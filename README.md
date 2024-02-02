@@ -2,7 +2,7 @@
 
 ## Chicago City Colleges Open Educational Resource
 
-Welcome to our interactive online textbook for learning Discrete math with SageMath.
+Welcome to our interactive online textbook for learning Discrete Mathematics with SageMath.
 
 ### Empowering mathematicians and computer scientists with open-source tools
 
@@ -14,4 +14,4 @@ We are developing essential resources for students to use mathematics software e
 
 ### Why Discrete Mathematics with SageMath?
 
-Our first textbook focuses on discrete mathematics because it is a foundational element in concepts replated to math and computer science. SageMath allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
+Our first textbook focuses on discrete mathematics because it is a foundational element in concepts related to math and computer science. SageMath allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
