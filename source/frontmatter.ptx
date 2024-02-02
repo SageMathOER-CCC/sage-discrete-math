@@ -6,9 +6,9 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
-      <institution>Your institution</institution>
+      <personname>Zunaid Ahmed, Hellen Colman, Samuel Lubliner</personname>
+      <department>Math Department</department>
+      <institution>City Colleges of Chicago</institution>
     </author>
     <date>
       <today />
