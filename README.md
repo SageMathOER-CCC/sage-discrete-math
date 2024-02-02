@@ -1,19 +1,17 @@
-# PreTeXt Codespace
+# Discrete Math with SageMath
 
-Use this template repository to quickly start a new [PreTeXt](https://pretextbook.org) project entirely in the cloud, using GitHub Codespaces.  
+## Chicago City Colleges Open Educational Resource
 
-## Instructions
+Welcome to our interactive online textbook for learning Discrete math with SageMath.
 
-Look for the green button at the top right of this page.  If the button says `Use this template`, then you are ready to create a new repository for your project.  Click on the button and select "Create a new repository".  On the next page, give your project a name, select public or private (this can be changed later), and click the "Create repository from template" button.
+### Empowering mathematicians and computer scientists with open-source tools
 
-You now have a GitHub repository saved in your account.  You can come back to that page any time you want to work on your project (note the URL or else find it in the list of your repositories when you log in to GitHub).
+We are developing essential resources for students to use mathematics software effectively. Our goal is to streamline the learning process with SageMath. This approach helps students focus more on mathematics and reduces the friction of learning how to code. Our resources are designed for all math students, regardless of programming experience.
 
-To start work on your project, go to the green button at the top of *your* repository's page, which will say `<> Code`.  
+### What is SageMath?
 
-1. Click on this button.
-2. Click on the tab that says "Codespaces."
-3. Click "Create codespace on main."
+[SageMath](https://www.sagemath.org/) is a free, open-source mathematics software system, based on Python. It integrates well-known open-source packages that include NumPy, SciPy, matplotlib, Sympy, Maxima, GAP, FLINT, R, and many [others](https://doc.sagemath.org/html/en/reference/spkg/). SageMath is fulfilling the need for a robust and free alternative to proprietary software like Magma, Maple, Mathematica, and Matlab.
 
-This take a minute or two (just the first time; later this will be much faster) and then open a browser version of VS Code with everything set up to start working.  It will generate a new pretext book (and replace this README with one you can edit for your project). 
+### Why Discrete Mathematics with SageMath?
 
-Next time you want to work on your book, return to your newly created repository, go to the green `<> Code` button, and select the codespace you previously created.  If you don't see that codespace (perhaps you deleted it to save space), you can always create a new codespace.
+Our first textbook focuses on discrete mathematics because it is a foundational element in concepts replated to math and computer science. SageMath allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
