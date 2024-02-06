@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="data-types" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Data Types</title>
+    <introduction>
+        <p>
+            SageMath is a Python-based system, integrating various open-source mathematics software packages. Learning the fundamentals of Python allows users to fully utilize SageMath and equips them with broader applicable skills.
+        </p>
+    </introduction>
+    
+    <p>Python has several built-in data types. These include:</p>
+    <p>
+        <ul>
+            <li>
+                <p>
+                    <term>Integers</term>: Whole numbers without a fractional part.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>42</c>, <c>-7</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Floats</term>: Numbers with a decimal point.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>3.14</c>, <c>-0.001</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Strings</term>: Sequence of characters used for text.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>"Hello"</c>, <c>'World'</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Booleans</term>: Represents truth values. Only two possible objects.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>True</c> and <c>False</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Lists</term>: Ordered, mutable collections of items.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>[1, 2, 3]</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Tuples</term>: Ordered, immutable collections.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>(1, 2, 3)</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Dictionaries</term>: Collections of key-value pairs.
+                    <ul>
+                        <li>
+                            <p>
+                                <c>{"name": "Alice", "age": 25}</c>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+        </ul>
+    </p>
+</section>
