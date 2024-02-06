@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="intro-to-programming" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Introduction to SageMath Programming</title>
+    <introduction>
+        <p>
+            SageMath is a Python-based system, integrating various open-source mathematics software packages. Learning the fundamentals of Python allows users to fully utilize SageMath and equips them with broader applicable skills.
+        </p>
+    </introduction>
+    
+    
+</section>

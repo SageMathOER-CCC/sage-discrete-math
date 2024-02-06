@@ -17,6 +17,7 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="first-line-of-sage.ptx" />
+  <xi:include href="sec-first-line-of-sage.ptx" />
+  <xi:include href="sec-intro-to-programming.ptx" />
 
 </chapter>
