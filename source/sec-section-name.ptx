@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Operations on Sets</title>
+
+        <!-- Set Union Subsection -->
+        <subsection>
+            <title>Set Union</title>
+            <p>
+                The union of sets, denoted by the symbol ∪, is one of the fundamental operations in set theory. It is used to combine the elements of two or more sets to form a new set. The union of sets A and B, written as A ∪ B, includes every element that is in A, in B, or in both. Importantly, it does not include duplicates; each element is unique in the resulting set. This operation reflects the inclusive 'or' in logic, where an element is included in the union if it exists in either of the sets or both.
+            </p>
+            <aside>
+                <title>Tips!</title>
+                <p>
+                    1. Remember that duplicates are removed in the union.
+                </p>
+                <p>
+                    2. The union of sets is always at least as big as each individual set.
+                </p>
+            </aside>
+            <example>
+                <p>
+                    If Set A = {1, 2, 3} and Set B = {3, 4, 5}, then the union A ∪ B is {1, 2, 3, 4, 5}.
+                </p>
+                <figure xml:id="union">
+                    <caption>Union A ∪ B</caption>
+                    <image source="union.png" width="50%">
+                    </image>
+                </figure>
+            <sage>
+                <input>
+                    A = Set([1, 2, 3])
+                    B = Set([3, 4, 5])
+                    print(A.union(B))
+                </input>
+                <output>{1, 2, 3, 4, 5}
+                </output>
+                </sage>
+            </example>
+            <p>
+                This operation can be visualized in real-world scenarios such as merging two distinct music playlists into one. In this case, any song that appears in both playlists will only be listed once in the merged playlist.
+            </p>
+        </subsection>
+
+        <!-- Set Intersection Subsection -->
+        <subsection>
+            <title>Set Intersection</title>
+            <p>
+                The intersection of sets, denoted as ∩, is another core operation in set theory. This operation finds common elements between sets. Specifically, the intersection of sets A and B, written as A ∩ B, is the set of elements that are both in A and in B. If there are no common elements, the intersection is the empty set, denoted as ∅, indicating that the sets are disjoint. The intersection represents the logical 'and', requiring an element to be in both sets to be included in the result.
+            </p>
+            <aside>
+                <title>Tips!</title>
+                <p>
+                    1. If two sets have no elements in common, their intersection is an empty set. This is known as disjoint sets.
+                </p>
+            </aside>
+            <example>
+                <p>
+                    For Set A = {1, 2, 3, 4} and Set B = {3, 4, 5, 6}, the intersection A ∩ B is {3, 4}.
+                </p>
+                <figure xml:id="intersection">
+                    <caption>Intersection A ∩ B</caption>
+                    <image source="intersection.png" width="50%">
+                    </image>
+                </figure>
+            <sage>
+                <input>
+                    A = Set([1, 2, 3, 4])
+                    B = Set([3, 4, 5, 6])
+                    print(A.intersection(B))
+                </input>
+                <output>{3, 4}
+                </output>
+                </sage>
+            </example>
+            <p>
+                A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.
+            </p>
+        </subsection>
+
+        <!-- Set Difference Subsection -->
+        <subsection>
+            <title>Set Difference</title>
+            <p>
+                The set difference, denoted by "−" or "\", is a crucial operation in set theory that highlights the difference between two sets. It is defined as the set of elements that are in one set, but not in another. For two sets A and B, the set difference A - B (or A \ B) contains all the elements that are in A but not in B. This operation is significant in problems where the relative complement of sets is essential. Unlike union and intersection, set difference is not commutative, meaning that A - B is not the same as B - A. The difference operation is particularly useful in various fields such as computer science, where it can represent operations like removing specific elements from a dataset.
+            </p>
+            <aside>
+                <title>Tips!</title>
+                <p>
+                    1. Set difference is not commutative; A - B ≠ B - A. This operation shows what is unique to the first set compared to the second.
+                </p>
+            </aside>
+            <example>
+                <p>
+                    If Set A = {1, 2, 3, 4, 5} and Set B = {4, 5, 6, 7}, then A - B (or A \ B) would be {1, 2, 3}.
+                </p>
+                <figure xml:id="difference">
+                    <caption>A - B (or A \ B)</caption>
+                    <image source="difference.png" width="50%">
+                    </image>
+                </figure>
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        B = Set([4, 5, 6, 7])
+                        print(A.difference(B))
+                    </input>
+                    <output>{1, 2, 3}
+                    </output>
+                    </sage>
+            </example>
+            <p>
+                In a real-life context, this can be seen as identifying items on a restaurant menu (Set A) that you have not yet tried (Set B), with A - B representing the new dishes to explore.
+            </p>
+        </subsection>
+
+        <!-- Set Complement Subsection -->
+        <subsection>
+            <title>Set Complement</title>
+            <p>
+                The complement of a set, denoted by A' or \(\bar{A}\), is a fundamental concept in set theory. Given a universal set U, which contains all possible elements under consideration, the complement of a set A consists of all the elements in U that are not in A. The complement thus represents the 'not' logic in the context of sets. It is an essential operation for understanding subsets and their relationships to the universal set. The complement is crucial in probability theory, logic, and various data operations in computer science.
+            </p>
+            <aside>
+                <title>Tips!</title>
+                <p>
+                    1. The complement depends on the definition of the universal set. It's the set of all elements that are not in the given set.
+                </p>
+            </aside>
+            <example>
+                <p>
+                    If the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and Set A = {1, 3, 5, 7}, the complement of A would be A' = {2, 4, 6, 8, 9}.
+                </p>
+                <figure xml:id="complement">
+                    <caption>Complement of A</caption>
+                    <image source="complement.png" width="50%">
+                    </image>
+                </figure>
+                <sage>
+                    <input>
+                        U = Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+                        A = Set([1, 3, 5, 7])
+                        print(U.difference(A))
+                    </input>
+                    <output>{2, 4, 6, 8, 9}
+                    </output>
+                    </sage>
+            </example>
+            <p>
+                This is analogous to having a list of all possible ice cream flavors (U) and identifying those flavors you have yet to try (A').
+            </p>
+        </subsection>
+
+        <!-- Cartesian Product of Sets Subsection -->
+        <subsection>
+            <title>Cartesian Product of Sets</title>
+            <p>
+                The Cartesian product, denoted by "×", is a set operation that returns a set of ordered pairs derived from two sets. For sets A and B, the Cartesian product A × B is the set of all ordered pairs (a, b), where a is an element of A and b is an element of B. This operation is vital for creating product sets, and it has extensive applications in fields such as mathematics, computer science, and logic. The Cartesian product is essential in defining relations and functions in mathematical terms. It is not a commutative operation, meaning the product A × B is different from B × A due to the order of elements in the pairs.
+            </p>
+            <aside>
+                <title>Tips!</title>
+                <p>
+                    1. The Cartesian product is not commutative; A × B is different from B × A. It creates ordered pairs with the first element from the first set and the second from the second set.
+                </p>
+            </aside>
+            <example>
+                <p>
+                    If Set A = {1, 2} and Set B = {x, y}, then their Cartesian product A × B would be {(1, x), (1, y), (2, x), (2, y)}.
+                </p>
+                <figure xml:id="car_product">
+                    <caption>Cartesian product A × B</caption>
+                    <image source="cartesian product.png" width="50%">
+                    </image>
+                </figure>
+                <sage>
+                    <input>
+                        A = Set([1, 2])
+                        B = Set(['x', 'y'])
+                        cartesian_product([A, B]).list()
+                    </input>
+                    <output>[(1, 'y'), (1, 'x'), (2, 'y'), (2, 'x')]
+                    </output>
+                    </sage>
+            </example>
+            <p>
+                This concept can be applied in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
+            </p>
+        </subsection>
+
+        <!-- Practice Questions Section -->
+        <subsection>
+            <title>Practice Questions</title>
+    
+            <p>Given Sets A = {a, b, c, d} and B = {c, d, e, f}, find A ∪ B and A ∩ B.</p>
+            <answer>
+                A ∪ B = {a, b, c, d, e, f}.<br/>
+                A ∩ B = {c, d}.
+            </answer>
+    
+            <p>With Sets X = {1, 2, 3, 4, 5, 6} and Y = {4, 5, 6, 7, 8}, determine X - Y and Y - X.</p>
+            <answer>
+                X - Y = {1, 2, 3}.<br/>
+                Y - X = {7, 8}.
+            </answer>
+    
+            <p>For a universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and Set Z = {2, 4, 6, 8}, find the complement of Z.</p>
+            <answer>
+                The complement of Z = {1, 3, 5, 7, 9}.
+            </answer>
+    
+            <p>If Set P = {red, blue} and Set Q = {circle, square}, list all elements of P × Q.</p>
+            <answer>
+                P × Q = {(red, circle), (red, square), (blue, circle), (blue, square)}.
+            </answer>
+    
+            <p>For Sets A = {1, 2, 3}, B = {3, 4, 5}, and C = {1, 5, 6}, find (A ∪ B) ∩ C and (A ∩ B) ∪ C.</p>
+            <answer>
+                (A ∪ B) ∩ C = {1, 3, 5}.<br/>
+                (A ∩ B) ∪ C = {3, 1, 5, 6}.
+            </answer>
+        </subsection>
+</section>
