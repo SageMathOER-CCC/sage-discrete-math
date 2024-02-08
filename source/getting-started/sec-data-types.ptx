@@ -8,16 +8,27 @@
         </p>
     </introduction>
     
-    <p>Python has several built-in data types. These include:</p>
+    <p>Python has several built-in data types and SageMath adds more.</p>
+
     <p>
         <ul>
             <li>
                 <p>
-                    <term>Integers</term>: Whole numbers without a fractional part.
+                    <term>Integer</term>: whole number.
                     <ul>
                         <li>
                             <p>
                                 <c>42</c>, <c>-7</c>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <c>int</c> is a built in Python integer. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Sage uses its own <c>Integer</c> data type to handle arbitrary large integers with exact arithmetic and converts an <c>int</c> to a Sage <c>Integer</c> unless you specify with <c>int()</c>
                             </p>
                         </li>
                     </ul>
@@ -25,7 +36,7 @@
             </li>
             <li>
                 <p>
-                    <term>Floats</term>: Numbers with a decimal point.
+                    <term>Float</term>: Numbers with a decimal point.
                     <ul>
                         <li>
                             <p>
@@ -37,11 +48,11 @@
             </li>
             <li>
                 <p>
-                    <term>Strings</term>: Sequence of characters used for text.
+                    <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
                     <ul>
                         <li>
                             <p>
-                                <c>"Hello"</c>, <c>'World'</c>.
+                                <c>'Hello'</c>, <c>"World"</c>.
                             </p>
                         </li>
                     </ul>
@@ -49,7 +60,7 @@
             </li>
             <li>
                 <p>
-                    <term>Booleans</term>: Represents truth values. Only two possible objects.
+                    <term>Booleans</term>: Represents truth values.
                     <ul>
                         <li>
                             <p>
@@ -97,4 +108,31 @@
             </li>
         </ul>
     </p>
+
+    <sage>
+        <input>
+            # You can ask Sage to return the data type of an object
+            # Here is an example of the Sage Integer type
+            type(2)
+        </input>
+    </sage>
+    <sage>
+        <input>
+            # You can ask Sage to return the data type of an object
+            # Here is an example of the built-in python int
+            type(int(2))
+        </input>
+    </sage>
+    <sage>
+        <input>
+            # Print a string
+            print("Hello, World")
+        </input>
+    </sage>
+    <sage>
+        <input>
+            # == is the mathematical equality operator, not to be confused with the assignment operator, = 
+        </input>
+    </sage>
+
 </section>
