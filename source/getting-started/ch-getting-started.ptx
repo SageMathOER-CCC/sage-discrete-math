@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-getting-started" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Getting Started</title>
+
+  <introduction>
+    <p> Here is a quick introduction to python programing and getting started with SageMath Software. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-intro-sage.ptx" />
+  <xi:include href="sec-intro-python.ptx" />
+  <xi:include href="sec-sage-input.ptx" />
+  
+</chapter>

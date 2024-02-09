@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sage-input" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basic Sage Notations and Inputs</title>
+
+  <subsection xml:id="sagemath-data-types">
+    <title>Data Types in SageMath</title>
+    <p>SageMath, while utilizing Python's syntax, introduces additional data types specific to mathematical computations.</p>
+    <ul>
+      <li>Sage Integers and Rationals: Enhanced versions of Python's numerical types with support for arbitrary precision and advanced mathematical operations.</li>
+      <li>Symbolic Expressions: Represent mathematical expressions symbolically, allowing for algebraic manipulations.</li>
+      <li>Matrices and Vectors: Specialized types for linear algebra operations.</li>
+      <li>Polynomials and Power Series: Types for handling polynomial and series operations effectively.</li>
+      <li>Graphs and Geometry Objects: For representing and manipulating mathematical structures in graph theory and geometry.</li>
+    </ul>
+    <p>These specialized types make SageMath a powerful tool for mathematical computation, extending beyond Python's native capabilities.</p>
+    <p>While SageMath builds upon Python's data types, it enhances them with more mathematically robust and versatile options. For instance, integers in SageMath are of arbitrary size, compared to Python's fixed-precision integers. Similarly, SageMath's symbolic expressions allow for direct manipulation of algebraic formulas, a feature not natively present in Python.</p>
+  </subsection>
+  
+  <subsection xml:id="creating-variables">
+    <title>Creating Variables and Assigning Values</title>
+    <p>Variables in Python are created upon first assignment. Python's dynamic typing means no prior declaration is necessary.</p>
+    <pre>
+      <c>x = 5        # An integer</c>
+      <c>y = "Hello"  # A string</c>
+      <c>z = 3.14     # A floating-point number</c>
+    </pre>
+  </subsection>
+  
+</section>
