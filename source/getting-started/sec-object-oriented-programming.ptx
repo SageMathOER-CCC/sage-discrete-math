@@ -19,6 +19,7 @@
     <p>
         We can also pass in arguments to this method to specify the number of digits we want to round to.
     </p>
+    
     <sage>
         <input>
             sqrt(2).n(digits=30)
@@ -34,14 +35,6 @@
         </input>
     </sage>
 
-    <p>
-        We can make this look more visually appealing:
-    </p>
-    <sage>
-        <input>
-            show(sqrt(2))
-        </input>
-    </sage>
 
     <p>
         Sage can do many more mathematical operations. If you are curious, check out the <url href="https://wiki.sagemath.org/quickref">Quick Reference Card</url> and the <url href="https://doc.sagemath.org/html/en/reference/#discrete-mathematics">Reference Manual</url>.
@@ -59,31 +52,5 @@
     <p>
         Even though this presentation of documentation is not beginner friendly we can try to deconstruct some of it. It looks like <c>Primes()</c> represents the set of prime numbers. We can assign the set of prime numbers to an identifier. We can also check if a given number belongs to this set. 
     </p>
-    <sage>
-        <input>
-            # We can also choose a more descriptive name
-
-            set_of_prime_numbers = Primes()
-
-            # I can check if 5 in contained in the set of prime numbers
-
-            5 in set_of_prime_numbers
-        </input>
-    </sage>
-
-    <sage>
-        <input>
-            # We can confirm that the set of prime numbers is infinite
-            
-            set_of_prime_numbers.cardinality()
-        </input>
-    </sage>
-
-    <sage>
-        <input>
-            # Since the set of prime numbers is infinite, asking for the length will return an error
-            
-            len(set_of_prime_numbers)
-        </input>
-    </sage>
+    
 </section>

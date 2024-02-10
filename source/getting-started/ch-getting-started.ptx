@@ -17,8 +17,8 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-first-line-of-sage.ptx" />
-  <xi:include href="sec-data-types.ptx" />
+  <xi:include href="sec-sage-browser.ptx" />
+  <xi:include href="sec-about-sage.ptx" />
   <xi:include href="sec-object-oriented-programming.ptx" />
   
 
