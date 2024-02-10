@@ -64,7 +64,7 @@
   </p>
   
   <p>
-    This might not mean too much right now and it will be more clear as we explore what is known as <term>object-oriented</term> programming. Just know that SageMath has different ways of representing and working with data. We can create an object my typing something into our Sage Worksheet or the cells on this page.
+    This might not mean too much right now and it will be more clear as we explore what is known as <term>object-oriented</term> programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.
   </p>
   
   <p>
