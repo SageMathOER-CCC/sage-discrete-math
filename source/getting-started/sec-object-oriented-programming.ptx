@@ -2,5 +2,11 @@
 
 <section xml:id="object-oriented-programming" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Object Oriented Programming</title>
+
+    <p>
+        SageMath supports <term>object-oriented</term> syntax. An <term>object</term> is a portion of memory used to model things in the real world. An object is an instance of a <term>class</term>. A class is like a blueprint for creating objects. Classes define the information an object holds (<term>attributes</term>) and what the object can do (<term>methods</term>). <term>Dot notation</term> is used to access attributes and methods of an object.
+    </p>
+
+
     
 </section>
