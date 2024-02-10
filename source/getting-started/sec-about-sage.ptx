@@ -8,17 +8,7 @@
   </p>
   
   <p>
-    Let's display something to the screen.
-  </p>
-
-  <sage>
-    <input>
-      show(sqrt(2)) 
-    </input>
-  </sage>
-  
-  <p>
-    We can also do some math
+    Let's do some math
   </p>
   
   <sage>
@@ -106,6 +96,25 @@
   </sage>
 
   <p>
+    If you type in <c>sqrt(2)</c> and evaluate, Sage will retain the symbolic value.
+  </p>
+  <sage>
+      <input>
+          print(type(sqrt(2)))
+          print(sqrt(2))
+      </input>
+  </sage>
+
+  <p>
+    We can also display mathematical notation
+  </p>
+  <sage>
+    <input>
+      show(sqrt(2)) 
+    </input>
+  </sage>
+
+  <p>
     Let's introduce some more types and classes!
   </p>
 
@@ -114,7 +123,6 @@
         set_of_prime_numbers = Primes()
 
         # I can check if 5 in contained in the set of prime numbers
-
         5 in set_of_prime_numbers
     </input>
   </sage>
@@ -192,9 +200,4 @@
         print(discrete_math_textbook_info)
       </input>
   </sage>
-
-  <p>
-    Sprinkle in mistakes and how to correct them
-  </p>
-      
 </section>

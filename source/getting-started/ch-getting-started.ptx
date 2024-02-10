@@ -19,7 +19,6 @@
   <!-- include sections -->
   <xi:include href="sec-sage-browser.ptx" />
   <xi:include href="sec-about-sage.ptx" />
-  <xi:include href="sec-object-oriented-programming.ptx" />
-  
-
+  <xi:include href="sec-debugging.ptx" />
+  <xi:include href="sec-documentation.ptx" />
 </chapter>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Debugging</title>
+  <p>
+    When you learn how to program you will make many mistakes. This will always be part of the process.Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of writing 
+  </p>
+
+  <sage>
+    <input>
+      print(Hello)
+    </input>
+  </sage>
+  
+</section>
