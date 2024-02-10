@@ -35,4 +35,81 @@
       </li>
     </ol>
   </p>
+
+  <p>
+    Fell free to copy and paste the code snippets we provide and run them in your own <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">Sage Worksheet</url> or <url href="https://jupyter.org/">Jupyter Notebook</url>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <url href="https://doc.sagemath.org/html/en/reference/spkg/">various</url> open-source mathematics software packages. Sage shares many features and syntax with python.
+  </p>
+
+  <p>
+    Lets see what we can print to the screen.
+  </p>
+
+  <sage>
+    <input>
+      print("Hello, Word")
+    </input>
+</sage>
+
+<sage>
+  <input>
+    show(sqrt(2)) 
+  </input>
+</sage>
+
+<p>
+  We can also do some math
+</p>
+
+<sage>
+  <input>
+    1+1
+  </input>
+</sage>
+
+<p>
+  Lets ask sage what type of <term>object</term> this is.
+</p>
+
+<sage>
+  <input>
+    type(1+1)
+  </input>
+</sage>
+
+<p>
+  Sage let us know <c>1 + 1</c> is an <c>Integer</c>.
+</p>
+
+<sage>
+  <input>
+    type(1/2)
+  </input>
+</sage>
+
+<sage>
+  <input>
+    type(1/2 + 1)
+  </input>
+</sage>
+
+<sage>
+  <input>
+    type(1/2 + 1.1)
+  </input>
+</sage>
+
+<sage>
+  <input>
+    type(1.1)
+  </input>
+</sage>
+
+<p>
+  You don't need to worry about what exactly these types mean. Just know that the types represented a particular way and have characteristic behaviors.
+</p>
+
+<p>
+  Lets create a variable give it a name.
+</p>
+
 </section>
