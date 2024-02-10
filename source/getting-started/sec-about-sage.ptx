@@ -68,7 +68,7 @@
   </p>
   
   <p>
-    Here is an example of dot notation. There are many more examples of dot notation in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
+    Dot notation is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of dot notation in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
   </p>
 
   <sage>
@@ -96,12 +96,12 @@
   </sage>
 
   <p>
-    If you type in <c>sqrt(2)</c> and evaluate, Sage will retain the symbolic value.
+    In this case there is no need to evaluate an approximation of <c>sqrt(2)</c> and <c>log(3)</c>. Sage will retain the symbolic value for accuracy.
   </p>
   <sage>
       <input>
-          print(type(sqrt(2)))
-          print(sqrt(2))
+          mySymbolic = sqrt(2) * log(3)
+          print(mySymbolic)
       </input>
   </sage>
 
