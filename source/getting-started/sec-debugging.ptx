@@ -3,13 +3,82 @@
 <section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Debugging</title>
   <p>
-    When you learn how to program you will make many mistakes. This will always be part of the process.Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of writing 
+    When you learn how to program you will make many mistakes. This will always be part of the process.Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of writing. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!
   </p>
 
   <sage>
     <input>
+      # Run this cell and see what happens
+      # Next edit 1message to message and run this cell again
+      1message = "Hello"
       print(Hello)
     </input>
   </sage>
-  
+
+  <p>
+    Why didn't this print Hello to the screen? The error message is showing us something is wrong with 1message and we have an <c>invalid decimal literal</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifies. 
+  </p>
+
+  <p>
+    Rules for naming identifiers in Python:
+
+    <ul>
+      <li>
+        <p>
+          Identifiers cannot start with a digit.
+        </p>
+      </li>
+      <li>
+        <p>
+          Identifiers are case-sensitive
+        </p>
+      </li>
+      <li>
+        <p>
+          Identifiers can include
+          <ul>
+            <li>
+              <p>
+                letters (<c>a</c> - <c>z</c>, <c>A</c> - <c>Z</c>)
+              </p>
+            </li>
+            <li>
+              <p>
+                digits (<c>0</c> - <c>9</c>)
+              </p>
+            </li>
+            <li>
+              <p>
+                underscore character <c>_</c>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          Do not use spaces, punctuation or special characters when naming identifiers
+        </p>
+      </li>
+      <li>
+        <p>
+          Keywords cannot be used as identifiers.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Here is another error:
+  </p>
+
+  <sage>
+    <input>
+      myMessage = "Hello"
+      print(Hello)
+    </input>
+  </sage>
+
+
+
 </section>
