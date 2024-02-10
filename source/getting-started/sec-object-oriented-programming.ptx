@@ -4,9 +4,86 @@
     <title>Object Oriented Programming</title>
 
     <p>
-        SageMath supports <term>object-oriented</term> syntax. An <term>object</term> is a portion of memory used to model things in the real world. An object is an instance of a <term>class</term>. A class is like a blueprint for creating objects. Classes define the information an object holds (<term>attributes</term>) and what the object can do (<term>methods</term>). <term>Dot notation</term> is used to access attributes and methods of an object.
+        SageMath supports <term>object-oriented</term> syntax. An <term>object</term> is a portion of memory used to model things in the real world. An object is an instance of a <term>class</term>. A class is like a blueprint for creating objects. Classes define the information an object holds (<term>attributes</term>) and what the object can do (<term>methods</term>). <term>Dot notation</term> is used to access attributes and methods of an object. Here is an example that illustrates these concepts.
+    </p>
+    
+    <p>
+        We can find the approximate value of sqrt of 2 with the <c>.n()</c> method.
+    </p>
+    <sage>
+        <input>
+            sqrt(2).n()
+        </input>
+    </sage>
+
+    <p>
+        We can also pass in arguments to this method to specify the number of digits we want to round to.
+    </p>
+    <sage>
+        <input>
+            sqrt(2).n(digits=30)
+        </input>
+    </sage>
+
+    <p>
+        If you type in <c>sqrt(2)</c> and evaluate, Sage will retain the symbolic value.
+    </p>
+    <sage>
+        <input>
+            sqrt(2)
+        </input>
+    </sage>
+
+    <p>
+        We can make this look more visually appealing:
+    </p>
+    <sage>
+        <input>
+            show(sqrt(2))
+        </input>
+    </sage>
+
+    <p>
+        Sage can do many more mathematical operations. If you are curious, check out the <url href="https://wiki.sagemath.org/quickref">Quick Reference Card</url> and the <url href="https://doc.sagemath.org/html/en/reference/#discrete-mathematics">Reference Manual</url>.
     </p>
 
+    <p>
+        If you want to view the documentation for a function, you can type the function followed by a <c>?</c>. Are you interested in viewing the source code? Run a function followed by <c>??</c>. Let take a look at the definition of the <c>Primes()</c> function. Keep in mind, this way of checking documentation is not always the most beginner friendly, but it can serve as a quick reference or reminder.
+    </p>
+    <sage>
+        <input>
+            Primes?
+        </input>
+    </sage>
 
-    
+    <p>
+        Even though this presentation of documentation is not beginner friendly we can try to deconstruct some of it. It looks like <c>Primes()</c> represents the set of prime numbers. We can assign the set of prime numbers to an identifier. We can also check if a given number belongs to this set. 
+    </p>
+    <sage>
+        <input>
+            # We can also choose a more descriptive name
+
+            set_of_prime_numbers = Primes()
+
+            # I can check if 5 in contained in the set of prime numbers
+
+            5 in set_of_prime_numbers
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # We can confirm that the set of prime numbers is infinite
+            
+            set_of_prime_numbers.cardinality()
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # Since the set of prime numbers is infinite, asking for the length will return an error
+            
+            len(set_of_prime_numbers)
+        </input>
+    </sage>
 </section>

@@ -1,79 +1,7 @@
-SageMath supports object-oriented syntax.
 
-An object is a portion of memory used to model things in the real world.
 
-An object is an instance of a class.
 
-A class is like a blueprint for creating objects. Classes define the information an object holds (attributes) and what the object can do (methods)
 
-Dot notation is used to access attributes and methods of an object.
-
-We can find the approximate value of sqrt of 2 with the .n() method.
-
-sqrt(2).n()
-
-1.41421356237310
-
-We can also pass in arguments to this method to specify the number of digits we want to round to.
-
-sqrt(2).n(digits=30)
-
-1.41421356237309504880168872421
-
-If you type in sqrt(2) and evaluate, Sage will retain the symbolic value.
-
-We can make this look nicer by running
-
-show(sqrt(2))
-
-Sage can do many mathematical operations. If you are curious, check out the Quick Reference Card https://wiki.sagemath.org/quickref and the Reference Manual https://doc.sagemath.org/html/en/reference/#discrete-mathematics
-
-If you want to view the documentation for a function, you can type the function followed by a ?
-
-Are you interested in viewing the source code? Run a function followed by ??
-
-Let take a look at the definition of the Primes function
-
-Primes?
-
-Init signature: Primes(proof)
-Docstring:     
-   The set of prime numbers.
-
-   EXAMPLES:
-
-      sage: P = Primes(); P
-      Set of all prime numbers: 2, 3, 5, 7, ...
-
-   We show various operations on the set of prime numbers:
-
-      sage: P.cardinality()
-      +Infinity
-      sage: R = Primes()
-      sage: P == R
-      True
-      sage: 5 in P
-      True
-      sage: 100 in P
-      False
-
-      sage: len(P)
-      Traceback (most recent call last):
-      ...
-      NotImplementedError: infinite set
-Init docstring:
-   EXAMPLES:
-
-      sage: P = Primes(); P
-      Set of all prime numbers: 2, 3, 5, 7, ...
-
-      sage: Q = Primes(proof=False); Q
-      Set of all prime numbers: 2, 3, 5, 7, ...
-File:           /home/sc_serv/sage/src/sage/sets/primes.py
-Type:           ClasscallMetaclass
-Subclasses:     
-
-Even though this presentation of documentation is not beginner friendly we can try to deconstruct some of it.
 
 In Python and Sage we can assign an identifier (similar to a name tag) to an object.
 
@@ -95,19 +23,7 @@ async      elif       if         or         yield
 
 Soft keywords are only reserved under specific contexts. Soft keywords include match, case, type and _
 
-In the documentation example, the set of prime numbers is assigned the name tag P.
+Dot operator 
+print function 
 
-We can also choose a more descriptive name
-
-set_of_prime_numbers = Primes()
-
-I can check if 5 in contained in the set of prime numbers by running
-
-5 in set_of_prime_numbers
-
-True
-
-More user friendly documentation can be found at <https://doc.sagemath.org/>
-
-                    
-                    
+remove cardinality and lens
