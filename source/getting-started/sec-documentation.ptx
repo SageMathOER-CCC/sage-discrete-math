@@ -7,14 +7,4 @@
         Sage can do many more mathematical operations. If you are curious, check out the <url href="https://wiki.sagemath.org/quickref">Quick Reference Card</url> and the <url href="https://doc.sagemath.org/html/en/reference/">Reference Manual</url>.
     </p>
 
-    <p>
-        If you want to view the documentation for a function, you can type the function followed by a <c>?</c>. Are you interested in viewing the source code? Run a function followed by <c>??</c>. Let take a look at the definition of the <c>Primes()</c> function. Keep in mind, this way of checking documentation is not always the most beginner friendly, but it can serve as a quick reference or reminder.
-    </p>
-    <sage>
-        <input>
-            Primes?
-        </input>
-    </sage>
-
-    
 </section>

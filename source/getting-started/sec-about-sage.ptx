@@ -137,22 +137,11 @@
   </sage>
 
   <p>
-      <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
-  </p>
-  <sage>
-      <input>
-          myString = "Hello"
-          print(type(myString))
-          print(myString)
-      </input>
-  </sage>
-
-  <p>
     <term>Lists</term>: Ordered mutable collections of items. Mutable means that the value can be changed.
   </p>
   <sage>
       <input>
-          myList = [1, 2, 3, 3]
+          myList = [1, 3, 3, 2]
           print(type(myList))
           print(myList)
       </input>
@@ -163,9 +152,20 @@
   </p>
   <sage>
       <input>
-          myTuple = (1, 2, 3, 3)             
+          myTuple = (1, 3, 3, 2)
           print(type(myTuple))
           print(myTuple)
+      </input>
+  </sage>
+
+  <p>
+    A <term>set</term> will order the values and ignores repeats.
+  </p>
+  <sage>
+      <input>
+          mySet = set([1, 3, 3, 2])
+          print(type(mySet))
+          print(mySet)
       </input>
   </sage>
 
@@ -198,6 +198,17 @@
             }
             
         print(discrete_math_textbook_info)
+      </input>
+  </sage>
+
+  <p>
+    <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
+  </p>
+  <sage>
+      <input>
+          myString = "Hello"
+          print(type(myString))
+          print(myString)
       </input>
   </sage>
 </section>

@@ -9,9 +9,8 @@
   <sage>
     <input>
       # Run this cell and see what happens
-      # Next edit 1message to message and run this cell again
-      1message = "Hello"
-      print(Hello)
+      1message = "Hello, World"
+      print(1message)
     </input>
   </sage>
 
@@ -69,24 +68,41 @@
   </p>
 
   <p>
+    Let's use an acceptable identifier
+  </p>
+
+  <sage>
+    <input>
+      message = "Hello, World"
+      print(message)
+    </input>
+  </sage>
+
+  <p>
+    Here are some more keywords that cannot be used for variable names
+  </p>
+  
+  <p>
+    <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
+  </p>
+  
+  <p>
     Here is another error:
   </p>
 
   <sage>
     <input>
-      myMessage = "Hello"
       print(Hello)
     </input>
   </sage>
 
   <p>
-    It looks like we have a <c>NameError</c>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it. If we want to print the string "Hello" we need to pass myMessage into the <c>Print()</c> function.
+    It looks like we have a <c>NameError</c>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.
   </p>
 
   <sage>
     <input>
-      myMessage = "Hello"
-      print(myMessage)
+      print("Hello")
     </input>
   </sage>
 
