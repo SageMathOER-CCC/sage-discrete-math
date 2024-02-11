@@ -33,6 +33,12 @@
       <li>
         To learn more about SageMath worksheets, refer to the <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">official documentation</url>
       </li>
+      <li>
+        Alternatively, you can run Sage code in a <url href="https://doc.cocalc.com/jupyter-start.html">Jupyter Notebook</url> for some additional features.
+      </li>
+      <li>
+        If you are feeling adventurous, you can <url href="https://doc.sagemath.org/html/en/installation/index.html">install</url> sage and run it locally on your own computer. Keep in mind that a local instal will be the most involved way to run Sage code.
+      </li>
     </ol>
   </p>
 </section>
