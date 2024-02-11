@@ -13,6 +13,10 @@
   
   <sage>
     <input>
+      # Lines that start with a pound sign are comments
+      # and ignored by Sage
+      # Run this cell by clicking the Evaluate(Sage) button
+      # or use the keyboard shortcut command + shift
       1+1
     </input>
   </sage>
@@ -28,7 +32,7 @@
   </sage>
   
   <p>
-    Sage let us know <c>1 + 1</c> is an <c>Integer</c>.
+    Sage let us know <c>1 + 1</c> returns an <c>Integer</c>.
   </p>
   
   <sage>
@@ -68,7 +72,7 @@
   </p>
   
   <p>
-    Dot notation is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of dot notation in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
+    <term>Dot notation</term> is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
   </p>
 
   <sage>
@@ -96,11 +100,12 @@
   </sage>
 
   <p>
-    In this case there is no need to evaluate an approximation of <c>sqrt(2)</c> and <c>log(3)</c>. Sage will retain the symbolic value for accuracy.
+    In the following example there is no need to evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
   </p>
   <sage>
       <input>
           mySymbolic = sqrt(2) * log(3)
+          print(type(mySymbolic))
           print(mySymbolic)
       </input>
   </sage>
@@ -137,7 +142,7 @@
   </sage>
 
   <p>
-    <term>Lists</term>: Ordered mutable collections of items. Mutable means that the value can be changed.
+    <term>Lists</term>: Ordered mutable collections of items. If an object is mutable, the value can be changed after it is created.
   </p>
   <sage>
       <input>
@@ -148,7 +153,7 @@
   </sage>
 
   <p>
-      <term>Tuples</term>: Ordered, immutable collections. Immutable means that the value cannot be changed.
+      <term>Tuples</term>: Ordered, immutable collections. If an object is immutable, the value cannot be changed after it is created.
   </p>
   <sage>
       <input>
@@ -159,7 +164,7 @@
   </sage>
 
   <p>
-    A <term>set</term> will order the values and ignores repeats.
+    A <term>set</term> will order the values and ignores repeats. Sets are mutable.
   </p>
   <sage>
       <input>
