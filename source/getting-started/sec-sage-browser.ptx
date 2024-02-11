@@ -31,7 +31,7 @@
         Save your worksheet as a PDF for your records.
       </li>
       <li>
-        To learn more about SageMath worksheets, refer to the <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">official documentation</url>
+        To learn more about SageMath worksheets, refer to the official<url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">documentation</url>
       </li>
       <li>
         Alternatively, you can run Sage code in a <url href="https://doc.cocalc.com/jupyter-start.html">Jupyter Notebook</url> for some additional features.
