@@ -57,6 +57,35 @@
 
 	  </subsection>
 
+	  <subsection xml:id="subsec-set-builder-notation">
+		<title>Set Builder Notation</title>
+		<p>
+			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements.
+		</p>
+
+		<sage>
+			<input>
+				# Create a set of even numbers between 1 and 10
+				evens = Set([x for x in srange(1, 11) if x % 2 == 0])
+				evens
+			</input>
+		</sage>
+
+		<p>
+			Here we are introducing a new programming concept iteration. Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> evens = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
+		</p>
+
+		<sage>
+			<input>
+				moreEvens = Set([x for x in srange(1, 101) if x % 2 == 0])
+				evens
+			</input>
+		</sage>
+
+		
+		
+	  </subsection>
+
 	  <subsection xml:id="subsec-subsets">
 		<title>Subsets</title>
 		<p>
