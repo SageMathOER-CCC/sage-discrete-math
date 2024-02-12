@@ -15,7 +15,7 @@
   </sage>
 
   <p>
-    Why didn't this print <c>Hello</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifies.
+    Why didn't this print <c>Hello</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifiers.
   </p>
 
   <p>
