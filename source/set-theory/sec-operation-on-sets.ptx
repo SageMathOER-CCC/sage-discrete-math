@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-operation-on-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Operations on Sets</title>
+
+        <!-- Set Membership Check Subsection -->
+        <subsection>
+             <title>Set Membership Check</title>
+            <p>
+               SageMath allows you to easily check whether a certain number or subset is a part of a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
+            </p>
+            <p>
+                Let's consider Set A = {1, 2, 3, 4, 5}. We can check if the number 3 is in set A:
+            </p>
+            <aside>
+                <title>Tips!</title>
+                <p>
+                    For organizations such as clubs, gyms, or online subscription services, set membership checks can be used to validate if a user is a member or subscriber. This can help control access to facilities or content.
+                </p>
+            </aside>        
+            <sage>
+                <input>
+                A = Set([1, 2, 3, 4, 5])
+                3 in A
+                </input>
+                <output></output>
+            </sage>
+            <p>
+                Similarly, we can check if the subset {3, 4, 5, 6} is a part of set A:
+            </p>
+            <sage>
+                <input>
+                A = Set([1, 2, 3, 4, 5])
+                B = Set([3, 4, 5, 6])
+                B in A
+                </input>
+                <output></output>
+            </sage>
+        </subsection>
+
+        <!-- Set Union Subsection -->
+        <subsection>
+            <title>Set Union</title>
+            <p>
+                There are two distinct methods available in Sage for calculating unions. An advantage inherent in utilizing the union() method lies in its capability to accept an arbitrary number of sets as parameters. This means you can find the intersection of more than two sets in a single call.
+            </p>
+
+               <p>
+                    Suppose Set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and Set C = {4, 5, 6}. We can use the <c>union()</c> function here.
+               </p>
+                <aside>
+                    <title>Tips!</title>
+                    <p>
+                        This operation can be visualized in real-world scenarios such as merging two distinct music playlists into one. In this case, any song that appears in both playlists will only be listed once in the merged playlist.
+                    </p>
+                </aside>  
+            <sage>
+                <input>
+                    A = Set([1, 2, 3, 4, 5])
+                    B = Set([3, 4, 5, 6])
+                    C = Set([4, 5, 6])
+                    A.union(B).union(C)
+                </input>
+                <output></output>
+                </sage>
+                <p>
+                    Alternatively, we can also use the <c> | </c> operator to perform the union operation.  
+                </p>
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        B = Set([3, 4, 5, 6])
+                        C = Set([4, 5, 6])
+                        A | B | C
+                    </input>
+                    <output></output>
+                  </sage>
+
+        </subsection>
+
+        <!-- Set Intersection Subsection -->
+        <subsection>
+            <title>Set Intersection</title>
+            <p>
+                Similar to union, there are two methods of using the intersection function in sage.
+            </p>
+                <p>
+                    Suppose Set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and Set C = {4, 5, 6}. We can use the <c>intersection()</c> function here.
+                </p>
+                <aside>
+                    <title>Tips!</title>
+                    <p>
+                        A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.
+                    </p>
+                </aside>        
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        B = Set([3, 4, 5, 6])
+                        C = Set([4, 5, 6])
+                        A.intersection(B).intersection(C)
+                    </input>
+                    <output></output>
+                    </sage>
+                    <p>
+                        Alternatively, we can also use the <c> &amp; </c> operator to perform the intersection operation.  
+                    </p>
+                    <sage>
+                        <input>
+                            A = Set([1, 2, 3, 4, 5])
+                            B = Set([3, 4, 5, 6])
+                            C = Set([4, 5, 6])
+                            A &amp; B &amp; C
+                        </input>
+                        <output></output>
+                      </sage>
+        </subsection>
+
+        <!-- Set Difference Subsection -->
+        <subsection>
+            <title>Set Difference</title>
+            <p>
+                We have two methods to solve for difference as well.
+            </p>
+                <p>
+                    Suppose Set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and Set C = {4, 5, 6}. We can use the <c>difference()</c> function here.
+                </p>
+                <aside>
+                    <title>Tips!</title>
+                    <p>
+                        In a real-life context, this can be seen as identifying items on a restaurant menu (Set A) that you have not yet tried (Set B), with A - B representing the new dishes to explore.
+                    </p>
+                </aside>    
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        B = Set([3, 4, 5, 6])
+                        C = Set([4, 5, 6])
+                        A.difference(B).difference(C)
+                    </input>
+                    <output></output>
+                    </sage>
+                    <p>
+                        Alternatively, we can also use the <c> - </c> operator to perform the difference operation.  
+                    </p>
+                    <sage>
+                        <input>
+                            A = Set([1, 2, 3, 4, 5])
+                            B = Set([3, 4, 5, 6])
+                            C = Set([4, 5, 6])
+                            A - B - C
+                        </input>
+                        <output></output>
+                      </sage>           
+        </subsection>
+
+        <!-- Set Complement Subsection -->
+        <subsection>
+            <title>Set Complement</title>
+                <p>
+                    Assume the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and Set A = {1, 2, 3, 4, 5}. We can use the <c>difference()</c> function here.
+                </p>
+                <aside>
+                    <title>Tips!</title>
+                    <p>
+                        This is analogous to having a list of all possible ice cream flavors (U) and identifying those flavors you have yet to try (A').
+                    </p>
+                </aside>    
+                <sage>
+                    <input>
+                        U = Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+                        A = Set([1, 2, 3, 4, 5])
+                        U.difference(A)
+                    </input>
+                    <output></output>
+                    </sage>
+                    <p>
+                        Alternatively, we can also use the <c> - </c> operator as well.  
+                    </p>
+                    <sage>
+                        <input>
+                            U = Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
+                            A = Set([1, 2, 3, 4, 5])
+                            U - A
+                        </input>
+                        <output></output>
+                      </sage>  
+        </subsection>
+
+        <!-- Cartesian Product of Sets Subsection -->
+        <subsection>
+            <title>Cartesian Product of Sets</title>
+                <p>
+                    Suppose Set A = {1, 2, 3, 4, 5} and Set D = {x, y}. We can use the <c>cartesian_product()</c> and <c>list()</c> functions here.
+                </p>
+                <aside>
+                    <title>Tips!</title>
+                    <p>
+                        This concept can be applied in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
+                    </p>
+                </aside>    
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        D = Set(['x', 'y'])
+                        cartesian_product([A, D]).list()
+                    </input>
+                    <output>[(1, 'y'), (1, 'x'), (2, 'y'), (2, 'x')]
+                    </output>
+                    </sage>
+        </subsection>
+
+</section>
