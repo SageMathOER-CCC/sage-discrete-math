@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="about-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Intro to Sage</title>
+
+  <p>
+      Fell free to copy and paste the code snippets we provide and run them in your own <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">Sage Worksheet</url> or <url href="https://jupyter.org/">Jupyter Notebook</url>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <url href="https://doc.sagemath.org/html/en/reference/spkg/">various</url> open-source mathematics software packages. Sage shares many features and syntax with python.
+  </p>
+  
+  <p>
+    Let's do some math
+  </p>
+  
+  <sage>
+    <input>
+      # Lines that start with a pound sign are comments
+      # and ignored by Sage
+      # Run this cell by clicking the Evaluate(Sage) button
+      # or use the keyboard shortcut command + shift
+      1+1
+    </input>
+  </sage>
+  
+  <p>
+    Lets ask sage what type of <term>object</term> this is.
+  </p>
+  
+  <sage>
+    <input>
+      type(1+1)
+    </input>
+  </sage>
+  
+  <p>
+    Sage let us know <c>1 + 1</c> returns an <c>Integer</c>.
+  </p>
+  
+  <sage>
+    <input>
+      type(1/2)
+    </input>
+  </sage>
+  
+  <sage>
+    <input>
+      type(1/2 + 1)
+    </input>
+  </sage>
+  
+  <sage>
+    <input>
+      type(1/2 + 1.1)
+    </input>
+  </sage>
+  
+  <sage>
+    <input>
+      type(1.1)
+    </input>
+  </sage>
+  
+  <p>
+    What is an <term>object</term>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
+  </p>
+  
+  <p>
+    A class provides a template or blueprint for creating objects and defines the <term>attributes</term> (properties) and <term>methods</term> (behaviors) that those objects can have.
+  </p>
+  
+  <p>
+    This might not mean too much right now and it will be more clear as we explore what is known as <term>object-oriented</term> programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.
+  </p>
+  
+  <p>
+    <term>Dot notation</term> is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
+  </p>
+
+  <sage>
+    <input>
+      # we declare a variable named n and assigned it the value 2
+      n = 2
+      
+      # Calculate the square root of n
+      sqrt_n = n.sqrt()
+      
+      # Evaluate to 10 digits of precision
+      first_10_digits = N(sqrt_n, digits=10)
+      print(first_10_digits)
+    </input>
+  </sage>
+
+  <p>
+    Sage supports different ways of accomplishing the same task.
+  </p>
+
+  <sage>
+    <input>
+      N(sqrt(2), digits=10)
+    </input>
+  </sage>
+
+  <p>
+    In the following example there is no need to evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
+  </p>
+  <sage>
+      <input>
+          mySymbolic = sqrt(2) * log(3)
+          print(type(mySymbolic))
+          print(mySymbolic)
+      </input>
+  </sage>
+
+  <p>
+    We can also display mathematical notation
+  </p>
+  <sage>
+    <input>
+      show(sqrt(2)) 
+    </input>
+  </sage>
+
+  <p>
+    Let's introduce some more types and classes!
+  </p>
+
+  <sage>
+    <input>
+        set_of_prime_numbers = Primes()
+
+        # I can check if 5 in contained in the set of prime numbers
+        5 in set_of_prime_numbers
+    </input>
+  </sage>
+
+  <p>
+    Look like this returns <c>True</c>. This is an example of a <term>boolean</term> value. 
+  </p>
+  <sage>
+    <input>
+        type(5 in Primes())
+    </input>
+  </sage>
+
+  <p>
+    <term>Lists</term>: Ordered mutable collections of items. If an object is mutable, the value can be changed after it is created.
+  </p>
+  <sage>
+      <input>
+          myList = [1, 3, 3, 2]
+          print(type(myList))
+          print(myList)
+      </input>
+  </sage>
+
+  <p>
+      <term>Tuples</term>: Ordered, immutable collections. If an object is immutable, the value cannot be changed after it is created.
+  </p>
+  <sage>
+      <input>
+          myTuple = (1, 3, 3, 2)
+          print(type(myTuple))
+          print(myTuple)
+      </input>
+  </sage>
+
+  <p>
+      <term>Dictionaries</term>: Collections of key-value pairs.
+  </p>
+  <sage>
+      <input>
+        # Python dictionary for the textbook
+        discrete_math_textbook_info = {
+            "title": "Discrete Math with SageMath",
+            "authors": ["Zunaid Ahmed", "Hellen Colman", "Samuel Lubliner"],
+            "institution": "City Colleges of Chicago",
+            "topics_covered": [
+                "Set Theory",
+                "Cartesian Products",
+                "Combinations and permutations",
+                "Binomial theorem",
+                "Logic: Propositions. True tables",
+                "Quantifiers",
+                "Relations",
+                "Functions",
+                "Recursion",
+                "Graphs",
+                "Trees",
+                "Lattices",
+                "Boolean algebras and functions"
+                ],
+                "format": ["Web", "PDF"]
+            }
+            
+        print(discrete_math_textbook_info)
+      </input>
+  </sage>
+
+  <p>
+    <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
+  </p>
+  <sage>
+      <input>
+          myString = "Hello"
+          print(type(myString))
+          print(myString)
+      </input>
+  </sage>
+</section>

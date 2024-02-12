@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Debugging</title>
+  <p>
+    When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!
+  </p>
+
+  <sage>
+    <input>
+      # Run this cell and see what happens
+      1message = "Hello, World"
+      print(1message)
+    </input>
+  </sage>
+
+  <p>
+    Why didn't this print <c>Hello</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifies.
+  </p>
+
+  <p>
+    Rules for naming identifiers in Python:
+
+    <ul>
+      <li>
+        <p>
+          Identifiers cannot start with a digit.
+        </p>
+      </li>
+      <li>
+        <p>
+          Identifiers are case-sensitive
+        </p>
+      </li>
+      <li>
+        <p>
+          Identifiers can include
+          <ul>
+            <li>
+              <p>
+                letters (<c>a</c> - <c>z</c>, <c>A</c> - <c>Z</c>)
+              </p>
+            </li>
+            <li>
+              <p>
+                digits (<c>0</c> - <c>9</c>)
+              </p>
+            </li>
+            <li>
+              <p>
+                underscore character <c>_</c>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          Do not use spaces, punctuation or special characters when naming identifiers
+        </p>
+      </li>
+      <li>
+        <p>
+          Keywords cannot be used as identifiers.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Let's use an acceptable identifier
+  </p>
+
+  <sage>
+    <input>
+      message = "Hello, World"
+      print(message)
+    </input>
+  </sage>
+
+  <p>
+    Here are some more keywords that cannot be used for variable names
+  </p>
+  
+  <p>
+    <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
+  </p>
+  
+  <p>
+    Here is another error:
+  </p>
+
+  <sage>
+    <input>
+      print(Hello)
+    </input>
+  </sage>
+
+  <p>
+    It looks like we have a <c>NameError</c>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.
+  </p>
+
+  <sage>
+    <input>
+      print("Hello")
+    </input>
+  </sage>
+
+  <p>
+    You have have noticed, sometimes we use <c>Print()</c> to display output and sometimes we do not. Other times we need to use multiple print statements.
+  </p>
+
+  <sage>
+    <input>
+      "Hello, World"
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      "Hello, "
+      "World"
+    </input>
+  </sage>
+
+  <p>
+    It looks like Sage is only showing the value of the last line of code. If we want to print both of these strings we will need two print statements.
+  </p>
+
+  <sage>
+    <input>
+      print("Hello, ")
+      print("World")
+    </input>
+  </sage>
+
+  <p>
+    Did you expect these words to be on the same line? Let's investigate what <c>Print()</c> does.
+  </p>
+
+  <sage>
+    <input>
+      print?
+    </input>
+  </sage>
+
+  <p>
+    It turns out <c>Print()</c> adds a new line after printing. Lets get the output we want on a single line.
+  </p>
+
+  <sage>
+    <input>
+      print("Hello, ", end="")
+      print("World")
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      print("Hello, " + "World")
+    </input>
+  </sage>
+
+</section>
