@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="cardinality" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Cardinality</title>
+    <p>
+      To find the cardinality of a set, we use the <c>len()</c> function. Assume Set A = {1, 2, 3, 4, 5}.
+    </p>
+    <aside>
+      <title>Tips!</title>
+      <p>
+        In social networks like Facebook or Twitter, cardinality can represent the number of friends or followers a user has. Understanding the cardinality of social connections can help in personalization, targeted advertising, and studying social influence.
+      </p>
+  </aside>  
+    <sage>
+        <input>
+          A = {1, 2, 3, 4, 5}
+          len(A)
+        </input>
+        <output></output>
+      </sage>
+</section>   
