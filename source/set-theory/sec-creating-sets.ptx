@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="creating-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Creating Sets</title>
+
+	<subsection xml:id="subsec-Ways-to-create-a-set">
+		<title>Sage Math Set</title>
+		<p>
+			We can create a set by inserting a list within a <c>Set()</c> function.
+		</p>
+
+		<sage>
+			<input>
+				mySageSet = Set([1, 2, 3, 4, 5])
+				print(type(mySageSet))
+				print(mySageSet)
+			</input>
+		</sage>
+
+		<p>
+			It looks like Sage has its own class for sets. Also notice when we print the set, the elements are ordered and the duplicates are ignored.
+		</p>
+
+		<p>
+			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Sets</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>
+		</p>
+
+		<p>
+			If we need to work with a set that allows duplicate elements, we can use a Python list. We can also use lists to perform operations like iteration, indexing, slicing, etc.
+		</p>
+
+	  </subsection>
+
+	  <subsection xml:id="subsec-subsets">
+		<title>Subsets</title>
+		<p>
+			Assume we have a Set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <c>Subsets()</c> and <c>list()</c> functions.
+		</p>
+		<sage>
+		  <input>
+			A = Subsets([1, 2, 3, 4, 5])
+			list(A)
+		  </input>
+		  <output></output>
+		</sage>
+	  </subsection>
+	  
+	</section>
