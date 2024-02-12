@@ -12,7 +12,7 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./getting-started/ch-getting-started.ptx" />
+
     <xi:include href="./set-theory/ch-set-theory.ptx" />
 
 

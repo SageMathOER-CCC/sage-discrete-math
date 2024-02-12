@@ -4,50 +4,31 @@
 	<title>Creating Sets</title>
 
 	<subsection xml:id="subsec-Ways-to-create-a-set">
-		<title>Ways to Create a Set</title>
-		<p>There are two ways we can define a set.</p>
-		
-		<ul>
-		  <li>
-			<p><term>Curly Brackets - Sets:</term><c>{}</c></p>
-			<p><term>Definition:</term> Curly brackets are used to define a mathematical set.</p>
-			<p><term>Characteristics:</term></p>
-			<ul>
-			  <li>Unordered: The elements in a set do not have a specific order.</li>
-			  <li>Unique Elements: Sets cannot have duplicate elements. If you try to add a duplicate element to a set, it will be ignored.</li>
-			  <li>Mathematical Set Operations: Sets support operations like union, intersection, difference, etc.</li>
-			</ul>
-			<p><term>Use-Case Example:</term> Sets are ideal when you need to maintain a collection of unique items and are interested in performing set operations. For instance, when dealing with distinct mathematical objects like prime numbers, graph vertices, or unique solutions to an equation.</p>
-		  </li>
-	  
-		  <li>
-			<p><term>Square Brackets - Lists:</term><c>[]</c></p>
-			<p><term>Definition:</term> Square brackets are used to define a list.</p>
-			<p><term>Characteristics:</term></p>
-			<ul>
-			  <li>Ordered: The elements in a list maintain a specific order.</li>
-			  <li>Duplicates Allowed: Lists can have duplicate elements.</li>
-			  <li>Indexing and Slicing: You can access elements by their position and slice parts of the list.</li>
-			</ul>
-			<p><term>Use-Case Example:</term> Lists are suitable for ordered collections of items where duplicates are allowed or required, and when you need to perform operations like iteration in a specific order, indexing, slicing, etc.</p>
-		  </li>
-		</ul>
-	  </subsection>
-	
-	  <subsection xml:id="subsec-create-a-set">
-		<title>Create a Set</title>
+		<title>Sage Math Set</title>
 		<p>
-		  Create a variable. Do not use reserved word or white space for a variable name. After the variable, we use an equal sign to assign (store) value. Define a set by listing the contents separated by commas in between a pair of curly braces.
+			We can create a set by wrapping a list <c>[element_0, element_1, element_2, element_n]</c> with <c>Set()</c>.
 		</p>
+
 		<sage>
-		  <input>
-			A = {1, 2, 3, 4, 5}
-			B = {3, 4, 5, 6}
-			print("Set A:", A)
-			print("Set B:", B)
-		  </input>
-		  <output></output>
+			<input>
+				mySageSet = Set([4, 2, 3, 3, 1])
+				print(type(mySageSet))
+				print(mySageSet)
+			</input>
 		</sage>
+
+		<p>
+			It looks like Sage has its own class for sets. Also notice when we print the set, the elements are ordered and the duplicates are ignored.
+		</p>
+
+		<p>
+			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Sets</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>
+		</p>
+
+		<p>
+			If we need to work with a set that allows duplicate elements, we can use a Python list. We can also use lists to perform operations like iteration, indexing, slicing, etc.
+		</p>
+
 	  </subsection>
 
 	  <subsection xml:id="subsec-subsets">
