@@ -60,11 +60,11 @@
   </sage>
   
   <p>
-    What is an <term>object</term> anyways? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
+    What is an <term>object</term>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
   </p>
   
   <p>
-    What is a class? A class provides a template or blueprint for creating objects and defines the <term>attributes</term> (properties) and <term>methods</term> (behaviors) that those objects can have.
+    A class provides a template or blueprint for creating objects and defines the <term>attributes</term> (properties) and <term>methods</term> (behaviors) that those objects can have.
   </p>
   
   <p>
@@ -160,17 +160,6 @@
           myTuple = (1, 3, 3, 2)
           print(type(myTuple))
           print(myTuple)
-      </input>
-  </sage>
-
-  <p>
-    A <term>set</term> will order the values and ignores repeats. Sets are mutable.
-  </p>
-  <sage>
-      <input>
-          mySet = set([1, 3, 3, 2])
-          print(type(mySet))
-          print(mySet)
       </input>
   </sage>
 
