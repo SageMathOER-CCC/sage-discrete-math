@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Running Your First Line of SageMath Code</title>
+<title>Creating Sets</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-getting-started.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-getting-started.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="data-types.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-set-theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-set-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="cardinality.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -145,70 +145,64 @@ sagecell.makeSagecell({
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-getting-started.html" class="internal"><span class="codenumber">1</span> <span class="title">Getting Started</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sage-browser.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Run Sage in the browser</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Intro to Sage</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="debugging.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Debugging</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="documentation.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Documentation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-set-theory.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="first-line-of-sage.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Running Your First Line of SageMath Code</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-types.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Data Types</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="object-oriented-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Object Oriented Programming</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="creating-sets.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Creating Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Sage Math Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-subsets" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Subsets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="cardinality.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-operation-on-sets.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Operations on Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Set Membership Check</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Set Union</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Set Intersection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Set Difference</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Set Complement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="first-line-of-sage"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Running Your First Line of SageMath Code</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="creating-sets"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Creating Sets</span>
 </h2>
-<div class="para" id="first-line-of-sage-2">The easiest way to get started is by running SageMath online. However, if you do not have reliable internet, you can also install the software locally on your own computer. Begin your journey with SageMath by following these steps:</div>
-<div class="para logical" id="first-line-of-sage-3"><ol class="decimal">
-<li id="first-line-of-sage-3-1-1"><div class="para" id="p-derived-first-line-of-sage-3-1-1">Navigate to <a class="external" href="https://www.sagemath.org/" target="_blank">the SageMath website</a><a class="xref" id="first-line-of-sage-3-1-1-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-1-2.html" title="Footnote 1.1.1"><sup> 1 </sup></a>
-</div></li>
-<li id="first-line-of-sage-3-1-2"><div class="para" id="p-derived-first-line-of-sage-3-1-2">Click on <a class="external" href="https://cocalc.com/features/sage" target="_blank">Sage on CoCalc</a><a class="xref" id="first-line-of-sage-3-1-2-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-2-2.html" title="Footnote 1.1.2"><sup> 2 </sup></a>
-</div></li>
-<li id="first-line-of-sage-3-1-3"><div class="para" id="p-derived-first-line-of-sage-3-1-3">
-<a class="external" href="https://cocalc.com/auth/sign-up" target="_blank">Create a CoCalc account</a><a class="xref" id="first-line-of-sage-3-1-3-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-3-2.html" title="Footnote 1.1.3"><sup> 3 </sup></a>
-</div></li>
-<li id="first-line-of-sage-3-1-4"><div class="para" id="p-derived-first-line-of-sage-3-1-4">Go to <a class="external" href="https://cocalc.com/projects" target="_blank">Your Projects</a><a class="xref" id="first-line-of-sage-3-1-4-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-4-2.html" title="Footnote 1.1.4"><sup> 4 </sup></a> on CoCalc and create a new project.</div></li>
-<li id="first-line-of-sage-3-1-5"><div class="para" id="p-derived-first-line-of-sage-3-1-5">Start your new project and create a new worksheet. Choose the SageMath Worksheet option.</div></li>
-<li id="first-line-of-sage-3-1-6"><div class="para" id="first-line-of-sage-3-1-6-1">Enter SageMath code into the worksheet and run it by clicking <code class="code-inline tex2jax_ignore">Run</code> or using the shortcut <code class="code-inline tex2jax_ignore">Shift + Enter</code>.</div></li>
-<li id="first-line-of-sage-3-1-7"><div class="para" id="p-derived-first-line-of-sage-3-1-7">Save your worksheet as a PDF for your records.</div></li>
-<li id="first-line-of-sage-3-1-8"><div class="para" id="p-derived-first-line-of-sage-3-1-8">To learn more about SageMath worksheets, refer to the <a class="external" href="https://doc.cocalc.com/sagews.html" target="_blank">official documentation</a><a class="xref" id="first-line-of-sage-3-1-8-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-8-2.html" title="Footnote 1.1.5"><sup> 5 </sup></a>
-</div></li>
-</ol></div>
-<div class="para" id="first-line-of-sage-4">Fell free to copy and paste the code snippets we provide and run them in your own <a class="external" href="https://doc.cocalc.com/sagews.html" target="_blank">Sage Worksheet</a><a class="xref" id="first-line-of-sage-4-2" href="" data-knowl="./knowl/fn/first-line-of-sage-4-2.html" title="Footnote 1.1.6"><sup> 6 </sup></a> or <a class="external" href="https://jupyter.org/" target="_blank">Jupyter Notebook</a><a class="xref" id="first-line-of-sage-4-4" href="" data-knowl="./knowl/fn/first-line-of-sage-4-4.html" title="Footnote 1.1.7"><sup> 7 </sup></a>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <a class="external" href="https://doc.sagemath.org/html/en/reference/spkg/" target="_blank">various</a><a class="xref" id="first-line-of-sage-4-6" href="" data-knowl="./knowl/fn/first-line-of-sage-4-6.html" title="Footnote 1.1.8"><sup> 8 </sup></a> open-source mathematics software packages. Sage shares many features and syntax with python.</div>
-<div class="para" id="first-line-of-sage-5">Let’s display something to the screen.</div>
-<pre id="first-line-of-sage-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(sqrt(2))
+<section class="subsection" id="subsec-Ways-to-create-a-set"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Sage Math Set</span>
+</h3>
+<div class="para" id="subsec-Ways-to-create-a-set-2">We can create a set by inserting a list within a <code class="code-inline tex2jax_ignore">Set()</code> function.</div>
+<pre id="subsec-Ways-to-create-a-set-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">mySageSet = Set([1, 2, 3, 4, 5])
+print(type(mySageSet))
+print(mySageSet)
 </script></pre>
-<div class="para" id="first-line-of-sage-7">We can also do some math</div>
-<pre id="first-line-of-sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">1+1
-</script></pre>
-<div class="para" id="first-line-of-sage-9">Lets ask sage what type of <dfn class="terminology">object</dfn> this is.</div>
-<pre id="first-line-of-sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1+1)
-</script></pre>
-<div class="para" id="first-line-of-sage-11">Sage let us know <code class="code-inline tex2jax_ignore">1 + 1</code> is an <code class="code-inline tex2jax_ignore">Integer</code>.</div>
-<pre id="first-line-of-sage-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2)
-</script></pre>
-<pre id="first-line-of-sage-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2 + 1)
-</script></pre>
-<pre id="first-line-of-sage-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2 + 1.1)
-</script></pre>
-<pre id="first-line-of-sage-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1.1)
-</script></pre>
-<div class="para" id="first-line-of-sage-16">What is an <dfn class="terminology">object</dfn> anyways? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <dfn class="terminology">class</dfn>.</div>
-<div class="para" id="first-line-of-sage-17">What is a class? A class provides a template or blueprint for creating objects and defines the <dfn class="terminology">attributes</dfn> (properties) and <dfn class="terminology">methods</dfn> (behaviors) that those objects can have.</div>
-<div class="para" id="first-line-of-sage-18">This might not mean too much right now and it will be more clear as we explore what is known as <dfn class="terminology">object-oriented</dfn> programming. Just know that SageMath has different ways of representing and working with data. We can create an object my typing something into our Sage Worksheet or the cells on this page.</div>
-<div class="para" id="first-line-of-sage-19">Lets create a variable, give it a name, and assign it a value.</div>
-<pre id="first-line-of-sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">set_of_prime_numbers = Primes()
-
-# I can check if 5 in contained in the set of prime numbers
-
-5 in set_of_prime_numbers
-</script></pre>
-<div class="para" id="first-line-of-sage-21">Look like this returns <code class="code-inline tex2jax_ignore">True</code>. This is an example of a boolean value.</div>
-<pre id="first-line-of-sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">types(5 in Primes())
-</script></pre>
-<div class="para" id="first-line-of-sage-23">Sprinkle in mistakes and how to correct them</div></section></div>
+<div class="para" id="subsec-Ways-to-create-a-set-4">It looks like Sage has its own class for sets. Also notice when we print the set, the elements are ordered and the duplicates are ignored.</div>
+<div class="para" id="subsec-Ways-to-create-a-set-5">If you are familiar with Python, you may have used a Python <code class="code-inline tex2jax_ignore">set</code> with a lower case <code class="code-inline tex2jax_ignore">s</code>. Even though Sage supports Python sets, we will be using Sage <code class="code-inline tex2jax_ignore">Sets</code> for the added features. Be sure to define <code class="code-inline tex2jax_ignore">Sets()</code> with an upper case <code class="code-inline tex2jax_ignore">S</code>
+</div>
+<div class="para" id="subsec-Ways-to-create-a-set-6">If we need to work with a set that allows duplicate elements, we can use a Python list. We can also use lists to perform operations like iteration, indexing, slicing, etc.</div></section><section class="subsection" id="subsec-subsets"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Subsets</span>
+</h3>
+<div class="para" id="subsec-subsets-2">Assume we have a Set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <code class="code-inline tex2jax_ignore">Subsets()</code> and <code class="code-inline tex2jax_ignore">list()</code> functions.</div>
+<pre id="subsec-subsets-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Subsets([1, 2, 3, 4, 5])
+list(A)
+</script></pre></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-getting-started.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="data-types.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-set-theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="cardinality.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

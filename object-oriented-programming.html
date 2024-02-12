@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Running Your First Line of SageMath Code</title>
+<title>Object Oriented Programming</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-getting-started.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-getting-started.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="data-types.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="about-sage.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-getting-started.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -148,67 +148,33 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-getting-started.html" class="internal"><span class="codenumber">1</span> <span class="title">Getting Started</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="first-line-of-sage.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Running Your First Line of SageMath Code</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="data-types.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Data Types</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="object-oriented-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Object Oriented Programming</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sage-browser.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Run Sage in the browser</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Intro to Sage</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="object-oriented-programming.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Object Oriented Programming</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="first-line-of-sage"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Running Your First Line of SageMath Code</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="object-oriented-programming"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Object Oriented Programming</span>
 </h2>
-<div class="para" id="first-line-of-sage-2">The easiest way to get started is by running SageMath online. However, if you do not have reliable internet, you can also install the software locally on your own computer. Begin your journey with SageMath by following these steps:</div>
-<div class="para logical" id="first-line-of-sage-3"><ol class="decimal">
-<li id="first-line-of-sage-3-1-1"><div class="para" id="p-derived-first-line-of-sage-3-1-1">Navigate to <a class="external" href="https://www.sagemath.org/" target="_blank">the SageMath website</a><a class="xref" id="first-line-of-sage-3-1-1-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-1-2.html" title="Footnote 1.1.1"><sup> 1 </sup></a>
-</div></li>
-<li id="first-line-of-sage-3-1-2"><div class="para" id="p-derived-first-line-of-sage-3-1-2">Click on <a class="external" href="https://cocalc.com/features/sage" target="_blank">Sage on CoCalc</a><a class="xref" id="first-line-of-sage-3-1-2-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-2-2.html" title="Footnote 1.1.2"><sup> 2 </sup></a>
-</div></li>
-<li id="first-line-of-sage-3-1-3"><div class="para" id="p-derived-first-line-of-sage-3-1-3">
-<a class="external" href="https://cocalc.com/auth/sign-up" target="_blank">Create a CoCalc account</a><a class="xref" id="first-line-of-sage-3-1-3-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-3-2.html" title="Footnote 1.1.3"><sup> 3 </sup></a>
-</div></li>
-<li id="first-line-of-sage-3-1-4"><div class="para" id="p-derived-first-line-of-sage-3-1-4">Go to <a class="external" href="https://cocalc.com/projects" target="_blank">Your Projects</a><a class="xref" id="first-line-of-sage-3-1-4-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-4-2.html" title="Footnote 1.1.4"><sup> 4 </sup></a> on CoCalc and create a new project.</div></li>
-<li id="first-line-of-sage-3-1-5"><div class="para" id="p-derived-first-line-of-sage-3-1-5">Start your new project and create a new worksheet. Choose the SageMath Worksheet option.</div></li>
-<li id="first-line-of-sage-3-1-6"><div class="para" id="first-line-of-sage-3-1-6-1">Enter SageMath code into the worksheet and run it by clicking <code class="code-inline tex2jax_ignore">Run</code> or using the shortcut <code class="code-inline tex2jax_ignore">Shift + Enter</code>.</div></li>
-<li id="first-line-of-sage-3-1-7"><div class="para" id="p-derived-first-line-of-sage-3-1-7">Save your worksheet as a PDF for your records.</div></li>
-<li id="first-line-of-sage-3-1-8"><div class="para" id="p-derived-first-line-of-sage-3-1-8">To learn more about SageMath worksheets, refer to the <a class="external" href="https://doc.cocalc.com/sagews.html" target="_blank">official documentation</a><a class="xref" id="first-line-of-sage-3-1-8-2" href="" data-knowl="./knowl/fn/first-line-of-sage-3-1-8-2.html" title="Footnote 1.1.5"><sup> 5 </sup></a>
-</div></li>
-</ol></div>
-<div class="para" id="first-line-of-sage-4">Fell free to copy and paste the code snippets we provide and run them in your own <a class="external" href="https://doc.cocalc.com/sagews.html" target="_blank">Sage Worksheet</a><a class="xref" id="first-line-of-sage-4-2" href="" data-knowl="./knowl/fn/first-line-of-sage-4-2.html" title="Footnote 1.1.6"><sup> 6 </sup></a> or <a class="external" href="https://jupyter.org/" target="_blank">Jupyter Notebook</a><a class="xref" id="first-line-of-sage-4-4" href="" data-knowl="./knowl/fn/first-line-of-sage-4-4.html" title="Footnote 1.1.7"><sup> 7 </sup></a>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <a class="external" href="https://doc.sagemath.org/html/en/reference/spkg/" target="_blank">various</a><a class="xref" id="first-line-of-sage-4-6" href="" data-knowl="./knowl/fn/first-line-of-sage-4-6.html" title="Footnote 1.1.8"><sup> 8 </sup></a> open-source mathematics software packages. Sage shares many features and syntax with python.</div>
-<div class="para" id="first-line-of-sage-5">Let’s display something to the screen.</div>
-<pre id="first-line-of-sage-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(sqrt(2))
+<div class="para" id="object-oriented-programming-2">SageMath supports <dfn class="terminology">object-oriented</dfn> syntax. An <dfn class="terminology">object</dfn> is a portion of memory used to model things in the real world. An object is an instance of a <dfn class="terminology">class</dfn>. A class is like a blueprint for creating objects. Classes define the information an object holds (<dfn class="terminology">attributes</dfn>) and what the object can do (<dfn class="terminology">methods</dfn>). <dfn class="terminology">Dot notation</dfn> is used to access attributes and methods of an object. Here is an example that illustrates these concepts.</div>
+<div class="para" id="object-oriented-programming-3">We can find the approximate value of sqrt of 2 with the <code class="code-inline tex2jax_ignore">.n()</code> method.</div>
+<pre id="object-oriented-programming-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sqrt(2).n()
 </script></pre>
-<div class="para" id="first-line-of-sage-7">We can also do some math</div>
-<pre id="first-line-of-sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">1+1
+<div class="para" id="object-oriented-programming-5">We can also pass in arguments to this method to specify the number of digits we want to round to.</div>
+<pre id="object-oriented-programming-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sqrt(2).n(digits=30)
 </script></pre>
-<div class="para" id="first-line-of-sage-9">Lets ask sage what type of <dfn class="terminology">object</dfn> this is.</div>
-<pre id="first-line-of-sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1+1)
+<div class="para" id="object-oriented-programming-7">If you type in <code class="code-inline tex2jax_ignore">sqrt(2)</code> and evaluate, Sage will retain the symbolic value.</div>
+<pre id="object-oriented-programming-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sqrt(2)
 </script></pre>
-<div class="para" id="first-line-of-sage-11">Sage let us know <code class="code-inline tex2jax_ignore">1 + 1</code> is an <code class="code-inline tex2jax_ignore">Integer</code>.</div>
-<pre id="first-line-of-sage-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2)
+<div class="para" id="object-oriented-programming-9">Sage can do many more mathematical operations. If you are curious, check out the <a class="external" href="https://wiki.sagemath.org/quickref" target="_blank">Quick Reference Card</a><a class="xref" id="object-oriented-programming-9-2" href="" data-knowl="./knowl/fn/object-oriented-programming-9-2.html" title="Footnote 1.3.1"><sup> 1 </sup></a> and the <a class="external" href="https://doc.sagemath.org/html/en/reference/#discrete-mathematics" target="_blank">Reference Manual</a><a class="xref" id="object-oriented-programming-9-4" href="" data-knowl="./knowl/fn/object-oriented-programming-9-4.html" title="Footnote 1.3.2"><sup> 2 </sup></a>.</div>
+<div class="para" id="object-oriented-programming-10">If you want to view the documentation for a function, you can type the function followed by a <code class="code-inline tex2jax_ignore">?</code>. Are you interested in viewing the source code? Run a function followed by <code class="code-inline tex2jax_ignore">??</code>. Let take a look at the definition of the <code class="code-inline tex2jax_ignore">Primes()</code> function. Keep in mind, this way of checking documentation is not always the most beginner friendly, but it can serve as a quick reference or reminder.</div>
+<pre id="object-oriented-programming-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Primes?
 </script></pre>
-<pre id="first-line-of-sage-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2 + 1)
-</script></pre>
-<pre id="first-line-of-sage-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2 + 1.1)
-</script></pre>
-<pre id="first-line-of-sage-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1.1)
-</script></pre>
-<div class="para" id="first-line-of-sage-16">What is an <dfn class="terminology">object</dfn> anyways? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <dfn class="terminology">class</dfn>.</div>
-<div class="para" id="first-line-of-sage-17">What is a class? A class provides a template or blueprint for creating objects and defines the <dfn class="terminology">attributes</dfn> (properties) and <dfn class="terminology">methods</dfn> (behaviors) that those objects can have.</div>
-<div class="para" id="first-line-of-sage-18">This might not mean too much right now and it will be more clear as we explore what is known as <dfn class="terminology">object-oriented</dfn> programming. Just know that SageMath has different ways of representing and working with data. We can create an object my typing something into our Sage Worksheet or the cells on this page.</div>
-<div class="para" id="first-line-of-sage-19">Lets create a variable, give it a name, and assign it a value.</div>
-<pre id="first-line-of-sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">set_of_prime_numbers = Primes()
-
-# I can check if 5 in contained in the set of prime numbers
-
-5 in set_of_prime_numbers
-</script></pre>
-<div class="para" id="first-line-of-sage-21">Look like this returns <code class="code-inline tex2jax_ignore">True</code>. This is an example of a boolean value.</div>
-<pre id="first-line-of-sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">types(5 in Primes())
-</script></pre>
-<div class="para" id="first-line-of-sage-23">Sprinkle in mistakes and how to correct them</div></section></div>
+<div class="para" id="object-oriented-programming-12">Even though this presentation of documentation is not beginner friendly we can try to deconstruct some of it. It looks like <code class="code-inline tex2jax_ignore">Primes()</code> represents the set of prime numbers. We can assign the set of prime numbers to an identifier. We can also check if a given number belongs to this set.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-getting-started.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="data-types.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="about-sage.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

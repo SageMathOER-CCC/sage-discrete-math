@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Intro to Sage</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -123,7 +135,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sage-browser.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-getting-started.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="debugging.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -133,11 +145,11 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-getting-started.html" class="internal"><span class="codenumber">1</span> <span class="title">Getting Started</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sage-browser.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Run Sage in the browser</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Intro to Sage</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Intro to Sage</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="debugging.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Debugging</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="documentation.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Documentation</span></a></div></li>
 </ul>
@@ -166,14 +178,113 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter contains-active"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="backmatter-2"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="about-sage"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Intro to Sage</span>
 </h2>
-<div class="para" id="backmatter-2-1">This book was authored in PreTeXt.</div></section></div>
+<div class="para" id="about-sage-2">Fell free to copy and paste the code snippets we provide and run them in your own <a class="external" href="https://doc.cocalc.com/sagews.html" target="_blank">Sage Worksheet</a><a class="xref" id="about-sage-2-2" href="" data-knowl="./knowl/fn/about-sage-2-2.html" title="Footnote 1.2.1"><sup> 1 </sup></a> or <a class="external" href="https://jupyter.org/" target="_blank">Jupyter Notebook</a><a class="xref" id="about-sage-2-4" href="" data-knowl="./knowl/fn/about-sage-2-4.html" title="Footnote 1.2.2"><sup> 2 </sup></a>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <a class="external" href="https://doc.sagemath.org/html/en/reference/spkg/" target="_blank">various</a><a class="xref" id="about-sage-2-6" href="" data-knowl="./knowl/fn/about-sage-2-6.html" title="Footnote 1.2.3"><sup> 3 </sup></a> open-source mathematics software packages. Sage shares many features and syntax with python.</div>
+<div class="para" id="about-sage-3">Let’s do some math</div>
+<pre id="about-sage-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Lines that start with a pound sign are comments
+# and ignored by Sage
+# Run this cell by clicking the Evaluate(Sage) button
+# or use the keyboard shortcut command + shift
+1+1
+</script></pre>
+<div class="para" id="about-sage-5">Lets ask sage what type of <dfn class="terminology">object</dfn> this is.</div>
+<pre id="about-sage-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1+1)
+</script></pre>
+<div class="para" id="about-sage-7">Sage let us know <code class="code-inline tex2jax_ignore">1 + 1</code> returns an <code class="code-inline tex2jax_ignore">Integer</code>.</div>
+<pre id="about-sage-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2)
+</script></pre>
+<pre id="about-sage-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2 + 1)
+</script></pre>
+<pre id="about-sage-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1/2 + 1.1)
+</script></pre>
+<pre id="about-sage-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(1.1)
+</script></pre>
+<div class="para" id="about-sage-12">What is an <dfn class="terminology">object</dfn>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <dfn class="terminology">class</dfn>.</div>
+<div class="para" id="about-sage-13">A class provides a template or blueprint for creating objects and defines the <dfn class="terminology">attributes</dfn> (properties) and <dfn class="terminology">methods</dfn> (behaviors) that those objects can have.</div>
+<div class="para" id="about-sage-14">This might not mean too much right now and it will be more clear as we explore what is known as <dfn class="terminology">object-oriented</dfn> programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.</div>
+<div class="para" id="about-sage-15">
+<dfn class="terminology">Dot notation</dfn> is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.</div>
+<pre id="about-sage-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># we declare a variable named n and assigned it the value 2
+n = 2
+
+# Calculate the square root of n
+sqrt_n = n.sqrt()
+
+# Evaluate to 10 digits of precision
+first_10_digits = N(sqrt_n, digits=10)
+print(first_10_digits)
+</script></pre>
+<div class="para" id="about-sage-17">Sage supports different ways of accomplishing the same task.</div>
+<pre id="about-sage-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">N(sqrt(2), digits=10)
+</script></pre>
+<div class="para" id="about-sage-19">In the following example there is no need to evaluate an approximation of <code class="code-inline tex2jax_ignore">sqrt(2) * log(3)</code>. Sage will retain the symbolic value for accuracy.</div>
+<pre id="about-sage-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">mySymbolic = sqrt(2) * log(3)
+print(type(mySymbolic))
+print(mySymbolic)
+</script></pre>
+<div class="para" id="about-sage-21">We can also display mathematical notation</div>
+<pre id="about-sage-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(sqrt(2))
+</script></pre>
+<div class="para" id="about-sage-23">Let’s introduce some more types and classes!</div>
+<pre id="about-sage-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">set_of_prime_numbers = Primes()
+
+# I can check if 5 in contained in the set of prime numbers
+5 in set_of_prime_numbers
+</script></pre>
+<div class="para" id="about-sage-25">Look like this returns <code class="code-inline tex2jax_ignore">True</code>. This is an example of a <dfn class="terminology">boolean</dfn> value.</div>
+<pre id="about-sage-26" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">type(5 in Primes())
+</script></pre>
+<div class="para" id="about-sage-27">
+<dfn class="terminology">Lists</dfn>: Ordered mutable collections of items. If an object is mutable, the value can be changed after it is created.</div>
+<pre id="about-sage-28" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">myList = [1, 3, 3, 2]
+print(type(myList))
+print(myList)
+</script></pre>
+<div class="para" id="about-sage-29">
+<dfn class="terminology">Tuples</dfn>: Ordered, immutable collections. If an object is immutable, the value cannot be changed after it is created.</div>
+<pre id="about-sage-30" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">myTuple = (1, 3, 3, 2)
+print(type(myTuple))
+print(myTuple)
+</script></pre>
+<div class="para" id="about-sage-31">
+<dfn class="terminology">Dictionaries</dfn>: Collections of key-value pairs.</div>
+<pre id="about-sage-32" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Python dictionary for the textbook
+discrete_math_textbook_info = {
+    "title": "Discrete Math with SageMath",
+    "authors": ["Zunaid Ahmed", "Hellen Colman", "Samuel Lubliner"],
+    "institution": "City Colleges of Chicago",
+    "topics_covered": [
+        "Set Theory",
+        "Cartesian Products",
+        "Combinations and permutations",
+        "Binomial theorem",
+        "Logic: Propositions. True tables",
+        "Quantifiers",
+        "Relations",
+        "Functions",
+        "Recursion",
+        "Graphs",
+        "Trees",
+        "Lattices",
+        "Boolean algebras and functions"
+        ],
+        "format": ["Web", "PDF"]
+    }
+    
+print(discrete_math_textbook_info)
+</script></pre>
+<div class="para" id="about-sage-33">
+<dfn class="terminology">Strings</dfn>: Sequence of characters used for text. You can use single or double quotes.</div>
+<pre id="about-sage-34" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">myString = "Hello"
+print(type(myString))
+print(myString)
+</script></pre></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sage-browser.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="debugging.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
