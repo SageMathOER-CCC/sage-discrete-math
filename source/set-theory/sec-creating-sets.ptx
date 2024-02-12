@@ -78,12 +78,9 @@
 		<sage>
 			<input>
 				moreEvens = Set([x for x in srange(1, 101) if x % 2 == 0])
-				evens
+				moreEvens
 			</input>
 		</sage>
-
-		
-		
 	  </subsection>
 
 	  <subsection xml:id="subsec-subsets">
