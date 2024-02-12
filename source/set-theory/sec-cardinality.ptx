@@ -13,9 +13,19 @@
   </aside>  
     <sage>
         <input>
-          A = {1, 2, 3, 4, 5}
+          A = Set([1, 2, 3, 4, 5])
           len(A)
         </input>
         <output></output>
       </sage>
+      <p>
+        Alternatively, we can also use the <c>cardinality()</c> function to perform the cardinality operation.
+    </p>
+    <sage>
+      <input>
+        A = Set([1, 2, 3, 4, 5])
+        A.cardinality()
+      </input>
+      <output></output>
+    </sage>
 </section>   
