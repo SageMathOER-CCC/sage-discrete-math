@@ -6,7 +6,7 @@ Welcome to our interactive online textbook for learning Discrete Mathematics wit
 
 ### Empowering mathematicians and computer scientists with open-source tools
 
-We are developing essential resources for students to use mathematics software effectively. Our goal is to streamline the learning process with SageMath. This approach helps students focus more on mathematics and reduces the friction of learning how to code. Our resources are designed for all math students, regardless of programming experience.
+We are developing essential resources for students to use mathematical software effectively. Our goal is to streamline the learning process with SageMath. This approach helps students focus more on mathematics and reduces the friction of learning how to code. Our resources are designed for all math students, regardless of programming experience.
 
 ### What is SageMath?
 
@@ -14,4 +14,4 @@ We are developing essential resources for students to use mathematics software e
 
 ### Why Discrete Mathematics with SageMath?
 
-Our first textbook focuses on discrete mathematics because it is a foundational element in concepts related to math and computer science. SageMath allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
+Our first textbook focuses on discrete mathematics. SageMath allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
