@@ -6,7 +6,7 @@
 	<subsection xml:id="subsec-Ways-to-create-a-set">
 		<title>Sage Math Set</title>
 		<p>
-			We can create a set by inserting a list within a <c>Set()</c> function.
+			We can create a set by inserting a list within a <c>Set()</c> function. We create a list with square brackets <c>[]</c>
 		</p>
 
 		<sage>
@@ -18,17 +18,69 @@
 		</sage>
 
 		<p>
-			It looks like Sage has its own class for sets. Also notice when we print the set, the elements are ordered and the duplicates are ignored.
+			It looks like Sage has its own class for sets.
+		</p>
+
+		<p>
+			Also notice when we print the set, the elements are ordered and the duplicates are ignored.
+		</p>
+
+		<sage>
+			<input>
+				mySageSet = Set([5, 1, 2, 3, 4, 5, 2, 1])
+				print(mySageSet)
+			</input>
+		</sage>
+
+		<sage>
+			<input>
+				myFirstSageSet = Set([1, 2, 3, 4, 5])
+				mySecondSageSet = Set([5, 1, 2, 3, 4, 5, 2, 1])
+				myFirstSageSet == mySecondSageSet
+			</input>
+		</sage>
+
+		<p>
+			Since Sage Sets remove duplicates, the two sets are equal. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+		</p>
+
+		<p>
+			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the boolean value, <c>True</c> if they are equal, and <c>False</c> if they are not.
+		</p>
+		<p>
+			The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.
 		</p>
 
 		<p>
 			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Sets</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>
 		</p>
 
+	  </subsection>
+
+	  <subsection xml:id="subsec-set-builder-notation">
+		<title>Set Builder Notation</title>
 		<p>
-			If we need to work with a set that allows duplicate elements, we can use a Python list. We can also use lists to perform operations like iteration, indexing, slicing, etc.
+			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements.
 		</p>
 
+		<sage>
+			<input>
+				# Create a set of even numbers between 1 and 10
+				evens = Set([x for x in srange(1, 11) if x % 2 == 0])
+				evens
+			</input>
+		</sage>
+
+		<p>
+			Here we are introducing a new programming concept iteration. Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> evens = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
+		</p>
+
+		<sage>
+			<input>
+				moreEvens = Set([x for x in srange(1, 101) if x % 2 == 0])
+				moreEvens
+			</input>
+		</sage>
 	  </subsection>
 
 	  <subsection xml:id="subsec-subsets">
