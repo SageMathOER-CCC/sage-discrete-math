@@ -200,7 +200,7 @@
   </p>
   <sage>
       <input>
-          myString = "Hello"
+          myString = "Hello, World"
           print(type(myString))
           print(myString)
       </input>
