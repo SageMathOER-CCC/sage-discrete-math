@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Debugging",
-  "body": " Debugging  When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!   Why didn't this print Hello to the screen? Sage told us we have a SyntaxError . In this case we are not too concerned with the meaning of invalid decimal literal . The problem is with how we named our variable. It turns out there are rules about naming identifies.  Rules for naming identifiers in Python:   Identifiers cannot start with a digit.    Identifiers are case-sensitive    Identifiers can include   letters ( a - z , A - Z )    digits ( 0 - 9 )    underscore character _        Do not use spaces, punctuation or special characters when naming identifiers    Keywords cannot be used as identifiers.     Let's use an acceptable identifier   Here are some more keywords that cannot be used for variable names   False , None , True , and , as , assert , async , await , break , class , continue , def , del , elif , else , except , finally , for , from , global , if , import , in , is , lambda , nonlocal , not , or , pass , raise , return , try , while , with , yield .  Here is another error:   It looks like we have a NameError . We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.   You have have noticed, sometimes we use Print() to display output and sometimes we do not. Other times we need to use multiple print statements.    It looks like Sage is only showing the value of the last line of code. If we want to print both of these strings we will need two print statements.   Did you expect these words to be on the same line? Let's investigate what Print() does.   It turns out Print() adds a new line after printing. Lets get the output we want on a single line.    "
+  "body": " Debugging  When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!   Why didn't this print Hello to the screen? Sage told us we have a SyntaxError . In this case we are not too concerned with the meaning of invalid decimal literal . The problem is with how we named our variable. It turns out there are rules about naming identifiers.  Rules for naming identifiers in Python:   Identifiers cannot start with a digit.    Identifiers are case-sensitive    Identifiers can include   letters ( a - z , A - Z )    digits ( 0 - 9 )    underscore character _        Do not use spaces, punctuation or special characters when naming identifiers    Keywords cannot be used as identifiers.     Let's use an acceptable identifier to name our variable.   Here are some more keywords that cannot be used for variable names   False , None , True , and , as , assert , async , await , break , class , continue , def , del , elif , else , except , finally , for , from , global , if , import , in , is , lambda , nonlocal , not , or , pass , raise , return , try , while , with , yield .  Here is another error:   It looks like we have a NameError . We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.   You have have noticed, sometimes we use Print() to display output and sometimes we do not. Other times we need to use multiple print statements.    It looks like Sage is only showing the value of the last line of code. If we want to print both of these strings we will need two print statements.   Did you expect these words to be on the same line? Let's investigate what Print() does.   It turns out Print() adds a new line after printing. Lets get the output we want on a single line.    "
 },
 {
   "id": "documentation",
@@ -142,7 +142,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Creating Sets",
-  "body": " Creating Sets   Sage Math Set  We can create a set by inserting a list within a Set() function.   It looks like Sage has its own class for sets. Also notice when we print the set, the elements are ordered and the duplicates are ignored.  If you are familiar with Python, you may have used a Python set with a lower case s . Even though Sage supports Python sets, we will be using Sage Sets for the added features. Be sure to define Sets() with an upper case S   If we need to work with a set that allows duplicate elements, we can use a Python list. We can also use lists to perform operations like iteration, indexing, slicing, etc.    Subsets  Assume we have a Set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the Subsets() and list() functions.    "
+  "body": " Creating Sets   Sage Math Set  We can create a set by inserting a list within a Set() function. We create a list with square brackets []    It looks like Sage has its own class for sets.  Also notice when we print the set, the elements are ordered and the duplicates are ignored.    Since Sage Sets remove duplicates, the two sets are equal. A single equal sign = and double equal sign == have different meanings.  The equality operator  == is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the boolean value, True if they are equal, and False if they are not.  The assignment operator  = is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.  If you are familiar with Python, you may have used a Python set with a lower case s . Even though Sage supports Python sets, we will be using Sage Sets for the added features. Be sure to define Sets() with an upper case S     Set Builder Notation  Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements.   Here we are introducing a new programming concept iteration. Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing evens = Set([2, 4, 6, 8, 10]) . Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.     Subsets  Assume we have a Set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the Subsets() and list() functions.    "
+},
+{
+  "id": "subsec-Ways-to-create-a-set-9",
+  "level": "2",
+  "url": "creating-sets.html#subsec-Ways-to-create-a-set-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "equality operator "
+},
+{
+  "id": "subsec-Ways-to-create-a-set-10",
+  "level": "2",
+  "url": "creating-sets.html#subsec-Ways-to-create-a-set-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "assignment operator "
 },
 {
   "id": "cardinality",
@@ -151,7 +169,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Cardinality",
-  "body": " Cardinality  To find the cardinality of a set, we use the len() function. Assume Set A = {1, 2, 3, 4, 5}.   Tips!  In social networks like Facebook or Twitter, cardinality can represent the number of friends or followers a user has. Understanding the cardinality of social connections can help in personalization, targeted advertising, and studying social influence.    Alternatively, we can also use the cardinality() function to perform the cardinality operation.   "
+  "body": " Cardinality  To find the cardinality of a set, we use the cardinality() function.   Tips!  In social networks like Facebook or Twitter, cardinality can represent the number of friends or followers a user has. Understanding the cardinality of social connections can help in personalization, targeted advertising, and studying social influence.    Alternatively, we can also use the len() function, built into Python. Instead of returning a Sage Integer , this will return a Python int .   In many cases, using Sage classes and functions will provide more functionality.    "
 },
 {
   "id": "sec-operation-on-sets",
