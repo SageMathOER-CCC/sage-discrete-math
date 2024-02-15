@@ -29,12 +29,12 @@
       </li>
       <li>
         <p>
-          Identifiers are case-sensitive
+          Identifiers are case-sensitive.
         </p>
       </li>
       <li>
         <p>
-          Identifiers can include
+          Identifiers can include:
           <ul>
             <li>
               <p>
@@ -56,7 +56,7 @@
       </li>
       <li>
         <p>
-          Do not use spaces, punctuation or special characters when naming identifiers
+          Do not use spaces, punctuation or special characters when naming identifiers.
         </p>
       </li>
       <li>

@@ -140,7 +140,7 @@
   </sage>
 
   <p>
-    <term>Lists</term>: Ordered mutable collections of items with in a pair of square brackets <c>[]</c>. If an object is mutable, the value can be changed after it is created.
+    <term>Lists</term>: Ordered mutable collections of items within a pair of square brackets <c>[]</c>. If an object is mutable, the value can be changed after it is created.
   </p>
   <sage>
       <input>
