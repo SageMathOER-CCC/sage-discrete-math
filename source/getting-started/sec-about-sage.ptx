@@ -77,15 +77,16 @@
 
   <sage>
     <input>
-      # Declare a variable named n and assigned it the value 2
+      # Declare a variable named n and assign it the value 2
       n = 2
-      
+
       # Calculate the square root of n
-      sqrt_n = n.sqrt()
-      
+      r = n.sqrt()
+
       # Evaluate to 10 digits of precision
-      first_10_digits = N(sqrt_n, digits=10)
-      print(first_10_digits)
+      d = N(r, digits=10)
+
+      print(d)
     </input>
   </sage>
 
