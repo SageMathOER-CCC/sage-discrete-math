@@ -10,7 +10,7 @@
                SageMath allows you to easily check whether a certain number or subset is a part of a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
             </p>
             <p>
-                Let's consider Set A = {1, 2, 3, 4, 5}. We can check if the number 3 is in set A:
+                Let's consider set A = {1, 2, 3, 4, 5}. We can check if the number 3 is in set A:
             </p>
             <aside>
                 <title>Tips!</title>
@@ -46,7 +46,7 @@
             </p>
 
                <p>
-                    Suppose Set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and Set C = {4, 5, 6}. We can use the <c>union()</c> function here.
+                    Suppose set A = {1, 2, 3, 4, 5}, set B = {3, 4, 5, 6}, and set C = {4, 5, 6}. We can use the <c>union()</c> function here.
                </p>
                 <aside>
                     <title>Tips!</title>
@@ -85,7 +85,7 @@
                 Similar to union, there are two methods of using the intersection function in sage.
             </p>
                 <p>
-                    Suppose Set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and Set C = {4, 5, 6}. We can use the <c>intersection()</c> function here.
+                    Suppose set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and set C = {4, 5, 6}. We can use the <c>intersection()</c> function here.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -123,12 +123,12 @@
                 We have two methods to solve for difference as well.
             </p>
                 <p>
-                    Suppose Set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and Set C = {4, 5, 6}. We can use the <c>difference()</c> function here.
+                    Suppose set A = {1, 2, 3, 4, 5}, set B = {3, 4, 5, 6}, and set C = {4, 5, 6}. We can use the <c>difference()</c> function here.
                 </p>
                 <aside>
                     <title>Tips!</title>
                     <p>
-                        In a real-life context, this can be seen as identifying items on a restaurant menu (Set A) that you have not yet tried (Set B), with A - B representing the new dishes to explore.
+                        In a real-life context, this can be seen as identifying items on a restaurant menu (set A) that you have not yet tried (set B), with A - B representing the new dishes to explore.
                     </p>
                 </aside>    
                 <sage>
@@ -158,7 +158,7 @@
         <subsection>
             <title>Set Complement</title>
                 <p>
-                    Assume the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and Set A = {1, 2, 3, 4, 5}. We can use the <c>difference()</c> function here.
+                    Assume the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and set A = {1, 2, 3, 4, 5}. We can use the <c>difference()</c> function here.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -191,7 +191,7 @@
         <subsection>
             <title>Cartesian Product of Sets</title>
                 <p>
-                    Suppose Set A = {1, 2, 3, 4, 5} and Set D = {x, y}. We can use the <c>cartesian_product()</c> and <c>list()</c> functions here.
+                    Suppose set A = {1, 2, 3, 4, 5} and set D = {x, y}. We can use the <c>cartesian_product()</c> and <c>list()</c> functions here.
                 </p>
                 <aside>
                     <title>Tips!</title>
