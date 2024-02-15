@@ -85,7 +85,6 @@
 
       # Evaluate to 10 digits of precision
       d = N(r, digits=10)
-
       print(d)
     </input>
   </sage>
@@ -126,10 +125,8 @@
 
   <sage>
     <input>
-        set_of_prime_numbers = Primes()
-
         # Check if 5 in contained in the set of prime numbers
-        5 in set_of_prime_numbers
+        5 in Primes()
     </input>
   </sage>
 
@@ -143,7 +140,7 @@
   </sage>
 
   <p>
-    <term>Lists</term>: Ordered mutable collections of items. If an object is mutable, the value can be changed after it is created.
+    <term>Lists</term>: Ordered mutable collections of items with in a pair of square brackets <c>[]</c>. If an object is mutable, the value can be changed after it is created.
   </p>
   <sage>
       <input>
@@ -154,13 +151,37 @@
   </sage>
 
   <p>
-      <term>Tuples</term>: Ordered, immutable collections. If an object is immutable, the value cannot be changed after it is created.
+      <term>Tuples</term>: Ordered, immutable collections within a pair of parenthesis <c>()</c>. If an object is immutable, the value cannot be changed after it is created.
   </p>
   <sage>
       <input>
           myTuple = (1, 3, 3, 2)
           print(type(myTuple))
           print(myTuple)
+      </input>
+  </sage>
+
+  <p>
+    <term>set</term>: <c>sets()</c> with lowercase <c>s</c> are built into Python. Python sets are collections of unique items within a pair of curly braces <c>{}</c>.
+  </p>
+  <sage>
+      <input>
+          myPythonSet = {1, 3, 3, 2}
+          # you can also define a set using the set() function
+          # myPythonSet = set([1, 3, 3, 2])
+          print(type(myPythonSet))
+          print(myPythonSet)
+      </input>
+  </sage>
+
+  <p>
+    <term>Set</term> is a built-in Sage class. It is similar to a Python set, with added functionality for mathematical operations.
+  </p>
+  <sage>
+      <input>
+          mySageSet = Set([1, 3, 3, 2])
+          print(type(mySageSet))
+          print(mySageSet)
       </input>
   </sage>
 
