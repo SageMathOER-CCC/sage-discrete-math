@@ -4,7 +4,7 @@
   <title>Intro to Sage</title>
 
   <p>
-      Fell free to copy and paste the code snippets we provide and run them in your own <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">Sage Worksheet</url> or <url href="https://jupyter.org/">Jupyter Notebook</url>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <url href="https://doc.sagemath.org/html/en/reference/spkg/">various</url> open-source mathematics software packages. Sage shares many features and syntax with python.
+      Feel free to copy and paste the code snippets we provide and run them in your own <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">Sage Worksheet</url> or <url href="https://jupyter.org/">Jupyter Notebook</url>. You can also edit the code and run the cells directly from this page. All the cells on the same page share the same memory, so be sure to run them in order. Sage integrates <url href="https://doc.sagemath.org/html/en/reference/spkg/">various</url> open-source mathematics software packages. Sage shares many features and syntax with Python.
   </p>
   
   <p>
@@ -15,7 +15,7 @@
     <input>
       # Lines that start with a pound sign are comments
       # and ignored by Sage
-      # Run this cell by clicking the Evaluate(Sage) button
+      # Run this cell by clicking the Evaluate (Sage) button
       # or use the keyboard shortcut command + shift
       1+1
     </input>
@@ -77,7 +77,7 @@
 
   <sage>
     <input>
-      # we declare a variable named n and assigned it the value 2
+      # Declare a variable named n and assigned it the value 2
       n = 2
       
       # Calculate the square root of n
@@ -127,7 +127,7 @@
     <input>
         set_of_prime_numbers = Primes()
 
-        # I can check if 5 in contained in the set of prime numbers
+        # Check if 5 in contained in the set of prime numbers
         5 in set_of_prime_numbers
     </input>
   </sage>
