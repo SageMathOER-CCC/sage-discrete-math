@@ -32,8 +32,8 @@
     </p>
     <sage>
       <input>
-        setPrimes = Primes()
-        setPrimes.cardinality()
+        P = Primes()
+        P.cardinality()
       </input>
     </sage>
 
@@ -41,8 +41,8 @@
       <input>
         # This results in an error because the
         # Python len() function is not defined for the primes class
-        setPrimes = Primes()
-        setPrimes.len()
+        P = Primes()
+        P.len()
       </input>
     </sage>
 </section>

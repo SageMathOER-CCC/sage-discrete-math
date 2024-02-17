@@ -6,42 +6,26 @@
 	<subsection xml:id="subsec-Ways-to-create-a-set">
 		<title>Sage Math Set</title>
 		<p>
-			We can create a set by inserting a list within a <c>Set()</c> function. We create a list with square brackets <c>[]</c>
+			We can create a set by inserting a list within a <c>Set()</c> function, with an uppercase <c>S</c>. We create a list with square brackets <c>[]</c>. Notice when we print the set, the elements are ordered and the duplicates are ignored.
 		</p>
 
 		<sage>
 			<input>
-				mySageSet = Set([1, 2, 3, 4, 5])
-				print(type(mySageSet))
-				print(mySageSet)
-			</input>
-		</sage>
-
-		<p>
-			It looks like Sage has its own class for sets.
-		</p>
-
-		<p>
-			Also notice when we print the set, the elements are ordered and the duplicates are ignored.
-		</p>
-
-		<sage>
-			<input>
-				mySageSet = Set([5, 1, 2, 3, 4, 5, 2, 1])
-				print(mySageSet)
+				A = Set([5, 1, 2, 3, 4, 5, 2, 1])
+				print(A)
 			</input>
 		</sage>
 
 		<sage>
 			<input>
-				myFirstSageSet = Set([1, 2, 3, 4, 5])
-				mySecondSageSet = Set([5, 1, 2, 3, 4, 5, 2, 1])
-				myFirstSageSet == mySecondSageSet
+				A = Set([1, 2, 3, 4, 5])
+				B = Set([5, 1, 2, 3, 4, 5, 2, 1])
+				A == B
 			</input>
 		</sage>
 
 		<p>
-			Since Sage Sets remove duplicates, the two sets are equal. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+			Since sets remove duplicates, the two sets are equal. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
 		</p>
 
 		<p>
@@ -52,7 +36,7 @@
 		</p>
 
 		<p>
-			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Sets</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>
+			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>.
 		</p>
 
 	  </subsection>
@@ -66,8 +50,8 @@
 		<sage>
 			<input>
 				# Create a set of even numbers between 1 and 10
-				evens = Set([x for x in srange(1, 11) if x % 2 == 0])
-				evens
+				C = Set([x for x in srange(1, 11) if x % 2 == 0])
+				C
 			</input>
 		</sage>
 
@@ -77,8 +61,8 @@
 
 		<sage>
 			<input>
-				moreEvens = Set([x for x in srange(1, 101) if x % 2 == 0])
-				moreEvens
+				D = Set([x for x in srange(1, 101) if x % 2 == 0])
+				D
 			</input>
 		</sage>
 	  </subsection>
@@ -86,7 +70,7 @@
 	  <subsection xml:id="subsec-subsets">
 		<title>Subsets</title>
 		<p>
-			Assume we have a Set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <c>Subsets()</c> and <c>list()</c> functions.
+			Assume we have a set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <c>Subsets()</c> and <c>list()</c> functions.
 		</p>
 		<sage>
 		  <input>
