@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="relations" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Relations</title>    
+    <title>Relations</title>
+    <p>
+        A relation <m>R</m> from <m>A</m> to <m>B</m> is a subset of the cartesian product <m>A \times B</m>.
+        <me>R \subseteq A \times B</me>
+    </p>
+    <p>
+        Remember a cartesian product is the set of pairs of elements in <m>A</m> and <m>B</m>. A relation is any subset of all the possible pairs where the first component belongs to <m>A</m> and the second component belongs to <m>B</m>.
+    </p>
+    <p>
+        Let's define sets <m>A</m> and <m>B</m>
+        <me>A = \{x,y,z\}</me>
+        <me>B = \{1,2,3,4\}</me>
+    </p>
+    <p>
+        Lets define a relation from A to B that is a subset of the cart product of
+        <me>
+            \{x,y,z\} \times \{1,2,3,4\}
+        </me>
+    </p>
+    <p>
+        A relation can be any subset. In this example relation, lets say the pairs I am considering are
+        <me>
+            R = \{(x,2),(y,1),(y,3),(z,2)\}
+        </me>
+    </p>
+    <p>
+        We can also express this as
+        <me>
+            xR2, yR1, yR3, zR2
+        </me>
+    </p>
+    <p>
+        This reads <m>X</m> relates to <m>2</m>, <m>y</m> relates to <m>1</m>, etc
+    </p>
+    <p>
+        Find how to show with a ven diagram in python
+    </p>
+    <p>
+        Let's use another example relation. If the two sets are equal we say that a relation from <m>A</m> to <m>A</m> is called a relation <term>on</term> <m>A</m>.
+    </p>
+    <p>
+        <em>Example:</em> Let <m>A = \{2,3,4,6,8}</m> and <m>R</m> be the relation on <m>A</m> defined by <m>aRb</m> if <m>a</m> divides <m>b</m>. This is expressed as <m>a | b</m>
+        <me>
+            R = \{(2,2),(2,4),(2,6),(2,8),(3, 3),(3, 6),(4,4),(4,8),(6,6),(8, 8)\}
+        </me>
+    </p>
+    <p>
+        To make sense of the pairs in this relation we can ask does <m>2</m> divide <m>2</m>? Yes. <m>2</m> does not divide <m>3</m> so it is not included. Next, we see that <m>2</m> divides <m>4</m>, and we continue with this pattern.
+    </p>
+    <p>
+        We can use a digraph to represent a relation on a set. A relation "on" is the relation of a set on itself. Create a node (vertex) for each element of the set. Use arrows pointing to nodes to represent the direction of the relation from one element to another. 
+    </p>
+    <p>
+        Example: Let <m>A = \{1,2,3\}</m> and <m>R</m> be the relation of <m>A</m> defined by <m>aRb</m> if <m>a < b</m>.
+    </p>
 </section>
+Notes:
+
+Let A = {1,2,3} and R be the following relation of A
+a R b iff a < b
+Digraph and notations
+
+Let B = {0,1} and A = PowerSetSymbol(B) and R be the following relation on A: 
+X R Y iff X ⊆ Y (X is contained / a subset of Y)
+
+Lets pick an element to see how it relates
+
+{1} is not related to the empty set because the set 1 is not a subset of the empty set
+
+What about {1} and {0}, not contained
+
+{1} R {0,1}
