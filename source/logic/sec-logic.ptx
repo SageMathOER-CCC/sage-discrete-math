@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Logic</title>
+
+    <!-- Logical Operators -->
+    <subsection>
+        <title>Logical Operators</title>
+        <p>
+            In SageMath, logical operations such as AND (&amp;), OR (|), NOT (~), conditional (->), and biconditional (&lt;-&gt;) play crucial roles in constructing and evaluating logical expressions.
+        </p>
+        <p>
+            AND, OR, and NOT operations correspond to basic logical functions: conjunction, disjunction, and negation, respectively. The conditional operation represents implication, where "p -> q" means if p then q. The biconditional operation, symbolized as "p &lt;-&gt; q", denotes equivalence, asserting that p and q are either both true or both false.
+        </p>
+    </subsection>
+
+    <!-- Logical Operations in SageMath -->
+    <subsection>
+        <title>Logical Operations in SageMath</title>
+        <p>
+            SageMath's <c>propcalc.formula()</c> function allows for the creation of logical formulas using variables and logical operators. This is especially useful in defining and manipulating logical statements.
+        </p>
+        <aside>
+            <title>Tips!</title>
+            <p>
+                Logical operations can model decision-making processes in programming, such as determining whether a set of conditions are met before executing a particular block of code.
+            </p>
+        </aside>
+        <sage>
+            <input>
+                a = propcalc.formula('p &amp; q')
+                b = propcalc.formula('~p | q')
+                c = propcalc.formula('p -&gt; q')
+                d = propcalc.formula('p &lt;-&gt; q')
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+    <!-- Truth Tables -->
+    <subsection>
+        <title>Truth Tables</title>
+        <p>
+            Truth tables represent the fundamental tool in logic to display the truth values of statements for all possible interpretations. The <c>truthtable()</c> function in SageMath generates the truth table for a given logical expression.
+        </p>
+        <aside>
+            <title>Tips!</title>
+            <p>
+                Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.
+            </p>
+        </aside>
+        <sage>
+            <input>
+                a = propcalc.formula('p -&gt; q')
+                a.truthtable()
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+    <!-- Tautologies -->
+    <subsection>
+        <title>Tautologies</title>
+        <p>
+            A tautology is a logical statement that is true under any interpretation of its variables. The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
+        </p>
+        <aside>
+            <title>Tips!</title>
+            <p>
+                Understanding tautologies is essential in computer science, particularly in optimizing algorithms and validating logical propositions in software verification.
+            </p>
+        </aside>
+        <sage>
+            <input>
+                a = propcalc.formula('p | ~p')
+                a.is_tautology()
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+</section>
