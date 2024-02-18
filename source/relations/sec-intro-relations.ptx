@@ -7,63 +7,66 @@
         <me>R \subseteq A \times B</me>
     </p>
     <p>
-        The Cartesian product <m>A \times B</m> consists of all possible ordered pairs where the first element is from <m>A</m> and the second element is from <m>B</m>.
+        The Cartesian product <m>A \times B</m> consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
-        Define the set of Pants and Shirts:
+        Let's define two sets, Pants and Shirts, as examples:
     </p>
     <p>
         <me>
-            \text{Pants} = \{p1, p2, p3, p4\} \\
+            \text{Pants} = \{p_1, p_2, p_3, p_4\} \\
         </me>
         <me>
-            \text{Shirts} = \{s1, s2, s3, s4\}
+            \text{Shirts} = \{s_1, s_2, s_3, s_4\}
         </me>
     </p>
     <p>
-        The Cartesian product of these sets, Pants and Shirts, consists of all possible ordered pairs combining elements from Pants with those from Shirts.
+        The Cartesian product of Pants and Shirts includes all possible combinations of pants with shirts.
     </p>
     <sage>
         <input>
             Pants = Set(['p1', 'p2', 'p3', 'p4'])
             Shirts = Set(['s1', 's2', 's3', 's4'])
             all_combinations = Pants.cartesian_product(Shirts)
+            print("All combinations of Pants and Shirts:")
             for combo in all_combinations:
                 print(combo)
         </input>
     </sage>
     <p>
-        Now that we have all the possible combinations of pants and shirts, we notice that we want to match pants with shirts according to their style. We can define a relation as a subset of this Cartesian product to match pants and shirts of the same style.
+        To explore how we can match pants with shirts based on their style, we define a relation as a subset of this Cartesian product, where each pair matches by a certain criterion, such as style.
     </p>
     <p>
-        Before we define the relation from Pants into Shirts, we need to define a new set, Styles. We can then define a relation from Pants into Styles and a relation from Shirts into Styles.
-    </p>
-    <p>
-        <me>
-            \text{Styles} = \{athletic, formal\}
-        </me>
-        
+        First, let's define a set of Styles, and then create relations for Pants and Shirts based on these styles.
     </p>
     <p>
         <me>
-            \text{PantStyles} = \{(p1, athletic), (p2, formal), (p3, athletic), (p4, formal)\} \\
+            \text{Styles} = \{\text{athletic}, \text{formal}\}
+        </me>
+    </p>
+    <p>
+        <me>
+            \text{PantStyles} = \{(p_1, \text{athletic}), (p_2, \text{formal}), (p_3, \text{athletic}), (p_4, \text{formal})\}
         </me>
         <me>
-            \text{ShirtStyles} = \{(s1, athletic), (s2, formal), (s3, athletic), (s4, formal)\}
+            \text{ShirtStyles} = \{(s_1, \text{athletic}), (s_2, \text{formal}), (s_3, \text{athletic}), (s_4, \text{formal})\}
         </me>
+    </p>
+    <p>
+        We can visualize all possible combinations of pants and shirts, taking their styles into account.
     </p>
     <sage>
         <input>
             PantStyles = Set([('p1', 'athletic'), ('p2', 'formal'), ('p3', 'athletic'), ('p4', 'formal')])
             ShirtStyles = Set([('s1', 'athletic'), ('s2', 'formal'), ('s3', 'athletic'), ('s4', 'formal')])
             all_combinations = PantStyles.cartesian_product(ShirtStyles)
-            # Iterate through the Cartesian product and print each combination
+            print("All combinations of PantStyles and ShirtStyles:")
             for combo in all_combinations:
                 print(combo)
         </input>
     </sage>
     <p>
-        Now that we have all the possible combinations of pants and shirts with their styles, we can define a relation from Pants into Shirts as a subset of the Cartesian product <m>PantStyles \times ShirtStyles</m>.
+        With these combinations, let's define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles <m>\times</m> ShirtStyles, including only those pairs where the pants and shirts have the same style.
     </p>
     <p>
         <me>
@@ -72,24 +75,16 @@
     </p>
     <sage>
         <input>
-            # Function to check if a pant and shirt match in style
+            # Define a function to determine if a pant and shirt match in style
             def match_style(pant, shirt):
-                # Find the style of the given pant
-                pant_style = [style for (p, style) in PantStyles if p == pant]
-                # Find the style of the given shirt
-                shirt_style = [style for (s, style) in ShirtStyles if s == shirt]
-                # Check if styles match (and ensure the lists are not empty)
-                return pant_style == shirt_style and pant_style != []
+                pant_style = next((style for (p, style) in PantStyles if p == pant), None)
+                shirt_style = next((style for (s, style) in ShirtStyles if s == shirt), None)
+                return pant_style and shirt_style and pant_style == shirt_style
 
-            # Use the Cartesian product of Pants and Shirts to check for matching styles
-            Pants = Set(['p1', 'p2', 'p3', 'p4'])
-            Shirts = Set(['s1', 's2', 's3', 's4'])
-            all_combinations = Pants.cartesian_product(Shirts)
+            # Generate the Cartesian product of Pants and Shirts to find matching styles
+            matching_style_relation = Set([combo for combo in Pants.cartesian_product(Shirts) if match_style(combo[0], combo[1])])
 
-            # Filter the combinations to only include matching styles
-            matching_style_relation = Set([combo for combo in all_combinations if match_style(combo[0], combo[1])])
-
-            # Display the matching style relation
+            print("Matching styles between Pants and Shirts:")
             for match in matching_style_relation:
                 print(match)
         </input>
