@@ -3,63 +3,56 @@
 <section xml:id="relations" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Relations</title>
     <p>
-        A relation <m>R</m> from <m>A</m> to <m>B</m> is a subset of the cartesian product <m>A \times B</m>.
+        A relation <m>R</m> from set <m>A</m> to set <m>B</m> is defined as a subset of the Cartesian product <m>A \times B</m>, represented as:
         <me>R \subseteq A \times B</me>
     </p>
     <p>
-        A cartesian product is the set of pairs of elements in <m>A</m> and <m>B</m>. A relation is any subset of all the possible pairs where the first component belongs to <m>A</m> and the second component belongs to <m>B</m>.
+        The Cartesian product <m>A \times B</m> consists of all possible ordered pairs where the first element is from <m>A</m> and the second element is from <m>B</m>. Therefore, a relation between <m>A</m> and <m>B</m> selects a specific subset of these pairs according to some criteria or rule.
     </p>
     <p>
-        Let's define sets <m>A</m> and <m>B</m>:
+        Consider the sets <m>A</m> and <m>B</m> defined as:
         <me>A = \{x,y,z\}</me>
         <me>B = \{1,2,3,4\}</me>
     </p>
     <p>
-        Lets define a relation from A to B that is a subset of the cart product of:
-        <me>
-            \{x,y,z\} \times \{1,2,3,4\}
-        </me>
+        The Cartesian product of <m>A</m> and <m>B</m>, <m>\{x,y,z\} \times \{1,2,3,4\}</m>, represents all possible ordered pairs combining elements from <m>A</m> with those from <m>B</m>.
     </p>
     <p>
-        A relation can be any subset. In this example relation, lets say the pairs I am considering are:
-        <me>
-            R = \{(x,2),(y,1),(y,3),(z,2)\}
-        </me>
+        Let's define a specific relation <m>R</m> as a subset of this Cartesian product:
+        <me>R = \{(x,2),(y,1),(y,3),(z,2)\}</me>
     </p>
     <p>
-        We can also express this as:
-        <me>
-            xR2, yR1, yR3, zR2
-        </me>
+        This relation can also be expressed using the relation symbol <m>R</m> as follows:
+        <me>xR2, \; yR1, \; yR3, \; zR2</me>
     </p>
     <p>
-        This reads <m>X</m> relates to <m>2</m>, <m>y</m> relates to <m>1</m>, etc.
-    </p>
+        This means that <m>x</m> is related to <m>2</m>, <m>y</m> is related to <m>1</m> and also to <m>3</m>, and <m>z</m> is related to <m>2</m>, according to the relation <m>R</m>.
+    </p>    
     <p>
         Find how to show with a ven diagram in python
     </p>
     <p>
-        Let's use another example relation. If the two sets are equal we say that a relation from <m>A</m> to <m>A</m> is called a relation <term>on</term> <m>A</m>.
+        Let's explore another example of a relation. When the two sets are identical, we refer to a relation from <m>A</m> to <m>A</m> as a relation <term>on</term> <m>A</m>.
     </p>
     <p>
-        <em>Example:</em> Let <m>A = \{2,3,4,6,8\}</m> and <m>R</m> be the relation on <m>A</m> defined by <m>aRb</m> if <m>a</m> divides <m>b</m>. This is also expressed as <m>a | b</m>
+        <em>Example:</em> Consider the set <m>A = \{2,3,4,6,8\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a</m> divides <m>b</m>, denoted as <m>a | b</m>. The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
         <me>
-            R = \{(2,2),(2,4),(2,6),(2,8),(3, 3),(3, 6),(4,4),(4,8),(6,6),(8, 8)\}
+            R = \{(2,2),(2,4),(2,6),(2,8),(3,3),(3,6),(4,4),(4,8),(6,6),(8,8)\}
         </me>
     </p>
     <p>
-        To make sense of the pairs in this relation we can ask does <m>2</m> divide <m>2</m>? Yes. <m>2</m> does not divide <m>3</m> so it is not included. Next, we see that <m>2</m> divides <m>4</m>, and we continue with this pattern.
+        To understand the pairs in this relation, consider whether <m>2</m> divides <m>2</m>. Since it does, the pair <m>(2,2)</m> is included in <m>R</m>. However, <m>2</m> does not divide <m>3</m>, so any pair involving <m>2</m> and <m>3</m> is excluded. Following this logic, we include pairs where the first element divides the second.
     </p>
     <p>
-        We can use a digraph to represent a relation on a set. A relation "on" is the relation of a set on itself. Create a node (vertex) for each element of the set. Use arrows pointing to nodes to represent the direction of the relation from one element to another. 
+        A digraph, or directed graph, is an effective way to visually represent a relation on a set. In a digraph for a relation "on", each element of the set is represented by a node (vertex). Arrows between nodes indicate the direction of the relation, from one element to another. This visual representation helps in understanding the structure and properties of the relation.
     </p>
     <p>
-        <em>Example:</em> Let <m>A = \{1,2,3\}</m> and <m>R</m> be the relation of <m>A</m> defined by <m>aRb</m> iff <m>a &lt; b</m>.
+        <em>Example 1:</em> Consider the set <m>A = \{1,2,3\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a &lt; b</m>. This relation captures the concept of one element being strictly less than another within the set <m>A</m>.
     </p>
     <p>
-        <em>Example:</em> Let <m>B = \{0,1\}</m> and <m>A = \mathcal{P}(B)</m> and <m>R</m> be the following relation on <m>A</m>: <m>XRY</m> iff <m>X \subseteq Y</m>.
+        <em>Example 2:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
     </p>
     <p>
-        Let's pick an element to see how it relates. <m>{1}</m> is not related to the empty set because the set <m>1</m> is not a subset of the empty set. What about <m>{1}</m> and <m>{0}</m>? <m>{1}</m> is not related to <m>{0}</m> because <m>{1}</m> is not a subset of <m>{0}</m>. <m>{1} R {0,1}</m> Check this.
-    </p>
+        To explore how elements relate within these examples, consider the element <m>\{1\}</m> in the context of the second example. The set <m>\{1\}</m> is not related to the empty set, denoted as <m>\{\}</m>, because <m>\{1\}</m> is not a subset of <m>\{\}</m>. Similarly, <m>\{1\}</m> does not relate to <m>\{0\}</m> because <m>\{1\}</m> is not a subset of <m>\{0\}</m>. However, <m>\{1\}</m> is related to <m>\{0,1\}</m> because <m>\{1\}</m> is indeed a subset of <m>\{0,1\}</m>, which we denote as <m>\{1\} R \{0,1\}</m>.
+    </p>    
 </section>
