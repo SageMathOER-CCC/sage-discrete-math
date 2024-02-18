@@ -10,6 +10,7 @@
   </introduction>
 
   <!-- include sections -->
+  <xi:include href="sec-intro-relations.ptx" />
   <xi:include href="sec-relations.ptx" />
   <xi:include href="sec-properties.ptx" />
 </chapter>
