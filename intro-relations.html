@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Introduction to Relations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -123,7 +135,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-relations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="relations-on-a-set.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -206,24 +218,99 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-relations.html" class="internal"><span class="codenumber">5</span> <span class="title">Relations</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-relations.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Introduction to Relations</span></a></div></li>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="intro-relations.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Introduction to Relations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="relations-on-a-set.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Relations on a set</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="properties.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Properties</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="equivalence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Equivalence</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="partial-order.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Partial Order</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter contains-active"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="backmatter-2"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="intro-relations"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Introduction to Relations</span>
 </h2>
-<div class="para" id="backmatter-2-1">This book was authored in PreTeXt.</div></section></div>
+<div class="para logical" id="intro-relations-2">
+<div class="para">A relation <span class="process-math">\(R\)</span> from set <span class="process-math">\(A\)</span> into set <span class="process-math">\(B\)</span> is defined as a subset of the Cartesian product <span class="process-math">\(A \times B\text{,}\)</span> represented as:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R \subseteq A \times B
+\end{equation*}
+</div>
+</div>
+<div class="para" id="intro-relations-3">The Cartesian product <span class="process-math">\(A \times B\)</span> consists of all possible ordered pairs <span class="process-math">\((a, b)\text{,}\)</span> where <span class="process-math">\(a \in A\)</span> and <span class="process-math">\(b \in B\text{.}\)</span> Each pair combines an element from set <span class="process-math">\(A\)</span> with an element from set <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="para" id="intro-relations-4">Let’s define two sets, Pants and Shirts, as examples:</div>
+<div class="para logical" id="intro-relations-5">
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Pants} = \{p_1, p_2, p_3, p_4\} \\
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Shirts} = \{s_1, s_2, s_3, s_4\}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="intro-relations-6">The Cartesian product of Pants and Shirts includes all possible combinations of pants with shirts.</div>
+<pre id="intro-relations-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Pants = Set(['p1', 'p2', 'p3', 'p4'])
+Shirts = Set(['s1', 's2', 's3', 's4'])
+
+all_combinations = Pants.cartesian_product(Shirts)
+
+for combo in all_combinations:
+    print(combo)
+</script></pre>
+<div class="para" id="intro-relations-8">To explore how we can match pants with shirts based on their style, we define a relation as a subset of this Cartesian product, where each pair matches by a certain criterion, such as style.</div>
+<div class="para" id="intro-relations-9">First, let’s define a set of Styles, and then create relations for Pants and Shirts based on these styles.</div>
+<div class="para logical" id="intro-relations-10"><div class="displaymath process-math">
+\begin{equation*}
+\text{Styles} = \{\text{athletic}, \text{formal}\}
+\end{equation*}
+</div></div>
+<div class="para logical" id="intro-relations-11">
+<div class="displaymath process-math">
+\begin{equation*}
+\text{PantStyles} = \{(p_1, \text{athletic}), (p_2, \text{formal}), (p_3, \text{athletic}), (p_4, \text{formal})\}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{ShirtStyles} = \{(s_1, \text{athletic}), (s_2, \text{formal}), (s_3, \text{athletic}), (s_4, \text{formal})\}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="intro-relations-12">We can visualize all possible combinations of pants and shirts, taking their styles into account.</div>
+<pre id="intro-relations-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define styles for pants and shirts as sets of tuples
+PantStyles = Set([('p1', 'athletic'), ('p2', 'formal'), ('p3', 'athletic'), ('p4', 'formal')])
+ShirtStyles = Set([('s1', 'athletic'), ('s2', 'formal'), ('s3', 'athletic'), ('s4', 'formal')])
+
+all_combinations = PantStyles.cartesian_product(ShirtStyles)
+
+for combo in all_combinations:
+    print(combo)
+</script></pre>
+<div class="para" id="intro-relations-14">With these combinations, let’s define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles <span class="process-math">\(\times\)</span> ShirtStyles, including only those pairs where the pants and shirts have the same style. This is a second example of a relation, on another relation.</div>
+<div class="para logical" id="intro-relations-15"><div class="displaymath process-math">
+\begin{equation*}
+\text{MatchingOutfit}  \subseteq \text{PantStyles} \times \text{ShirtStyles}
+\end{equation*}
+</div></div>
+<pre id="intro-relations-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define a relation for matching styles between Pants and Shirts
+# Filter the Cartesian product of PantStyles and ShirtStyles
+# to include only pairs where the styles (second element of each tuple) match
+matching_style_combinations = [combo for combo in all_combinations if combo[0][1] == combo[1][1]]
+
+# Display the matching style combinations
+for (pant, shirt) in matching_style_combinations:
+    print(f"Pant: {pant[0]}, Shirt: {shirt[0]}, Style: {pant[1]}")
+</script></pre></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="ch-relations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="relations-on-a-set.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Truth Table</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -123,7 +135,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-logical-operation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-logic.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-tautology.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -179,9 +191,9 @@ window.MathJax = {
 </ul>
 </li></ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">4</span> <span class="title">Logic</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-logical-operation.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Logical Operations</span></a></div>
 <ul class="structural toc-item-list">
@@ -189,7 +201,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logical-operation.html#sec-logical-operation-3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Logical Operations in SageMath</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-truth-table.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Truth Table</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-truth-table.html#sec-truth-table-2" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Truth Tables</span></a></div></li>
@@ -216,14 +228,38 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="partial-order.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Partial Order</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter contains-active"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="backmatter-2"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-truth-table"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Truth Table</span>
 </h2>
-<div class="para" id="backmatter-2-1">This book was authored in PreTeXt.</div></section></div>
+<section class="subsection" id="sec-truth-table-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="space"> </span><span class="title">Truth Tables</span>
+</h3>
+<div class="para" id="sec-truth-table-2-2">Truth tables represent the fundamental tool in logic to display the truth values of statements for all possible interpretations. The <code class="code-inline tex2jax_ignore">truthtable()</code> function in SageMath generates the truth table for a given logical expression.</div>
+<aside class="aside aside-like" id="sec-truth-table-2-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<div class="para" id="sec-truth-table-2-3-2">Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.</div></aside><pre id="sec-truth-table-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a = propcalc.formula('p -> q')
+a.truthtable()
+</script></pre></section><section class="subsection" id="sec-truth-table-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="space"> </span><span class="title">Truth Tables for Three Variables</span>
+</h3>
+<div class="para" id="sec-truth-table-3-2">Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <code class="code-inline tex2jax_ignore">truthtable()</code> function accommodates expressions with any reasonable number of variables.</div>
+<aside class="aside aside-like" id="sec-truth-table-3-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<div class="para" id="sec-truth-table-3-3-2">Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.</div></aside><pre id="sec-truth-table-3-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">b = propcalc.formula('(p & q) -> r')
+b.truthtable()
+</script></pre></section><section class="subsection" id="sec-truth-table-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="space"> </span><span class="title">Analyzing Logical Equivalences</span>
+</h3>
+<div class="para" id="sec-truth-table-4-2">Truth tables are instrumental in determining logical equivalences between two expressions. By comparing their truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.</div>
+<aside class="aside aside-like" id="sec-truth-table-4-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<div class="para" id="sec-truth-table-4-3-2">This approach is invaluable in simplifying logical expressions in computer algorithms and understanding proofs in mathematical logic.</div></aside><pre id="sec-truth-table-4-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">expr1 = propcalc.formula('(p -> q) & (q -> r)')
+expr2 = propcalc.formula('p -> r')
+table1 = expr1.truthtable()
+table2 = expr2.truthtable()
+table1 == table2
+</script></pre></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-logical-operation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-tautology.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Partial Order</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -123,7 +135,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="equivalence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-relations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -206,24 +218,59 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-relations.html" class="internal"><span class="codenumber">5</span> <span class="title">Relations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-relations.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Introduction to Relations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="relations-on-a-set.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Relations on a set</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="properties.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Properties</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="equivalence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Equivalence</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="partial-order.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Partial Order</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="partial-order.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Partial Order</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter contains-active"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="backmatter-2"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="partial-order"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.5</span><span class="space"> </span><span class="title">Partial Order</span>
 </h2>
-<div class="para" id="backmatter-2-1">This book was authored in PreTeXt.</div></section></div>
+<div class="para" id="partial-order-2">A Partial Order (PO) <span class="process-math">\(\prec\)</span> satisfies the following properties:</div>
+<div class="para" id="partial-order-3">
+<dfn class="terminology">Reflexive</dfn> a R a for all a <span class="process-math">\(\in\)</span> A</div>
+<div class="para" id="partial-order-4">
+<dfn class="terminology">Antisymmetric</dfn> If a R b and b R a then a = b for all a, b <span class="process-math">\(\in\)</span> A</div>
+<div class="para" id="partial-order-5">
+<dfn class="terminology">Transitive</dfn> If a R b and b R c then a R c for all a, b, c <span class="process-math">\(\in\)</span> A</div>
+<div class="para" id="partial-order-6">
+<em class="emphasis">Example:</em> Let <span class="process-math">\(B = \{0,1\}\)</span> and define <span class="process-math">\(A\)</span> as the power set of <span class="process-math">\(B\text{,}\)</span> denoted <span class="process-math">\(A = \mathcal{P}(B)\text{.}\)</span> Establish a relation <span class="process-math">\(R\)</span> on <span class="process-math">\(A\)</span> where <span class="process-math">\(XRY\)</span> if and only if <span class="process-math">\(X \subseteq Y\text{.}\)</span> This relation represents the idea of one set being a subset of another within the power set of <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="para" id="partial-order-7">To explore how elements relate within these examples, consider the element <span class="process-math">\(\{1\}\)</span> in the context of the second example. The set <span class="process-math">\(\{1\}\)</span> is not related to the empty set, denoted as <span class="process-math">\(\{\}\text{,}\)</span> because <span class="process-math">\(\{1\}\)</span> is not a subset of <span class="process-math">\(\{\}\text{.}\)</span> Similarly, <span class="process-math">\(\{1\}\)</span> does not relate to <span class="process-math">\(\{0\}\)</span> because <span class="process-math">\(\{1\}\)</span> is not a subset of <span class="process-math">\(\{0\}\text{.}\)</span> However, <span class="process-math">\(\{1\}\)</span> is related to <span class="process-math">\(\{0,1\}\)</span> because <span class="process-math">\(\{1\}\)</span> is indeed a subset of <span class="process-math">\(\{0,1\}\text{,}\)</span> which we denote as <span class="process-math">\(\{1\} R \{0,1\}\text{.}\)</span>
+</div>
+<pre id="partial-order-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set B
+B = Set([0, 1])
+
+# Generate the power set of B, denoted as A
+A = B.subsets()
+
+# Define the relation R on A where XRY iff X is a subset of Y
+R = [(X, Y) for X in A for Y in A if X.issubset(Y)]
+
+# Display the relation R
+print(R)
+</script></pre>
+<pre id="partial-order-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set B
+B = Set([0, 1])
+
+# Generate the power set of B, denoted as A
+A = B.subsets()
+
+# Define the poset using the subsets of B and the subset relation
+P = Poset((A, lambda x, y: x.issubset(y)))
+
+# Increase size of vertices to fit the label
+P.plot(vertex_size=1000).show()
+</script></pre></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="equivalence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
