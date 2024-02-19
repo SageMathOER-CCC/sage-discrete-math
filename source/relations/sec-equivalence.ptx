@@ -8,7 +8,7 @@
     <p>
         <term>Class of equivalence</term> is defined by
         <me>
-            |a| = \{x \in A \; | \; aRx\}
+            |a| = \{x \in A \; | \; xRa\}
         </me>
     </p>
     <p>
@@ -16,39 +16,40 @@
     </p>
     <p>
         <me>
-            \text{Let A } = \{x \; | \; x \text{ is a person living in USA} \}
+            \text{Let A } = \{x \; | \; x \text{ is a person living in a building} \}
         </me>
     </p>
     <p>
         Let R be the following relation on A:
     </p>
-    <p>
-        x R y iff x and y live in the same building.
-    </p>
+    <me>
+        \text{x R y iff x and y live in the same floor of the building.}
+    </me>
+    
     <p>
         <ul>
             <li>
                 <p>
-                    <term>Reflexive</term>: A person lives in the same building as himself. This is true for everybody living in USA.
+                    <term>Reflexive</term>: A person lives in the same floor as themselves.
                 </p>
             </li>
             <li>
                 <p>
-                    <term>Symmetric</term>: If person x lives in the same building as person y, then person y lives in the same building as person x.
+                    <term>Symmetric</term>: If person x lives in the same floor as person y, then person y lives in the same floor as person x.
                 </p>
             </li>
             <li>
                 <p>
-                    <term>Transitive</term>: If person x lives in the same building as person y and person y lives in the same building as person z, then person x lives in the same building as person z.
+                    <term>Transitive</term>: If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.
                 </p>
             </li>
         </ul>
     </p>
     <p>
-        Class of equivalence
+        Class of equivalence:
         <me>
-            \text{person } a = \{ x \in A | x R a \} =
-            \text{all people living in the same building as person } a
+            | \text{person a} | = \{ x \; \in A | x R a \} =
+            \text{all people living in the same floor as person } a
         </me>
     </p>
 </section>
