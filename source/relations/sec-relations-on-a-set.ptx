@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="relations" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Relations</title>
+<section xml:id="relations-on-a-set" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Relations on a set</title>
     
     <p>
         Let's explore another example of a relation. When the two sets are identical, we refer to a relation from <m>A</m> to <m>A</m> as a relation <term>on</term> <m>A</m>.
@@ -30,15 +30,15 @@
     </p>
     <sage>
         <input>
-            # Optionally, to further understand the relation, you can check specific divisibility:
-            # Check if 2 divides 2
-            print(2.divides(2))  # Expected output: True
+            # Create the digraph from the relation R
+            R_graph = DiGraph(R, loops=True, format='list_of_edges')
 
-            # Check if 2 divides 3
-            print(2.divides(3))  # Expected output: False
+            # Optionally, you can customize the plot with additional parameters
+            R_graph.plot(save_pos=True, layout='circular')
 
-            # Check if 2 divides 4
-            print(2.divides(4))  # Expected output: True
+            # Display the graph
+            R_graph.show()
+
         </input>
       </sage>
     <p>

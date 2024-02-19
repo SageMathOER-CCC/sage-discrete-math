@@ -71,7 +71,7 @@
         </input>
     </sage>
     <p>
-        With these combinations, let's define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles <m>\times</m> ShirtStyles, including only those pairs where the pants and shirts have the same style.
+        With these combinations, let's define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles <m>\times</m> ShirtStyles, including only those pairs where the pants and shirts have the same style. This is a second example of a relation, on another relation.
     </p>
     <p>
         <me>
