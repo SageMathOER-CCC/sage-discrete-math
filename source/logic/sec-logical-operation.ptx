@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Logical Operations</title>
+
+    <!-- Logical Operators -->
+    <subsection>
+        <title>Logical Operators</title>
+        <p>
+            In SageMath, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
+        </p>
+        <p>
+            AND, OR, and NOT operations correspond to basic logical functions: conjunction, disjunction, and negation, respectively. The conditional operation represents implication, where <c>p -&gt; q</c> means if <c>p then q</c>. The biconditional operation, symbolized as <c>p &lt;-&gt; q</c>, denotes equivalence, asserting that p and q are either both true or both false.
+        </p>
+    </subsection>
+
+    <!-- Logical Operations in SageMath -->
+    <subsection>
+        <title>Logical Operations in SageMath</title>
+        <p>
+            SageMath's <c>propcalc.formula()</c> function allows for the creation of logical formulas using variables and logical operators. This is especially useful in defining and manipulating logical statements.
+        </p>
+        <aside>
+            <title>Tips!</title>
+            <p>
+                Logical operations can model decision-making processes in programming, such as determining whether a set of conditions are met before executing a particular block of code.
+            </p>
+        </aside>
+        <sage>
+            <input>
+                a = propcalc.formula('p &amp; q')
+                b = propcalc.formula('~p | q')
+                c = propcalc.formula('p -&gt; q')
+                d = propcalc.formula('p &lt;-&gt; q')
+                print(a, b, c, d)
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+</section>

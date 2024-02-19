@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-truth-table" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Truth Table</title>
+
+     <!-- Truth Tables -->
+     <subsection>
+        <title>Truth Tables</title>
+        <p>
+            Truth tables represent the fundamental tool in logic to display the truth values of statements for all possible interpretations. The <c>truthtable()</c> function in SageMath generates the truth table for a given logical expression.
+        </p>
+        <aside>
+            <title>Tips!</title>
+            <p>
+                Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.
+            </p>
+        </aside>
+        <sage>
+            <input>
+                a = propcalc.formula('p -&gt; q')
+                a.truthtable()
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+    <!-- Truth Tables for Three Variables -->
+<subsection>
+    <title>Truth Tables for Three Variables</title>
+    <p>
+        Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function accommodates expressions with any reasonable number of variables.
+    </p>
+    <aside>
+        <title>Tips!</title>
+        <p>
+            Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.
+        </p>
+    </aside>
+    <sage>
+        <input>
+            b = propcalc.formula('(p &amp; q) -&gt; r')
+            b.truthtable()
+        </input>
+        <output></output>
+    </sage>
+</subsection>
+
+<!-- Analyzing Logical Equivalences with Truth Tables -->
+<subsection>
+    <title>Analyzing Logical Equivalences</title>
+    <p>
+        Truth tables are instrumental in determining logical equivalences between two expressions. By comparing their truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.
+    </p>
+    <aside>
+        <title>Tips!</title>
+        <p>
+            This approach is invaluable in simplifying logical expressions in computer algorithms and understanding proofs in mathematical logic.
+        </p>
+    </aside>
+    <sage>
+        <input>
+            expr1 = propcalc.formula('(p -&gt; q) &amp; (q -&gt; r)')
+            expr2 = propcalc.formula('p -&gt; r')
+            table1 = expr1.truthtable()
+            table2 = expr2.truthtable()
+            table1 == table2
+        </input>
+        <output></output>
+    </sage>
+</subsection>
+
+</section> 
