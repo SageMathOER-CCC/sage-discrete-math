@@ -8,7 +8,7 @@
     <p>
         <term>Class of equivalence</term> is defined by
         <me>
-            [a] = \{x \in A | aRx\}
+            |a| = \{x \in A \; | \; aRx\}
         </me>
     </p>
     <p>
@@ -16,7 +16,7 @@
     </p>
     <p>
         <me>
-            \text{Let A } = \{x | x \text{ is a person living in USA} \}
+            \text{Let A } = \{x \; | \; x \text{ is a person living in USA} \}
         </me>
     </p>
     <p>
