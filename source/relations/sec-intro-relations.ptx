@@ -65,7 +65,6 @@
 
             all_combinations = PantStyles.cartesian_product(ShirtStyles)
 
-            print("All combinations of PantStyles and ShirtStyles, before filtering by matching styles:")
             for combo in all_combinations:
                 print(combo)
         </input>
@@ -86,7 +85,6 @@
             matching_style_combinations = [combo for combo in all_combinations if combo[0][1] == combo[1][1]]
 
             # Display the matching style combinations
-            print("\nMatching style combinations of Pants and Shirts:")
             for (pant, shirt) in matching_style_combinations:
                 print(f"Pant: {pant[0]}, Shirt: {shirt[0]}, Style: {pant[1]}")
         </input>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Equivalence</title>
+    <p>
+        A relation is called an <term>equivalence relation</term> if the relation satisfies the following properties: reflexive symmetric and transitive.
+    </p>
+    <p>
+        <term>Class of equivalence</term> is defined by
+        <me>
+            [a] = \{x \in A | aRx\}
+        </me>
+    </p>
+    <p>
+        The class of equivalence of a is the set of all elements in A that are related to a.
+    </p>
+    <p>
+        <me>
+            \text{Let A } = \{x | x \text{ is a person living in USA} \}
+        </me>
+    </p>
+    <p>
+        Let R be the following relation on A:
+    </p>
+    <p>
+        x R y if and only if x and y live in the same building.
+    </p>
+    <p>
+        <ul>
+            <li>
+                <p>
+                    <term>Reflexive</term>: A person lives in the same building as himself. This is true for everybody living in USA.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Symmetric</term>: If person x lives in the same building as person y, then person y lives in the same building as person x.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Transitive</term>: If person x lives in the same building as person y and person y lives in the same building as person z, then person x lives in the same building as person z.
+                </p>
+            </li>
+        </ul>
+    </p>
+    <p>
+        Class of equivalence
+        <me>
+            \text{person } a = \{ x \in A | x R a \} =
+            \text{all people living in the same building as person } a
+        </me>
+    </p>
+</section>
