@@ -4,13 +4,16 @@
     <title>Relations on a set</title>
     
     <p>
-        Let's explore another example of a relation. When the two sets are identical, we refer to a relation from <m>A</m> to <m>A</m> as a relation <term>on</term> <m>A</m>.
+        Let's explore specific kind of relation. When the two sets are identical, we refer to a relation from <m>A</m> to <m>A</m> as a relation <term>on</term> <m>A</m>.
     </p>
     <p>
-        <em>Example:</em> Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
+        <em>Example 1:</em> Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
         <me>
             R = \{(2,2),(2,4),(2,6),(2,8),(3,3),(3,6),(4,4),(4,8),(6,6),(8,8)\}
         </me>
+    </p>
+    <p>
+        To understand the pairs in this relation, consider whether <m>2</m> divides <m>2</m>. Since it does, the pair <m>(2,2)</m> is included in <m>R</m>. However, <m>2</m> does not divide <m>3</m>, so any pair involving <m>2</m> and <m>3</m> is excluded. Following this logic, we include pairs where the first element divides the second.
     </p>
     <sage>
         <input>
@@ -18,34 +21,24 @@
             A = Set([2, 3, 4, 6, 8])
 
             # Define the relation R on A: aRb iff a divides b
-            # We use the divides function from Sage to check divisibility
             R = [(a, b) for a in A for b in A if a.divides(b)]
 
-            # Display the relation R
             print(R)
         </input>
-      </sage>
+    </sage>
     <p>
-        To understand the pairs in this relation, consider whether <m>2</m> divides <m>2</m>. Since it does, the pair <m>(2,2)</m> is included in <m>R</m>. However, <m>2</m> does not divide <m>3</m>, so any pair involving <m>2</m> and <m>3</m> is excluded. Following this logic, we include pairs where the first element divides the second.
+        A digraph, or directed graph, is a visual representation of a relation on a set. Every set element is shown as a node (vertex), and arrows between nodes represent the directional nature of the relation.
     </p>
     <sage>
         <input>
             # Create the digraph from the relation R
-            R_graph = DiGraph(R, loops=True, format='list_of_edges')
+            R_graph = DiGraph(R, loops=True,)
 
-            # Optionally, you can customize the plot with additional parameters
-            R_graph.plot(save_pos=True, layout='circular')
-
-            # Display the graph
             R_graph.show()
-
         </input>
       </sage>
     <p>
-        A digraph, or directed graph, is an effective way to visually represent a relation on a set. In a digraph for a relation "on", each element of the set is represented by a node (vertex). Arrows between nodes indicate the direction of the relation, from one element to another. This visual representation helps in understanding the structure and properties of the relation.
-    </p>
-    <p>
-        <em>Example 1:</em> Consider the set <m>A = \{1,2,3\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a &lt; b</m>. This relation captures the concept of one element being strictly less than another within the set <m>A</m>.
+        <em>Example 2:</em> Consider the set <m>A = \{1,2,3\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a &lt; b</m>.
     </p>
     <sage>
         <input>
@@ -60,7 +53,7 @@
         </input>
       </sage>
     <p>
-        <em>Example 2:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
+        <em>Example 3:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
     </p>
     <p>
         To explore how elements relate within these examples, consider the element <m>\{1\}</m> in the context of the second example. The set <m>\{1\}</m> is not related to the empty set, denoted as <m>\{\}</m>, because <m>\{1\}</m> is not a subset of <m>\{\}</m>. Similarly, <m>\{1\}</m> does not relate to <m>\{0\}</m> because <m>\{1\}</m> is not a subset of <m>\{0\}</m>. However, <m>\{1\}</m> is related to <m>\{0,1\}</m> because <m>\{1\}</m> is indeed a subset of <m>\{0,1\}</m>, which we denote as <m>\{1\} R \{0,1\}</m>.
