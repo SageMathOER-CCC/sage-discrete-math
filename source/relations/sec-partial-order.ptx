@@ -2,5 +2,55 @@
 
 <section xml:id="partial-order" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Partial Order</title>
+    <p>
+        A Partial Order (PO) <m>\prec</m> satisfies the following properties:
+    </p>
+    <p>
+        <term>Reflexive</term> a R a for all a <m>\in</m> A
+    </p>
+    <p>
+        <term>Antisymmetric</term> If a R b and b R a then a = b for all a, b <m>\in</m> A
+    </p>
+    <p>
+        <term>Transitive</term> If a R b and b R c then a R c for all a, b, c <m>\in</m> A
+    </p>
+
+    <p>
+        <em>Example:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
+    </p>
+    <p>
+        To explore how elements relate within these examples, consider the element <m>\{1\}</m> in the context of the second example. The set <m>\{1\}</m> is not related to the empty set, denoted as <m>\{\}</m>, because <m>\{1\}</m> is not a subset of <m>\{\}</m>. Similarly, <m>\{1\}</m> does not relate to <m>\{0\}</m> because <m>\{1\}</m> is not a subset of <m>\{0\}</m>. However, <m>\{1\}</m> is related to <m>\{0,1\}</m> because <m>\{1\}</m> is indeed a subset of <m>\{0,1\}</m>, which we denote as <m>\{1\} R \{0,1\}</m>.
+    </p>
+    <sage>
+        <input>
+            # Define the set B
+            B = Set([0, 1])
+
+            # Generate the power set of B, denoted as A
+            A = B.subsets()
+
+            # Define the relation R on A where XRY iff X is a subset of Y
+            R = [(X, Y) for X in A for Y in A if X.issubset(Y)]
+
+            # Display the relation R
+            print(R)
+        </input>
+      </sage>
+      
+      <sage>
+        <input>
+            # Define the set B
+            B = Set([0, 1])
+
+            # Generate the power set of B, denoted as A
+            A = B.subsets()
+
+            # Define the poset using the subsets of B and the subset relation
+            P = Poset((A, lambda x, y: x.issubset(y)))
+
+            # Increase size of vertices to fit the label
+            P.plot(vertex_size=1000).show()
+        </input>
+      </sage>
     
 </section>

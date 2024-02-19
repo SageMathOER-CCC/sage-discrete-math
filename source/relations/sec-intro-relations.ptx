@@ -30,7 +30,6 @@
 
             all_combinations = Pants.cartesian_product(Shirts)
 
-            print("All combinations of Pants and Shirts:")
             for combo in all_combinations:
                 print(combo)
         </input>
