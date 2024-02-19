@@ -16,6 +16,7 @@
     <xi:include href="./set-theory/ch-set-theory.ptx" />
     <xi:include href="./combinatorics/ch-combinatorics.ptx" />
     <xi:include href="./logic/ch-logic.ptx" />
+    <xi:include href="./relations/ch-relations.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

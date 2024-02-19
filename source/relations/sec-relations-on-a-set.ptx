@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="relations-on-a-set" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Relations on a set</title>
+    
+    <p>
+        Let's explore specific kind of relation. When the two sets are identical, we refer to a relation from <m>A</m> to <m>A</m> as a relation <term>on</term> <m>A</m>.
+    </p>
+    <p>
+        <em>Example 1:</em> Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
+        <me>
+            R = \{(2,2),(2,4),(2,6),(2,8),(3,3),(3,6),(4,4),(4,8),(6,6),(8,8)\}
+        </me>
+    </p>
+    <p>
+        To understand the pairs in this relation, consider whether <m>2</m> divides <m>2</m>. Since it does, the pair <m>(2,2)</m> is included in <m>R</m>. However, <m>2</m> does not divide <m>3</m>, so any pair involving <m>2</m> and <m>3</m> is excluded. Following this logic, we include pairs where the first element divides the second.
+    </p>
+    <sage>
+        <input>
+            # Define the set A
+            A = Set([2, 3, 4, 6, 8])
+
+            # Define the relation R on A: aRb iff a divides b
+            R = [(a, b) for a in A for b in A if a.divides(b)]
+
+            print(R)
+        </input>
+    </sage>
+    <p>
+        A digraph, or directed graph, is a visual representation of a relation on a set. Every set element is shown as a node (vertex), and arrows between nodes represent the directional nature of the relation.
+    </p>
+    <sage>
+        <input>
+            # Create the digraph from the relation R
+            R_graph = DiGraph(R, loops=True,)
+
+            R_graph.show()
+        </input>
+      </sage>
+    <p>
+        <em>Example 2:</em> Consider the set <m>A = \{1,2,3\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a &lt; b</m>.
+    </p>
+    <sage>
+        <input>
+            # Define the set A
+            A = Set([1, 2, 3])
+
+            # Define the relation R on A: aRb if a &lt; b
+            R = [(a, b) for a in A for b in A if a &lt; b]
+
+            # Display the relation R
+            R
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # Create the digraph from the relation R
+            R_graph = DiGraph(R)
+
+            R_graph.show()
+        </input>
+    </sage>
+</section>
