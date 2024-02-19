@@ -27,7 +27,9 @@
         <input>
             Pants = Set(['p1', 'p2', 'p3', 'p4'])
             Shirts = Set(['s1', 's2', 's3', 's4'])
+
             all_combinations = Pants.cartesian_product(Shirts)
+
             print("All combinations of Pants and Shirts:")
             for combo in all_combinations:
                 print(combo)
@@ -57,10 +59,13 @@
     </p>
     <sage>
         <input>
+            # Define styles for pants and shirts as sets of tuples
             PantStyles = Set([('p1', 'athletic'), ('p2', 'formal'), ('p3', 'athletic'), ('p4', 'formal')])
             ShirtStyles = Set([('s1', 'athletic'), ('s2', 'formal'), ('s3', 'athletic'), ('s4', 'formal')])
+
             all_combinations = PantStyles.cartesian_product(ShirtStyles)
-            print("All combinations of PantStyles and ShirtStyles:")
+
+            print("All combinations of PantStyles and ShirtStyles, before filtering by matching styles:")
             for combo in all_combinations:
                 print(combo)
         </input>
@@ -75,18 +80,15 @@
     </p>
     <sage>
         <input>
-            # Define a function to determine if a pant and shirt match in style
-            def match_style(pant, shirt):
-                pant_style = next((style for (p, style) in PantStyles if p == pant), None)
-                shirt_style = next((style for (s, style) in ShirtStyles if s == shirt), None)
-                return pant_style and shirt_style and pant_style == shirt_style
+            # Define a relation for matching styles between Pants and Shirts
+            # Filter the Cartesian product of PantStyles and ShirtStyles
+            # to include only pairs where the styles (second element of each tuple) match
+            matching_style_combinations = [combo for combo in all_combinations if combo[0][1] == combo[1][1]]
 
-            # Generate the Cartesian product of Pants and Shirts to find matching styles
-            matching_style_relation = Set([combo for combo in Pants.cartesian_product(Shirts) if match_style(combo[0], combo[1])])
-
-            print("Matching styles between Pants and Shirts:")
-            for match in matching_style_relation:
-                print(match)
+            # Display the matching style combinations
+            print("\nMatching style combinations of Pants and Shirts:")
+            for (pant, shirt) in matching_style_combinations:
+                print(f"Pant: {pant[0]}, Shirt: {shirt[0]}, Style: {pant[1]}")
         </input>
     </sage>
 </section>
