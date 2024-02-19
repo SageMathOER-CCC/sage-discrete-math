@@ -2,4 +2,73 @@
 
 <section xml:id="properties" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Properties</title>
+    <p>
+       A relation R on set A may or may not satisfy the following properties:
+    </p>
+    <p>
+        <term>Reflexive</term>: a relates to a for all elements a in the set A. All the elements relate to themselves.
+        <me>
+            aRa \quad \forall a \in A
+        </me>
+    </p>
+    <p>
+        <term>Symmetric</term>: if a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
+        <me>
+            \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
+        </me>
+    </p>
+    <p>
+        <term>Antisymmetric</term>: The only case that a relates to be and b relates to a is when a and b are equal.
+        <me>
+            \text{If } aRb \text{ and } bRa \text{ then } a = b \quad \forall a, b \in A
+        </me>
+    </p>
+    <p>
+        <term>Transitive</term>: if a relates to b and b relates to c, then a relates to c.
+        <me>
+            \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
+        </me>
+    </p>
+    <p>
+        A relation is called an <term>equivalence relation</term> if the relation satisfies the following properties: reflexive symmetric and transitive.
+    </p>
+    <p>
+        <term>Class of equivalence</term> is defined by
+        <me>
+            [a] = \{x \in A | aRx\}
+        </me>
+    </p>
+    <p>
+        In plain english, the class of equivalence of a is the set of all elements in A that are related to a.
+    </p>
+    <p>
+        <me>
+            \text{Let A } = \{x | x \text{ is a person living in USA} \}
+        </me>
+    </p>
+    <p>
+        Let R be the following relation on A:
+    </p>
+    <p>
+        x R y if and only if x and y live in the same building.
+    </p>
+    <p>
+        <ul>
+            <li>
+                <p>
+                    <term>Reflexive</term>: A person lives in the same building as himself. This is true for everybody living in USA.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Symmetric</term>: If person x lives in the same building as person y, then person y lives in the same building as person x.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Transitive</term>: If person x lives in the same building as person y and person y lives in the same building as person z, then person x lives in the same building as person z.
+                </p>
+            </li>
+        </ul>
+    </p>
 </section>
