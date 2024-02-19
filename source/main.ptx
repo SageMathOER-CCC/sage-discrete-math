@@ -14,6 +14,8 @@
    <!-- Include chapters -->
     <xi:include href="./getting-started/ch-getting-started.ptx" />
     <xi:include href="./set-theory/ch-set-theory.ptx" />
+    <xi:include href="./combinatorics/ch-combinatorics.ptx" />
+    <xi:include href="./logic/ch-logic.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

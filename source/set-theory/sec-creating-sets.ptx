@@ -70,12 +70,12 @@
 	  <subsection xml:id="subsec-subsets">
 		<title>Subsets</title>
 		<p>
-			Assume we have a set A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <c>Subsets()</c> and <c>list()</c> functions.
+			Assume we have A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <c>Subsets()</c> function to generate all the subsets and then use the <c>Set()</c> function to show us all the subsets.
 		</p>
 		<sage>
 		  <input>
 			A = Subsets([1, 2, 3, 4, 5])
-			list(A)
+			Set(A)
 		  </input>
 		  <output></output>
 		</sage>

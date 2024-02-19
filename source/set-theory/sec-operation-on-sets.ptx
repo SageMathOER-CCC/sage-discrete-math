@@ -10,7 +10,7 @@
                SageMath allows you to easily check whether a certain number or subset is a part of a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
             </p>
             <p>
-                Let's consider set A = {1, 2, 3, 4, 5}. We can check if the number 3 is in set A:
+                Let's consider A = {1, 2, 3, 4, 5}. We can check if the number 3 is in set A:
             </p>
             <aside>
                 <title>Tips!</title>
@@ -26,11 +26,11 @@
                 <output></output>
             </sage>
             <p>
-                Similarly, we can check if the subset {3, 4, 5, 6} is a part of set A:
+                Similarly, we can check if B = {3, 4, 5, 6} is a subset of A:
             </p>
             <sage>
                 <input>
-                A = Set([1, 2, 3, 4, 5])
+                A = Subsets([1, 2, 3, 4, 5])
                 B = Set([3, 4, 5, 6])
                 B in A
                 </input>
@@ -46,7 +46,7 @@
             </p>
 
                <p>
-                    Suppose set A = {1, 2, 3, 4, 5}, set B = {3, 4, 5, 6}, and set C = {4, 5, 6}. We can use the <c>union()</c> function here.
+                    Suppose A = {1, 2, 3, 4, 5}, B = {3, 4, 5, 6}. We can use the <c>union()</c> function here.
                </p>
                 <aside>
                     <title>Tips!</title>
@@ -57,9 +57,8 @@
             <sage>
                 <input>
                     A = Set([1, 2, 3, 4, 5])
-                    B = Set([3, 4, 5, 6])
-                    C = Set([4, 5, 6])
-                    A.union(B).union(C)
+                    B = Set([3, 4, 5, 6]) 
+                    A.union(B)
                 </input>
                 <output></output>
                 </sage>
@@ -70,8 +69,7 @@
                     <input>
                         A = Set([1, 2, 3, 4, 5])
                         B = Set([3, 4, 5, 6])
-                        C = Set([4, 5, 6])
-                        A | B | C
+                        A | B 
                     </input>
                     <output></output>
                   </sage>
@@ -85,7 +83,7 @@
                 Similar to union, there are two methods of using the intersection function in sage.
             </p>
                 <p>
-                    Suppose set A = {1, 2, 3, 4, 5}, Set B = {3, 4, 5, 6}, and set C = {4, 5, 6}. We can use the <c>intersection()</c> function here.
+                    Suppose A = {1, 2, 3, 4, 5}, B = {3, 4, 5, 6}. We can use the <c>intersection()</c> function here.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -97,8 +95,7 @@
                     <input>
                         A = Set([1, 2, 3, 4, 5])
                         B = Set([3, 4, 5, 6])
-                        C = Set([4, 5, 6])
-                        A.intersection(B).intersection(C)
+                        A.intersection(B)
                     </input>
                     <output></output>
                     </sage>
@@ -109,8 +106,7 @@
                         <input>
                             A = Set([1, 2, 3, 4, 5])
                             B = Set([3, 4, 5, 6])
-                            C = Set([4, 5, 6])
-                            A &amp; B &amp; C
+                            A &amp; B
                         </input>
                         <output></output>
                       </sage>
@@ -123,7 +119,7 @@
                 We have two methods to solve for difference as well.
             </p>
                 <p>
-                    Suppose set A = {1, 2, 3, 4, 5}, set B = {3, 4, 5, 6}, and set C = {4, 5, 6}. We can use the <c>difference()</c> function here.
+                    Suppose A = {1, 2, 3, 4, 5}, B = {3, 4, 5, 6}. We can use the <c>difference()</c> function here.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -135,8 +131,7 @@
                     <input>
                         A = Set([1, 2, 3, 4, 5])
                         B = Set([3, 4, 5, 6])
-                        C = Set([4, 5, 6])
-                        A.difference(B).difference(C)
+                        A.difference(B)
                     </input>
                     <output></output>
                     </sage>
@@ -147,18 +142,54 @@
                         <input>
                             A = Set([1, 2, 3, 4, 5])
                             B = Set([3, 4, 5, 6])
-                            C = Set([4, 5, 6])
-                            A - B - C
+                            A - B 
                         </input>
                         <output></output>
                       </sage>           
+        </subsection>
+
+        <!-- Multi Set Opperation Subsection -->
+        <subsection>
+            <title>Multiple Sets</title>
+            <p>
+                For doing operations using involving multiple sets, we can repeat the operations to get our results, let us see an example.
+            </p>
+
+               <p>
+                    Suppose A = {1, 2, 3, 4, 5}, B = {3, 4, 5, 6} and C = {5, 6, 7}. To find the union of all three sets, we will repeat the <c>union()</c> function.
+               </p> 
+            <sage>
+                <input>
+                    A = Set([1, 2, 3, 4, 5])
+                    B = Set([3, 4, 5, 6]) 
+                    C = Set([5, 6, 7]) 
+                    A.union(B).union(C)
+                </input>
+                <output></output>
+                </sage>
+                <p>
+                    Alternatively, we can also repeat the <c> | </c> operator to perform the union operation.  
+                </p>
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        B = Set([3, 4, 5, 6])
+                        C = Set([5, 6, 7])
+                        A | B | C
+                    </input>
+                    <output></output>
+                  </sage>
+                  <p>
+                    Similar operations can also be done using the <c>intersection()</c> and <c>difference()</c> functions as well as their operators.
+                  </p>
+
         </subsection>
 
         <!-- Set Complement Subsection -->
         <subsection>
             <title>Set Complement</title>
                 <p>
-                    Assume the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and set A = {1, 2, 3, 4, 5}. We can use the <c>difference()</c> function here.
+                    Assume the universal set, U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and A = {1, 2, 3, 4, 5}. We can use the <c>difference()</c> function here.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -191,7 +222,7 @@
         <subsection>
             <title>Cartesian Product of Sets</title>
                 <p>
-                    Suppose set A = {1, 2, 3, 4, 5} and set D = {x, y}. We can use the <c>cartesian_product()</c> and <c>list()</c> functions here.
+                    Suppose A = {1, 2, 3, 4, 5} and D = {x, y}. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions here.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -203,9 +234,9 @@
                     <input>
                         A = Set([1, 2, 3, 4, 5])
                         D = Set(['x', 'y'])
-                        cartesian_product([A, D]).list()
+                        Set(cartesian_product([A, D]))
                     </input>
-                    <output>[(1, 'y'), (1, 'x'), (2, 'y'), (2, 'x')]
+                    <output>
                     </output>
                     </sage>
         </subsection>
