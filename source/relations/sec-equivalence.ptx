@@ -23,7 +23,7 @@
         Let R be the following relation on A:
     </p>
     <p>
-        x R y if and only if x and y live in the same building.
+        x R y iff x and y live in the same building.
     </p>
     <p>
         <ul>
