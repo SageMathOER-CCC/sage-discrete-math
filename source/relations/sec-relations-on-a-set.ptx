@@ -51,7 +51,16 @@
             # Display the relation R
             R
         </input>
-      </sage>
+    </sage>
+
+    <sage>
+        <input>
+            # Create the digraph from the relation R
+            R_graph = DiGraph(R)
+
+            R_graph.show()
+        </input>
+    </sage>
     <p>
         <em>Example 3:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
     </p>
@@ -71,17 +80,22 @@
 
             # Display the relation R
             print(R)
-
-            # Explore specific relations
-            # Check if {1} is a subset of the empty set
-            print(Set([1]).issubset(Set([])))  # Expected output: False
-
-            # Check if {1} is a subset of {0}
-            print(Set([1]).issubset(Set([0])))  # Expected output: False
-
-            # Check if {1} is a subset of {0, 1}
-            print(Set([1]).issubset(Set([0, 1])))  # Expected output: True
-
         </input>
-      </sage> 
+      </sage>
+      
+      <sage>
+        <input>
+            # Define the set B
+            B = Set([0, 1])
+
+            # Generate the power set of B, denoted as A
+            A = B.subsets()
+
+            # Define the poset using the subsets of B and the subset relation
+            P = Poset((A, lambda x, y: x.issubset(y)))
+
+            # Increase size of vertices to fit the label
+            P.plot(vertex_size=1000).show()
+        </input>
+      </sage>
 </section>
