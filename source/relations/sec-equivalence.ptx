@@ -3,52 +3,103 @@
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title>
     <p>
-        A relation is called an <term>equivalence relation</term> if the relation satisfies the following properties: reflexive symmetric and transitive.
+        A relation is called an <term>equivalence relation</term> if it satisfies three key properties: reflexivity, symmetry, and transitivity. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.
     </p>
     <p>
-        <term>Class of equivalence</term> is defined by
+        The <term>class of equivalence</term> for an element a in set A is defined by the set:
+    </p>
+    <me>
+        |a| = \{x \in A \; | \; xRa\}
+    </me>
+    <p>
+        This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.
+    </p>
+    <p>
+        Consider set A as defined by the scenario:
+    </p>
+    <p>
         <me>
-            [a] = \{x \in A | aRx\}
+            \text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
         </me>
     </p>
+    <sage>
+        <input>
+            # Define the set of people and their respective floors using SageMath Set
+            A = Set([('Person1', 1), ('Person2', 2), ('Person3', 3),
+            ('Person4', 1), ('Person5', 2), ('Person6', 3),
+            ('Person7', 1), ('Person8', 2), ('Person9', 3), ('Person10', 1)])
+        </input>
+    </sage>
     <p>
-        The class of equivalence of a is the set of all elements in A that are related to a.
+        In this context, let R be the relation on A described as follows:
     </p>
+    <me>
+        \text{x R y iff x and y live in the same floor of the building.}
+    </me>
+    <sage>
+        <input>
+            def R(x, y):
+                return x[1] == y[1]  # x[1] and y[1] represent the floors of person x and y, respectively
+
+            def class_of_equivalence(person, A):
+                return Set([x for x in A if R(person, x)])
+
+            def print_class_of_equivalence(person, A):
+                equivalence_class = class_of_equivalence(person, A)
+                # Extracting just the names from the tuples for a more readable output
+                names_in_class = [x[0] for x in equivalence_class]
+                print(f"Class of Equivalence for {person[0]} (living on floor {person[1]}): {', '.join(names_in_class)}")
+                
+            # Example: Class of equivalence for 'Person1'
+            person_a = ('Person1', 1)
+            print_class_of_equivalence(person_a, A)
+
+        </input>
+    </sage>
     <p>
-        <me>
-            \text{Let A } = \{x | x \text{ is a person living in USA} \}
-        </me>
-    </p>
-    <p>
-        Let R be the following relation on A:
-    </p>
-    <p>
-        x R y if and only if x and y live in the same building.
+        This relation demonstrates the properties of an equivalence relation:
     </p>
     <p>
         <ul>
             <li>
                 <p>
-                    <term>Reflexive</term>: A person lives in the same building as himself. This is true for everybody living in USA.
+                    <term>Reflexive</term>: A person lives in the same floor as themselves.
                 </p>
             </li>
             <li>
                 <p>
-                    <term>Symmetric</term>: If person x lives in the same building as person y, then person y lives in the same building as person x.
+                    <term>Symmetric</term>: If person x lives in the same floor as person y, then person y lives in the same floor as person x.
                 </p>
             </li>
             <li>
                 <p>
-                    <term>Transitive</term>: If person x lives in the same building as person y and person y lives in the same building as person z, then person x lives in the same building as person z.
+                    <term>Transitive</term>: If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.
                 </p>
             </li>
         </ul>
     </p>
+    <sage>
+        <input>
+            # Reflexivity Test
+            reflexive_test = all(R(person, person) for person in A)
+            print("Reflexive:", reflexive_test)
+
+            # Symmetry Test
+            symmetry_test = all(R(x, y) == R(y, x) for x in A for y in A)
+            print("Symmetric:", symmetry_test)
+
+            # Transitivity Test
+            transitivity_test = all(not R(x, y) or not R(y, z) or R(x, z) for x in A for y in A for z in A)
+            print("Transitive:", transitivity_test)
+        </input>
+    </sage>
     <p>
-        Class of equivalence
-        <me>
-            \text{person } a = \{ x \in A | x R a \} =
-            \text{all people living in the same building as person } a
-        </me>
+        For the class of equivalence, considering person a as an example:
+    </p>
+    <me>
+        | \text{person a} | = \{ x \in A \; | \; x R a \} = \text{all people living on the same floor as person a}
+    </me>
+    <p>
+        This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation "living on the same floor as" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.
     </p>
 </section>
