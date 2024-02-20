@@ -234,18 +234,20 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.5</span><span class="space"> </span><span class="title">Partial Order</span>
 </h2>
 <div class="para" id="partial-order-2">A Partial Order (PO) <span class="process-math">\(\prec\)</span> satisfies the following properties:</div>
-<div class="para" id="partial-order-3">
-<dfn class="terminology">Reflexive</dfn> a R a for all a <span class="process-math">\(\in\)</span> A</div>
+<ul class="disc">
+<li id="partial-order-3-1"><div class="para" id="partial-order-3-1-1">
+<dfn class="terminology">Reflexive</dfn> a R a for all a <span class="process-math">\(\in\)</span> A</div></li>
+<li id="partial-order-3-2"><div class="para" id="partial-order-3-2-1">
+<dfn class="terminology">Antisymmetric</dfn> If a R b and b R a then a = b for all a, b <span class="process-math">\(\in\)</span> A</div></li>
+<li id="partial-order-3-3"><div class="para" id="partial-order-3-3-1">
+<dfn class="terminology">Transitive</dfn> If a R b and b R c then a R c for all a, b, c <span class="process-math">\(\in\)</span> A</div></li>
+</ul>
 <div class="para" id="partial-order-4">
-<dfn class="terminology">Antisymmetric</dfn> If a R b and b R a then a = b for all a, b <span class="process-math">\(\in\)</span> A</div>
-<div class="para" id="partial-order-5">
-<dfn class="terminology">Transitive</dfn> If a R b and b R c then a R c for all a, b, c <span class="process-math">\(\in\)</span> A</div>
-<div class="para" id="partial-order-6">
 <em class="emphasis">Example:</em> Let <span class="process-math">\(B = \{0,1\}\)</span> and define <span class="process-math">\(A\)</span> as the power set of <span class="process-math">\(B\text{,}\)</span> denoted <span class="process-math">\(A = \mathcal{P}(B)\text{.}\)</span> Establish a relation <span class="process-math">\(R\)</span> on <span class="process-math">\(A\)</span> where <span class="process-math">\(XRY\)</span> if and only if <span class="process-math">\(X \subseteq Y\text{.}\)</span> This relation represents the idea of one set being a subset of another within the power set of <span class="process-math">\(B\text{.}\)</span>
 </div>
-<div class="para" id="partial-order-7">To explore how elements relate within these examples, consider the element <span class="process-math">\(\{1\}\)</span> in the context of the second example. The set <span class="process-math">\(\{1\}\)</span> is not related to the empty set, denoted as <span class="process-math">\(\{\}\text{,}\)</span> because <span class="process-math">\(\{1\}\)</span> is not a subset of <span class="process-math">\(\{\}\text{.}\)</span> Similarly, <span class="process-math">\(\{1\}\)</span> does not relate to <span class="process-math">\(\{0\}\)</span> because <span class="process-math">\(\{1\}\)</span> is not a subset of <span class="process-math">\(\{0\}\text{.}\)</span> However, <span class="process-math">\(\{1\}\)</span> is related to <span class="process-math">\(\{0,1\}\)</span> because <span class="process-math">\(\{1\}\)</span> is indeed a subset of <span class="process-math">\(\{0,1\}\text{,}\)</span> which we denote as <span class="process-math">\(\{1\} R \{0,1\}\text{.}\)</span>
+<div class="para" id="partial-order-5">To explore how elements relate within these examples, consider the element <span class="process-math">\(\{1\}\)</span> in the context of the second example. The set <span class="process-math">\(\{1\}\)</span> is not related to the empty set, denoted as <span class="process-math">\(\{\}\text{,}\)</span> because <span class="process-math">\(\{1\}\)</span> is not a subset of <span class="process-math">\(\{\}\text{.}\)</span> Similarly, <span class="process-math">\(\{1\}\)</span> does not relate to <span class="process-math">\(\{0\}\)</span> because <span class="process-math">\(\{1\}\)</span> is not a subset of <span class="process-math">\(\{0\}\text{.}\)</span> However, <span class="process-math">\(\{1\}\)</span> is related to <span class="process-math">\(\{0,1\}\)</span> because <span class="process-math">\(\{1\}\)</span> is indeed a subset of <span class="process-math">\(\{0,1\}\text{,}\)</span> which we denote as <span class="process-math">\(\{1\} R \{0,1\}\text{.}\)</span>
 </div>
-<pre id="partial-order-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set B
+<pre id="partial-order-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set B
 B = Set([0, 1])
 
 # Generate the power set of B, denoted as A
@@ -257,7 +259,7 @@ R = [(X, Y) for X in A for Y in A if X.issubset(Y)]
 # Display the relation R
 print(R)
 </script></pre>
-<pre id="partial-order-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set B
+<pre id="partial-order-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set B
 B = Set([0, 1])
 
 # Generate the power set of B, denoted as A

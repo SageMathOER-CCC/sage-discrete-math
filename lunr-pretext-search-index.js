@@ -241,7 +241,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Introduction to Relations",
-  "body": " Introduction to Relations  A relation from set into set is defined as a subset of the Cartesian product , represented as:   The Cartesian product consists of all possible ordered pairs , where and . Each pair combines an element from set with an element from set .  Let's define two sets, Pants and Shirts, as examples:      The Cartesian product of Pants and Shirts includes all possible combinations of pants with shirts.   To explore how we can match pants with shirts based on their style, we define a relation as a subset of this Cartesian product, where each pair matches by a certain criterion, such as style.  First, let's define a set of Styles, and then create relations for Pants and Shirts based on these styles.         We can visualize all possible combinations of pants and shirts, taking their styles into account.   With these combinations, let's define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles ShirtStyles, including only those pairs where the pants and shirts have the same style. This is a second example of a relation, on another relation.      "
+  "body": " Introduction to Relations  A relation  from set into set is defined as a subset of the Cartesian product , represented as:   The Cartesian product consists of all possible ordered pairs , where and . Each pair combines an element from set with an element from set .  Let's define two sets, Pants and Shirts, as examples:      The Cartesian product of Pants and Shirts includes all possible combinations of pants with shirts.   To explore how we can match pants with shirts based on their style, we define a relation as a subset of this Cartesian product, where each pair matches by a certain criterion, such as style.  First, let's define a set of Styles, and then create relations for Pants and Shirts based on these styles.         We can visualize all possible combinations of pants and shirts, taking their styles into account.   With these combinations, let's define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles ShirtStyles, including only those pairs where the pants and shirts have the same style. This is a second example of a relation, on another relation.      "
+},
+{
+  "id": "intro-relations-2",
+  "level": "2",
+  "url": "intro-relations.html#intro-relations-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "relation "
 },
 {
   "id": "relations-on-a-set",
@@ -313,7 +322,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "Equivalence",
-  "body": " Equivalence  A relation is called an equivalence relation if the relation satisfies the following properties: reflexive symmetric and transitive.   Class of equivalence is defined by   The class of equivalence of a is the set of all elements in A that are related to a.     Let R be the following relation on A:  x R y if and only if x and y live in the same building.      Reflexive : A person lives in the same building as himself. This is true for everybody living in USA.     Symmetric : If person x lives in the same building as person y, then person y lives in the same building as person x.     Transitive : If person x lives in the same building as person y and person y lives in the same building as person z, then person x lives in the same building as person z.     Class of equivalence   "
+  "body": " Equivalence  A relation is called an equivalence relation if it satisfies three key properties: reflexivity, symmetry, and transitivity. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.  The class of equivalence for an element a in set A is defined by the set:   This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.  Consider set A as defined by the scenario:      In this context, let R be the relation on A described as follows:    This relation demonstrates the properties of an equivalence relation:      Reflexive : A person lives in the same floor as themselves.     Symmetric : If person x lives in the same floor as person y, then person y lives in the same floor as person x.     Transitive : If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.      For the class of equivalence, considering person a as an example:   This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation \"living on the same floor as\" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.  "
 },
 {
   "id": "equivalence-2",
@@ -331,12 +340,12 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Class of equivalence "
+  "body": "class of equivalence "
 },
 {
-  "id": "equivalence-8",
+  "id": "equivalence-13",
   "level": "2",
-  "url": "equivalence.html#equivalence-8",
+  "url": "equivalence.html#equivalence-13",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -349,30 +358,30 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.5",
   "title": "Partial Order",
-  "body": " Partial Order  A Partial Order (PO) satisfies the following properties:   Reflexive a R a for all a A   Antisymmetric If a R b and b R a then a = b for all a, b A   Transitive If a R b and b R c then a R c for all a, b, c A   Example: Let and define as the power set of , denoted . Establish a relation on where if and only if . This relation represents the idea of one set being a subset of another within the power set of .  To explore how elements relate within these examples, consider the element in the context of the second example. The set is not related to the empty set, denoted as , because is not a subset of . Similarly, does not relate to because is not a subset of . However, is related to because is indeed a subset of , which we denote as .    "
+  "body": " Partial Order  A Partial Order (PO) satisfies the following properties:     Reflexive a R a for all a A     Antisymmetric If a R b and b R a then a = b for all a, b A     Transitive If a R b and b R c then a R c for all a, b, c A     Example: Let and define as the power set of , denoted . Establish a relation on where if and only if . This relation represents the idea of one set being a subset of another within the power set of .  To explore how elements relate within these examples, consider the element in the context of the second example. The set is not related to the empty set, denoted as , because is not a subset of . Similarly, does not relate to because is not a subset of . However, is related to because is indeed a subset of , which we denote as .    "
 },
 {
-  "id": "partial-order-3",
+  "id": "partial-order-3-1-1",
   "level": "2",
-  "url": "partial-order.html#partial-order-3",
+  "url": "partial-order.html#partial-order-3-1-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Reflexive "
 },
 {
-  "id": "partial-order-4",
+  "id": "partial-order-3-2-1",
   "level": "2",
-  "url": "partial-order.html#partial-order-4",
+  "url": "partial-order.html#partial-order-3-2-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Antisymmetric "
 },
 {
-  "id": "partial-order-5",
+  "id": "partial-order-3-3-1",
   "level": "2",
-  "url": "partial-order.html#partial-order-5",
+  "url": "partial-order.html#partial-order-3-3-1",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

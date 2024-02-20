@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -221,41 +233,75 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="equivalence"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.4</span><span class="space"> </span><span class="title">Equivalence</span>
 </h2>
-<div class="para" id="equivalence-2">A relation is called an <dfn class="terminology">equivalence relation</dfn> if the relation satisfies the following properties: reflexive symmetric and transitive.</div>
-<div class="para logical" id="equivalence-3">
-<div class="para">
-<dfn class="terminology">Class of equivalence</dfn> is defined by</div>
+<div class="para" id="equivalence-2">A relation is called an <dfn class="terminology">equivalence relation</dfn> if it satisfies three key properties: reflexivity, symmetry, and transitivity. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.</div>
+<div class="para" id="equivalence-3">The <dfn class="terminology">class of equivalence</dfn> for an element a in set A is defined by the set:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[a] = \{x \in A | aRx\}
+|a| = \{x \in A \; | \; xRa\}
 \end{equation*}
 </div>
-</div>
-<div class="para" id="equivalence-4">The class of equivalence of a is the set of all elements in A that are related to a.</div>
-<div class="para logical" id="equivalence-5"><div class="displaymath process-math">
+<div class="para" id="equivalence-5">This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.</div>
+<div class="para" id="equivalence-6">Consider set A as defined by the scenario:</div>
+<div class="para logical" id="equivalence-7"><div class="displaymath process-math">
 \begin{equation*}
-\text{Let A } = \{x | x \text{ is a person living in USA} \}
+\text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
 \end{equation*}
 </div></div>
-<div class="para" id="equivalence-6">Let R be the following relation on A:</div>
-<div class="para" id="equivalence-7">x R y if and only if x and y live in the same building.</div>
-<div class="para logical" id="equivalence-8"><ul class="disc">
-<li id="equivalence-8-1-1"><div class="para" id="equivalence-8-1-1-1">
-<dfn class="terminology">Reflexive</dfn>: A person lives in the same building as himself. This is true for everybody living in USA.</div></li>
-<li id="equivalence-8-1-2"><div class="para" id="equivalence-8-1-2-1">
-<dfn class="terminology">Symmetric</dfn>: If person x lives in the same building as person y, then person y lives in the same building as person x.</div></li>
-<li id="equivalence-8-1-3"><div class="para" id="equivalence-8-1-3-1">
-<dfn class="terminology">Transitive</dfn>: If person x lives in the same building as person y and person y lives in the same building as person z, then person x lives in the same building as person z.</div></li>
-</ul></div>
-<div class="para logical" id="equivalence-9">
-<div class="para">Class of equivalence</div>
+<pre id="equivalence-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set of people and their respective floors using SageMath Set
+A = Set([('Person1', 1), ('Person2', 2), ('Person3', 3),
+('Person4', 1), ('Person5', 2), ('Person6', 3),
+('Person7', 1), ('Person8', 2), ('Person9', 3), ('Person10', 1)])
+</script></pre>
+<div class="para" id="equivalence-9">In this context, let R be the relation on A described as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{person } a = \{ x \in A | x R a \} =
-\text{all people living in the same building as person } a
+\text{x R y iff x and y live in the same floor of the building.}
 \end{equation*}
 </div>
-</div></section></div>
+<pre id="equivalence-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def R(x, y):
+    return x[1] == y[1]  # x[1] and y[1] represent the floors of person x and y, respectively
+
+def class_of_equivalence(person, A):
+    return Set([x for x in A if R(person, x)])
+
+def print_class_of_equivalence(person, A):
+    equivalence_class = class_of_equivalence(person, A)
+    # Extracting just the names from the tuples for a more readable output
+    names_in_class = [x[0] for x in equivalence_class]
+    print(f"Class of Equivalence for {person[0]} (living on floor {person[1]}): {', '.join(names_in_class)}")
+    
+# Example: Class of equivalence for 'Person1'
+person_a = ('Person1', 1)
+print_class_of_equivalence(person_a, A)
+</script></pre>
+<div class="para" id="equivalence-12">This relation demonstrates the properties of an equivalence relation:</div>
+<div class="para logical" id="equivalence-13"><ul class="disc">
+<li id="equivalence-13-1-1"><div class="para" id="equivalence-13-1-1-1">
+<dfn class="terminology">Reflexive</dfn>: A person lives in the same floor as themselves.</div></li>
+<li id="equivalence-13-1-2"><div class="para" id="equivalence-13-1-2-1">
+<dfn class="terminology">Symmetric</dfn>: If person x lives in the same floor as person y, then person y lives in the same floor as person x.</div></li>
+<li id="equivalence-13-1-3"><div class="para" id="equivalence-13-1-3-1">
+<dfn class="terminology">Transitive</dfn>: If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.</div></li>
+</ul></div>
+<pre id="equivalence-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Reflexivity Test
+reflexive_test = all(R(person, person) for person in A)
+print("Reflexive:", reflexive_test)
+
+# Symmetry Test
+symmetry_test = all(R(x, y) == R(y, x) for x in A for y in A)
+print("Symmetric:", symmetry_test)
+
+# Transitivity Test
+transitivity_test = all(not R(x, y) or not R(y, z) or R(x, z) for x in A for y in A for z in A)
+print("Transitive:", transitivity_test)
+</script></pre>
+<div class="para" id="equivalence-15">For the class of equivalence, considering person a as an example:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+| \text{person a} | = \{ x \in A \; | \; x R a \} = \text{all people living on the same floor as person a}
+\end{equation*}
+</div>
+<div class="para" id="equivalence-17">This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation "living on the same floor as" groups the building’s residents into sets, with each set corresponding to a floor, forming an equivalence class.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="partial-order.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
