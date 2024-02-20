@@ -3,7 +3,7 @@
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title>
     <p>
-        A relation is called an <term>equivalence relation</term> if the relation satisfies the following properties: reflexive symmetric and transitive.
+        A relation is called an <term>equivalence relation</term> if the relation satisfies the reflexive symmetric and transitive properties.
     </p>
     <p>
         <term>Class of equivalence</term> is defined by
@@ -16,7 +16,7 @@
     </p>
     <p>
         <me>
-            \text{Let A } = \{x \; | \; x \text{ is a person living in a building} \}
+            \text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
         </me>
     </p>
     <p>

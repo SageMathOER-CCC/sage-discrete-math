@@ -3,7 +3,7 @@
 <section xml:id="intro-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Introduction to Relations</title>
     <p>
-        A relation <m>R</m> from set <m>A</m> into set <m>B</m> is defined as a subset of the Cartesian product <m>A \times B</m>, represented as:
+        A <term>relation</term> <m>R</m> from set <m>A</m> into set <m>B</m> is defined as a subset of the Cartesian product <m>A \times B</m>, represented as:
         <me>R \subseteq A \times B</me>
     </p>
     <p>
