@@ -5,16 +5,23 @@
     <p>
         A Partial Order (PO) <m>\prec</m> satisfies the following properties:
     </p>
-    <p>
-        <term>Reflexive</term> a R a for all a <m>\in</m> A
-    </p>
-    <p>
-        <term>Antisymmetric</term> If a R b and b R a then a = b for all a, b <m>\in</m> A
-    </p>
-    <p>
-        <term>Transitive</term> If a R b and b R c then a R c for all a, b, c <m>\in</m> A
-    </p>
-
+    <ul>
+        <li>
+            <p>
+                <term>Reflexive</term> a R a for all a <m>\in</m> A
+            </p>
+        </li>
+        <li>
+            <p>
+                <term>Antisymmetric</term> If a R b and b R a then a = b for all a, b <m>\in</m> A
+            </p>
+        </li>
+        <li>
+            <p>
+                <term>Transitive</term> If a R b and b R c then a R c for all a, b, c <m>\in</m> A
+            </p>
+        </li>
+    </ul>
     <p>
         <em>Example:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
     </p>
