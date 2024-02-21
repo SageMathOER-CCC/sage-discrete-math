@@ -9,7 +9,7 @@
       </sage>
     
       <p>
-        You have have noticed, sometimes we use <c>Print()</c> to display output and sometimes we do not. Other times we need to use multiple print statements.
+        Sometimes we use <c>Print()</c> to display output and sometimes we do not. Other times we need to use multiple print statements.
       </p>
     
       <sage>
@@ -37,7 +37,7 @@
       </sage>
     
       <p>
-        Did you expect these words to be on the same line? Let's investigate what <c>Print()</c> does.
+        Did you expect these words to be on the same line? Let's investigate what <c>Print()</c> does. We can look up the documentation for a function by using the <c>?</c> operator at the end of the function name.
       </p>
     
       <sage>
@@ -70,6 +70,4 @@
           show(sqrt(2) * log(3)) 
         </input>
       </sage>
-    
-
 </section>

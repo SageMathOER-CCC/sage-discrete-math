@@ -92,7 +92,7 @@
 
   <sage>
     <input>
-      print(Hello, World)
+      print(Hi)
     </input>
   </sage>
 
