@@ -2,5 +2,65 @@
 
 <section xml:id="printing" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Printing</title>
+    <sage>
+        <input>
+          print("Hello, World!")
+        </input>
+      </sage>
+    
+      <p>
+        You have have noticed, sometimes we use <c>Print()</c> to display output and sometimes we do not. Other times we need to use multiple print statements.
+      </p>
+    
+      <sage>
+        <input>
+          "Hello, World!"
+        </input>
+      </sage>
+    
+      <sage>
+        <input>
+          "Hello, "
+          "World!"
+        </input>
+      </sage>
+    
+      <p>
+        It looks like Sage is only showing the value of the last line of code. If we want to print both of these strings we will need two print statements.
+      </p>
+    
+      <sage>
+        <input>
+          print("Hello, ")
+          print("World!")
+        </input>
+      </sage>
+    
+      <p>
+        Did you expect these words to be on the same line? Let's investigate what <c>Print()</c> does.
+      </p>
+    
+      <sage>
+        <input>
+          print?
+        </input>
+      </sage>
+    
+      <p>
+        It turns out <c>Print()</c> adds a new line after printing. Lets get the output we want on a single line.
+      </p>
+    
+      <sage>
+        <input>
+          print("Hello, ", end="")
+          print("World!")
+        </input>
+      </sage>
+    
+      <sage>
+        <input>
+          print("Hello, " + "World!")
+        </input>
+      </sage>
 
 </section>
