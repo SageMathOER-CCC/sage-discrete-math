@@ -52,8 +52,7 @@
     
       <sage>
         <input>
-          print("Hello, ", end="")
-          print("World!")
+          print("Hello, ", "World!")
         </input>
       </sage>
     
@@ -62,5 +61,15 @@
           print("Hello, " + "World!")
         </input>
       </sage>
+
+      <p>
+        We can also display mathematical notation
+      </p>
+      <sage>
+        <input>
+          show(sqrt(2) * log(3)) 
+        </input>
+      </sage>
+    
 
 </section>
