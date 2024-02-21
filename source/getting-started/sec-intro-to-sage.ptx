@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="about-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Intro to Sage</title>
+
+  <p>
+    You can run and edit the Sage code directly in the SageMathCells embedded in this webpage. All the cells on the same page share the same memory. Be sure to run the cells in order. If you run the cells on a given page out of order, you may get unexpected results.
+  </p>
+  
+  <p>
+    Notice how Sage builds on Python. Valid Python is also valid Sage. Sage adds many feature that are well suited for mathematical computation. Before we get started with discrete math, let's see how we can use Sage as a calculator.
+  </p>
+  
+  <sage>
+    <input>
+      # Lines that start with a pound sign are comments
+      # and ignored by Sage
+      # Run this cell by clicking the Evaluate (Sage) button
+      # or use the keyboard shortcut command + shift
+      1+1
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # ** is the exponentiation operator
+      2**3
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # / returns a rational number
+      5/2
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # // returns an Integer without the remainder
+      5//2
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # % is the modulo operator and returns the remainder
+      5 % 2
+    </input>
+  </sage>
+</section>

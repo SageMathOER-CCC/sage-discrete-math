@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="OOP" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Object Oriented Programming</title>
+  
+  
+  <p>
+    What is an <term>object</term>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
+  </p>
+  
+  <p>
+    A class provides a template or blueprint for creating objects and defines the <term>attributes</term> (properties) and <term>methods</term> (behaviors) that those objects can have.
+  </p>
+  
+  <p>
+    This might not mean too much right now and it will be more clear as we explore what is known as <term>object-oriented</term> programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.
+  </p>
+  
+  <p>
+    <term>Dot notation</term> is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
+  </p>
+
+  <sage>
+    <input>
+      # Declare a variable named n and assign it the value 2
+      n = 2
+
+      # Calculate the square root of n
+      r = n.sqrt()
+
+      # Evaluate to 10 digits of precision
+      d = N(r, digits=10)
+      print(d)
+    </input>
+  </sage>
+
+  <p>
+    Sage supports different ways of accomplishing the same task.
+  </p>
+
+  <sage>
+    <input>
+      N(sqrt(2), digits=10)
+    </input>
+  </sage>
+
+  
+
+</section>
