@@ -29,8 +29,7 @@
       r = n.sqrt()
 
       # Evaluate to 10 digits of precision
-      d = N(r, digits=10)
-      print(d)
+      d = N(r, digits=10); d # ; is the same as a new line
     </input>
   </sage>
 

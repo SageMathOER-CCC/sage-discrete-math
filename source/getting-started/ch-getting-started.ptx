@@ -21,7 +21,9 @@
   <!-- include sections -->
   <xi:include href="sec-intro-to-sage.ptx" />
   <xi:include href="sec-OOP.ptx" />
+  <xi:include href="sec-printing.ptx" />
   <xi:include href="sec-data-types.ptx" />
+  <xi:include href="sec-iteration.ptx" />
   <xi:include href="sec-debugging.ptx" />
   <xi:include href="sec-documentation.ptx" />
   <xi:include href="sec-sage-browser.ptx" />
