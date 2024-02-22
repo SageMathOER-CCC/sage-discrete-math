@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="digraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Digraphs</title>
+    <p>
+        A digraph, or directed graph, is a visual representation of a relation R on the set A. Every element in set A is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represent the pair <m>(a,b)</m> on the relation R.
+    </p>
+    <p>
+        Consider the set <m>A = \{1,2,3,4\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a &lt; b</m>.
+    </p>
+    <sage>
+        <input>
+            # Define the set A
+            A = Set([1, 2, 3, 4])
+
+            # Define the relation R on A: aRb if a &lt; b
+            R = [(a, b) for a in A for b in A if a &lt; b]
+
+            # Display the relation R
+            R
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # Create the digraph from the relation R
+            DiGraph(R)
+        </input>
+    </sage>
+</section>
