@@ -3,7 +3,25 @@
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title>
     <p>
-        A relation is called an <term>equivalence relation</term> if it satisfies three key properties: reflexivity, symmetry, and transitivity. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.
+        A relation is called an <term>equivalence relation</term> if it satisfies three key properties: <term>reflexivity</term>, <term>symmetry</term>, and <term>transitivity</term>. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.
+    </p>
+    <p>
+        <term>Reflexive</term>: a relates to a for all elements a in the set A. All the elements relate to themselves.
+        <me>
+            aRa \quad \forall a \in A
+        </me>
+    </p>
+    <p>
+        <term>Symmetric</term>: if a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
+        <me>
+            \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
+        </me>
+    </p>
+    <p>
+        <term>Transitive</term>: if a relates to b and b relates to c, then a relates to c.
+        <me>
+            \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
+        </me>
     </p>
     <p>
         The <term>class of equivalence</term> for an element a in set A is defined by the set:

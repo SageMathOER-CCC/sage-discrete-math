@@ -10,14 +10,14 @@
         Recall, the Cartesian product <m>A \times B</m> consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
-        Let's define two sets, Pants and Shirts, as examples:
+        Let's define two sets, pants and shirts, as examples:
     </p>
     <p>
         <me>
-            \text{Pants} = \{p_1, p_2, p_3\}
+            \text{pants} = \{p_1, p_2, p_3\}
         </me>
         <me>
-            \text{Shirts} = \{s_1, s_2, s_3, s_4\}
+            \text{shirts} = \{s_1, s_2, s_3, s_4\}
         </me>
     </p>
     <sage>
@@ -39,7 +39,7 @@
         </input>
     </sage>
     <p>
-        Create a relation from Pants to Shirts based on style, where each pair of pants is matched with a shirt.
+        Create a relation from pants to shirts based on style, where each pair of pants is matched with a shirt.
     </p>
     <sage>
         <input>
@@ -54,7 +54,7 @@
         </input>
     </sage>
     <p>
-        The Cartesian product of Pants and Shirts includes all possible combinations of pants with shirts.
+        The Cartesian product of pants and shirts includes all possible combinations of pants with shirts.
     </p>
     <sage>
         <input>
@@ -64,7 +64,7 @@
         </input>
     </sage>
     <p>
-        This relation of pants to shirts can be represented as a subset of the Cartesian product of Pants and Shirts.
+        This relation of pants to shirts can be represented as a subset of the Cartesian product of pants and shirts.
     </p>
     <p>
         <me>
