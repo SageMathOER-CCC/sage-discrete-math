@@ -140,6 +140,7 @@
     </p>
     <sage>
         <input>
+            # Implement more optimal runtime for larger sets
             # Function to check reflexivity
             def is_reflexive(set_A, relation):
                 return all((a, a) in relation for a in set_A)
