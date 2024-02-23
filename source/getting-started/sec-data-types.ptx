@@ -7,13 +7,13 @@
   </p>
 
   <p>
-    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
+    <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
   </p>
   <sage>
       <input>
-          mySymbolic = sqrt(2) * log(3)
-          print(type(mySymbolic))
-          print(mySymbolic)
+          greeting = "Hello, World!"
+          print(type(greeting))
+          print(greeting)
       </input>
   </sage>
 
@@ -25,7 +25,7 @@
     <input>
         # Check if 5 in contained in the set of prime numbers
         f = 5 in Primes()
-        type(f)
+        print(type(f))
         print(f)
     </input>
   </sage>
@@ -82,6 +82,8 @@
   <sage>
       <input>
         # Python dictionary for the textbook
+        import pprint
+
         d = {
             "title": "Discrete Math with SageMath",
             "authors": ["Zunaid Ahmed", "Hellen Colman", "Samuel Lubliner"],
@@ -103,20 +105,20 @@
                 ],
                 "format": ["Web", "PDF"]
             }
-        print(type(d)    
-        print(d)
+        print(type(d))
+        pprint.pprint(d)
       </input>
   </sage>
 
   <p>
-    <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
+    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
   </p>
   <sage>
       <input>
-          greeting = "Hello, World"
-          print(type(greeting))
-          print(greeting)
+          n = sqrt(2) * log(3)
+          print(type(n))
+          print(n)
+          show(n)
       </input>
   </sage>
-
 </section>

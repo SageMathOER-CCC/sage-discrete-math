@@ -5,24 +5,70 @@
     <p>
         A relation is called an <term>equivalence relation</term> if it satisfies three key properties: <term>reflexivity</term>, <term>symmetry</term>, and <term>transitivity</term>. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.
     </p>
-    <p>
-        <term>Reflexive</term>: a relates to a for all elements a in the set A. All the elements relate to themselves.
-        <me>
-            aRa \quad \forall a \in A
-        </me>
-    </p>
-    <p>
-        <term>Symmetric</term>: if a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
-        <me>
-            \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
-        </me>
-    </p>
-    <p>
-        <term>Transitive</term>: if a relates to b and b relates to c, then a relates to c.
-        <me>
-            \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
-        </me>
-    </p>
+    <ul>
+        <li>
+            <p>
+                <term>Reflexive</term>
+            </p>
+            <li>
+                <p>
+                    <m>
+                        aRa \quad \forall a \in A
+                    </m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    a relates to a for all elements a in the set A. All the elements relate to themselves.
+                </p>
+            </li>
+            <li>
+                <p>
+                    
+                </p>
+            </li>
+        </li>
+        <li>
+            <p>
+                <term>Symmetric</term>
+            </p>
+            <li>
+                <p>
+                    <m>
+                        \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
+                    </m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
+                </p>
+            </li>
+            <li>
+                <p>
+                    
+                </p>
+            </li>
+        </li>
+        <li>
+            <p>
+                <term>Transitive</term>
+            </p>
+            <li>
+                <p>
+                    <m>
+                        \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
+                    </m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    If a relates to b and b relates to c, then a relates to c.
+                </p>
+            </li>
+        </li>
+    </ul>
+
     <p>
         The <term>class of equivalence</term> for an element a in set A is defined by the set:
     </p>
@@ -43,11 +89,11 @@
     <sage>
         <input>
             # Define the set of people and their respective floors using SageMath Set
-            A = Set([('Person1', 1), ('Person2', 2), ('Person3', 3),
-            ('Person4', 1), ('Person5', 2), ('Person6', 3),
-            ('Person7', 1), ('Person8', 2), ('Person9', 3), ('Person10', 1)])
+            A = Set(["p_1", "p_2", "p_3", "p_4", "p_5", "p_6", "p_7", "p_8", "p_9", "p_10"])
+            A
         </input>
     </sage>
+
     <p>
         In this context, let R be the relation on A described as follows:
     </p>
@@ -56,22 +102,31 @@
     </me>
     <sage>
         <input>
-            def R(x, y):
-                return x[1] == y[1]  # x[1] and y[1] represent the floors of person x and y, respectively
+            # Define subsets for people living on the same floor
+            first_floor = Set(["p_1", "p_2", "p_3", "p_4"])
+            second_floor = Set(["p_5", "p_6", "p_7"])
+            third_floor = Set(["p_8", "p_9", "p_10"])
+            print("first_floor:", first_floor)
+            print("second_floor:", second_floor)
+            print("third_floor:", third_floor)
+        </input>
+    </sage>
 
-            def class_of_equivalence(person, A):
-                return Set([x for x in A if R(person, x)])
 
-            def print_class_of_equivalence(person, A):
-                equivalence_class = class_of_equivalence(person, A)
-                # Extracting just the names from the tuples for a more readable output
-                names_in_class = [x[0] for x in equivalence_class]
-                print(f"Class of Equivalence for {person[0]} (living on floor {person[1]}): {', '.join(names_in_class)}")
-                
-            # Example: Class of equivalence for 'Person1'
-            person_a = ('Person1', 1)
-            print_class_of_equivalence(person_a, A)
+    <sage>
+        <input>
+            # Define the first floor relation
+            first_floor_relation = Set([(a, b) for a in first_floor for b in first_floor])
 
+            # Define the second floor relation
+            second_floor_relation = Set([(a, b) for a in second_floor for b in second_floor])
+
+            # Define the third floor relation
+            third_floor_relation = Set([(a, b) for a in third_floor for b in third_floor])
+
+            print("first_floor_relation:", first_floor_relation)
+            print("second_floor_relation:", second_floor_relation)
+            print("third_floor_relation:", third_floor_relation)
         </input>
     </sage>
     <p>
@@ -98,17 +153,6 @@
     </p>
     <sage>
         <input>
-            # Reflexivity Test
-            reflexive_test = all(R(person, person) for person in A)
-            print("Reflexive:", reflexive_test)
-
-            # Symmetry Test
-            symmetry_test = all(R(x, y) == R(y, x) for x in A for y in A)
-            print("Symmetric:", symmetry_test)
-
-            # Transitivity Test
-            transitivity_test = all(not R(x, y) or not R(y, z) or R(x, z) for x in A for y in A for z in A)
-            print("Transitive:", transitivity_test)
         </input>
     </sage>
     <p>
