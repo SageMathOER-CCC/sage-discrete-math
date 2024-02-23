@@ -86,14 +86,6 @@
             \text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
         </me>
     </p>
-    <sage>
-        <input>
-            # Define the set of people and their respective floors using SageMath Set
-            A = Set(["p_1", "p_2", "p_3", "p_4", "p_5", "p_6", "p_7", "p_8", "p_9", "p_10"])
-            A
-        </input>
-    </sage>
-
     <p>
         In this context, let R be the relation on A described as follows:
     </p>
@@ -102,36 +94,31 @@
     </me>
     <sage>
         <input>
-            # Define subsets for people living on the same floor
-            first_floor = Set(["p_1", "p_2", "p_3", "p_4"])
-            second_floor = Set(["p_5", "p_6", "p_7"])
-            third_floor = Set(["p_8", "p_9", "p_10"])
-            print("first_floor:", first_floor)
-            print("second_floor:", second_floor)
-            print("third_floor:", third_floor)
+            # Define the set of people
+            A = Set(['p_1', 'p_2', 'p_3', 'p_4', 'p_5', 'p_6', 'p_7', 'p_8', 'p_9', 'p_10'])
+
+            # Define the floors as a dictionary, mapping floor names to sets of people
+            floors = {
+                'first_floor': Set(['p_1', 'p_2', 'p_3', 'p_4']),
+                'second_floor': Set(['p_5', 'p_6', 'p_7']),
+                'third_floor': Set(['p_8', 'p_9', 'p_10'])
+            }
+
+            print("A, set of all people:", A)
+            print("sets of floors:", floors)
         </input>
     </sage>
 
-
-    <sage>
-        <input>
-            # Define the first floor relation
-            first_floor_relation = Set([(a, b) for a in first_floor for b in first_floor])
-
-            # Define the second floor relation
-            second_floor_relation = Set([(a, b) for a in second_floor for b in second_floor])
-
-            # Define the third floor relation
-            third_floor_relation = Set([(a, b) for a in third_floor for b in third_floor])
-
-            print("first_floor_relation:", first_floor_relation)
-            print("second_floor_relation:", second_floor_relation)
-            print("third_floor_relation:", third_floor_relation)
-        </input>
-    </sage>
     <p>
         This relation demonstrates the properties of an equivalence relation:
     </p>
+    <sage>
+        <input>
+            # Define the relation R based on living on the same floor
+            R = Set([(x, y) for x in A for y in A if any(x in floors[floor] and y in floors[floor] for floor in floors)])
+            R
+        </input>
+    </sage>
     <p>
         <ul>
             <li>
@@ -153,6 +140,22 @@
     </p>
     <sage>
         <input>
+            # Function to check reflexivity
+            def is_reflexive(set_A, relation):
+                return all((a, a) in relation for a in set_A)
+
+            # Function to check symmetry
+            def is_symmetric(relation):
+                return all((b, a) in relation for a, b in relation)
+
+            # Function to check transitivity
+            def is_transitive(relation, set_A):
+                return all((a, c) in relation for a in set_A for b in set_A for c in set_A if (a, b) in relation and (b, c) in relation)
+
+            # Display properties of the relation R
+            print("Reflexive:", is_reflexive(A, R))
+            print("Symmetric:", is_symmetric(R))
+            print("Transitive:", is_transitive(R, A))
         </input>
     </sage>
     <p>
@@ -164,4 +167,14 @@
     <p>
         This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation "living on the same floor as" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.
     </p>
+    <sage>
+        <input>
+            # Function to check if the relation is an equivalence relation
+            def check_equivalence_relation(set_A, relation):
+                return is_reflexive(set_A, relation) and is_symmetric(relation) and is_transitive(relation, set_A)
+
+            # Check if the relation is an equivalence relation
+            print("Is it an equivalence relation?", check_equivalence_relation(A, R))
+        </input>
+    </sage>
 </section>
