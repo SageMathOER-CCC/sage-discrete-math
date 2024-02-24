@@ -16,15 +16,15 @@
             # Define the relation R on A: aRb if a &lt; b
             R = [(a, b) for a in A for b in A if a &lt; b]
 
-            # Display the relation R
-            R
+            # Create the digraph from the relation R
+            DiGraph(R)
         </input>
     </sage>
 
     <sage>
         <input>
-            # Create the digraph from the relation R
-            DiGraph(R)
+            # Alternatively, we can define the digraph directly
+            DiGraph({1: [2, 3, 4], 2: [3, 4], 3: [4]})
         </input>
     </sage>
 </section>

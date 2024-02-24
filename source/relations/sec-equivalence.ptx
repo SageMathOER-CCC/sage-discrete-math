@@ -86,12 +86,6 @@
             \text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
         </me>
     </p>
-    <p>
-        In this context, let R be the relation on A described as follows:
-    </p>
-    <me>
-        \text{x R y iff x and y live in the same floor of the building.}
-    </me>
     <sage>
         <input>
             # Define the set of people
@@ -104,14 +98,17 @@
                 'third_floor': Set(['p_8', 'p_9', 'p_10'])
             }
 
-            print("A, set of all people:", A)
+            print("Set of all people:", A)
             print("sets of floors:", floors)
         </input>
     </sage>
 
     <p>
-        This relation demonstrates the properties of an equivalence relation:
+        In this context, let R be the relation on A described as follows:
     </p>
+    <me>
+        \text{x R y iff x and y live in the same floor of the building.}
+    </me>
     <sage>
         <input>
             # Define the relation R based on living on the same floor
@@ -119,6 +116,9 @@
             R
         </input>
     </sage>
+    <p>
+        This relation demonstrates the properties of an equivalence relation:
+    </p>
     <p>
         <ul>
             <li>
