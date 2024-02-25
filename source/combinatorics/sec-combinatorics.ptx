@@ -52,7 +52,7 @@
         </p>
         <sage>
             <input>
-                Combinations(5, 3)
+                binomial(5, 3)
             </input>
             <output></output>
         </sage>
