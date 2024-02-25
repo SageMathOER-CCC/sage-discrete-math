@@ -1,0 +1,82 @@
+<section xml:id="sec-recursion" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Recursion</title>
+
+        <p>
+            Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.
+        </p>
+
+    <!-- Recursion in Sequences -->
+    <subsection>
+        <title>Recursion in Sequences</title>
+        <p>
+            A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors. The following Python code in Sage illustrates how to solve a recursive sequence using the <c>rsolve()</c> function from the <c>sympy</c> library, which symbolically solves recurrence equations.
+        </p>
+        <sage>
+            <input>
+                from sympy import Function, rsolve
+                from sympy.abc import n
+                s = Function('s')
+                eqn = s(n) - s(n-1) - 2*s(n-2)
+                sol = rsolve(eqn, s(n), {s(0): 2, s(1): 7})
+                sol
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            Here, <c>s</c> is a function representing the sequence. The equation <c>eqn</c> defines the recursive relation <m>s(n) = s(n-1) + 2\cdot s(n-2)</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s(0) = 2</m> and <m>s(1) = 7</m>.
+        </p>
+    </subsection>
+
+    <!-- Recursion with Binomial Coefficients -->
+    <subsection>
+        <title>Recursion with Binomial Coefficients</title>
+        <p>
+            Binomial coefficients, denoted as <m>\binom{n}{k}</m>, count the number of ways to choose <m>k</m> elements from an <m>n</m>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <c>binomial(n, k)</c> function.
+        </p>
+        <sage>
+            <input>
+                binomial(5, 3)
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            We can also explore the recursive nature of binomials using a Python syntax.
+        </p>
+        <sage>
+            <input>
+                def binomial_recursive(n, k):
+                    if k == 0 or k == n:
+                        return 1
+                    else:
+                        return binomial_recursive(n-1, k-1) + binomial_recursive(n-1, k)
+
+                binomial_recursive(5, 3)
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            This Python function implements the recursive formula <m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m>, with base cases <m>\binom{n}{0} = \binom{n}{n} = 1</m>.
+        </p>
+    </subsection>
+
+    <!-- Recursion in Polynomials -->
+    <subsection>
+        <title>Recursion in Polynomials</title>
+        <p>
+            Polynomials can also be generated and manipulated recursively. For instance, the derivative of a polynomial is a lower-degree polynomial that can be calculated recursively. Sage provides tools for polynomial manipulation, including differentiation.
+        </p>
+        <sage>
+            <input>
+                R = PolynomialRing(QQ, 'x')
+                p = R('x^3 + 2*x^2 + x + 1')
+                dp = p.derivative()
+                dp
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            In this code, <c>PolynomialRing(QQ, 'x')</c> creates a polynomial ring in the variable <m>x</m> with rational number coefficients (<c>QQ</c>). The polynomial <m>p = x^3 + 2x^2 + x + 1</m> is defined within this ring. The method <c>.derivative()</c> computes the derivative of <m>p</m>, producing a new polynomial <m>dp</m> representing the derivative.
+        </p>
+    </subsection>
+
+</section>

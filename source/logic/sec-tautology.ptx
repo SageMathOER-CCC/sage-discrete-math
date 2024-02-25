@@ -3,11 +3,35 @@
 <section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Tautologies</title>
 
+    <!-- Analyzing Logical Equivalences with Truth Tables -->
+<subsection>
+    <title>Analyzing Logical Equivalences</title>
+    <p>
+        Truth tables are instrumental in determining logical equivalences between two expressions. By comparing their truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.
+    </p>
+    <aside>
+        <title>Tips!</title>
+        <p>
+            This approach is invaluable in simplifying logical expressions in computer algorithms and understanding proofs in mathematical logic.
+        </p>
+    </aside>
+    <sage>
+        <input>
+            E1 = propcalc.formula('(p -&gt; q) &amp; (q -&gt; r)')
+            E2 = propcalc.formula('p -&gt; r')
+            T1 = E1.truthtable()
+            T2 = E2.truthtable()
+            T1 == T2
+        </input>
+        <output></output>
+    </sage>
+</subsection>
+
     <!-- Tautologies -->
     <subsection>
     <title>Tautologies</title>
     <p>
-        A tautology is a logical statement that is true under any interpretation of its variables. The <c>is_tautology()</c> function checks whether a given logical expression is a tautology. Recognizing tautologies is crucial for understanding the foundations of logical arguments and the construction of proofs.
+        A tautology is a logical statement that is always true.  The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
     </p>
     <aside>
         <title>Tips!</title>
@@ -26,25 +50,15 @@
         Tautologies play a key role in deductive reasoning, where they serve as universally valid starting points for logical deductions. They are also instrumental in the design of digital logic circuits, where the goal is to achieve certain logical conditions regardless of the input state.
     </p>
     <p>
-        For instance, in the context of digital electronics, a tautology can represent a circuit that always outputs a high signal (true), regardless of the inputs. This concept is used to design fault-tolerant systems and ensure consistency in logical operations.
-    </p>
-    <sage>
-        <input>
-            b = propcalc.formula('(p &amp; q) | ~(p &amp; q)')
-            b.is_tautology()
-        </input>
-        <output></output>
-    </sage>
-    <p>
-        Exploring tautologies with SageMath not only strengthens a student's grasp of logical principles but also enhances their ability to apply these concepts in computing and mathematical proof construction. By analyzing various expressions and verifying their status as tautologies, students gain insights into the structure and properties of logical statements.
+        Exploring tautologies with Sage not only strengthens a student's grasp of logical principles but also enhances their ability to apply these concepts in computing and mathematical proof construction. By analyzing various expressions and verifying their status as tautologies, students gain insights into the structure and properties of logical statements.
     </p>
     </subsection>
 
     <!-- Tautologies and Contradictions -->
     <subsection>
-    <title>Tautologies and Contradictions</title>
+    <title>Contradictions</title>
     <p>
-        In contrast to tautologies, contradictions are statements that are false under any interpretation of their variables. Understanding the relationship between tautologies, contradictions, and contingent statements (those that are neither universally true nor false) is fundamental in logic and mathematics.
+        In contrast to tautologies, contradictions are statements that are always false.
     </p>
     <aside>
         <title>Tips!</title>
@@ -54,9 +68,8 @@
     </aside>
     <sage>
         <input>
-            contradiction = propcalc.formula('p &amp; ~p')
-            contradiction.is_tautology()  
-            # This should return False, indicating it's not a tautology (and thus a contradiction)
+            A = propcalc.formula('p &amp; ~p')
+            A.is_contradiction()  
         </input>
         <output></output>
     </sage>
