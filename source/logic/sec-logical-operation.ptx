@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Logical Operations</title>
+    <title>Logical Operators</title>
 
     <!-- Logical Operators -->
-    <subsection>
-        <title>Logical Operators</title>
-        <p>
-            In SageMath, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
-        </p>
-        <p>
-            AND, OR, and NOT operations correspond to basic logical functions: conjunction, disjunction, and negation, respectively. The conditional operation represents implication, where <c>p -&gt; q</c> means if <c>p then q</c>. The biconditional operation, symbolized as <c>p &lt;-&gt; q</c>, denotes equivalence, asserting that p and q are either both true or both false.
-        </p>
-    </subsection>
 
-    <!-- Logical Operations in SageMath -->
-    <subsection>
-        <title>Logical Operations in SageMath</title>
+
         <p>
-            SageMath's <c>propcalc.formula()</c> function allows for the creation of logical formulas using variables and logical operators. This is especially useful in defining and manipulating logical statements.
+            In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
+        </p>
+        <tabular>
+                    <row>
+                        <cell>Operator</cell>
+                        <cell>Symbol</cell>
+                        <cell>Description</cell>
+                    </row>
+                    <row>
+                        <cell>AND</cell>
+                        <cell>&amp;</cell>
+                        <cell>True if both operands are true</cell>
+                    </row>
+                    <row>
+                        <cell>OR</cell>
+                        <cell>|</cell>
+                        <cell>True if at least one operand is true</cell>
+                    </row>
+                    <row>
+                        <cell>NOT</cell>
+                        <cell>~</cell>
+                        <cell>Negates the truth value of its operand</cell>
+                    </row>
+                    <row>
+                        <cell>Conditional</cell>
+                        <cell>-&gt;</cell>
+                        <cell>True if the first operand implies the second</cell>
+                    </row>
+                    <row>
+                        <cell>Biconditional</cell>
+                        <cell>&lt;-&gt;</cell>
+                        <cell>True if both operands are equal</cell>
+                    </row>
+        </tabular>
+        
+
+
+    <!-- Logical Operations in Sage -->
+    <subsection>
+        <title>Boolean Formula</title>
+        
+        <p>
+            Sage's <c>propcalc.formula()</c> function allows for the creation of boolean formulas using variables and logical operators.
         </p>
         <aside>
             <title>Tips!</title>
@@ -28,11 +59,7 @@
         </aside>
         <sage>
             <input>
-                a = propcalc.formula('p &amp; q')
-                b = propcalc.formula('~p | q')
-                c = propcalc.formula('p -&gt; q')
-                d = propcalc.formula('p &lt;-&gt; q')
-                print(a, b, c, d)
+                propcalc.formula('(p &amp; q) | (~p)')
             </input>
             <output></output>
         </sage>
