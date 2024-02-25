@@ -9,13 +9,13 @@
   <sage>
     <input>
       # Run this cell and see what happens
-      1message = "Hello, World"
+      1message = "Hello, World!"
       print(1message)
     </input>
   </sage>
 
   <p>
-    Why didn't this print <c>Hello</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifiers.
+    Why didn't this print <c>Hello, World!</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifiers.
   </p>
 
   <p>
@@ -73,7 +73,7 @@
 
   <sage>
     <input>
-      message = "Hello, World"
+      message = "Hello, World!"
       print(message)
     </input>
   </sage>
@@ -92,73 +92,12 @@
 
   <sage>
     <input>
-      print(Hello, World)
+      print(Hi)
     </input>
   </sage>
 
   <p>
     It looks like we have a <c>NameError</c>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.
   </p>
-
-  <sage>
-    <input>
-      print("Hello, World")
-    </input>
-  </sage>
-
-  <p>
-    You have have noticed, sometimes we use <c>Print()</c> to display output and sometimes we do not. Other times we need to use multiple print statements.
-  </p>
-
-  <sage>
-    <input>
-      "Hello, World"
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      "Hello, "
-      "World"
-    </input>
-  </sage>
-
-  <p>
-    It looks like Sage is only showing the value of the last line of code. If we want to print both of these strings we will need two print statements.
-  </p>
-
-  <sage>
-    <input>
-      print("Hello, ")
-      print("World")
-    </input>
-  </sage>
-
-  <p>
-    Did you expect these words to be on the same line? Let's investigate what <c>Print()</c> does.
-  </p>
-
-  <sage>
-    <input>
-      print?
-    </input>
-  </sage>
-
-  <p>
-    It turns out <c>Print()</c> adds a new line after printing. Lets get the output we want on a single line.
-  </p>
-
-  <sage>
-    <input>
-      print("Hello, ", end="")
-      print("World")
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      print("Hello, " + "World")
-    </input>
-  </sage>
 
 </section>

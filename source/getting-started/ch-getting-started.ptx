@@ -4,10 +4,12 @@
   <title>Getting Started</title>
 
   <introduction>
-    <p> Welcome to our introduction to SageMath. This chapter is designed for learners of all backgrounds—whether you're new to programming or aiming to expand your mathematical toolkit. Running your first line of code is streamlined through the platform of CoCalc Sage worksheets, enabling you to execute code directly in your browser with minimal set up and installation. </p>
+    <p>
+      Welcome to our introduction to SageMath (also referred to as Sage). This chapter is designed for learners of all backgrounds—whether you're new to programming or aiming to expand your mathematical toolkit. There are various options for running Sage, including the SageMathCell, CoCalc, and a local installation. The easiest way to get started is to use the SageMathCell embedded directly in this book. We will also cover how to use CoCalc, a cloud-based platform that provides a collaborative environment for running Sage code.
+    </p>
 
     <p>
-      We'll cover the basics, including SageMath's syntax, data types, variables, and debugging techniques. Our goal is to equip you with the foundational knowledge needed to explore mathematical problems and programming concepts in an accessible and straightforward manner.
+      Sage is a free open-source mathematics software system that integrates <url href="https://doc.sagemath.org/html/en/reference/spkg/">various</url> open-source mathematics software packages. We'll cover the basics, including SageMath's syntax, data types, variables, and debugging techniques. Our goal is to equip you with the foundational knowledge needed to explore mathematical problems and programming concepts in an accessible and straightforward manner.
     </p>
 
     <p>
@@ -17,8 +19,12 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-sage-browser.ptx" />
-  <xi:include href="sec-about-sage.ptx" />
+  <xi:include href="sec-intro-to-sage.ptx" />
+  <xi:include href="sec-printing.ptx" />
+  <xi:include href="sec-OOP.ptx" />
+  <xi:include href="sec-data-types.ptx" />
+  <xi:include href="sec-iteration.ptx" />
   <xi:include href="sec-debugging.ptx" />
   <xi:include href="sec-documentation.ptx" />
+  <xi:include href="sec-sage-browser.ptx" />
 </chapter>

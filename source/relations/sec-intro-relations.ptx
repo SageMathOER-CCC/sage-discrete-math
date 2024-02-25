@@ -3,89 +3,86 @@
 <section xml:id="intro-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Introduction to Relations</title>
     <p>
-        A <term>relation</term> <m>R</m> from set <m>A</m> into set <m>B</m> is defined as a subset of the Cartesian product <m>A \times B</m>, represented as:
+        A <term>relation</term> <m>R</m> from set <m>A</m> into set <m>B</m> is a subset of the Cartesian product <m>A \times B</m>, represented as:
         <me>R \subseteq A \times B</me>
     </p>
     <p>
-        The Cartesian product <m>A \times B</m> consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
+        Recall, the Cartesian product <m>A \times B</m> consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
-        Let's define two sets, Pants and Shirts, as examples:
+        Let's define two sets, pants and shirts, as examples:
     </p>
     <p>
         <me>
-            \text{Pants} = \{p_1, p_2, p_3, p_4\} \\
+            \text{pants} = \{p_1, p_2, p_3\}
         </me>
         <me>
-            \text{Shirts} = \{s_1, s_2, s_3, s_4\}
+            \text{shirts} = \{s_1, s_2, s_3, s_4\}
         </me>
-    </p>
-    <p>
-        The Cartesian product of Pants and Shirts includes all possible combinations of pants with shirts.
     </p>
     <sage>
         <input>
-            Pants = Set(['p1', 'p2', 'p3', 'p4'])
-            Shirts = Set(['s1', 's2', 's3', 's4'])
+            # Define the sets of pants and shirts
+            pants = Set(['p1', 'p2', 'p3'])
+            shirts = Set(['s1', 's2', 's3', 's4'])
 
-            all_combinations = Pants.cartesian_product(Shirts)
+            # Define subsets for formal and athletic wear
+            formal_pants = Set(['p1'])
+            formal_shirts = Set(['s1', 's2'])
+            athletic_pants = Set(['p2', 'p3'])
+            athletic_shirts = Set(['s3', 's4'])
 
-            for combo in all_combinations:
-                print(combo)
+            print("formal_pants:", formal_pants)
+            print("formal_shirts:", formal_shirts)
+            print("athletic_pants:", athletic_pants)
+            print("athletic_shirts:", athletic_shirts)
         </input>
     </sage>
     <p>
-        To explore how we can match pants with shirts based on their style, we define a relation as a subset of this Cartesian product, where each pair matches by a certain criterion, such as style.
-    </p>
-    <p>
-        First, let's define a set of Styles, and then create relations for Pants and Shirts based on these styles.
-    </p>
-    <p>
-        <me>
-            \text{Styles} = \{\text{athletic}, \text{formal}\}
-        </me>
-    </p>
-    <p>
-        <me>
-            \text{PantStyles} = \{(p_1, \text{athletic}), (p_2, \text{formal}), (p_3, \text{athletic}), (p_4, \text{formal})\}
-        </me>
-        <me>
-            \text{ShirtStyles} = \{(s_1, \text{athletic}), (s_2, \text{formal}), (s_3, \text{athletic}), (s_4, \text{formal})\}
-        </me>
-    </p>
-    <p>
-        We can visualize all possible combinations of pants and shirts, taking their styles into account.
+        Create a relation from pants to shirts based on style, where each pair of pants is matched with a shirt.
     </p>
     <sage>
         <input>
-            # Define styles for pants and shirts as sets of tuples
-            PantStyles = Set([('p1', 'athletic'), ('p2', 'formal'), ('p3', 'athletic'), ('p4', 'formal')])
-            ShirtStyles = Set([('s1', 'athletic'), ('s2', 'formal'), ('s3', 'athletic'), ('s4', 'formal')])
+            # Define the formal relation
+            formal_relation = Set([(a, b) for a in formal_pants for b in formal_shirts])
 
-            all_combinations = PantStyles.cartesian_product(ShirtStyles)
+            # Define the athletic relation
+            athletic_relation = Set([(a, b) for a in athletic_pants for b in athletic_shirts])
 
-            for combo in all_combinations:
-                print(combo)
+            print("Formal Relation:", formal_relation)
+            print("Athletic Relation:", athletic_relation)
         </input>
     </sage>
     <p>
-        With these combinations, let's define a specific relation from Pants to Shirts based on matching styles. This relation is a subset of the Cartesian product PantStyles <m>\times</m> ShirtStyles, including only those pairs where the pants and shirts have the same style. This is a second example of a relation, on another relation.
+        The Cartesian product of pants and shirts includes all possible combinations of pants with shirts.
+    </p>
+    <sage>
+        <input>
+            # Create the Cartesian product
+            cartesian_product = Set([(a, b) for a in pants for b in shirts])
+            cartesian_product
+        </input>
+    </sage>
+    <p>
+        This relation of pants to shirts can be represented as a subset of the Cartesian product of pants and shirts.
     </p>
     <p>
         <me>
-            \text{MatchingOutfit}  \subseteq \text{PantStyles} \times \text{ShirtStyles}
+            \text{formal_relation}  \subseteq \text{pants} \times \text{shirts}
+        </me>
+        <me>
+            \text{athletic_relation}  \subseteq \text{pants} \times \text{shirts}
         </me>
     </p>
     <sage>
         <input>
-            # Define a relation for matching styles between Pants and Shirts
-            # Filter the Cartesian product of PantStyles and ShirtStyles
-            # to include only pairs where the styles (second element of each tuple) match
-            matching_style_combinations = [combo for combo in all_combinations if combo[0][1] == combo[1][1]]
+            # Check if each relation is a subset of the Cartesian product separately
+            formal_is_subset = formal_relation.issubset(cartesian_product)
+            athletic_is_subset = athletic_relation.issubset(cartesian_product)
 
-            # Display the matching style combinations
-            for (pant, shirt) in matching_style_combinations:
-                print(f"Pant: {pant[0]}, Shirt: {shirt[0]}, Style: {pant[1]}")
+            # Display the results
+            print("Formal Relation Subset of Cartesian Product:", formal_is_subset)
+            print("Athletic Relation Subset of Cartesian Product:", athletic_is_subset)
         </input>
     </sage>
 </section>

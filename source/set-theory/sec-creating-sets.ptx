@@ -16,6 +16,16 @@
 			</input>
 		</sage>
 
+		<p>
+			We can ask Sage to compare two sets to see if they are equal or not. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+		</p>
+		<p>
+			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
+		</p>
+		<p>
+			The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.
+		</p>
+
 		<sage>
 			<input>
 				A = Set([1, 2, 3, 4, 5])
@@ -25,14 +35,7 @@
 		</sage>
 
 		<p>
-			Since sets remove duplicates, the two sets are equal. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
-		</p>
-
-		<p>
-			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the boolean value, <c>True</c> if they are equal, and <c>False</c> if they are not.
-		</p>
-		<p>
-			The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.
+			Since sets remove duplicates, the two sets are equal.
 		</p>
 
 		<p>
@@ -56,7 +59,7 @@
 		</sage>
 
 		<p>
-			Here we are introducing a new programming concept iteration. Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> evens = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
+			Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> C = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
 		</p>
 
 		<sage>
@@ -70,7 +73,7 @@
 	  <subsection xml:id="subsec-subsets">
 		<title>Subsets</title>
 		<p>
-			Assume we have A = {1, 2, 3, 4, 5}, to list all the subsets included in this set, we can use the <c>Subsets()</c> function to generate all the subsets and then use the <c>Set()</c> function to show us all the subsets.
+			To list all the subsets included in this set, we can use the <c>Subsets()</c> function to generate all the subsets and then use the <c>Set()</c> function to display the sets of subsets.
 		</p>
 		<sage>
 		  <input>
