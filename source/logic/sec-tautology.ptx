@@ -31,7 +31,7 @@
     <subsection>
     <title>Tautologies</title>
     <p>
-        A tautology is a logical statement that is always true. under any interpretation of its variables. The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
+        A tautology is a logical statement that is always true.  The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
     </p>
     <aside>
         <title>Tips!</title>
