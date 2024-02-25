@@ -49,7 +49,7 @@
         <title>Boolean Formula</title>
         
         <p>
-            Sage's <c>propcalc.formula()</c> function allows for the creation of boolean formulas using variables and logical operators.
+            Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators.
         </p>
         <aside>
             <title>Tips!</title>
