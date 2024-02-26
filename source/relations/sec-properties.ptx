@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Properties</title>
+    <introduction>
+        <p>
+            A relation can satisfy the following properties:
+        
+            <ul>
+                <li>
+                    <p>
+                        <term>Reflexive</term>
+                    </p>
+                    <li>
+                        <p>
+                            <m>
+                                aRa \quad \forall a \in A
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            a relates to a for all elements a in the set A. All the elements relate to themselves.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            
+                        </p>
+                    </li>
+                </li>
+                <li>
+                    <p>
+                        <term>Symmetric</term>
+                    </p>
+                    <li>
+                        <p>
+                            <m>
+                                \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            
+                        </p>
+                    </li>
+                </li>
+                <li>
+                    <p>
+                        <term>Transitive</term>
+                    </p>
+                    <li>
+                        <p>
+                            <m>
+                                \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If a relates to b and b relates to c, then a relates to c.
+                        </p>
+                    </li>
+                </li>
+            </ul>
+        </p>
+    </introduction>
+
+    <subsection xml:id="subsec-reflexive">
+        <title>Reflexive</title>
+        <p>
+            We can check if a relation R on a set A is reflexive by checking if the relation contains all the reflexive pairs. A reflexive pair is a pair of elements (a, a) for each element a in the set A. If all the reflexive pairs are in the relation R, then the relation is reflexive.
+        </p>
+        <sage>
+            <input>
+                # Define the relation R on set A
+                A = Set([1, 2, 3])
+                R = Set([(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)])
+                show(R)
+            </input>
+          </sage>
+          <sage>
+            <input>
+                # Function to check if the relation R on set A is reflexive
+                def is_reflexive(A, R):
+                    # Create a set of (a, a) pairs for each element a in A
+                    reflexive_pairs = Set([(a, a) for a in A])
+                    # Check if all reflexive pairs are in the relation R
+                    return reflexive_pairs.issubset(R)
+
+                reflexivity_check = is_reflexive(A, R)
+                print(f"Is the relation R reflexive? {reflexivity_check}")
+            </input>
+          </sage>
+
+          <p>
+            If we are working with DiGraphs, we can use the method <code>has_edge</code> to check if the graph has a loop for each vertex.
+          </p>
+          <sage>
+            <input>
+                # Define the relation R as a list of tuples (pairs) and the set A
+                A = [1, 2, 3]
+                R = [(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)]
+
+                # Create a directed graph from the relation R
+                G = DiGraph(R, loops=True)
+
+                # A direct way to check for reflexivity using graph methods
+                is_reflexive = all(G.has_edge(a, a) for a in A)
+
+                print(f"Is the relation R reflexive? {is_reflexive}")
+            </input>
+          </sage>
+    </subsection>
+
+    <subsection xml:id="subsec-symmetric">
+        <title>Symmetric</title>
+    </subsection>
+
+    <subsection xml:id="subsec-transitive">
+        <title>Transitive</title>
+    </subsection>
+</section>
