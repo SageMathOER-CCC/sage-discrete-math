@@ -88,13 +88,13 @@
           <sage>
             <input>
                 # Function to check if the relation R on set A is reflexive
-                def is_reflexive(A, R):
+                def is_reflexive_set(A, R):
                     # Create a set of (a, a) pairs for each element a in A
                     reflexive_pairs = Set([(a, a) for a in A])
                     # Check if all reflexive pairs are in the relation R
                     return reflexive_pairs.issubset(R)
 
-                reflexivity_check = is_reflexive(A, R)
+                reflexivity_check = is_reflexive_set(A, R)
                 print(f"Is the relation R reflexive? {reflexivity_check}")
             </input>
           </sage>
@@ -121,9 +121,61 @@
 
     <subsection xml:id="subsec-symmetric">
         <title>Symmetric</title>
+        <p>
+            Checking for symmetry in a set:
+        </p>
+        <sage>
+            <input>
+                # Define the set A
+                A = Set([1, 2, 3])
+
+                # Define the relation R on A as a set of tuples
+                R = Set([(1, 2), (2, 1), (3, 3)])
+
+                # Define a function to check symmetry
+                def is_symmetric_set(relation_R):
+                    # Generate the inverse of each pair in the relation
+                    inverse_R = Set([(b, a) for a, b in relation_R])
+                    # The relation is symmetric if the intersection of R and its inverse is equal to R itself
+                    return relation_R.issubset(inverse_R) and inverse_R.issubset(relation_R)
+
+                # Check if R is symmetric
+                symmetric = is_symmetric_set(R)
+                print(f"Is the relation R symmetric? {is_symmetric}.")
+            </input>
+        </sage>
+        <sage>
+            <input>
+                # Define the relation R as a list of tuples (directed edges)
+                relation_R = [(1, 2), (2, 1), (3, 3)]
+
+                # Create a directed graph (digraph) from the relation
+                G = DiGraph(relation_R, loops=true)
+
+                # Function to check if a digraph represents a symmetric relation
+                def is_symmetric_digraph(digraph):
+                    for u, v in digraph.edges(labels=False):
+                        if not digraph.has_edge(v, u):
+                            return False
+                    return True
+
+                # Check if the digraph G represents a symmetric relation
+                symmetric = is_symmetric_digraph(G)
+                print(f"Is the relation symmetric? {symmetric}.")
+
+            </input>
+        </sage>
     </subsection>
 
     <subsection xml:id="subsec-transitive">
         <title>Transitive</title>
+        <sage>
+            <input>
+            </input>
+        </sage>
+        <sage>
+            <input>
+            </input>
+        </sage>
     </subsection>
 </section>
