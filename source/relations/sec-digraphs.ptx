@@ -5,6 +5,42 @@
     <p>
         A digraph, or directed graph, is a visual representation of a relation R on the set A. Every element in set A is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represent the pair <m>(a,b)</m> on the relation R.
     </p>
+    <sage>
+        <input>
+            # Define the set A
+            A = Set([2, 3, 4, 6, 8])
+
+            # Define the relation R on A: aRb if
+            f a divides b
+            R = [(a, b) for a in A for b in A if a.divides(b)]
+
+            DiGraph(R)
+        </input>
+    </sage>
+    <p>
+        If we try to display this particular Digraph we get the descriptive error. <c>ValueError: cannot add edge from 2 to 2 in graph without loops</c>. Let's run <c>DiGraph?</c> to investigate further.
+    </p>
+    <sage>
+        <input>
+            DiGraph?
+        </input>
+    </sage>
+    <p>
+        From the documentation we learn, by default, a "DiGraph" object has no loops. Let's tuned with the
+        appropriate flags.
+    </p>
+    <sage>
+        <input>
+            # Define the set A
+            A = Set([2, 3, 4, 6, 8])
+
+            # Define the relation R on A: aRb iff a divides b
+            R = [(a, b) for a in A for b in A if a.divides(b)]
+
+            # Convert R from a `list` to a `Set`
+            DiGraph(R, loops=true)
+        </input>
+    </sage>
     <p>
         Consider the set <m>A = \{1,2,3,4\}</m>. Define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a &lt; b</m>.
     </p>
@@ -24,7 +60,17 @@
     <sage>
         <input>
             # Alternatively, we can define the digraph directly
+            # The element on the left of the `:` is a node
+            # The node relates to the elements in the list on the right of the `:`
+            # 1 relates to 2, 3, and 4
             DiGraph({1: [2, 3, 4], 2: [3, 4], 3: [4]})
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # We can also define the digraph using tuples
+            DiGraph([(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)])
         </input>
     </sage>
 </section>

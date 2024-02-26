@@ -23,7 +23,8 @@
             # Define the relation R on A: aRb iff a divides b
             R = [(a, b) for a in A for b in A if a.divides(b)]
 
-            Set(R)
+            # Convert R from a `list` to a `Set`
+            show(Set(R))
         </input>
     </sage>
 </section>

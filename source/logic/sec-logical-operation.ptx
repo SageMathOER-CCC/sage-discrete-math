@@ -2,10 +2,7 @@
 
 <section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Logical Operators</title>
-
-    <!-- Logical Operators -->
-
-
+    <introduction>
         <p>
             In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
         </p>
@@ -41,8 +38,7 @@
                         <cell>True if both operands are equal</cell>
                     </row>
         </tabular>
-        
-
+    </introduction>
 
     <!-- Logical Operations in Sage -->
     <subsection>

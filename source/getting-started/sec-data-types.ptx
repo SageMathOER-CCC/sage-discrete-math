@@ -42,6 +42,25 @@
   </sage>
 
   <p>
+    Lists are indexed starting at 0.
+  </p>
+  <sage>
+    <input>
+        l[0]
+    </input>
+</sage>
+
+<p>
+  Lists have many handy methods.
+</p>
+<sage>
+  <input>
+    # Find the number of elements in the list
+    len(l)
+  </input>
+</sage>
+
+  <p>
       <term>Tuples</term>: Ordered, immutable collections within a pair of parenthesis <c>()</c>. If an object is immutable, the value cannot be changed after it is created.
   </p>
   <sage>

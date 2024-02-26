@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Properties</title>
+    <introduction>
+        <p>
+            A relation can satisfy the following properties:
+        
+            <ul>
+                <li>
+                    <p>
+                        <term>Reflexive</term>
+                    </p>
+                    <li>
+                        <p>
+                            <m>
+                                aRa \quad \forall a \in A
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            a relates to a for all elements a in the set A. All the elements relate to themselves.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            
+                        </p>
+                    </li>
+                </li>
+                <li>
+                    <p>
+                        <term>Symmetric</term>
+                    </p>
+                    <li>
+                        <p>
+                            <m>
+                                \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            
+                        </p>
+                    </li>
+                </li>
+                <li>
+                    <p>
+                        <term>Antisymmetric</term>: The only case that a relates to be and b relates to a is when a and b are equal.
+                        <m>
+                            \text{If } aRb \text{ and } bRa \text{ then } a = b \quad \forall a, b \in A
+                        </m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Transitive</term>
+                    </p>
+                    <li>
+                        <p>
+                            <m>
+                                \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
+                            </m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If a relates to b and b relates to c, then a relates to c.
+                        </p>
+                    </li>
+                </li>
+            </ul>
+        </p>
+    </introduction>
+
+    <subsection xml:id="subsec-reflexive">
+        <title>Reflexive</title>
+        <p>
+            We can check if a relation R on a set A is reflexive by checking if the relation contains all the reflexive pairs. A reflexive pair is a pair of elements (a, a) for each element a in the set A. If all the reflexive pairs are in the relation R, then the relation is reflexive.
+        </p>
+        <sage>
+            <input>
+                # Define the relation R on set A
+                A = Set([1, 2, 3])
+                R = Set([(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)])
+                show(R)
+            </input>
+          </sage>
+          <sage>
+            <input>
+                # Function to check if the relation R on set A is reflexive
+                def is_reflexive_set(A, R):
+                    # Create a set of (a, a) pairs for each element a in A
+                    reflexive_pairs = Set([(a, a) for a in A])
+                    # Check if all reflexive pairs are in the relation R
+                    return reflexive_pairs.issubset(R)
+
+                reflexivity_check = is_reflexive_set(A, R)
+                print(f"Is the relation R reflexive? {reflexivity_check}")
+            </input>
+          </sage>
+
+          <p>
+            If we are working with DiGraphs, we can use the method <code>has_edge</code> to check if the graph has a loop for each vertex.
+          </p>
+          <sage>
+            <input>
+                # Define the relation R as a list of tuples (pairs) and the set A
+                A = [1, 2, 3]
+                R = [(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)]
+
+                # Create a directed graph from the relation R
+                G = DiGraph(R, loops=True)
+
+                # A direct way to check for reflexivity using graph methods
+                is_reflexive = all(G.has_edge(a, a) for a in A)
+
+                print(f"Is the relation R reflexive? {is_reflexive}")
+            </input>
+          </sage>
+    </subsection>
+
+    <subsection xml:id="subsec-symmetric">
+        <title>Symmetric</title>
+        <p>
+            Checking for symmetry in a set:
+        </p>
+        <sage>
+            <input>
+                # Define the set A
+                A = Set([1, 2, 3])
+
+                # Define the relation R on A as a set of tuples
+                R = Set([(1, 2), (2, 1), (3, 3)])
+
+                # Define a function to check symmetry
+                def is_symmetric_set(relation_R):
+                    # Generate the inverse of each pair in the relation
+                    inverse_R = Set([(b, a) for a, b in relation_R])
+                    # The relation is symmetric if the intersection of R and its inverse is equal to R itself
+                    return relation_R.issubset(inverse_R) and inverse_R.issubset(relation_R)
+
+                # Check if R is symmetric
+                symmetric = is_symmetric_set(R)
+                print(f"Is the relation R symmetric? {symmetric}.")
+            </input>
+        </sage>
+        <p>
+            Checking for symmetry in a digraph:
+        </p>
+        <sage>
+            <input>
+                # Define the relation R as a list of tuples (directed edges)
+                relation_R = [(1, 2), (2, 1), (3, 3)]
+
+                # Create a directed graph (digraph) from the relation
+                G = DiGraph(relation_R, loops=true)
+
+                # Function to check if a digraph represents a symmetric relation
+                def is_symmetric_digraph(digraph):
+                    for u, v in digraph.edges(labels=False):
+                        if not digraph.has_edge(v, u):
+                            return False
+                    return True
+
+                # Check if the digraph G represents a symmetric relation
+                symmetric = is_symmetric_digraph(G)
+                print(f"Is the relation symmetric? {symmetric}.")
+
+            </input>
+        </sage>
+    </subsection>
+    <subsection xml:id="subsec-anti-symmetric">
+        <title>Antisymmetric</title>
+        <sage>
+            <input>
+                # Define a directed graph (digraph) with edges representing a relation
+                D = DiGraph([(1, 2), (3, 1), (1,1)], loops=true)
+
+                # Check if the digraph's relation is antisymmetric
+                is_antisymmetric = D.antisymmetric()
+
+                # Print the result
+                print(f"The relation represented by the digraph is antisymmetric: {is_antisymmetric}")
+            </input>
+        </sage>
+        <sage>
+            <input>
+                # Define the set
+                S = Set([1, 2, 3])
+
+                # Define the relation as a list of tuples (a, b) where a divides b
+                relation = [(a, b) for a in S for b in S if b % a == 0]
+
+                # Create a digraph from the relation
+                G = DiGraph(relation, loops=true)
+
+                # Check if the relation (digraph) is antisymmetric
+                is_antisymmetric = G.antisymmetric()
+
+                print(f"The relation is antisymmetric: {G.antisymmetric()}")
+            </input>
+        </sage>
+
+        <p>
+            We can also define a function to check for the antisymmetric property in a <c>Set</c>:
+        </p>
+        <sage>
+            <input>
+                # Define a Set of ordered pairs to represent the relation
+                relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
+
+                # Function to check if the relation is antisymmetric
+                def is_antisymmetric(relation):
+                    for a, b in relation:
+                        if (b, a) in relation and a != b:
+                            return False
+                    return True
+
+                # Check if the relation is antisymmetric
+                antisymmetric = is_antisymmetric(relation)
+
+                print(f"The relation is antisymmetric: {antisymmetric}")
+            </input>
+        </sage>
+    </subsection>
+
+    <subsection xml:id="subsec-transitive">
+        <title>Transitive</title>
+        <sage>
+            <input>
+                # Define a digraph with some vertices and edges
+                D = DiGraph([(1, 2), (2, 3), (1, 3)], loops=True)
+
+                # Check if the digraph's relation is transitive
+                is_transitive = D.is_transitive()
+                print(f"Is the relation transitive? {is_transitive}")
+            </input>
+        </sage>
+
+        <p>
+            Sage <c>Sets</c> don't have a built-in method to check if a relation is transitive. However, we can convert a Set to a list and create a directed graph from the relation. Then, we can use the built-in method <c>is_transitive</c> to check if the graph is transitive.
+        </p>
+        <sage>
+            <input>
+                # Define the set and the relation as a set of ordered pairs
+                A = Set([1, 2, 3])
+                relation = Set([(1, 2), (2, 3), (1, 3)])
+
+                # Create a directed graph from the relation
+                G = DiGraph([A, list(relation)])
+
+                # Use the built-in method to check if the graph is transitive
+                is_transitive = G.is_transitive()
+                print(f"The relation is transitive: {is_transitive}")
+
+            </input>
+        </sage>
+    </subsection>
+</section>

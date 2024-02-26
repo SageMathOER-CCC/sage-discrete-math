@@ -2,4 +2,43 @@
 
 <section xml:id="iteration" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Iteration</title>
+    <p>
+        Iteration is used to create loops that allow a program to repeat a sequence of instructions until a certain condition is met. In a for loop, the loop variable is assigned a value from a sequence, and the body of the loop is executed once for each value.
+    </p>
+    <sage>
+        <input>
+            # Print the numbers from 0 to 49
+            # Notice that 50 is not included
+            for i in range(50):
+                print(i)
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # The starting value of the range is included, unlike the ending value
+            for i in range(20, 50):
+                print(i)
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # We can also specify a step value
+            for i in range(20, 50, 9):
+                print(i)
+        </input>
+    </sage>
+
+    <p>
+        Lists are often used in iteration. Here is an example of list comprehension, which is a concise way to create lists.
+    </p>
+    <sage>
+        <input>
+            # Create a list of the cube roots of the numbers from 9 to 100
+            # In list comprehension, the for loop is written inside the square
+            # Unlike the range function, the ending value is included in the range
+            [n**3 for n in [9..100]]
+        </input>
+    </sage>
 </section>

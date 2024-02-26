@@ -3,7 +3,6 @@
 <section xml:id="OOP" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Object Oriented Programming</title>
   
-  
   <p>
     What is an <term>object</term>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
   </p>
@@ -20,29 +19,29 @@
     <term>Dot notation</term> is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
   </p>
 
-  <sage>
-    <input>
-      # Declare a variable named n and assign it the value 2
-      n = 2
-
-      # Calculate the square root of n
-      r = n.sqrt()
-
-      # Evaluate to 10 digits of precision
-      d = N(r, digits=10); d # ; is the same as a new line
-    </input>
-  </sage>
+  <p>
+    Lets use Sage's object oriented syntax to plot a graph and save it to a file.
+  </p>
 
   <p>
-    Sage supports different ways of accomplishing the same task.
+    In terms of object-oriented programming, the <c>Circuit</c> method is a method of the <c>digraphs</c> class. We can use the <c>plot</c> method to plot the graph. 
   </p>
 
   <sage>
     <input>
-      N(sqrt(2), digits=10)
+      # we will learn more about digraphs later in this text
+      g = digraphs.Circuit(10)
+      plot(g)
     </input>
   </sage>
 
-  
+  <p>
+    You can save the plot by using the <c>save</c> method.
+  </p>
 
+  <sage>
+    <input>
+      plot(g).save('filename.pdf')
+    </input>
+  </sage>
 </section>
