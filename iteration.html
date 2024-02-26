@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -188,7 +200,7 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-logical-operation.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Logical Operators</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logical-operation.html#sec-logical-operation-4" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Boolean Formula</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-logical-operation.html#sec-logical-operation-3" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Boolean Formula</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-truth-table.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Truth Tables</span></a></div></li>
 <li class="toc-item toc-section">
@@ -207,8 +219,17 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-relations.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Introduction to Relations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="relations-on-a-set.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Relations on a set</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="digraphs.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Digraphs</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="equivalence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Equivalence</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="partial-order.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Partial Order</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="properties.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="properties.html#subsec-reflexive" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Reflexive</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="properties.html#subsec-symmetric" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Symmetric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="properties.html#subsec-anti-symmetric" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Antisymmetric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="properties.html#subsec-transitive" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Transitive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="equivalence.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="partial-order.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Partial Order</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -216,7 +237,7 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-functions.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functions.html#sec-functions-9" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Graphical Representations</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functions.html#sec-functions-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Graphical Representations</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-recursion.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Recursion</span></a></div>
@@ -232,7 +253,27 @@ window.MathJax = {
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="iteration"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Iteration</span>
-</h2></section></div>
+</h2>
+<div class="para" id="iteration-2">Iteration is used to create loops that allow a program to repeat a sequence of instructions until a certain condition is met. In a for loop, the loop variable is assigned a value from a sequence, and the body of the loop is executed once for each value.</div>
+<pre id="iteration-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Print the numbers from 0 to 49
+# Notice that 50 is not included
+for i in range(50):
+    print(i)
+</script></pre>
+<pre id="iteration-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># The starting value of the range is included, unlike the ending value
+for i in range(20, 50):
+    print(i)
+</script></pre>
+<pre id="iteration-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># We can also specify a step value
+for i in range(20, 50, 9):
+    print(i)
+</script></pre>
+<div class="para" id="iteration-6">Lists are often used in iteration. Here is an example of list comprehension, which is a concise way to create lists.</div>
+<pre id="iteration-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Create a list of the cube roots of the numbers from 9 to 100
+# In list comprehension, the for loop is written inside the square
+# Unlike the range function, the ending value is included in the range
+[n**3 for n in [9..100]]
+</script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="data-types.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="debugging.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

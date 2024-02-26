@@ -34,7 +34,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Object Oriented Programming",
-  "body": " Object Oriented Programming  What is an object ? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a class .  A class provides a template or blueprint for creating objects and defines the attributes (properties) and methods (behaviors) that those objects can have.  This might not mean too much right now and it will be more clear as we explore what is known as object-oriented programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.   Dot notation is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.   Sage supports different ways of accomplishing the same task.   "
+  "body": " Object Oriented Programming  What is an object ? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a class .  A class provides a template or blueprint for creating objects and defines the attributes (properties) and methods (behaviors) that those objects can have.  This might not mean too much right now and it will be more clear as we explore what is known as object-oriented programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.   Dot notation is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.  Lets use Sage's object oriented syntax to plot a graph and save it to a file.  In terms of object-oriented programming, the Circuit method is a method of the digraphs class. We can use the plot method to plot the graph.   You can save the plot by using the save method.   "
 },
 {
   "id": "OOP-2",
@@ -79,7 +79,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Data Types",
-  "body": " Data Types  Let's ask sage what type of object this is.   Strings : Sequence of characters used for text. You can use single or double quotes.    True and False  boolean values.    Lists : Ordered mutable collections of items within a pair of square brackets [] . If an object is mutable, the value can be changed after it is created.    Tuples : Ordered, immutable collections within a pair of parenthesis () . If an object is immutable, the value cannot be changed after it is created.    set : sets() with lowercase s are built into Python. Python sets are collections of unique items within a pair of curly braces {} .    Set is a built-in Sage class. It is similar to a Python set, with added functionality for mathematical operations.    Dictionaries : Collections of key-value pairs.   In the following example Sage does not evaluate an approximation of sqrt(2) * log(3) . Sage will retain the symbolic value for accuracy.   "
+  "body": " Data Types  Let's ask sage what type of object this is.   Strings : Sequence of characters used for text. You can use single or double quotes.    True and False  boolean values.    Lists : Ordered mutable collections of items within a pair of square brackets [] . If an object is mutable, the value can be changed after it is created.   Lists are indexed starting at 0.   Lists have many handy methods.    Tuples : Ordered, immutable collections within a pair of parenthesis () . If an object is immutable, the value cannot be changed after it is created.    set : sets() with lowercase s are built into Python. Python sets are collections of unique items within a pair of curly braces {} .    Set is a built-in Sage class. It is similar to a Python set, with added functionality for mathematical operations.    Dictionaries : Collections of key-value pairs.   In the following example Sage does not evaluate an approximation of sqrt(2) * log(3) . Sage will retain the symbolic value for accuracy.   "
 },
 {
   "id": "data-types-2",
@@ -118,36 +118,36 @@ var ptx_lunr_docs = [
   "body": "Lists "
 },
 {
-  "id": "data-types-9",
-  "level": "2",
-  "url": "data-types.html#data-types-9",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Tuples "
-},
-{
-  "id": "data-types-11",
-  "level": "2",
-  "url": "data-types.html#data-types-11",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "set "
-},
-{
   "id": "data-types-13",
   "level": "2",
   "url": "data-types.html#data-types-13",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Set "
+  "body": "Tuples "
 },
 {
   "id": "data-types-15",
   "level": "2",
   "url": "data-types.html#data-types-15",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "set "
+},
+{
+  "id": "data-types-17",
+  "level": "2",
+  "url": "data-types.html#data-types-17",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Set "
+},
+{
+  "id": "data-types-19",
+  "level": "2",
+  "url": "data-types.html#data-types-19",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -160,7 +160,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Iteration",
-  "body": " Iteration  "
+  "body": " Iteration  Iteration is used to create loops that allow a program to repeat a sequence of instructions until a certain condition is met. In a for loop, the loop variable is assigned a value from a sequence, and the body of the loop is executed once for each value.     Lists are often used in iteration. Here is an example of list comprehension, which is a concise way to create lists.   "
 },
 {
   "id": "debugging",
@@ -250,7 +250,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Logical Operators",
-  "body": " Logical Operators   In Sage, logical operations such as AND & , OR | , NOT ~ , conditional -> , and biconditional <-> play crucial roles in constructing and evaluating logical expressions.    Operator  Symbol  Description    AND  &  True if both operands are true    OR  |  True if at least one operand is true    NOT  ~  Negates the truth value of its operand    Conditional  ->  True if the first operand implies the second    Biconditional  <->  True if both operands are equal      Boolean Formula  Sage's propcalc.formula() function allows for the creation of Boolean formulas using variables and logical operators.   Tips!  Logical operations can model decision-making processes in programming, such as determining whether a set of conditions are met before executing a particular block of code.     "
+  "body": " Logical Operators   In Sage, logical operations such as AND & , OR | , NOT ~ , conditional -> , and biconditional <-> play crucial roles in constructing and evaluating logical expressions.    Operator  Symbol  Description    AND  &  True if both operands are true    OR  |  True if at least one operand is true    NOT  ~  Negates the truth value of its operand    Conditional  ->  True if the first operand implies the second    Biconditional  <->  True if both operands are equal       Boolean Formula  Sage's propcalc.formula() function allows for the creation of Boolean formulas using variables and logical operators.   Tips!  Logical operations can model decision-making processes in programming, such as determining whether a set of conditions are met before executing a particular block of code.     "
 },
 {
   "id": "sec-truth-table",
@@ -313,16 +313,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Digraphs",
-  "body": " Digraphs  A digraph, or directed graph, is a visual representation of a relation R on the set A. Every element in set A is shown as a node (vertex). An arrow from the node to the node represent the pair on the relation R.  Consider the set . Define a relation on such that if and only if .    "
+  "body": " Digraphs  A digraph, or directed graph, is a visual representation of a relation R on the set A. Every element in set A is shown as a node (vertex). An arrow from the node to the node represent the pair on the relation R.   If we try to display this particular Digraph we get the descriptive error. ValueError: cannot add edge from 2 to 2 in graph without loops . Let's run DiGraph? to investigate further.   From the documentation we learn, by default, a \"DiGraph\" object has no loops. Let's tuned with the appropriate flags.   Consider the set . Define a relation on such that if and only if .     "
+},
+{
+  "id": "properties",
+  "level": "1",
+  "url": "properties.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Properties",
+  "body": " Properties   A relation can satisfy the following properties:    Reflexive         a relates to a for all elements a in the set A. All the elements relate to themselves.          Symmetric         If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.          Antisymmetric : The only case that a relates to be and b relates to a is when a and b are equal.      Transitive         If a relates to b and b relates to c, then a relates to c.        Reflexive  We can check if a relation R on a set A is reflexive by checking if the relation contains all the reflexive pairs. A reflexive pair is a pair of elements (a, a) for each element a in the set A. If all the reflexive pairs are in the relation R, then the relation is reflexive.    If we are working with DiGraphs, we can use the method has_edge to check if the graph has a loop for each vertex.     Symmetric  Checking for symmetry in a set:   Checking for symmetry in a digraph:     Antisymmetric    We can also define a function to check for the antisymmetric property in a Set :     Transitive   Sage Sets don't have a built-in method to check if a relation is transitive. However, we can convert a Set to a list and create a directed graph from the relation. Then, we can use the built-in method is_transitive to check if the graph is transitive.    "
+},
+{
+  "id": "properties-2-1",
+  "level": "2",
+  "url": "properties.html#properties-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reflexive Symmetric Antisymmetric Transitive "
 },
 {
   "id": "equivalence",
   "level": "1",
   "url": "equivalence.html",
   "type": "Section",
-  "number": "5.4",
+  "number": "5.5",
   "title": "Equivalence",
-  "body": " Equivalence  A relation is called an equivalence relation if it satisfies three key properties: reflexivity , symmetry , and transitivity . These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.     Reflexive         a relates to a for all elements a in the set A. All the elements relate to themselves.          Symmetric         If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.          Transitive         If a relates to b and b relates to c, then a relates to c.     The class of equivalence for an element a in set A is defined by the set:   This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.  Consider set A as defined by the scenario:      In this context, let R be the relation on A described as follows:    This relation demonstrates the properties of an equivalence relation:      Reflexive : A person lives in the same floor as themselves.     Symmetric : If person x lives in the same floor as person y, then person y lives in the same floor as person x.     Transitive : If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.      For the class of equivalence, considering person a as an example:   This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation \"living on the same floor as\" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.   "
+  "body": " Equivalence  A relation is called an equivalence relation if it satisfies three key properties:     Reflexive    a relates to a for all elements a in the set A. All the elements relate to themselves.      Symmetric    If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.      Transitive    If a relates to b and b relates to c, then a relates to c.     The class of equivalence for an element a in set A is defined by the set:   This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.  Consider set A as defined by the scenario:      In this context, let R be the relation on A described as follows:    This relation demonstrates the properties of an equivalence relation:      Reflexive : A person lives in the same floor as themselves.     Symmetric : If person x lives in the same floor as person y, then person y lives in the same floor as person x.     Transitive : If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.        For the class of equivalence, considering person a as an example:   This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation \"living on the same floor as\" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.  "
 },
 {
   "id": "equivalence-2",
@@ -331,7 +349,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "equivalence relation reflexivity symmetry transitivity "
+  "body": "equivalence relation "
 },
 {
   "id": "equivalence-3-1-1",
@@ -383,9 +401,9 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "partial-order.html",
   "type": "Section",
-  "number": "5.5",
+  "number": "5.6",
   "title": "Partial Order",
-  "body": " Partial Order  A Partial Order (PO) satisfies the following properties:   Reflexive : a relates to a for all elements a in the set A. All the elements relate to themselves.    Antisymmetric : The only case that a relates to be and b relates to a is when a and b are equal.    Transitive : if a relates to b and b relates to c, then a relates to c.      Example: Let and define as the power set of , denoted . Establish a relation on where if and only if . This relation represents the idea of one set being a subset of another within the power set of .  To explore how elements relate within these examples, consider the element in the context of the second example. The set is not related to the empty set, denoted as , because is not a subset of . Similarly, does not relate to because is not a subset of . However, is related to because is indeed a subset of , which we denote as .   We can also define a poset by specifying the relation directly.   "
+  "body": " Partial Order  A Partial Order (PO) satisfies the following properties:   Reflexive : a relates to a for all elements a in the set A. All the elements relate to themselves.   Antisymmetric : The only case that a relates to be and b relates to a is when a and b are equal.   Transitive : if a relates to b and b relates to c, then a relates to c.     Example: Let and define as the power set of , denoted . Establish a relation on where if and only if . This relation represents the idea of one set being a subset of another within the power set of .  To explore how elements relate within these examples, consider the element in the context of the second example. The set is not related to the empty set, denoted as , because is not a subset of . Similarly, does not relate to because is not a subset of . However, is related to because is indeed a subset of , which we denote as .   We can also define a poset by specifying the relation directly.   "
 },
 {
   "id": "partial-order-3",
@@ -421,7 +439,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Functions",
-  "body": " Functions  A function from a set into a set is a relation from into such that each element of is related to exactly one element of the set . The set is called the domain of the function, and the set is called the codomain. Functions are fundamental in both mathematics and computer science for describing mathematical relationships and implementing computational logic.   Tips!  Defining functions in Sage is not only useful for mathematical calculations but also for creating complex algorithms, modeling data, and simulating real-world scenarios in various fields of science and engineering.   In Sage, functions can be defined in various ways, including direct definition using Sage syntax or by defining Python functions.  For example, defining a function to calculate the cube of a number:   Alternatively, using Python syntax:     Graphical Representations  Sage provides powerful tools for visualizing functions, enabling students to explore the graphical representations of mathematical relationships. Graphs can be plotted directly from function definitions, offering insights into function behavior, such as continuity, limits, and extrema.   Tips!  Utilizing graphical representations of functions can greatly aid in understanding complex concepts in calculus and analysis, such as differentiation and integration, by providing a visual context.   For example, to plot the function over the interval :    "
+  "body": " Functions   A function from a set into a set is a relation from into such that each element of is related to exactly one element of the set . The set is called the domain of the function, and the set is called the codomain. Functions are fundamental in both mathematics and computer science for describing mathematical relationships and implementing computational logic.   Tips!  Defining functions in Sage is not only useful for mathematical calculations but also for creating complex algorithms, modeling data, and simulating real-world scenarios in various fields of science and engineering.   In Sage, functions can be defined in various ways, including direct definition using Sage syntax or by defining Python functions.  For example, defining a function to calculate the cube of a number:   Alternatively, using Python syntax:      Graphical Representations  Sage provides powerful tools for visualizing functions, enabling students to explore the graphical representations of mathematical relationships. Graphs can be plotted directly from function definitions, offering insights into function behavior, such as continuity, limits, and extrema.   Tips!  Utilizing graphical representations of functions can greatly aid in understanding complex concepts in calculus and analysis, such as differentiation and integration, by providing a visual context.   For example, to plot the function over the interval :    "
 },
 {
   "id": "sec-recursion",
@@ -430,7 +448,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Recursion",
-  "body": " Recursion  Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.    Recursion in Sequences  A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors. The following Python code in Sage illustrates how to solve a recursive sequence using the rsolve() function from the sympy library, which symbolically solves recurrence equations.   Here, s is a function representing the sequence. The equation eqn defines the recursive relation . The rsolve() function is then used to find a closed-form solution to this recurrence, given the initial conditions and .     Recursion with Binomial Coefficients  Binomial coefficients, denoted as , count the number of ways to choose elements from an -element set. They can be defined recursively. Sage can compute binomial coefficients using the binomial(n, k) function.   We can also explore the recursive nature of binomials using a Python syntax.   This Python function implements the recursive formula , with base cases .     Recursion in Polynomials  Polynomials can also be generated and manipulated recursively. For instance, the derivative of a polynomial is a lower-degree polynomial that can be calculated recursively. Sage provides tools for polynomial manipulation, including differentiation.   In this code, PolynomialRing(QQ, 'x') creates a polynomial ring in the variable with rational number coefficients ( QQ ). The polynomial is defined within this ring. The method .derivative() computes the derivative of , producing a new polynomial representing the derivative.   "
+  "body": " Recursion   Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.     Recursion in Sequences  A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors. The following Python code in Sage illustrates how to solve a recursive sequence using the rsolve() function from the sympy library, which symbolically solves recurrence equations.   Here, s is a function representing the sequence. The equation eqn defines the recursive relation . The rsolve() function is then used to find a closed-form solution to this recurrence, given the initial conditions and .     Recursion with Binomial Coefficients  Binomial coefficients, denoted as , count the number of ways to choose elements from an -element set. They can be defined recursively. Sage can compute binomial coefficients using the binomial(n, k) function.   We can also explore the recursive nature of binomials using a Python syntax.   This Python function implements the recursive formula , with base cases .     Recursion in Polynomials  Polynomials can also be generated and manipulated recursively. For instance, the derivative of a polynomial is a lower-degree polynomial that can be calculated recursively. Sage provides tools for polynomial manipulation, including differentiation.   In this code, PolynomialRing(QQ, 'x') creates a polynomial ring in the variable with rational number coefficients ( QQ ). The polynomial is defined within this ring. The method .derivative() computes the derivative of , producing a new polynomial representing the derivative.   "
 },
 {
   "id": "backmatter-2",
