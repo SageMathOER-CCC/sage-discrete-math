@@ -1,9 +1,10 @@
 <section xml:id="sec-recursion" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Recursion</title>
-
+    <introduction>
         <p>
             Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.
         </p>
+    </introduction>
 
     <!-- Recursion in Sequences -->
     <subsection>
