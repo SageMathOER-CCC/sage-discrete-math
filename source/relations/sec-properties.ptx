@@ -53,6 +53,14 @@
                 </li>
                 <li>
                     <p>
+                        <term>Antisymmetric</term>: The only case that a relates to be and b relates to a is when a and b are equal.
+                        <m>
+                            \text{If } aRb \text{ and } bRa \text{ then } a = b \quad \forall a, b \in A
+                        </m>
+                    </p>
+                </li>
+                <li>
+                    <p>
                         <term>Transitive</term>
                     </p>
                     <li>
@@ -141,7 +149,7 @@
 
                 # Check if R is symmetric
                 symmetric = is_symmetric_set(R)
-                print(f"Is the relation R symmetric? {is_symmetric}.")
+                print(f"Is the relation R symmetric? {symmetric}.")
             </input>
         </sage>
         <p>
@@ -166,6 +174,60 @@
                 symmetric = is_symmetric_digraph(G)
                 print(f"Is the relation symmetric? {symmetric}.")
 
+            </input>
+        </sage>
+    </subsection>
+    <subsection xml:id="subsec-anti-symmetric">
+        <title>Antisymmetric</title>
+        <sage>
+            <input>
+                # Define a directed graph (digraph) with edges representing a relation
+                D = DiGraph([(1, 2), (3, 1), (1,1)], loops=true)
+
+                # Check if the digraph's relation is antisymmetric
+                is_antisymmetric = D.antisymmetric()
+
+                # Print the result
+                print(f"The relation represented by the digraph is antisymmetric: {is_antisymmetric}")
+            </input>
+        </sage>
+        <sage>
+            <input>
+                # Define the set
+                S = Set([1, 2, 3])
+
+                # Define the relation as a list of tuples (a, b) where a divides b
+                relation = [(a, b) for a in S for b in S if b % a == 0]
+
+                # Create a digraph from the relation
+                G = DiGraph(relation, loops=true)
+
+                # Check if the relation (digraph) is antisymmetric
+                is_antisymmetric = G.antisymmetric()
+
+                print(f"The relation is antisymmetric: {G.antisymmetric()}")
+            </input>
+        </sage>
+
+        <p>
+            We can also define a function to check for the antisymmetric property in a <c>Set</c>:
+        </p>
+        <sage>
+            <input>
+                # Define a Set of ordered pairs to represent the relation
+                relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
+
+                # Function to check if the relation is antisymmetric
+                def is_antisymmetric(relation):
+                    for a, b in relation:
+                        if (b, a) in relation and a != b:
+                            return False
+                    return True
+
+                # Check if the relation is antisymmetric
+                antisymmetric = is_antisymmetric(relation)
+
+                print(f"The relation is antisymmetric: {antisymmetric}")
             </input>
         </sage>
     </subsection>

@@ -3,7 +3,7 @@
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title>
     <p>
-        A relation is called an <term>equivalence relation</term> if it satisfies three key properties: <term>reflexivity</term>, <term>symmetry</term>, and <term>transitivity</term>. These properties ensure that elements can be grouped into classes of equivalence based on their mutual relations.
+        A relation is called an <term>equivalence relation</term> if it satisfies three key properties:
     </p>
     <ul>
         <li>
@@ -12,19 +12,7 @@
             </p>
             <li>
                 <p>
-                    <m>
-                        aRa \quad \forall a \in A
-                    </m>
-                </p>
-            </li>
-            <li>
-                <p>
                     a relates to a for all elements a in the set A. All the elements relate to themselves.
-                </p>
-            </li>
-            <li>
-                <p>
-                    
                 </p>
             </li>
         </li>
@@ -34,19 +22,7 @@
             </p>
             <li>
                 <p>
-                    <m>
-                        \text{If } aRb \text{ then } bRa \quad \forall a, b \in A
-                    </m>
-                </p>
-            </li>
-            <li>
-                <p>
                     If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
-                </p>
-            </li>
-            <li>
-                <p>
-                    
                 </p>
             </li>
         </li>
@@ -54,13 +30,6 @@
             <p>
                 <term>Transitive</term>
             </p>
-            <li>
-                <p>
-                    <m>
-                        \text{If } aRb \text{ and } bRc \text{ then } aRc \quad \forall a, b, c \in A
-                    </m>
-                </p>
-            </li>
             <li>
                 <p>
                     If a relates to b and b relates to c, then a relates to c.
