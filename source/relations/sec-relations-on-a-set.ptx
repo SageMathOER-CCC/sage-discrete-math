@@ -24,7 +24,7 @@
             R = [(a, b) for a in A for b in A if a.divides(b)]
 
             # Convert R from a `list` to a `Set`
-            Set(R)
+            show(Set(R))
         </input>
     </sage>
 </section>
