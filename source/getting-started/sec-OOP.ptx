@@ -4,7 +4,7 @@
   <title>Object Oriented Programming</title>
   
   <p>
-    What is an <term>object</term>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
+    What is an <term>object</term>? Almost everything in Sage! More specifically an object is an instance of a <term>class</term>. 
   </p>
   
   <p>
