@@ -3,8 +3,25 @@
 <section xml:id="data-types" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Data Types</title>
   <p>
+    Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations.
     Let's ask sage what type of <term>object</term> this is.
   </p>
+  <sage>
+    <input>
+        n = 2
+        type(n)
+    </input>
+  </sage>
+
+  <p>
+    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
+  </p>
+  <sage>
+      <input>
+          n = sqrt(2) * log(3)
+          type(n)
+      </input>
+  </sage>
 
   <p>
     <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
@@ -12,21 +29,18 @@
   <sage>
       <input>
           greeting = "Hello, World!"
-          print(type(greeting))
-          print(greeting)
+          type(greeting)
       </input>
   </sage>
 
   <p>
     <c>True</c> and <c>False</c> <term>boolean</term> values. 
   </p>
-
   <sage>
     <input>
         # Check if 5 in contained in the set of prime numbers
-        f = 5 in Primes()
-        print(type(f))
-        print(f)
+        bool = 5 in Primes()
+        type(bool)
     </input>
   </sage>
 
@@ -36,20 +50,18 @@
   <sage>
       <input>
           l = [1, 3, 3, 2]
-          print(type(l))
-          print(l)
+          type(l)
       </input>
   </sage>
 
   <p>
-    Lists are indexed starting at 0.
+    Lists are indexed starting at 0. Here we access the first element of a list by asking for the value at index zero.
   </p>
   <sage>
     <input>
         l[0]
     </input>
 </sage>
-
 <p>
   Lists have many handy methods.
 </p>
@@ -66,21 +78,17 @@
   <sage>
       <input>
           t = (1, 3, 3, 2)
-          print(type(t))
-          print(t)
+          type(t)
       </input>
   </sage>
 
   <p>
-    <term>set</term>: <c>sets()</c> with lowercase <c>s</c> are built into Python. Python sets are collections of unique items within a pair of curly braces <c>{}</c>.
+    <term>set</term>: <c>set()</c> with lowercase <c>s</c> are built into Python. Python sets are collections of unique items within a pair of curly braces <c>{}</c>.
   </p>
   <sage>
       <input>
           s = {1, 3, 3, 2}
-          # you can also define a set using the set() function
-          # myPythonSet = set([1, 3, 3, 2])
-          print(type(s))
-          print(s)
+          type(s)
       </input>
   </sage>
 
@@ -90,10 +98,18 @@
   <sage>
       <input>
           S = Set([1, 3, 3, 2])
-          print(type(S))
-          print(S)
+          type(S)
       </input>
   </sage>
+  <p>
+    We define the set in a list with square brackets <c>[]</c>. The set is then created with the <c>Set()</c> function. When a list is converted to a set, the duplicates are removed.
+  </p>
+  <sage>
+    <input>
+        S = Set([5, 5, 1, 3, 5, 3, 2, 2, 3])
+        print(S)
+    </input>
+</sage>
 
   <p>
       <term>Dictionaries</term>: Collections of key-value pairs.
@@ -128,16 +144,7 @@
         pprint.pprint(d)
       </input>
   </sage>
-
   <p>
-    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
+    The <c>pprint</c> module is used to print the dictionary in a more readable format.
   </p>
-  <sage>
-      <input>
-          n = sqrt(2) * log(3)
-          print(type(n))
-          print(n)
-          show(n)
-      </input>
-  </sage>
 </section>
