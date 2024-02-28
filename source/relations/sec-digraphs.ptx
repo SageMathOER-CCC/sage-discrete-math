@@ -3,7 +3,7 @@
 <section xml:id="digraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Digraphs</title>
     <p>
-        A digraph, or directed graph, is a visual representation of a relation R on the set A. Every element in set A is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represent the pair <m>(a,b)</m> on the relation R.
+        A digraph, or directed graph, is a visual representation of a relation <m>R</m> on the set <m>A</m>. Every element in set <m>A</m> is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represent the pair <m>(a,b)</m> on the relation <m>R</m>.
     </p>
     <sage>
         <input>
