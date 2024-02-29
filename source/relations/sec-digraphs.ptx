@@ -13,12 +13,11 @@
             # Define the relation R on A: aRb iff a divides b
             R = [(a, b) for a in A for b in A if a.divides(b)]
 
-            # Convert R from a `list` to a `Set`
             DiGraph(R, loops=true)
         </input>
     </sage>
     <p>
-        We can add a title to the digraph.
+        We can add a title to the digraph with the <c>name</c> parameter.
     </p>
     <sage>
         <input>
