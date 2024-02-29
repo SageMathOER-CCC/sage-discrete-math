@@ -38,7 +38,7 @@
         </input>
     </sage>
     <p>
-      <c>print()</c> outputs a similar result.
+      <c>print()</c> outputs a similar result without the quotes.
     </p>
     <sage>
       <input>

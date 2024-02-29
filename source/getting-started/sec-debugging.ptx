@@ -99,5 +99,9 @@
   <p>
     It looks like we have a <c>NameError</c>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.
   </p>
-
+  <sage>
+    <input>
+      print("Hi")
+    </input>
+  </sage>
 </section>
