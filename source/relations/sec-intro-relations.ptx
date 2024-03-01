@@ -58,10 +58,8 @@
             athletic_jackets = Set(['j2', 'j3'])
             athletic_shirts = Set(['s3', 's4'])
 
-            # Define the formal relation
+            # Define the relations
             formal_relation = Set([(a, b) for a in formal_jackets for b in formal_shirts])
-
-            # Define the athletic relation
             athletic_relation = Set([(a, b) for a in athletic_jackets for b in athletic_shirts])
 
             print("Formal Relation:", formal_relation)

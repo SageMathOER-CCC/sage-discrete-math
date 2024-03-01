@@ -97,7 +97,7 @@
   </sage>
 
   <p>
-    It looks like we have a <c>NameError</c>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.
+    It looks like we have a <c>NameError</c> because <c>Hi</c> is not defined. In this case Sage thinks that <c>Hi</c> is a variable because there are no parenthesis around it. Let's make it a string by adding quotes around it. Alternately, we could have kept <c>Hi</c> without quotes to use it as a variable and assign a value to it.
   </p>
   <sage>
     <input>

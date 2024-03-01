@@ -18,9 +18,25 @@
     </p>
 
     <p>
-        To explore how elements relate within these examples, consider the element <m>\{1\}</m> in the context of the second example. The set <m>\{1\}</m> is not related to the empty set, denoted as <m>\{\}</m>, because <m>\{1\}</m> is not a subset of <m>\{\}</m>. Similarly, <m>\{1\}</m> does not relate to <m>\{0\}</m> because <m>\{1\}</m> is not a subset of <m>\{0\}</m>. However, <m>\{1\}</m> is related to <m>\{0,1\}</m> because <m>\{1\}</m> is indeed a subset of <m>\{0,1\}</m>, which we denote as <m>\{1\} R \{0,1\}</m>.
+        To explore how elements relate within these examples, consider the element <m>\{1\}</m> in the context of the second example.
+        <ul>
+            <li>
+                <p>
+                    The set <m>\{1\}</m> is not related to the empty set, denoted as <m>\{\}</m>, because <m>\{1\}</m> is not a subset of <m>\{\}</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Similarly, <m>\{1\}</m> does not relate to <m>\{0\}</m> because <m>\{1\}</m> is not a subset of <m>\{0\}</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    However, <m>\{1\} R \{0,1\}</m> because <m>\{1\}</m> is indeed a subset of <m>\{0,1\}</m>.
+                </p>
+            </li>
+        </ul>
     </p>
-
     <sage>
         <input>
             B = Set([0, 1])

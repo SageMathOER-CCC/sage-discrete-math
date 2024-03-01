@@ -3,8 +3,7 @@
 <section xml:id="data-types" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Data Types</title>
   <p>
-    Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations.
-    Let's ask sage what type of <term>object</term> this is.
+    Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask sage what type of object this is.
   </p>
   <sage>
     <input>
@@ -12,9 +11,12 @@
         type(n)
     </input>
   </sage>
+  <p>
+    <c>2</c> is represented by an object which is an instance of the <term>Integer</term> class. Sage has many classes for different types of numbers and mathematical objects.
+  </p>
 
   <p>
-    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the symbolic value for accuracy.
+    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the <term>symbolic</term> value for accuracy.
   </p>
   <sage>
       <input>
@@ -24,7 +26,7 @@
   </sage>
 
   <p>
-    <term>Strings</term>: Sequence of characters used for text. You can use single or double quotes.
+    <term>String</term>: Sequence of characters used for text. You can use single or double quotes.
   </p>
   <sage>
       <input>
@@ -45,7 +47,7 @@
   </sage>
 
   <p>
-    <term>Lists</term>: Ordered mutable collections of items within a pair of square brackets <c>[]</c>. If an object is mutable, the value can be changed after it is created.
+    <term>List</term>: Mutable collection of items within a pair of square brackets <c>[]</c>. If an object is mutable, the value can be changed after it is created.
   </p>
   <sage>
       <input>
@@ -55,7 +57,7 @@
   </sage>
 
   <p>
-    Lists are indexed starting at 0. Here we access the first element of a list by asking for the value at index zero.
+    Lists are indexed starting at <c>0</c>. Here we access the first element of a list by asking for the value at index zero.
   </p>
   <sage>
     <input>
@@ -63,7 +65,7 @@
     </input>
 </sage>
 <p>
-  Lists have many handy methods.
+  Lists have many helpful methods.
 </p>
 <sage>
   <input>
@@ -73,7 +75,7 @@
 </sage>
 
   <p>
-      <term>Tuples</term>: Ordered, immutable collections within a pair of parenthesis <c>()</c>. If an object is immutable, the value cannot be changed after it is created.
+      <term>Tuple</term>: Immutable collection within a pair of parenthesis <c>()</c>. If an object is immutable, the value cannot be changed after it is created.
   </p>
   <sage>
       <input>
@@ -83,7 +85,7 @@
   </sage>
 
   <p>
-    <term>set</term>: <c>set()</c> with lowercase <c>s</c> are built into Python. Python sets are collections of unique items within a pair of curly braces <c>{}</c>.
+    <term>set</term>: Collection of unique items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> are built into Python.
   </p>
   <sage>
       <input>
@@ -93,7 +95,7 @@
   </sage>
 
   <p>
-    <term>Set</term> is a built-in Sage class. It is similar to a Python set, with added functionality for mathematical operations.
+    <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c>S</c> have added functionality for mathematical operations.
   </p>
   <sage>
       <input>
@@ -112,23 +114,18 @@
 </sage>
 
   <p>
-      <term>Dictionaries</term>: Collections of key-value pairs.
+      <term>Dictionary</term>: Collection of key-value pairs.
   </p>
   <sage>
       <input>
-        # Python dictionary for the textbook
-        import pprint
-
         d = {
             "title": "Discrete Math with SageMath",
             "authors": ["Zunaid Ahmed", "Hellen Colman", "Samuel Lubliner"],
             "institution": "City Colleges of Chicago",
             "topics_covered": [
                 "Set Theory",
-                "Cartesian Products",
                 "Combinations and permutations",
-                "Binomial theorem",
-                "Logic: Propositions. True tables",
+                "Logic",
                 "Quantifiers",
                 "Relations",
                 "Functions",
@@ -136,15 +133,21 @@
                 "Graphs",
                 "Trees",
                 "Lattices",
-                "Boolean algebras and functions"
+                "Boolean algebras"
                 ],
                 "format": ["Web", "PDF"]
             }
-        print(type(d))
-        pprint.pprint(d)
+
+        type(d)
       </input>
   </sage>
   <p>
-    The <c>pprint</c> module is used to print the dictionary in a more readable format.
+    The <c>pprint</c> module may be used to print the dictionary in a more readable format.
   </p>
+  <sage>
+    <input>
+      import pprint
+      pprint.pprint(d)
+    </input>
+</sage>
 </section>

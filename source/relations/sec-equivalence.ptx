@@ -2,23 +2,22 @@
 
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title>
+
     <p>
-        A relation is called an <term>equivalence relation</term> if it satisfies the reflexive, symmetric, and transitive properties. The <term>class of equivalence</term> for an element <m>a</m> in set <m>A</m> is defined by the set:
+        A relation on a set is called an <term>equivalence relation</term> if it is reflexive, symmetric, and transitive. The <term>equivalence class</term> of an element <m>a</m> in a set <m>A</m> is the set of all elements in <m>A</m> that are related to <m>a</m> by this relation, denoted by:
     </p>
     <me>
         |a| = \{x \in A \; | \; xRa\}
     </me>
     <p>
-        This set comprises all elements in <m>A</m> that are related to <m>a</m> through the relation <m>R</m>, illustrating how elements are grouped into equivalence classes.
+        Here, <m>|a|</m> represents the equivalence class of <m>a</m>, comprising all elements in <m>A</m> that are related to <m>a</m> through the relation <m>R</m>. This illustrates the grouping of elements into equivalence classes.
     </p>
     <p>
-        Consider set <m>A</m> as defined by the scenario:
+        Consider a set <m>A</m> defined as:
     </p>
-    <p>
-        <me>
-            \text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
-        </me>
-    </p>
+    <me>
+        A = \{x \; | \; x \text{ is a person living in a given building} \}
+    </me>
     <sage>
         <input>
             # Define the set of people
@@ -96,12 +95,12 @@
         </input>
     </sage>
     <p>
-        For the class of equivalence, considering person a as an example:
+        For the equivalence class, considering a person <m>a</m> as an example:
     </p>
     <me>
-        | \text{person a} | = \{ x \in A \; | \; x R a \} = \text{all people living on the same floor as person a}
+        |a| = \{ x \in A \; | \; xRa \} = \text{all people living on the same floor as person a}
     </me>
     <p>
-        This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as <m>a</m>. The relation "living on the same floor as" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.
+        This definition confirms that the equivalence class for person <m>a</m> includes all individuals residing on the same floor, effectively grouping the building's residents into equivalence classes based on their floors.
     </p>
 </section>
