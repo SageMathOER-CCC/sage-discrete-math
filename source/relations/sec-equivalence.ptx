@@ -45,7 +45,7 @@
     </sage>
 
     <p>
-        In this context, let <m>R</m> be the relation on <m>A</m> described as follows:
+        Let <m>R</m> be the relation on <m>A</m> described as follows:
     </p>
     <me>
         \text{x R y iff x and y live in the same floor of the building.}

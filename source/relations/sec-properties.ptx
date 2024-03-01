@@ -132,24 +132,24 @@
             <input>
                 relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
 
-                def is_antisymmetric(relation):
+                def is_antisymmetric_set(relation):
                     for a, b in relation:
                         if (b, a) in relation and a != b:
                             return False
                     return True
 
-                is_antisymmetric(relation)
+                is_antisymmetric_set(relation)
             </input>
         </sage>
         <p>
-            Although Sage has a built in <c>antisymmetric()</c> method for <c>Graphs</c>, this behaves differently from the definition of antisymmetry for we are using. Interestinly, this returns <c>False</c>.
+            Although Sage has a built in <c>antisymmetric()</c> method for <c>Graphs</c>, this behaves differently from the definition of antisymmetry for we are using. A <c>DiGraph</c> returns <c>False</c> if there is a cycle.
         </p>
         <sage>
             <input>
                 # Warning: This will return False
-                relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)]) 
+                relation = [(1, 2), (2, 3), (3, 4), (4, 1)]
 
-                DiGraph(list(relation)).antisymmetric()
+                DiGraph(relation).antisymmetric()
             </input>
         </sage>
     </subsection>
@@ -176,6 +176,8 @@
                                     if (b, c) in R and not (a, c) in R:
                                         return False
                     return True
+                
+                is_transitive(A, R)
             </input>
         </sage>
         <p>
@@ -186,12 +188,12 @@
                 A = Set([1, 2, 3])
                 R = Set([(1, 2), (2, 3), (1, 3)])
 
-                G = DiGraph(list(R), format='list_of_edges')
+                G = DiGraph([R])
                 
                 G.is_transitive()
             </input>
         </sage>
-        
+
         <sage>
             <input>
                 D = DiGraph([(1, 2), (2, 3), (1, 3)], loops=True)
