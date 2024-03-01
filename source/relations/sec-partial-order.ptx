@@ -3,32 +3,13 @@
 <section xml:id="partial-order" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Partial Order</title>
     <p>
-        A Partial Order (PO) <m>\prec</m> satisfies the following properties:
+        A Partial Order (PO) <m>\prec</m> satisfies the reflexive, antisymmetric, and transitive properties.
     </p>
-    <p>
-        <term>Reflexive</term>: a relates to a for all elements a in the set A. All the elements relate to themselves.
-    </p>
-    <p>
-        <term>Antisymmetric</term>: The only case that a relates to be and b relates to a is when a and b are equal.
-    </p>
-    <p>
-        <term>Transitive</term>: if a relates to b and b relates to c, then a relates to c.
-    </p>
-
     <sage>
         <input>
-            # Example Partial Order
             A = Set([1, 2, 3, 4, 5, 6, 8])
             P = Poset((A, lambda x, y: x.divides(y)))
             P.plot()
-        </input>
-    </sage>
-    <sage>
-        <input>
-            # copy and past the output into an overleaf document
-            l = latex(P)
-            # Print the LaTeX code
-            print(l)
         </input>
     </sage>
 
@@ -42,14 +23,9 @@
 
     <sage>
         <input>
-            # Define the set B
             B = Set([0, 1])
-
-            # Generate the power set of B, denoted as A
-            # Should I use the power set function instead of subsets?
             A = B.subsets()
 
-            # Define the poset using the subsets of B and the subset relation
             P = Poset((A, lambda x, y: x.issubset(y)))
 
             # Increase size of vertices to fit the label
@@ -67,5 +43,4 @@
             H.plot()
         </input>
     </sage>
-    
 </section>

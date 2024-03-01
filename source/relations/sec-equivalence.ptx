@@ -3,52 +3,16 @@
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title>
     <p>
-        A relation is called an <term>equivalence relation</term> if it satisfies three key properties:
-    </p>
-    <ul>
-        <li>
-            <p>
-                <term>Reflexive</term>
-            </p>
-            <li>
-                <p>
-                    a relates to a for all elements a in the set A. All the elements relate to themselves.
-                </p>
-            </li>
-        </li>
-        <li>
-            <p>
-                <term>Symmetric</term>
-            </p>
-            <li>
-                <p>
-                    If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.
-                </p>
-            </li>
-        </li>
-        <li>
-            <p>
-                <term>Transitive</term>
-            </p>
-            <li>
-                <p>
-                    If a relates to b and b relates to c, then a relates to c.
-                </p>
-            </li>
-        </li>
-    </ul>
-
-    <p>
-        The <term>class of equivalence</term> for an element a in set A is defined by the set:
+        A relation is called an <term>equivalence relation</term> if it satisfies the reflexive, symmetric, and transitive properties. The <term>class of equivalence</term> for an element <m>a</m> in set <m>A</m> is defined by the set:
     </p>
     <me>
         |a| = \{x \in A \; | \; xRa\}
     </me>
     <p>
-        This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.
+        This set comprises all elements in <m>A</m> that are related to <m>a</m> through the relation <m>R</m>, illustrating how elements are grouped into equivalence classes.
     </p>
     <p>
-        Consider set A as defined by the scenario:
+        Consider set <m>A</m> as defined by the scenario:
     </p>
     <p>
         <me>
@@ -59,6 +23,15 @@
         <input>
             # Define the set of people
             A = Set(['p_1', 'p_2', 'p_3', 'p_4', 'p_5', 'p_6', 'p_7', 'p_8', 'p_9', 'p_10'])
+            A
+        </input>
+    </sage>
+    <p>
+        Create sets for the people living on each floor of the building:
+    </p>
+    <sage>
+        <input>
+            import pprint
 
             # Define the floors as a dictionary, mapping floor names to sets of people
             floors = {
@@ -67,13 +40,12 @@
                 'third_floor': Set(['p_8', 'p_9', 'p_10'])
             }
 
-            print("Set of all people:", A)
-            print("sets of floors:", floors)
+            pprint.pprint(floors)
         </input>
     </sage>
 
     <p>
-        In this context, let R be the relation on A described as follows:
+        In this context, let <m>R</m> be the relation on <m>A</m> described as follows:
     </p>
     <me>
         \text{x R y iff x and y live in the same floor of the building.}
@@ -89,49 +61,34 @@
         This relation demonstrates the properties of an equivalence relation:
     </p>
     <p>
-        <ul>
-            <li>
-                <p>
-                    <term>Reflexive</term>: A person lives in the same floor as themselves.
-                </p>
-            </li>
-            <li>
-                <p>
-                    <term>Symmetric</term>: If person x lives in the same floor as person y, then person y lives in the same floor as person x.
-                </p>
-            </li>
-            <li>
-                <p>
-                    <term>Transitive</term>: If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.
-                </p>
-            </li>
-        </ul>
+        <term>Reflexive</term>: A person lives in the same floor as themselves.
     </p>
     <sage>
         <input>
             def is_reflexive_set(A, R):
-                # Create a set of (a, a) pairs for each element a in A
                 reflexive_pairs = Set([(a, a) for a in A])
-                # Check if all reflexive pairs are in the relation R
                 return reflexive_pairs.issubset(R)
 
             is_reflexive_set(A, R)
         </input>
     </sage>
 
+    <p>
+        <term>Symmetric</term>: If person <m>a</m> lives in the same floor as person <m>b</m>, then person <m>b</m> lives in the same floor as person <m>a</m>.
+    </p>
     <sage>
         <input>
             def is_symmetric_set(relation_R):
-                # Generate the inverse of each pair in the relation
-                inverse_R = Set([(b, a) for a, b in relation_R])
-                # The relation is symmetric if the intersection of R and its inverse is equal to R itself
-                return relation_R.issubset(inverse_R) and inverse_R.issubset(relation_R)
+                inverse_R = Set([(b, a) for (a, b) in relation_R])
+                return relation_R == inverse_R
 
-            # Check if R is symmetric
             is_symmetric_set(R)
         </input>
     </sage>
 
+    <p>
+        <term>Transitive</term>: If person <m>a</m> lives in the same floor as person <m>b</m> and person <m>b</m> lives in the same floor as person <m>c</m>, then person <m>a</m> lives in the same floor as person <m>c</m>.
+    </p>
     <sage>
         <input>
             G = DiGraph(list(R), loops=true)
@@ -145,6 +102,6 @@
         | \text{person a} | = \{ x \in A \; | \; x R a \} = \text{all people living on the same floor as person a}
     </me>
     <p>
-        This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation "living on the same floor as" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.
+        This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as <m>a</m>. The relation "living on the same floor as" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.
     </p>
 </section>
