@@ -11,4 +11,27 @@
     <p>
         The Sage <url href="https://doc.sagemath.org/html/en/index.html">documentation</url> can be found at this link. Right now, reading the documentation is optional. We will do our best to get you up and running with Sage with this text.
     </p>
+    <p>
+        You can quickly reference Sage documentation with the <c>?</c> operator. You may also view the source code with the <c>??</c> operator.
+    </p>
+    <sage>
+        <input>
+            Set?
+        </input>
+    </sage>
+    <sage>
+        <input>
+            Set??
+        </input>
+    </sage>
+    <sage>
+        <input>
+            factor?
+        </input>
+    </sage>
+    <sage>
+        <input>
+            factor??
+        </input>
+    </sage>
 </section>
