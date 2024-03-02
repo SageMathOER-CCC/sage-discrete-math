@@ -4,7 +4,7 @@
     <title>Relations on a set</title>
     
     <p>
-        Let's explore specific kind of relation. When the two sets are identical, we refer to a relation from <m>A</m> to <m>A</m> as a relation <term>on</term> <m>A</m>.
+        When the set <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
     </p>
     <p>
         Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
@@ -12,19 +12,15 @@
             R = \{(2,2),(2,4),(2,6),(2,8),(3,3),(3,6),(4,4),(4,8),(6,6),(8,8)\}
         </me>
     </p>
-    <p>
-        To understand the pairs in this relation, consider whether <m>2</m> divides <m>2</m>. Since it does, the pair <m>(2,2)</m> is included in <m>R</m>. However, <m>2</m> does not divide <m>3</m>, so any pair involving <m>2</m> and <m>3</m> is excluded. Following this logic, we include pairs where the first element divides the second.
-    </p>
     <sage>
         <input>
             # Define the set A
             A = Set([2, 3, 4, 6, 8])
 
             # Define the relation R on A: aRb iff a divides b
-            R = [(a, b) for a in A for b in A if a.divides(b)]
+            R = Set([(a, b) for a in A for b in A if a.divides(b)])
 
-            # Convert R from a `list` to a `Set`
-            show(Set(R))
+            show(R)
         </input>
     </sage>
 </section>

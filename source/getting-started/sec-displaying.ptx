@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="displaying" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Display Values</title>
+    <p>
+      Sage offers various ways to display values to the screen. The simplest way is to just type the value into a cell and Sage will display it. Sage also has functions to display values to the screen.
+    </p>
+    <p>
+      <ul>
+        <li>
+          <p>
+            <c>print()</c> displays the value of the expression inside the parentheses to the screen.
+          </p>
+        </li>
+        <li>
+          <p>
+            <c>pretty_print()</c> displays rich text.
+          </p>
+        </li>
+        <li>
+          <p>
+            <c>show()</c> is an alias for <c>pretty_print()</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <c>latex()</c> produces the raw latex code for the expression inside the parentheses. You can past this code into a latex document to display the expression.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Sage will display the value of the last line of code in a cell.
+    </p>
+    <sage>
+        <input>
+          "Hello, World!"
+        </input>
+    </sage>
+    <p>
+      <c>print()</c> outputs a similar result without the quotes.
+    </p>
+    <sage>
+      <input>
+        print("Hello, World!")
+      </input>
+    </sage>
+    <p>
+      View mathematical notation with rich text.
+    </p>
+    <sage>
+      <input>
+        show(sqrt(2) / log(3))
+      </input>
+    </sage>
+    <p>
+      If we want to display values from multiple lines of code, we can use multiple functions to display the values.
+    </p>
+    <sage>
+      <input>
+        a = x^2
+        b = pi
+        show(a)
+        show(b)
+      </input>
+    </sage>
+</section>

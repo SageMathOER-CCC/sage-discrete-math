@@ -4,7 +4,7 @@
   <title>Object Oriented Programming</title>
   
   <p>
-    What is an <term>object</term>? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a <term>class</term>. 
+    What is an <term>object</term>? An object can be used to model almost anything. More specifically, an object is an instance of a <term>class</term>.
   </p>
   
   <p>
@@ -12,36 +12,33 @@
   </p>
   
   <p>
-    This might not mean too much right now and it will be more clear as we explore what is known as <term>object-oriented</term> programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.
+    While this concept might seem abstract at first, it becomes clearer as we dive deeper into object-oriented programming (OOP). SageMath utilizes OOP principles, offering a structured way to represent and manipulate data. We can create an object by typing something into our Sage Worksheet or the cells on this page.
   </p>
   
   <p>
-    <term>Dot notation</term> is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.
-  </p>
-
-  <p>
-    Lets use Sage's object oriented syntax to plot a graph and save it to a file.
-  </p>
-
-  <p>
-    In terms of object-oriented programming, the <c>Circuit</c> method is a method of the <c>digraphs</c> class. We can use the <c>plot</c> method to plot the graph. 
+    <term>Dot notation</term> is a syntax used in OOP to access an object's attributes and methods. Here is an example of dot notation. There are many more examples of this in Sage.
   </p>
 
   <sage>
     <input>
-      # we will learn more about digraphs later in this text
-      g = digraphs.Circuit(10)
-      plot(g)
+      n = 4
+      n.sqrt()
     </input>
   </sage>
-
-  <p>
-    You can save the plot by using the <c>save</c> method.
-  </p>
-
   <sage>
     <input>
-      plot(g).save('filename.pdf')
+      n = 4
+      n.sqrt(all=True)
+    </input>
+  </sage>
+  <sage>
+    <input>
+      sqrt(2).n()
+    </input>
+  </sage>
+  <sage>
+    <input>
+      sqrt(2).n(prec=100)
     </input>
   </sage>
 </section>

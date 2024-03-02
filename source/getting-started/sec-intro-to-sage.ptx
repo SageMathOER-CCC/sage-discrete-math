@@ -6,10 +6,46 @@
   <p>
     You can run and edit the Sage code directly in the SageMathCells embedded in this webpage. All the cells on the same page share the same memory. Be sure to run the cells in order. If you run the cells on a given page out of order, you may get unexpected results.
   </p>
-  
   <p>
-    Notice how Sage builds on Python. Valid Python is also valid Sage. Sage adds many feature that are well suited for mathematical computation. Before we get started with discrete math, let's see how we can use Sage as a calculator.
+    Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
   </p>
+  <ul>
+    <li>
+      <p>
+        Addition: <c>+</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        Subtraction: <c>-</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        Multiplication: <c>*</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        Exponentiation: <c>**</c>, or <c>^</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        Rational: <c>/</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        Integer division rounded down: <c>//</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        Modulo: <c>%</c>
+      </p>
+    </li>
+  </ul>
   
   <sage>
     <input>
@@ -23,22 +59,50 @@
 
   <sage>
     <input>
-      # ** is the exponentiation operator
+      100 - 1
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      3*4
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # Sage uses two exponentiation operators
+      # ** is valid in Sage and Python
       2**3
     </input>
   </sage>
 
   <sage>
     <input>
-      # / returns a rational number
-      5/2
+      # Sage uses two exponentiation operators
+      # ^ is valid in Sage
+      2^3
     </input>
   </sage>
 
   <sage>
     <input>
-      # // returns an Integer without the remainder
-      5//2
+      # Returns a rational number
+      5/3
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # Returns a floating point approximation
+      5/3.0
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      # Returns an Integer and rounds down
+      5//3
     </input>
   </sage>
 
