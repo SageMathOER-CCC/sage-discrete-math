@@ -16,16 +16,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Intro to Sage",
-  "body": " Intro to Sage  You can run and edit the Sage code directly in the SageMathCells embedded in this webpage. All the cells on the same page share the same memory. Be sure to run the cells in order. If you run the cells on a given page out of order, you may get unexpected results.  Notice how Sage builds on Python. Valid Python is also valid Sage. Sage adds many feature that are well suited for mathematical computation. Before we get started with discrete math, let's see how we can use Sage as a calculator.       "
+  "body": " Intro to Sage  You can run and edit the Sage code directly in the SageMathCells embedded in this webpage. All the cells on the same page share the same memory. Be sure to run the cells in order. If you run the cells on a given page out of order, you may get unexpected results.  Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:    Addition: +     Subtraction: -     Multiplication: *     Exponentiation: ** , or ^     Rational: \/     Integer division rounded down: \/\/     Modulo: %              "
 },
 {
-  "id": "printing",
+  "id": "displaying",
   "level": "1",
-  "url": "printing.html",
+  "url": "displaying.html",
   "type": "Section",
   "number": "1.2",
-  "title": "Printing",
-  "body": " Printing   Sometimes we use print() to display output and sometimes we do not. Other times we need to use multiple print statements.    It looks like Sage is only showing the value of the last line of code. If we want to print both of these strings we will need two print statements.   Did you expect these words to be on the same line? Let's investigate what print() does. We can look up the documentation for a function by using the ? operator at the end of the function name.   It turns out print() adds a new line after printing. Lets get the output we want on a single line.    We can also display mathematical notation   "
+  "title": "Display Values",
+  "body": " Display Values  Sage offers various ways to display values to the screen. The simplest way is to just type the value into a cell and Sage will display it. Sage also has functions to display values to the screen.      print() displays the value of the expression inside the parentheses to the screen.     pretty_print() displays rich text.     show() is an alias for pretty_print() .     latex() produces the raw latex code for the expression inside the parentheses. You can past this code into a latex document to display the expression.     Sage will display the value of the last line of code in a cell.    print() outputs a similar result without the quotes.   View mathematical notation with rich text.   If we want to display values from multiple lines of code, we can use multiple functions to display the values.   "
 },
 {
   "id": "OOP",
@@ -34,7 +34,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Object Oriented Programming",
-  "body": " Object Oriented Programming  What is an object ? Almost everything in Sage and Python for that matter is an object! More specifically an object is an instance of a class .  A class provides a template or blueprint for creating objects and defines the attributes (properties) and methods (behaviors) that those objects can have.  This might not mean too much right now and it will be more clear as we explore what is known as object-oriented programming. Just know that SageMath has different ways of representing and working with data. We can create an object by typing something into our Sage Worksheet or the cells on this page.   Dot notation is a feature in object-oriented programming. Here is an example of dot notation. There are many more examples of this in Sage. Dot notation is used to access attributes and methods of an object. We can also pass in arguments to this method to specify the number of digits we want to round to.  Lets use Sage's object oriented syntax to plot a graph and save it to a file.  In terms of object-oriented programming, the Circuit method is a method of the digraphs class. We can use the plot method to plot the graph.   You can save the plot by using the save method.   "
+  "body": " Object Oriented Programming  What is an object ? An object can be used to model almost anything. More specifically, an object is an instance of a class .  A class provides a template or blueprint for creating objects and defines the attributes (properties) and methods (behaviors) that those objects can have.  While this concept might seem abstract at first, it becomes clearer as we dive deeper into object-oriented programming (OOP). SageMath utilizes OOP principles, offering a structured way to represent and manipulate data. We can create an object by typing something into our Sage Worksheet or the cells on this page.   Dot notation is a syntax used in OOP to access an object's attributes and methods. Here is an example of dot notation. There are many more examples of this in Sage.      "
 },
 {
   "id": "OOP-2",
@@ -55,15 +55,6 @@ var ptx_lunr_docs = [
   "body": "attributes methods "
 },
 {
-  "id": "OOP-4",
-  "level": "2",
-  "url": "OOP.html#OOP-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "object-oriented "
-},
-{
   "id": "OOP-5",
   "level": "2",
   "url": "OOP.html#OOP-5",
@@ -79,25 +70,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Data Types",
-  "body": " Data Types  Let's ask sage what type of object this is.   Strings : Sequence of characters used for text. You can use single or double quotes.    True and False  boolean values.    Lists : Ordered mutable collections of items within a pair of square brackets [] . If an object is mutable, the value can be changed after it is created.   Lists are indexed starting at 0.   Lists have many handy methods.    Tuples : Ordered, immutable collections within a pair of parenthesis () . If an object is immutable, the value cannot be changed after it is created.    set : sets() with lowercase s are built into Python. Python sets are collections of unique items within a pair of curly braces {} .    Set is a built-in Sage class. It is similar to a Python set, with added functionality for mathematical operations.    Dictionaries : Collections of key-value pairs.   In the following example Sage does not evaluate an approximation of sqrt(2) * log(3) . Sage will retain the symbolic value for accuracy.   "
+  "body": " Data Types  Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask sage what type of object this is.    2 is represented by an object which is an instance of the Integer class. Sage has many classes for different types of numbers and mathematical objects.  In the following example Sage does not evaluate an approximation of sqrt(2) * log(3) . Sage will retain the symbolic value for accuracy.    String : Sequence of characters used for text. You can use single or double quotes.    True and False  boolean values.    List : Mutable collection of items within a pair of square brackets [] . If an object is mutable, the value can be changed after it is created.   Lists are indexed starting at 0 . Here we access the first element of a list by asking for the value at index zero.   Lists have many helpful methods.    Tuple : Immutable collection within a pair of parenthesis () . If an object is immutable, the value cannot be changed after it is created.    set : Collection of unique items within a pair of curly braces {} . set() with lowercase s are built into Python.    Set is a built-in Sage class. Set with a capital S have added functionality for mathematical operations.   We define the set in a list with square brackets [] . The set is then created with the Set() function. When a list is converted to a set, the duplicates are removed.    Dictionary : Collection of key-value pairs.   The pprint module may be used to print the dictionary in a more readable format.   "
 },
 {
-  "id": "data-types-2",
+  "id": "data-types-4",
   "level": "2",
-  "url": "data-types.html#data-types-2",
+  "url": "data-types.html#data-types-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "object "
-},
-{
-  "id": "data-types-3",
-  "level": "2",
-  "url": "data-types.html#data-types-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Strings "
+  "body": "Integer "
 },
 {
   "id": "data-types-5",
@@ -106,7 +88,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "boolean "
+  "body": "symbolic "
 },
 {
   "id": "data-types-7",
@@ -115,25 +97,25 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Lists "
+  "body": "String "
 },
 {
-  "id": "data-types-13",
+  "id": "data-types-9",
   "level": "2",
-  "url": "data-types.html#data-types-13",
+  "url": "data-types.html#data-types-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Tuples "
+  "body": "boolean "
 },
 {
-  "id": "data-types-15",
+  "id": "data-types-11",
   "level": "2",
-  "url": "data-types.html#data-types-15",
+  "url": "data-types.html#data-types-11",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "set "
+  "body": "List "
 },
 {
   "id": "data-types-17",
@@ -142,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Set "
+  "body": "Tuple "
 },
 {
   "id": "data-types-19",
@@ -151,7 +133,25 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Dictionaries "
+  "body": "set "
+},
+{
+  "id": "data-types-21",
+  "level": "2",
+  "url": "data-types.html#data-types-21",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Set "
+},
+{
+  "id": "data-types-25",
+  "level": "2",
+  "url": "data-types.html#data-types-25",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Dictionary "
 },
 {
   "id": "iteration",
@@ -169,7 +169,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Debugging",
-  "body": " Debugging  When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!   Why didn't this print Hello, World! to the screen? Sage told us we have a SyntaxError . In this case we are not too concerned with the meaning of invalid decimal literal . The problem is with how we named our variable. It turns out there are rules about naming identifiers.  Rules for naming identifiers in Python:   Identifiers cannot start with a digit.    Identifiers are case-sensitive.    Identifiers can include:   letters ( a - z , A - Z )    digits ( 0 - 9 )    underscore character _        Do not use spaces, punctuation or special characters when naming identifiers.    Keywords cannot be used as identifiers.     Let's use an acceptable identifier to name our variable.   Here are some more keywords that cannot be used for variable names   False , None , True , and , as , assert , async , await , break , class , continue , def , del , elif , else , except , finally , for , from , global , if , import , in , is , lambda , nonlocal , not , or , pass , raise , return , try , while , with , yield .  Here is another error:   It looks like we have a NameError . We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.  "
+  "body": " Debugging  When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!   Why didn't this print Hello, World! to the screen? Sage told us we have a SyntaxError . In this case we are not too concerned with the meaning of invalid decimal literal . The problem is with how we named our variable. It turns out there are rules about naming identifiers.  Rules for naming identifiers in Python:   Identifiers cannot start with a digit.    Identifiers are case-sensitive.    Identifiers can include:   letters ( a - z , A - Z )    digits ( 0 - 9 )    underscore character _        Do not use spaces, punctuation or special characters when naming identifiers.    Keywords cannot be used as identifiers.     Let's use an acceptable identifier to name our variable.   Here are some more keywords that cannot be used for variable names   False , None , True , and , as , assert , async , await , break , class , continue , def , del , elif , else , except , finally , for , from , global , if , import , in , is , lambda , nonlocal , not , or , pass , raise , return , try , while , with , yield .  Here is another error:   It looks like we have a NameError because Hi is not defined. In this case Sage thinks that Hi is a variable because there are no parenthesis around it. Let's make it a string by adding quotes around it. Alternately, we could have kept Hi without quotes to use it as a variable and assign a value to it.   "
 },
 {
   "id": "documentation",
@@ -178,7 +178,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.7",
   "title": "Documentation",
-  "body": " Documentation  Sage can do many more mathematical operations. If you want an idea of what Sage can do, check out the Quick Reference Card and the Reference Manual .  The tutorial is an overview to become familiar with Sage.  The Sage documentation can be found at this link. Right now, reading the documentation is optional. We will do our best to get you up and running with Sage with this text.  "
+  "body": " Documentation  Sage can do many more mathematical operations. If you want an idea of what Sage can do, check out the Quick Reference Card and the Reference Manual .  The tutorial is an overview to become familiar with Sage.  The Sage documentation can be found at this link. Right now, reading the documentation is optional. We will do our best to get you up and running with Sage with this text.  You can quickly reference Sage documentation with the ? operator. You may also view the source code with the ?? operator.      "
 },
 {
   "id": "sage-browser",
@@ -277,7 +277,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Introduction to Relations",
-  "body": " Introduction to Relations  A relation  from set into set is a subset of the Cartesian product , represented as:   Recall, the Cartesian product consists of all possible ordered pairs , where and . Each pair combines an element from set with an element from set .  Let's define two sets, pants and shirts, as examples:       Create a relation from pants to shirts based on style, where each pair of pants is matched with a shirt.   The Cartesian product of pants and shirts includes all possible combinations of pants with shirts.   This relation of pants to shirts can be represented as a subset of the Cartesian product of pants and shirts.       "
+  "body": " Introduction to Relations  A relation  from set to the set is any subset of the Cartesian product . We can ask Sage to decide if is a relation from to . First construct the Cartesian product . Then build the set of all subsets of the Cartesian product. Finally ask if is a subset of .  Recall, the Cartesian product consists of all possible ordered pairs , where and . Each pair combines an element from set with an element from set .   Let's use relations to explore matching items of clothes. Let's define two sets, jackets and shirts, as examples:      The Cartesian product of jackets and shirts includes all possible combinations of jackets with shirts.   Create a relation from jackets to shirts based on style, where each pair of jackets is matched with a shirt.   "
 },
 {
   "id": "intro-relations-2",
@@ -295,7 +295,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Relations on a set",
-  "body": " Relations on a set  Let's explore specific kind of relation. When the two sets are identical, we refer to a relation from to as a relation on  .  Consider the set . Let's define a relation on such that iff ( divides ). The relation can be represented by the set of ordered pairs where the first element divides the second:   To understand the pairs in this relation, consider whether divides . Since it does, the pair is included in . However, does not divide , so any pair involving and is excluded. Following this logic, we include pairs where the first element divides the second.   "
+  "body": " Relations on a set  When the set we refer to the relation as a relation on  .  Consider the set . Let's define a relation on such that iff ( divides ). The relation can be represented by the set of ordered pairs where the first element divides the second:    "
 },
 {
   "id": "relations-on-a-set-2",
@@ -313,7 +313,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "Digraphs",
-  "body": " Digraphs  A digraph, or directed graph, is a visual representation of a relation R on the set A. Every element in set A is shown as a node (vertex). An arrow from the node to the node represent the pair on the relation R.   If we try to display this particular Digraph we get the descriptive error. ValueError: cannot add edge from 2 to 2 in graph without loops . Let's run DiGraph? to investigate further.   From the documentation we learn, by default, a \"DiGraph\" object has no loops. Let's tuned with the appropriate flags.   Consider the set . Define a relation on such that if and only if .     "
+  "body": " Digraphs  A digraph, or directed graph, is a visual representation of a relation on the set . Every element in set is shown as a node (vertex). An arrow from the node to the node represents the pair on the relation .   We can add a title to the digraph with the name parameter.   If the digraph does not contain a relation from a node to itself, we can omit the loops=true parameter. If we happen to forgot to include the parameter when we need to, Sage will give us a descriptive error message.   Alternatively, we can define the digraph directly. The element on the left of the : is a node. The node relates to the elements in the list on the right of the : .   We can also define the digraph using tuples.   "
 },
 {
   "id": "properties",
@@ -322,7 +322,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "Properties",
-  "body": " Properties   A relation can satisfy the following properties:    Reflexive         a relates to a for all elements a in the set A. All the elements relate to themselves.          Symmetric         If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.          Antisymmetric : The only case that a relates to be and b relates to a is when a and b are equal.      Transitive         If a relates to b and b relates to c, then a relates to c.        Reflexive  We can check if a relation R on a set A is reflexive by checking if the relation contains all the reflexive pairs. A reflexive pair is a pair of elements (a, a) for each element a in the set A. If all the reflexive pairs are in the relation R, then the relation is reflexive.    If we are working with DiGraphs, we can use the method has_edge to check if the graph has a loop for each vertex.     Symmetric  Checking for symmetry in a set:   Checking for symmetry in a digraph:     Antisymmetric    We can also define a function to check for the antisymmetric property in a Set :     Transitive   Sage Sets don't have a built-in method to check if a relation is transitive. However, we can convert a Set to a list and create a directed graph from the relation. Then, we can use the built-in method is_transitive to check if the graph is transitive.    "
+  "body": " Properties   A relation may satisfy certain properties:    Reflexive :      Symmetric :      Antisymmetric :      Transitive :      Sage is open-source and many people work on the software for free, when they can find the available time. While Sage has many built-in methods, in some cases, we may need to define our own functions to check for certain properties. When you see the def keyword, it means that we are defining a function. The function is a block of code that only runs when it is called. If you would like to reuse the functions defined in this section, you can copy and paste the function definitions into your own Sage worksheet. For methods built into Sage, you can use them directly, without including the definitions. If you feel inspired, try contributing to the official Sage project.    Reflexive  A relation is reflexive if relates to for all elements in the set . This means all the elements relate to themselves.   Let's define a function to check if the relation on set is reflexive. We'll create a set of pairs for each element in and check if this set is a subset of . This will return True if the relation is reflexive and False otherwise.   If we are working with DiGraphs , we can use the method has_edge to check if the graph has a loop for each vertex.     Symmetric  A relation is symmetric if relates to , then relates to . The relation is symmetric if the order of the elements does not matter.   We can check if a DiGraph is symmetric by comparing the edges of the graph with the reverse edges. In our definition of symmetry, we are only interested in the relation of nodes, so we set edge labels=False .     Antisymmetric  When a relation is antisymmetric, the only case that relates to and relates to is when and are equal.   Although Sage has a built in antisymmetric() method for Graphs , this behaves differently from the definition of antisymmetry for we are using. A DiGraph returns False if there is a cycle.     Transitive  A relation is transitive if relates to and relates to , then relates to .  Let's define a function to check for the transitive property in a Set :   You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set three times. We can improve the time complexity by using a dictionary to store the relation . Alternatively, we can use built-in methods in Sage.     "
 },
 {
   "id": "properties-2-1",
@@ -340,7 +340,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.5",
   "title": "Equivalence",
-  "body": " Equivalence  A relation is called an equivalence relation if it satisfies three key properties:     Reflexive    a relates to a for all elements a in the set A. All the elements relate to themselves.      Symmetric    If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.      Transitive    If a relates to b and b relates to c, then a relates to c.     The class of equivalence for an element a in set A is defined by the set:   This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.  Consider set A as defined by the scenario:      In this context, let R be the relation on A described as follows:    This relation demonstrates the properties of an equivalence relation:      Reflexive : A person lives in the same floor as themselves.     Symmetric : If person x lives in the same floor as person y, then person y lives in the same floor as person x.     Transitive : If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.        For the class of equivalence, considering person a as an example:   This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation \"living on the same floor as\" groups the building's residents into sets, with each set corresponding to a floor, forming an equivalence class.  "
+  "body": " Equivalence  A relation on a set is called an equivalence relation if it is reflexive, symmetric, and transitive. The equivalence class of an element in a set is the set of all elements in that are related to by this relation, denoted by:   Here, represents the equivalence class of , comprising all elements in that are related to through the relation . This illustrates the grouping of elements into equivalence classes.  Consider a set defined as:    Create sets for the people living on each floor of the building:   Let be the relation on described as follows:    This relation demonstrates the properties of an equivalence relation:   Reflexive : A person lives in the same floor as themselves.    Symmetric : If person lives in the same floor as person , then person lives in the same floor as person .    Transitive : If person lives in the same floor as person and person lives in the same floor as person , then person lives in the same floor as person .   For the equivalence class, considering a person as an example:   This definition confirms that the equivalence class for person includes all individuals residing on the same floor, effectively grouping the building's residents into equivalence classes based on their floors.  "
 },
 {
   "id": "equivalence-2",
@@ -349,43 +349,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "equivalence relation "
-},
-{
-  "id": "equivalence-3-1-1",
-  "level": "2",
-  "url": "equivalence.html#equivalence-3-1-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Reflexive "
-},
-{
-  "id": "equivalence-3-2-1",
-  "level": "2",
-  "url": "equivalence.html#equivalence-3-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Symmetric "
-},
-{
-  "id": "equivalence-3-3-1",
-  "level": "2",
-  "url": "equivalence.html#equivalence-3-3-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Transitive "
-},
-{
-  "id": "equivalence-4",
-  "level": "2",
-  "url": "equivalence.html#equivalence-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "class of equivalence "
+  "body": "equivalence relation equivalence class "
 },
 {
   "id": "equivalence-14",
@@ -394,7 +358,25 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Reflexive Symmetric Transitive "
+  "body": "Reflexive "
+},
+{
+  "id": "equivalence-16",
+  "level": "2",
+  "url": "equivalence.html#equivalence-16",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Symmetric "
+},
+{
+  "id": "equivalence-18",
+  "level": "2",
+  "url": "equivalence.html#equivalence-18",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Transitive "
 },
 {
   "id": "partial-order",
@@ -403,34 +385,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.6",
   "title": "Partial Order",
-  "body": " Partial Order  A Partial Order (PO) satisfies the following properties:   Reflexive : a relates to a for all elements a in the set A. All the elements relate to themselves.   Antisymmetric : The only case that a relates to be and b relates to a is when a and b are equal.   Transitive : if a relates to b and b relates to c, then a relates to c.     Example: Let and define as the power set of , denoted . Establish a relation on where if and only if . This relation represents the idea of one set being a subset of another within the power set of .  To explore how elements relate within these examples, consider the element in the context of the second example. The set is not related to the empty set, denoted as , because is not a subset of . Similarly, does not relate to because is not a subset of . However, is related to because is indeed a subset of , which we denote as .   We can also define a poset by specifying the relation directly.   "
-},
-{
-  "id": "partial-order-3",
-  "level": "2",
-  "url": "partial-order.html#partial-order-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Reflexive "
-},
-{
-  "id": "partial-order-4",
-  "level": "2",
-  "url": "partial-order.html#partial-order-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Antisymmetric "
-},
-{
-  "id": "partial-order-5",
-  "level": "2",
-  "url": "partial-order.html#partial-order-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Transitive "
+  "body": " Partial Order  A Partial Order (PO) satisfies the reflexive, antisymmetric, and transitive properties.    Example: Let and define as the power set of , denoted . Establish a relation on where if and only if . This relation represents the idea of one set being a subset of another within the power set of .  To explore how elements relate within these examples, consider the element in the context of the second example.   The set is not related to the empty set, denoted as , because is not a subset of .    Similarly, does not relate to because is not a subset of .    However, because is indeed a subset of .      We can also define a poset by specifying the relation directly.   "
 },
 {
   "id": "sec-functions",

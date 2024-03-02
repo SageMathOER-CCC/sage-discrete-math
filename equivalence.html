@@ -149,7 +149,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-getting-started.html" class="internal"><span class="codenumber">1</span> <span class="title">Getting Started</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Intro to Sage</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="printing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Printing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="displaying.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Display Values</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="OOP.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Object Oriented Programming</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="data-types.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Data Types</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="iteration.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Iteration</span></a></div></li>
@@ -254,36 +254,25 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="equivalence"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.5</span><span class="space"> </span><span class="title">Equivalence</span>
 </h2>
-<div class="para" id="equivalence-2">A relation is called an <dfn class="terminology">equivalence relation</dfn> if it satisfies three key properties:</div>
-<ul class="disc">
-<li id="equivalence-3-1">
-<div class="para" id="equivalence-3-1-1"><dfn class="terminology">Reflexive</dfn></div>
-                <div class="para" id="equivalence-3-1-2-1">a relates to a for all elements a in the set A. All the elements relate to themselves.</div>
-            </li>
-<li id="equivalence-3-2">
-<div class="para" id="equivalence-3-2-1"><dfn class="terminology">Symmetric</dfn></div>
-                <div class="para" id="equivalence-3-2-2-1">If a relates to b, then b relates to a. The relation is symmetric if the order of the elements does not matter.</div>
-            </li>
-<li id="equivalence-3-3">
-<div class="para" id="equivalence-3-3-1"><dfn class="terminology">Transitive</dfn></div>
-                <div class="para" id="equivalence-3-3-2-1">If a relates to b and b relates to c, then a relates to c.</div>
-            </li>
-</ul>
-<div class="para" id="equivalence-4">The <dfn class="terminology">class of equivalence</dfn> for an element a in set A is defined by the set:</div>
+<div class="para" id="equivalence-2">A relation on a set is called an <dfn class="terminology">equivalence relation</dfn> if it is reflexive, symmetric, and transitive. The <dfn class="terminology">equivalence class</dfn> of an element <span class="process-math">\(a\)</span> in a set <span class="process-math">\(A\)</span> is the set of all elements in <span class="process-math">\(A\)</span> that are related to <span class="process-math">\(a\)</span> by this relation, denoted by:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 |a| = \{x \in A \; | \; xRa\}
 \end{equation*}
 </div>
-<div class="para" id="equivalence-6">This set comprises all elements in A that are related to a through the relation R, illustrating how elements are grouped into equivalence classes.</div>
-<div class="para" id="equivalence-7">Consider set A as defined by the scenario:</div>
-<div class="para logical" id="equivalence-8"><div class="displaymath process-math">
+<div class="para" id="equivalence-4">Here, <span class="process-math">\(|a|\)</span> represents the equivalence class of <span class="process-math">\(a\text{,}\)</span> comprising all elements in <span class="process-math">\(A\)</span> that are related to <span class="process-math">\(a\)</span> through the relation <span class="process-math">\(R\text{.}\)</span> This illustrates the grouping of elements into equivalence classes.</div>
+<div class="para" id="equivalence-5">Consider a set <span class="process-math">\(A\)</span> defined as:</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\text{Let A } = \{x \; | \; x \text{ is a person living in a given building} \}
+A = \{x \; | \; x \text{ is a person living in a given building} \}
 \end{equation*}
-</div></div>
-<pre id="equivalence-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set of people
+</div>
+<pre id="equivalence-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set of people
 A = Set(['p_1', 'p_2', 'p_3', 'p_4', 'p_5', 'p_6', 'p_7', 'p_8', 'p_9', 'p_10'])
+A
+</script></pre>
+<div class="para" id="equivalence-8">Create sets for the people living on each floor of the building:</div>
+<pre id="equivalence-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import pprint
 
 # Define the floors as a dictionary, mapping floor names to sets of people
 floors = {
@@ -292,10 +281,9 @@ floors = {
     'third_floor': Set(['p_8', 'p_9', 'p_10'])
 }
 
-print("Set of all people:", A)
-print("sets of floors:", floors)
+pprint.pprint(floors)
 </script></pre>
-<div class="para" id="equivalence-10">In this context, let R be the relation on A described as follows:</div>
+<div class="para" id="equivalence-10">Let <span class="process-math">\(R\)</span> be the relation on <span class="process-math">\(A\)</span> described as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \text{x R y iff x and y live in the same floor of the building.}
@@ -306,41 +294,36 @@ R = Set([(x, y) for x in A for y in A if any(x in floors[floor] and y in floors[
 R
 </script></pre>
 <div class="para" id="equivalence-13">This relation demonstrates the properties of an equivalence relation:</div>
-<div class="para logical" id="equivalence-14"><ul class="disc">
-<li id="equivalence-14-1-1"><div class="para" id="equivalence-14-1-1-1">
-<dfn class="terminology">Reflexive</dfn>: A person lives in the same floor as themselves.</div></li>
-<li id="equivalence-14-1-2"><div class="para" id="equivalence-14-1-2-1">
-<dfn class="terminology">Symmetric</dfn>: If person x lives in the same floor as person y, then person y lives in the same floor as person x.</div></li>
-<li id="equivalence-14-1-3"><div class="para" id="equivalence-14-1-3-1">
-<dfn class="terminology">Transitive</dfn>: If person x lives in the same floor as person y and person y lives in the same floor as person z, then person x lives in the same floor as person z.</div></li>
-</ul></div>
+<div class="para" id="equivalence-14">
+<dfn class="terminology">Reflexive</dfn>: A person lives in the same floor as themselves.</div>
 <pre id="equivalence-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_reflexive_set(A, R):
-    # Create a set of (a, a) pairs for each element a in A
     reflexive_pairs = Set([(a, a) for a in A])
-    # Check if all reflexive pairs are in the relation R
     return reflexive_pairs.issubset(R)
 
 is_reflexive_set(A, R)
 </script></pre>
-<pre id="equivalence-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_symmetric_set(relation_R):
-    # Generate the inverse of each pair in the relation
-    inverse_R = Set([(b, a) for a, b in relation_R])
-    # The relation is symmetric if the intersection of R and its inverse is equal to R itself
-    return relation_R.issubset(inverse_R) and inverse_R.issubset(relation_R)
+<div class="para" id="equivalence-16">
+<dfn class="terminology">Symmetric</dfn>: If person <span class="process-math">\(a\)</span> lives in the same floor as person <span class="process-math">\(b\text{,}\)</span> then person <span class="process-math">\(b\)</span> lives in the same floor as person <span class="process-math">\(a\text{.}\)</span>
+</div>
+<pre id="equivalence-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_symmetric_set(relation_R):
+    inverse_R = Set([(b, a) for (a, b) in relation_R])
+    return relation_R == inverse_R
 
-# Check if R is symmetric
 is_symmetric_set(R)
 </script></pre>
-<pre id="equivalence-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = DiGraph(list(R), loops=true)
+<div class="para" id="equivalence-18">
+<dfn class="terminology">Transitive</dfn>: If person <span class="process-math">\(a\)</span> lives in the same floor as person <span class="process-math">\(b\)</span> and person <span class="process-math">\(b\)</span> lives in the same floor as person <span class="process-math">\(c\text{,}\)</span> then person <span class="process-math">\(a\)</span> lives in the same floor as person <span class="process-math">\(c\text{.}\)</span>
+</div>
+<pre id="equivalence-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = DiGraph(list(R), loops=true)
 G.is_transitive()
 </script></pre>
-<div class="para" id="equivalence-18">For the class of equivalence, considering person a as an example:</div>
+<div class="para" id="equivalence-20">For the equivalence class, considering a person <span class="process-math">\(a\)</span> as an example:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-| \text{person a} | = \{ x \in A \; | \; x R a \} = \text{all people living on the same floor as person a}
+|a| = \{ x \in A \; | \; xRa \} = \text{all people living on the same floor as person a}
 \end{equation*}
 </div>
-<div class="para" id="equivalence-20">This definition shows that the class of equivalence for person a includes all individuals residing on the same floor as a. The relation "living on the same floor as" groups the building’s residents into sets, with each set corresponding to a floor, forming an equivalence class.</div></section></div>
+<div class="para" id="equivalence-22">This definition confirms that the equivalence class for person <span class="process-math">\(a\)</span> includes all individuals residing on the same floor, effectively grouping the building’s residents into equivalence classes based on their floors.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="partial-order.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

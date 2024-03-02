@@ -149,7 +149,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-getting-started.html" class="internal"><span class="codenumber">1</span> <span class="title">Getting Started</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Intro to Sage</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="printing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Printing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="displaying.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Display Values</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="OOP.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Object Oriented Programming</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="data-types.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Data Types</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="iteration.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Iteration</span></a></div></li>
@@ -288,7 +288,9 @@ print(message)
 <div class="para" id="debugging-10">Here is another error:</div>
 <pre id="debugging-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print(Hi)
 </script></pre>
-<div class="para" id="debugging-12">It looks like we have a <code class="code-inline tex2jax_ignore">NameError</code>. We also know that Hello is not defined. In this case Sage thinks that Hello is a variable because there are no parenthesis around it.</div></section></div>
+<div class="para" id="debugging-12">It looks like we have a <code class="code-inline tex2jax_ignore">NameError</code> because <code class="code-inline tex2jax_ignore">Hi</code> is not defined. In this case Sage thinks that <code class="code-inline tex2jax_ignore">Hi</code> is a variable because there are no parenthesis around it. Let’s make it a string by adding quotes around it. Alternately, we could have kept <code class="code-inline tex2jax_ignore">Hi</code> without quotes to use it as a variable and assign a value to it.</div>
+<pre id="debugging-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">print("Hi")
+</script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="iteration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="documentation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
