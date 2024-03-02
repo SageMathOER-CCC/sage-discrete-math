@@ -30,7 +30,7 @@
     <subsection>
         <title>Combinations</title>
         <p>
-            The combination <m>(n, k)</m> is an unordered selection of k objects from a set of n objects.
+            The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set of <m>n</m> objects.
         </p>
         <aside>
             <title>Tips!</title>
@@ -62,7 +62,7 @@
     <subsection>
         <title>Permutations</title>
         <p>
-            A permutation <m>(n, k)</m> is an ordered selection of k objects from a set of n objects.
+            A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>n</m> objects.
         </p>
         <aside>
             <title>Tips!</title>
@@ -70,6 +70,15 @@
                 Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.
             </p>
         </aside>
+        <p>
+            To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
+        </p>
+        <sage>
+            <input>
+                Permutations(3).cardinality()
+            </input>
+            <output></output>
+        </sage>
         <p>
             To display the set of permutations with 3 elements, we use the <c>Permutations()</c> function and the use the <c>Set()</c> function for output.
         </p>

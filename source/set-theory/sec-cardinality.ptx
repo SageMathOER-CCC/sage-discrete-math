@@ -28,7 +28,7 @@
     </sage>
 
     <p>
-      In many cases, using Sage classes and functions will provide more functionality.
+      In many cases, using Sage classes and functions will provide more functionality. In the following example, <c>cardinality()</c> gives us a valid output while <c>len()</c> does not.
     </p>
     <sage>
       <input>

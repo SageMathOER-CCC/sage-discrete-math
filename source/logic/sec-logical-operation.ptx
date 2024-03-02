@@ -10,32 +10,32 @@
                     <row>
                         <cell>Operator</cell>
                         <cell>Symbol</cell>
-                        <cell>Description</cell>
+                        <cell>Mathematical Notation</cell>
                     </row>
                     <row>
                         <cell>AND</cell>
                         <cell>&amp;</cell>
-                        <cell>True if both operands are true</cell>
+                        <cell><m>\land</m></cell>
                     </row>
                     <row>
                         <cell>OR</cell>
                         <cell>|</cell>
-                        <cell>True if at least one operand is true</cell>
+                        <cell><m>\lor</m></cell>
                     </row>
                     <row>
                         <cell>NOT</cell>
                         <cell>~</cell>
-                        <cell>Negates the truth value of its operand</cell>
+                        <cell><m>\lnot</m></cell>
                     </row>
                     <row>
                         <cell>Conditional</cell>
                         <cell>-&gt;</cell>
-                        <cell>True if the first operand implies the second</cell>
+                        <cell><m>\rightarrow</m></cell>
                     </row>
                     <row>
                         <cell>Biconditional</cell>
                         <cell>&lt;-&gt;</cell>
-                        <cell>True if both operands are equal</cell>
+                        <cell><m>\leftrightarrow</m></cell>
                     </row>
         </tabular>
     </introduction>
@@ -45,7 +45,7 @@
         <title>Boolean Formula</title>
         
         <p>
-            Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators.
+            Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c>show</c> function to display the mathematical notations.
         </p>
         <aside>
             <title>Tips!</title>
@@ -55,7 +55,8 @@
         </aside>
         <sage>
             <input>
-                propcalc.formula('(p &amp; q) | (~p)')
+                A = propcalc.formula('(p &amp; q) | (~p)')
+                show(A)
             </input>
             <output></output>
         </sage>
