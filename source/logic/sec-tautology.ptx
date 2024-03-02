@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Tautologies</title>
+    <title>Analyzing Logical Equivalences</title>
 
     <!-- Analyzing Logical Equivalences with Truth Tables -->
 <subsection>
-    <title>Analyzing Logical Equivalences</title>
+    <title>Equivalent Statements</title>
     <p>
-        Truth tables are instrumental in determining logical equivalences between two expressions. By comparing their truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.
+        By comparing the truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.
     </p>
     <aside>
         <title>Tips!</title>
@@ -46,12 +46,6 @@
         </input>
         <output></output>
     </sage>
-    <p>
-        Tautologies play a key role in deductive reasoning, where they serve as universally valid starting points for logical deductions. They are also instrumental in the design of digital logic circuits, where the goal is to achieve certain logical conditions regardless of the input state.
-    </p>
-    <p>
-        Exploring tautologies with Sage not only strengthens a student's grasp of logical principles but also enhances their ability to apply these concepts in computing and mathematical proof construction. By analyzing various expressions and verifying their status as tautologies, students gain insights into the structure and properties of logical statements.
-    </p>
     </subsection>
 
     <!-- Tautologies and Contradictions -->
@@ -73,9 +67,6 @@
         </input>
         <output></output>
     </sage>
-    <p>
-        By studying tautologies alongside contradictions, students can better understand the boundaries of logical expressions and the concept of logical necessity versus impossibility. This knowledge is crucial in fields such as theoretical computer science, philosophy of logic, and mathematical logic.
-    </p>
     </subsection>
 
 </section>
