@@ -8,42 +8,6 @@
 <section xml:id="sec-operation-on-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Operations on Sets</title>
 
-        <!-- Set Membership Check Subsection -->
-        <subsection>
-             <title>Set Membership Check</title>
-            <p>
-               Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
-            </p>
-            <p>
-                Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set A:
-            </p>
-            <aside>
-                <title>Tips!</title>
-                <p>
-                    For organizations such as clubs, gyms, or online subscription services, set membership checks can be used to validate if a user is a member or subscriber. This can help control access to facilities or content.
-                </p>
-            </aside>        
-            <sage>
-                <input>
-                A = Set([1, 2, 3, 4, 5])
-                3 in A
-                </input>
-                <output></output>
-            </sage>
-            <p>
-                We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of A by using the <c>Subsets</c> function to generate a set S with all the subsets of A. Then we use the <c>in</c> function to check whether B belongs to the subset of A.
-            </p>
-            <sage>
-                <input>
-                A = Set([1, 2, 3, 4, 5])
-                S = Subsets(A)
-                B = Set([3, 4, 5, 6])
-                B in S
-                </input>
-                <output></output>
-            </sage>
-        </subsection>
-
         <!-- Set Union Subsection -->
         <subsection>
             <title>Union of Sets</title>
@@ -86,7 +50,7 @@
         <subsection>
             <title>Intersection of Sets</title>
             <p>
-                Similar to union, there are two methods of using the intersection function in sage.
+                Similar to union, there are two methods of using the intersection function in Sage.
             </p>
                 <p>
                     Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>intersection()</c> function to calculate <m>A ∩ B</m>.
@@ -154,7 +118,7 @@
                       </sage>           
         </subsection>
 
-        <!-- Multi Set Opperation Subsection -->
+        <!-- Multi Set Operation Subsection -->
         <subsection>
             <title>Multiple Sets</title>
             <p>
@@ -195,7 +159,7 @@
         <subsection>
             <title>Complement of Sets</title>
                 <p>
-                    Assume the universal set, <m>U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}</m> and <m>A = \{1, 2, 3, 4, 5\}</m>. We can use the <c>difference()</c> function to find the complement of A.
+                    Let <m>U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}</m> be the universal set. Given the set <m>A = \{1, 2, 3, 4, 5\}</m>. We can use the <c>difference()</c> function to find the complement of <m>A</m>.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -228,7 +192,7 @@
         <subsection>
             <title>Cartesian Product of Sets</title>
                 <p>
-                    Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the operation <m>A × D</m>.
+                    Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the cartesian product <m>A × D</m>.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -245,6 +209,38 @@
                     <output>
                     </output>
                     </sage>
+                    <p>
+                        Alternatively, we can use the <c>.</c> notation to find the cartesian product.
+                    </p>
+                    <sage>
+                        <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        D = Set(['x', 'y'])
+                        Set(A.cartesian_product(D))
+                        </input>
+                        <output></output>
+                    </sage>
         </subsection>
+
+        <!-- Powerset of Sets Subsection -->
+        <subsection>
+            <title>Powerset of Sets</title>
+                <p>
+                    The powerset of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. This Sage code defines a set <m>A = &#123;1, 2, 3&#125;</m> and uses the <c>powerset()</c> function to generate all subsets of <m>A</m>. The <c>list()</c> function is then used to convert the powerset iterator into a list.
+                </p>
+                <aside>
+                    <title>Tips!</title>
+                    <p>
+                        Exploring the powerset of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
+                    </p>
+                </aside>
+                <sage>
+                    <input>
+                        A = Set([1, 2, 3, 4, 5])
+                        list(powerset(A))
+                    </input>
+                    <output></output>
+                </sage>
+</subsection>
 
 </section>
