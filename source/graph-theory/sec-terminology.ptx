@@ -68,7 +68,10 @@
   </p>
   <sage>
     <input>
-        # example
+      # Count the vertices.
+      # Count the edges.
+      # Degree sequence.
+      # Verify theorem.
     </input>
   </sage>
   
@@ -100,7 +103,10 @@
   </p>
   <sage>
     <input>
-        # example
+      # Count the vertices.
+      # Count the edges.
+      # Degree sequence.
+      # Verify theorem.
     </input>
   </sage>
   <p>
