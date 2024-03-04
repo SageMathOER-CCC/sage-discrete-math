@@ -9,11 +9,83 @@
     The size of <m>G = (V, E) \textit{ is the number of edges: } |E|</m>
   </p>
   <p>
-    An edge <m>{u, v\}</m> is incident with <m>u</m> and <m>v</m>.
+    An edge <m>\{u, v\}</m> is incident with <m>u</m> and <m>v</m>.
+  </p>
+  <p>
+    The degree of a vertex <m>v</m>, <m>deg(v)</m>, is the number of edges incident with <m>v</m>.
+  </p>
+  <p>
+    The degree sequence of <m>G = (V, E)</m> is the list of degrees of its vertices, in increasing order.
+  </p>
+  <p>
+    Theorem: The sum of the degrees of the vertices in a graph equals twice the size of the graph:
+    <me>
+      \sum_{v \in V} \deg(v) = 2|E|
+    </me>
+  </p>
+  <p>
+    Examples:
   </p>
   <sage>
     <input>
-        # example to show terms
+      graph_data = {
+        1: [2, 5],
+        2: [1, 5],
+        3: [4],
+        5: [1, 2, 7],
+        6: [],
+        7: [5]
+    }
+    
+    G = Graph(graph_data)
+    
+    vertex_colors = {
+        'grey': [1],
+        'yellow': [2],
+        'green': [3],
+        'brown': [4],
+        'magenta': [5],
+        'blue': [6],
+        'orange': [7]
+    }
+    
+    G.plot(vertex_colors=vertex_colors, layout='circular')
     </input>
   </sage>
+  <p>
+    <me>
+      |V| = 5, |E| = 6
+    </me>
+    <me>
+      (3, 3, 2, 2, 2)
+    </me>
+    <me>
+      \sum_{v \in V} \deg(v) = 3 + 3 + 2 + 2 + 2 = 2 \cdot 6
+    </me>
+  </p>
+  <p>
+    Let's verify this with Sage:
+  </p>
+  <sage>
+    <input>
+        # example
+    </input>
+  </sage>
+  
+  <sage>
+    <input>
+        # example
+    </input>
+  </sage>
+  <p>
+    <me>
+      |V| = 7, |E| = 5
+    </me>
+    <me>
+      (3, 2, 2, 1, 1, 1, 0)
+    </me>
+    <me>
+      \sum_{v \in V} \deg(v) = 10
+    </me>
+  </p>
 </section>
