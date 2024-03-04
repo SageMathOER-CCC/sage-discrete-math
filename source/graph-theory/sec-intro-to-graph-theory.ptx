@@ -3,6 +3,46 @@
 <section xml:id="intro-graph-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction to Graph Theory</title>
   <p>
+    Applications of graphs include:
+    <ul>
+      <li>
+        <p>
+          Social interaction
+        </p>
+      </li>
+      <li>
+        <p>
+          Influence
+        </p>
+      </li>
+      <li>
+        <p>
+          Call network
+        </p>
+      </li>
+      <li>
+        <p>
+          World wide web
+        </p>
+      </li>
+      <li>
+        <p>
+          Citation graph
+        </p>
+      </li>
+      <li>
+        <p>
+          Collaboration
+        </p>
+      </li>
+      <li>
+        <p>
+          PageRank
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
     <me>
       A \ \text{graph} \ G = (V, E) \text{ consists of a set } V \text{ of vertices and a set } E \text{ of edges, where}
     </me>
@@ -42,14 +82,6 @@
       G = Graph([V, E], multiedges=True)
 
       G.plot()
-    </input>
-  </sage>
-  <p>
-    Here are some more example graphs:
-  </p>
-  <sage>
-    <input>
-      
     </input>
   </sage>
 </section>
