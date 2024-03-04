@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-functions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-functions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-graph-theory.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -167,19 +167,20 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Sage Math Set</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-set-builder-notation" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Set Builder Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-subsets" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#creating-sets-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Set Membership Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="cardinality.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cardinality</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-operation-on-sets.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Operations on Sets</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Set Membership Check</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Union of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Intersection of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Difference of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Multiple Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Complement of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Union of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Intersection of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Difference of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Multiple Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Complement of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Powerset of Sets</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -204,9 +205,9 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-truth-table.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Truth Tables</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-tautology.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Tautologies</span></a></div>
+<div class="toc-title-box"><a href="sec-tautology.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Analyzing Logical Equivalences</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tautology.html#sec-tautology-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Analyzing Logical Equivalences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tautology.html#sec-tautology-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Equivalent Statements</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tautology.html#sec-tautology-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Tautologies</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tautology.html#sec-tautology-4" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Contradictions</span></a></div></li>
 </ul>
@@ -244,9 +245,17 @@ sagecell.makeSagecell({
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recursion.html#sec-recursion-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Recursion in Sequences</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recursion.html#sec-recursion-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Recursion with Binomial Coefficients</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-recursion.html#sec-recursion-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Recursion in Polynomials</span></a></div></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-graph-theory.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Introduction to Graph Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -257,16 +266,16 @@ sagecell.makeSagecell({
 <section class="introduction" id="sec-recursion-2"><div class="para" id="sec-recursion-2-1">Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.</div></section><section class="subsection" id="sec-recursion-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="space"> </span><span class="title">Recursion in Sequences</span>
 </h3>
-<div class="para" id="sec-recursion-3-2">A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors. The following Python code in Sage illustrates how to solve a recursive sequence using the <code class="code-inline tex2jax_ignore">rsolve()</code> function from the <code class="code-inline tex2jax_ignore">sympy</code> library, which symbolically solves recurrence equations.</div>
-<pre id="sec-recursion-3-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from sympy import Function, rsolve
+<div class="para" id="sec-recursion-3-2">A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.</div>
+<div class="para" id="sec-recursion-3-3">Here, <code class="code-inline tex2jax_ignore">s</code> is a function representing the sequence. The equation <code class="code-inline tex2jax_ignore">eqn</code> defines the recursive relation <span class="process-math">\(s(n) = s(n-1) + 2\cdot s(n-2)\text{.}\)</span> The <code class="code-inline tex2jax_ignore">rsolve()</code> function is then used to find a closed-form solution to this recurrence, given the initial conditions <span class="process-math">\(s(0) = 2\)</span> and <span class="process-math">\(s(1) = 7\text{.}\)</span> At last, we use <code class="code-inline tex2jax_ignore">SR()</code> function to convert the notations from python to mathematical.</div>
+<pre id="sec-recursion-3-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from sympy import Function, rsolve
 from sympy.abc import n
 s = Function('s')
 eqn = s(n) - s(n-1) - 2*s(n-2)
 sol = rsolve(eqn, s(n), {s(0): 2, s(1): 7})
 sol
-</script></pre>
-<div class="para" id="sec-recursion-3-4">Here, <code class="code-inline tex2jax_ignore">s</code> is a function representing the sequence. The equation <code class="code-inline tex2jax_ignore">eqn</code> defines the recursive relation <span class="process-math">\(s(n) = s(n-1) + 2\cdot s(n-2)\text{.}\)</span> The <code class="code-inline tex2jax_ignore">rsolve()</code> function is then used to find a closed-form solution to this recurrence, given the initial conditions <span class="process-math">\(s(0) = 2\)</span> and <span class="process-math">\(s(1) = 7\text{.}\)</span>
-</div></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
+SR(sol)
+</script></pre></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Recursion with Binomial Coefficients</span>
 </h3>
 <div class="para" id="sec-recursion-4-2">Binomial coefficients, denoted as <span class="process-math">\(\binom{n}{k}\text{,}\)</span> count the number of ways to choose <span class="process-math">\(k\)</span> elements from an <span class="process-math">\(n\)</span>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <code class="code-inline tex2jax_ignore">binomial(n, k)</code> function.</div>
@@ -282,18 +291,9 @@ sol
 binomial_recursive(5, 3)
 </script></pre>
 <div class="para" id="sec-recursion-4-6">This Python function implements the recursive formula <span class="process-math">\(\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}\text{,}\)</span> with base cases <span class="process-math">\(\binom{n}{0} = \binom{n}{n} = 1\text{.}\)</span>
-</div></section><section class="subsection" id="sec-recursion-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="space"> </span><span class="title">Recursion in Polynomials</span>
-</h3>
-<div class="para" id="sec-recursion-5-2">Polynomials can also be generated and manipulated recursively. For instance, the derivative of a polynomial is a lower-degree polynomial that can be calculated recursively. Sage provides tools for polynomial manipulation, including differentiation.</div>
-<pre id="sec-recursion-5-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">R = PolynomialRing(QQ, 'x')
-p = R('x^3 + 2*x^2 + x + 1')
-dp = p.derivative()
-dp
-</script></pre>
-<div class="para" id="sec-recursion-5-4">In this code, <code class="code-inline tex2jax_ignore">PolynomialRing(QQ, 'x')</code> creates a polynomial ring in the variable <span class="process-math">\(x\)</span> with rational number coefficients (<code class="code-inline tex2jax_ignore">QQ</code>). The polynomial <span class="process-math">\(p = x^3 + 2x^2 + x + 1\)</span> is defined within this ring. The method <code class="code-inline tex2jax_ignore">.derivative()</code> computes the derivative of <span class="process-math">\(p\text{,}\)</span> producing a new polynomial <span class="process-math">\(dp\)</span> representing the derivative.</div></section></section></div>
+</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-graph-theory.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
