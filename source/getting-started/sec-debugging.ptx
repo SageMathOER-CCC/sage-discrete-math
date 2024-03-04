@@ -97,11 +97,20 @@
   </sage>
 
   <p>
-    It looks like we have a <c>NameError</c> because <c>Hi</c> is not defined. In this case Sage thinks that <c>Hi</c> is a variable because there are no parenthesis around it. Let's make it a string by adding quotes around it. Alternately, we could have kept <c>Hi</c> without quotes to use it as a variable and assign a value to it.
+    It looks like we have a <c>NameError</c> because <c>Hi</c> is not defined. In this case Sage thinks that <c>Hi</c> is a variable because there are no quotes around it. Let's make it a string by adding quotes around it.
   </p>
   <sage>
     <input>
       print("Hi")
+    </input>
+  </sage>
+  <p>
+    Alternately, we could have kept <c>Hi</c> without quotes to use it as a variable and assign a value to it.
+  </p>
+  <sage>
+    <input>
+      Hi = "Hello, World!"
+      print(Hi)
     </input>
   </sage>
 </section>

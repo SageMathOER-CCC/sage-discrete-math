@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="intro-graph-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to Graph Theory</title>
+  <p>
+    Applications of graphs include:
+    <ul>
+      <li>
+        <p>
+          Social interaction
+        </p>
+      </li>
+      <li>
+        <p>
+          Influence
+        </p>
+      </li>
+      <li>
+        <p>
+          Call network
+        </p>
+      </li>
+      <li>
+        <p>
+          World wide web
+        </p>
+      </li>
+      <li>
+        <p>
+          Citation graph
+        </p>
+      </li>
+      <li>
+        <p>
+          Collaboration
+        </p>
+      </li>
+      <li>
+        <p>
+          PageRank
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    <me>
+      A \ \text{graph} \ G = (V, E) \text{ consists of a set } V \text{ of vertices and a set } E \text{ of edges, where}
+    </me>
+    <me>
+      E \subset \{\{u, v\} | u, v \in V\}
+    </me>
+  </p>
+  <p>
+    The set of edges is a set whose elements are subsets of two vertices. Vertices can also be called nodes. Let the set of Vertices <m>V</m> and the set of edges <m>E</m> be defined as follows:
+    <me>
+      V = \{a, b, c, d, e\}
+    </me>
+    <me>
+      E = \{\{a, e\}, \{a, b\}, \{a, c\}, \{b, c\}, \{b, d\}, \{c, d\}, \{d, e\}\}
+    </me>
+  </p>
+  <sage>
+    <input>
+      V = ['a', 'b', 'c', 'd', 'e']
+
+      E = [('a', 'e'), ('a', 'b'), ('a', 'c'), ('b', 'c'), ('b', 'd'), ('c', 'd'), ('d', 'e')]
+
+      G = Graph([V, E])
+
+      G.plot()
+    </input>
+  </sage>
+  <p>
+    A <term>multigraph</term> is a graph with multiple edges between the same pair of vertices. Keep in mind that these definitions are not standardized and may vary from source to source. Be sure to set <c>multiedges=True</c> for a multigraph in Sage.
+  </p>
+  <sage>
+    <input>
+      V = ['a', 'b', 'c', 'd', 'e']
+
+      E = [('a', 'e'), ('a', 'b'), ('a', 'c'), ('b', 'c'), ('b', 'd'), ('c', 'd'), ('c', 'd'), ('d', 'e')]
+
+      G = Graph([V, E], multiedges=True)
+
+      G.plot()
+    </input>
+  </sage>
+</section>
