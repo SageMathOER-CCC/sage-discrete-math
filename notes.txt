@@ -1,0 +1,105 @@
+# Graphs
+
+
+
+Degree of a vertex
+
+The degree of the vertex $v$, $\deg(v)$, is the number of edges incident with $v$.
+
+Degree Sequence
+
+The degree sequence of $G = (V, E)$ is the list of degrees of its vertices, in decreasing order.
+
+Theorem
+
+The sum of the degrees of the vertices in a graph equals twice the size of the graph:
+$$
+\sum_{v \in V} \deg(v) = 2|E|
+$$
+
+Count the vertices.
+Count the edges.
+Degree sequence.
+Verify theroem.
+
+$$
+|V| = 5, |E| = 6
+
+$$
+$$
+(3, 3, 2, 2, 2)
+$$
+
+$$
+\sum_{v \in V} \deg(v) = 3 + 3 + 2 + 2 + 2 = 2 \cdot 6
+$$
+
+$$
+|V| = 7, |E| = 5
+$$
+$$
+(3, 2, 2, 1, 1, 1, 0)
+$$
+$$
+\sum_{v \in V} \deg(v) = 10
+$$
+
+Connectivity
+
+Path
+
+A path of length n between vertices \( u \) and \( v \) is a sequence of edges
+
+$$
+(e_1, e_2, \ldots, e_n)
+$$
+such that
+$$
+$$
+e_1 = \{u, w_1\}
+$$
+$$
+e_2 = \{w_1, w_2\}
+$$
+$$
+\vdots
+.
+.
+.
+$$
+$$
+e_n = \{w_{n-1}, v\}
+$$
+
+Circuit
+$$
+$$
+A circuit is a path from \( u \) to \( u \).
+$$
+
+A graph is connected if there exists a path between u and v for all
+$$
+u, v \in V .
+$$
+
+$$
+G = (V, E) \sim G' = (V', E') \\
+$$
+$$
+G \text{ is isomorphic to } G' \text{ if there exists a bijection } f: V \rightarrow V' \text{ such that } \{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'
+$$
+
+Easier to prove, not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic.
+
+Invariant under isomorphism
+$$
+\text{If } G = (V, E) \sim G' = (V', E'), \text{ then}
+$$
+G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
+$$
+$$
+|V| = |V'| \text{ and } |E| = |E'|
+$$
+$$
+\text{degree sequence of } G = \text{ degree sequence of } G'
+$$

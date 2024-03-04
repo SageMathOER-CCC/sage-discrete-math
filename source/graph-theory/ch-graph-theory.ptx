@@ -9,4 +9,5 @@
 
   <!-- include sections -->
   <xi:include href="sec-intro-to-graph-theory.ptx" />
+  <xi:include href="sec-terminology.ptx" />
 </chapter>

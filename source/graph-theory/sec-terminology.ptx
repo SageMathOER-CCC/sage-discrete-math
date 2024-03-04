@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="terminology" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Terminology</title>
+  <p>
+    The order of <m>G = (V, E) \textit{ is the number of vertices: } |V|</m>
+  </p>
+  <p>
+    The size of <m>G = (V, E) \textit{ is the number of edges: } |E|</m>
+  </p>
+  <p>
+    An edge <m>{u, v\}</m> is incident with <m>u</m> and <m>v</m>.
+  </p>
+  <sage>
+    <input>
+        # example to show terms
+    </input>
+  </sage>
+</section>
