@@ -74,6 +74,32 @@
   
   <sage>
     <input>
+      graph_data = {
+        'a': ['b', 'e'],
+        'b': ['a', 'e', 'c'],
+        'c': ['b', 'd'],
+        'd': ['e', 'c'],
+        'e': ['a', 'b', 'd']
+    }
+    
+    G = Graph(graph_data)
+    
+    vertex_colors = {
+        'yellow': ['a'],
+        'brown': ['b'],
+        'green': ['c'],
+        'blue': ['d'],
+        'orange': ['e']
+    }
+    
+    G.plot(vertex_colors=vertex_colors, layout='circular')
+    </input>
+  </sage>
+  <p>
+    Let's verify this with Sage:
+  </p>
+  <sage>
+    <input>
         # example
     </input>
   </sage>
