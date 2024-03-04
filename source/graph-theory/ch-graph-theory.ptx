@@ -11,4 +11,5 @@
   <xi:include href="sec-intro-to-graph-theory.ptx" />
   <xi:include href="sec-terminology.ptx" />
   <xi:include href="sec-connectivity.ptx" />
+  <xi:include href="sec-isomorphism.ptx" />
 </chapter>
