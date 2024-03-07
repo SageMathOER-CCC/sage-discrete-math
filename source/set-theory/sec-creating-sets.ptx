@@ -6,7 +6,7 @@
 	<subsection xml:id="subsec-Ways-to-create-a-set">
 		<title>Sage Math Set</title>
 		<p>
-			We can create a set by inserting a list within a <c>Set()</c> function, with an uppercase <c>S</c>. We create a list with square brackets <c>[]</c>. Notice when we print the set, the elements are ordered and the duplicates are ignored.
+			To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c>list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c>Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
 		</p>
 
 		<sage>
@@ -35,11 +35,7 @@
 		</sage>
 
 		<p>
-			Since sets remove duplicates, the two sets are equal.
-		</p>
-
-		<p>
-			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>.
+			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
 		</p>
 
 	  </subsection>
@@ -73,7 +69,7 @@
 	  <subsection xml:id="subsec-subsets">
 		<title>Subsets</title>
 		<p>
-			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the sets of subsets.
+			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
 		</p>
 		<sage>
 		  <input>

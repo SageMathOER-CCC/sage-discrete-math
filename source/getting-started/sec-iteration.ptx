@@ -35,7 +35,7 @@
     </p>
     <sage>
         <input>
-            # Create a list of the cube roots of the numbers from 9 to 100
+            # Create a list of the cubes of the numbers from 9 to 100
             # In list comprehension, the for loop is written inside the square
             # Unlike the range function, the ending value is included in the range
             [n**3 for n in [9..20]]
