@@ -75,12 +75,31 @@
         </p>
         <sage>
             <input>
-                Permutations(3).cardinality()
+                Permutations(5, 3).cardinality()
             </input>
             <output></output>
         </sage>
         <p>
             To display the set of permutations with 3 elements, we use the <c>Permutations()</c> function and the use the <c>Set()</c> function for output.
+        </p>
+        <sage>
+            <input>
+                A = Permutations(5, 3)
+                Set(A)
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            When <m>n = k</m>, we can calculate permutations of <m>3</m> elements:
+        </p>
+        <sage>
+            <input>
+                Permutations(3).cardinality()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            Similarly, we can also show the sets of permutations:
         </p>
         <sage>
             <input>
@@ -90,17 +109,17 @@
             <output></output>
         </sage>
         <p>
-            We can also specify the elements by:
+            We can also specify the elements:
         </p>
         <sage>
             <input>
-            A = Permutations([2, 3, 4])
+            A = Permutations(['a', 'b', 'c'])
             Set(A)
             </input>
             <output></output>
         </sage>
         <p>
-            In the code above, we specified the elements to be 2, 3 and 4.
+            In the code above, we specified the elements to be 'a', 'b' and 'c'.
         </p>
     </subsection>
 
