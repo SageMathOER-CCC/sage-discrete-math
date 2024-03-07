@@ -17,8 +17,8 @@
         </aside>
         <sage>
             <input>
-                a = propcalc.formula('p -&gt; q')
-                a.truthtable()
+                A = propcalc.formula('p -&gt; q')
+                A.truthtable()
             </input>
             <output></output>
         </sage>
@@ -27,13 +27,15 @@
         </p>
         <sage>
             <input>
-                A=SymbolicLogic()
-                A.print_table(A.truthtable(A.statement('p -&gt; q')))
+                A = SymbolicLogic()
+                B = A.statement('p -&gt; q')
+                C = A.truthtable(B)
+                A.print_table(C)
             </input>
             <output></output>
         </sage>
         <p>
-            <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c>statement()</c> defines a logical implication. The <c>truthtable()</c> method generates a truth table for this statement, and <c>print_table()</c> displays it.
+            <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c>statement()</c> defines the given statement. The <c>truthtable()</c> method generates a truth table for this statement, and <c>print_table()</c> displays it.
         </p>
 
 
@@ -51,8 +53,8 @@
     </aside>
     <sage>
         <input>
-            b = propcalc.formula('(p &amp; q) -&gt; r')
-            b.truthtable()
+            B = propcalc.formula('(p &amp; q) -&gt; r')
+            B.truthtable()
         </input>
         <output></output>
     </sage>
