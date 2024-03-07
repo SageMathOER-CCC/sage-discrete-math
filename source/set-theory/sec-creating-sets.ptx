@@ -70,6 +70,7 @@
 		<title>Subsets</title>
 		<p>
 			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
+			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
 		</p>
 		<sage>
 		  <input>
@@ -87,7 +88,7 @@
 		  Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
 	   </p>
 	   <p>
-		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set A:
+		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set <m>A</m>:
 	   </p>
 	   <aside>
 		   <title>Tips!</title>
@@ -103,7 +104,7 @@
 		   <output></output>
 	   </sage>
 	   <p>
-		   We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of A by using the <c>Subsets</c> function to generate a set S with all the subsets of A. Then we use the <c>in</c> operator to check whether <m>B</m> belongs to the set of subsets of <m>A</m>.
+		   We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of <m>A</m> by using the <c>Subsets</c> function to generate a set <m>S</m> with all the subsets of <m>A</m>. Then we use the <c>in</c> operator to check whether <m>B</m> belongs to the set of subsets of <m>A</m>.
 	   </p>
 	   <sage>
 		   <input>
