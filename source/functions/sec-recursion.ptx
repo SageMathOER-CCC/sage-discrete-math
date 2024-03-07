@@ -13,7 +13,7 @@
             A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors. 
         </p>
         <p>
-            Here, <c>s</c> is a function representing the sequence. The equation <c>eqn</c> defines the recursive relation <m>s(n) = s(n-1) + 2\cdot s(n-2)</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s(0) = 2</m> and <m>s(1) = 7</m>. At last, we use <c>SR()</c> function to convert the notations from python to mathematical.
+            Here, <c>s</c> is a function representing the sequence. The equation <c>eqn</c> defines the recursive relation <m>s(n) = s(n-1) + 2\cdot s(n-2)</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s(0) = 2</m> and <m>s(1) = 7</m>. At last, we use <c>SR()</c> function to convert from Python notation to mathematical notation.
         </p>
         <sage>
             <input>
@@ -22,11 +22,13 @@
                 s = Function('s')
                 eqn = s(n) - s(n-1) - 2*s(n-2)
                 sol = rsolve(eqn, s(n), {s(0): 2, s(1): 7})
-                sol
-                SR(sol)
+                show(SR(sol))
             </input>
             <output></output>
-        </sage>       
+        </sage>
+        <p>
+            <c>show()</c> function can be used to make the output visually more pleasing, you can try to remove it and see how the output looks instead.
+        </p>
     </subsection>
 
     <!-- Recursion with Binomial Coefficients -->
@@ -57,7 +59,7 @@
             <output></output>
         </sage>
         <p>
-            This Python function implements the recursive formula <m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m>, with base cases <m>\binom{n}{0} = \binom{n}{n} = 1</m>.
+            This function implements the recursive formula <m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m>, with base cases <m>\binom{n}{0} = \binom{n}{n} = 1</m>.
         </p>
     </subsection>
 

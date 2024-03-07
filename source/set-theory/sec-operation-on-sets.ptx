@@ -192,7 +192,7 @@
         <subsection>
             <title>Cartesian Product of Sets</title>
                 <p>
-                    Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the cartesian product <m>A × D</m>.
+                    Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the Cartesian product <m>A × D</m>.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -210,7 +210,7 @@
                     </output>
                     </sage>
                     <p>
-                        Alternatively, we can use the <c>.</c> notation to find the cartesian product.
+                        Alternatively, we can use the <c>.</c> notation to find the Cartesian product.
                     </p>
                     <sage>
                         <input>
@@ -224,14 +224,14 @@
 
         <!-- Powerset of Sets Subsection -->
         <subsection>
-            <title>Powerset of Sets</title>
+            <title>Power Set of Sets</title>
                 <p>
-                    The powerset of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. This Sage code defines a set <m>A = &#123;1, 2, 3&#125;</m> and uses the <c>powerset()</c> function to generate all subsets of <m>A</m>. The <c>list()</c> function is then used to convert the powerset iterator into a list.
+                    The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. This Sage code defines a set <m>A = \{1, 2, 3, 4, 5\}</m> and uses the <c>powerset()</c> function to generate all subsets of <m>A</m>. The <c>list()</c> function is then used to convert the power set iterator into a list.
                 </p>
                 <aside>
                     <title>Tips!</title>
                     <p>
-                        Exploring the powerset of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
+                        Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
                     </p>
                 </aside>
                 <sage>

@@ -6,7 +6,7 @@
 	<subsection xml:id="subsec-Ways-to-create-a-set">
 		<title>Sage Math Set</title>
 		<p>
-			We can create a set by inserting a list within a <c>Set()</c> function, with an uppercase <c>S</c>. We create a list with square brackets <c>[]</c>. Notice when we print the set, the elements are ordered and the duplicates are ignored.
+			We can create a set by inserting a list within a <c>Set()</c> function, with an uppercase <c>S</c>. We create a list with square brackets <c>[]</c>. Notice when we print the set, the elements are displayed in order and the duplicates are ignored.
 		</p>
 
 		<sage>
@@ -20,7 +20,7 @@
 			We can ask Sage to compare two sets to see if they are equal or not. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
 		</p>
 		<p>
-			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
+			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
 		</p>
 		<p>
 			The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.
@@ -33,13 +33,8 @@
 				A == B
 			</input>
 		</sage>
-
 		<p>
-			Since sets remove duplicates, the two sets are equal.
-		</p>
-
-		<p>
-			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Sets()</c> with an upper case <c>S</c>.
+			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
 		</p>
 
 	  </subsection>
@@ -73,7 +68,7 @@
 	  <subsection xml:id="subsec-subsets">
 		<title>Subsets</title>
 		<p>
-			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the sets of subsets.
+			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
 		</p>
 		<sage>
 		  <input>
@@ -91,7 +86,7 @@
 		  Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
 	   </p>
 	   <p>
-		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set A:
+		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set <m>A</m>:
 	   </p>
 	   <aside>
 		   <title>Tips!</title>
@@ -107,7 +102,7 @@
 		   <output></output>
 	   </sage>
 	   <p>
-		   We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of A by using the <c>Subsets</c> function to generate a set S with all the subsets of A. Then we use the <c>in</c> operator to check whether <m>B</m> belongs to the set of subsets of <m>A</m>.
+		   We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of <m>A</m> by using the <c>Subsets</c> function to generate a set <m>S</m> with all the subsets of <m>A</m>. Then we use the <c>in</c> operator to check whether <m>B</m> belongs to the set of subsets of <m>A</m>.
 	   </p>
 	   <sage>
 		   <input>
