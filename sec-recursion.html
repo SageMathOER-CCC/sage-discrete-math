@@ -180,7 +180,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Multiple Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Complement of Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Powerset of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Power Set of Sets</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -267,15 +267,16 @@ sagecell.makeSagecell({
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="space"> </span><span class="title">Recursion in Sequences</span>
 </h3>
 <div class="para" id="sec-recursion-3-2">A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.</div>
-<div class="para" id="sec-recursion-3-3">Here, <code class="code-inline tex2jax_ignore">s</code> is a function representing the sequence. The equation <code class="code-inline tex2jax_ignore">eqn</code> defines the recursive relation <span class="process-math">\(s(n) = s(n-1) + 2\cdot s(n-2)\text{.}\)</span> The <code class="code-inline tex2jax_ignore">rsolve()</code> function is then used to find a closed-form solution to this recurrence, given the initial conditions <span class="process-math">\(s(0) = 2\)</span> and <span class="process-math">\(s(1) = 7\text{.}\)</span> At last, we use <code class="code-inline tex2jax_ignore">SR()</code> function to convert the notations from python to mathematical.</div>
+<div class="para" id="sec-recursion-3-3">Here, <code class="code-inline tex2jax_ignore">s</code> is a function representing the sequence. The equation <code class="code-inline tex2jax_ignore">eqn</code> defines the recursive relation <span class="process-math">\(s(n) = s(n-1) + 2\cdot s(n-2)\text{.}\)</span> The <code class="code-inline tex2jax_ignore">rsolve()</code> function is then used to find a closed-form solution to this recurrence, given the initial conditions <span class="process-math">\(s(0) = 2\)</span> and <span class="process-math">\(s(1) = 7\text{.}\)</span> At last, we use <code class="code-inline tex2jax_ignore">SR()</code> function to convert from Python notation to mathematical notation.</div>
 <pre id="sec-recursion-3-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from sympy import Function, rsolve
 from sympy.abc import n
 s = Function('s')
 eqn = s(n) - s(n-1) - 2*s(n-2)
 sol = rsolve(eqn, s(n), {s(0): 2, s(1): 7})
-sol
-SR(sol)
-</script></pre></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
+show(SR(sol))
+</script></pre>
+<div class="para" id="sec-recursion-3-5">
+<code class="code-inline tex2jax_ignore">show()</code> function can be used to make the output visually more pleasing, you can try to remove it and see how the output looks instead.</div></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Recursion with Binomial Coefficients</span>
 </h3>
 <div class="para" id="sec-recursion-4-2">Binomial coefficients, denoted as <span class="process-math">\(\binom{n}{k}\text{,}\)</span> count the number of ways to choose <span class="process-math">\(k\)</span> elements from an <span class="process-math">\(n\)</span>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <code class="code-inline tex2jax_ignore">binomial(n, k)</code> function.</div>
@@ -290,7 +291,7 @@ SR(sol)
 
 binomial_recursive(5, 3)
 </script></pre>
-<div class="para" id="sec-recursion-4-6">This Python function implements the recursive formula <span class="process-math">\(\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}\text{,}\)</span> with base cases <span class="process-math">\(\binom{n}{0} = \binom{n}{n} = 1\text{.}\)</span>
+<div class="para" id="sec-recursion-4-6">This function implements the recursive formula <span class="process-math">\(\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}\text{,}\)</span> with base cases <span class="process-math">\(\binom{n}{0} = \binom{n}{n} = 1\text{.}\)</span>
 </div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-graph-theory.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

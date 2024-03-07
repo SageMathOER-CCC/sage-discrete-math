@@ -180,7 +180,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Multiple Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Complement of Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Powerset of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Power Set of Sets</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -298,12 +298,13 @@ Set(A)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="space"> </span><span class="title">Set Membership Check</span>
 </h3>
 <div class="para" id="creating-sets-5-2">Sage allows you to easily check whether a certain element belongs to a set. You can use the <code class="code-inline tex2jax_ignore">in</code> operator to check membership, which returns <code class="code-inline tex2jax_ignore">True</code> if the element is in the set and <code class="code-inline tex2jax_ignore">False</code> otherwise.</div>
-<div class="para" id="creating-sets-5-3">Let’s consider <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\text{.}\)</span> We can check if the number 3 is in set A:</div>
+<div class="para" id="creating-sets-5-3">Let’s consider <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\text{.}\)</span> We can check if the number 3 is in set <span class="process-math">\(A\text{:}\)</span>
+</div>
 <aside class="aside aside-like" id="creating-sets-5-4"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="creating-sets-5-4-2">For organizations such as clubs, gyms, or online subscription services, set membership checks can be used to validate if a user is a member or subscriber. This can help control access to facilities or content.</div></aside><pre id="creating-sets-5-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 3 in A
 </script></pre>
-<div class="para" id="creating-sets-5-6">We also can check if <span class="process-math">\(B = \{3, 4, 5, 6\}\)</span> is a subset of A by using the <code class="code-inline tex2jax_ignore">Subsets</code> function to generate a set S with all the subsets of A. Then we use the <code class="code-inline tex2jax_ignore">in</code> operator to check whether <span class="process-math">\(B\)</span> belongs to the set of subsets of <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="creating-sets-5-6">We also can check if <span class="process-math">\(B = \{3, 4, 5, 6\}\)</span> is a subset of <span class="process-math">\(A\)</span> by using the <code class="code-inline tex2jax_ignore">Subsets</code> function to generate a set <span class="process-math">\(S\)</span> with all the subsets of <span class="process-math">\(A\text{.}\)</span> Then we use the <code class="code-inline tex2jax_ignore">in</code> operator to check whether <span class="process-math">\(B\)</span> belongs to the set of subsets of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <pre id="creating-sets-5-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 S = Subsets(A)

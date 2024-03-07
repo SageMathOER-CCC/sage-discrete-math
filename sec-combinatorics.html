@@ -180,7 +180,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Multiple Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Complement of Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Powerset of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Power Set of Sets</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -286,17 +286,24 @@ sagecell.makeSagecell({
 <div class="para" id="sec-combinatorics-4-2">A permutation <span class="process-math">\((n, k)\)</span> is an ordered selection of <span class="process-math">\(k\)</span> objects from a set of <span class="process-math">\(n\)</span> objects.</div>
 <aside class="aside aside-like" id="sec-combinatorics-4-3"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-combinatorics-4-3-2">Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.</div></aside><div class="para" id="sec-combinatorics-4-4">To calculate the permutation of a set with 3 elements, we use the <code class="code-inline tex2jax_ignore">Permutations()</code> and the <code class="code-inline tex2jax_ignore">cardinality()</code> functions.</div>
-<pre id="sec-combinatorics-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Permutations(3).cardinality()
+<pre id="sec-combinatorics-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Permutations(5, 3).cardinality()
 </script></pre>
 <div class="para" id="sec-combinatorics-4-6">To display the set of permutations with 3 elements, we use the <code class="code-inline tex2jax_ignore">Permutations()</code> function and the use the <code class="code-inline tex2jax_ignore">Set()</code> function for output.</div>
-<pre id="sec-combinatorics-4-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(3)
+<pre id="sec-combinatorics-4-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(5, 3)
 Set(A)
 </script></pre>
-<div class="para" id="sec-combinatorics-4-8">We can also specify the elements by:</div>
-<pre id="sec-combinatorics-4-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations([2, 3, 4])
+<div class="para" id="sec-combinatorics-4-8">When <span class="process-math">\(n = k\text{,}\)</span> we can calculate permutations of <span class="process-math">\(3\)</span> elements:</div>
+<pre id="sec-combinatorics-4-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Permutations(3).cardinality()
+</script></pre>
+<div class="para" id="sec-combinatorics-4-10">Similarly, we can also show the sets of permutations:</div>
+<pre id="sec-combinatorics-4-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(3)
 Set(A)
 </script></pre>
-<div class="para" id="sec-combinatorics-4-10">In the code above, we specified the elements to be 2, 3 and 4.</div></section></section></div>
+<div class="para" id="sec-combinatorics-4-12">We can also specify the elements:</div>
+<pre id="sec-combinatorics-4-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(['a', 'b', 'c'])
+Set(A)
+</script></pre>
+<div class="para" id="sec-combinatorics-4-14">In the code above, we specified the elements to be ’a’, ’b’ and ’c’.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-combinatorics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

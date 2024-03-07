@@ -180,7 +180,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Multiple Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Complement of Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Powerset of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Power Set of Sets</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -352,11 +352,11 @@ Set(cartesian_product([A, D]))
 D = Set(['x', 'y'])
 Set(A.cartesian_product(D))
 </script></pre></section><section class="subsection" id="sec-operation-on-sets-8"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="space"> </span><span class="title">Powerset of Sets</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="space"> </span><span class="title">Power Set of Sets</span>
 </h3>
-<div class="para" id="sec-operation-on-sets-8-2">The powerset of a set <span class="process-math">\(A\)</span> is the set of all subsets of <span class="process-math">\(A\text{,}\)</span> including the empty set and <span class="process-math">\(A\)</span> itself. This Sage code defines a set <span class="process-math">\(A = {1, 2, 3}\)</span> and uses the <code class="code-inline tex2jax_ignore">powerset()</code> function to generate all subsets of <span class="process-math">\(A\text{.}\)</span> The <code class="code-inline tex2jax_ignore">list()</code> function is then used to convert the powerset iterator into a list.</div>
+<div class="para" id="sec-operation-on-sets-8-2">The power set of a set <span class="process-math">\(A\)</span> is the set of all subsets of <span class="process-math">\(A\text{,}\)</span> including the empty set and <span class="process-math">\(A\)</span> itself. This Sage code defines a set <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and uses the <code class="code-inline tex2jax_ignore">powerset()</code> function to generate all subsets of <span class="process-math">\(A\text{.}\)</span> The <code class="code-inline tex2jax_ignore">list()</code> function is then used to convert the power set iterator into a list.</div>
 <aside class="aside aside-like" id="sec-operation-on-sets-8-3"><h4 class="heading"><span class="title">Tips!</span></h4>
-<div class="para" id="sec-operation-on-sets-8-3-2">Exploring the powerset of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.</div></aside><pre id="sec-operation-on-sets-8-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
+<div class="para" id="sec-operation-on-sets-8-3-2">Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.</div></aside><pre id="sec-operation-on-sets-8-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 list(powerset(A))
 </script></pre></section></section></div>
 <div class="ptx-content-footer">

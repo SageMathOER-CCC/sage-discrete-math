@@ -180,7 +180,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-5" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Multiple Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-6" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Complement of Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-7" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Cartesian Product of Sets</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Powerset of Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operation-on-sets.html#sec-operation-on-sets-8" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Power Set of Sets</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -265,19 +265,21 @@ sagecell.makeSagecell({
 </h2>
 <div class="para" id="sec-truth-table-2">The <code class="code-inline tex2jax_ignore">truthtable()</code> function in Sage generates the truth table for a given logical expression.</div>
 <aside class="aside aside-like" id="sec-truth-table-3"><h3 class="heading"><span class="title">Tips!</span></h3>
-<div class="para" id="sec-truth-table-3-2">Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.</div></aside><pre id="sec-truth-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a = propcalc.formula('p -> q')
-a.truthtable()
+<div class="para" id="sec-truth-table-3-2">Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.</div></aside><pre id="sec-truth-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = propcalc.formula('p -> q')
+A.truthtable()
 </script></pre>
 <div class="para" id="sec-truth-table-5">An alternative way to display the table with better separation and visuals would be to use <code class="code-inline tex2jax_ignore">SymbolicLogic()</code>, <code class="code-inline tex2jax_ignore">statement()</code>, <code class="code-inline tex2jax_ignore">truthtable()</code> and the <code class="code-inline tex2jax_ignore">print_table()</code> functions.</div>
-<pre id="sec-truth-table-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=SymbolicLogic()
-A.print_table(A.truthtable(A.statement('p -> q')))
+<pre id="sec-truth-table-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = SymbolicLogic()
+B = A.statement('p -> q')
+C = A.truthtable(B)
+A.print_table(C)
 </script></pre>
 <div class="para" id="sec-truth-table-7">
-<code class="code-inline tex2jax_ignore">SymbolicLogic()</code> creates an instance for handling symbolic logic operations, while <code class="code-inline tex2jax_ignore">statement()</code> defines a logical implication. The <code class="code-inline tex2jax_ignore">truthtable()</code> method generates a truth table for this statement, and <code class="code-inline tex2jax_ignore">print_table()</code> displays it.</div>
+<code class="code-inline tex2jax_ignore">SymbolicLogic()</code> creates an instance for handling symbolic logic operations, while <code class="code-inline tex2jax_ignore">statement()</code> defines the given statement. The <code class="code-inline tex2jax_ignore">truthtable()</code> method generates a truth table for this statement, and <code class="code-inline tex2jax_ignore">print_table()</code> displays it.</div>
 <div class="para" id="sec-truth-table-8">Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <code class="code-inline tex2jax_ignore">truthtable()</code> function accommodates expressions with any reasonable number of variables.</div>
 <aside class="aside aside-like" id="sec-truth-table-9"><h3 class="heading"><span class="title">Tips!</span></h3>
-<div class="para" id="sec-truth-table-9-2">Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.</div></aside><pre id="sec-truth-table-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">b = propcalc.formula('(p & q) -> r')
-b.truthtable()
+<div class="para" id="sec-truth-table-9-2">Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.</div></aside><pre id="sec-truth-table-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">B = propcalc.formula('(p & q) -> r')
+B.truthtable()
 </script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-logical-operation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-tautology.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
