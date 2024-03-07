@@ -192,7 +192,7 @@
         <subsection>
             <title>Cartesian Product of Sets</title>
                 <p>
-                    Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the cartesian product <m>A × D</m>.
+                    Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the Cartesian product <m>A × D</m>.
                 </p>
                 <aside>
                     <title>Tips!</title>
@@ -210,7 +210,7 @@
                     </output>
                     </sage>
                     <p>
-                        Alternatively, we can use the <c>.</c> notation to find the cartesian product.
+                        Alternatively, we can use the <c>.</c> notation to find the Cartesian product.
                     </p>
                     <sage>
                         <input>
