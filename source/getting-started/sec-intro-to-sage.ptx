@@ -32,12 +32,12 @@
     </li>
     <li>
       <p>
-        Rational: <c>/</c>
+        Division: <c>/</c>
       </p>
     </li>
     <li>
       <p>
-        Integer division rounded down: <c>//</c>
+        Integer division: <c>//</c>
       </p>
     </li>
     <li>
@@ -101,14 +101,14 @@
 
   <sage>
     <input>
-      # Returns an Integer and rounds down
+      # Returns the quotient
       5//3
     </input>
   </sage>
 
   <sage>
     <input>
-      # % is the modulo operator and returns the remainder
+      # Returns the remainder
       5 % 2
     </input>
   </sage>

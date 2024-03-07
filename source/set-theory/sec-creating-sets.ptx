@@ -20,7 +20,7 @@
 			We can ask Sage to compare two sets to see if they are equal or not. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
 		</p>
 		<p>
-			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
+			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
 		</p>
 		<p>
 			The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.

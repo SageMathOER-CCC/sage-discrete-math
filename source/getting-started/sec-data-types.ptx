@@ -36,13 +36,13 @@
   </sage>
 
   <p>
-    <c>True</c> and <c>False</c> <term>boolean</term> values. 
+    <term>Boolean</term> values can be <c>True</c> or <c>False</c>. 
   </p>
   <sage>
     <input>
         # Check if 5 in contained in the set of prime numbers
-        bool = 5 in Primes()
-        type(bool)
+        b = 5 in Primes()
+        type(b)
     </input>
   </sage>
 
