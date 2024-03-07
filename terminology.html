@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="intro-graph-theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="connectivity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="definitions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="connectivity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -252,7 +252,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-graph-theory.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Introduction to Graph Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
@@ -263,15 +263,15 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="terminology"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">Terminology</span>
 </h2>
-<div class="para" id="terminology-2">The order of <span class="process-math">\(G = (V, E) \textit{ is the number of vertices: } |V|\)</span>
+<div class="para" id="terminology-2">The <dfn class="terminology">order</dfn> of <span class="process-math">\(G = (V, E) \textit{ is the number of vertices: } |V|\)</span>
 </div>
-<div class="para" id="terminology-3">The size of <span class="process-math">\(G = (V, E) \textit{ is the number of edges: } |E|\)</span>
+<div class="para" id="terminology-3">The <dfn class="terminology">size</dfn> of <span class="process-math">\(G = (V, E) \textit{ is the number of edges: } |E|\)</span>
 </div>
-<div class="para" id="terminology-4">An edge <span class="process-math">\(\{u, v\}\)</span> is incident with <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span>
+<div class="para" id="terminology-4">An edge <span class="process-math">\(\{u, v\}\)</span> is <dfn class="terminology">incident</dfn> with <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span>
 </div>
-<div class="para" id="terminology-5">The degree of a vertex <span class="process-math">\(v\text{,}\)</span> <span class="process-math">\(deg(v)\text{,}\)</span> is the number of edges incident with <span class="process-math">\(v\text{.}\)</span>
+<div class="para" id="terminology-5">The <dfn class="terminology">degree</dfn> of a vertex <span class="process-math">\(v\text{,}\)</span> deg<span class="process-math">\((v)\text{,}\)</span> is the number of edges incident with <span class="process-math">\(v\text{.}\)</span>
 </div>
-<div class="para" id="terminology-6">The degree sequence of <span class="process-math">\(G = (V, E)\)</span> is the list of degrees of its vertices, in increasing order.</div>
+<div class="para" id="terminology-6">The degree <dfn class="terminology">sequence</dfn> of <span class="process-math">\(G = (V, E)\)</span> is the list of degrees of its vertices, in increasing order.</div>
 <div class="para logical" id="terminology-7">
 <div class="para">Theorem: The sum of the degrees of the vertices in a graph equals twice the size of the graph:</div>
 <div class="displaymath process-math">
@@ -371,7 +371,7 @@ G.plot(vertex_colors=vertex_colors, layout='circular')
 </div>
 </div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="intro-graph-theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="connectivity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="definitions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="connectivity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

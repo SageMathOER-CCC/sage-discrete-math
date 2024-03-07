@@ -252,7 +252,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-graph-theory.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Introduction to Graph Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
@@ -295,7 +295,7 @@ pprint.pprint(floors)
 <div class="para" id="equivalence-10">Let <span class="process-math">\(R\)</span> be the relation on <span class="process-math">\(A\)</span> described as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{x R y iff x and y live in the same floor of the building.}
+x R y\ \text{iff}\ x\ \text{and}\ y\ \text{live in the same floor of the building.}
 \end{equation*}
 </div>
 <pre id="equivalence-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the relation R based on living on the same floor
@@ -325,14 +325,7 @@ is_symmetric_set(R)
 </div>
 <pre id="equivalence-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = DiGraph(list(R), loops=true)
 G.is_transitive()
-</script></pre>
-<div class="para" id="equivalence-20">For the equivalence class, considering a person <span class="process-math">\(a\)</span> as an example:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-|a| = \{ x \in A \; | \; xRa \} = \text{all people living on the same floor as person a}
-\end{equation*}
-</div>
-<div class="para" id="equivalence-22">This definition confirms that the equivalence class for person <span class="process-math">\(a\)</span> includes all individuals residing on the same floor, effectively grouping the building’s residents into equivalence classes based on their floors.</div></section></div>
+</script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="partial-order.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

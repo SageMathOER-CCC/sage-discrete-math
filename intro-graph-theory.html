@@ -264,18 +264,6 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Introduction to Graph Theory</span>
 </h2>
 <div class="para logical" id="intro-graph-theory-2">
-<div class="para">Applications of graphs include:</div>
-<ul class="disc">
-<li id="intro-graph-theory-2-1-1"><div class="para" id="intro-graph-theory-2-1-1-1">Social interaction</div></li>
-<li id="intro-graph-theory-2-1-2"><div class="para" id="intro-graph-theory-2-1-2-1">Influence</div></li>
-<li id="intro-graph-theory-2-1-3"><div class="para" id="intro-graph-theory-2-1-3-1">Call network</div></li>
-<li id="intro-graph-theory-2-1-4"><div class="para" id="intro-graph-theory-2-1-4-1">World wide web</div></li>
-<li id="intro-graph-theory-2-1-5"><div class="para" id="intro-graph-theory-2-1-5-1">Citation graph</div></li>
-<li id="intro-graph-theory-2-1-6"><div class="para" id="intro-graph-theory-2-1-6-1">Collaboration</div></li>
-<li id="intro-graph-theory-2-1-7"><div class="para" id="intro-graph-theory-2-1-7-1">PageRank</div></li>
-</ul>
-</div>
-<div class="para logical" id="intro-graph-theory-3">
 <div class="displaymath process-math">
 \begin{equation*}
 A \ \text{graph} \ G = (V, E) \text{ consists of a set } V \text{ of vertices and a set } E \text{ of edges, where}
@@ -283,11 +271,11 @@ A \ \text{graph} \ G = (V, E) \text{ consists of a set } V \text{ of vertices an
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-E \subset \{\{u, v\} | u, v \in V\}
+E \subset \{\{u, v\} | u, v \in V\}\text{.}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="intro-graph-theory-4">
+<div class="para logical" id="intro-graph-theory-3">
 <div class="para">The set of edges is a set whose elements are subsets of two vertices. Vertices can also be called nodes. Let the set of Vertices <span class="process-math">\(V\)</span> and the set of edges <span class="process-math">\(E\)</span> be defined as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -300,7 +288,7 @@ E = \{\{a, e\}, \{a, b\}, \{a, c\}, \{b, c\}, \{b, d\}, \{c, d\}, \{d, e\}\}
 \end{equation*}
 </div>
 </div>
-<pre id="intro-graph-theory-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = ['a', 'b', 'c', 'd', 'e']
+<pre id="intro-graph-theory-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = ['a', 'b', 'c', 'd', 'e']
 
 E = [('a', 'e'), ('a', 'b'), ('a', 'c'), ('b', 'c'), ('b', 'd'), ('c', 'd'), ('d', 'e')]
 
@@ -308,8 +296,8 @@ G = Graph([V, E])
 
 G.plot()
 </script></pre>
-<div class="para" id="intro-graph-theory-6">A <dfn class="terminology">multigraph</dfn> is a graph with multiple edges between the same pair of vertices. Keep in mind that these definitions are not standardized and may vary from source to source. Be sure to set <code class="code-inline tex2jax_ignore">multiedges=True</code> for a multigraph in Sage.</div>
-<pre id="intro-graph-theory-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = ['a', 'b', 'c', 'd', 'e']
+<div class="para" id="intro-graph-theory-5">A <dfn class="terminology">multigraph</dfn> is a graph with multiple edges between the same pair of vertices. Keep in mind that these definitions are not standardized and may vary from source to source. Be sure to set <code class="code-inline tex2jax_ignore">multiedges=True</code> for a multigraph in Sage.</div>
+<pre id="intro-graph-theory-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = ['a', 'b', 'c', 'd', 'e']
 
 E = [('a', 'e'), ('a', 'b'), ('a', 'c'), ('b', 'c'), ('b', 'd'), ('c', 'd'), ('c', 'd'), ('d', 'e')]
 

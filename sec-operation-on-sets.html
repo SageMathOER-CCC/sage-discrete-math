@@ -252,7 +252,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-graph-theory.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Introduction to Graph Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
@@ -340,14 +340,14 @@ U - A
 </script></pre></section><section class="subsection" id="sec-operation-on-sets-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="space"> </span><span class="title">Cartesian Product of Sets</span>
 </h3>
-<div class="para" id="sec-operation-on-sets-7-2">Suppose <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and <span class="process-math">\(D = \{x, y\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">cartesian_product()</code> and <code class="code-inline tex2jax_ignore">Set()</code> functions to display the cartesian product <span class="process-math">\(A × D\text{.}\)</span>
+<div class="para" id="sec-operation-on-sets-7-2">Suppose <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and <span class="process-math">\(D = \{x, y\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">cartesian_product()</code> and <code class="code-inline tex2jax_ignore">Set()</code> functions to display the Cartesian product <span class="process-math">\(A × D\text{.}\)</span>
 </div>
 <aside class="aside aside-like" id="sec-operation-on-sets-7-3"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-7-3-2">This concept can be applied in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.</div></aside><pre id="sec-operation-on-sets-7-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 D = Set(['x', 'y'])
 Set(cartesian_product([A, D]))
 </script></pre>
-<div class="para" id="sec-operation-on-sets-7-5">Alternatively, we can use the <code class="code-inline tex2jax_ignore">.</code> notation to find the cartesian product.</div>
+<div class="para" id="sec-operation-on-sets-7-5">Alternatively, we can use the <code class="code-inline tex2jax_ignore">.</code> notation to find the Cartesian product.</div>
 <pre id="sec-operation-on-sets-7-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 D = Set(['x', 'y'])
 Set(A.cartesian_product(D))

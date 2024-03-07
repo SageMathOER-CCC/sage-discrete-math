@@ -252,7 +252,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-graph-theory.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Introduction to Graph Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
@@ -263,18 +263,10 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="relations-on-a-set"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">5.2</span><span class="space"> </span><span class="title">Relations on a set</span>
 </h2>
-<div class="para" id="relations-on-a-set-2">When the set <span class="process-math">\(A = B\)</span> we refer to the relation as a relation <dfn class="terminology">on</dfn> <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="relations-on-a-set-2">When <span class="process-math">\(A = B\)</span> we refer to the relation as a relation <dfn class="terminology">on</dfn> <span class="process-math">\(A\text{.}\)</span>
 </div>
-<div class="para logical" id="relations-on-a-set-3">
-<div class="para">Consider the set <span class="process-math">\(A = \{2,3,4,6,8\}\text{.}\)</span> Let’s define a relation <span class="process-math">\(R\)</span> on <span class="process-math">\(A\)</span> such that <span class="process-math">\(aRb\)</span> iff <span class="process-math">\(a | b\)</span> (<span class="process-math">\(a\)</span> divides <span class="process-math">\(b\)</span>). The relation <span class="process-math">\(R\)</span> can be represented by the set of ordered pairs where the first element divides the second:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R = \{(2,2),(2,4),(2,6),(2,8),(3,3),(3,6),(4,4),(4,8),(6,6),(8,8)\}
-\end{equation*}
-</div>
-</div>
-<pre id="relations-on-a-set-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the set A
-A = Set([2, 3, 4, 6, 8])
+<div class="para" id="relations-on-a-set-3">Consider the set <span class="process-math">\(A = \{2,3,4,6,8\}\text{.}\)</span> Let’s define a relation <span class="process-math">\(R\)</span> on <span class="process-math">\(A\)</span> such that <span class="process-math">\(aRb\)</span> iff <span class="process-math">\(a | b\)</span> (<span class="process-math">\(a\)</span> divides <span class="process-math">\(b\)</span>). The relation <span class="process-math">\(R\)</span> can be represented by the set of ordered pairs where the first element divides the second:</div>
+<pre id="relations-on-a-set-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([2, 3, 4, 6, 8])
 
 # Define the relation R on A: aRb iff a divides b
 R = Set([(a, b) for a in A for b in A if a.divides(b)])

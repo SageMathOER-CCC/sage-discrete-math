@@ -252,7 +252,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro-graph-theory.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Introduction to Graph Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
@@ -269,7 +269,7 @@ type(n)
 </script></pre>
 <div class="para" id="data-types-4">
 <code class="code-inline tex2jax_ignore">2</code> is represented by an object which is an instance of the <dfn class="terminology">Integer</dfn> class. Sage has many classes for different types of numbers and mathematical objects.</div>
-<div class="para" id="data-types-5">In the following example Sage does not evaluate an approximation of <code class="code-inline tex2jax_ignore">sqrt(2) * log(3)</code>. Sage will retain the <dfn class="terminology">symbolic</dfn> value for accuracy.</div>
+<div class="para" id="data-types-5">In the following example Sage does not evaluate an approximation of <code class="code-inline tex2jax_ignore">sqrt(2) * log(3)</code>. Sage will retain the <dfn class="terminology">symbolic</dfn> value.</div>
 <pre id="data-types-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">n = sqrt(2) * log(3)
 type(n)
 </script></pre>
@@ -279,10 +279,10 @@ type(n)
 type(greeting)
 </script></pre>
 <div class="para" id="data-types-9">
-<code class="code-inline tex2jax_ignore">True</code> and <code class="code-inline tex2jax_ignore">False</code> <dfn class="terminology">boolean</dfn> values.</div>
+<dfn class="terminology">Boolean</dfn>: The type bool can be one of two values, <code class="code-inline tex2jax_ignore">True</code> or <code class="code-inline tex2jax_ignore">False</code>.</div>
 <pre id="data-types-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Check if 5 in contained in the set of prime numbers
-bool = 5 in Primes()
-type(bool)
+b = 5 in Primes()
+type(b)
 </script></pre>
 <div class="para" id="data-types-11">
 <dfn class="terminology">List</dfn>: Mutable collection of items within a pair of square brackets <code class="code-inline tex2jax_ignore">[]</code>. If an object is mutable, the value can be changed after it is created.</div>
@@ -302,7 +302,7 @@ len(l)
 type(t)
 </script></pre>
 <div class="para" id="data-types-19">
-<dfn class="terminology">set</dfn>: Collection of unique items within a pair of curly braces <code class="code-inline tex2jax_ignore">{}</code>. <code class="code-inline tex2jax_ignore">set()</code> with lowercase <code class="code-inline tex2jax_ignore">s</code> are built into Python.</div>
+<dfn class="terminology">set</dfn>: Collection of unique items within a pair of curly braces <code class="code-inline tex2jax_ignore">{}</code>. <code class="code-inline tex2jax_ignore">set()</code> with lowercase <code class="code-inline tex2jax_ignore">s</code> are built into Python. Every item in a set is unique. If you define a set with duplicate items, the duplicates will be removed.</div>
 <pre id="data-types-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">s = {1, 3, 3, 2}
 type(s)
 </script></pre>
@@ -311,7 +311,7 @@ type(s)
 <pre id="data-types-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">S = Set([1, 3, 3, 2])
 type(S)
 </script></pre>
-<div class="para" id="data-types-23">We define the set in a list with square brackets <code class="code-inline tex2jax_ignore">[]</code>. The set is then created with the <code class="code-inline tex2jax_ignore">Set()</code> function. When a list is converted to a set, the duplicates are removed.</div>
+<div class="para" id="data-types-23">We define the set in a list with square brackets <code class="code-inline tex2jax_ignore">[]</code>. The set is then created with the <code class="code-inline tex2jax_ignore">Set()</code> function.</div>
 <pre id="data-types-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">S = Set([5, 5, 1, 3, 5, 3, 2, 2, 3])
 print(S)
 </script></pre>
