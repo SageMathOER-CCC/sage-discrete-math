@@ -70,7 +70,6 @@
 		<title>Subsets</title>
 		<p>
 			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
-			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
 		</p>
 		<sage>
 		  <input>
