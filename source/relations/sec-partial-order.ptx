@@ -40,9 +40,7 @@
 
             r = [(a, b) for a in A for b in A if a.divides(b)]
 
-            P = Poset((A, r))
-
-            P.plot()
+            Poset((A, r))
         </input>
     </sage>
 </section>
