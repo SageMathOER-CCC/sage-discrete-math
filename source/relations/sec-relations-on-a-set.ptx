@@ -4,17 +4,13 @@
     <title>Relations on a set</title>
     
     <p>
-        When the set <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
+        When <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
     </p>
     <p>
         Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
-        <me>
-            R = \{(2,2),(2,4),(2,6),(2,8),(3,3),(3,6),(4,4),(4,8),(6,6),(8,8)\}
-        </me>
     </p>
     <sage>
         <input>
-            # Define the set A
             A = Set([2, 3, 4, 6, 8])
 
             # Define the relation R on A: aRb iff a divides b

@@ -3,10 +3,10 @@
 <section xml:id="intro-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Introduction to Relations</title>
     <p>
-        A <term>relation</term> <m>R</m> from set <m>A</m> to set <m>B</m> is any subset of the Cartesian product <m>A \times B</m>, indicating that <m>R \subseteq A \times B</m>. We can ask Sage to decide if <m>R</m> is a relation from <m>A</m> to <m>B</m>. First construct the Cartesian product <m>C = A \times B</m>. Then build the set <m>S</m> of all subsets of the <m>C</m>. Finally ask if <m>R</m> is a subset of <m>S</m>.
+        A <term>relation</term> <m>R</m> from set <m>A</m> to set <m>B</m> is any subset of the Cartesian product <m>A \times B</m>, indicating that <m>R \subseteq A \times B</m>. We can ask Sage to decide if <m>R</m> is a relation from <m>A</m> to <m>B</m>. First construct <m>C</m>. Then build the set <m>S</m> of all subsets of <m>C</m>. Finally ask if <m>R</m> is a subset of <m>S</m>.
     </p>
     <p>
-        Recall, the Cartesian product <m>A \times B</m> consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
+        Recall, the Cartesian product consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
         In this example, an element in the set <m>A</m> relates to an element in <m>B</m> if the element from <m>A</m> is twice the element from <m>B</m>.
@@ -15,9 +15,12 @@
         <input>
             A = Set([1, 2, 3, 4, 5, 6])
             B = Set([1, 2, 7])
+
             C = Set(cartesian_product([A, B]))
             S = Subsets(C)
+
             R = Set([(a, b) for a in A for b in B if a==2*b])
+            
             print("R =", R)
             print("Is R a relation from set A to set B?", R in S)
         </input>
@@ -45,26 +48,19 @@
 
             # View all the possible combinations of jackets and shirts
             C = cartesian_product([jackets, shirts])
+            
             Set(C)
         </input>
     </sage>
     <p>
-        Create a relation from jackets to shirts based on style, where each jacket is matched with a shirt.
+        Since the Cartesian product returns all the possible combinations, some jackets and shirts will clash. Let's create a relation from jackets to shirts based on matching the items of clothing.
     </p>
     <sage>
         <input>
-            # Define subsets for formal and athletic wear
-            formal_jackets = Set(['j1'])
-            formal_shirts = Set(['s1', 's2'])
-            athletic_jackets = Set(['j2', 'j3'])
-            athletic_shirts = Set(['s3', 's4'])
+            # Define a matching relation between jackets and shirts
+            R = Set([('j1', 's1'), ('j2', 's3'), ('j3', 's4'), ('j1', 's2')])
 
-            # Define the relations
-            formal_relation = Set([(a, b) for a in formal_jackets for b in formal_shirts])
-            athletic_relation = Set([(a, b) for a in athletic_jackets for b in athletic_shirts])
-
-            print("Formal Relation:", formal_relation)
-            print("Athletic Relation:", athletic_relation)
+            print("Matching relation R =", R)
         </input>
     </sage>
 </section>

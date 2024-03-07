@@ -36,7 +36,7 @@
   </sage>
 
   <p>
-    <term>Boolean</term> values can be <c>True</c> or <c>False</c>. 
+    <term>Boolean</term>: The type bool can be one of two values, <c>True</c> or <c>False</c>.
   </p>
   <sage>
     <input>

@@ -4,7 +4,7 @@
     <title>Properties</title>
     <introduction>
         <p>
-            A relation may satisfy certain properties:
+            A relation on <m>A</m> may satisfy certain properties:
         
             <ul>
                 <li>
@@ -76,13 +76,13 @@
           </p>
           <sage>
             <input>
+                def is_reflexive_digraph(A, G):
+                    return all(G.has_edge(a, a) for a in A)
+
                 A = [1, 2, 3]
                 R = [(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)]
 
                 G = DiGraph(R, loops=True)
-
-                def is_reflexive_digraph(A, G):
-                    return all(G.has_edge(a, a) for a in A)
 
                 is_reflexive_digraph(A, G)
             </input>
@@ -92,17 +92,17 @@
     <subsection xml:id="subsec-symmetric">
         <title>Symmetric</title>
         <p>
-            A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>. The relation is symmetric if the order of the elements does not matter.
+            A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>.
         </p>
         <sage>
             <input>
-                A = Set([1, 2, 3])
-
-                R = Set([(1, 2), (2, 1), (3, 3)])
-
                 def is_symmetric_set(relation_R):
                     inverse_R = Set([(b, a) for (a, b) in relation_R])
                     return relation_R == inverse_R
+
+                A = Set([1, 2, 3])
+
+                R = Set([(1, 2), (2, 1), (3, 3)])
 
                 is_symmetric_set(R)
             </input>
@@ -112,12 +112,12 @@
         </p>
         <sage>
             <input>
+                def is_symmetric_digraph(digraph):
+                    return digraph.edges(labels=False) == digraph.reverse().edges(labels=False)
+
                 relation_R = [(1, 2), (2, 1), (3, 3)]
 
                 G = DiGraph(relation_R, loops=true)
-
-                def is_symmetric_digraph(digraph):
-                    return digraph.edges(labels=False) == digraph.reverse().edges(labels=False)
                 
                 is_symmetric_digraph(G)
             </input>
@@ -130,26 +130,47 @@
         </p>
         <sage>
             <input>
-                relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
-
                 def is_antisymmetric_set(relation):
                     for a, b in relation:
                         if (b, a) in relation and a != b:
                             return False
                     return True
 
+                relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
+
                 is_antisymmetric_set(relation)
             </input>
         </sage>
         <p>
-            Although Sage has a built in <c>antisymmetric()</c> method for <c>Graphs</c>, this behaves differently from the definition of antisymmetry for we are using. A <c>DiGraph</c> returns <c>False</c> if there is a cycle.
+            While SageMath offers a built-in <c>antisymmetric()</c> method for <c>Graphs</c>, it checks for a more restricted property than the standard definition of antisymmetry. Specifically, it verifies if there is a path from <m>a</m> to <m>b</m>, and there is a path form <m>b</m> to <m>a</m>, then <m>a=b</m>.
         </p>
         <sage>
             <input>
-                # Warning: This will return False
+                # Example with the more restricted
+                # Sage built-in antisymmetric method
+                # Warning: returns False
+                
                 relation = [(1, 2), (2, 3), (3, 4), (4, 1)]
-
+                
                 DiGraph(relation).antisymmetric()
+            </input>
+        </sage>
+        <p>
+            Let's define a function to check for the standard definition of antisymmetry in a <c>DiGraph</c>.
+        </p>
+        <sage>
+            <input>
+                def is_antisymmetric_digraph(digraph):
+                    for edge in digraph.edges(labels=False):
+                        a, b = edge
+                        # Check if there is an edge in both directions (a to b and b to a) and a is not equal to b
+                        if digraph.has_edge(b, a) and a != b:
+                            return False
+                    return True
+
+                relation = DiGraph([(1, 2), (2, 3), (3, 4), (4, 1)])
+
+                is_antisymmetric_digraph(relation)
             </input>
         </sage>
     </subsection>
@@ -164,11 +185,7 @@
         </p>
         <sage>
             <input>
-                A = Set([1, 2, 3])
-                
-                R = Set([(1, 2), (2, 3), (1, 3)])
-
-                def is_transitive(A, R):
+                def is_transitive_set(A, R):
                     for a in A:
                         for b in A:
                             if (a, b) in R:
@@ -176,23 +193,17 @@
                                     if (b, c) in R and not (a, c) in R:
                                         return False
                     return True
+
+                A = Set([1, 2, 3])
                 
-                is_transitive(A, R)
+                R = Set([(1, 2), (2, 3), (1, 3)])
+                
+                is_transitive_set(A, R)
             </input>
         </sage>
         <p>
-            You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set <m>A</m> three times. We can improve the time complexity by using a dictionary to store the relation <m>R</m>. Alternatively, we can use built-in methods in Sage.
+            You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set <m>A</m> three times. We can improve the time complexity by using a dictionary to store the relation <m>R</m>. Alternatively, we can use built-in Sage <c>DiGraph</c> methods.
         </p>
-        <sage>
-            <input>
-                A = Set([1, 2, 3])
-                R = Set([(1, 2), (2, 3), (1, 3)])
-
-                G = DiGraph([R])
-                
-                G.is_transitive()
-            </input>
-        </sage>
 
         <sage>
             <input>
