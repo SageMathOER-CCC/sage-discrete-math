@@ -3,60 +3,44 @@
 <section xml:id="partial-order" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Partial Order</title>
     <p>
-        A Partial Order (PO) <m>\prec</m> satisfies the reflexive, antisymmetric, and transitive properties.
+        A relation on a set is a Partial Order (PO) <m>\prec</m> if it satisfies the reflexive, antisymmetric, and transitive properties. A poset is a set with a partial order relation. For example, the following set of numbers with a relation given by divisibility is a poset.
     </p>
     <sage>
         <input>
             A = Set([1, 2, 3, 4, 5, 6, 8])
-            P = Poset((A, lambda x, y: x.divides(y)))
-            P.plot()
+
+            r = [(a, b) for a in A for b in A if a.divides(b)]
+
+            DiGraph(r, loops=True)
         </input>
     </sage>
-
     <p>
-        <em>Example:</em> Let <m>B = \{0,1\}</m> and define <m>A</m> as the power set of <m>B</m>, denoted <m>A = \mathcal{P}(B)</m>. Establish a relation <m>R</m> on <m>A</m> where <m>XRY</m> if and only if <m>X \subseteq Y</m>. This relation represents the idea of one set being a subset of another within the power set of <m>B</m>.
-    </p>
-
-    <p>
-        To explore how elements relate within these examples, consider the element <m>\{1\}</m> in the context of the second example.
+        A Hasse diagram is a visual representation of a poset. Unlike a digraph, the position of the height of the vertex has meaning. The vertex from bellow relates to the vertex above. A Hasse diagram is a more compact compared to a directed graph due to the following assumptions:
         <ul>
             <li>
                 <p>
-                    The set <m>\{1\}</m> is not related to the empty set, denoted as <m>\{\}</m>, because <m>\{1\}</m> is not a subset of <m>\{\}</m>.
+                    In a Hasse diagram the self-loops are assumed and not visualized.
                 </p>
             </li>
             <li>
                 <p>
-                    Similarly, <m>\{1\}</m> does not relate to <m>\{0\}</m> because <m>\{1\}</m> is not a subset of <m>\{0\}</m>.
+                    A poset satisfies the antisymmetric property so the arrows are omitted.
                 </p>
             </li>
             <li>
                 <p>
-                    However, <m>\{1\} R \{0,1\}</m> because <m>\{1\}</m> is indeed a subset of <m>\{0,1\}</m>.
+                    Due to the transitive property, the vertex from bellow relates to the vertex above and the intermediate connections are implied and not visualized.
                 </p>
             </li>
         </ul>
     </p>
     <sage>
         <input>
-            B = Set([0, 1])
-            A = B.subsets()
+            A = Set([1, 2, 3, 4, 5, 6, 8])
 
-            P = Poset((A, lambda x, y: x.issubset(y)))
+            r = [(a, b) for a in A for b in A if a.divides(b)]
 
-            # Increase size of vertices to fit the label
-            P.plot(vertex_size=800)
-        </input>
-      </sage>
-
-      <p>
-        We can also define a poset by specifying the relation directly.
-      </p>
-
-      <sage>
-        <input>
-            H = Poset({0: [1, 2], 1: [3], 2: [3], 3: []})
-            H.plot()
+            Poset((A, r))
         </input>
     </sage>
 </section>

@@ -47,7 +47,7 @@
         Let <m>R</m> be the relation on <m>A</m> described as follows:
     </p>
     <me>
-        \text{x R y iff x and y live in the same floor of the building.}
+        x R y\ \text{iff}\ x\ \text{and}\ y\ \text{live in the same floor of the building.}
     </me>
     <sage>
         <input>
@@ -94,13 +94,4 @@
             G.is_transitive()
         </input>
     </sage>
-    <p>
-        For the equivalence class, considering a person <m>a</m> as an example:
-    </p>
-    <me>
-        |a| = \{ x \in A \; | \; xRa \} = \text{all people living on the same floor as person a}
-    </me>
-    <p>
-        This definition confirms that the equivalence class for person <m>a</m> includes all individuals residing on the same floor, effectively grouping the building's residents into equivalence classes based on their floors.
-    </p>
 </section>

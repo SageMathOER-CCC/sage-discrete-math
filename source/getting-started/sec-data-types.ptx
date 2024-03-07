@@ -16,7 +16,7 @@
   </p>
 
   <p>
-    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the <term>symbolic</term> value for accuracy.
+    In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the <term>symbolic</term> value.
   </p>
   <sage>
       <input>
@@ -36,13 +36,13 @@
   </sage>
 
   <p>
-    <c>True</c> and <c>False</c> <term>boolean</term> values. 
+    <term>Boolean</term>: The type bool can be one of two values, <c>True</c> or <c>False</c>.
   </p>
   <sage>
     <input>
         # Check if 5 in contained in the set of prime numbers
-        bool = 5 in Primes()
-        type(bool)
+        b = 5 in Primes()
+        type(b)
     </input>
   </sage>
 
@@ -85,7 +85,7 @@
   </sage>
 
   <p>
-    <term>set</term>: Collection of unique items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> are built into Python.
+    <term>set</term>: Collection of unique items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> are built into Python. Every item in a set is unique.
   </p>
   <sage>
       <input>
@@ -104,7 +104,7 @@
       </input>
   </sage>
   <p>
-    We define the set in a list with square brackets <c>[]</c>. The set is then created with the <c>Set()</c> function. When a list is converted to a set, the duplicates are removed.
+    We define the set in a list with square brackets <c>[]</c>. The set is then created with the <c>Set()</c> function.
   </p>
   <sage>
     <input>

@@ -24,7 +24,7 @@
         </li>
         <li>
           <p>
-            <c>latex()</c> produces the raw latex code for the expression inside the parentheses. You can past this code into a latex document to display the expression.
+            <c>latex()</c> produces the raw <latex /> code for the expression inside the parentheses. You can paste this code into a <latex /> document to display the expression.
           </p>
         </li>
       </ul>

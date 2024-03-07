@@ -39,6 +39,15 @@
     </sage>
 
     <p>
+        We can also define the digraph using pair notion for relations.
+    </p>
+    <sage>
+        <input>
+            DiGraph([(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)])
+        </input>
+    </sage>
+
+    <p>
         Alternatively, we can define the digraph directly. The element on the left of the <c>:</c> is a node. The node relates to the elements in the list on the right of the <c>:</c>.
     </p>
     <sage>
@@ -47,15 +56,6 @@
             # 2 relates to 3 and 4
             # 3 relates to 4
             DiGraph({1: [2, 3, 4], 2: [3, 4], 3: [4]})
-        </input>
-    </sage>
-
-    <p>
-        We can also define the digraph using tuples.
-    </p>
-    <sage>
-        <input>
-            DiGraph([(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)])
         </input>
     </sage>
 </section>
