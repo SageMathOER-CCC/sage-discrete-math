@@ -86,6 +86,7 @@
 
   <p>
     <term>set</term>: Collection of unique items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> are built into Python. Every item in a set is unique.
+    
   </p>
   <sage>
       <input>
