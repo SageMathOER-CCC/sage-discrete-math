@@ -34,7 +34,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Object Oriented Programming",
-  "body": " Object Oriented Programming  What is an object ? An object can be used to model almost anything. More specifically, an object is an instance of a class .  A class provides a template or blueprint for creating objects and defines the attributes (properties) and methods (behaviors) that those objects can have.  While this concept might seem abstract at first, it becomes clearer as we dive deeper into object-oriented programming (OOP). SageMath utilizes OOP principles, offering a structured way to represent and manipulate data. We can create an object by typing something into our Sage Worksheet or the cells on this page.   Dot notation is a syntax used in OOP to access an object's attributes and methods. Here is an example of dot notation. There are many more examples of this in Sage.      "
+  "body": " Object Oriented Programming   Object-Oriented Programming (OOP) is a programming paradigm that mirrors the world as a collection of objects that interact with each other. An object can be used to model almost anything. More specifically, an object is an instance of a class .  Classes are like blueprints and define the attributes and methods of the objects they create. An attribute is a characteristic or property. A method is a function associated with an object that can perform actions on it or related to it.  Lets use these new terms to describe the following example.   In python and Sage, when we type a variable name, we are referring to an object. We initialize the object by assigning it a value. In this case, the object is a list of vowels.   Sage let us know vowels is an instance of the class list . By assigning a series of characters enclosed in square brackets to the variable vowels , we create a list object. This object, vowels, now represents a list of vowels, and we can interact with it using various methods.   Dot notation is a syntax used to access an object's attributes and methods. The list class has methods and attributes that we can use to interact with the list object. For example, we can use the append method to add an element to the list.   A parameter is a variable that is passed to a method when it is called. In this case, the parameter is the string 'y' . The append method adds the string 'y' to the end of the list. The list class has many more methods and attributes that we can use to interact with the list object. While list is a built-in Python class, Sage offers many more classes that are specialized for mathematical applications. For example, in the next chapter we will learn about the Sage Set class. Objects instantiated from the Set class have methods and attributes that are useful for working with sets.   While this concept might seem abstract at first, it becomes clearer as we dive deeper into Sage. We will learn how Sage utilizes OOP principles and built-in classes, offering a structured way to represent data and perform powerful mathematical operations.  "
 },
 {
   "id": "OOP-2",
@@ -43,7 +43,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "object class "
+  "body": "Object-Oriented Programming class "
 },
 {
   "id": "OOP-3",
@@ -55,13 +55,22 @@ var ptx_lunr_docs = [
   "body": "attributes methods "
 },
 {
-  "id": "OOP-5",
+  "id": "OOP-9",
   "level": "2",
-  "url": "OOP.html#OOP-5",
+  "url": "OOP.html#OOP-9",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Dot notation "
+},
+{
+  "id": "OOP-11",
+  "level": "2",
+  "url": "OOP.html#OOP-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "parameter "
 },
 {
   "id": "data-types",
