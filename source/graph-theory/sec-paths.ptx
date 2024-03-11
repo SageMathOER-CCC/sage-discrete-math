@@ -3,7 +3,18 @@
 <section xml:id="paths" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Paths</title>
   <p>
-    
+    A <term>path</term> of length n between vertices <m>u</m> and <m>v</m> is a sequence of edges <m>(e_1, e_2, \ldots, e_n)</m> such that <m>e_1 = \{u, w_1\}, e_2 = \{w_1, w_2\}, \ldots, e_n = \{w_{n-1}, v\}</m>
   </p>
+  <p>
+    A <term>circuit</term> is a path from <m>u</m> to <m>v</m>.
+  </p>
+  <p>
+    A graph is <term>connected</term> if there exists a path between <m>u</m> and <m>v</m> for all <m>u, v \in V</m>.
+  </p>
+  <sage>
+    <input>
+      # example sage code
+    </input>
+  </sage>
 
 </section>
