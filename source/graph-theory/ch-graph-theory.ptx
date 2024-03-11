@@ -47,8 +47,10 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-definitions.ptx" />
-  <xi:include href="sec-terminology.ptx" />
-  <xi:include href="sec-connectivity.ptx" />
+  <xi:include href="sec-basics.ptx" />
+  <xi:include href="sec-paths.ptx" />
   <xi:include href="sec-isomorphism.ptx" />
+  <xi:include href="sec-euler_and_hamilton.ptx" />
+  <xi:include href="sec-search_algorithm.ptx" />
+
 </chapter>
