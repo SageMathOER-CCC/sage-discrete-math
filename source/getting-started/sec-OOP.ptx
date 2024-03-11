@@ -2,43 +2,61 @@
 
 <section xml:id="OOP" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Object Oriented Programming</title>
-  
+
   <p>
-    What is an <term>object</term>? An object can be used to model almost anything. More specifically, an object is an instance of a <term>class</term>.
+    <term>Object-Oriented Programming</term> (OOP) is a programming paradigm that mirrors the world as a collection of objects that interact with each other. An object can be used to model almost anything. More specifically, an object is an instance of a <term>class</term>.
   </p>
-  
   <p>
-    A class provides a template or blueprint for creating objects and defines the <term>attributes</term> (properties) and <term>methods</term> (behaviors) that those objects can have.
+    Classes are like blueprints and define the <term>attributes</term> and <term>methods</term> of the objects they create. An attribute is a characteristic or property. A method is a function associated with an object that can perform actions on it or related to it.
   </p>
-  
+
   <p>
-    While this concept might seem abstract at first, it becomes clearer as we dive deeper into object-oriented programming (OOP). SageMath utilizes OOP principles, offering a structured way to represent and manipulate data. We can create an object by typing something into our Sage Worksheet or the cells on this page.
-  </p>
-  
-  <p>
-    <term>Dot notation</term> is a syntax used in OOP to access an object's attributes and methods. Here is an example of dot notation. There are many more examples of this in Sage.
+    Lets use these new terms to describe the following example.
   </p>
 
   <sage>
     <input>
-      n = 4
-      n.sqrt()
+      vowels = ['a', 'e', 'i', 'o', 'u']
     </input>
   </sage>
+
+  <p>
+    In python and Sage, when we type a variable name, we are referring to an object. We initialize the object by assigning it a value. In this case, the object is a list of vowels.
+  </p>
+
   <sage>
     <input>
-      n = 4
-      n.sqrt(all=True)
+      type(vowels)
     </input>
   </sage>
+
+  <p>
+    Sage let us know <c>vowels</c> is an instance of the class <c>list</c>. By assigning a series of characters enclosed in square brackets to the variable <c>vowels</c>, we create a <c>list</c> object. This object, vowels, now represents a list of vowels, and we can interact with it using various methods.
+  </p>
+
+  <p>
+    <term>Dot notation</term> is a syntax used to access an object's attributes and methods. The list class has methods and attributes that we can use to interact with the list object. For example, we can use the <c>append</c> method to add an element to the list.
+  </p>
+
   <sage>
     <input>
-      sqrt(2).n()
+      vowels.append('y')
+      vowels
     </input>
   </sage>
+
+  <p>    
+    A <term>parameter</term> is a variable that is passed to a method when it is called. In this case, the parameter is the string <c>'y'</c>. The <c>append</c> method adds the string <c>'y'</c> to the end of the list. The list class has many more methods and attributes that we can use to interact with the list object. While <c>list</c> is a built-in Python class, Sage offers many more classes that are specialized for mathematical applications. For example, in the next chapter we will learn about the Sage <c>Set</c> class. Objects instantiated from the <c>Set</c> class have methods and attributes that are useful for working with sets.
+  </p>
+
   <sage>
     <input>
-      sqrt(2).n(prec=100)
+      v = Set(vowels)
+      type(v)
     </input>
   </sage>
+  
+  <p>
+    While this concept might seem abstract at first, it becomes clearer as we dive deeper into Sage. We will learn how Sage utilizes OOP principles and built-in classes, offering a structured way to represent data and perform powerful mathematical operations.
+  </p>
 </section>
