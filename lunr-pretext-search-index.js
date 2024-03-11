@@ -79,7 +79,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Data Types",
-  "body": " Data Types  Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask sage what type of object this is.    2 is represented by an object which is an instance of the Integer class. Sage has many classes for different types of numbers and mathematical objects.  In the following example Sage does not evaluate an approximation of sqrt(2) * log(3) . Sage will retain the symbolic value.    String : Sequence of characters used for text. You can use single or double quotes.    Boolean : The type bool can be one of two values, True or False .    List : Mutable collection of items within a pair of square brackets [] . If an object is mutable, the value can be changed after it is created.   Lists are indexed starting at 0 . Here we access the first element of a list by asking for the value at index zero.   Lists have many helpful methods.    Tuple : Immutable collection within a pair of parenthesis () . If an object is immutable, the value cannot be changed after it is created.    set : Collection of unique items within a pair of curly braces {} . set() with lowercase s are built into Python. Every item in a set is unique.    Set is a built-in Sage class. Set with a capital S have added functionality for mathematical operations.   We define the set in a list with square brackets [] . The set is then created with the Set() function.    Dictionary : Collection of key-value pairs.   The pprint module may be used to print the dictionary in a more readable format.   "
+  "body": " Data Types  Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask sage what type of object this is.    2 is represented by an object which is an instance of the Integer class. Sage has many classes for different types of numbers and mathematical objects.  In the following example Sage does not evaluate an approximation of sqrt(2) * log(3) . Sage will retain the symbolic value.    String : Sequence of characters used for text. You can use single or double quotes.    Boolean : The type bool can be one of two values, True or False .    List : Mutable collection of items within a pair of square brackets [] . If an object is mutable, the value can be changed after it is created.   Lists are indexed starting at 0 . Here we access the first element of a list by asking for the value at index zero.   Lists have many helpful methods.    Tuple : Immutable collection within a pair of parenthesis () . If an object is immutable, the value cannot be changed after it is created.    set : Collection of unique items within a pair of curly braces {} . set() with lowercase s is built into Python. Every item in a set is unique.    Set is a built-in Sage class. Set with a capital S have added functionality for mathematical operations.   We define the set in a list with square brackets [] . The set is then created with the Set() function.    Dictionary : Collection of key-value pairs.   The pprint module may be used to print the dictionary in a more readable format.   "
 },
 {
   "id": "data-types-4",
@@ -415,121 +415,49 @@ var ptx_lunr_docs = [
   "body": " Recursion   Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.     Recursion in Sequences  A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.  Here, s is a function representing the sequence. The equation eqn defines the recursive relation . The rsolve() function is then used to find a closed-form solution to this recurrence, given the initial conditions and . At last, we use SR() function to convert from Python notation to mathematical notation.    show() function can be used to make the output visually more pleasing, you can try to remove it and see how the output looks instead.     Recursion with Binomial Coefficients  Binomial coefficients, denoted as , count the number of ways to choose elements from an -element set. They can be defined recursively. Sage can compute binomial coefficients using the binomial(n, k) function.   We can also explore the recursive nature of binomials using a Python syntax.   This function implements the recursive formula , with base cases .   "
 },
 {
-  "id": "definitions",
+  "id": "sec-graph-theory",
   "level": "1",
-  "url": "definitions.html",
+  "url": "sec-graph-theory.html",
   "type": "Section",
   "number": "7.1",
-  "title": "Definitions",
-  "body": " Definitions    .  The set of edges is a set whose elements are subsets of two vertices. Vertices can also be called nodes. Let the set of Vertices and the set of edges be defined as follows:     Include the other ways to define a graph.      A multigraph is a graph with multiple edges between the same pair of vertices. Keep in mind that these definitions are not standardized and may vary from source to source. Be sure to set multiedges=True for a multigraph in Sage.   "
+  "title": "Basics",
+  "body": " Basics    Vertices and Edges  A basic graph in Sage can be defined by its vertices and edges. You can start by creating a graph either by directly specifying the edges or by defining the vertices and edges separately and then combining them to form the graph. These methods allow for flexibility in how you construct graphs based on the information available.  The first method involves specifying the edges directly, where each edge is defined by a pair of vertices:   The second method uses a list of vertices and a list of edges, providing a clear separation between the graph's vertices and its connectivity:   Both methods allow for the creation and visualization of graphs in Sage, with the choice of method depending on the format of the data available and personal preference for clarity and organization.     Just Edges  Defining a graph solely by its edges focuses on the relationships between vertices, simplifying the graph creation process. Sage infers the vertices based on the edges provided.  To create a more complex graph by specifying only its edges:   This example shows a graph with a mix of a pentagon and a triangle, demonstrating how edges alone can define complex structures in a graph.     Neighbors  Neighbors in a graph are vertices directly connected by an edge. Identifying neighbors is crucial for understanding a graph's structure.  To find the neighbors of a vertex in a more complex graph:   This method demonstrates how to determine the connectivity of any given vertex within a graph.     Predefined Graphs  Sage offers a wide array of predefined graphs for experimentation and study. These graphs represent important concepts and structures in graph theory.  Examples of creating and visualizing some well-known predefined graphs:   These examples include the Petersen graph, a complete graph on 5 vertices (also known as the K5 graph), the tetrahedral graph, the dodecahedral graph, and the hexahedral (or cubic) graph, showcasing a variety of graph structures.     Data Defined First  Defining a graph with data structures before creation allows for managing complex graphs efficiently. This approach is suitable for graphs with a large number of vertices or intricate connectivity.  An example using a dictionary to define a graph:   This method provides a clear and organized way to define the relationships between vertices, especially for complex or large-scale graphs.    Weighted Graphs  Weighted graphs extend the concept of graphs by associating a weight, typically a numerical value, with each edge. These weights can represent distances, costs, capacities, or other quantities relevant to the problem being modeled. In Sage, weighted graphs are easily handled, allowing for the exploration of algorithms and properties specific to these types of graphs.  To create a weighted graph, you can add a third element to each edge tuple representing the weight.  Here is an example of defining a weighted graph with five vertices, forming a pentagon where each edge has a unique weight:   In the code above, the graph G is defined with vertices and edges, where each edge is a tuple containing two vertices and the weight of the edge. The weighted=True parameter indicates that the graph is weighted, and the plot(edge_labels=True) method visualizes the graph with edge weights displayed.  Weighted graphs are crucial for understanding many real-world problems. For instance, finding the shortest path between two points, which is a common problem in networking and transportation, can be modeled using weighted graphs.  To demonstrate a common operation on weighted graphs, let's calculate the shortest path between two vertices using Dijkstra's algorithm:   This example illustrates how to use G.shortest_path() and G.shortest_path_length() methods with the by_weight=True parameter to find and calculate the length of the shortest path between vertices 'A' and 'D', considering edge weights.  Weighted graphs can also be used to model networks where the edges represent connections with varying strengths or capacities. Analyzing such networks can reveal insights into the most efficient paths, bottlenecks, and other important characteristics.  Another operation commonly performed on weighted graphs is finding the minimum spanning tree, which connects all vertices with the minimum total edge weight. Here's how you can find the minimum spanning tree of a weighted graph in Sage:   The method G.min_spanning_tree() returns the edges of the minimum spanning tree. A new graph, T_graph , is then created from these edges to visualize the minimum spanning tree with its edge weights.    Plot Options for Graphs  Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization techniques for graph visualization in Sage.  To begin with, you can customize the color of vertices and edges. This is particularly useful for highlighting specific parts of a graph, such as a path or a subgraph.  Here is an example of how to set different colors for vertices and edges:   In this code, the vertex_color and edge_color parameters are used to specify the colors of the vertices and edges, respectively.  Adjusting the thickness of edges can also enhance the visualization, especially for weighted graphs or to emphasize certain edges over others.  To modify the edge thickness:   The edge_thickness parameter allows you to specify the thickness of the edges in the plot.  Another useful customization is adjusting the size of the vertices, which can be helpful when dealing with graphs that have a large number of vertices or when you want to draw attention to specific vertices.  To change the size of vertices:   The vertex_size parameter controls the size of the vertices in the plot.  While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the plot method is not supported.  To customize labels and enable them for vertices and edges:   This example shows how to enable vertex and edge labels to enhance the information displayed on the graph. For more advanced label customization, including color, you may need to explore additional graph visualization libraries or tools that offer extended functionality.  Sage's graph plotting capabilities are extensive, offering a wide range of customization options that enable detailed and informative visualizations. By exploring these options, you can tailor the appearance of your graphs to suit your specific needs and preferences, making your data analysis and presentations more effective and engaging.    Graph Characteristics  Understanding the characteristics of graphs is fundamental to analyzing their properties and behaviors. Graph characteristics, such as the number of vertices and edges, degree of vertices, and whether the graph is connected or not, provide essential insights into the structure of the graph. Sage offers various functions to compute and analyze these characteristics, making it a powerful tool for graph theory studies.  The number of vertices and edges in a graph are basic yet vital characteristics that describe its size.  To find the number of vertices and edges:   In the above example, G.num_vertices() and G.num_edges() methods return the number of vertices and edges in the graph G , respectively.  The degree of a vertex is the number of edges incident to the vertex. Analyzing the degree distribution can reveal important aspects of the graph's connectivity and structure.  To find the degree of all vertices:   The method G.degree_sequence() provides a list of degrees of all vertices in the graph, which can be used to analyze the graph's degree distribution.  Another important characteristic is whether a graph is connected. A graph is connected if there is a path between every pair of vertices.  To check if a graph is connected:   The G.is_connected() method checks the connectivity of the graph, which is crucial for understanding the graph's structure and properties.  The diameter of a graph is the longest shortest path between any two vertices, providing insight into the graph's extent.  To calculate the graph's diameter:   The average distance between vertices in a graph is another measure of the graph's overall connectivity.  To compute the average distance:   These operations and characteristics are just a few examples of the analysis possible with SageMath. By understanding these properties, you can gain deeper insights into the nature and structure of graphs, aiding in more complex analyses and applications in graph theory and beyond.    Graphs and Matrices  Matrices play a crucial role in graph theory, providing a compact and powerful representation of graphs. The adjacency matrix and the incidence matrix are two primary examples, each encoding different aspects of a graph's structure. Sage makes it easy to work with these matrices, enabling the exploration of graphs through linear algebraic properties.  An adjacency matrix of a graph is a square matrix used to represent which vertices (or nodes) of the graph are adjacent to which other vertices. Each cell [i, j] in the matrix is filled with a 1 if there is an edge from vertex i to vertex j , and a 0 otherwise.  To create a graph from an adjacency matrix:   In this example, the matrix A represents the adjacency matrix of a graph, and Graph(A) creates the graph based on that matrix. The plot shows the resulting graph.  An incidence matrix is another matrix representation of a graph, which describes the relationship between vertices and edges. In this matrix, rows correspond to vertices, and columns correspond to edges, with entries indicating whether a vertex is incident to an edge.  Sage also allows you to work with graphs using their incidence matrices, though constructing a graph directly from an incidence matrix requires a bit more manual work compared to using an adjacency matrix.  Besides creating graphs from matrices, you can also obtain these matrix representations from existing graphs in Sage. This is particularly useful for analysis and for applying linear algebra techniques to study graph properties.  To get the adjacency matrix of a graph:   And to get the incidence matrix:   These capabilities of Sage to seamlessly transition between graph and matrix representations open up a wide range of analytical possibilities, enabling deeper insights into the structure and properties of graphs.    Adding and Deleting Vertices and Edges  Manipulating graphs by adding or deleting vertices and edges is a fundamental aspect of graph theory studies. These operations allow you to dynamically modify graphs, exploring how structural changes affect graph properties and behaviors. Sage provides intuitive methods for these actions, enabling easy modifications of graphs for experimentation and analysis.  Adding a vertex to a graph can be done with the add_vertex() method. This is useful for incremental graph construction or for adding vertices that can later be connected by edges.  To demonstrate adding a vertex and making it visible by connecting it with an edge:   The add_edge() method adds an edge between two vertices, automatically creating any vertices not already present in the graph.  To delete a vertex or an edge, use the delete_vertex() and delete_edge() methods, respectively. Deleting a vertex also removes all edges incident to it.  Example of deleting a vertex:   Example of deleting an edge:   These methods are crucial for exploring dynamic graph theory aspects, allowing the study of how changes in graph structure influence properties like connectivity, the presence of cycles, and path finding.   "
 },
 {
-  "id": "definitions-10",
-  "level": "2",
-  "url": "definitions.html#definitions-10",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "multigraph "
-},
-{
-  "id": "terminology",
+  "id": "paths",
   "level": "1",
-  "url": "terminology.html",
+  "url": "paths.html",
   "type": "Section",
   "number": "7.2",
-  "title": "Terminology",
-  "body": " Terminology  The order of   The size of   An edge is incident with and .  The degree of a vertex , deg , is the number of edges incident with .  The degree sequence of is the list of degrees of its vertices, in increasing order.  Theorem: The sum of the degrees of the vertices in a graph equals twice the size of the graph:   Examples:        Let's verify this with Sage:    Let's verify this with Sage:        "
-},
-{
-  "id": "terminology-2",
-  "level": "2",
-  "url": "terminology.html#terminology-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "order "
-},
-{
-  "id": "terminology-3",
-  "level": "2",
-  "url": "terminology.html#terminology-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "size "
-},
-{
-  "id": "terminology-4",
-  "level": "2",
-  "url": "terminology.html#terminology-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "incident "
-},
-{
-  "id": "terminology-5",
-  "level": "2",
-  "url": "terminology.html#terminology-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "degree "
-},
-{
-  "id": "terminology-6",
-  "level": "2",
-  "url": "terminology.html#terminology-6",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "sequence "
-},
-{
-  "id": "connectivity",
-  "level": "1",
-  "url": "connectivity.html",
-  "type": "Section",
-  "number": "7.3",
-  "title": "Connectivity",
-  "body": " Connectivity  A path of length n between vertices and is a sequence of edges such that   A circuit is a path from to .  A graph is connected if there exists a path between and for all .   "
-},
-{
-  "id": "connectivity-2",
-  "level": "2",
-  "url": "connectivity.html#connectivity-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "path "
-},
-{
-  "id": "connectivity-3",
-  "level": "2",
-  "url": "connectivity.html#connectivity-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "circuit "
-},
-{
-  "id": "connectivity-4",
-  "level": "2",
-  "url": "connectivity.html#connectivity-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "connected "
+  "title": "Paths",
+  "body": " Paths    "
 },
 {
   "id": "isomorphism",
   "level": "1",
   "url": "isomorphism.html",
   "type": "Section",
-  "number": "7.4",
+  "number": "7.3",
   "title": "Isomorphism",
   "body": " Isomorphism      Easier to prove, not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. Invariant under isomorphism:       "
+},
+{
+  "id": "euler_and_hamilton",
+  "level": "1",
+  "url": "euler_and_hamilton.html",
+  "type": "Section",
+  "number": "7.4",
+  "title": "Euler and Hamilton",
+  "body": " Euler and Hamilton    "
+},
+{
+  "id": "search_algorithm",
+  "level": "1",
+  "url": "search_algorithm.html",
+  "type": "Section",
+  "number": "7.5",
+  "title": "Search Algorithms",
+  "body": " Search Algorithms    "
 },
 {
   "id": "backmatter-2",
