@@ -7,7 +7,7 @@
     <term>Object-Oriented Programming</term> (OOP) is a programming paradigm that mirrors the world as a collection of objects that interact with each other. An object can be used to model almost anything. More specifically, an object is an instance of a <term>class</term>.
   </p>
   <p>
-    Classes define the <term>attributes</term> and <term>methods</term> of the objects they create. An attribute is a characteristic or property. A method is a function associated with an object that can perform actions on it or related to it.
+    Classes are like blueprints and define the <term>attributes</term> and <term>methods</term> of the objects they create. An attribute is a characteristic or property. A method is a function associated with an object that can perform actions on it or related to it.
   </p>
 
   <p>
