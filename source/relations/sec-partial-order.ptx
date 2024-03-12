@@ -52,4 +52,8 @@
             # is_poset()
         </input>
     </sage>
+    <p>
+        What does Poset() do?
+        Difference in cell vs worksheet display
+    </p>
 </section>
