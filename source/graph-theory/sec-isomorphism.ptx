@@ -38,7 +38,69 @@
   </p>
   <sage>
     <input>
-      # example sage code
+
+      def invariants_under_isomorphism(G1, G2):
+          # Are both graphs connected?
+          are_both_connected = G1.is_connected() == G2.is_connected()
+          print("Are both graphs connected? " + ("Yes" if are_both_connected else "No"))
+          
+          # Do both graphs have the same number of vertices and edges?
+          same_number_of_vertices_and_edges = (G1.order() == G2.order()) and (G1.size() == G2.size())
+          print("Do both graphs have the same number of vertices and edges? " + ("Yes" if same_number_of_vertices_and_edges else "No"))
+          
+          # Do both graphs have the same degree sequence?
+          # Sort the degree sequences because the order of the vertices does not matter.
+          same_degree_sequence = sorted(G1.degree_sequence()) == sorted(G2.degree_sequence())
+          print("Do both graphs have the same degree sequence? " + ("Yes" if same_degree_sequence else "No"))
+          
+          # Final check
+          if are_both_connected and same_number_of_vertices_and_edges and same_degree_sequence:
+              print("The graphs may be isomorphic.")
+          else:
+              print("The graphs are not isomorphic.")
+    </input>
+  </sage>
+  <sage>
+    <input>
+      A = Graph([('a', 'b'), ('b', 'c'), ('c', 'f'), ('f', 'd'), ('d', 'e'), ('e', 'a')])
+      B = Graph([(1, 5), (1, 9), (5, 9), (4, 6), (4, 7), (6, 7)])
+      invariants_under_isomorphism(A, B)
+    </input>
+  </sage>
+
+  <sage>
+    <input>
+      C = Graph({
+          'a': ['b', 'c', 'g'],
+          'b': ['a', 'd', 'h'],
+          'c': ['a', 'd', 'e'],
+          'd': ['b', 'c', 'f'],
+          'e': ['c', 'f', 'g'],
+          'f': ['d', 'e', 'h'],
+          'g': ['a', 'e', 'h'],
+          'h': ['b', 'f', 'g']
+          })
+
+      D = Graph({
+          1: [2, 6, 8],
+          2: [1, 3, 5],
+          3: [2, 4, 8],
+          4: [3, 5, 7],
+          5: [2, 4, 6],
+          6: [1, 5, 7],
+          7: [4, 6, 8],
+          8: [1, 3, 7]
+          })
+      
+      invariants_under_isomorphism(C, D)
+    </input>
+  </sage>
+  <p>
+    Since invariants under isomorphism are satisfied for the first pair of graphs, the graphs may be isomorphic. Let's check if graphs <m>C</m> and <m>D</m> are definitively isomorphic.
+  </p>
+  <sage>
+    <input>
+      A.is_isomorphic(B)
     </input>
   </sage>
 </section>
