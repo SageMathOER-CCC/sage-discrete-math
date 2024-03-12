@@ -97,7 +97,7 @@
   </p>
   <sage>
     <input>
-      A.is_isomorphic(B)
+      C.is_isomorphic(D)
     </input>
   </sage>
 </section>
