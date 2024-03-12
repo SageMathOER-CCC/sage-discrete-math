@@ -15,7 +15,10 @@
         </input>
     </sage>
     <p>
-        A Hasse diagram is a visual representation of a poset. Unlike a digraph, the position of the height of the vertex has meaning. The vertex from bellow relates to the vertex above. A Hasse diagram is a more compact compared to a directed graph due to the following assumptions:
+        Revised: A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if x relates to y,  then the vertex x appears lower in the drawing than the vertex y. Self-loops are assumed and not shown. Transitive property is assumed and not shown.
+    </p>
+    <p>
+        Remove: A Hasse diagram is a visual representation of a poset. Unlike a digraph, the position of the height of the vertex has meaning. The vertex from bellow relates to the vertex above. A Hasse diagram is a more compact compared to a directed graph due to the following assumptions:
         <ul>
             <li>
                 <p>
@@ -41,6 +44,12 @@
             r = [(a, b) for a in A for b in A if a.divides(b)]
 
             Poset((A, r))
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # is_poset()
         </input>
     </sage>
 </section>
