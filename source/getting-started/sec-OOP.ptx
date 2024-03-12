@@ -11,17 +11,18 @@
   </p>
 
   <p>
-    Lets use these new terms to describe the following example.
+    Let's use these new terms to describe the following example.
   </p>
 
   <sage>
     <input>
       vowels = ['a', 'e', 'i', 'o', 'u']
+      vowels
     </input>
   </sage>
 
   <p>
-    In python and Sage, when we type a variable name, we are referring to an object. We initialize the object by assigning it a value. In this case, the object is a list of vowels.
+    In Python and Sage, when we type a variable name, we are referring to an object. We initialize the object by assigning it a value. In this case, the object is a list of vowels.
   </p>
 
   <sage>
@@ -31,7 +32,7 @@
   </sage>
 
   <p>
-    Sage let us know <c>vowels</c> is an instance of the class <c>list</c>. By assigning a series of characters enclosed in square brackets to the variable <c>vowels</c>, we create a <c>list</c> object. This object, vowels, now represents a list of vowels, and we can interact with it using various methods.
+    Sage let us know <c>vowels</c> is an instance of the class <c>list</c>. By assigning a series of characters enclosed in square brackets to the variable <c>vowels</c>, we create a <c>list</c> object. This object, <c>vowels</c>, now represents a list of vowels, and we can interact with it using various methods.
   </p>
 
   <p>
