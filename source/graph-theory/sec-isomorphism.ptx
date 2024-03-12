@@ -19,10 +19,7 @@
   </p>
 
   <p>
-    When dealing with a large graph with many edges and vertices, it can be difficult to determine if two graphs are isomorphic. In general, it is easier to prove that the graphs are not isomorphic. The invariant under isomorphism theorem is a set of conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The invariants are:
-    <me>
-      \text{If } G = (V, E) \sim G' = (V', E'), \text{ then}
-    </me>
+    When dealing with a large graph with many edges and vertices, it can be difficult to determine if two graphs are isomorphic. In general, it is easier to prove that the graphs are not isomorphic. The <term>invariant under isomorphism</term> theorem is a set of conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:
     <me>
       G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
     </me>
