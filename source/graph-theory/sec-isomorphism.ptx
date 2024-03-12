@@ -3,15 +3,23 @@
 <section xml:id="isomorphism" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Isomorphism</title>
   <p>
-    <me>
-      G = (V, E) \sim G' = (V', E') \\
-    </me>
-    <me>
-      G \text{ is isomorphic to } G' \text{ if there exists a bijection } f: V \rightarrow V' \text{ such that } \{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'
-    </me>
+    <term>Isomorphism</term> is a relation of sameness between graphs. The symbol for equivalence relation, <m>\sim</m> is the same symbol for isomorphism. Let's say that the graphs <m>G</m> and <m>G'</m> are isomorphic:
+  </p>
+  <me>
+    G = (V, E) \sim G' = (V', E') \\
+  </me>
+  <p>
+    <m>G</m> is isomorphic to <m>G'</m> if there exists a bijection <m>f: V \rightarrow V'</m> such that <m>\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>.
   </p>
   <p>
-    Easier to prove, not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. Invariant under isomorphism:
+    Recall from learning about functions, a bijection is a function that is both injective and surjective. This means that every vertex in <m>G</m> is mapped to a unique vertex in <m>G'</m>.
+  </p>
+  <p>
+    Every time two vertices determine an edge in the first graph, the image of these vertices determined by the bijection also determine an edge in the second graph. This means that the two graphs have the same structure, but the vertices are labeled differently.
+  </p>
+
+  <p>
+    When dealing with a large graph with many edges and vertices, it can be difficult to determine if two graphs are isomorphic. In general, it is easier to prove that the graphs are not isomorphic. The invariant under isomorphism theorem is a set of conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The invariants are:
     <me>
       \text{If } G = (V, E) \sim G' = (V', E'), \text{ then}
     </me>
@@ -24,6 +32,9 @@
     <me>
       \text{degree sequence of } G = \text{ degree sequence of } G'
     </me>
+  </p>
+  <p>
+    To summarize, if one graph is connected and the other is not, then the graphs are not isomorphic. If the number of vertices and edges are different, then the graphs are not isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all three invariants are satisfied, then the graphs may or may not be isomorphic.
   </p>
   <sage>
     <input>
