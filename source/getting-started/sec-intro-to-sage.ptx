@@ -101,15 +101,15 @@
 
   <sage>
     <input>
-      # Returns the quotient
+      # Returns the quotient of the integer division
       5//3
     </input>
   </sage>
 
   <sage>
     <input>
-      # Returns the remainder
-      5 % 2
+      # Returns the remainder of the integer division
+      5 % 3
     </input>
   </sage>
 </section>

@@ -15,24 +15,7 @@
         </input>
     </sage>
     <p>
-        A Hasse diagram is a visual representation of a poset. Unlike a digraph, the position of the height of the vertex has meaning. The vertex from bellow relates to the vertex above. A Hasse diagram is a more compact compared to a directed graph due to the following assumptions:
-        <ul>
-            <li>
-                <p>
-                    In a Hasse diagram the self-loops are assumed and not visualized.
-                </p>
-            </li>
-            <li>
-                <p>
-                    A poset satisfies the antisymmetric property so the arrows are omitted.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Due to the transitive property, the vertex from bellow relates to the vertex above and the intermediate connections are implied and not visualized.
-                </p>
-            </li>
-        </ul>
+        A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if x relates to y,  then the vertex x appears lower in the drawing than the vertex y. Self-loops are assumed and not shown. Similarly, the diagram assumes the transitive property and does not explicitly display transitive relationships.
     </p>
     <sage>
         <input>
@@ -43,4 +26,7 @@
             Poset((A, r))
         </input>
     </sage>
+    <p>
+        Given a set <m>A</m> and a relation <m>r</m> based on divisibility, when you create a poset in Sage using <c>Poset((A, r))</c>, Sage computes the transitive closure of <m>r</m>. This means it identifies the minimal set of relations needed to maintain the partial order structure, removing redundant pairs that can be inferred through transitivity. The <c>show()</c> function displays the Hasse diagram of the poset.
+    </p>
 </section>

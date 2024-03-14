@@ -3,7 +3,7 @@
 <section xml:id="data-types" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Data Types</title>
   <p>
-    Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask sage what type of object this is.
+    Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask Sage what type of object this is.
   </p>
   <sage>
     <input>
@@ -12,7 +12,7 @@
     </input>
   </sage>
   <p>
-    <c>2</c> is represented by an object which is an instance of the <term>Integer</term> class. Sage has many classes for different types of numbers and mathematical objects.
+    Sage tells us that <c>2</c> is represented by an object which is an instance of the <term>Integer</term> class. Sage has many classes for different types of numbers and mathematical objects.
   </p>
 
   <p>
@@ -104,7 +104,7 @@
       </input>
   </sage>
   <p>
-    We define the set in a list with square brackets <c>[]</c>. The set is then created with the <c>Set()</c> function.
+    We start by defining a <c>list</c> within square brackets <c>[]</c>. The set is then created with the <c>Set()</c> function.
   </p>
   <sage>
     <input>

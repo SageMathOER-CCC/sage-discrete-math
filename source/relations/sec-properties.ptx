@@ -142,7 +142,7 @@
             </input>
         </sage>
         <p>
-            While SageMath offers a built-in <c>antisymmetric()</c> method for <c>Graphs</c>, it checks for a more restricted property than the standard definition of antisymmetry. Specifically, it verifies if there is a path from <m>a</m> to <m>b</m>, and there is a path form <m>b</m> to <m>a</m>, then <m>a=b</m>.
+            While Sage offers a built-in <c>antisymmetric()</c> method for <c>Graphs</c>, it checks for a more restricted property than the standard definition of antisymmetry. Specifically, it verifies if there is a path from <m>a</m> to <m>b</m>, and there is a path form <m>b</m> to <m>a</m>, then <m>a=b</m>. Observe that while the standard antisymmetric property forbids the edges to be bidirectional, the Sage antisymmetric forbids cycles.
         </p>
         <sage>
             <input>

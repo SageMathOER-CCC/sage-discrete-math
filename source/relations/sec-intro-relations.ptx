@@ -3,7 +3,7 @@
 <section xml:id="intro-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Introduction to Relations</title>
     <p>
-        A <term>relation</term> <m>R</m> from set <m>A</m> to set <m>B</m> is any subset of the Cartesian product <m>A \times B</m>, indicating that <m>R \subseteq A \times B</m>. We can ask Sage to decide if <m>R</m> is a relation from <m>A</m> to <m>B</m>. First construct <m>C</m>. Then build the set <m>S</m> of all subsets of <m>C</m>. Finally ask if <m>R</m> is a subset of <m>S</m>.
+        A <term>relation</term> <m>R</m> from set <m>A</m> to set <m>B</m> is any subset of the Cartesian product <m>A \times B</m>, indicating that <m>R \subseteq A \times B</m>. We can ask Sage to decide if <m>R</m> is a relation from <m>A</m> to <m>B</m>. First construct the Cartesian product <m>C = A \times B</m>. Then build the set <m>S</m> of all subsets of <m>C</m>. Finally ask if <m>R</m> is a subset of <m>S</m>.
     </p>
     <p>
         Recall, the Cartesian product consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
