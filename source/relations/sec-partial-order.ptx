@@ -27,6 +27,6 @@
         </input>
     </sage>
     <p>
-        Given a set <m>A</m> and a relation <m>r</m> based on divisibility, when you create a poset in Sage using <c>Poset((A, r))</c>, Sage computes the transitive closure of <m>r</m>. This means it identifies the minimal set of relations needed to maintain the partial order structure, removing redundant pairs that can be inferred through transitivity.
+        Given a set <m>A</m> and a relation <m>r</m> based on divisibility, when you create a poset in Sage using <c>Poset((A, r))</c>, Sage computes the transitive closure of <m>r</m>. This means it identifies the minimal set of relations needed to maintain the partial order structure, removing redundant pairs that can be inferred through transitivity. The <c>show()</c> function displays the Hasse diagram of the poset.
     </p>
 </section>
