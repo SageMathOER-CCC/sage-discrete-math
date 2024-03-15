@@ -48,9 +48,11 @@
 
   <!-- include sections -->
   <xi:include href="sec-basics.ptx" />
+  <xi:include href="sec-plot-options.ptx" />
   <xi:include href="sec-paths.ptx" />
   <xi:include href="sec-isomorphism.ptx" />
-  <xi:include href="sec-euler_and_hamilton.ptx" />
-  <xi:include href="sec-search_algorithm.ptx" />
+  <xi:include href="sec-euler-and-hamilton.ptx" />
+  <xi:include href="sec-search-algorithm.ptx" />
+
 
 </chapter>

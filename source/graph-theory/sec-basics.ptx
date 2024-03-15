@@ -1,4 +1,4 @@
-<section xml:id="sec-graph-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-basics" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basics</title>
 
   <subsection>
@@ -12,16 +12,9 @@
             <p><m>E</m> is a set of edges (also called links or lines), which are unordered pairs of vertices (in an undirected graph) or ordered pairs of vertices (in a directed graph).</p>
         </li>
     </ul>    
-    <p>The vertices represent the objects, and the edges represent the connections or relationships between these objects. Graphs can be used to model a wide range of phenomena in various fields such as computer science, biology, social sciences, and more.</p>
+    <p>The vertices represent the objects, and the edges represent the connections or relationships between these objects.</p>
     
 
-
-  <!-- Vertices and Edges -->
-  <subsubsection>
-    <title>Vertices and Edges</title>
-    <p>
-        A basic graph in Sage can be defined by its vertices and edges. You can start by creating a graph either by directly specifying the edges or by defining the vertices and edges separately and then combining them to form the graph. These methods allow for flexibility in how you construct graphs based on the information available.
-    </p>
     <p>
         The first method involves specifying the edges directly, where each edge is defined by a pair of vertices:
     </p>
@@ -35,7 +28,7 @@
         </output>
     </sage>
     <p>
-        The second method uses a list of vertices and a list of edges, providing a clear separation between the graph's vertices and its connectivity:
+        The second method uses a list of vertices and a list of edges, providing a clear separation between the graph's vertices and edges:
     </p>
     <sage>
         <input>
@@ -51,57 +44,19 @@
     <p>
         Both methods allow for the creation and visualization of graphs in Sage, with the choice of method depending on the format of the data available and personal preference for clarity and organization.
     </p>
-</subsubsection>
+    <p>
+        Graphs can also be defined by specifying the connections from each vertex. In Sage, an undirected graph can be created using a dictionary to represent the adjacency list of each vertex, indicating the vertices that are connected by an edge.
+    </p>
+    <sage>
+        <input>
+            G = Graph({1: [2, 3, 4], 2: [1, 3, 4], 3: [1, 2, 4], 4: [1, 2, 3]})
+            G.plot()
+        </input>
+        <output>
+            # A graphical representation of the undirected graph. All vertices (1, 2, 3, and 4) are interconnected.
+        </output>
+    </sage>
 
-  <!-- Just Edges -->
-  <subsubsection>
-      <title>Just Edges</title>
-      <p>
-          Defining a graph solely by its edges focuses on the relationships between vertices, simplifying the graph creation process. Sage infers the vertices based on the edges provided.
-      </p>
-      <p>
-          To create a more complex graph by specifying only its edges:
-      </p>
-      <sage>
-          <input>
-              G = Graph([('A', 'F'), ('F', 'G'), ('G', 'A'), ('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-              G.show()
-          </input>
-          <output>
-              # A graphical representation of the graph with vertices A, F, G, B, C, D, E, and edges forming a complex shape including a triangle and a pentagon.
-          </output>
-      </sage>
-      <p>
-          This example shows a graph with a mix of a pentagon and a triangle, demonstrating how edges alone can define complex structures in a graph.
-      </p>
-  </subsubsection>
-
-  <!-- Neighbors -->
-  <subsubsection>
-      <title>Neighbors</title>
-      <p>
-          Neighbors in a graph are vertices directly connected by an edge. Identifying neighbors is crucial for understanding a graph's structure.
-      </p>
-      <p>
-          To find the neighbors of a vertex in a more complex graph:
-      </p>
-      <sage>
-          <input>
-              G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-              G.neighbors('B')
-          </input>
-          <output>
-              # The list of vertices that are neighbors of vertex B, illustrating its connections within the graph.
-          </output>
-      </sage>
-      <p>
-          This method demonstrates how to determine the connectivity of any given vertex within a graph.
-      </p>
-  </subsubsection>
-
-  <!-- Predefined Graphs -->
-  <subsubsection>
-      <title>Predefined Graphs</title>
       <p>
           Sage offers a wide array of predefined graphs for experimentation and study. These graphs represent important concepts and structures in graph theory.
       </p>
@@ -128,11 +83,6 @@
       <p>
           These examples include the Petersen graph, a complete graph on 5 vertices (also known as the K5 graph), the tetrahedral graph, the dodecahedral graph, and the hexahedral (or cubic) graph, showcasing a variety of graph structures.
       </p>
-  </subsubsection>
-
-  <!-- Data Defined First -->
-  <subsubsection>
-      <title>Data Defined First</title>
       <p>
           Defining a graph with data structures before creation allows for managing complex graphs efficiently. This approach is suitable for graphs with a large number of vertices or intricate connectivity.
       </p>
@@ -152,8 +102,6 @@
       <p>
           This method provides a clear and organized way to define the relationships between vertices, especially for complex or large-scale graphs.
       </p>
-  </subsubsection>
-
 </subsection>
 
   <subsection>
@@ -162,7 +110,7 @@
         Weighted graphs extend the concept of graphs by associating a weight, typically a numerical value, with each edge. These weights can represent distances, costs, capacities, or other quantities relevant to the problem being modeled. In Sage, weighted graphs are easily handled, allowing for the exploration of algorithms and properties specific to these types of graphs.
     </p>
     <p>
-        To create a weighted graph, you can add a third element to each edge tuple representing the weight.
+        To create a weighted graph, you can add a third element to each pair of vertices representing the weight.
     </p>
     <p>
         Here is an example of defining a weighted graph with five vertices, forming a pentagon where each edge has a unique weight:
@@ -181,244 +129,111 @@
     <p>
         In the code above, the graph <c>G</c> is defined with vertices and edges, where each edge is a tuple containing two vertices and the weight of the edge. The <c>weighted=True</c> parameter indicates that the graph is weighted, and the <c>plot(edge_labels=True)</c> method visualizes the graph with edge weights displayed.
     </p>
-    <p>
-        Weighted graphs are crucial for understanding many real-world problems. For instance, finding the shortest path between two points, which is a common problem in networking and transportation, can be modeled using weighted graphs.
-    </p>
-    <p>
-        To demonstrate a common operation on weighted graphs, let's calculate the shortest path between two vertices using Dijkstra's algorithm:
-    </p>
-    <sage>
-        <input>
-            V = ['A', 'B', 'C', 'D', 'E']
-            E = [('A', 'B', 2), ('B', 'C', 3), ('C', 'D', 4), ('D', 'E', 5), ('E', 'A', 1)]
-            G = Graph([V, E], weighted=True)
-            # above from previous code            
-            shortest_path = G.shortest_path('A', 'D', by_weight=True)
-            shortest_path_length = G.shortest_path_length('A', 'D', by_weight=True)
-            (shortest_path, shortest_path_length)
-        </input>
-        <output>
-            # The shortest path from A to D and its total weight.
-        </output>
-    </sage>
-    <p>
-        This example illustrates how to use <c>G.shortest_path()</c> and <c>G.shortest_path_length()</c> methods with the <c>by_weight=True</c> parameter to find and calculate the length of the shortest path between vertices 'A' and 'D', considering edge weights.
-    </p>
-    <p>
-        Weighted graphs can also be used to model networks where the edges represent connections with varying strengths or capacities. Analyzing such networks can reveal insights into the most efficient paths, bottlenecks, and other important characteristics.
-    </p>
-    <p>
-        Another operation commonly performed on weighted graphs is finding the minimum spanning tree, which connects all vertices with the minimum total edge weight. Here's how you can find the minimum spanning tree of a weighted graph in Sage:
-    </p>
-    <sage>
-        <input>
-            V = ['A', 'B', 'C', 'D', 'E']
-            E = [('A', 'B', 2), ('B', 'C', 3), ('C', 'D', 4), ('D', 'E', 5), ('E', 'A', 1)]
-            G = Graph([V, E], weighted=True)
-            # above from previous code  
-            T = G.min_spanning_tree()
-            T_graph = Graph(T, weighted=True)
-            T_graph.plot(edge_labels=True)
-        </input>
-        <output>
-            # A graphical representation of the minimum spanning tree of the graph.
-        </output>
-    </sage>
-    <p>
-        The method <c>G.min_spanning_tree()</c> returns the edges of the minimum spanning tree. A new graph, <c>T_graph</c>, is then created from these edges to visualize the minimum spanning tree with its edge weights.
-    </p>
-</subsection>
-
-<subsection>
-  <title>Plot Options for Graphs</title>
-  <p>
-      Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization techniques for graph visualization in Sage.
-  </p>
-  <p>
-      To begin with, you can customize the color of vertices and edges. This is particularly useful for highlighting specific parts of a graph, such as a path or a subgraph.
-  </p>
-  <p>
-      Here is an example of how to set different colors for vertices and edges:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          G.plot(vertex_color='blue', edge_color='red')
-      </input>
-      <output>
-          # A graphical representation of the graph with blue vertices and red edges.
-      </output>
-  </sage>
-  <p>
-      In this code, the <c>vertex_color</c> and <c>edge_color</c> parameters are used to specify the colors of the vertices and edges, respectively.
-  </p>
-  <p>
-      Adjusting the thickness of edges can also enhance the visualization, especially for weighted graphs or to emphasize certain edges over others.
-  </p>
-  <p>
-      To modify the edge thickness:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          # above from previous code  
-          G.plot(edge_thickness=2.5)  # Adjusts the thickness of all edges
-      </input>
-      <output>
-          # A graphical representation of the graph with thicker edges.
-      </output>
-  </sage>
-  <p>
-      The <c>edge_thickness</c> parameter allows you to specify the thickness of the edges in the plot.
-  </p>
-  <p>
-      Another useful customization is adjusting the size of the vertices, which can be helpful when dealing with graphs that have a large number of vertices or when you want to draw attention to specific vertices.
-  </p>
-  <p>
-      To change the size of vertices:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          # above from previous code  
-          G.plot(vertex_size=200)  # Adjusts the size of all vertices
-      </input>
-      <output>
-          # A graphical representation of the graph with larger vertices.
-      </output>
-  </sage>
-  <p>
-      The <c>vertex_size</c> parameter controls the size of the vertices in the plot.
-  </p>
-  <p>
-    While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c>plot</c> method is not supported.
-</p>
-<p>
-    To customize labels and enable them for vertices and edges:
-</p>
-<sage>
-    <input>
-        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        # above from previous code  
-        G.plot(vertex_labels=True, edge_labels=True)
-    </input>
-    <output>
-        # A graphical representation of the graph with vertex and edge labels enabled.
-    </output>
-</sage>
-<p>
-    This example shows how to enable vertex and edge labels to enhance the information displayed on the graph. For more advanced label customization, including color, you may need to explore additional graph visualization libraries or tools that offer extended functionality.
-</p>
-<p>
-    Sage's graph plotting capabilities are extensive, offering a wide range of customization options that enable detailed and informative visualizations. By exploring these options, you can tailor the appearance of your graphs to suit your specific needs and preferences, making your data analysis and presentations more effective and engaging.
-</p>
 </subsection>
 
 <subsection>
     <title>Graph Characteristics</title>
     <p>
-        Understanding the characteristics of graphs is fundamental to analyzing their properties and behaviors. Graph characteristics, such as the number of vertices and edges, degree of vertices, and whether the graph is connected or not, provide essential insights into the structure of the graph. Sage offers various functions to compute and analyze these characteristics, making it a powerful tool for graph theory studies.
+        Understanding the characteristics of graphs is fundamental to analyzing their properties and behaviors. These characteristics provide essential insights into the structure of the graph. Sage offers various functions to compute and analyze these characteristics, which are crucial for graph theory studies.
     </p>
     <p>
-        The number of vertices and edges in a graph are basic yet vital characteristics that describe its size.
-    </p>
-    <p>
-        To find the number of vertices and edges:
+        To list all vertices of a graph, we use the <c>G.vertices()</c> method, which returns a list of the graph's vertices.
     </p>
     <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-          (G.order(), G.size())
-      </input>
-      <output>
-          # The number of vertices (order) and edges (size) in the graph.
-      </output>
+        <input>
+            G.vertices()
+        </input>
+        <output>
+            # List of vertices in the graph.
+        </output>
     </sage>
     <p>
-        In the above example, <c>G.order()</c> and <c>G.size()</c> methods return the number of vertices and edges in the graph <c>G</c>, respectively.
+        To list all edges of a graph, the <c>G.edges()</c> method is used. This returns a list of tuples representing the graph's edges.
     </p>
-  <p>
-      The degree of a vertex is the number of edges incident to the vertex. Analyzing the degree distribution can reveal important aspects of the graph's connectivity and structure.
-  </p>
-  <p>
-      To find the degree of all vertices:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-          # above from previous code  
-          G.degree_sequence()
-      </input>
-      <output>
-          # The degree sequence of the graph, showing the degree of each vertex.
-      </output>
-  </sage>
+    <sage>
+        <input>
+            G.edges()
+        </input>
+        <output>
+            # List of edges in the graph.
+        </output>
+    </sage>
+    <p>
+        The order of a graph <m>G=(V,E)</m> is the number of vertices <m>|V|</m>. It provides a measure of its size.
+    </p>
+    <p>
+        To find the order of the graph:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+            G.order()
+        </input>
+        <output>
+            # The number of vertices in the graph G.
+        </output>
+    </sage>
+    <p>
+        The size of a graph <m>G=(V,E)</m> is the number of edges <m>|E|</m>. It is indicative of the graph's complexity.
+    </p>
+    <p>
+        To find the size of the graph:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+            # Using the same graph G from the previous example
+            G.size()
+        </input>
+        <output>
+            # The number of edges in the graph G.
+        </output>
+    </sage>
+    <p>
+        The degree of a vertex in <m>G</m> is the number of edges incident to the vertex. This is important for understanding the connectivity within the graph.
+    </p>
+    <p>
+        To find the degree of vertex <m>A</m>:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+            # above from previous code  
+            G.degree('A')
+        </input>
+        <output>
+            # The degree of vertex 'A' in the graph.
+        </output>
+    </sage>
+    <p>
+        By calling <c>G.degree('A')</c>, Sage returns the degree of vertex 'A', which is the count of how many edges are incident to 'A'.
+    </p>
+    <p>
+        To find the degree of all vertices:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+            # Using the same graph G from the previous examples
+            G.degree_sequence()
+        </input>
+        <output>
+            # The degree sequence of the graph, listing the degrees of all vertices.
+        </output>
+    </sage>
   <p>
       The method <c>G.degree_sequence()</c> provides a list of degrees of all vertices in the graph, which can be used to analyze the graph's degree distribution.
   </p>
   <p>
-      Another important characteristic is whether a graph is connected. A graph is connected if there is a path between every pair of vertices.
-  </p>
-  <p>
-      To check if a graph is connected:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-          # above from previous code  
-          G.is_connected()
-      </input>
-      <output>
-          # Returns True if the graph is connected, False otherwise.
-      </output>
-  </sage>
-  <p>
-      The <c>G.is_connected()</c> method checks the connectivity of the graph, which is crucial for understanding the graph's structure and properties.
-  </p>
-  <p>
-    The diameter of a graph is the longest shortest path between any two vertices, providing insight into the graph's extent.
+    The <m>degree</m> of a specific vertex within a graph indicates how many connections (edges) that vertex has to others. This is useful for identifying how connected or central a vertex is within the graph.
 </p>
-<p>
-    To calculate the graph's diameter:
-</p>
-<sage>
-    <input>
-        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-        # above from previous code  
-        G.diameter()
-    </input>
-    <output>
-        # The diameter of the graph.
-    </output>
-</sage>
-<p>
-    The average distance between vertices in a graph is another measure of the graph's overall connectivity.
-</p>
-<p>
-    To compute the average distance:
-</p>
-<sage>
-    <input>
-        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-        # above from previous code  
-        G.average_distance()
-    </input>
-    <output>
-        # The average distance between all pairs of vertices.
-    </output>
-</sage>
-<p>
-    These operations and characteristics are just a few examples of the analysis possible with SageMath. By understanding these properties, you can gain deeper insights into the nature and structure of graphs, aiding in more complex analyses and applications in graph theory and beyond.
-</p>
+
 </subsection>
 
 <subsection>
   <title>Graphs and Matrices</title>
   <p>
-      Matrices play a crucial role in graph theory, providing a compact and powerful representation of graphs. The adjacency matrix and the incidence matrix are two primary examples, each encoding different aspects of a graph's structure. Sage makes it easy to work with these matrices, enabling the exploration of graphs through linear algebraic properties.
-  </p>
-  <p>
-      An <em>adjacency matrix</em> of a graph is a square matrix used to represent which vertices (or nodes) of the graph are adjacent to which other vertices. Each cell <c>[i, j]</c> in the matrix is filled with a 1 if there is an edge from vertex <c>i</c> to vertex <c>j</c>, and a 0 otherwise.
+      The <em>adjacency matrix</em> of a graph is a square matrix used to represent which vertices (or nodes) of the graph are adjacent to which other vertices. Each entry <m>a_{ij}</m> in the matrix is equal to 1 if there is an edge from vertex <c>i</c> to vertex <c>j</c>, and a 0 otherwise.
   </p>
   <p>
       To create a graph from an adjacency matrix:
@@ -437,13 +252,10 @@
       In this example, the matrix <c>A</c> represents the adjacency matrix of a graph, and <c>Graph(A)</c> creates the graph based on that matrix. The plot shows the resulting graph.
   </p>
   <p>
-      An <em>incidence matrix</em> is another matrix representation of a graph, which describes the relationship between vertices and edges. In this matrix, rows correspond to vertices, and columns correspond to edges, with entries indicating whether a vertex is incident to an edge.
+      The <em>incidence matrix</em> is another matrix representation of a graph, which describes the relationship between vertices and edges. In this matrix, rows correspond to vertices, and columns correspond to edges, with entries indicating whether a vertex is incident to an edge.
   </p>
   <p>
-      Sage also allows you to work with graphs using their incidence matrices, though constructing a graph directly from an incidence matrix requires a bit more manual work compared to using an adjacency matrix.
-  </p>
-  <p>
-      Besides creating graphs from matrices, you can also obtain these matrix representations from existing graphs in Sage. This is particularly useful for analysis and for applying linear algebra techniques to study graph properties.
+      Besides creating graphs from matrices, you can also obtain these matrix representations from a given graph in Sage.
   </p>
   <p>
       To get the adjacency matrix of a graph:
@@ -473,73 +285,75 @@
           # The incidence matrix of the graph G.
       </output>
   </sage>
-  <p>
-      These capabilities of Sage to seamlessly transition between graph and matrix representations open up a wide range of analytical possibilities, enabling deeper insights into the structure and properties of graphs.
-  </p>
 </subsection>
 
 <subsection>
-  <title>Adding and Deleting Vertices and Edges</title>
-  <p>
-      Manipulating graphs by adding or deleting vertices and edges is a fundamental aspect of graph theory studies. These operations allow you to dynamically modify graphs, exploring how structural changes affect graph properties and behaviors. Sage provides intuitive methods for these actions, enabling easy modifications of graphs for experimentation and analysis.
-  </p>
-  <p>
-      Adding a vertex to a graph can be done with the <c>add_vertex()</c> method. This is useful for incremental graph construction or for adding vertices that can later be connected by edges.
-  </p>
-  <p>
-      To demonstrate adding a vertex and making it visible by connecting it with an edge:
-  </p>
-  <sage>
-      <input>
-          G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
-          G.add_vertex(5)
-          G.add_edge(5, 1)  # Ensure the new vertex is connected and thus visible
-          G.plot()
-      </input>
-      <output>
-          # A graphical representation of the graph after adding a new vertex and an edge.
-      </output>
-  </sage>
-  <p>
-      The <c>add_edge()</c> method adds an edge between two vertices, automatically creating any vertices not already present in the graph.
-  </p>
-  <p>
-      To delete a vertex or an edge, use the <c>delete_vertex()</c> and <c>delete_edge()</c> methods, respectively. Deleting a vertex also removes all edges incident to it.
-  </p>
-  <p>
-      Example of deleting a vertex:
-  </p>
-  <sage>
-      <input>
-          G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
-          G.add_vertex(5)
-          G.add_edge(5, 1) 
-          # above from previous code 
-          G.delete_vertex(5)
-          G.plot()
-      </input>
-      <output>
-          # A graphical representation of the graph after deleting a vertex.
-      </output>
-  </sage>
-  <p>
-      Example of deleting an edge:
-  </p>
-  <sage>
-      <input>
-          G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
-          # above from previous code 
-          G.delete_edge(1, 4)
-          G.plot()
-      </input>
-      <output>
-          # A graphical representation of the graph after deleting an edge.
-      </output>
-  </sage>
-  <p>
-      These methods are crucial for exploring dynamic graph theory aspects, allowing the study of how changes in graph structure influence properties like connectivity, the presence of cycles, and path finding.
-  </p>
-</subsection>
+    <title>Manipulating Graphs in Sage</title>
+    <p>
+        Modifying graphs by adding or removing vertices and edges allows us to observe how these changes affect graph properties. Sage provides user-friendly functions for these modifications, facilitating dynamic exploration of graphs.
+    </p>
+    <p>
+        To add a vertex to a graph:
+    </p>
+    <sage>
+        <input>
+            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
+            G.add_vertex(5)
+            G.plot()
+        </input>
+        <output>
+            # A graphical representation of the graph with an additional vertex.
+        </output>
+    </sage>
+    <p>
+        To remove a vertex from a graph:
+    </p>
+    <sage>
+        <input>
+            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
+            G.add_vertex(5)
+            # Using the graph G from the previous code
+            G.delete_vertex(5)
+            G.plot()
+        </input>
+        <output>
+            # The graph with vertex 5 removed.
+        </output>
+    </sage>
+    <p>
+        To add an edge between two vertices in a graph:
+    </p>
+    <sage>
+        <input>
+            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
+            # Using the graph G from the initial state
+            G.add_edge(1, 3)
+            G.plot()
+        </input>
+        <output>
+            # The graph with a new edge between vertices 1 and 3.
+        </output>
+    </sage>
+    <p>
+        To delete an edge from a graph:
+    </p>
+    <sage>
+        <input>
+            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
+            G.add_edge(1, 3)
+            # Using the graph G from the previous code
+            G.delete_edge(1, 3)
+            G.plot()
+        </input>
+        <output>
+            # The graph with the edge between vertices 1 and 3 removed.
+        </output>
+    </sage>
+    <p>
+        These methods for adding and deleting vertices and edges provide a robust framework for studying the impact of structural changes on graph dynamics within Sage.
+    </p>
+  </subsection>
+  
 
 
 
