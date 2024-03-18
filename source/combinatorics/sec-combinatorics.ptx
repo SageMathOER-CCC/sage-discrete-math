@@ -71,7 +71,7 @@
             </p>
         </aside>
         <p>
-            To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
+            For instance, to calculate the number of ways to choose 3 elements from a set of 5 when the order matters, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
         </p>
         <sage>
             <input>
@@ -80,7 +80,7 @@
             <output></output>
         </sage>
         <p>
-            To display the set of permutations with 3 elements, we use the <c>Permutations()</c> function and the use the <c>Set()</c> function for output.
+            To display the set of permutations for 3 chosen elements from a set of 5 in order, we use the <c>Permutations()</c> function and the use the <c>Set()</c> function.
         </p>
         <sage>
             <input>
@@ -90,7 +90,10 @@
             <output></output>
         </sage>
         <p>
-            When <m>n = k</m>, we can calculate permutations of <m>3</m> elements:
+            When <m>n = k</m>, we can calculate permutations of <m>n</m> elements.
+        </p>
+        <p>
+            To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
         </p>
         <sage>
             <input>
@@ -118,9 +121,6 @@
             </input>
             <output></output>
         </sage>
-        <p>
-            In the code above, we specified the elements to be 'a', 'b' and 'c'.
-        </p>
     </subsection>
 
 </section>

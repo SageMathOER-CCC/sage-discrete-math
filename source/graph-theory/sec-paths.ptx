@@ -1,20 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="paths" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Paths</title>
   <p>
-    A <term>path</term> of length n between vertices <m>u</m> and <m>v</m> is a sequence of edges <m>(e_1, e_2, \ldots, e_n)</m> such that <m>e_1 = \{u, w_1\}, e_2 = \{w_1, w_2\}, \ldots, e_n = \{w_{n-1}, v\}</m>
+    Paths are fundamental elements of graph theory. SageMath's capabilities enable us to discover and study various paths, enhancing our comprehension of graph connectivity and network architecture. A path in a graph is a sequence of vertices where each adjacent pair is connected by an edge.
   </p>
   <p>
-    A <term>circuit</term> is a path from <m>u</m> to <m>v</m>.
+    To determine if a graph is fully connected, where there is a path between every pair of vertices, we can use the <c>is_connected()</c> function:
   </p>
+  <sage>
+      <input>
+          G = Graph({1: [2, 3], 2: [3], 3: [4], 4: []})
+          G.is_connected()
+      </input>
+      <output>
+          # Checks if the graph is fully connected, returning a boolean value.
+      </output>
+  </sage>
   <p>
-    A graph is <term>connected</term> if there exists a path between <m>u</m> and <m>v</m> for all <m>u, v \in V</m>.
+    To get all paths between two vertices:
   </p>
   <sage>
     <input>
-      # example sage code
+      G = Graph({1: [2, 3], 2: [3], 3: [4], 4: []})
+      G.all_paths(1, 4)
     </input>
+    <output>
+        # Lists all paths from vertex 1 to vertex 4.
+    </output>
   </sage>
-
+  <p>
+    Finding the shortest path between two vertices can be achieved using the <c>shortest_path()</c> function:
+  </p>
+  <sage>
+      <input>
+          G = Graph({1: [2, 3], 2: [3], 3: [4], 4: []})
+          G.shortest_path(1, 4)
+      </input>
+      <output>
+          # Retrieves the shortest path from vertex 1 to vertex 4, if it exists.
+      </output>
+  </sage>
+  <p>
+    To identify all connected components of a graph, the <c>connected_components()</c> function can be utilized:
+  </p>
+  <sage>
+      <input>
+          G = Graph({1: [2, 3], 2: [4], 3: [], 4: [], 5: [6], 6: []})
+          G.connected_components()
+      </input>
+      <output>
+          # Returns a list of connected components, with each component represented as a list of vertices.
+      </output>
+  </sage>
+  <p>
+    The diameter of a graph is the length of the longest shortest path between any two vertices, providing insight into the graph's size and connectivity:
+  </p>
+  <sage>
+      <input>
+          G = Graph({1: [2, 3], 2: [3, 4], 3: [4], 4: []})
+          G.diameter()
+      </input>
+      <output>
+          # Calculates the diameter of the graph.
+      </output>
+  </sage>
+  <p>
+    Additionally, knowing whether a graph is bipartite is crucial as it affects the structure and properties of paths within the graph. A graph is bipartite if its vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:
+  </p>
+  <sage>
+      <input>
+          G = Graph({1: [2, 3], 2: [4], 3: [4], 4: []})
+          G.is_bipartite()
+      </input>
+      <output>
+          # Checks if the graph is bipartite, returning a boolean value along with the partition sets if it is bipartite.
+      </output>
+  </sage>
 </section>

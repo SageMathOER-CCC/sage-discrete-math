@@ -10,10 +10,10 @@
     <subsection>
         <title>Recursion in Sequences</title>
         <p>
-            A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors. 
+            A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.
         </p>
         <p>
-            Here, <c>s</c> is a function representing the sequence. The equation <c>eqn</c> defines the recursive relation <m>s(n) = s(n-1) + 2\cdot s(n-2)</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s(0) = 2</m> and <m>s(1) = 7</m>. At last, we use <c>SR()</c> function to convert from Python notation to mathematical notation.
+            Here, <c>s</c> is a function representing the sequence. The equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we use the <c>SR()</c> function to convert from Python notation to mathematical notation.
         </p>
         <sage>
             <input>
@@ -27,9 +27,26 @@
             <output></output>
         </sage>
         <p>
-            <c>show()</c> function can be used to make the output visually more pleasing, you can try to remove it and see how the output looks instead.
+            We can use the <c>show()</c> function to make the output visually more pleasing; you can try removing it and see how the output looks.
         </p>
-    </subsection>
+        <p>
+            Similarly, the Fibonacci sequence is another example of a recursive sequence, defined by the base cases <m>F_0 = 0</m> and <m>F_1 = 1</m>, and the recursive relation <m>F_n = F_{n-1} + F_{n-2}</m> for <m>n &gt; 1</m>. This sequence is a cornerstone example in the study of recursion.
+        </p>
+        <sage>
+            <input>
+                from sympy import Function, rsolve
+                from sympy.abc import n
+                F = Function('F')
+                fib_eqn = F(n) - F(n-1) - F(n-2)
+                fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
+                show(SR(fib_sol))
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            The <c>show()</c> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.
+        </p>
+    </subsection>    
 
     <!-- Recursion with Binomial Coefficients -->
     <subsection>
@@ -44,7 +61,7 @@
             <output></output>
         </sage>
         <p>
-            We can also explore the recursive nature of binomials using a Python syntax.
+            We can also explore the recursive nature of binomial coefficients using Python syntax.
         </p>
         <sage>
             <input>
