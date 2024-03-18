@@ -475,7 +475,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.5",
   "title": "Euler and Hamilton",
-  "body": " Euler and Hamilton    "
+  "body": " Euler and Hamilton  A Euler path is a path that uses every edge of a graph exactly once. An Euler path that is a circuit is called an Euler circuit .  The idea of an Euler path emerged from the study of the Königsberg bridges problem. Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once. This problem can be modeled as a graph, with the land masses as vertices and the bridges as edges.   While exploring this problem, Euler discovered the following:   A connected graph has an Euler circuit iff every vertex has an even degree.    A connected graph has an Euler path iff there are at most two vertices with an odd degree.   We say that a graph is Eulerian if contains an Euler circuit.  We can use Sage to determine if a graph is Eulerian.   If you are curious, you can run Graph.is_eulerian?? to see how Sage verifies the necessary conditions to determine if a graph is Eulerian.   A Hamilton path is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a Hamilton circuit . If a graph contains a Hamilton circuit, we say that the graph is Hamiltonian .  Hamilton created the \"Around the World\" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.  We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.   We can ask Sage to determine if the dodecahedron is Hamiltonian.   There is no general way to look at a graph and know weather a Hamiltonian path or circuit exists, without trail and error. However, there are some theorems that can help us determine if a graph is Hamiltonian.  If is a simple graph with vertices ( ) such that the degree of every vertex is at least , then is a Hamiltonian graph.  If is a simple graph with vertices ( ) such that for every pair of non-adjacent vertices and in , then is a Hamiltonian graph.  By running Graph.is_hamiltonian?? we see that Sage uses the traveling_salesman_problem() function to determine if a graph is Hamiltonian.   The traveling salesman problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is NP-hard , meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.  Let's explore the following graph:   We can ask Sage if the graph contains a Hamiltonian cycle.    hamiltonian_cycle returns True and lists an example of a Hamiltonian cycle as the list of vertices [1, 2, 3, 4, 5] . This is just one of the many Hamiltonian cycles that exist in the graph. Now lets find the minimum Hamiltonian cycle.   Now we have the plot of the minimum Hamiltonian cycle. The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city. The minimum Hamiltonian cycle is the solution to the traveling salesman problem. We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.   "
+},
+{
+  "id": "euler-and-hamilton-2",
+  "level": "2",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Euler path Euler circuit "
+},
+{
+  "id": "euler-and-hamilton-3",
+  "level": "2",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Königsberg bridges "
+},
+{
+  "id": "euler-and-hamilton-5",
+  "level": "2",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Euler circuit Euler path Eulerian "
+},
+{
+  "id": "euler-and-hamilton-10",
+  "level": "2",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Hamilton path Hamilton circuit Hamiltonian "
+},
+{
+  "id": "euler-and-hamilton-21",
+  "level": "2",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-21",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "NP-hard "
 },
 {
   "id": "search-algorithm",
