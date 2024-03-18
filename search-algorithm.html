@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Terminology</title>
+<title>Search Algorithms</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,19 +86,7 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "pre.sagecell-sage",
-  "linked": true,
-  "linkKey": "linked-sage",
-  "autoeval": false,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -135,7 +123,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="definitions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="connectivity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="euler-and-hamilton.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -252,126 +240,31 @@ sagecell.makeSagecell({
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basics.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Graph Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Weighted Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Graph Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-5" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Graphs and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-6" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Manipulating Graphs in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-plot-options.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Plot Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="terminology"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">Terminology</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="search-algorithm"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.6</span><span class="space"> </span><span class="title">Search Algorithms</span>
 </h2>
-<div class="para" id="terminology-2">The <dfn class="terminology">order</dfn> of <span class="process-math">\(G = (V, E) \textit{ is the number of vertices: } |V|\)</span>
-</div>
-<div class="para" id="terminology-3">The <dfn class="terminology">size</dfn> of <span class="process-math">\(G = (V, E) \textit{ is the number of edges: } |E|\)</span>
-</div>
-<div class="para" id="terminology-4">An edge <span class="process-math">\(\{u, v\}\)</span> is <dfn class="terminology">incident</dfn> with <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span>
-</div>
-<div class="para" id="terminology-5">The <dfn class="terminology">degree</dfn> of a vertex <span class="process-math">\(v\text{,}\)</span> deg<span class="process-math">\((v)\text{,}\)</span> is the number of edges incident with <span class="process-math">\(v\text{.}\)</span>
-</div>
-<div class="para" id="terminology-6">The degree <dfn class="terminology">sequence</dfn> of <span class="process-math">\(G = (V, E)\)</span> is the list of degrees of its vertices, in increasing order.</div>
-<div class="para logical" id="terminology-7">
-<div class="para">Theorem: The sum of the degrees of the vertices in a graph equals twice the size of the graph:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{v \in V} \deg(v) = 2|E|
-\end{equation*}
-</div>
-</div>
-<div class="para" id="terminology-8">Examples:</div>
-<pre id="terminology-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">  graph_data = {
-    1: [2, 5],
-    2: [1, 5],
-    3: [4],
-    5: [1, 2, 7],
-    6: [],
-    7: [5]
-}
-
-G = Graph(graph_data)
-
-vertex_colors = {
-    'grey': [1],
-    'yellow': [2],
-    'green': [3],
-    'brown': [4],
-    'magenta': [5],
-    'blue': [6],
-    'orange': [7]
-}
-
-G.plot(vertex_colors=vertex_colors, layout='circular')
-</script></pre>
-<div class="para logical" id="terminology-10">
-<div class="displaymath process-math">
-\begin{equation*}
-|V| = 5, |E| = 6
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-(3, 3, 2, 2, 2)
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{v \in V} \deg(v) = 3 + 3 + 2 + 2 + 2 = 2 \cdot 6
-\end{equation*}
-</div>
-</div>
-<div class="para" id="terminology-11">Let’s verify this with Sage:</div>
-<pre id="terminology-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Count the vertices.
-# Count the edges.
-# Degree sequence.
-# Verify theorem.
-</script></pre>
-<pre id="terminology-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">  graph_data = {
-    'a': ['b', 'e'],
-    'b': ['a', 'e', 'c'],
-    'c': ['b', 'd'],
-    'd': ['e', 'c'],
-    'e': ['a', 'b', 'd']
-}
-
-G = Graph(graph_data)
-
-vertex_colors = {
-    'yellow': ['a'],
-    'brown': ['b'],
-    'green': ['c'],
-    'blue': ['d'],
-    'orange': ['e']
-}
-
-G.plot(vertex_colors=vertex_colors, layout='circular')
-</script></pre>
-<div class="para" id="terminology-14">Let’s verify this with Sage:</div>
-<pre id="terminology-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Count the vertices.
-# Count the edges.
-# Degree sequence.
-# Verify theorem.
-</script></pre>
-<div class="para logical" id="terminology-16">
-<div class="displaymath process-math">
-\begin{equation*}
-|V| = 7, |E| = 5
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-(3, 2, 2, 1, 1, 1, 0)
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{v \in V} \deg(v) = 10
-\end{equation*}
-</div>
-</div></section></div>
+<div class="para" id="search-algorithm-2"></div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="definitions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="connectivity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="euler-and-hamilton.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
