@@ -2,9 +2,46 @@
 
 <section xml:id="definitions-and-theorems" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Definitions and Theorems</title>
+
+  <p>
+    Given a graph, a <term>cycle</term> is a circuit with no repeated edges. A <term>tree</term> is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a <term>forest</term>.
+  </p>
+  <p>
+    Let <m>G = (M, E)</m> be a graph. The following are all equivalent:
+    <ul>
+      <li>
+        <p>
+          <m>G</m> is a tree.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each pair of distinct vertices, there exists a unique path between them.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> is connected, and if <m>e \in E</m> then the graph <m>(V, E - {e})</m> is disconnected.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> contains no cycles, but by adding one edge, you create a cycle.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> is connected and <m>|E| = |v| - 1</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
     
     <sage>
       <input>
+        is_tree()
+        is_forest()
       </input>
     </sage>
+
 </section>
