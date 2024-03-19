@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="definitions-and-theorems" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Definitions and Theorems</title>
+
+  <p>
+    Given a graph, a <term>cycle</term> is a circuit with no repeated edges. A <term>tree</term> is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a <term>forest</term>.
+  </p>
+  <p>
+    Let <m>G = (M, E)</m> be a graph. The following are all equivalent:
+    <ul>
+      <li>
+        <p>
+          <m>G</m> is a tree.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each pair of distinct vertices, there exists a unique path between them.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> is connected, and if <m>e \in E</m> then the graph <m>(V, E - {e})</m> is disconnected.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> contains no cycles, but by adding one edge, you create a cycle.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> is connected and <m>|E| = |v| - 1</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    Let's explore the following graph:
+  </p>
+    
+  <sage>
+    <input>
+      data = {
+        1: [4],
+        2: [3, 4, 5],
+        3: [2],
+        4: [1, 2, 6, 7],
+        5: [2, 8],
+        6: [4, 9, 11],
+        7: [4],
+        8: [5, 10],
+        9: [6],
+        10: [8],
+        11: [6]
+        }
+        
+      G = Graph(data)
+      G.show()
+    </input>
+  </sage>
+
+  <p>
+    Let's ask Sage if this graph is a tree.
+  </p>
+  <sage>
+    <input>
+      G.is_tree()
+    </input>
+  </sage>
+
+  <p>
+    If we remove an edge, we can see that the graph is no longer a tree.
+  </p>
+
+  <sage>
+    <input>
+      G_removed_edge = G.copy()
+      G_removed_edge.delete_edge((1, 4))
+      G_removed_edge.show()
+      G_removed_edge.is_tree()
+    </input>
+  </sage>
+  <p>
+    However, we can see that the graph is now a tree.
+  </p>
+  <sage>
+    <input>
+      G_removed_edge.is_forest()
+    </input>
+  </sage>
+  <p>
+    If we add an edge, we can see that the graph contains a cycle and is no longer a tree.
+  </p>
+
+  <sage>
+    <input>
+      G_added_edge = G.copy()
+      G_added_edge.add_edge((1, 2))
+      G_added_edge.show()
+      G_added_edge.is_tree()
+    </input>
+  </sage>
+</section>

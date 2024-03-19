@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-trees" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Trees</title>
+
+  <introduction>
+    <p> Trees introduction paragraph here </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-definitions-and-theorems.ptx" />
+  <xi:include href="sec-search-algorithms.ptx" />
+  
+  
+</chapter>

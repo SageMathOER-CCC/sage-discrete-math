@@ -19,6 +19,7 @@
     <xi:include href="./relations/ch-relations.ptx" />
     <xi:include href="./functions/ch-functions.ptx" />
     <xi:include href="./graph-theory/ch-graph-theory.ptx" />
+    <xi:include href="./trees/ch-trees.ptx" />
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
 
