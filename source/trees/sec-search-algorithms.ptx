@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="search-algo" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="search-algorithms" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Search Algorithms</title>
     <p>
       The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
@@ -94,7 +94,7 @@
     </p>
     <sage>
         <input>
-            G.min_spanning_tree(weight_function=None, algorithm='Prim_Boost', starting_vertex=None, check=False, by_weight=False, check_weight=True)
+            G.min_spanning_tree()
         </input>
     </sage>
     <p>
@@ -106,5 +106,12 @@
             h.show(edge_labels = True)
         </input>
     </sage>
-
+    <p>
+        We can see that <c>min_spanning_tree</c> uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.
+    </p>
+    <sage>
+        <input>
+            Graph.min_spanning_tree??
+        </input>
+    </sage>
 </section>
