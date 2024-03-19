@@ -532,6 +532,87 @@ var ptx_lunr_docs = [
   "body": " Search Algorithms    "
 },
 {
+  "id": "definitions-and-theorems",
+  "level": "1",
+  "url": "definitions-and-theorems.html",
+  "type": "Section",
+  "number": "8.1",
+  "title": "Definitions and Theorems",
+  "body": " Definitions and Theorems  Given a graph, a cycle is a circuit with no repeated edges. A tree is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a forest .  Let be a graph. The following are all equivalent:    is a tree.    For each pair of distinct vertices, there exists a unique path between them.     is connected, and if then the graph is disconnected.     contains no cycles, but by adding one edge, you create a cycle.     is connected and .     Let's explore the following graph:   Let's ask Sage if this graph is a tree.   If we remove an edge, we can see that the graph is no longer a tree.   However, we can see that the graph is now a tree.   If we add an edge, we can see that the graph contains a cycle and is no longer a tree.   "
+},
+{
+  "id": "definitions-and-theorems-2",
+  "level": "2",
+  "url": "definitions-and-theorems.html#definitions-and-theorems-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "cycle tree forest "
+},
+{
+  "id": "search-algorithms",
+  "level": "1",
+  "url": "search-algorithms.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Search Algorithms",
+  "body": " Search Algorithms  The graph is a subgraph of if and .  The subgraph is a spanning subgraph of if .  A spanning tree for the graph is a spanning subgraph of that is a tree.   Breadth-first search algorithm    Choose a vertex of the graph (root), arbitrarily.    Travel all the edges incident with the root vertex.    Give an order to this set of new vertices added.    Consider each of these vertices as a root, in order, and add all the unvisited incident edges that do not produce a cycle.    Repeat the method with the new set of vertices.    Follow the same procedure until all the vertices have been visited.   The output of this algorithm is a spanning tree.   Given a weighted graph, a minimal spanning tree is a spanning tree whose sum of wights is minimal.   Prim's Algorithm : Keep two disjoint sets of vertices. One contains vertices that are in the growwing spanning tree and the other that are not in the growing spanning tree.   Choose a vertex arbitrarily. At this step, and .    Select the cheapest vertex in that is connected to the growing spanning tree and add it into     Follow the same procedure until all the vertices are in    The output of this algorithm is a minimal spanning tree.  Let's explore the following graph:   We can ask Sage for the minimal spanning tree of this graph.   Let's visualize the minimal spanning tree.   We can see that min_spanning_tree uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.   "
+},
+{
+  "id": "search-algorithms-2",
+  "level": "2",
+  "url": "search-algorithms.html#search-algorithms-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "subgraph "
+},
+{
+  "id": "search-algorithms-3",
+  "level": "2",
+  "url": "search-algorithms.html#search-algorithms-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "spanning subgraph "
+},
+{
+  "id": "search-algorithms-4",
+  "level": "2",
+  "url": "search-algorithms.html#search-algorithms-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "spanning tree "
+},
+{
+  "id": "search-algorithms-5",
+  "level": "2",
+  "url": "search-algorithms.html#search-algorithms-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Breadth-first search algorithm "
+},
+{
+  "id": "search-algorithms-7",
+  "level": "2",
+  "url": "search-algorithms.html#search-algorithms-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "minimal spanning tree "
+},
+{
+  "id": "search-algorithms-8",
+  "level": "2",
+  "url": "search-algorithms.html#search-algorithms-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Prim's Algorithm "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
