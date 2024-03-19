@@ -37,11 +37,10 @@
     </ul>
   </p>
     
-    <sage>
-      <input>
-        is_tree()
-        is_forest()
-      </input>
-    </sage>
-
+  <sage>
+    <input>
+      is_tree()
+      is_forest()
+    </input>
+  </sage>
 </section>

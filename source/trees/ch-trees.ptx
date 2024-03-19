@@ -9,6 +9,7 @@
 
   <!-- include sections -->
   <xi:include href="sec-definitions-and-theorems.ptx" />
+  <xi:include href="sec-search-algo.ptx" />
   
   
 </chapter>

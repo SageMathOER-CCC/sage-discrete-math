@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="search-algo" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Search Algorithms</title>
+    <p>
+      The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
+    </p>
+    <p>
+      The subgraph <m>G' = (V', E')</m> is a <term>spanning subgraph</term> of <m>G = (V, E)</m> if <m>V' = V</m>.
+    </p>
+    <p>
+      A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
+    </p>
+
+    <p>
+        <term>Breadth-first search algorithm</term>
+        <ol>
+            <li>
+                <p>
+                    Choose a vertex of the graph (root), arbitrarily.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Travel all the edges incident with the root vertex.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Give an order to this set of new vertices added.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Consider each of these vertices as a root, in order, and add all the unvisited incident edges that do not produce a cycle.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Repeat the method with the new set of vertices.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Follow the same procedure until all the vertices have been visited.
+                </p>
+            </li>
+        </ol>
+        The output of this algorithm is a spanning tree.
+    </p>
+    
+    <sage>
+        <input>
+            breadth_first_search()
+        </input>
+    </sage>
+
+    <p>
+        Given a weighted graph, a <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal.
+    </p>
+    <p>
+        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growwing spanning tree and the other <m>(R)</m> that are not in the growing spanning tree.
+        <ol>
+            <li>
+                <p>
+                    Choose a vertex <m>u \in V</m> arbitrarily. At this step, <m>L = \{u\}</m> and <m>R = V - \{u\}</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Select the cheapest vertex in <m>R</m> that is connected to the growing spanning tree <m>L</m> and add it into <m>L</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Follow the same procedure until all the vertices are in <m>L</m>
+                </p>
+            </li>
+        </ol>
+        The output of this algorithm is a minimal spanning tree.
+    </p>
+    <p>
+        Let's explore the following graph:
+    </p>
+
+    <sage>
+        <input>
+            G = Graph({1:{3:8, 5:1}, 2:{3:6, 4:4}, 3:{5:2}, 4:{1:5, 3:4}})
+            G.show(edge_labels = True)
+        </input>
+    </sage>
+    <p>
+        We can ask Sage for the minimal spanning tree of this graph.
+    </p>
+    <sage>
+        <input>
+            G.min_spanning_tree(weight_function=None, algorithm='Prim_Boost', starting_vertex=None, check=False, by_weight=False, check_weight=True)
+        </input>
+    </sage>
+    <p>
+        Let's visualize the minimal spanning tree.
+    </p>
+    <sage>
+        <input>
+            h = Graph(G.min_spanning_tree())
+            h.show(edge_labels = True)
+        </input>
+    </sage>
+
+</section>
