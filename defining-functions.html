@@ -267,7 +267,6 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -282,13 +281,13 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="defining-functions"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.7</span><span class="space"> </span><span class="title">Defining Functions</span>
 </h2>
-<div class="para" id="defining-functions-2">Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what exactly these functions do and how to use them. In Sage, you can also define your own functions. Defining a function in Sage is similar to defining a function in Python.</div>
+<div class="para" id="defining-functions-2">Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what these functions do and how to use them. In Sage, you can also define your own functions. Defining a function in Sage is similar to defining a function in Python.</div>
 <div class="para" id="defining-functions-3">To define a function in Sage, use the <code class="code-inline tex2jax_ignore">def</code> keyword followed by the function name and the function’s arguments. The function’s body is indented. The <code class="code-inline tex2jax_ignore">return</code> keyword is used to return a value from the function.</div>
 <div class="para" id="defining-functions-4">Here we have a function that takes a name as an argument and returns a greeting:</div>
 <pre id="defining-functions-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def greetings(name):
     return 'Hello, ' + name + '!'
 </script></pre>
-<div class="para" id="defining-functions-6">Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells.</div>
+<div class="para" id="defining-functions-6">Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells. When you run the cell that defines the function, you won’t see any output. You will only see output when you call the function.</div>
 <pre id="defining-functions-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Replace 'World' with your name
 greetings('World')
 </script></pre>
@@ -333,6 +332,21 @@ greetings('World')
         raise ValueError('Name cannot be empty')
     
     return 'Hello, ' + name + '!'
+</script></pre>
+<div class="para" id="defining-functions-15">Let’s use what we learned about functions to define a function that is relevant to mathematics. You may have heard of Pascal’s Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is a function that generates the <span class="process-math">\(n^{th}\)</span> (0-indexed)row of Pascal’s Triangle:</div>
+<pre id="defining-functions-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def printPascalRow(n):
+    # List to store the nth row
+    nth_row = []
+    
+    # Generate each item in the nth row using the binomial coefficient
+    for k in range(n + 1):
+        nth_row.append(binomial(n, k))
+    
+    # Print the nth row
+    print(nth_row)
+</script></pre>
+<div class="para" id="defining-functions-17">After running the above cell, you can call the function <code class="code-inline tex2jax_ignore">printPascalRow</code>.</div>
+<pre id="defining-functions-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">printPascalRow(5)
 </script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="debugging.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="documentation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

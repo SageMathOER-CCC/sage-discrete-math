@@ -267,7 +267,6 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -282,9 +281,9 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="isomorphism"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.4</span><span class="space"> </span><span class="title">Isomorphism</span>
 </h2>
-<div class="para" id="isomorphism-2">Informally, we can say that <dfn class="terminology">Isomorphism</dfn> is a relation of sameness between graphs. Let’s say that the graphs <span class="process-math">\(G = (V, E)\)</span> and <span class="process-math">\(G' = (V', E')\)</span> are isomorphic if there exists a bijection <span class="process-math">\(f: V \rightarrow V'\)</span> such that <span class="process-math">\(\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'\text{.}\)</span>
+<div class="para" id="isomorphism-2">Informally, we can say that an <dfn class="terminology">isomorphism</dfn> is a relation of sameness between graphs. Let’s say that the graphs <span class="process-math">\(G = (V, E)\)</span> and <span class="process-math">\(G' = (V', E')\)</span> are isomorphic if there exists a bijection <span class="process-math">\(f: V \rightarrow V'\)</span> such that <span class="process-math">\(\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'\text{.}\)</span>
 </div>
-<div class="para" id="isomorphism-3">This means there is a bijection between the vertices <span class="process-math">\(v\)</span> and <span class="process-math">\(v'\)</span> such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph. Essentially, the two graphs have the same structure, but the vertices are labeled differently.</div>
+<div class="para" id="isomorphism-3">This means there is a bijection between the set of vertices such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph, and vice versa. Essentially, the two graphs have the same structure, but the vertices are labeled differently.</div>
 <pre id="isomorphism-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C = Graph({
     'a': ['b', 'c', 'g'],
     'b': ['a', 'd', 'h'],
@@ -314,7 +313,7 @@ D.show()
 <pre id="isomorphism-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C.is_isomorphic(D)
 </script></pre>
 <div class="para logical" id="isomorphism-7">
-<div class="para">The <dfn class="terminology">invariant under isomorphism</dfn> theorem is a set of conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:</div>
+<div class="para">The <dfn class="terminology">invariants under isomorphism</dfn> are conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}

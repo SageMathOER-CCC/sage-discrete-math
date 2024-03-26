@@ -267,7 +267,6 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -303,7 +302,29 @@ fib_eqn = F(n) - F(n-1) - F(n-2)
 fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
 show(SR(fib_sol))
 </script></pre>
-<div class="para" id="sec-recursion-3-8">The <code class="code-inline tex2jax_ignore">show()</code> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.</div></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
+<div class="para" id="sec-recursion-3-8">The <code class="code-inline tex2jax_ignore">show()</code> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.</div>
+<div class="para" id="sec-recursion-3-9">We can also write a function <code class="code-inline tex2jax_ignore">fib()</code> to compute the <span class="process-math">\(n\)</span>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us test with 3.</div>
+<pre id="sec-recursion-3-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def fib(n):
+    if n == 0 or n == 1: return n
+    else:
+        U = 0; V = 1  # the initial terms F0 and F1
+        for k in range(2, n+1):
+            W = U + V; U = V; V = W
+        return V
+fib(3)
+</script></pre>
+<div class="para" id="sec-recursion-3-11">Let us now compare our two methods using the same value of <span class="process-math">\(n = 3\text{.}\)</span>
+</div>
+<pre id="sec-recursion-3-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from sympy import Function, rsolve, Symbol, simplify
+n = Symbol('n')
+F = Function('F')
+fib_eqn = F(n) - F(n-1) - F(n-2)
+fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
+# Evaluate the solution at n=3
+fib3 = simplify(fib_sol.subs(n, 3))
+show(SR(fib3))
+</script></pre>
+<div class="para" id="sec-recursion-3-13">As we can see, both methods return the same value thus proving both methods are correct.</div></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Recursion with Binomial Coefficients</span>
 </h3>
 <div class="para" id="sec-recursion-4-2">Binomial coefficients, denoted as <span class="process-math">\(\binom{n}{k}\text{,}\)</span> count the number of ways to choose <span class="process-math">\(k\)</span> elements from an <span class="process-math">\(n\)</span>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <code class="code-inline tex2jax_ignore">binomial(n, k)</code> function.</div>

@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="isomorphism.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="search-algorithm.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="isomorphism.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-trees.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -267,7 +267,6 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -291,7 +290,6 @@ sagecell.makeSagecell({
               ('D', 'A', 'b_5'),
               ('D', 'B', 'b_6'),
               ('D', 'C', 'b_7')]
-
 G = Graph(konigsberg, multiedges=True)
 G.plot(edge_labels=True)
 </script></pre>
@@ -306,24 +304,29 @@ G.plot(edge_labels=True)
 <div class="para" id="euler-and-hamilton-6">We can use Sage to determine if a graph is Eulerian.</div>
 <pre id="euler-and-hamilton-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.is_eulerian()
 </script></pre>
-<div class="para" id="euler-and-hamilton-8">If you are curious, you can run <code class="code-inline tex2jax_ignore">Graph.is_eulerian??</code> to see how Sage verifies the necessary conditions to determine if a graph is Eulerian.</div>
-<pre id="euler-and-hamilton-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Graph.is_eulerian??
+<div class="para" id="euler-and-hamilton-8">We can use <code class="code-inline tex2jax_ignore">path=True</code> to determine if a graph contains an Euler path. Sage will return a tuple that defines the edge that would make the graph Eulerian. This edge may or may not be already present in the graph.</div>
+<pre id="euler-and-hamilton-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+G.plot()
+G.is_eulerian(path=True)
 </script></pre>
-<div class="para" id="euler-and-hamilton-10">A <dfn class="terminology">Hamilton path</dfn> is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a <dfn class="terminology">Hamilton circuit</dfn>. If a graph contains a Hamilton circuit, we say that the graph is <dfn class="terminology">Hamiltonian</dfn>.</div>
-<div class="para" id="euler-and-hamilton-11">Hamilton created the "Around the World" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.</div>
-<div class="para" id="euler-and-hamilton-12">We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.</div>
-<pre id="euler-and-hamilton-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().show()
+<div class="para" id="euler-and-hamilton-10">We can ask Sage to find an Euler circuit in a graph with the <code class="code-inline tex2jax_ignore">eulerian_circuit</code> function.</div>
+<pre id="euler-and-hamilton-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = graphs.CycleGraph(6)
+G.eulerian_circuit()
 </script></pre>
-<div class="para" id="euler-and-hamilton-14">We can ask Sage to determine if the dodecahedron is Hamiltonian.</div>
-<pre id="euler-and-hamilton-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().is_hamiltonian()
+<div class="para" id="euler-and-hamilton-12">If we are not interested in the edge labels, we can set <code class="code-inline tex2jax_ignore">labels=False</code>. We can also set <code class="code-inline tex2jax_ignore">return_vertices=True</code> to get a list of vertices for the path</div>
+<pre id="euler-and-hamilton-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = graphs.CycleGraph(6)
+G.eulerian_circuit(labels=False, return_vertices=True)
 </script></pre>
-<div class="para" id="euler-and-hamilton-16">There is no general way to look at a graph and know weather a Hamiltonian path or circuit exists, without trail and error. However, there are some theorems that can help us determine if a graph is Hamiltonian.</div>
-<div class="para" id="euler-and-hamilton-17">If <span class="process-math">\(G\)</span> is a simple graph with <span class="process-math">\(n\)</span> vertices ( <span class="process-math">\(n \geq 3\)</span> ) such that the degree of every vertex is at least <span class="process-math">\(n/2\text{,}\)</span> then <span class="process-math">\(G\)</span> is a Hamiltonian graph.</div>
-<div class="para" id="euler-and-hamilton-18">If <span class="process-math">\(G\)</span> is a simple graph with <span class="process-math">\(n\)</span> vertices ( <span class="process-math">\(n \geq 3\)</span> ) such that <span class="process-math">\(deg(u) + deg(v) \geq n\)</span> for every pair of non-adjacent vertices <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> in <span class="process-math">\(G\text{,}\)</span> then <span class="process-math">\(G\)</span> is a Hamiltonian graph.</div>
-<div class="para" id="euler-and-hamilton-19">By running <code class="code-inline tex2jax_ignore">Graph.is_hamiltonian??</code> we see that Sage uses the <code class="code-inline tex2jax_ignore">traveling_salesman_problem()</code> function to determine if a graph is Hamiltonian.</div>
-<pre id="euler-and-hamilton-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Graph.is_hamiltonian??
+<div class="para" id="euler-and-hamilton-14">A <dfn class="terminology">Hamilton path</dfn> is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a <dfn class="terminology">Hamilton circuit</dfn>. If a graph contains a Hamilton circuit, we say that the graph is <dfn class="terminology">Hamiltonian</dfn>.</div>
+<div class="para" id="euler-and-hamilton-15">Hamilton created the "Around the World" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.</div>
+<div class="para" id="euler-and-hamilton-16">We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.</div>
+<pre id="euler-and-hamilton-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().show()
 </script></pre>
-<div class="para" id="euler-and-hamilton-21">The traveling salesman problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is <dfn class="terminology">NP-hard</dfn>, meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.</div>
+<div class="para" id="euler-and-hamilton-18">We can ask Sage to determine if the dodecahedron is Hamiltonian.</div>
+<pre id="euler-and-hamilton-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().is_hamiltonian()
+</script></pre>
+<div class="para" id="euler-and-hamilton-20">By running <code class="code-inline tex2jax_ignore">Graph.is_hamiltonian??</code> we see that Sage uses the <code class="code-inline tex2jax_ignore">traveling_salesman_problem()</code> function to determine if a graph is Hamiltonian.</div>
+<div class="para" id="euler-and-hamilton-21">The traveling salesperson problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is <dfn class="terminology">NP-hard</dfn>, meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.</div>
 <div class="para" id="euler-and-hamilton-22">Let’s explore the following graph:</div>
 <pre id="euler-and-hamilton-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
 G.show(edge_labels=True)
@@ -339,9 +342,15 @@ h.plot(edge_labels=True)
 <div class="para" id="euler-and-hamilton-28">Now we have the plot of the minimum Hamiltonian cycle. The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city. The minimum Hamiltonian cycle is the solution to the traveling salesman problem. We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.</div>
 <pre id="euler-and-hamilton-29" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sumWeights = sum(h.edge_labels())
 print(sumWeights)
+</script></pre>
+<div class="para" id="euler-and-hamilton-30">If there is no Hamiltonian cycle, Sage will return <code class="code-inline tex2jax_ignore">False</code>. If we use the <code class="code-inline tex2jax_ignore">backtrack</code> algorithm, Sage will return a list that representing the longest path found.</div>
+<pre id="euler-and-hamilton-31" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
+G.plot()
+
+G.hamiltonian_cycle(algorithm='backtrack')
 </script></pre></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="isomorphism.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="search-algorithm.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="isomorphism.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-trees.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

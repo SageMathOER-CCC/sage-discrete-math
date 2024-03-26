@@ -267,7 +267,6 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -282,7 +281,7 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-plot-options"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">Plot Options</span>
 </h2>
-<div class="para" id="sec-plot-options-2">Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization techniques for graph visualization in Sage.</div>
+<div class="para" id="sec-plot-options-2">Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization options for graph visualization in Sage.</div>
 <div class="para" id="sec-plot-options-3">To begin with, you can customize the color of vertices and edges. This is particularly useful for highlighting specific parts of a graph, such as a path or a subgraph.</div>
 <div class="para" id="sec-plot-options-4">Here is an example of how to set different colors for vertices and edges:</div>
 <pre id="sec-plot-options-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
@@ -291,65 +290,53 @@ G.plot(vertex_color='blue', edge_color='red')
 <div class="para" id="sec-plot-options-6">Adjusting the thickness of edges can also enhance the visualization, especially for weighted graphs or to emphasize certain edges over others.</div>
 <div class="para" id="sec-plot-options-7">To modify the edge thickness:</div>
 <pre id="sec-plot-options-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-# above from previous code  
 G.plot(edge_thickness=2.5)  # Adjusts the thickness of all edges
 </script></pre>
 <div class="para" id="sec-plot-options-9">The <code class="code-inline tex2jax_ignore">edge_thickness</code> parameter allows you to specify the thickness of the edges in the plot.</div>
 <div class="para" id="sec-plot-options-10">Another useful customization is adjusting the size of the vertices, which can be helpful when dealing with graphs that have a large number of vertices or when you want to fit certain texts inside of the vertices.</div>
 <div class="para" id="sec-plot-options-11">To change the size of vertices:</div>
 <pre id="sec-plot-options-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-# above from previous code  
 G.plot(vertex_size=2000)  # Adjusts the size of all vertices
 </script></pre>
 <div class="para" id="sec-plot-options-13">While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <code class="code-inline tex2jax_ignore">plot</code> method is not supported.</div>
 <div class="para" id="sec-plot-options-14">To customize labels and enable them for vertices and edges:</div>
 <pre id="sec-plot-options-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-# above from previous code  
 G.plot(vertex_labels=True, edge_labels=True)
 </script></pre>
-<div class="para" id="sec-plot-options-16">Layouts in Sage determine how vertices are positioned on the plane. Various layout algorithms can provide different perspectives of the graph’s structure.</div>
-<div class="para" id="sec-plot-options-17">To apply a Graphviz layout to the graph for a more natural look:</div>
+<div class="para" id="sec-plot-options-16">Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph’s structure.</div>
+<div class="para" id="sec-plot-options-17">For instance, the <code class="code-inline tex2jax_ignore">circular</code> layout places vertices in a circle, which can highlight the symmetry and regular structure of a graph.</div>
 <pre id="sec-plot-options-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-# Use the Graphviz layout with the 'twopi' program for a more natural look
-G.plot(layout='graphviz', prog='twopi')
-</script></pre>
-<div class="para" id="sec-plot-options-19">In Sage, the <code class="code-inline tex2jax_ignore">layout</code> option in the <code class="code-inline tex2jax_ignore">plot</code> method is used to select the algorithm that determines the positioning of the graph’s vertices. When set to <code class="code-inline tex2jax_ignore">graphviz</code>, Sage uses the Graphviz library’s sophisticated layout algorithms. The <code class="code-inline tex2jax_ignore">prog</code> parameter within <code class="code-inline tex2jax_ignore">layout</code> specifies which Graphviz layout engine to use. Different layout engines are optimized for different types of graphs and visual preferences.</div>
-<div class="para" id="sec-plot-options-20">The <code class="code-inline tex2jax_ignore">'dot'</code> engine is used for directed graphs, <code class="code-inline tex2jax_ignore">'neato'</code> for undirected graphs with a more natural layout, <code class="code-inline tex2jax_ignore">'fdp'</code> and <code class="code-inline tex2jax_ignore">'sfdp'</code> for force-directed layouts of large graphs, <code class="code-inline tex2jax_ignore">'twopi'</code> for radial layouts, and <code class="code-inline tex2jax_ignore">'circo'</code> for circular layouts. These various engines help highlight different aspects of the graph’s structure, from hierarchical relationships with <code class="code-inline tex2jax_ignore">'dot'</code> to symmetrical patterns with <code class="code-inline tex2jax_ignore">'circo'</code>.</div>
-<div class="para" id="sec-plot-options-21">Beyond Graphviz layouts, SageMath offers native layout algorithms that are versatile for various graph types. For instance, the <code class="code-inline tex2jax_ignore">circular</code> layout positions vertices in a circle, emphasizing symmetry and connectivity.</div>
-<pre id="sec-plot-options-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-# above from previous code
 G.plot(layout='circular')
 </script></pre>
-<div class="para" id="sec-plot-options-23">The <code class="code-inline tex2jax_ignore">planar</code> layout is applied to graphs that can be drawn without edge crossings, illustrating planarity.</div>
-<pre id="sec-plot-options-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-# above from previous code
+<div class="para" id="sec-plot-options-19">The <code class="code-inline tex2jax_ignore">spring</code> layout, also known as a force-directed layout, positions vertices to minimize edge intersections and edge length variance, resembling a system of springs. This layout often reveals the underlying structure of the graph by separating clusters of nodes.</div>
+<pre id="sec-plot-options-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+G.plot(layout='spring')
+</script></pre>
+<div class="para" id="sec-plot-options-21">Another common layout is the <code class="code-inline tex2jax_ignore">planar</code> layout, which is applied to graphs that can be drawn without any edge crossings, demonstrating the graph’s planarity. The planar layout is ideal for showing the graph in a way that makes planar relationships clear.</div>
+<pre id="sec-plot-options-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(layout='planar')
 </script></pre>
-<div class="para" id="sec-plot-options-25">Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.</div>
-<div class="para" id="sec-plot-options-26">To set the vertex shape to a square:</div>
-<pre id="sec-plot-options-27" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-23">After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <code class="code-inline tex2jax_ignore">layout</code> option to <code class="code-inline tex2jax_ignore">graphviz</code>, you can access various Graphviz layout engines. For instance, <code class="code-inline tex2jax_ignore">prog='dot'</code> is great for hierarchical graphs, <code class="code-inline tex2jax_ignore">prog='neato'</code> for undirected graphs with spring model layouts, <code class="code-inline tex2jax_ignore">prog='fdp'</code> for force-directed layouts, <code class="code-inline tex2jax_ignore">prog='twopi'</code> for radial layouts, and <code class="code-inline tex2jax_ignore">prog='circo'</code> for circular layouts. These layouts are particularly useful when the graph’s structure needs to be visualized in a way that standard layouts cannot accommodate.</div>
+<div class="para" id="sec-plot-options-24">Here is an example using a Graphviz layout:</div>
+<pre id="sec-plot-options-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+G.plot(layout='graphviz', prog='neato')
+</script></pre>
+<div class="para" id="sec-plot-options-26">Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.</div>
+<div class="para" id="sec-plot-options-27">To set the vertex shape to a square:</div>
+<pre id="sec-plot-options-28" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 # above from previous code
 G.plot(vertex_shape='s')  # Changes the shape of vertices to squares
 </script></pre>
-<div class="para" id="sec-plot-options-28">Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.</div>
-<div class="para" id="sec-plot-options-29">To change the edge style to dashed lines:</div>
-<pre id="sec-plot-options-30" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-29">Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.</div>
+<div class="para" id="sec-plot-options-30">To change the edge style to dashed lines:</div>
+<pre id="sec-plot-options-31" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 # above from previous code
 G.plot(edge_style='dashed')  # Changes the edges to dashed lines
 </script></pre>
-<div class="para" id="sec-plot-options-31">Below is an example how to apply multiple options to a plot:</div>
-<pre id="sec-plot-options-32" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Creating the graph with its edges
+<div class="para" id="sec-plot-options-32">Below is an example how to apply multiple options to a plot:</div>
+<pre id="sec-plot-options-33" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Creating the graph with its edges
 G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-
-# Applying multiple plot options:
-# 'graphviz' layout with 'twopi' program for radial layout
-# Blue vertices and red edges for color differentiation
-# Edge thickness set to 2.5 for better visibility
-# Vertex size increased to 2000 for emphasis
-# Vertex labels and edge labels enabled for clarity
-# Vertex shape set to square for aesthetic differentiation
-# Edge style set to dashed for visual distinction
-G.plot(layout='graphviz', prog='twopi', vertex_color='blue', edge_color='red', edge_thickness=2.5, vertex_size=2000, vertex_labels=True, edge_labels=True, vertex_shape='s', edge_style='dashed')
+G.plot(layout='circular', vertex_color='blue', edge_color='red', edge_thickness=2.5, vertex_size=2000, vertex_labels=True, edge_labels=True, vertex_shape='s', edge_style='dashed')
 </script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-basics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="paths.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
