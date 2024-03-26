@@ -6,29 +6,16 @@
     <p>In discrete mathematics, a graph is a fundamental concept used to model pairwise relations between objects. A graph is defined as an ordered pair <m>G = (V, E)</m>, where:</p>
     <ul>
         <li>
-            <p><m>V</m> is a set of vertices (also called nodes or points).</p>
+            <p><m>V</m> is a set of vertices (also called nodes).</p>
         </li>
         <li>
-            <p><m>E</m> is a set of edges (also called links or lines), which are unordered pairs of vertices (in an undirected graph) or ordered pairs of vertices (in a directed graph).</p>
+            <p><m>E</m> is a set of edges (also called links or arcs), which are unordered pairs of vertices (in an undirected graph) or ordered pairs of vertices (in a directed graph).</p>
         </li>
     </ul>    
     <p>The vertices represent the objects, and the edges represent the connections or relationships between these objects.</p>
     
-
     <p>
-        The first method involves specifying the edges directly, where each edge is defined by a pair of vertices:
-    </p>
-    <sage>
-        <input>
-            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'E')])
-            G.show()
-        </input>
-        <output>
-            # A graphical representation of the graph with vertices A, B, C, D, E forming a pentagon and additional diagonals A-C and B-E.
-        </output>
-    </sage>
-    <p>
-        The second method uses a list of vertices and a list of edges, providing a clear separation between the graph's vertices and edges:
+        We can define a graph in sage by listing the vertices and edges:
     </p>
     <sage>
         <input>
@@ -42,10 +29,23 @@
         </output>
     </sage>
     <p>
+        Another way would be specifying the edges only, where each edge is defined by a pair of vertices:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'E')])
+            G.show()
+        </input>
+        <output>
+            # A graphical representation of the graph with vertices A, B, C, D, E forming a pentagon and additional diagonals A-C and B-E.
+        </output>
+    </sage>
+
+    <p>
         Both methods allow for the creation and visualization of graphs in Sage, with the choice of method depending on the format of the data available and personal preference for clarity and organization.
     </p>
     <p>
-        Graphs can also be defined by specifying the connections from each vertex. In Sage, an undirected graph can be created using a dictionary to represent the adjacency list of each vertex, indicating the vertices that are connected by an edge.
+        Graphs can also be defined by specifying the neighbors of each vertex. In Sage, an undirected graph can be created using a dictionary to represent the adjacency list of each vertex, indicating the vertices that are connected by an edge.
     </p>
     <sage>
         <input>
@@ -87,7 +87,7 @@
           Defining a graph with data structures before creation allows for managing complex graphs efficiently. This approach is suitable for graphs with a large number of vertices or intricate connectivity.
       </p>
       <p>
-          An example using a dictionary to define a graph:
+          An example using predefined data to define a graph:
       </p>
       <sage>
           <input>
@@ -141,6 +141,7 @@
     </p>
     <sage>
         <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
             G.vertices()
         </input>
         <output>
@@ -152,6 +153,7 @@
     </p>
     <sage>
         <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
             G.edges()
         </input>
         <output>
@@ -159,7 +161,19 @@
         </output>
     </sage>
     <p>
-        The order of a graph <m>G=(V,E)</m> is the number of vertices <m>|V|</m>. It provides a measure of its size.
+        To remove empty levels, include <c>labels=false</c>
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+            G.edges(labels=false)
+        </input>
+        <output>
+            # List of edges in the graph.
+        </output>
+    </sage>
+    <p>
+        The order of a graph <m>G=(V,E)</m> is the number of vertices <m>|V|</m>.
     </p>
     <p>
         To find the order of the graph:
@@ -174,7 +188,7 @@
         </output>
     </sage>
     <p>
-        The size of a graph <m>G=(V,E)</m> is the number of edges <m>|E|</m>. It is indicative of the graph's complexity.
+        The size of a graph <m>G=(V,E)</m> is the number of edges <m>|E|</m>.
     </p>
     <p>
         To find the size of the graph:
@@ -182,7 +196,6 @@
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-            # Using the same graph G from the previous example
             G.size()
         </input>
         <output>
@@ -190,7 +203,7 @@
         </output>
     </sage>
     <p>
-        The degree of a vertex in <m>G</m> is the number of edges incident to the vertex. This is important for understanding the connectivity within the graph.
+        The degree of a vertex in <m>G</m> is the number of edges incident to the vertex.
     </p>
     <p>
         To find the degree of vertex <m>A</m>:
@@ -198,7 +211,6 @@
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-            # above from previous code  
             G.degree('A')
         </input>
         <output>
@@ -206,34 +218,24 @@
         </output>
     </sage>
     <p>
-        By calling <c>G.degree('A')</c>, Sage returns the degree of vertex 'A', which is the count of how many edges are incident to 'A'.
-    </p>
-    <p>
-        To find the degree of all vertices:
+        The method <c>G.degree_sequence()</c> provides a list of degrees of all vertices in the graph in decreasing order.
     </p>
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
-            # Using the same graph G from the previous examples
             G.degree_sequence()
         </input>
         <output>
             # The degree sequence of the graph, listing the degrees of all vertices.
         </output>
     </sage>
-  <p>
-      The method <c>G.degree_sequence()</c> provides a list of degrees of all vertices in the graph, which can be used to analyze the graph's degree distribution.
-  </p>
-  <p>
-    The <m>degree</m> of a specific vertex within a graph indicates how many connections (edges) that vertex has to others. This is useful for identifying how connected or central a vertex is within the graph.
-</p>
 
 </subsection>
 
 <subsection>
   <title>Graphs and Matrices</title>
   <p>
-      The <em>adjacency matrix</em> of a graph is a square matrix used to represent which vertices (or nodes) of the graph are adjacent to which other vertices. Each entry <m>a_{ij}</m> in the matrix is equal to 1 if there is an edge from vertex <c>i</c> to vertex <c>j</c>, and a 0 otherwise.
+      The <em>adjacency matrix</em> of a graph is a square matrix used to represent which vertices of the graph are adjacent to which other vertices. Each entry <m>a_{ij}</m> in the matrix is equal to 1 if there is an edge from vertex <c>i</c> to vertex <c>j</c>, and is equal to 0 otherwise.
   </p>
   <p>
       To create a graph from an adjacency matrix:
@@ -262,9 +264,7 @@
   </p>
   <sage>
       <input>
-          A = Matrix([[0, 1, 0, 0, 1], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [1, 0, 0, 1, 0]])
-          G = Graph(A)
-          # above from previous code  
+          G = Graph([('A', 'B'), ('A', 'E'), ('B', 'C'), ('C', 'D'), ('D', 'E')])
           G.adjacency_matrix()
       </input>
       <output>
@@ -278,7 +278,6 @@
       <input>
           A = Matrix([[0, 1, 0, 0, 1], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [1, 0, 0, 1, 0]])
           G = Graph(A)
-          # above from previous code 
           G.incidence_matrix()
       </input>
       <output>
@@ -299,7 +298,7 @@
         <input>
             G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
             G.add_vertex(5)
-            G.plot()
+            G.show()
         </input>
         <output>
             # A graphical representation of the graph with an additional vertex.
@@ -311,13 +310,11 @@
     <sage>
         <input>
             G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
-            G.add_vertex(5)
-            # Using the graph G from the previous code
-            G.delete_vertex(5)
-            G.plot()
+            G.delete_vertex(4)
+            G.show()
         </input>
         <output>
-            # The graph with vertex 5 removed.
+            # The graph with vertex 4 removed.
         </output>
     </sage>
     <p>
@@ -326,9 +323,8 @@
     <sage>
         <input>
             G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
-            # Using the graph G from the initial state
             G.add_edge(1, 3)
-            G.plot()
+            G.show()
         </input>
         <output>
             # The graph with a new edge between vertices 1 and 3.
@@ -340,21 +336,39 @@
     <sage>
         <input>
             G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
-            G.add_edge(1, 3)
-            # Using the graph G from the previous code
+            G.delete_edge(1, 2)
+            G.show()
+        </input>
+        <output>
+            # The graph with the edge between vertices 1 and 2 removed.
+        </output>
+    </sage>
+    <p>
+       Observe that deleting a vertex that was not there, returns an error whilst deleting a edge that was not in the graph leaves the graph unchanged. Adding a vertex or edge that was already in the graph, leaves the graph unchanged.
+    </p>
+    <sage>
+        <input>
+            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
             G.delete_edge(1, 3)
-            G.plot()
+            G.show()
         </input>
         <output>
             # The graph with the edge between vertices 1 and 3 removed.
         </output>
     </sage>
     <p>
-        These methods for adding and deleting vertices and edges provide a robust framework for studying the impact of structural changes on graph dynamics within Sage.
-    </p>
+        You can also add a list of vertices or edges.
+     </p>
+     <sage>
+         <input>
+             G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
+             G.add_vertices([10, 11, 12])
+             G.show()
+         </input>
+         <output>
+             # The graph with the edge between vertices 1 and 3 removed.
+         </output>
+     </sage>
   </subsection>
-  
-
-
 
 </section>

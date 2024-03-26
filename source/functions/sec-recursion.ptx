@@ -46,6 +46,44 @@
         <p>
             The <c>show()</c> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.
         </p>
+        <p>
+            We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us test with 3.
+        </p>
+        <sage>
+            <input>
+                def fib(n):
+                    if n == 0 or n == 1: return n
+                    else:
+                        U = 0; V = 1  # the initial terms F0 and F1
+                        for k in range(2, n+1):
+                            W = U + V; U = V; V = W
+                        return V
+                fib(3)
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            Let us now compare our two methods using the same value of <m>n = 3</m>.
+        </p>
+        <sage>
+            <input>
+                from sympy import Function, rsolve, Symbol, simplify
+                n = Symbol('n')
+                F = Function('F')
+                fib_eqn = F(n) - F(n-1) - F(n-2)
+                fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
+                # Evaluate the solution at n=3
+                fib3 = simplify(fib_sol.subs(n, 3))
+                show(SR(fib3))
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            As we can see, both methods return the same value thus proving both methods are correct.
+        </p>
+
+        
+        
     </subsection>    
 
     <!-- Recursion with Binomial Coefficients -->
