@@ -52,7 +52,4 @@
   <xi:include href="sec-paths.ptx" />
   <xi:include href="sec-isomorphism.ptx" />
   <xi:include href="sec-euler-and-hamilton.ptx" />
-  <xi:include href="sec-search-algorithm.ptx" />
-
-
 </chapter>
