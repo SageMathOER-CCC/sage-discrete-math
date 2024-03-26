@@ -3,10 +3,10 @@
 <section xml:id="isomorphism" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Isomorphism</title>
   <p>
-    Informally, we can say that <term>Isomorphism</term> is a relation of sameness between graphs. Let's say that the graphs <m>G = (V, E)</m> and <m>G' = (V', E')</m> are isomorphic if there exists a bijection <m>f: V \rightarrow V'</m> such that <m>\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>.
+    Informally, we can say that an <term>isomorphism</term> is a relation of sameness between graphs. Let's say that the graphs <m>G = (V, E)</m> and <m>G' = (V', E')</m> are isomorphic if there exists a bijection <m>f: V \rightarrow V'</m> such that <m>\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>.
   </p>
   <p>
-    This means there is a bijection between the vertices <m>v</m> and <m>v'</m> such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph. Essentially, the two graphs have the same structure, but the vertices are labeled differently.
+    This means there is a bijection between the set of vertices such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph, and vice versa. Essentially, the two graphs have the same structure, but the vertices are labeled differently.
   </p>
   <sage>
     <input>
@@ -46,7 +46,7 @@
   </sage>
 
   <p>
-    The <term>invariant under isomorphism</term> theorem is a set of conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:
+    The <term>invariants under isomorphism</term> are conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:
     <me>
       G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
     </me>
