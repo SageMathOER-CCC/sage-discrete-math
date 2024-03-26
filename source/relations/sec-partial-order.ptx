@@ -3,30 +3,44 @@
 <section xml:id="partial-order" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Partial Order</title>
     <p>
-        A relation on a set is a Partial Order (PO) <m>\prec</m> if it satisfies the reflexive, antisymmetric, and transitive properties. A poset is a set with a partial order relation. For example, the following set of numbers with a relation given by divisibility is a poset.
+        A relation <m>R</m> on a set is a Partial Order (PO) <m>\prec</m> if it satisfies the reflexive, antisymmetric, and transitive properties. A poset is a set with a partial order relation. For example, the following set of numbers with a relation given by divisibility is a poset.
     </p>
     <sage>
         <input>
             A = Set([1, 2, 3, 4, 5, 6, 8])
 
-            r = [(a, b) for a in A for b in A if a.divides(b)]
+            R = [(a, b) for a in A for b in A if a.divides(b)]
 
-            DiGraph(r, loops=True)
+            D = DiGraph(R, loops=True)
+
+            plot(D)
         </input>
     </sage>
+    
     <p>
-        A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if x relates to y,  then the vertex x appears lower in the drawing than the vertex y. Self-loops are assumed and not shown. Similarly, the diagram assumes the transitive property and does not explicitly display transitive relationships.
+        A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if <m>x</m> relates to <m>y</m>,  then the vertex <m>x</m> appears lower in the drawing than the vertex <m>y</m>. Self-loops are assumed and not shown. Similarly, the diagram assumes the transitive property and does not explicitly display the edges that are implied by the transitive property.
+    </p>
+    <p>
+        If <m>R</m> is a partial order relation on <m>A</m>, then the function <c>Poset((A, R))</c> computes the Hasse diagram associated to <m>R</m>.
     </p>
     <sage>
         <input>
             A = Set([1, 2, 3, 4, 5, 6, 8])
 
-            r = [(a, b) for a in A for b in A if a.divides(b)]
+            R = [(a, b) for a in A for b in A if a.divides(b)]
 
-            Poset((A, r))
+            P = Poset((A, R))
+
+            plot(P)
         </input>
     </sage>
     <p>
-        Given a set <m>A</m> and a relation <m>r</m> based on divisibility, when you create a poset in Sage using <c>Poset((A, r))</c>, Sage computes the transitive closure of <m>r</m>. This means it identifies the minimal set of relations needed to maintain the partial order structure, removing redundant pairs that can be inferred through transitivity. The <c>show()</c> function displays the Hasse diagram of the poset.
+        Moreover, the <c>cover_relations()</c> function shows the pairs depicted in the Hasse diagram after the previous simplifications.
     </p>
+    <sage>
+        <input>
+            P.cover_relations()
+        </input>
+    </sage>
+
 </section>
