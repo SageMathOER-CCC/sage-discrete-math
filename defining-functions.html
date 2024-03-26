@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Connectivity</title>
+<title>Defining Functions</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="terminology.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-graph-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="isomorphism.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="debugging.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-getting-started.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="documentation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -145,17 +145,18 @@ sagecell.makeSagecell({
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-getting-started.html" class="internal"><span class="codenumber">1</span> <span class="title">Getting Started</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="about-sage.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Intro to Sage</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="displaying.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Display Values</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="OOP.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Object Oriented Programming</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="data-types.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Data Types</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="iteration.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Iteration</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="debugging.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Debugging</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="documentation.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Documentation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sage-browser.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Run Sage in the browser</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="defining-functions.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Defining Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="documentation.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Documentation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sage-browser.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Run Sage in the browser</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -249,30 +250,92 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-graph-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Graph Theory</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Definitions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="terminology.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Terminology</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="connectivity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Connectivity</span></a></div></li>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-basics.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-2" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Graph Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-3" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Weighted Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-4" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Graph Characteristics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-5" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Graphs and Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-basics.html#sec-basics-6" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Manipulating Graphs in Sage</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-plot-options.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Plot Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithm.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Search Algorithms</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-trees.html" class="internal"><span class="codenumber">8</span> <span class="title">Trees</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="definitions-and-theorems.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Definitions and Theorems</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="search-algorithms.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Search Algorithms</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="connectivity"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.3</span><span class="space"> </span><span class="title">Connectivity</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="defining-functions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.7</span><span class="space"> </span><span class="title">Defining Functions</span>
 </h2>
-<div class="para" id="connectivity-2">A <dfn class="terminology">path</dfn> of length n between vertices <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> is a sequence of edges <span class="process-math">\((e_1, e_2, \ldots, e_n)\)</span> such that <span class="process-math">\(e_1 = \{u, w_1\}, e_2 = \{w_1, w_2\}, \ldots, e_n = \{w_{n-1}, v\}\)</span>
-</div>
-<div class="para" id="connectivity-3">A <dfn class="terminology">circuit</dfn> is a path from <span class="process-math">\(u\)</span> to <span class="process-math">\(v\text{.}\)</span>
-</div>
-<div class="para" id="connectivity-4">A graph is <dfn class="terminology">connected</dfn> if there exists a path between <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> for all <span class="process-math">\(u, v \in V\text{.}\)</span>
-</div>
-<pre id="connectivity-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># example sage code
+<div class="para" id="defining-functions-2">Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what exactly these functions do and how to use them. In Sage, you can also define your own functions. Defining a function in Sage is similar to defining a function in Python.</div>
+<div class="para" id="defining-functions-3">To define a function in Sage, use the <code class="code-inline tex2jax_ignore">def</code> keyword followed by the function name and the function’s arguments. The function’s body is indented. The <code class="code-inline tex2jax_ignore">return</code> keyword is used to return a value from the function.</div>
+<div class="para" id="defining-functions-4">Here we have a function that takes a name as an argument and returns a greeting:</div>
+<pre id="defining-functions-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def greetings(name):
+    return 'Hello, ' + name + '!'
+</script></pre>
+<div class="para" id="defining-functions-6">Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells.</div>
+<pre id="defining-functions-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Replace 'World' with your name
+greetings('World')
+</script></pre>
+<div class="para" id="defining-functions-8">You can also add input validation to your functions to make them more robust.</div>
+<pre id="defining-functions-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def greetings(name):
+    if not isinstance(name, str):
+        raise ValueError('Name must be a string')
+    
+    if not name:
+        raise ValueError('Name cannot be empty')
+    return 'Hello, ' + name + '!'
+</script></pre>
+<div class="para" id="defining-functions-10">Try calling the function with an empty string or a non-string argument to see the input validation in action.</div>
+<pre id="defining-functions-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">greetings('')
+</script></pre>
+<pre id="defining-functions-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">greetings(9000)
+</script></pre>
+<div class="para" id="defining-functions-13">Functions can also include a <code class="code-inline tex2jax_ignore">docstring</code> to provide documentation for the function. The <code class="code-inline tex2jax_ignore">docstring</code> is a string that appears as the first statement in the function body. It is used to describe what the function does and how to use it.</div>
+<pre id="defining-functions-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def greetings(name):
+    """
+    Generate a greeting message for a given name.
+
+    This function takes a name as input and returns a greeting string. It ensures the name is a string and not empty, raising a ValueError with an appropriate message if these conditions are not met.
+
+    Parameters:
+    - name (str): The name to include in the greeting.
+
+    Returns:
+    - str: A greeting message which includes the given name.
+
+    Raises:
+    - ValueError: If 'name' is not a string or is an empty string.
+
+    Example:
+    >>> greetings("Alice")
+    'Hello, Alice!'
+    """
+    if not isinstance(name, str):
+        raise ValueError('Name must be a string')
+    
+    if not name:
+        raise ValueError('Name cannot be empty')
+    
+    return 'Hello, ' + name + '!'
 </script></pre></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="terminology.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="isomorphism.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="debugging.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="documentation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

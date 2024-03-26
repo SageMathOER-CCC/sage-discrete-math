@@ -181,11 +181,20 @@ var ptx_lunr_docs = [
   "body": " Debugging  When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!   Why didn't this print Hello, World! to the screen? Sage told us we have a SyntaxError . In this case we are not too concerned with the meaning of invalid decimal literal . The problem is with how we named our variable. It turns out there are rules about naming identifiers.  Rules for naming identifiers in Python:   Identifiers cannot start with a digit.    Identifiers are case-sensitive.    Identifiers can include:   letters ( a - z , A - Z )    digits ( 0 - 9 )    underscore character _        Do not use spaces, punctuation or special characters when naming identifiers.    Keywords cannot be used as identifiers.     Let's use an acceptable identifier to name our variable.   Here are some more keywords that cannot be used for variable names   False , None , True , and , as , assert , async , await , break , class , continue , def , del , elif , else , except , finally , for , from , global , if , import , in , is , lambda , nonlocal , not , or , pass , raise , return , try , while , with , yield .  Here is another error:   It looks like we have a NameError because Hi is not defined. In this case Sage thinks that Hi is a variable because there are no quotes around it. Let's make it a string by adding quotes around it.   Alternately, we could have kept Hi without quotes to use it as a variable and assign a value to it.   "
 },
 {
+  "id": "defining-functions",
+  "level": "1",
+  "url": "defining-functions.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Defining Functions",
+  "body": " Defining Functions  Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what exactly these functions do and how to use them. In Sage, you can also define your own functions. Defining a function in Sage is similar to defining a function in Python.  To define a function in Sage, use the def keyword followed by the function name and the function's arguments. The function's body is indented. The return keyword is used to return a value from the function.  Here we have a function that takes a name as an argument and returns a greeting:   Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells.   You can also add input validation to your functions to make them more robust.   Try calling the function with an empty string or a non-string argument to see the input validation in action.    Functions can also include a docstring to provide documentation for the function. The docstring is a string that appears as the first statement in the function body. It is used to describe what the function does and how to use it.   "
+},
+{
   "id": "documentation",
   "level": "1",
   "url": "documentation.html",
   "type": "Section",
-  "number": "1.7",
+  "number": "1.8",
   "title": "Documentation",
   "body": " Documentation  Sage can do many more mathematical operations. If you want an idea of what Sage can do, check out the Quick Reference Card and the Reference Manual .  The tutorial is an overview to become familiar with Sage.  The Sage documentation can be found at this link. Right now, reading the documentation is optional. We will do our best to get you up and running with Sage with this text.  You can quickly reference Sage documentation with the ? operator. You may also view the source code with the ?? operator.      "
 },
@@ -194,7 +203,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sage-browser.html",
   "type": "Section",
-  "number": "1.8",
+  "number": "1.9",
   "title": "Run Sage in the browser",
   "body": " Run Sage in the browser  The easiest way to get started is by running SageMath online. However, if you do not have reliable internet, you can also install the software locally on your own computer. Begin your journey with SageMath by following these steps:    Navigate to the SageMath website   Click on Sage on CoCalc    Create a CoCalc account   Go to Your Projects on CoCalc and create a new project.  Start your new project and create a new worksheet. Choose the SageMath Worksheet option.   Enter SageMath code into the worksheet. Try to evaluate a simple expression and use the worksheet like a calculator. Execute the code by clicking Run or using the shortcut Shift + Enter . We'll learn more ways to run code in the next section.   Save your worksheet as a PDF for your records.  To learn more about SageMath worksheets, refer to the documentation   Alternatively, you can run Sage code in a Jupyter Notebook for some additional features.  If you are feeling adventurous, you can install Sage and run it locally on your own computer. Keep in mind that a local install will be the most involved way to run Sage code.    "
 },
