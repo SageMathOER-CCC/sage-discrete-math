@@ -2,7 +2,7 @@
     <title>Plot Options</title>
 
     <p>
-        Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization techniques for graph visualization in Sage.
+        Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization options for graph visualization in Sage.
     </p>
     <p>
         To begin with, you can customize the color of vertices and edges. This is particularly useful for highlighting specific parts of a graph, such as a path or a subgraph.
@@ -29,7 +29,6 @@
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-            # above from previous code  
             G.plot(edge_thickness=2.5)  # Adjusts the thickness of all edges
         </input>
         <output>
@@ -48,7 +47,6 @@
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-            # above from previous code  
             G.plot(vertex_size=2000)  # Adjusts the size of all vertices
         </input>
         <output>
@@ -65,7 +63,6 @@
   <sage>
       <input>
           G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          # above from previous code  
           G.plot(vertex_labels=True, edge_labels=True)
       </input>
       <output>
@@ -75,53 +72,60 @@
 
 
   <p>
-    Layouts in Sage determine how vertices are positioned on the plane. Various layout algorithms can provide different perspectives of the graph's structure.
+    Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph's structure.
 </p>
 <p>
-    To apply a Graphviz layout to the graph for a more natural look:
+    For instance, the <c>circular</c> layout places vertices in a circle, which can highlight the symmetry and regular structure of a graph.
 </p>
 <sage>
     <input>
         G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        # Use the Graphviz layout with the 'twopi' program for a more natural look
-        G.plot(layout='graphviz', prog='twopi')
-    </input>
-    <output>
-        # A graphical representation of the graph using the Graphviz 'twopi' layout.
-    </output>
-</sage>
-<p>
-    In Sage, the <c>layout</c> option in the <c>plot</c> method is used to select the algorithm that determines the positioning of the graph's vertices. When set to <c>graphviz</c>, Sage uses the Graphviz library's sophisticated layout algorithms. The <c>prog</c> parameter within <c>layout</c> specifies which Graphviz layout engine to use. Different layout engines are optimized for different types of graphs and visual preferences.
-</p>
-<p>
-    The <c>'dot'</c> engine is used for directed graphs, <c>'neato'</c> for undirected graphs with a more natural layout, <c>'fdp'</c> and <c>'sfdp'</c> for force-directed layouts of large graphs, <c>'twopi'</c> for radial layouts, and <c>'circo'</c> for circular layouts. These various engines help highlight different aspects of the graph's structure, from hierarchical relationships with <c>'dot'</c> to symmetrical patterns with <c>'circo'</c>.
-</p>
-<p>
-    Beyond Graphviz layouts, SageMath offers native layout algorithms that are versatile for various graph types. For instance, the <c>circular</c> layout positions vertices in a circle, emphasizing symmetry and connectivity.
-</p>
-<sage>
-    <input>
-        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        # above from previous code
         G.plot(layout='circular')
     </input>
     <output>
-        # Visualizes the graph with a circular layout.
+        # Visualizes the graph with vertices positioned in a circular layout.
     </output>
 </sage>
 <p>
-    The <c>planar</c> layout is applied to graphs that can be drawn without edge crossings, illustrating planarity.
+    The <c>spring</c> layout, also known as a force-directed layout, positions vertices to minimize edge intersections and edge length variance, resembling a system of springs. This layout often reveals the underlying structure of the graph by separating clusters of nodes.
 </p>
 <sage>
     <input>
         G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        # above from previous code
+        G.plot(layout='spring')
+    </input>
+    <output>
+        # Displays the graph using a spring (force-directed) layout.
+    </output>
+</sage>
+<p>
+    Another common layout is the <c>planar</c> layout, which is applied to graphs that can be drawn without any edge crossings, demonstrating the graph's planarity. The planar layout is ideal for showing the graph in a way that makes planar relationships clear.
+</p>
+<sage>
+    <input>
+        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
         G.plot(layout='planar')
     </input>
     <output>
-        # Displays the graph with a planar layout, if possible.
+        # Attempts to display the graph with a planar layout, if possible. If the graph is not planar, an error message is printed.
     </output>
 </sage>
+<p>
+    After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <c>layout</c> option to <c>graphviz</c>, you can access various Graphviz layout engines. For instance, <c>prog='dot'</c> is great for hierarchical graphs, <c>prog='neato'</c> for undirected graphs with spring model layouts, <c>prog='fdp'</c> for force-directed layouts, <c>prog='twopi'</c> for radial layouts, and <c>prog='circo'</c> for circular layouts. These layouts are particularly useful when the graph's structure needs to be visualized in a way that standard layouts cannot accommodate.
+</p>
+<p>
+    Here is an example using a Graphviz layout:
+</p>
+<sage>
+    <input>
+        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+        G.plot(layout='graphviz', prog='neato')
+    </input>
+    <output>
+        # The graph is rendered using the Graphviz 'neato' layout.
+    </output>
+</sage>
+
 
   <p>
       Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.
@@ -164,16 +168,7 @@
     <input>
         # Creating the graph with its edges
         G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        
-        # Applying multiple plot options:
-        # 'graphviz' layout with 'twopi' program for radial layout
-        # Blue vertices and red edges for color differentiation
-        # Edge thickness set to 2.5 for better visibility
-        # Vertex size increased to 2000 for emphasis
-        # Vertex labels and edge labels enabled for clarity
-        # Vertex shape set to square for aesthetic differentiation
-        # Edge style set to dashed for visual distinction
-        G.plot(layout='graphviz', prog='twopi', vertex_color='blue', edge_color='red', edge_thickness=2.5, vertex_size=2000, vertex_labels=True, edge_labels=True, vertex_shape='s', edge_style='dashed')
+        G.plot(layout='circular', vertex_color='blue', edge_color='red', edge_thickness=2.5, vertex_size=2000, vertex_labels=True, edge_labels=True, vertex_shape='s', edge_style='dashed')
     </input>
     <output>
         # A graphical representation of the graph incorporating multiple customization options for enhanced visualization.
