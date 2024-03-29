@@ -136,6 +136,18 @@
     <p>
         Understanding the characteristics of graphs is fundamental to analyzing their properties and behaviors. These characteristics provide essential insights into the structure of the graph. Sage offers various functions to compute and analyze these characteristics, which are crucial for graph theory studies.
     </p>
+<p>
+        We start by plotting the following graph.
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+            G.show()
+        </input>
+        <output>
+            # Plot the graph.
+        </output>
+    </sage>
     <p>
         To list all vertices of a graph, we use the <c>G.vertices()</c> method, which returns a list of the graph's vertices.
     </p>
@@ -161,7 +173,7 @@
         </output>
     </sage>
     <p>
-        To remove empty levels, include <c>labels=false</c>
+        To remove empty labels, include <c>labels=false</c>.
     </p>
     <sage>
         <input>
@@ -276,8 +288,7 @@
   </p>
   <sage>
       <input>
-          A = Matrix([[0, 1, 0, 0, 1], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [1, 0, 0, 1, 0]])
-          G = Graph(A)
+          G = Graph([('A', 'B'), ('A', 'E'), ('B', 'C'), ('C', 'D'), ('D', 'E')])
           G.incidence_matrix()
       </input>
       <output>
@@ -344,7 +355,7 @@
         </output>
     </sage>
     <p>
-       Observe that deleting a vertex that was not there, returns an error whilst deleting a edge that was not in the graph leaves the graph unchanged. Adding a vertex or edge that was already in the graph, leaves the graph unchanged.
+       Observe that deleting a vertex that was not there, returns an error whilst deleting an edge that was not in the graph leaves the graph unchanged. Adding a vertex or edge that was already in the graph, leaves the graph unchanged.
     </p>
     <sage>
         <input>
