@@ -1,7 +1,7 @@
 <section xml:id="paths" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Paths</title>
   <p>
-    A path is a sequence of edges which connects a sequence of vertices through a non-repeating walk.
+    A path between two vertices <m>u</m> and <m>v</m> is a sequence of consecutive edges starting at <m>u</m> and ending at <m>v</m>.
   </p>
   <p>
     To get all paths between two vertices:
@@ -16,7 +16,7 @@
     </output>
   </sage>
   <p>
-    The length of a path in graph theory is defined as the number of edges that make up the path.
+    The length of a path is defined as the number of edges that make up the path.
   </p>
   <p>
     Finding the shortest path between two vertices can be achieved using the <c>shortest_path()</c> function:
@@ -34,7 +34,7 @@
     A graph is said to be connected if there is a path between any two vertices in the graph.
   </p>
   <p>
-    To determine if a graph is fully connected, where there is a path between every pair of vertices, we can use the <c>is_connected()</c> function:
+    To determine if a graph is connected, we can use the <c>is_connected()</c> function:
   </p>
   <sage>
       <input>
@@ -42,13 +42,26 @@
           G.is_connected()
       </input>
       <output>
-          # Checks if the graph is fully connected, returning a boolean value.
+          # Checks if the graph is connected, returning a boolean value.
       </output>
   </sage>
   <p>
-    Connected components of an undirected graph are the subgraphs in which any two vertices are connected to each other by paths, and which are connected to no additional vertices in the supergraph.
+    A connected component of a graph <m>G </m> is a maximal
+connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it has only one connected component.
+</p>
+<p>
+    For example, the following graph is not connected:
   </p>
-  <p>
+  <sage>
+      <input>
+          G = Graph({1: [2, 3], 2: [4], 5: [6]})
+          G.is_connected()
+      </input>
+      <output>
+          # Checks if the graph is connected, returning a boolean value.
+      </output>
+  </sage>
+<p>
     To identify all connected components of a graph, the <c>connected_components()</c> function can be utilized:
   </p>
   <sage>
@@ -61,14 +74,12 @@
       </output>
   </sage>
   <p>
-    We can combine both code to help us better evaluate the path of a graph.
+    We can visualize the graph as a disjoint union of its connected components, by plotting it. 
   </p>
   <sage>
     <input>
         G = Graph({1: [2, 3], 2: [4], 5: [6, 7], 6: [7]})
         G.show()
-        G.is_connected()
-        G.connected_components()
     </input>
     <output>
     </output>
