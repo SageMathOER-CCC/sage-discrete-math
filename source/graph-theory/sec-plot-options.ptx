@@ -53,7 +53,18 @@
             # A graphical representation of the graph with larger vertices.
         </output>
     </sage>
-
+<p>
+        In order to avoid the previous graph cropping, we can use 
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+            G.plot(vertex_size=2000, graph_border=True)  
+        </input>
+        <output>
+            # A graphical representation of the graph with larger vertices.
+        </output>
+    </sage>
     <p>
       While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c>plot</c> method is not supported.
   </p>
@@ -99,7 +110,7 @@
     </output>
 </sage>
 <p>
-    Another common layout is the <c>planar</c> layout, which is applied to graphs that can be drawn without any edge crossings, demonstrating the graph's planarity. The planar layout is ideal for showing the graph in a way that makes planar relationships clear.
+    Another common layout is the <c>planar</c> layout, which is applied to graphs that can be drawn without any edge crossings.
 </p>
 <sage>
     <input>
@@ -119,7 +130,7 @@
 <sage>
     <input>
         G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        G.plot(layout='graphviz', prog='neato')
+        G.plot(layout='graphviz', prog='dot')
     </input>
     <output>
         # The graph is rendered using the Graphviz 'neato' layout.
