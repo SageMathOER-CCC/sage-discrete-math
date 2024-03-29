@@ -15,7 +15,7 @@
     <p>The vertices represent the objects, and the edges represent the connections or relationships between these objects.</p>
     
     <p>
-        We can define a graph in sage by listing the vertices and edges:
+        We can define a graph in Sage by listing the vertices and edges:
     </p>
     <sage>
         <input>
