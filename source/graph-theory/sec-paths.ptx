@@ -85,7 +85,7 @@ connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it ha
     </output>
 </sage>
   <p>
-    The diameter of a graph is the length of the longest shortest path between any two vertices, providing insight into the graph's size and connectivity:
+    The diameter of a graph is the length of the longest shortest path between any two vertices.
   </p>
   <sage>
       <input>
@@ -97,7 +97,7 @@ connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it ha
       </output>
   </sage>
   <p>
-    Additionally, knowing whether a graph is bipartite is crucial as it affects the structure and properties of paths within the graph. A graph is bipartite if its vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:
+     A graph is bipartite if its set of vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:
   </p>
   <sage>
       <input>
