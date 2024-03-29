@@ -13,7 +13,7 @@
             A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.
         </p>
         <p>
-            Here, <c>s</c> is a function representing the sequence. The equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we use the <c>SR()</c> function to convert from Python notation to mathematical notation.
+            Given a sequence defined by a recursive formula, we can ask Sage to find its closed form. Here, <c>s</c> is a function representing the sequence defined by recursion. The equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we use the <c>SR()</c> function to convert from Python notation to mathematical notation.
         </p>
         <sage>
             <input>
@@ -47,7 +47,7 @@
             The <c>show()</c> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.
         </p>
         <p>
-            We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us test with 3.
+            We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us calculate the third Fibonacci number.
         </p>
         <sage>
             <input>
@@ -63,7 +63,7 @@
             <output></output>
         </sage>
         <p>
-            Let us now compare our two methods using the same value of <m>n = 3</m>.
+            We go back to the previous method where we calculated the closed form <c>fib_sol</c> and evaluate it now at  <m>n = 3</m>.
         </p>
         <sage>
             <input>
@@ -79,7 +79,7 @@
             <output></output>
         </sage>
         <p>
-            As we can see, both methods return the same value thus proving both methods are correct.
+            As we can see, we obtain the same number either by evaluating the closed form at <m>n = 3</m> or by finding the third Fibonacci number directly by iteration.
         </p>
 
         
@@ -99,7 +99,7 @@
             <output></output>
         </sage>
         <p>
-            We can also explore the recursive nature of binomial coefficients using Python syntax.
+            We can also explore the recursive nature of binomial coefficients by defining a function ourselves recursively.
         </p>
         <sage>
             <input>
