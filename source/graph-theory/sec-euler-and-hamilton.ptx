@@ -2,7 +2,7 @@
 <section xml:id="euler-and-hamilton" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Euler and Hamilton</title>
 	<p>
-		A <term>Euler path</term> is a path that uses every edge of a graph exactly once.
+		An <term>Euler path</term> is a path that uses every edge of a graph exactly once.
 		An Euler path that is a circuit is called an <term>Euler circuit</term>.
 	</p>
 
