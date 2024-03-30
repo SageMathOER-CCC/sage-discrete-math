@@ -285,7 +285,7 @@ sagecell.makeSagecell({
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="space"> </span><span class="title">Recursion in Sequences</span>
 </h3>
 <div class="para" id="sec-recursion-3-2">A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.</div>
-<div class="para" id="sec-recursion-3-3">Here, <code class="code-inline tex2jax_ignore">s</code> is a function representing the sequence. The equation <code class="code-inline tex2jax_ignore">eqn</code> defines the recursive relation <span class="process-math">\(s_n = s_{n-1} + 2\cdot s_{n-2}\text{.}\)</span> The <code class="code-inline tex2jax_ignore">rsolve()</code> function is then used to find a closed-form solution to this recurrence, given the initial conditions <span class="process-math">\(s_0 = 2\)</span> and <span class="process-math">\(s_1 = 7\text{.}\)</span> At last, we use the <code class="code-inline tex2jax_ignore">SR()</code> function to convert from Python notation to mathematical notation.</div>
+<div class="para" id="sec-recursion-3-3">Given a sequence defined by a recursive formula, we can ask Sage to find its closed form. Here, <code class="code-inline tex2jax_ignore">s</code> is a function representing the sequence defined by recursion. The equation <code class="code-inline tex2jax_ignore">eqn</code> defines the recursive relation <span class="process-math">\(s_n = s_{n-1} + 2\cdot s_{n-2}\text{.}\)</span> The <code class="code-inline tex2jax_ignore">rsolve()</code> function is then used to find a closed-form solution to this recurrence, given the initial conditions <span class="process-math">\(s_0 = 2\)</span> and <span class="process-math">\(s_1 = 7\text{.}\)</span> At last, we use the <code class="code-inline tex2jax_ignore">SR()</code> function to convert from Python notation to mathematical notation.</div>
 <pre id="sec-recursion-3-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from sympy import Function, rsolve
 from sympy.abc import n
 s = Function('s')
@@ -303,7 +303,7 @@ fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
 show(SR(fib_sol))
 </script></pre>
 <div class="para" id="sec-recursion-3-8">The <code class="code-inline tex2jax_ignore">show()</code> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.</div>
-<div class="para" id="sec-recursion-3-9">We can also write a function <code class="code-inline tex2jax_ignore">fib()</code> to compute the <span class="process-math">\(n\)</span>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us test with 3.</div>
+<div class="para" id="sec-recursion-3-9">We can also write a function <code class="code-inline tex2jax_ignore">fib()</code> to compute the <span class="process-math">\(n\)</span>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us calculate the third Fibonacci number.</div>
 <pre id="sec-recursion-3-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def fib(n):
     if n == 0 or n == 1: return n
     else:
@@ -313,7 +313,7 @@ show(SR(fib_sol))
         return V
 fib(3)
 </script></pre>
-<div class="para" id="sec-recursion-3-11">Let us now compare our two methods using the same value of <span class="process-math">\(n = 3\text{.}\)</span>
+<div class="para" id="sec-recursion-3-11">We go back to the previous method where we calculated the closed form <code class="code-inline tex2jax_ignore">fib_sol</code> and evaluate it now at  <span class="process-math">\(n = 3\text{.}\)</span>
 </div>
 <pre id="sec-recursion-3-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">from sympy import Function, rsolve, Symbol, simplify
 n = Symbol('n')
@@ -324,13 +324,13 @@ fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
 fib3 = simplify(fib_sol.subs(n, 3))
 show(SR(fib3))
 </script></pre>
-<div class="para" id="sec-recursion-3-13">As we can see, both methods return the same value thus proving both methods are correct.</div></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
+<div class="para" id="sec-recursion-3-13">As we can see, we obtain the same number either by evaluating the closed form at <span class="process-math">\(n = 3\)</span> or by finding the third Fibonacci number directly by iteration.</div></section><section class="subsection" id="sec-recursion-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Recursion with Binomial Coefficients</span>
 </h3>
 <div class="para" id="sec-recursion-4-2">Binomial coefficients, denoted as <span class="process-math">\(\binom{n}{k}\text{,}\)</span> count the number of ways to choose <span class="process-math">\(k\)</span> elements from an <span class="process-math">\(n\)</span>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <code class="code-inline tex2jax_ignore">binomial(n, k)</code> function.</div>
 <pre id="sec-recursion-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">binomial(5, 3)
 </script></pre>
-<div class="para" id="sec-recursion-4-4">We can also explore the recursive nature of binomial coefficients using Python syntax.</div>
+<div class="para" id="sec-recursion-4-4">We can also explore the recursive nature of binomial coefficients by defining a function ourselves recursively.</div>
 <pre id="sec-recursion-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def binomial_recursive(n, k):
     if k == 0 or k == n:
         return 1

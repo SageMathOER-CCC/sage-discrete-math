@@ -298,43 +298,47 @@ G.plot(edge_thickness=2.5)  # Adjusts the thickness of all edges
 <pre id="sec-plot-options-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(vertex_size=2000)  # Adjusts the size of all vertices
 </script></pre>
-<div class="para" id="sec-plot-options-13">While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <code class="code-inline tex2jax_ignore">plot</code> method is not supported.</div>
-<div class="para" id="sec-plot-options-14">To customize labels and enable them for vertices and edges:</div>
-<pre id="sec-plot-options-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-13">In order to avoid the previous graph cropping, we can use</div>
+<pre id="sec-plot-options-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+G.plot(vertex_size=2000, graph_border=True)
+</script></pre>
+<div class="para" id="sec-plot-options-15">While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <code class="code-inline tex2jax_ignore">plot</code> method is not supported.</div>
+<div class="para" id="sec-plot-options-16">To customize labels and enable them for vertices and edges:</div>
+<pre id="sec-plot-options-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(vertex_labels=True, edge_labels=True)
 </script></pre>
-<div class="para" id="sec-plot-options-16">Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph’s structure.</div>
-<div class="para" id="sec-plot-options-17">For instance, the <code class="code-inline tex2jax_ignore">circular</code> layout places vertices in a circle, which can highlight the symmetry and regular structure of a graph.</div>
-<pre id="sec-plot-options-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-18">Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph’s structure.</div>
+<div class="para" id="sec-plot-options-19">For instance, the <code class="code-inline tex2jax_ignore">circular</code> layout places vertices in a circle, which can highlight the symmetry and regular structure of a graph.</div>
+<pre id="sec-plot-options-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(layout='circular')
 </script></pre>
-<div class="para" id="sec-plot-options-19">The <code class="code-inline tex2jax_ignore">spring</code> layout, also known as a force-directed layout, positions vertices to minimize edge intersections and edge length variance, resembling a system of springs. This layout often reveals the underlying structure of the graph by separating clusters of nodes.</div>
-<pre id="sec-plot-options-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-21">The <code class="code-inline tex2jax_ignore">spring</code> layout, also known as a force-directed layout, positions vertices to minimize edge intersections and edge length variance, resembling a system of springs. This layout often reveals the underlying structure of the graph by separating clusters of nodes.</div>
+<pre id="sec-plot-options-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(layout='spring')
 </script></pre>
-<div class="para" id="sec-plot-options-21">Another common layout is the <code class="code-inline tex2jax_ignore">planar</code> layout, which is applied to graphs that can be drawn without any edge crossings, demonstrating the graph’s planarity. The planar layout is ideal for showing the graph in a way that makes planar relationships clear.</div>
-<pre id="sec-plot-options-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-23">Another common layout is the <code class="code-inline tex2jax_ignore">planar</code> layout, which is applied to graphs that can be drawn without any edge crossings.</div>
+<pre id="sec-plot-options-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(layout='planar')
 </script></pre>
-<div class="para" id="sec-plot-options-23">After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <code class="code-inline tex2jax_ignore">layout</code> option to <code class="code-inline tex2jax_ignore">graphviz</code>, you can access various Graphviz layout engines. For instance, <code class="code-inline tex2jax_ignore">prog='dot'</code> is great for hierarchical graphs, <code class="code-inline tex2jax_ignore">prog='neato'</code> for undirected graphs with spring model layouts, <code class="code-inline tex2jax_ignore">prog='fdp'</code> for force-directed layouts, <code class="code-inline tex2jax_ignore">prog='twopi'</code> for radial layouts, and <code class="code-inline tex2jax_ignore">prog='circo'</code> for circular layouts. These layouts are particularly useful when the graph’s structure needs to be visualized in a way that standard layouts cannot accommodate.</div>
-<div class="para" id="sec-plot-options-24">Here is an example using a Graphviz layout:</div>
-<pre id="sec-plot-options-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-G.plot(layout='graphviz', prog='neato')
+<div class="para" id="sec-plot-options-25">After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <code class="code-inline tex2jax_ignore">layout</code> option to <code class="code-inline tex2jax_ignore">graphviz</code>, you can access various Graphviz layout engines. For instance, <code class="code-inline tex2jax_ignore">prog='dot'</code> is great for hierarchical graphs, <code class="code-inline tex2jax_ignore">prog='neato'</code> for undirected graphs with spring model layouts, <code class="code-inline tex2jax_ignore">prog='fdp'</code> for force-directed layouts, <code class="code-inline tex2jax_ignore">prog='twopi'</code> for radial layouts, and <code class="code-inline tex2jax_ignore">prog='circo'</code> for circular layouts. These layouts are particularly useful when the graph’s structure needs to be visualized in a way that standard layouts cannot accommodate.</div>
+<div class="para" id="sec-plot-options-26">Here is an example using a Graphviz layout:</div>
+<pre id="sec-plot-options-27" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+G.plot(layout='graphviz', prog='dot')
 </script></pre>
-<div class="para" id="sec-plot-options-26">Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.</div>
-<div class="para" id="sec-plot-options-27">To set the vertex shape to a square:</div>
-<pre id="sec-plot-options-28" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-28">Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.</div>
+<div class="para" id="sec-plot-options-29">To set the vertex shape to a square:</div>
+<pre id="sec-plot-options-30" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 # above from previous code
 G.plot(vertex_shape='s')  # Changes the shape of vertices to squares
 </script></pre>
-<div class="para" id="sec-plot-options-29">Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.</div>
-<div class="para" id="sec-plot-options-30">To change the edge style to dashed lines:</div>
-<pre id="sec-plot-options-31" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+<div class="para" id="sec-plot-options-31">Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.</div>
+<div class="para" id="sec-plot-options-32">To change the edge style to dashed lines:</div>
+<pre id="sec-plot-options-33" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 # above from previous code
 G.plot(edge_style='dashed')  # Changes the edges to dashed lines
 </script></pre>
-<div class="para" id="sec-plot-options-32">Below is an example how to apply multiple options to a plot:</div>
-<pre id="sec-plot-options-33" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Creating the graph with its edges
+<div class="para" id="sec-plot-options-34">Below is an example how to apply multiple options to a plot:</div>
+<pre id="sec-plot-options-35" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Creating the graph with its edges
 G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
 G.plot(layout='circular', vertex_color='blue', edge_color='red', edge_thickness=2.5, vertex_size=2000, vertex_labels=True, edge_labels=True, vertex_shape='s', edge_style='dashed')
 </script></pre></section></div>

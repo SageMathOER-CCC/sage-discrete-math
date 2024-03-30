@@ -292,7 +292,7 @@ sagecell.makeSagecell({
 <span class="process-math">\(E\)</span> is a set of edges (also called links or arcs), which are unordered pairs of vertices (in an undirected graph) or ordered pairs of vertices (in a directed graph).</div></li>
 </ul>
 <div class="para" id="sec-basics-2-4">The vertices represent the objects, and the edges represent the connections or relationships between these objects.</div>
-<div class="para" id="sec-basics-2-5">We can define a graph in sage by listing the vertices and edges:</div>
+<div class="para" id="sec-basics-2-5">We can define a graph in Sage by listing the vertices and edges:</div>
 <pre id="sec-basics-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">V = ['A', 'B', 'C', 'D', 'E']
 E = [('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'D'), ('C', 'E')]
 G = Graph([V, E])
@@ -342,39 +342,42 @@ G.plot(edge_labels=True)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="space"> </span><span class="title">Graph Characteristics</span>
 </h3>
 <div class="para" id="sec-basics-4-2">Understanding the characteristics of graphs is fundamental to analyzing their properties and behaviors. These characteristics provide essential insights into the structure of the graph. Sage offers various functions to compute and analyze these characteristics, which are crucial for graph theory studies.</div>
-<div class="para" id="sec-basics-4-3">To list all vertices of a graph, we use the <code class="code-inline tex2jax_ignore">G.vertices()</code> method, which returns a list of the graph’s vertices.</div>
+<div class="para" id="sec-basics-4-3">We start by plotting the following graph.</div>
 <pre id="sec-basics-4-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+G.show()
+</script></pre>
+<div class="para" id="sec-basics-4-5">To list all vertices of a graph, we use the <code class="code-inline tex2jax_ignore">G.vertices()</code> method, which returns a list of the graph’s vertices.</div>
+<pre id="sec-basics-4-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.vertices()
 </script></pre>
-<div class="para" id="sec-basics-4-5">To list all edges of a graph, the <code class="code-inline tex2jax_ignore">G.edges()</code> method is used. This returns a list of tuples representing the graph’s edges.</div>
-<pre id="sec-basics-4-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+<div class="para" id="sec-basics-4-7">To list all edges of a graph, the <code class="code-inline tex2jax_ignore">G.edges()</code> method is used. This returns a list of tuples representing the graph’s edges.</div>
+<pre id="sec-basics-4-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.edges()
 </script></pre>
-<div class="para" id="sec-basics-4-7">To remove empty levels, include <code class="code-inline tex2jax_ignore">labels=false</code>
-</div>
-<pre id="sec-basics-4-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+<div class="para" id="sec-basics-4-9">To remove empty labels, include <code class="code-inline tex2jax_ignore">labels=false</code>.</div>
+<pre id="sec-basics-4-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.edges(labels=false)
 </script></pre>
-<div class="para" id="sec-basics-4-9">The order of a graph <span class="process-math">\(G=(V,E)\)</span> is the number of vertices <span class="process-math">\(|V|\text{.}\)</span>
+<div class="para" id="sec-basics-4-11">The order of a graph <span class="process-math">\(G=(V,E)\)</span> is the number of vertices <span class="process-math">\(|V|\text{.}\)</span>
 </div>
-<div class="para" id="sec-basics-4-10">To find the order of the graph:</div>
-<pre id="sec-basics-4-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+<div class="para" id="sec-basics-4-12">To find the order of the graph:</div>
+<pre id="sec-basics-4-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.order()
 </script></pre>
-<div class="para" id="sec-basics-4-12">The size of a graph <span class="process-math">\(G=(V,E)\)</span> is the number of edges <span class="process-math">\(|E|\text{.}\)</span>
+<div class="para" id="sec-basics-4-14">The size of a graph <span class="process-math">\(G=(V,E)\)</span> is the number of edges <span class="process-math">\(|E|\text{.}\)</span>
 </div>
-<div class="para" id="sec-basics-4-13">To find the size of the graph:</div>
-<pre id="sec-basics-4-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+<div class="para" id="sec-basics-4-15">To find the size of the graph:</div>
+<pre id="sec-basics-4-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.size()
 </script></pre>
-<div class="para" id="sec-basics-4-15">The degree of a vertex in <span class="process-math">\(G\)</span> is the number of edges incident to the vertex.</div>
-<div class="para" id="sec-basics-4-16">To find the degree of vertex <span class="process-math">\(A\text{:}\)</span>
+<div class="para" id="sec-basics-4-17">The degree of a vertex in <span class="process-math">\(G\)</span> is the number of edges incident to the vertex.</div>
+<div class="para" id="sec-basics-4-18">To find the degree of vertex <span class="process-math">\(A\text{:}\)</span>
 </div>
-<pre id="sec-basics-4-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+<pre id="sec-basics-4-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.degree('A')
 </script></pre>
-<div class="para" id="sec-basics-4-18">The method <code class="code-inline tex2jax_ignore">G.degree_sequence()</code> provides a list of degrees of all vertices in the graph in decreasing order.</div>
-<pre id="sec-basics-4-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
+<div class="para" id="sec-basics-4-20">The method <code class="code-inline tex2jax_ignore">G.degree_sequence()</code> provides a list of degrees of all vertices in the graph in decreasing order.</div>
+<pre id="sec-basics-4-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
 G.degree_sequence()
 </script></pre></section><section class="subsection" id="sec-basics-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="space"> </span><span class="title">Graphs and Matrices</span>
@@ -393,8 +396,7 @@ G.plot()
 G.adjacency_matrix()
 </script></pre>
 <div class="para" id="sec-basics-5-10">And to get the incidence matrix:</div>
-<pre id="sec-basics-5-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Matrix([[0, 1, 0, 0, 1], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 1], [1, 0, 0, 1, 0]])
-G = Graph(A)
+<pre id="sec-basics-5-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([('A', 'B'), ('A', 'E'), ('B', 'C'), ('C', 'D'), ('D', 'E')])
 G.incidence_matrix()
 </script></pre></section><section class="subsection" id="sec-basics-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="space"> </span><span class="title">Manipulating Graphs in Sage</span>
@@ -420,7 +422,7 @@ G.show()
 G.delete_edge(1, 2)
 G.show()
 </script></pre>
-<div class="para" id="sec-basics-6-11">Observe that deleting a vertex that was not there, returns an error whilst deleting a edge that was not in the graph leaves the graph unchanged. Adding a vertex or edge that was already in the graph, leaves the graph unchanged.</div>
+<div class="para" id="sec-basics-6-11">Observe that deleting a vertex that was not there, returns an error whilst deleting an edge that was not in the graph leaves the graph unchanged. Adding a vertex or edge that was already in the graph, leaves the graph unchanged.</div>
 <pre id="sec-basics-6-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (2, 3), (3, 4), (4, 1)])
 G.delete_edge(1, 3)
 G.show()
