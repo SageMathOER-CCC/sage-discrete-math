@@ -613,6 +613,24 @@ var ptx_lunr_docs = [
   "body": "Prim's Algorithm "
 },
 {
+  "id": "sec-definition",
+  "level": "1",
+  "url": "sec-definition.html",
+  "type": "Section",
+  "number": "9.1",
+  "title": "Definition",
+  "body": " Definition  A lattice is defined as a partially ordered set (poset) in which any two elements have a unique supremum (also known as join) and infimum (also known as meet). This section introduces lattices and discusses their significance.  In Sage, a lattice can be represented as a poset using the Poset() function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements. The cover_relations=True parameter tells Sage to compute the covering relations automatically, which simplifies the definition of the poset and ensures that the graphical representation reflects the direct connections between elements, aiding in the visualization of the lattice structure.    Join Analysis  The join of two elements in a lattice is the least upper bound of those elements. To find the join of a lattice, we use is_join_semilattice() function.     Meet Analysis  The meet of two elements in a lattice is their greatest lower bound. To find the meet of a lattice, we use is_meet_semilattice() function.     "
+},
+{
+  "id": "sec-tables-of-operations",
+  "level": "1",
+  "url": "sec-tables-of-operations.html",
+  "type": "Section",
+  "number": "9.2",
+  "title": "Tables of Operations",
+  "body": " Tables of Operations   This section delves into the representation of meet and join operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.    Meet Operation Table  The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.  The function to output the table is not available in sage, but we can define our own function to output the table as a matrix.     Join Operation Table  Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.  Similarly, we can define a function to output the join table as a matrix as well.    "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
