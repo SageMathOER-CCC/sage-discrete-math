@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-lattices" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lattice</title>
+
+  <introduction>
+    <p> Lattice introduction paragraph here </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-definition.ptx" />
+  <xi:include href="sec-tables-of-operations.ptx" />
+
+</chapter>
