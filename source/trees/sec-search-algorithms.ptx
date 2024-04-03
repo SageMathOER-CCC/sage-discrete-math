@@ -94,7 +94,7 @@
     </p>
     <sage>
         <input>
-            G.min_spanning_tree()
+            G.min_spanning_tree(by_weight=True)
         </input>
     </sage>
     <p>
@@ -102,7 +102,7 @@
     </p>
     <sage>
         <input>
-            h = Graph(G.min_spanning_tree())
+            h = Graph(G.min_spanning_tree(by_weight=True))
             h.show(edge_labels = True)
         </input>
     </sage>
