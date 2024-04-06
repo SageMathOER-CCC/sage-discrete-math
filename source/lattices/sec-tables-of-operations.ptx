@@ -12,36 +12,42 @@
             The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice. 
         </p>
         <p>
-            The function to output the table is not available in sage, but we can define our own function to output the table as a matrix. 
+            For outputting the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c>LatticePoset()</c>. Then we can use the function <c>meet_matrix()</c> to process the table. 
         </p>
         <sage>
             <input>
-                # Define the poset
-                L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                [('a', 'b'), ('a', 'c'), ('b', 'd'), ('c', 'd'), 
-                 ('c', 'e'), ('d', 'f'), ('e', 'f'), ('f', 'g')]), 
-                 cover_relations=True)
-
-                # Get the list of elements in the poset
-                elements = L.list()
-
-                # Initialize matrices for meet table
-                meet_matrix = matrix(QQ, len(elements), len(elements))
-
-
-                # Populate the matrix
-                for i, x in enumerate(elements):
-                    for j, y in enumerate(elements):
-                        meet_matrix[i, j] = elements.index(L.meet(x, y))
-
-                # Display the tables
-                print("Meet Table:")
-                show(meet_matrix)
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.meet_matrix(); L
+                show(P)
             </input>
             <output>
                 # Displays the meet operation table as a matrix.
             </output>
         </sage>
+        <p>
+            From the output matrix, we can verify the <m>a_{ij}</m> are the position of the elements in the poset instead of the actual values. Sage does not have a specific function to output the exact values, but we can define our own function for this purpose.
+        </p>
+        <sage>
+            <input>
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.meet_matrix()
+                elements = L.list()
+                K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
+                for i in range(P.nrows()):
+                    for j in range(P.ncols()):
+                        K[i][j] = elements[P[i,j]]
+
+                for row in K:
+                    print(row)
+            </input>
+            <output>
+            </output>
+        </sage>
+
     </subsection>
 
     <subsection xml:id="join-operation-table">
@@ -50,34 +56,39 @@
             Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements. 
         </p>
         <p>
-            Similarly, we can define a function to output the join table as a matrix as well. 
+            Similarly, we can use the function <c>join_matrix()</c> to process the table. 
         </p>
         <sage>
             <input>
-                # Define the poset
-                L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                [('a', 'b'), ('a', 'c'), ('b', 'd'), ('c', 'd'), 
-                 ('c', 'e'), ('d', 'f'), ('e', 'f'), ('f', 'g')]), 
-                 cover_relations=True)
-
-                # Get the list of elements in the poset
-                elements = L.list()
-
-                # Initialize matrices for join table
-                join_matrix = matrix(QQ, len(elements), len(elements))
-
-
-                # Populate the matrix
-                for i, x in enumerate(elements):
-                    for j, y in enumerate(elements):
-                        join_matrix[i, j] = elements.index(L.join(x, y))
-
-                # Display the tables
-                print("Join Table:")
-                show(join_matrix)
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.join_matrix(); L
+                show(P)
             </input>
             <output>
-                # Outputs the join operation table in matrix form.
+                # Displays the join operation table as a matrix.
+            </output>
+        </sage>
+        <p>
+            We can also output the elements of the poset by slightly changing the function we previously defined.
+        </p>
+        <sage>
+            <input>
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.join_matrix()
+                elements = L.list()
+                K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
+                for i in range(P.nrows()):
+                    for j in range(P.ncols()):
+                        K[i][j] = elements[P[i,j]]
+
+                for row in K:
+                    print(row)
+            </input>
+            <output>
             </output>
         </sage>
     </subsection>
