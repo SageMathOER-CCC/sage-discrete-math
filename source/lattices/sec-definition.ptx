@@ -1,63 +1,120 @@
 <section xml:id="sec-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
             <title>Definition</title>
             <p>
-                A lattice is defined as a partially ordered set (poset) in which any two elements have a unique supremum (also known as join) and infimum (also known as meet). This section introduces lattices and discusses their significance.
+                A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet). 
             </p>
             <p>
-                In Sage, a lattice can be represented as a poset using the <c>Poset()</c> function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements. The <c>cover_relations=True</c> parameter tells Sage to compute the covering relations automatically, which simplifies the definition of the poset and ensures that the graphical representation reflects the direct connections between elements, aiding in the visualization of the lattice structure.
+                In Sage, a lattice can be represented as a poset using the <c>Poset()</c> function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.
             </p>
             <sage>
                 <input>
-                    L = Poset((Set(['a', 'b', 'c', 'd', 'e', 'f', 'g']), 
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
                                [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]), 
-                              cover_relations=True)
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.plot()
                 </input>
                 <output>
                     # This will plot the poset that forms a lattice structure.
                 </output>
             </sage>
-    
-        <subsection xml:id="join-semilattice-analysis">
-            <title>Join Analysis</title>
             <p>
-                The join of two elements in a lattice is the least upper bound of those elements. To find the join of a lattice, we use <c>is_join_semilattice()</c> function.
+                We can also use <c>LatticePoset()</c> function to plot the lattice. This function is more optimized and reduces the cycles when plotting complicated lattices.
             </p>
             <sage>
                 <input>
-                    L = Poset((Set(['a', 'b', 'c', 'd', 'e', 'f', 'g']), 
+                    L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
                                [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]), 
-                              cover_relations=True)
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                    L.plot()
+                </input>
+                <output>
+                    # This will plot the latticeposet that forms a lattice structure.
+                </output>
+            </sage>
+            <p>
+                The function <c>is_lattice()</c> can be used to determine whether the poset is a lattice.
+            </p>
+            <sage>
+                <input>
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                    L.is_lattice()
+                </input>
+                <output>
+                    # This will check if the poset is a lattice.
+                </output>
+            </sage>
+    
+        <subsection xml:id="join">
+            <title>Join</title>
+            <p>
+                The join of two elements in a lattice is the least upper bound of those elements.
+            </p>
+            <p>
+                To check if a poset is a join semi-lattice (every pair of elements has a least upper bound), we use <c>is_join_semilattice()</c> function.
+            </p>
+            <sage>
+                <input>
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.is_join_semilattice()
                 </input>
                 <output>
                     # Returns True if the lattice is a join semilattice; otherwise, False.
                 </output>
             </sage>
-        </subsection>
-    
-        <subsection xml:id="meet-semilattice-analysis">
-            <title>Meet Analysis</title>
             <p>
-                The meet of two elements in a lattice is their greatest lower bound. To find the meet of a lattice, we use <c>is_meet_semilattice()</c> function.
+                We can also find the join for individual pairs using the <c>join()</c> function.
             </p>
             <sage>
                 <input>
-                    L = Poset((Set(['a', 'b', 'c', 'd', 'e', 'f', 'g']), 
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
                                [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]), 
-                              cover_relations=True)
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                    L.join('b', 'f')
+                </input>
+                <output>
+                </output>
+            </sage>
+        </subsection>
+    
+        <subsection xml:id="meet">
+            <title>Meet</title>
+            <p>
+                The meet of two elements in a lattice is their greatest lower bound.
+            </p>
+            <p>
+                To check if a poset is a meet semi-lattice (every pair of elements has a greatest lower bound), we use <c>is_meet_semilattice()</c> function.
+            </p>
+            <sage>
+                <input>
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.is_meet_semilattice()
                 </input>
                 <output>
                     # Returns True if the lattice is a meet semilattice; otherwise, False.
                 </output>
             </sage>
+            <p>
+                We can also find the meet for individual pairs using the <c>meet()</c> function.
+            </p>
+            <sage>
+                <input>
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                                ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                    L.meet('a', 'b')
+                </input>
+                <output>
+                </output>
+            </sage>
         </subsection>
     
-        <!-- Additional subsections can follow here -->
+
     
     </section>
     
