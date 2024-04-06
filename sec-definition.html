@@ -277,13 +277,13 @@ sagecell.makeSagecell({
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattice</span></a></div>
+<div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Definition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join-semilattice-analysis" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Join Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#meet-semilattice-analysis" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Meet Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Join</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#meet" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Meet</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -300,32 +300,55 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-definition"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Definition</span>
 </h2>
-<div class="para" id="sec-definition-2">A lattice is defined as a partially ordered set (poset) in which any two elements have a unique supremum (also known as join) and infimum (also known as meet). This section introduces lattices and discusses their significance.</div>
-<div class="para" id="sec-definition-3">In Sage, a lattice can be represented as a poset using the <code class="code-inline tex2jax_ignore">Poset()</code> function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements. The <code class="code-inline tex2jax_ignore">cover_relations=True</code> parameter tells Sage to compute the covering relations automatically, which simplifies the definition of the poset and ensures that the graphical representation reflects the direct connections between elements, aiding in the visualization of the lattice structure.</div>
-<pre id="sec-definition-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((Set(['a', 'b', 'c', 'd', 'e', 'f', 'g']), 
+<div class="para" id="sec-definition-2">A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet).</div>
+<div class="para" id="sec-definition-3">In Sage, a lattice can be represented as a poset using the <code class="code-inline tex2jax_ignore">Poset()</code> function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.</div>
+<pre id="sec-definition-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]), 
-          cover_relations=True)
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.plot()
 </script></pre>
-<section class="subsection" id="join-semilattice-analysis"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="space"> </span><span class="title">Join Analysis</span>
-</h3>
-<div class="para" id="join-semilattice-analysis-2">The join of two elements in a lattice is the least upper bound of those elements. To find the join of a lattice, we use <code class="code-inline tex2jax_ignore">is_join_semilattice()</code> function.</div>
-<pre id="join-semilattice-analysis-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((Set(['a', 'b', 'c', 'd', 'e', 'f', 'g']), 
+<div class="para" id="sec-definition-5">We can also use <code class="code-inline tex2jax_ignore">LatticePoset()</code> function to plot the lattice. This function is more optimized and reduces the cycles when plotting complicated lattices.</div>
+<pre id="sec-definition-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]), 
-          cover_relations=True)
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+L.plot()
+</script></pre>
+<div class="para" id="sec-definition-7">The function <code class="code-inline tex2jax_ignore">is_lattice()</code> can be used to determine whether the poset is a lattice.</div>
+<pre id="sec-definition-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+L.is_lattice()
+</script></pre>
+<section class="subsection" id="join"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="space"> </span><span class="title">Join</span>
+</h3>
+<div class="para" id="join-2">The join of two elements in a lattice is the least upper bound of those elements.</div>
+<div class="para" id="join-3">To check if a poset is a join semi-lattice (every pair of elements has a least upper bound), we use <code class="code-inline tex2jax_ignore">is_join_semilattice()</code> function.</div>
+<pre id="join-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.is_join_semilattice()
-</script></pre></section><section class="subsection" id="meet-semilattice-analysis"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Meet Analysis</span>
-</h3>
-<div class="para" id="meet-semilattice-analysis-2">The meet of two elements in a lattice is their greatest lower bound. To find the meet of a lattice, we use <code class="code-inline tex2jax_ignore">is_meet_semilattice()</code> function.</div>
-<pre id="meet-semilattice-analysis-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((Set(['a', 'b', 'c', 'd', 'e', 'f', 'g']), 
+</script></pre>
+<div class="para" id="join-5">We can also find the join for individual pairs using the <code class="code-inline tex2jax_ignore">join()</code> function.</div>
+<pre id="join-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]), 
-          cover_relations=True)
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+L.join('b', 'f')
+</script></pre></section><section class="subsection" id="meet"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Meet</span>
+</h3>
+<div class="para" id="meet-2">The meet of two elements in a lattice is their greatest lower bound.</div>
+<div class="para" id="meet-3">To check if a poset is a meet semi-lattice (every pair of elements has a greatest lower bound), we use <code class="code-inline tex2jax_ignore">is_meet_semilattice()</code> function.</div>
+<pre id="meet-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.is_meet_semilattice()
+</script></pre>
+<div class="para" id="meet-5">We can also find the meet for individual pairs using the <code class="code-inline tex2jax_ignore">meet()</code> function.</div>
+<pre id="meet-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+L.meet('a', 'b')
 </script></pre></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-lattices.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-tables-of-operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

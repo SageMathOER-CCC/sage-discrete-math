@@ -277,13 +277,13 @@ sagecell.makeSagecell({
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattice</span></a></div>
+<div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Definition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join-semilattice-analysis" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Join Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#meet-semilattice-analysis" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Meet Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Join</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#meet" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Meet</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -338,10 +338,10 @@ sagecell.makeSagecell({
 G.show(edge_labels = True)
 </script></pre>
 <div class="para" id="search-algorithms-11">We can ask Sage for the minimal spanning tree of this graph.</div>
-<pre id="search-algorithms-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.min_spanning_tree()
+<pre id="search-algorithms-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.min_spanning_tree(by_weight=True)
 </script></pre>
 <div class="para" id="search-algorithms-13">Let’s visualize the minimal spanning tree.</div>
-<pre id="search-algorithms-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">h = Graph(G.min_spanning_tree())
+<pre id="search-algorithms-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">h = Graph(G.min_spanning_tree(by_weight=True))
 h.show(edge_labels = True)
 </script></pre>
 <div class="para" id="search-algorithms-15">We can see that <code class="code-inline tex2jax_ignore">min_spanning_tree</code> uses a variation of Prim’s Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.</div>

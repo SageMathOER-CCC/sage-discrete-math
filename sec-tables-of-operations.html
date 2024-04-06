@@ -277,13 +277,13 @@ sagecell.makeSagecell({
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattice</span></a></div>
+<div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Definition</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join-semilattice-analysis" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Join Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#meet-semilattice-analysis" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Meet Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Join</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#meet" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Meet</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section active">
@@ -304,54 +304,50 @@ sagecell.makeSagecell({
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="space"> </span><span class="title">Meet Operation Table</span>
 </h3>
 <div class="para" id="meet-operation-table-2">The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.</div>
-<div class="para" id="meet-operation-table-3">The function to output the table is not available in sage, but we can define our own function to output the table as a matrix.</div>
-<pre id="meet-operation-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the poset
-L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-[('a', 'b'), ('a', 'c'), ('b', 'd'), ('c', 'd'), 
- ('c', 'e'), ('d', 'f'), ('e', 'f'), ('f', 'g')]), 
- cover_relations=True)
-
-# Get the list of elements in the poset
+<div class="para" id="meet-operation-table-3">For outputting the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <code class="code-inline tex2jax_ignore">LatticePoset()</code>. Then we can use the function <code class="code-inline tex2jax_ignore">meet_matrix()</code> to process the table.</div>
+<pre id="meet-operation-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+P = L.meet_matrix(); L
+show(P)
+</script></pre>
+<div class="para" id="meet-operation-table-5">From the output matrix, we can verify the <span class="process-math">\(a_{ij}\)</span> are the position of the elements in the poset instead of the actual values. Sage does not have a specific function to output the exact values, but we can define our own function for this purpose.</div>
+<pre id="meet-operation-table-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+P = L.meet_matrix()
 elements = L.list()
+K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
+for i in range(P.nrows()):
+    for j in range(P.ncols()):
+        K[i][j] = elements[P[i,j]]
 
-# Initialize matrices for meet table
-meet_matrix = matrix(QQ, len(elements), len(elements))
-
-
-# Populate the matrix
-for i, x in enumerate(elements):
-    for j, y in enumerate(elements):
-        meet_matrix[i, j] = elements.index(L.meet(x, y))
-
-# Display the tables
-print("Meet Table:")
-show(meet_matrix)
+for row in K:
+    print(row)
 </script></pre></section><section class="subsection" id="join-operation-table"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.2.2</span><span class="space"> </span><span class="title">Join Operation Table</span>
 </h3>
 <div class="para" id="join-operation-table-2">Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.</div>
-<div class="para" id="join-operation-table-3">Similarly, we can define a function to output the join table as a matrix as well.</div>
-<pre id="join-operation-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the poset
-L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-[('a', 'b'), ('a', 'c'), ('b', 'd'), ('c', 'd'), 
- ('c', 'e'), ('d', 'f'), ('e', 'f'), ('f', 'g')]), 
- cover_relations=True)
-
-# Get the list of elements in the poset
+<div class="para" id="join-operation-table-3">Similarly, we can use the function <code class="code-inline tex2jax_ignore">join_matrix()</code> to process the table.</div>
+<pre id="join-operation-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+P = L.join_matrix(); L
+show(P)
+</script></pre>
+<div class="para" id="join-operation-table-5">We can also output the elements of the poset by slightly changing the function we previously defined.</div>
+<pre id="join-operation-table-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+P = L.join_matrix()
 elements = L.list()
+K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
+for i in range(P.nrows()):
+    for j in range(P.ncols()):
+        K[i][j] = elements[P[i,j]]
 
-# Initialize matrices for join table
-join_matrix = matrix(QQ, len(elements), len(elements))
-
-
-# Populate the matrix
-for i, x in enumerate(elements):
-    for j, y in enumerate(elements):
-        join_matrix[i, j] = elements.index(L.join(x, y))
-
-# Display the tables
-print("Join Table:")
-show(join_matrix)
+for row in K:
+    print(row)
 </script></pre></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-definition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
