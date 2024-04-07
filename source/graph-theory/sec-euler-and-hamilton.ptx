@@ -21,7 +21,7 @@
                     ('D', 'B', 'b_6'),
                     ('D', 'C', 'b_7')]
       G = Graph(konigsberg, multiedges=True)
-      G.plot(edge_labels=True)
+      G.show(edge_labels=True)
 	</input>
 	</sage>
 
@@ -64,7 +64,7 @@
 	<sage>
 	<input>
     G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-    G.plot()
+    G.show()
     G.is_eulerian(path=True)
 	</input>
 	</sage>
@@ -159,7 +159,7 @@
 	<sage>
 	<input>
     h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
-    h.plot(edge_labels=True)
+    h.show(edge_labels=True)
 	</input>
 	</sage>
 
@@ -183,7 +183,7 @@
 	<sage>
 	<input>
     G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
-    G.plot()
+    G.show()
 
     G.hamiltonian_cycle(algorithm='backtrack')
 	</input>
