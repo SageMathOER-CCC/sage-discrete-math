@@ -51,6 +51,9 @@
     G.is_eulerian()
 	</input>
 	</sage>
+	<p>
+		Since this returns <c>false</c>, we know that the graph is not Eulerian. Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
+	</p>
 
 	<p>
 		We can use <c>path=True</c> to determine if a graph contains an Euler path.
