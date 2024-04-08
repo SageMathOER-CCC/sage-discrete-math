@@ -51,12 +51,22 @@
         </ol>
         The output of this algorithm is a spanning tree.
     </p>
-    
+    <p>
+        The <c>breadth_first_search()</c> function provides a flexible method for traversing graphs. This function can be employed to explore a graph from a specified starting point (or points) and can be adapted for various applications such as finding the shortest path, generating a spanning tree, or simply exploring the structure of a graph.
+    </p>
+    <p>
+        Let's consider the following graph:
+    </p>
     <sage>
         <input>
-            breadth_first_search()
+            G = Graph({0: [1, 2], 1: [2], 2: [3], 3: [1, 2]})
+            G.show()
+            print(list(G.breadth_first_search(start=0, report_distance=True)))
         </input>
     </sage>
+    <p>
+        In this example, the breadth-first search algorithm function is initiated at vertex 0, and it reports the distance of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its distance from the starting vertex. This distance is measured in terms of the number of edges that must be traversed to reach that vertex from the start.
+    </p>
 
     <p>
         Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree including Prim's Algorithm.
@@ -93,7 +103,7 @@
         </input>
     </sage>
     <p>
-        We can ask Sage for the minimal spanning tree of this graph. By running <c>Graph.min_spanning_tree??</c> We can see that <c>min_spanning_tree</c> uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.
+        We can ask Sage for the minimal spanning tree of this graph. By running <c>Graph.min_spanning_tree??</c> We can see that <c>min_spanning_tree()</c> uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.
     </p>
     <sage>
         <input>
