@@ -484,7 +484,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.5",
   "title": "Euler and Hamilton",
-  "body": " Euler and Hamilton  An Euler path is a path that uses every edge of a graph exactly once. An Euler path that is a circuit is called an Euler circuit .  The idea of an Euler path emerged from the study of the Königsberg bridges problem. Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once. This problem can be modeled as a graph, with the land masses as vertices and the bridges as edges.   While exploring this problem, Euler discovered the following:   A connected graph has an Euler circuit iff every vertex has an even degree.    A connected graph has an Euler path iff there are at most two vertices with an odd degree.   We say that a graph is Eulerian if contains an Euler circuit.  We can use Sage to determine if a graph is Eulerian.   We can use path=True to determine if a graph contains an Euler path. Sage will return a tuple that defines the edge that would make the graph Eulerian. This edge may or may not be already present in the graph.   We can ask Sage to find an Euler circuit in a graph with the eulerian_circuit function.   If we are not interested in the edge labels, we can set labels=False . We can also set return_vertices=True to get a list of vertices for the path   A Hamilton path is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a Hamilton circuit . If a graph contains a Hamilton circuit, we say that the graph is Hamiltonian .  Hamilton created the \"Around the World\" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.  We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.   We can ask Sage to determine if the dodecahedron is Hamiltonian.   By running Graph.is_hamiltonian?? we see that Sage uses the traveling_salesman_problem() function to determine if a graph is Hamiltonian.  The traveling salesperson problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is NP-hard , meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.  Let's explore the following graph:   We can ask Sage if the graph contains a Hamiltonian cycle.    hamiltonian_cycle returns True and lists an example of a Hamiltonian cycle as the list of vertices [1, 2, 3, 4, 5] . This is just one of the many Hamiltonian cycles that exist in the graph. Now lets find the minimum Hamiltonian cycle.   Now we have the plot of the minimum Hamiltonian cycle. The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city. The minimum Hamiltonian cycle is the solution to the traveling salesman problem. We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.   If there is no Hamiltonian cycle, Sage will return False . If we use the backtrack algorithm, Sage will return a list that representing the longest path found.   "
+  "body": " Euler and Hamilton  An Euler path is a path that uses every edge of a graph exactly once. An Euler path that is a circuit is called an Euler circuit .  The idea of an Euler path emerged from the study of the Königsberg bridges problem. Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once. This problem can be modeled as a graph, with the land masses as vertices and the bridges as edges.   While exploring this problem, Euler discovered the following:   A connected graph has an Euler circuit iff every vertex has an even degree.    A connected graph has an Euler path iff there are at most two vertices with an odd degree.   We say that a graph is Eulerian if contains an Euler circuit.  We can use Sage to determine if a graph is Eulerian.   Since this returns false , we know that the graph is not Eulerian. Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.  We can use path=True to determine if a graph contains an Euler path. Sage will return the beginning and the end of the path.   We can ask Sage to find an Euler circuit in a graph with the eulerian_circuit function. Let's take a look at the following graph.   If we are not interested in the edge labels, we can set labels=False . We can also set return_vertices=True to get a list of vertices for the path   A Hamilton path is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a Hamilton circuit . If a graph contains a Hamilton circuit, we say that the graph is Hamiltonian .  Hamilton created the \"Around the World\" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.  We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.   We can ask Sage to determine if the dodecahedron is Hamiltonian.   By running Graph.is_hamiltonian?? we see that Sage uses the traveling_salesman_problem() function to determine if a graph is Hamiltonian.  The traveling salesperson problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is NP-hard , meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.  Let's explore the following graph:   We can ask Sage if the graph contains a Hamiltonian cycle.   The function hamiltonian_cycle returns True and lists an example of a Hamiltonian cycle as the list of vertices [1, 2, 3, 4, 5] . This is just one of the many Hamiltonian cycles that exist in the graph. Now lets find the minimum Hamiltonian cycle.   Now we have the plot of the minimum Hamiltonian cycle. The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city. The minimum Hamiltonian cycle is the solution to the traveling salesman problem. We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.   If there is no Hamiltonian cycle, Sage will return False . If we use the backtrack algorithm, Sage will return a list that representing the longest path found.   "
 },
 {
   "id": "euler-and-hamilton-2",
@@ -514,18 +514,18 @@ var ptx_lunr_docs = [
   "body": "Euler circuit Euler path Eulerian "
 },
 {
-  "id": "euler-and-hamilton-14",
+  "id": "euler-and-hamilton-15",
   "level": "2",
-  "url": "euler-and-hamilton.html#euler-and-hamilton-14",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-15",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Hamilton path Hamilton circuit Hamiltonian "
 },
 {
-  "id": "euler-and-hamilton-21",
+  "id": "euler-and-hamilton-22",
   "level": "2",
-  "url": "euler-and-hamilton.html#euler-and-hamilton-21",
+  "url": "euler-and-hamilton.html#euler-and-hamilton-22",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -538,7 +538,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.1",
   "title": "Definitions and Theorems",
-  "body": " Definitions and Theorems  Given a graph, a cycle is a circuit with no repeated edges. A tree is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a forest .  Let be a graph. The following are all equivalent:    is a tree.    For each pair of distinct vertices, there exists a unique path between them.     is connected, and if then the graph is disconnected.     contains no cycles, but by adding one edge, you create a cycle.     is connected and .     Let's explore the following graph:   Let's ask Sage if this graph is a tree.   If we remove an edge, we can see that the graph is no longer a tree.   However, we can see that the graph is now a tree.   If we add an edge, we can see that the graph contains a cycle and is no longer a tree.   "
+  "body": " Definitions and Theorems  Given a graph, a cycle is a circuit with no repeated edges. A tree is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a forest .  Let be a graph. The following are all equivalent:    is a tree.    For each pair of distinct vertices, there exists a unique path between them.     is connected, and if then the graph is disconnected.     contains no cycles, but by adding one edge, you create a cycle.     is connected and .     Let's explore the following graph:   Let's ask Sage if this graph is a tree.   If we remove an edge, we can see that the graph is no longer a tree.   However, we can see that the graph is still a forest.   If we add an edge, we can see that the graph contains a cycle and is no longer a tree.   "
 },
 {
   "id": "definitions-and-theorems-2",
@@ -556,7 +556,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.2",
   "title": "Search Algorithms",
-  "body": " Search Algorithms  The graph is a subgraph of if and .  The subgraph is a spanning subgraph of if .  A spanning tree for the graph is a spanning subgraph of that is a tree.   Breadth-first search algorithm    Choose a vertex of the graph (root), arbitrarily.    Travel all the edges incident with the root vertex.    Give an order to this set of new vertices added.    Consider each of these vertices as a root, in order, and add all the unvisited incident edges that do not produce a cycle.    Repeat the method with the new set of vertices.    Follow the same procedure until all the vertices have been visited.   The output of this algorithm is a spanning tree.   Given a weighted graph, a minimal spanning tree is a spanning tree whose sum of wights is minimal.   Prim's Algorithm : Keep two disjoint sets of vertices. One contains vertices that are in the growwing spanning tree and the other that are not in the growing spanning tree.   Choose a vertex arbitrarily. At this step, and .    Select the cheapest vertex in that is connected to the growing spanning tree and add it into     Follow the same procedure until all the vertices are in    The output of this algorithm is a minimal spanning tree.  Let's explore the following graph:   We can ask Sage for the minimal spanning tree of this graph.   Let's visualize the minimal spanning tree.   We can see that min_spanning_tree uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.   "
+  "body": " Search Algorithms  The graph is a subgraph of if and .  The subgraph is a spanning subgraph of if .  A spanning tree for the graph is a spanning subgraph of that is a tree.  Given a graph, there are several algorithms to calculate a spanning tree. For instance the depth-first search algorithm and the breadth-first search algorithm are two of them.   Breadth-first search algorithm    Choose a vertex of the graph (root), arbitrarily.    Travel all the edges incident with the root vertex.    Give an order to this set of new vertices added.    Consider each of these vertices as a root, in order, and add all the unvisited incident edges that do not produce a cycle.    Repeat the method with the new set of vertices.    Follow the same procedure until all the vertices have been visited.   The output of this algorithm is a spanning tree.  The breadth_first_search() function provides a flexible method for traversing graphs. This function can be employed to explore a graph from a specified starting point (or points) and can be adapted for various applications such as finding the shortest path, generating a spanning tree, or simply exploring the structure of a graph.  Let's consider the following graph:   In this example, the breadth-first search algorithm function is initiated at vertex 0, and it reports the distance of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its distance from the starting vertex. This distance is measured in terms of the number of edges that must be traversed to reach that vertex from the start.  Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A minimal spanning tree is a spanning tree whose sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree including Prim's Algorithm.   Prim's Algorithm : Keep two disjoint sets of vertices. One contains vertices that are in the growing spanning tree and the other that are not in the growing spanning tree.   Choose a vertex arbitrarily. At this step, and .    Select the cheapest vertex in that is connected to the growing spanning tree and add it into     Follow the same procedure until all the vertices are in    The output of this algorithm is a minimal spanning tree.  Let's explore the following graph:   We can ask Sage for the minimal spanning tree of this graph. By running Graph.min_spanning_tree?? We can see that min_spanning_tree() uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.   Let's visualize the minimal spanning tree.   "
 },
 {
   "id": "search-algorithms-2",
@@ -586,27 +586,27 @@ var ptx_lunr_docs = [
   "body": "spanning tree "
 },
 {
-  "id": "search-algorithms-5",
+  "id": "search-algorithms-6",
   "level": "2",
-  "url": "search-algorithms.html#search-algorithms-5",
+  "url": "search-algorithms.html#search-algorithms-6",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Breadth-first search algorithm "
 },
 {
-  "id": "search-algorithms-7",
+  "id": "search-algorithms-11",
   "level": "2",
-  "url": "search-algorithms.html#search-algorithms-7",
+  "url": "search-algorithms.html#search-algorithms-11",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "minimal spanning tree "
 },
 {
-  "id": "search-algorithms-8",
+  "id": "search-algorithms-12",
   "level": "2",
-  "url": "search-algorithms.html#search-algorithms-8",
+  "url": "search-algorithms.html#search-algorithms-12",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

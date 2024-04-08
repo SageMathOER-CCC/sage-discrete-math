@@ -310,7 +310,7 @@ sagecell.makeSagecell({
               ('D', 'B', 'b_6'),
               ('D', 'C', 'b_7')]
 G = Graph(konigsberg, multiedges=True)
-G.plot(edge_labels=True)
+G.show(edge_labels=True)
 </script></pre>
 <div class="para logical" id="euler-and-hamilton-5">
 <div class="para">While exploring this problem, Euler discovered the following:</div>
@@ -323,49 +323,49 @@ G.plot(edge_labels=True)
 <div class="para" id="euler-and-hamilton-6">We can use Sage to determine if a graph is Eulerian.</div>
 <pre id="euler-and-hamilton-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.is_eulerian()
 </script></pre>
-<div class="para" id="euler-and-hamilton-8">We can use <code class="code-inline tex2jax_ignore">path=True</code> to determine if a graph contains an Euler path. Sage will return a tuple that defines the edge that would make the graph Eulerian. This edge may or may not be already present in the graph.</div>
-<pre id="euler-and-hamilton-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-G.plot()
+<div class="para" id="euler-and-hamilton-8">Since this returns <code class="code-inline tex2jax_ignore">false</code>, we know that the graph is not Eulerian. Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.</div>
+<div class="para" id="euler-and-hamilton-9">We can use <code class="code-inline tex2jax_ignore">path=True</code> to determine if a graph contains an Euler path. Sage will return the beginning and the end of the path.</div>
+<pre id="euler-and-hamilton-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+G.show()
 G.is_eulerian(path=True)
 </script></pre>
-<div class="para" id="euler-and-hamilton-10">We can ask Sage to find an Euler circuit in a graph with the <code class="code-inline tex2jax_ignore">eulerian_circuit</code> function.</div>
-<pre id="euler-and-hamilton-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = graphs.CycleGraph(6)
+<div class="para" id="euler-and-hamilton-11">We can ask Sage to find an Euler circuit in a graph with the <code class="code-inline tex2jax_ignore">eulerian_circuit</code> function. Let’s take a look at the following graph.</div>
+<pre id="euler-and-hamilton-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = graphs.CycleGraph(6)
+G.show()
 G.eulerian_circuit()
 </script></pre>
-<div class="para" id="euler-and-hamilton-12">If we are not interested in the edge labels, we can set <code class="code-inline tex2jax_ignore">labels=False</code>. We can also set <code class="code-inline tex2jax_ignore">return_vertices=True</code> to get a list of vertices for the path</div>
-<pre id="euler-and-hamilton-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = graphs.CycleGraph(6)
+<div class="para" id="euler-and-hamilton-13">If we are not interested in the edge labels, we can set <code class="code-inline tex2jax_ignore">labels=False</code>. We can also set <code class="code-inline tex2jax_ignore">return_vertices=True</code> to get a list of vertices for the path</div>
+<pre id="euler-and-hamilton-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = graphs.CycleGraph(6)
 G.eulerian_circuit(labels=False, return_vertices=True)
 </script></pre>
-<div class="para" id="euler-and-hamilton-14">A <dfn class="terminology">Hamilton path</dfn> is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a <dfn class="terminology">Hamilton circuit</dfn>. If a graph contains a Hamilton circuit, we say that the graph is <dfn class="terminology">Hamiltonian</dfn>.</div>
-<div class="para" id="euler-and-hamilton-15">Hamilton created the "Around the World" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.</div>
-<div class="para" id="euler-and-hamilton-16">We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.</div>
-<pre id="euler-and-hamilton-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().show()
+<div class="para" id="euler-and-hamilton-15">A <dfn class="terminology">Hamilton path</dfn> is a path that uses every vertex of a graph exactly once. A Hamilton path that is a circuit is called a <dfn class="terminology">Hamilton circuit</dfn>. If a graph contains a Hamilton circuit, we say that the graph is <dfn class="terminology">Hamiltonian</dfn>.</div>
+<div class="para" id="euler-and-hamilton-16">Hamilton created the "Around the World" puzzle. The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.</div>
+<div class="para" id="euler-and-hamilton-17">We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian. See for yourself if the dodecahedron is Hamiltonian.</div>
+<pre id="euler-and-hamilton-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().show()
 </script></pre>
-<div class="para" id="euler-and-hamilton-18">We can ask Sage to determine if the dodecahedron is Hamiltonian.</div>
-<pre id="euler-and-hamilton-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().is_hamiltonian()
+<div class="para" id="euler-and-hamilton-19">We can ask Sage to determine if the dodecahedron is Hamiltonian.</div>
+<pre id="euler-and-hamilton-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">graphs.DodecahedralGraph().is_hamiltonian()
 </script></pre>
-<div class="para" id="euler-and-hamilton-20">By running <code class="code-inline tex2jax_ignore">Graph.is_hamiltonian??</code> we see that Sage uses the <code class="code-inline tex2jax_ignore">traveling_salesman_problem()</code> function to determine if a graph is Hamiltonian.</div>
-<div class="para" id="euler-and-hamilton-21">The traveling salesperson problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is <dfn class="terminology">NP-hard</dfn>, meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.</div>
-<div class="para" id="euler-and-hamilton-22">Let’s explore the following graph:</div>
-<pre id="euler-and-hamilton-23" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
+<div class="para" id="euler-and-hamilton-21">By running <code class="code-inline tex2jax_ignore">Graph.is_hamiltonian??</code> we see that Sage uses the <code class="code-inline tex2jax_ignore">traveling_salesman_problem()</code> function to determine if a graph is Hamiltonian.</div>
+<div class="para" id="euler-and-hamilton-22">The traveling salesperson problem is a classic optimization problem. Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science. It is <dfn class="terminology">NP-hard</dfn>, meaning that no efficient algorithm is known to solve it. The complexity of the problem increases with the number of nodes. When working with many nodes, the algorithm can take a long time to run.</div>
+<div class="para" id="euler-and-hamilton-23">Let’s explore the following graph:</div>
+<pre id="euler-and-hamilton-24" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
 G.show(edge_labels=True)
 </script></pre>
-<div class="para" id="euler-and-hamilton-24">We can ask Sage if the graph contains a Hamiltonian cycle.</div>
-<pre id="euler-and-hamilton-25" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.hamiltonian_cycle(algorithm='backtrack')
+<div class="para" id="euler-and-hamilton-25">We can ask Sage if the graph contains a Hamiltonian cycle.</div>
+<pre id="euler-and-hamilton-26" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.hamiltonian_cycle(algorithm='backtrack')
 </script></pre>
-<div class="para" id="euler-and-hamilton-26">
-<code class="code-inline tex2jax_ignore">hamiltonian_cycle</code> returns <code class="code-inline tex2jax_ignore">True</code> and lists an example of a Hamiltonian cycle as the list of vertices <code class="code-inline tex2jax_ignore">[1, 2, 3, 4, 5]</code>. This is just one of the many Hamiltonian cycles that exist in the graph. Now lets find the minimum Hamiltonian cycle.</div>
-<pre id="euler-and-hamilton-27" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
-h.plot(edge_labels=True)
+<div class="para" id="euler-and-hamilton-27">The function <code class="code-inline tex2jax_ignore">hamiltonian_cycle</code> returns <code class="code-inline tex2jax_ignore">True</code> and lists an example of a Hamiltonian cycle as the list of vertices <code class="code-inline tex2jax_ignore">[1, 2, 3, 4, 5]</code>. This is just one of the many Hamiltonian cycles that exist in the graph. Now lets find the minimum Hamiltonian cycle.</div>
+<pre id="euler-and-hamilton-28" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
+h.show(edge_labels=True)
 </script></pre>
-<div class="para" id="euler-and-hamilton-28">Now we have the plot of the minimum Hamiltonian cycle. The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city. The minimum Hamiltonian cycle is the solution to the traveling salesman problem. We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.</div>
-<pre id="euler-and-hamilton-29" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sumWeights = sum(h.edge_labels())
+<div class="para" id="euler-and-hamilton-29">Now we have the plot of the minimum Hamiltonian cycle. The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city. The minimum Hamiltonian cycle is the solution to the traveling salesman problem. We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.</div>
+<pre id="euler-and-hamilton-30" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sumWeights = sum(h.edge_labels())
 print(sumWeights)
 </script></pre>
-<div class="para" id="euler-and-hamilton-30">If there is no Hamiltonian cycle, Sage will return <code class="code-inline tex2jax_ignore">False</code>. If we use the <code class="code-inline tex2jax_ignore">backtrack</code> algorithm, Sage will return a list that representing the longest path found.</div>
-<pre id="euler-and-hamilton-31" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
-G.plot()
-
+<div class="para" id="euler-and-hamilton-31">If there is no Hamiltonian cycle, Sage will return <code class="code-inline tex2jax_ignore">False</code>. If we use the <code class="code-inline tex2jax_ignore">backtrack</code> algorithm, Sage will return a list that representing the longest path found.</div>
+<pre id="euler-and-hamilton-32" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
+G.show()
 G.hamiltonian_cycle(algorithm='backtrack')
 </script></pre></section></div>
 <div class="ptx-content-footer">
