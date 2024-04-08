@@ -11,6 +11,9 @@
     <p>
       A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
     </p>
+    <p>
+        Given a graph, there are several algorithms to calculate a spanning tree. For instance the depth-first search algorithm and the breadth-first search algorithm are two of them.
+    </p>
 
     <p>
         <term>Breadth-first search algorithm</term>
@@ -56,10 +59,10 @@
     </sage>
 
     <p>
-        Given a weighted graph, a <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal.
+        Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree including Prim's Algorithm.
     </p>
     <p>
-        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growwing spanning tree and the other <m>(R)</m> that are not in the growing spanning tree.
+        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growing spanning tree and the other <m>(R)</m> that are not in the growing spanning tree.
         <ol>
             <li>
                 <p>
