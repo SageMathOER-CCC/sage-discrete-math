@@ -21,7 +21,7 @@
                     ('D', 'B', 'b_6'),
                     ('D', 'C', 'b_7')]
       G = Graph(konigsberg, multiedges=True)
-      G.plot(edge_labels=True)
+      G.show(edge_labels=True)
 	</input>
 	</sage>
 
@@ -53,26 +53,31 @@
 	</sage>
 
 	<p>
+		Since this returns <c>false</c>, we know that the graph is not Eulerian.
+		Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
+	</p>
+
+	<p>
 		We can use <c>path=True</c> to determine if a graph contains an Euler path.
-		Sage will return a tuple that defines the edge that would make the graph Eulerian.
-		This edge may or may not be already present in
-		the graph.
+		Sage will return the beginning and the end of the path.
 	</p>
 	<sage>
 	<input>
     G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-    G.plot()
+    G.show()
     G.is_eulerian(path=True)
 	</input>
 	</sage>
 
 	<p>
 		We can ask Sage to find an Euler circuit in a graph with the <c>eulerian_circuit</c> function.
+		Let's take a look at the following graph.
 	</p>
 	<sage>
 	<input>
-    G = graphs.CycleGraph(6)
-    G.eulerian_circuit()
+	G = graphs.CycleGraph(6)
+	G.show()
+	G.eulerian_circuit()
 	</input>
 	</sage>
 
@@ -149,14 +154,14 @@
 	</sage>
 
 	<p>
-		<c>hamiltonian_cycle</c> returns <c>True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c>[1, 2, 3, 4, 5]</c>.
+		The function <c>hamiltonian_cycle</c> returns <c>True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c>[1, 2, 3, 4, 5]</c>.
 		This is just one of the many Hamiltonian cycles that exist in the graph.
 		Now lets find the minimum Hamiltonian cycle.
 	</p>
 	<sage>
 	<input>
     h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
-    h.plot(edge_labels=True)
+    h.show(edge_labels=True)
 	</input>
 	</sage>
 
@@ -180,8 +185,7 @@
 	<sage>
 	<input>
     G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
-    G.plot()
-
+    G.show()
     G.hamiltonian_cycle(algorithm='backtrack')
 	</input>
 	</sage>

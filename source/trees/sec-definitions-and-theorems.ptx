@@ -83,7 +83,7 @@
     </input>
   </sage>
   <p>
-    However, we can see that the graph is now a tree.
+    However, we can see that the graph is still a forest.
   </p>
   <sage>
     <input>
