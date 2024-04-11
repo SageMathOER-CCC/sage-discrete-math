@@ -53,7 +53,7 @@
 	</sage>
 
 	<p>
-		Since this returns <c>false</c>, we know that the graph is not Eulerian.
+		Since this returns <c>False</c>, we know that the graph is not Eulerian.
 		Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
 	</p>
 
@@ -70,14 +70,13 @@
 	</sage>
 
 	<p>
-		We can ask Sage to find an Euler circuit in a graph with the <c>eulerian_circuit</c> function.
-		Let's take a look at the following graph.
+		If the graph is Eulerian, we can ask Sage to find an Euler circuit with the <c>eulerian_circuit</c> function. Let's take a look at the following graph.
 	</p>
 	<sage>
 	<input>
-	G = graphs.CycleGraph(6)
-	G.show()
-	G.eulerian_circuit()
+		G = Graph([(1, 2), (2, 3), (2, 3),(3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+		G.show()
+		G.eulerian_circuit()
 	</input>
 	</sage>
 
@@ -128,7 +127,7 @@
 
 	<p>
 		The traveling salesperson problem is a classic optimization problem.
-		Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science.
+		Given a list of cities and the lengths between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science.
 		It is <term>NP-hard</term>, meaning that no efficient algorithm is known to solve it.
 		The complexity of the problem increases with the number of nodes.
 		When working with many nodes, the algorithm can take a long time to run.
@@ -168,7 +167,7 @@
 	<p>
 		Now we have the plot of the minimum Hamiltonian cycle.
 		The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city.
-		The minimum Hamiltonian cycle is the solution to the traveling salesman problem.
+		The minimum Hamiltonian cycle is the solution to the traveling salesperson problem.
 		We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.
 	</p>
 	<sage>
@@ -180,7 +179,7 @@
 
 	<p>
 		If there is no Hamiltonian cycle, Sage will return <c>False</c>.
-		If we use the <c>backtrack</c> algorithm, Sage will return a list that representing the longest path found.
+		If we use the <c>backtrack</c> algorithm, Sage will return a list that represents the longest path found.
 	</p>
 	<sage>
 	<input>
