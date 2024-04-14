@@ -266,7 +266,13 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-plot-options.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Plot Options</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="euler-and-hamilton.html#subsec-Euler" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Euler</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="euler-and-hamilton.html#subsec-Hamilton" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Hamilton</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -300,7 +306,7 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-tables-of-operations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">9.2</span><span class="space"> </span><span class="title">Tables of Operations</span>
 </h2>
-<section class="introduction" id="sec-tables-of-operations-2"><div class="para" id="sec-tables-of-operations-2-1">This section delves into the representation of meet <span class="process-math">\((⊓)\)</span> and join <span class="process-math">\((⊔)\)</span> operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.</div></section><section class="subsection" id="meet-operation-table"><h3 class="heading hide-type">
+<section class="introduction" id="sec-tables-of-operations-2"><div class="para" id="sec-tables-of-operations-2-1">This section delves into the representation of meet <span class="process-math">\((∧)\)</span> and join <span class="process-math">\((∨)\)</span> operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.</div></section><section class="subsection" id="meet-operation-table"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="space"> </span><span class="title">Meet Operation Table</span>
 </h3>
 <div class="para" id="meet-operation-table-2">The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.</div>
@@ -311,7 +317,7 @@ sagecell.makeSagecell({
 P = L.meet_matrix(); L
 show(P)
 </script></pre>
-<div class="para" id="meet-operation-table-5">From the output matrix, we can verify the <span class="process-math">\(a_{ij}\)</span> are the position of the elements in the poset instead of the actual values. Sage does not have a specific function to output the exact values, but we can define our own function for this purpose.</div>
+<div class="para" id="meet-operation-table-5">From the output matrix, we can see that each entry <span class="process-math">\(a_{ij}\)</span> is not the actual value of the meet of the elements <span class="process-math">\(a_{i}\)</span> and <span class="process-math">\(a_{j}\)</span> but just its position in the lattice. Sage does not have a specific function to output the exact meet, but we can define our own function for this purpose.</div>
 <pre id="meet-operation-table-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
@@ -321,9 +327,25 @@ K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
 for i in range(P.nrows()):
     for j in range(P.ncols()):
         K[i][j] = elements[P[i,j]]
-
 for row in K:
     print(row)
+</script></pre>
+<div class="para" id="meet-operation-table-7">We can further improve our function to show the output as a table instead of a matrix.</div>
+<pre id="meet-operation-table-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                  [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                   ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))               
+P = L.meet_matrix()
+elements = L.list()               
+def create_table(elements, P):
+    column_widths = max(len(element) for element in elements) + 2
+    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)                    
+    divider = "-" * len(header)                 
+    table = [header, divider]                
+    for i, row_label in enumerate(elements):
+        row = f"{row_label:>{column_widths}} | " + " ".join(f"{elements[P[i,j]]:>{column_widths}}" for j in range(len(elements)))
+        table.append(row)                 
+    return "\n".join(table)               
+print(create_table(elements, P))
 </script></pre></section><section class="subsection" id="join-operation-table"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.2.2</span><span class="space"> </span><span class="title">Join Operation Table</span>
 </h3>
@@ -348,6 +370,23 @@ for i in range(P.nrows()):
 
 for row in K:
     print(row)
+</script></pre>
+<div class="para" id="join-operation-table-7">We can also output the join table just as shown above for meet.</div>
+<pre id="join-operation-table-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                  [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                   ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))               
+P = L.join_matrix()
+elements = L.list()               
+def create_table(elements, P):
+    column_widths = max(len(element) for element in elements) + 2
+    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)                    
+    divider = "-" * len(header)                 
+    table = [header, divider]                
+    for i, row_label in enumerate(elements):
+        row = f"{row_label:>{column_widths}} | " + " ".join(f"{elements[P[i,j]]:>{column_widths}}" for j in range(len(elements)))
+        table.append(row)                 
+    return "\n".join(table)               
+print(create_table(elements, P))
 </script></pre></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-definition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

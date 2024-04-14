@@ -266,7 +266,13 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-plot-options.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Plot Options</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="paths.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Paths</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="isomorphism.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Isomorphism</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="euler-and-hamilton.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Euler and Hamilton</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="euler-and-hamilton.html#subsec-Euler" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Euler</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="euler-and-hamilton.html#subsec-Hamilton" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Hamilton</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -301,13 +307,13 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Definition</span>
 </h2>
 <div class="para" id="sec-definition-2">A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet).</div>
-<div class="para" id="sec-definition-3">In Sage, a lattice can be represented as a poset using the <code class="code-inline tex2jax_ignore">Poset()</code> function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.</div>
+<div class="para" id="sec-definition-3">In Sage, a lattice can be represented as a poset using the <code class="code-inline tex2jax_ignore">Poset()</code> function. This function takes a tuple as its argument, where the first element is the set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.</div>
 <pre id="sec-definition-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.plot()
 </script></pre>
-<div class="para" id="sec-definition-5">We can also use <code class="code-inline tex2jax_ignore">LatticePoset()</code> function to plot the lattice. This function is more optimized and reduces the cycles when plotting complicated lattices.</div>
+<div class="para" id="sec-definition-5">We can also use <code class="code-inline tex2jax_ignore">LatticePoset()</code> function to plot the lattice. The function <code class="code-inline tex2jax_ignore">Poset()</code> can be used with any poset, even when the poset is not a lattice. The function <code class="code-inline tex2jax_ignore">LatticePoset()</code> will give an error if the poset is not a lattice. The function is also more optimized and reduces the time needed when plotting complicated lattices.</div>
 <pre id="sec-definition-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
