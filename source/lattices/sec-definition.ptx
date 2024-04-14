@@ -4,7 +4,7 @@
                 A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet). 
             </p>
             <p>
-                In Sage, a lattice can be represented as a poset using the <c>Poset()</c> function. This function takes a tuple as its argument, where the first element is a set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.
+                In Sage, a lattice can be represented as a poset using the <c>Poset()</c> function. This function takes a tuple as its argument, where the first element is the set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.
             </p>
             <sage>
                 <input>
@@ -18,7 +18,7 @@
                 </output>
             </sage>
             <p>
-                We can also use <c>LatticePoset()</c> function to plot the lattice. This function is more optimized and reduces the cycles when plotting complicated lattices.
+                We can also use <c>LatticePoset()</c> function to plot the lattice. The function <c>Poset()</c> can be used with any poset, even when the poset is not a lattice. The function <c>LatticePoset()</c> will give an error if the poset is not a lattice. The function is also more optimized and reduces the time needed when plotting complicated lattices.
             </p>
             <sage>
                 <input>
