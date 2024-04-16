@@ -28,5 +28,35 @@
       </shortlicense>
     </copyright>
   </colophon>
+
+  <preface xml:id="authors">
+    <title>Authors</title>
+
+    <contributor xml:id="za">
+      <personname>Zunaid Ahmed</personname>
+      <department>Computer Engineering</department>
+      <institution>Truman College</institution>
+      <email>zunaid.ahmed@hotmail.com</email>
+    </contributor>
+    <contributor xml:id="hc">
+      <personname>Hellen Colman</personname>
+      <department>Math Department</department>
+      <institution>Wright College</institution>
+      <email>hcolman@ccc.edu</email>
+    </contributor>
+
+    <contributor xml:id="sl">
+      <personname>Samuel Lubliner</personname>
+      <department>Computer Science</department>
+      <institution>Wright College</institution>
+      <email>xxxxxx</email>
+    </contributor>
+
+  </preface>
+    
+    
+
+
+
 </frontmatter>
 
