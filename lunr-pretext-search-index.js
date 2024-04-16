@@ -10,6 +10,15 @@ var ptx_lunr_docs = [
   "body": "  GitHub Repository   copyright  "
 },
 {
+  "id": "authors",
+  "level": "1",
+  "url": "authors.html",
+  "type": "Preface",
+  "number": "",
+  "title": "Authors",
+  "body": " Authors   Zunaid Ahmed  Computer Engineering  Truman College  zunaid.ahmed@hotmail.com    Hellen Colman  Math Department  Wright College  hcolman@ccc.edu    Samuel Lubliner  Computer Science  Wright College  xxxxxx   "
+},
+{
   "id": "about-sage",
   "level": "1",
   "url": "about-sage.html",
