@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Authors",
-  "body": " Authors   Zunaid Ahmed  Computer Engineering  Truman College  zunaid.ahmed@hotmail.com    Hellen Colman  Math Department  Wright College  hcolman@ccc.edu    Samuel Lubliner  Computer Science  Wright College  xxxxxx   "
+  "body": " Authors   Zunaid Ahmed  Computer Engineering  Truman College  zunaid.ahmed@hotmail.com    Hellen Colman  Math Department  Wright College  hcolman@ccc.edu    Samuel Lubliner  Computer Science  Wright College  sage.oer@gmail.com   "
 },
 {
   "id": "about-sage",
