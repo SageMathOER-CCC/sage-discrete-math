@@ -1,5 +1,6 @@
 <section xml:id="sec-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
-            <title>Definition</title>
+    <subsection xml:id="definition">        
+    <title>Definition</title>
             <p>
                 A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet). 
             </p>
@@ -44,8 +45,10 @@
                 <output>
                     # This will check if the poset is a lattice.
                 </output>
-            </sage>
-    
+            </sage>                
+          </subsection>    
+
+          
         <subsection xml:id="join">
             <title>Join</title>
             <p>
