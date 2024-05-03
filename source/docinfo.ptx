@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <!-- The docinfo block is the analogue to the latex preamble -->
 <!-- This is where you can define macros and other book-wide -->
 <!-- settings. -->
@@ -12,7 +13,7 @@
 
   <!-- The next three lines are likely for mature projects only: -->
 
-  <!-- <brandlogo url="" source="images/cover.png"/> -->
+  <brandlogo url="" source="images/cover.png"/>
   <!-- <covers front="images/front.pdf" back="images/back.pdf"/> -->
   <!-- <document-id>unique-book-id</document-id> -->
 
@@ -30,6 +31,10 @@
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
-
+  <html>
+    <!-- Expects favicon/favicon-32x32.png, and favicon/favicon-16x16.png,       -->
+    <!-- possibly in external images directory, when specified in publisher file -->
+    <favicon/>
+  </html>
 
 </docinfo>
