@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Boolean Algebra</title>
+
+  <introduction>
+    <p> Boolean algebra introduction paragraph here </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-boolean-definition.ptx" />
+
+  
+</chapter>
