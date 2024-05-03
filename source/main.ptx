@@ -21,6 +21,7 @@
     <xi:include href="./graph-theory/ch-graph-theory.ptx" />
     <xi:include href="./trees/ch-trees.ptx" />
     <xi:include href="./lattices/ch-lattices.ptx" /> 
+    <xi:include href="./boolean-algebra/ch-boolean-algebra.ptx" />
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
 
