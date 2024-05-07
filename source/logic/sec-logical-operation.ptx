@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Logical Operators</title>
     <introduction>
@@ -7,39 +5,45 @@
             In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
         </p>
         <tabular>
-                    <row>
-                        <cell>Operator</cell>
-                        <cell>Symbol</cell>
-                        <cell>Mathematical Notation</cell>
-                    </row>
-                    <row>
-                        <cell>AND</cell>
-                        <cell>&amp;</cell>
-                        <cell><m>\land</m></cell>
-                    </row>
-                    <row>
-                        <cell>OR</cell>
-                        <cell>|</cell>
-                        <cell><m>\lor</m></cell>
-                    </row>
-                    <row>
-                        <cell>NOT</cell>
-                        <cell>~</cell>
-                        <cell><m>\lnot</m></cell>
-                    </row>
-                    <row>
-                        <cell>Conditional</cell>
-                        <cell>-&gt;</cell>
-                        <cell><m>\rightarrow</m></cell>
-                    </row>
-                    <row>
-                        <cell>Biconditional</cell>
-                        <cell>&lt;-&gt;</cell>
-                        <cell><m>\leftrightarrow</m></cell>
-                    </row>
+            <row>
+                <cell>Operator</cell>
+                <cell>Symbol</cell>
+                <cell>Mathematical Notation</cell>
+            </row>
+            <row>
+                <cell>AND</cell>
+                <cell>&amp;</cell>
+                <cell><m>\land</m></cell>
+            </row>
+            <row>
+                <cell>OR</cell>
+                <cell>|</cell>
+                <cell><m>\lor</m></cell>
+            </row>
+            <row>
+                <cell>NOT</cell>
+                <cell>~</cell>
+                <cell><m>\lnot</m></cell>
+            </row>
+            <row>
+                <cell>Conditional</cell>
+                <cell>-&gt;</cell>
+                <cell><m>\rightarrow</m></cell>
+            </row>
+            <row>
+                <cell>Biconditional</cell>
+                <cell>&lt;-&gt;</cell>
+                <cell><m>\leftrightarrow</m></cell>
+            </row>
         </tabular>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
+            </p>
+        </aside>
+        
     </introduction>
-
     <!-- Logical Operations in Sage -->
     <subsection>
         <title>Boolean Formula</title>
@@ -47,18 +51,14 @@
         <p>
             Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c>show</c> function to display the mathematical notations.
         </p>
-        <aside>
-            <title>Tips!</title>
-            <p>
-                Logical operations can model decision-making processes in programming, such as determining whether a set of conditions are met before executing a particular block of code.
-            </p>
-        </aside>
         <sage>
             <input>
                 A = propcalc.formula('(p &amp; q) | (~p)')
                 show(A)
             </input>
-            <output></output>
+            <output>
+                # Displays the Boolean formula (p AND q) OR (NOT p) in mathematical notation.
+            </output>
         </sage>
     </subsection>
 
