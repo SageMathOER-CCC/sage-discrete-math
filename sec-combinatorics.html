@@ -294,7 +294,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title"></span></a></div>
+<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#definition" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Definition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Join</span></a></div></li>
@@ -323,14 +323,14 @@ sagecell.makeSagecell({
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Factorial Function</span>
 </h3>
 <div class="para" id="sec-combinatorics-2-2">The factorial of a non-negative integer <span class="process-math">\(n\text{,}\)</span> denoted by <span class="process-math">\(n!\text{,}\)</span> is the product of all positive integers less than or equal to <span class="process-math">\(n\text{.}\)</span> In Sage, the <code class="code-inline tex2jax_ignore">factorial()</code> function computes this value, which is essential in permutations and combinations calculations.</div>
-<aside class="aside aside-like" id="sec-combinatorics-2-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-combinatorics-2-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-combinatorics-2-3-2">Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.</div></aside><div class="para" id="sec-combinatorics-2-4">For example, to compute the factorial of 5:</div>
 <pre id="sec-combinatorics-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">factorial(5)
 </script></pre></section><section class="subsection" id="sec-combinatorics-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">Combinations</span>
 </h3>
 <div class="para" id="sec-combinatorics-3-2">The combination <span class="process-math">\((n, k)\)</span> is an unordered selection of <span class="process-math">\(k\)</span> objects from a set of <span class="process-math">\(n\)</span> objects.</div>
-<aside class="aside aside-like" id="sec-combinatorics-3-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-combinatorics-3-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-combinatorics-3-3-2">Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.</div></aside><div class="para" id="sec-combinatorics-3-4">For instance, to calculate the number of ways to choose 3 elements from a set of 5:</div>
 <pre id="sec-combinatorics-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Combinations(5, 3).cardinality()
 </script></pre>
@@ -340,7 +340,7 @@ sagecell.makeSagecell({
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="space"> </span><span class="title">Permutations</span>
 </h3>
 <div class="para" id="sec-combinatorics-4-2">A permutation <span class="process-math">\((n, k)\)</span> is an ordered selection of <span class="process-math">\(k\)</span> objects from a set of <span class="process-math">\(n\)</span> objects.</div>
-<aside class="aside aside-like" id="sec-combinatorics-4-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-combinatorics-4-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-combinatorics-4-3-2">Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.</div></aside><div class="para" id="sec-combinatorics-4-4">For instance, to calculate the number of ways to choose 3 elements from a set of 5 when the order matters, we use the <code class="code-inline tex2jax_ignore">Permutations()</code> and the <code class="code-inline tex2jax_ignore">cardinality()</code> functions.</div>
 <pre id="sec-combinatorics-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Permutations(5, 3).cardinality()
 </script></pre>
