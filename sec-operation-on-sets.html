@@ -294,7 +294,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Lattices</span></a></div>
+<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title"></span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#definition" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Definition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Join</span></a></div></li>
@@ -325,7 +325,7 @@ sagecell.makeSagecell({
 <div class="para" id="sec-operation-on-sets-2-2">There are two distinct methods available in Sage for calculating unions.</div>
 <div class="para" id="sec-operation-on-sets-2-3">Suppose <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and <span class="process-math">\(B = \{3, 4, 5, 6\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">union()</code> function to calculate <span class="process-math">\(A ∪ B\text{.}\)</span>
 </div>
-<aside class="aside aside-like" id="sec-operation-on-sets-2-4"><h4 class="heading"><span class="title">Notes.</span></h4>
+<aside class="aside aside-like" id="sec-operation-on-sets-2-4"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-2-4-2">This operation can be visualized in real-world scenarios such as merging two distinct music playlists into one. In this case, any song that appears in both playlists will only be listed once in the merged playlist.</div></aside><pre id="sec-operation-on-sets-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 B = Set([3, 4, 5, 6]) 
 A.union(B)
@@ -340,7 +340,7 @@ A | B
 <div class="para" id="sec-operation-on-sets-3-2">Similar to union, there are two methods of using the intersection function in Sage.</div>
 <div class="para" id="sec-operation-on-sets-3-3">Suppose <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and <span class="process-math">\(B = \{3, 4, 5, 6\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">intersection()</code> function to calculate <span class="process-math">\(A ∩ B\text{.}\)</span>
 </div>
-<aside class="aside aside-like" id="sec-operation-on-sets-3-4"><h4 class="heading"><span class="title">Notes.</span></h4>
+<aside class="aside aside-like" id="sec-operation-on-sets-3-4"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-3-4-2">A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.</div></aside><pre id="sec-operation-on-sets-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 B = Set([3, 4, 5, 6])
 A.intersection(B)
@@ -354,7 +354,7 @@ A & B
 </h3>
 <div class="para" id="sec-operation-on-sets-4-2">We have two methods to solve for difference as well.</div>
 <div class="para" id="sec-operation-on-sets-4-3">Suppose <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and <span class="process-math">\(B = \{3, 4, 5, 6\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">difference()</code> function to calculate the difference between 2 sets.</div>
-<aside class="aside aside-like" id="sec-operation-on-sets-4-4"><h4 class="heading"><span class="title">Notes.</span></h4>
+<aside class="aside aside-like" id="sec-operation-on-sets-4-4"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-4-4-2">In a real-life context, this can be seen as identifying items on a restaurant menu (set A) that you have not yet tried (set B), with A - B representing the new dishes to explore.</div></aside><pre id="sec-operation-on-sets-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 B = Set([3, 4, 5, 6])
 A.difference(B)
@@ -384,7 +384,7 @@ A | B | C
 </h3>
 <div class="para" id="sec-operation-on-sets-6-2">Let <span class="process-math">\(U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}\)</span> be the universal set. Given the set <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">difference()</code> function to find the complement of <span class="process-math">\(A\text{.}\)</span>
 </div>
-<aside class="aside aside-like" id="sec-operation-on-sets-6-3"><h4 class="heading"><span class="title">Notes.</span></h4>
+<aside class="aside aside-like" id="sec-operation-on-sets-6-3"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-6-3-2">This is analogous to having a list of all possible ice cream flavors (U) and identifying those flavors you have yet to try (A’).</div></aside><pre id="sec-operation-on-sets-6-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">U = Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 A = Set([1, 2, 3, 4, 5])
 U.difference(A)
@@ -398,7 +398,7 @@ U - A
 </h3>
 <div class="para" id="sec-operation-on-sets-7-2">Suppose <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and <span class="process-math">\(D = \{x, y\}\text{.}\)</span> We can use the <code class="code-inline tex2jax_ignore">cartesian_product()</code> and <code class="code-inline tex2jax_ignore">Set()</code> functions to display the Cartesian product <span class="process-math">\(A × D\text{.}\)</span>
 </div>
-<aside class="aside aside-like" id="sec-operation-on-sets-7-3"><h4 class="heading"><span class="title">Notes.</span></h4>
+<aside class="aside aside-like" id="sec-operation-on-sets-7-3"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-7-3-2">This concept can be applied in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.</div></aside><pre id="sec-operation-on-sets-7-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 D = Set(['x', 'y'])
 Set(cartesian_product([A, D]))
@@ -411,7 +411,7 @@ Set(A.cartesian_product(D))
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="space"> </span><span class="title">Power Set of Sets</span>
 </h3>
 <div class="para" id="sec-operation-on-sets-8-2">The power set of a set <span class="process-math">\(A\)</span> is the set of all subsets of <span class="process-math">\(A\text{,}\)</span> including the empty set and <span class="process-math">\(A\)</span> itself. This Sage code defines a set <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\)</span> and uses the <code class="code-inline tex2jax_ignore">powerset()</code> function to generate all subsets of <span class="process-math">\(A\text{.}\)</span> The <code class="code-inline tex2jax_ignore">list()</code> function is then used to convert the power set iterator into a list.</div>
-<aside class="aside aside-like" id="sec-operation-on-sets-8-3"><h4 class="heading"><span class="title">Notes.</span></h4>
+<aside class="aside aside-like" id="sec-operation-on-sets-8-3"><h4 class="heading"><span class="title">Tips!</span></h4>
 <div class="para" id="sec-operation-on-sets-8-3-2">Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.</div></aside><pre id="sec-operation-on-sets-8-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 list(powerset(A))
 </script></pre></section></section></div>
