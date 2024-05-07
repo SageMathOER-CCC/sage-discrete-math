@@ -6,7 +6,7 @@
       To find the cardinality of a set, we use the <c>cardinality()</c> function.
     </p>
     <aside>
-      <title>Tips!</title>
+      <title>Notes</title>
       <p>
         In social networks like Facebook or Twitter, cardinality can represent the number of friends or followers a user has. Understanding the cardinality of social connections can help in personalization, targeted advertising, and studying social influence.
       </p>
