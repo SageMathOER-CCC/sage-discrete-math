@@ -4,7 +4,7 @@
 	<title>Creating Sets</title>
 
 	<subsection xml:id="subsec-Ways-to-create-a-set">
-		<title>Sage Math Set</title>
+		<title>Set Definitions</title>
 		<p>
 			To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c>list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c>Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
 		</p>
