@@ -10,7 +10,7 @@
             The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c> function computes this value, which is essential in permutations and combinations calculations.
         </p>
         <aside>
-            <title>Tips!</title>
+            <title>Notes</title>
             <p>
                 Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.
             </p>
@@ -33,7 +33,7 @@
             The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set of <m>n</m> objects.
         </p>
         <aside>
-            <title>Tips!</title>
+            <title>Notes</title>
             <p>
                 Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.
             </p>
@@ -65,7 +65,7 @@
             A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>n</m> objects.
         </p>
         <aside>
-            <title>Tips!</title>
+            <title>Notes</title>
             <p>
                 Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.
             </p>
