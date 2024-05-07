@@ -32,6 +32,7 @@
   <preface xml:id="authors">
     <title>Authors</title>
 
+    <contributors>
     <contributor xml:id="za">
       <personname>Zunaid Ahmed</personname>
       <department>Computer Engineering</department>
@@ -51,6 +52,7 @@
       <institution>Wright College</institution>
       <email>sage.oer@gmail.com</email>
     </contributor>
+  </contributors>
 
   </preface>
     
