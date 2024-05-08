@@ -5,6 +5,12 @@
     <p>
         A digraph, or directed graph, is a visual representation of a relation <m>R</m> on the set <m>A</m>. Every element in set <m>A</m> is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represents the pair <m>(a,b)</m> on the relation <m>R</m>.
     </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+            Digraphs are essential in the modeling of computer networks where nodes represent computers or routers and directed edges represent the direction of data flow. This aids in understanding and optimizing network traffic and routing protocols.
+        </p>
+    </aside>
     <sage>
         <input>
             # Define the set A
@@ -19,6 +25,12 @@
     <p>
         We can add a title to the digraph with the <c>name</c> parameter.
     </p>
+    <aside>
+        <title>Real-world Application: Social Network Analysis</title>
+        <p>
+            In social network analysis, digraphs are used to represent relationships where direction matters, such as Twitter followers or citations in academic papers. This helps in identifying influential users or key research papers.
+        </p>
+    </aside>
     <sage>
         <input>
             DiGraph(R, loops=true, name="Look at my digraph")
@@ -37,7 +49,12 @@
             DiGraph(R)
         </input>
     </sage>
-
+    <aside>
+        <title>Real-world Application: Systems Biology</title>
+        <p>
+            Directed graphs are crucial in systems biology to model regulatory networks where nodes represent genes or proteins, and edges represent regulatory influences, helping to decode complex biological systems and interactions.
+        </p>
+    </aside>
     <p>
         We can also define the digraph using pair notion for relations.
     </p>
