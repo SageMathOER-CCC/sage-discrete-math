@@ -4,7 +4,9 @@
   <title>Lattices</title>
 
   <introduction>
-    <p> Lattice introduction paragraph here </p>
+    <p>
+      Building on the partial order sets introduced earlier, this chapter explains how to ask Sage to decide whether a given poset is a lattice. Then we show how to calculate the meet and join tables using build-in functions in Sage as well as customized ones.
+    </p>
   </introduction>
 
   <!-- include sections -->
