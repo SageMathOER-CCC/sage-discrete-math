@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -173,7 +173,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="creating-sets.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Creating Sets</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Sage Math Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Set Definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-set-builder-notation" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Set Builder Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-subsets" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Subsets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#creating-sets-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Set Membership Check</span></a></div></li>
@@ -294,7 +294,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title"></span></a></div>
+<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#definition" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Definition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Join</span></a></div></li>
@@ -330,30 +330,31 @@ G.all_paths(1, 4)
 <pre id="paths-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [3], 3: [4]})
 G.shortest_path(1, 4)
 </script></pre>
-<div class="para" id="paths-8">A graph is said to be connected if there is a path between any two vertices in the graph.</div>
-<div class="para" id="paths-9">To determine if a graph is connected, we can use the <code class="code-inline tex2jax_ignore">is_connected()</code> function:</div>
-<pre id="paths-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [3], 3: [4]})
+<aside class="aside aside-like" id="paths-8"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="paths-8-2">Pathfinding in graphs is a key algorithm in logistics to determine the most efficient route between locations. It’s used in GPS navigation systems to find the quickest route for vehicles, and in network design to optimize data flow between servers, enhancing the efficiency of network infrastructures.</div></aside><div class="para" id="paths-9">A graph is said to be connected if there is a path between any two vertices in the graph.</div>
+<div class="para" id="paths-10">To determine if a graph is connected, we can use the <code class="code-inline tex2jax_ignore">is_connected()</code> function:</div>
+<pre id="paths-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [3], 3: [4]})
 G.is_connected()
 </script></pre>
-<div class="para" id="paths-11">A connected component of a graph <span class="process-math">\(G \)</span> is a maximal connected subgraph of <span class="process-math">\(G \text{.}\)</span> If the graph <span class="process-math">\(G \)</span> is connected, then it has only one connected component.</div>
-<div class="para" id="paths-12">For example, the following graph is not connected:</div>
-<pre id="paths-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 5: [6]})
+<div class="para" id="paths-12">A connected component of a graph <span class="process-math">\(G \)</span> is a maximal connected subgraph of <span class="process-math">\(G \text{.}\)</span> If the graph <span class="process-math">\(G \)</span> is connected, then it has only one connected component.</div>
+<div class="para" id="paths-13">For example, the following graph is not connected:</div>
+<pre id="paths-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 5: [6]})
 G.is_connected()
 </script></pre>
-<div class="para" id="paths-14">To identify all connected components of a graph, the <code class="code-inline tex2jax_ignore">connected_components()</code> function can be utilized:</div>
-<pre id="paths-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 5: [6]})
+<div class="para" id="paths-15">To identify all connected components of a graph, the <code class="code-inline tex2jax_ignore">connected_components()</code> function can be utilized:</div>
+<pre id="paths-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 5: [6]})
 G.connected_components()
 </script></pre>
-<div class="para" id="paths-16">We can visualize the graph as a disjoint union of its connected components, by plotting it.</div>
-<pre id="paths-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 5: [6, 7], 6: [7]})
+<div class="para" id="paths-17">We can visualize the graph as a disjoint union of its connected components, by plotting it.</div>
+<pre id="paths-18" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 5: [6, 7], 6: [7]})
 G.show()
 </script></pre>
-<div class="para" id="paths-18">The diameter of a graph is the length of the longest shortest path between any two vertices.</div>
-<pre id="paths-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [3, 4], 3: [4]})
+<div class="para" id="paths-19">The diameter of a graph is the length of the longest shortest path between any two vertices.</div>
+<pre id="paths-20" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [3, 4], 3: [4]})
 G.diameter()
 </script></pre>
-<div class="para" id="paths-20">A graph is bipartite if its set of vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:</div>
-<pre id="paths-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 3: [4]})
+<div class="para" id="paths-21">A graph is bipartite if its set of vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:</div>
+<pre id="paths-22" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = Graph({1: [2, 3], 2: [4], 3: [4]})
 G.is_bipartite()
 </script></pre></section></div>
 <div class="ptx-content-footer">

@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -173,7 +173,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="creating-sets.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Creating Sets</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Sage Math Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Set Definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-set-builder-notation" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Set Builder Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-subsets" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Subsets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#creating-sets-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Set Membership Check</span></a></div></li>
@@ -294,7 +294,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title"></span></a></div>
+<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#definition" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Definition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Join</span></a></div></li>
@@ -319,14 +319,14 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-functions"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">6.1</span><span class="space"> </span><span class="title">Functions</span>
 </h2>
-<section class="introduction" id="sec-functions-2"><div class="para" id="sec-functions-2-1">A function from a set <span class="process-math">\(A\)</span> into a set <span class="process-math">\(B\)</span> is a relation from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\)</span> such that each element of <span class="process-math">\(A\)</span> is related to exactly one element of the set <span class="process-math">\(B\text{.}\)</span> The set <span class="process-math">\(A\)</span> is called the domain of the function, and the set <span class="process-math">\(B\)</span> is called the co-domain. Functions are fundamental in both mathematics and computer science for describing mathematical relationships and implementing computational logic.</div> <aside class="aside aside-like" id="sec-functions-2-2"><h3 class="heading"><span class="title">Tips!</span></h3>
+<section class="introduction" id="sec-functions-2"><div class="para" id="sec-functions-2-1">A function from a set <span class="process-math">\(A\)</span> into a set <span class="process-math">\(B\)</span> is a relation from <span class="process-math">\(A\)</span> into <span class="process-math">\(B\)</span> such that each element of <span class="process-math">\(A\)</span> is related to exactly one element of the set <span class="process-math">\(B\text{.}\)</span> The set <span class="process-math">\(A\)</span> is called the domain of the function, and the set <span class="process-math">\(B\)</span> is called the co-domain. Functions are fundamental in both mathematics and computer science for describing mathematical relationships and implementing computational logic.</div> <aside class="aside aside-like" id="sec-functions-2-2"><h3 class="heading"><span class="title">Notes.</span></h3>
 <div class="para" id="sec-functions-2-2-2">Defining functions in Sage is not only useful for mathematical calculations but also for creating complex algorithms, modeling data, and simulating real-world scenarios in various fields of science and engineering.</div></aside> <div class="para" id="sec-functions-2-3">In Sage, functions can be defined using direct definition.</div> <div class="para" id="sec-functions-2-4">For example, defining a function to calculate the cube of a number:</div> <pre id="sec-functions-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = x^3
 show(f)
 </script></pre></section><section class="subsection" id="sec-functions-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="space"> </span><span class="title">Graphical Representations</span>
 </h3>
 <div class="para" id="sec-functions-3-2">Sage provides powerful tools for visualizing functions, enabling you to explore the graphical representations of mathematical relationships. Graphs can be plotted directly from function definitions, offering insights into function behavior, such as continuity, limits, and extrema.</div>
-<aside class="aside aside-like" id="sec-functions-3-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-functions-3-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-functions-3-3-2">Utilizing graphical representations of functions can greatly aid in understanding complex concepts in calculus and analysis, such as differentiation and integration, by providing a visual context.</div></aside><div class="para" id="sec-functions-3-4">For example, to plot the function <span class="process-math">\(f(x) = x^3\)</span> over the interval <span class="process-math">\([-2, 2]\text{:}\)</span>
 </div>
 <pre id="sec-functions-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f(x) = x^3

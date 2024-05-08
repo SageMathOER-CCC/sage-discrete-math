@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -173,7 +173,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="creating-sets.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Creating Sets</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Sage Math Set</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-Ways-to-create-a-set" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Set Definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-set-builder-notation" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Set Builder Notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#subsec-subsets" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Subsets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="creating-sets.html#creating-sets-5" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Set Membership Check</span></a></div></li>
@@ -294,7 +294,7 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="ch-lattices.html" class="internal"><span class="codenumber">9</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title"></span></a></div>
+<div class="toc-title-box"><a href="sec-definition.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Lattices</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#definition" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Definition</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-definition.html#join" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Join</span></a></div></li>
@@ -320,7 +320,7 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Creating Sets</span>
 </h2>
 <section class="subsection" id="subsec-Ways-to-create-a-set"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Sage Math Set</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Set Definitions</span>
 </h3>
 <div class="para" id="subsec-Ways-to-create-a-set-2">To construct a set, encase the elements within square brackets <code class="code-inline tex2jax_ignore">[]</code>. Then, pass this <code class="code-inline tex2jax_ignore">list</code> as an argument to the <code class="code-inline tex2jax_ignore">Set()</code> function. It’s important to note that the <code class="code-inline tex2jax_ignore">S</code> in <code class="code-inline tex2jax_ignore">Set()</code> should be uppercase to define a Sage set. In a set, each element is unique.</div>
 <pre id="subsec-Ways-to-create-a-set-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([5, 1, 2, 3, 4, 5, 2, 1])
@@ -356,7 +356,7 @@ Set(A)
 <div class="para" id="creating-sets-5-2">Sage allows you to easily check whether a certain element belongs to a set. You can use the <code class="code-inline tex2jax_ignore">in</code> operator to check membership, which returns <code class="code-inline tex2jax_ignore">True</code> if the element is in the set and <code class="code-inline tex2jax_ignore">False</code> otherwise.</div>
 <div class="para" id="creating-sets-5-3">Let’s consider <span class="process-math">\(A = \{1, 2, 3, 4, 5\}\text{.}\)</span> We can check if the number 3 is in set <span class="process-math">\(A\text{:}\)</span>
 </div>
-<aside class="aside aside-like" id="creating-sets-5-4"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="creating-sets-5-4"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="creating-sets-5-4-2">For organizations such as clubs, gyms, or online subscription services, set membership checks can be used to validate if a user is a member or subscriber. This can help control access to facilities or content.</div></aside><pre id="creating-sets-5-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5])
 3 in A
 </script></pre>
