@@ -10,7 +10,7 @@
         By comparing the truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.
     </p>
     <aside>
-        <title>Tips!</title>
+        <title>Notes</title>
         <p>
             This approach is invaluable in simplifying logical expressions in computer algorithms and understanding proofs in mathematical logic.
         </p>
@@ -34,7 +34,7 @@
         A tautology is a logical statement that is always true.  The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
     </p>
     <aside>
-        <title>Tips!</title>
+        <title>Notes</title>
         <p>
             Understanding tautologies is essential in computer science, particularly in optimizing algorithms and validating logical propositions in software verification. It's also fundamental in mathematical proof strategies, such as proof by contradiction.
         </p>
@@ -55,7 +55,7 @@
         In contrast to tautologies, contradictions are statements that are always false.
     </p>
     <aside>
-        <title>Tips!</title>
+        <title>Notes</title>
         <p>
             Analyzing the relationship between tautologies and contradictions can aid in the development of critical thinking skills, important for debugging in programming, constructing mathematical proofs, and designing logical circuits.
         </p>

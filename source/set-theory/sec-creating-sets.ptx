@@ -4,7 +4,7 @@
 	<title>Creating Sets</title>
 
 	<subsection xml:id="subsec-Ways-to-create-a-set">
-		<title>Sage Math Set</title>
+		<title>Set Definitions</title>
 		<p>
 			To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c>list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c>Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
 		</p>
@@ -90,7 +90,7 @@
 		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set <m>A</m>:
 	   </p>
 	   <aside>
-		   <title>Tips!</title>
+		   <title>Notes</title>
 		   <p>
 			   For organizations such as clubs, gyms, or online subscription services, set membership checks can be used to validate if a user is a member or subscriber. This can help control access to facilities or content.
 		   </p>

@@ -4,11 +4,14 @@
   <title>Boolean Algebra</title>
 
   <introduction>
-    <p> Boolean algebra introduction paragraph here </p>
+    <p>
+      This chapter completes the preceding one by explaining how to ask Sage to decide whether a given lattice is a Boolean algebra. We also illustrate basic operations with Boolean functions.
+    </p>
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-boolean-definition.ptx" />
+  <xi:include href="sec-boolean-algebra.ptx" />
+  <xi:include href="sec-boolean-functions.ptx" />
 
   
 </chapter>

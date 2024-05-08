@@ -5,7 +5,7 @@
 
   <introduction>
     <p>
-      Now that we've studied sets, its time to investigate the interrelationships between the elements of a set.
+      In this chapter, we'll explore the relationships between elements in sets, building upon the concept of "Cartesian product" introduced earlier. We'll begin by learning how to visualize relations using Sage. Then, we'll introduce some new functions that can help us determine whether these relations are equivalence or partial order relations.
     </p>
   </introduction>
 

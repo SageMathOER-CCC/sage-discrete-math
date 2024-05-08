@@ -28,6 +28,12 @@
             # A graphical representation of the graph with vertices A, B, C, D, E forming a pentagon and additional diagonals A-D and C-E.
         </output>
     </sage>
+    <aside>
+        <title>Notes</title>
+        <p>
+          Graph theory is pivotal in areas such as network routing and social networking. For example, in telecommunications, graphs are used to model and optimize routing of communications like telephone traffic or internet data packets through a network of nodes and links, ensuring efficient and fault-tolerant network design.
+        </p>
+      </aside>
     <p>
         Another way would be specifying the edges only, where each edge is defined by a pair of vertices:
     </p>

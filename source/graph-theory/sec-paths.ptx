@@ -30,6 +30,12 @@
           # Retrieves the shortest path from vertex 1 to vertex 4, if it exists.
       </output>
   </sage>
+  <aside>
+    <title>Notes</title>
+    <p>
+      Pathfinding in graphs is a key algorithm in logistics to determine the most efficient route between locations. It's used in GPS navigation systems to find the quickest route for vehicles, and in network design to optimize data flow between servers, enhancing the efficiency of network infrastructures.
+    </p>
+  </aside>
   <p>
     A graph is said to be connected if there is a path between any two vertices in the graph.
   </p>
@@ -46,10 +52,9 @@
       </output>
   </sage>
   <p>
-    A connected component of a graph <m>G </m> is a maximal
-connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it has only one connected component.
-</p>
-<p>
+    A connected component of a graph <m>G </m> is a maximal connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it has only one connected component.
+  </p>
+  <p>
     For example, the following graph is not connected:
   </p>
   <sage>
@@ -61,7 +66,7 @@ connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it ha
           # Checks if the graph is connected, returning a boolean value.
       </output>
   </sage>
-<p>
+  <p>
     To identify all connected components of a graph, the <c>connected_components()</c> function can be utilized:
   </p>
   <sage>
@@ -83,7 +88,7 @@ connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it ha
     </input>
     <output>
     </output>
-</sage>
+  </sage>
   <p>
     The diameter of a graph is the length of the longest shortest path between any two vertices.
   </p>

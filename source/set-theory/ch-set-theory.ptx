@@ -4,7 +4,9 @@
   <title>Set Theory</title>
 
   <introduction>
-    <p> Set theory is a fundamental branch of mathematical logic that deals with the properties and relations of sets, which are collections of objects. Developed in the late 19th century by Georg Cantor, set theory provides the foundational framework for nearly all of mathematics. It introduces the concept of infinite sets, explores the sizes of these sets, and examines operations between them. Essential to understanding mathematical structures, set theory is not only pivotal in pure mathematics but also has applications in computer science, philosophy, and linguistics. This introduction covers the basic principles and operations of set theory, providing a solid foundation for further mathematical exploration. </p>
+    <p>
+      This chapter presents the study of set theory with Sage, starting with a description of the <c>Set</c> function and its variations, then how to use it to calculate the basic set operations.
+    </p>
   </introduction>
 
   <!-- include sections -->

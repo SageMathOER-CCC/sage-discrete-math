@@ -11,6 +11,12 @@
   <p>
     Here we have a function that takes a name as an argument and returns a greeting:
   </p>
+  <aside>
+    <title>Notes</title>
+    <p>
+      For an extra challenge, you can implement our <c>greetings</c> function more elegantly with string formatting.
+    </p>
+  </aside>
   <sage>
     <input>
       def greetings(name):
@@ -23,7 +29,9 @@
   <sage>
     <input>
       # Replace 'World' with your name
-      greetings('World')
+      your_name = 'World'
+      
+      greetings(your_name)
     </input>
   </sage>
   <p>
@@ -45,7 +53,8 @@
   </p>
   <sage>
     <input>
-      greetings('')
+      no_name = ''
+      greetings(no_name)
     </input>
   </sage>
   <sage>
@@ -60,9 +69,7 @@
     <input>
       def greetings(name):
           """
-          Generate a greeting message for a given name.
-
-          This function takes a name as input and returns a greeting string. It ensures the name is a string and not empty, raising a ValueError with an appropriate message if these conditions are not met.
+          This function takes a name and returns a greeting. It ensures the name is a string and not empty, raising a ValueError with a message if these conditions are not met.
 
           Parameters:
           - name (str): The name to include in the greeting.

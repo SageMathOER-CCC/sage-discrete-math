@@ -10,7 +10,7 @@
             The <c>truthtable()</c> function in Sage generates the truth table for a given logical expression.
         </p>
         <aside>
-            <title>Tips!</title>
+            <title>Notes</title>
             <p>
                 Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.
             </p>
@@ -46,7 +46,7 @@
         Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function accommodates expressions with any reasonable number of variables.
     </p>
     <aside>
-        <title>Tips!</title>
+        <title>Notes</title>
         <p>
             Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.
         </p>

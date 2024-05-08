@@ -5,44 +5,7 @@
 
   <introduction>
     <p>
-      Applications of graphs include:
-      <ul>
-        <li>
-          <p>
-            Social interaction
-          </p>
-        </li>
-        <li>
-          <p>
-            Influence
-          </p>
-        </li>
-        <li>
-          <p>
-            Call network
-          </p>
-        </li>
-        <li>
-          <p>
-            World wide web
-          </p>
-        </li>
-        <li>
-          <p>
-            Citation graph
-          </p>
-        </li>
-        <li>
-          <p>
-            Collaboration
-          </p>
-        </li>
-        <li>
-          <p>
-            PageRank
-          </p>
-        </li>
-      </ul>
+      Sage is extremely powerful for graph theory. This chapter presents the study of graph theory with Sage, starting with a description of the Graph class through the implementation of optimization algorithms. We also illustrate Sage's graphical capabilities for visualizing graphs.
     </p>
   </introduction>
 
