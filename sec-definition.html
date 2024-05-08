@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -329,20 +332,19 @@ sagecell.makeSagecell({
             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.plot()
 </script></pre>
-<div class="para" id="definition-5">We can also use <code class="code-inline tex2jax_ignore">LatticePoset()</code> function to plot the lattice. The function <code class="code-inline tex2jax_ignore">Poset()</code> can be used with any poset, even when the poset is not a lattice. The function <code class="code-inline tex2jax_ignore">LatticePoset()</code> will give an error if the poset is not a lattice. The function is also more optimized and reduces the time needed when plotting complicated lattices.</div>
-<pre id="definition-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+<aside class="aside aside-like" id="definition-5"><h4 class="heading"><span class="title">Notes.</span></h4>
+<div class="para" id="definition-5-2">Lattices play a critical role in computer science, particularly in structuring hierarchical access control in security systems and databases. They help in managing permissions through role-based access control, where roles and data can be organized in a lattice to determine the propagation of access rights.</div></aside><div class="para" id="definition-6">We can also use <code class="code-inline tex2jax_ignore">LatticePoset()</code> function to plot the lattice. The function <code class="code-inline tex2jax_ignore">Poset()</code> can be used with any poset, even when the poset is not a lattice. The function <code class="code-inline tex2jax_ignore">LatticePoset()</code> will give an error if the poset is not a lattice. The function is also more optimized and reduces the time needed when plotting complicated lattices.</div>
+<pre id="definition-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.plot()
 </script></pre>
-<div class="para" id="definition-7">The function <code class="code-inline tex2jax_ignore">is_lattice()</code> can be used to determine whether the poset is a lattice.</div>
-<pre id="definition-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+<div class="para" id="definition-8">The function <code class="code-inline tex2jax_ignore">is_lattice()</code> can be used to determine whether the poset is a lattice.</div>
+<pre id="definition-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
            [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
 L.is_lattice()
-</script></pre>
-<aside class="aside aside-like" id="definition-9"><h4 class="heading"><span class="title">Notes.</span></h4>
-<div class="para" id="definition-9-2">Lattices play a critical role in computer science, particularly in structuring hierarchical access control in security systems and databases. They help in managing permissions through role-based access control, where roles and data can be organized in a lattice to determine the propagation of access rights.</div></aside></section><section class="subsection" id="join"><h3 class="heading hide-type">
+</script></pre></section><section class="subsection" id="join"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="space"> </span><span class="title">Join</span>
 </h3>
 <div class="para" id="join-2">The join of two elements in a lattice is the least upper bound of those elements.</div>

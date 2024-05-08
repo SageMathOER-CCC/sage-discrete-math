@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -320,7 +323,7 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Truth Tables</span>
 </h2>
 <div class="para" id="sec-truth-table-2">The <code class="code-inline tex2jax_ignore">truthtable()</code> function in Sage generates the truth table for a given logical expression.</div>
-<aside class="aside aside-like" id="sec-truth-table-3"><h3 class="heading"><span class="title">Tips!</span></h3>
+<aside class="aside aside-like" id="sec-truth-table-3"><h3 class="heading"><span class="title">Notes.</span></h3>
 <div class="para" id="sec-truth-table-3-2">Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.</div></aside><pre id="sec-truth-table-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = propcalc.formula('p -> q')
 A.truthtable()
 </script></pre>
@@ -333,7 +336,7 @@ A.print_table(C)
 <div class="para" id="sec-truth-table-7">
 <code class="code-inline tex2jax_ignore">SymbolicLogic()</code> creates an instance for handling symbolic logic operations, while <code class="code-inline tex2jax_ignore">statement()</code> defines the given statement. The <code class="code-inline tex2jax_ignore">truthtable()</code> method generates a truth table for this statement, and <code class="code-inline tex2jax_ignore">print_table()</code> displays it.</div>
 <div class="para" id="sec-truth-table-8">Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <code class="code-inline tex2jax_ignore">truthtable()</code> function accommodates expressions with any reasonable number of variables.</div>
-<aside class="aside aside-like" id="sec-truth-table-9"><h3 class="heading"><span class="title">Tips!</span></h3>
+<aside class="aside aside-like" id="sec-truth-table-9"><h3 class="heading"><span class="title">Notes.</span></h3>
 <div class="para" id="sec-truth-table-9-2">Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.</div></aside><pre id="sec-truth-table-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">B = propcalc.formula('(p & q) -> r')
 B.truthtable()
 </script></pre></section></div>

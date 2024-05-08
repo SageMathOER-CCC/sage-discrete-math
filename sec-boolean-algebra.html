@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Combinatorics</title>
+<title>Boolean Algebra</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-combinatorics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-combinatorics.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-boolean-algebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-boolean-algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-boolean-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -194,9 +194,9 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-combinatorics.html" class="internal"><span class="codenumber">3</span> <span class="title">Combinatorics</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-combinatorics.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Combinatorics</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-combinatorics.html#sec-combinatorics-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Factorial Function</span></a></div></li>
@@ -310,61 +310,33 @@ sagecell.makeSagecell({
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-combinatorics"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Combinatorics</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-boolean-algebra"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">10.1</span><span class="space"> </span><span class="title">Boolean Algebra</span>
 </h2>
-<section class="subsection" id="sec-combinatorics-2"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Factorial Function</span>
-</h3>
-<div class="para" id="sec-combinatorics-2-2">The factorial of a non-negative integer <span class="process-math">\(n\text{,}\)</span> denoted by <span class="process-math">\(n!\text{,}\)</span> is the product of all positive integers less than or equal to <span class="process-math">\(n\text{.}\)</span> In Sage, the <code class="code-inline tex2jax_ignore">factorial()</code> function computes this value, which is essential in permutations and combinations calculations.</div>
-<aside class="aside aside-like" id="sec-combinatorics-2-3"><h4 class="heading"><span class="title">Notes.</span></h4>
-<div class="para" id="sec-combinatorics-2-3-2">Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.</div></aside><div class="para" id="sec-combinatorics-2-4">For example, to compute the factorial of 5:</div>
-<pre id="sec-combinatorics-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">factorial(5)
-</script></pre></section><section class="subsection" id="sec-combinatorics-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">Combinations</span>
-</h3>
-<div class="para" id="sec-combinatorics-3-2">The combination <span class="process-math">\((n, k)\)</span> is an unordered selection of <span class="process-math">\(k\)</span> objects from a set of <span class="process-math">\(n\)</span> objects.</div>
-<aside class="aside aside-like" id="sec-combinatorics-3-3"><h4 class="heading"><span class="title">Notes.</span></h4>
-<div class="para" id="sec-combinatorics-3-3-2">Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.</div></aside><div class="para" id="sec-combinatorics-3-4">For instance, to calculate the number of ways to choose 3 elements from a set of 5:</div>
-<pre id="sec-combinatorics-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Combinations(5, 3).cardinality()
+<div class="para" id="sec-boolean-algebra-2">Boolean algebra is the algebra of two-valued logic with only sentential connectives, or equivalently of algebras of sets under union and complementation.</div>
+<div class="para" id="sec-boolean-algebra-3">A common structure analyzed in Boolean algebra is the lattice. Below, we show how to work with a divisor lattice, which is a specific type of lattice useful in various mathematical computations.</div>
+<aside class="aside aside-like" id="sec-boolean-algebra-4"><div class="para" id="sec-boolean-algebra-4-1">In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.</div></aside><pre id="sec-boolean-algebra-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
+p.show()
 </script></pre>
-<div class="para" id="sec-combinatorics-3-6">Another method would be using the <code class="code-inline tex2jax_ignore">binomial()</code> function.</div>
-<pre id="sec-combinatorics-3-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">binomial(5, 3)
-</script></pre></section><section class="subsection" id="sec-combinatorics-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="space"> </span><span class="title">Permutations</span>
-</h3>
-<div class="para" id="sec-combinatorics-4-2">A permutation <span class="process-math">\((n, k)\)</span> is an ordered selection of <span class="process-math">\(k\)</span> objects from a set of <span class="process-math">\(n\)</span> objects.</div>
-<aside class="aside aside-like" id="sec-combinatorics-4-3"><h4 class="heading"><span class="title">Notes.</span></h4>
-<div class="para" id="sec-combinatorics-4-3-2">Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.</div></aside><div class="para" id="sec-combinatorics-4-4">For instance, to calculate the number of ways to choose 3 elements from a set of 5 when the order matters, we use the <code class="code-inline tex2jax_ignore">Permutations()</code> and the <code class="code-inline tex2jax_ignore">cardinality()</code> functions.</div>
-<pre id="sec-combinatorics-4-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Permutations(5, 3).cardinality()
+<div class="para" id="sec-boolean-algebra-6">The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.</div>
+<pre id="sec-boolean-algebra-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
+p.is_distributive()
 </script></pre>
-<div class="para" id="sec-combinatorics-4-6">To display the set of permutations for 3 chosen elements from a set of 5 in order, we use the <code class="code-inline tex2jax_ignore">Permutations()</code> function and the use the <code class="code-inline tex2jax_ignore">Set()</code> function.</div>
-<pre id="sec-combinatorics-4-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(5, 3)
-Set(A)
-</script></pre>
-<div class="para" id="sec-combinatorics-4-8">When <span class="process-math">\(n = k\text{,}\)</span> we can calculate permutations of <span class="process-math">\(n\)</span> elements.</div>
-<div class="para" id="sec-combinatorics-4-9">To calculate the permutation of a set with 3 elements, we use the <code class="code-inline tex2jax_ignore">Permutations()</code> and the <code class="code-inline tex2jax_ignore">cardinality()</code> functions.</div>
-<pre id="sec-combinatorics-4-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">Permutations(3).cardinality()
-</script></pre>
-<div class="para" id="sec-combinatorics-4-11">Similarly, we can also show the sets of permutations:</div>
-<pre id="sec-combinatorics-4-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(3)
-Set(A)
-</script></pre>
-<div class="para" id="sec-combinatorics-4-13">We can also specify the elements:</div>
-<pre id="sec-combinatorics-4-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Permutations(['a', 'b', 'c'])
-Set(A)
-</script></pre></section></section></div>
+<aside class="aside aside-like" id="sec-boolean-algebra-8"><div class="para" id="sec-boolean-algebra-8-1">In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.</div></aside><div class="para" id="sec-boolean-algebra-9">Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.</div>
+<pre id="sec-boolean-algebra-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
+p.is_complemented()
+</script></pre></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-combinatorics.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-boolean-algebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-boolean-functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

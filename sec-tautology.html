@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -323,7 +326,7 @@ sagecell.makeSagecell({
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="space"> </span><span class="title">Equivalent Statements</span>
 </h3>
 <div class="para" id="sec-tautology-2-2">By comparing the truth tables, we can ascertain if two logical statements are equivalent, meaning they have identical truth values for all possible inputs.</div>
-<aside class="aside aside-like" id="sec-tautology-2-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-tautology-2-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-tautology-2-3-2">This approach is invaluable in simplifying logical expressions in computer algorithms and understanding proofs in mathematical logic.</div></aside><pre id="sec-tautology-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">E1 = propcalc.formula('(p -> q) & (q -> r)')
 E2 = propcalc.formula('p -> r')
 T1 = E1.truthtable()
@@ -333,14 +336,14 @@ T1 == T2
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="space"> </span><span class="title">Tautologies</span>
 </h3>
 <div class="para" id="sec-tautology-3-2">A tautology is a logical statement that is always true.  The <code class="code-inline tex2jax_ignore">is_tautology()</code> function checks whether a given logical expression is a tautology.</div>
-<aside class="aside aside-like" id="sec-tautology-3-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-tautology-3-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-tautology-3-3-2">Understanding tautologies is essential in computer science, particularly in optimizing algorithms and validating logical propositions in software verification. It’s also fundamental in mathematical proof strategies, such as proof by contradiction.</div></aside><pre id="sec-tautology-3-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">a = propcalc.formula('p | ~p')
 a.is_tautology()
 </script></pre></section><section class="subsection" id="sec-tautology-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="space"> </span><span class="title">Contradictions</span>
 </h3>
 <div class="para" id="sec-tautology-4-2">In contrast to tautologies, contradictions are statements that are always false.</div>
-<aside class="aside aside-like" id="sec-tautology-4-3"><h4 class="heading"><span class="title">Tips!</span></h4>
+<aside class="aside aside-like" id="sec-tautology-4-3"><h4 class="heading"><span class="title">Notes.</span></h4>
 <div class="para" id="sec-tautology-4-3-2">Analyzing the relationship between tautologies and contradictions can aid in the development of critical thinking skills, important for debugging in programming, constructing mathematical proofs, and designing logical circuits.</div></aside><pre id="sec-tautology-4-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = propcalc.formula('p & ~p')
 A.is_contradiction()
 </script></pre></section></section></div>

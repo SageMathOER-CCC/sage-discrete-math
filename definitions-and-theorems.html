@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -353,20 +356,21 @@ sagecell.makeSagecell({
 G = Graph(data)
 G.show()
 </script></pre>
-<div class="para" id="definitions-and-theorems-6">Let’s ask Sage if this graph is a tree.</div>
-<pre id="definitions-and-theorems-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.is_tree()
+<aside class="aside aside-like" id="definitions-and-theorems-6"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="definitions-and-theorems-6-2">Trees play a crucial role in the design of network topologies, especially in ensuring that data is transferred efficiently without loops in network paths. Forests can represent disconnected networks, which are critical in scenarios where backup systems are designed to operate independently.</div></aside><div class="para" id="definitions-and-theorems-7">Let’s ask Sage if this graph is a tree.</div>
+<pre id="definitions-and-theorems-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G.is_tree()
 </script></pre>
-<div class="para" id="definitions-and-theorems-8">If we remove an edge, we can see that the graph is no longer a tree.</div>
-<pre id="definitions-and-theorems-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G_removed_edge = G.copy()
+<div class="para" id="definitions-and-theorems-9">If we remove an edge, we can see that the graph is no longer a tree.</div>
+<pre id="definitions-and-theorems-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G_removed_edge = G.copy()
 G_removed_edge.delete_edge((1, 4))
 G_removed_edge.show()
 G_removed_edge.is_tree()
 </script></pre>
-<div class="para" id="definitions-and-theorems-10">However, we can see that the graph is still a forest.</div>
-<pre id="definitions-and-theorems-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G_removed_edge.is_forest()
+<div class="para" id="definitions-and-theorems-11">However, we can see that the graph is still a forest.</div>
+<pre id="definitions-and-theorems-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G_removed_edge.is_forest()
 </script></pre>
-<div class="para" id="definitions-and-theorems-12">If we add an edge, we can see that the graph contains a cycle and is no longer a tree.</div>
-<pre id="definitions-and-theorems-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G_added_edge = G.copy()
+<div class="para" id="definitions-and-theorems-13">If we add an edge, we can see that the graph contains a cycle and is no longer a tree.</div>
+<pre id="definitions-and-theorems-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G_added_edge = G.copy()
 G_added_edge.add_edge((1, 2))
 G_added_edge.show()
 G_added_edge.is_tree()

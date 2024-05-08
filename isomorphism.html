@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -322,7 +325,8 @@ sagecell.makeSagecell({
 <div class="para" id="isomorphism-2">Informally, we can say that an <dfn class="terminology">isomorphism</dfn> is a relation of sameness between graphs. Let’s say that the graphs <span class="process-math">\(G = (V, E)\)</span> and <span class="process-math">\(G' = (V', E')\)</span> are isomorphic if there exists a bijection <span class="process-math">\(f: V \rightarrow V'\)</span> such that <span class="process-math">\(\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'\text{.}\)</span>
 </div>
 <div class="para" id="isomorphism-3">This means there is a bijection between the set of vertices such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph, and vice versa. Essentially, the two graphs have the same structure, but the vertices are labeled differently.</div>
-<pre id="isomorphism-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C = Graph({
+<aside class="aside aside-like" id="isomorphism-4"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="isomorphism-4-2">In chemistry, isomorphism is crucial in the study of molecules. Chemical isomers have the same molecular formula but different structures (or graphs), affecting their chemical properties and reactions. Understanding graph isomorphism helps chemists identify and differentiate these molecules efficiently.</div></aside><pre id="isomorphism-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C = Graph({
     'a': ['b', 'c', 'g'],
     'b': ['a', 'd', 'h'],
     'c': ['a', 'd', 'e'],
@@ -347,10 +351,10 @@ D = Graph({
 C.show()
 D.show()
 </script></pre>
-<div class="para" id="isomorphism-5">The sage <code class="code-inline tex2jax_ignore">is_isomorphic()</code> method can be used to check if two graphs are isomorphic. The method returns <code class="code-inline tex2jax_ignore">True</code> if the graphs are isomorphic and <code class="code-inline tex2jax_ignore">False</code> if the graphs are not isomorphic.</div>
-<pre id="isomorphism-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C.is_isomorphic(D)
+<div class="para" id="isomorphism-6">The sage <code class="code-inline tex2jax_ignore">is_isomorphic()</code> method can be used to check if two graphs are isomorphic. The method returns <code class="code-inline tex2jax_ignore">True</code> if the graphs are isomorphic and <code class="code-inline tex2jax_ignore">False</code> if the graphs are not isomorphic.</div>
+<pre id="isomorphism-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C.is_isomorphic(D)
 </script></pre>
-<div class="para logical" id="isomorphism-7">
+<div class="para logical" id="isomorphism-8">
 <div class="para">The <dfn class="terminology">invariants under isomorphism</dfn> are conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -368,9 +372,10 @@ G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="isomorphism-8">To summarize, if one graph is connected and the other is not, then the graphs are not isomorphic. If the number of vertices and edges are different, then the graphs are not isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all three invariants are satisfied, then the graphs may or may not be isomorphic.</div>
-<div class="para" id="isomorphism-9">Let’s define a function to check if two graphs satisfy the invariants under isomorphism. Make sure you run the next cell to define the function before using the function.</div>
-<pre id="isomorphism-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def invariants_under_isomorphism(G1, G2):
+<aside class="aside aside-like" id="isomorphism-9"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="isomorphism-9-2">Graph isomorphism has implications in computer science, particularly in data mining and machine learning. Algorithms that detect isomorphisms can help identify similar data structures in databases, facilitating the classification and clustering of data based on structural similarity.</div></aside><div class="para" id="isomorphism-10">To summarize, if one graph is connected and the other is not, then the graphs are not isomorphic. If the number of vertices and edges are different, then the graphs are not isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all three invariants are satisfied, then the graphs may or may not be isomorphic.</div>
+<div class="para" id="isomorphism-11">Let’s define a function to check if two graphs satisfy the invariants under isomorphism. Make sure you run the next cell to define the function before using the function.</div>
+<pre id="isomorphism-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def invariants_under_isomorphism(G1, G2):
     # Are both graphs connected?
     are_both_connected = G1.is_connected() == G2.is_connected()
     print("Are both graphs connected? " + ("Yes" if are_both_connected else "No"))
@@ -390,12 +395,13 @@ G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
     else:
         print("The graphs are not isomorphic.")
 </script></pre>
-<pre id="isomorphism-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Graph([('a', 'b'), ('b', 'c'), ('c', 'f'), ('f', 'd'), ('d', 'e'), ('e', 'a')])
+<aside class="aside aside-like" id="isomorphism-13"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="isomorphism-13-2">Network theory uses graph isomorphism to analyze and understand different networks, such as social networks or communication networks. By identifying isomorphic subgraphs, researchers can detect patterns and anomalies across different network systems.</div></aside><pre id="isomorphism-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Graph([('a', 'b'), ('b', 'c'), ('c', 'f'), ('f', 'd'), ('d', 'e'), ('e', 'a')])
 B = Graph([(1, 5), (1, 9), (5, 9), (4, 6), (4, 7), (6, 7)])
 invariants_under_isomorphism(A, B)
 </script></pre>
-<div class="para" id="isomorphism-12">If we use <code class="code-inline tex2jax_ignore">invariants_under_isomorphism</code> on the <span class="process-math">\(C\)</span> and <span class="process-math">\(D\text{,}\)</span> the output will let us know that the graphs may or may not be isomorphic. We can use the <code class="code-inline tex2jax_ignore">is_isomorphic()</code> method to check if the graphs are definitively isomorphic.</div>
-<pre id="isomorphism-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">invariants_under_isomorphism(C, D)
+<div class="para" id="isomorphism-15">If we use <code class="code-inline tex2jax_ignore">invariants_under_isomorphism</code> on the <span class="process-math">\(C\)</span> and <span class="process-math">\(D\text{,}\)</span> the output will let us know that the graphs may or may not be isomorphic. We can use the <code class="code-inline tex2jax_ignore">is_isomorphic()</code> method to check if the graphs are definitively isomorphic.</div>
+<pre id="isomorphism-16" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">invariants_under_isomorphism(C, D)
 </script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="paths.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="euler-and-hamilton.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

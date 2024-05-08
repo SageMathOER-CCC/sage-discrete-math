@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -321,11 +324,12 @@ sagecell.makeSagecell({
 </h2>
 <div class="para" id="intro-relations-2">A <dfn class="terminology">relation</dfn> <span class="process-math">\(R\)</span> from set <span class="process-math">\(A\)</span> to set <span class="process-math">\(B\)</span> is any subset of the Cartesian product <span class="process-math">\(A \times B\text{,}\)</span> indicating that <span class="process-math">\(R \subseteq A \times B\text{.}\)</span> We can ask Sage to decide if <span class="process-math">\(R\)</span> is a relation from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{.}\)</span> First construct the Cartesian product <span class="process-math">\(C = A \times B\text{.}\)</span> Then build the set <span class="process-math">\(S\)</span> of all subsets of <span class="process-math">\(C\text{.}\)</span> Finally ask if <span class="process-math">\(R\)</span> is a subset of <span class="process-math">\(S\text{.}\)</span>
 </div>
-<div class="para" id="intro-relations-3">Recall, the Cartesian product consists of all possible ordered pairs <span class="process-math">\((a, b)\text{,}\)</span> where <span class="process-math">\(a \in A\)</span> and <span class="process-math">\(b \in B\text{.}\)</span> Each pair combines an element from set <span class="process-math">\(A\)</span> with an element from set <span class="process-math">\(B\text{.}\)</span>
+<aside class="aside aside-like" id="intro-relations-3"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="intro-relations-3-2">In database management, relations model the connections between different entities (e.g., customers and orders). Each record in one table can relate to records in another, facilitating complex queries and data analytics essential for operational intelligence and decision making.</div></aside><div class="para" id="intro-relations-4">Recall, the Cartesian product consists of all possible ordered pairs <span class="process-math">\((a, b)\text{,}\)</span> where <span class="process-math">\(a \in A\)</span> and <span class="process-math">\(b \in B\text{.}\)</span> Each pair combines an element from set <span class="process-math">\(A\)</span> with an element from set <span class="process-math">\(B\text{.}\)</span>
 </div>
-<div class="para" id="intro-relations-4">In this example, an element in the set <span class="process-math">\(A\)</span> relates to an element in <span class="process-math">\(B\)</span> if the element from <span class="process-math">\(A\)</span> is twice the element from <span class="process-math">\(B\text{.}\)</span>
+<div class="para" id="intro-relations-5">In this example, an element in the set <span class="process-math">\(A\)</span> relates to an element in <span class="process-math">\(B\)</span> if the element from <span class="process-math">\(A\)</span> is twice the element from <span class="process-math">\(B\text{.}\)</span>
 </div>
-<pre id="intro-relations-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5, 6])
+<pre id="intro-relations-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = Set([1, 2, 3, 4, 5, 6])
 B = Set([1, 2, 7])
 
 C = Set(cartesian_product([A, B]))
@@ -336,8 +340,9 @@ R = Set([(a, b) for a in A for b in B if a==2*b])
 print("R =", R)
 print("Is R a relation from set A to set B?", R in S)
 </script></pre>
-<div class="para" id="intro-relations-6">Let’s use relations to explore matching items of clothes. Let’s define two sets, jackets and shirts, as examples:</div>
-<div class="para logical" id="intro-relations-7">
+<div class="para" id="intro-relations-7">Let’s use relations to explore matching items of clothes. Let’s define two sets, jackets and shirts, as examples:</div>
+<aside class="aside aside-like" id="intro-relations-8"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="intro-relations-8-2">In online shopping platforms, relations help in personalizing customer experiences. Products and user preferences can be modeled as sets, with relations based on past purchases or browsing history to recommend new products effectively.</div></aside><div class="para logical" id="intro-relations-9">
 <div class="displaymath process-math">
 \begin{equation*}
 \text{jackets} = \{j_1, j_2, j_3\}
@@ -349,8 +354,8 @@ print("Is R a relation from set A to set B?", R in S)
 \end{equation*}
 </div>
 </div>
-<div class="para" id="intro-relations-8">The Cartesian product of jackets and shirts includes all possible combinations of jackets with shirts.</div>
-<pre id="intro-relations-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the sets of jackets and shirts
+<div class="para" id="intro-relations-10">The Cartesian product of jackets and shirts includes all possible combinations of jackets with shirts.</div>
+<pre id="intro-relations-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the sets of jackets and shirts
 jackets = Set(['j1', 'j2', 'j3'])
 shirts = Set(['s1', 's2', 's3', 's4'])
 
@@ -359,8 +364,9 @@ C = cartesian_product([jackets, shirts])
 
 Set(C)
 </script></pre>
-<div class="para" id="intro-relations-10">Since the Cartesian product returns all the possible combinations, some jackets and shirts will clash. Let’s create a relation from jackets to shirts based on matching the items of clothing.</div>
-<pre id="intro-relations-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define a matching relation between jackets and shirts
+<aside class="aside aside-like" id="intro-relations-12"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="intro-relations-12-2">Recommendation systems in services like streaming and e-commerce use relations to connect users to products or media they’re likely to enjoy, based on similar user preferences and behaviors, enhancing user engagement and satisfaction.</div></aside><div class="para" id="intro-relations-13">Since the Cartesian product returns all the possible combinations, some jackets and shirts will clash. Let’s create a relation from jackets to shirts based on matching the items of clothing.</div>
+<pre id="intro-relations-14" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define a matching relation between jackets and shirts
 R = Set([('j1', 's1'), ('j2', 's3'), ('j3', 's4'), ('j1', 's2')])
 
 print("Matching relation R =", R)

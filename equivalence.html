@@ -110,7 +110,7 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_crc.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
@@ -312,7 +312,10 @@ sagecell.makeSagecell({
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-boolean-algebra.html" class="internal"><span class="codenumber">10</span> <span class="title">Boolean Algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-definition.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-algebra.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Boolean Algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-boolean-functions.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Boolean functions</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -337,7 +340,8 @@ A = Set(['p_1', 'p_2', 'p_3', 'p_4', 'p_5', 'p_6', 'p_7', 'p_8', 'p_9', 'p_10'])
 A
 </script></pre>
 <div class="para" id="equivalence-8">Create sets for the people living on each floor of the building:</div>
-<pre id="equivalence-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import pprint
+<aside class="aside aside-like" id="equivalence-9"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="equivalence-9-2">Equivalence relations are fundamental in data classification systems where objects need to be grouped based on shared characteristics. This is crucial in fields ranging from library science, where books are grouped by genres, to digital marketing, where consumers are segmented by purchasing behaviors.</div></aside><pre id="equivalence-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import pprint
 
 # Define the floors as a dictionary, mapping floor names to sets of people
 floors = {
@@ -348,38 +352,39 @@ floors = {
 
 pprint.pprint(floors)
 </script></pre>
-<div class="para" id="equivalence-10">Let <span class="process-math">\(R\)</span> be the relation on <span class="process-math">\(A\)</span> described as follows:</div>
+<div class="para" id="equivalence-11">Let <span class="process-math">\(R\)</span> be the relation on <span class="process-math">\(A\)</span> described as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 x R y\ \text{iff}\ x\ \text{and}\ y\ \text{live in the same floor of the building.}
 \end{equation*}
 </div>
-<pre id="equivalence-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the relation R based on living on the same floor
+<pre id="equivalence-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Define the relation R based on living on the same floor
 R = Set([(x, y) for x in A for y in A if any(x in floors[floor] and y in floors[floor] for floor in floors)])
 R
 </script></pre>
-<div class="para" id="equivalence-13">This relation demonstrates the properties of an equivalence relation:</div>
-<div class="para" id="equivalence-14">
+<aside class="aside aside-like" id="equivalence-14"><h3 class="heading"><span class="title">Notes.</span></h3>
+<div class="para" id="equivalence-14-2">In social sciences, equivalence classes help in the study of social groups and structures, analyzing how individuals within the same social class share certain characteristics and behaviors, facilitating targeted sociological studies and policy-making.</div></aside><div class="para" id="equivalence-15">This relation demonstrates the properties of an equivalence relation:</div>
+<div class="para" id="equivalence-16">
 <dfn class="terminology">Reflexive</dfn>: A person lives in the same floor as themselves.</div>
-<pre id="equivalence-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_reflexive_set(A, R):
+<pre id="equivalence-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_reflexive_set(A, R):
     reflexive_pairs = Set([(a, a) for a in A])
     return reflexive_pairs.issubset(R)
 
 is_reflexive_set(A, R)
 </script></pre>
-<div class="para" id="equivalence-16">
+<div class="para" id="equivalence-18">
 <dfn class="terminology">Symmetric</dfn>: If person <span class="process-math">\(a\)</span> lives in the same floor as person <span class="process-math">\(b\text{,}\)</span> then person <span class="process-math">\(b\)</span> lives in the same floor as person <span class="process-math">\(a\text{.}\)</span>
 </div>
-<pre id="equivalence-17" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_symmetric_set(relation_R):
+<pre id="equivalence-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def is_symmetric_set(relation_R):
     inverse_R = Set([(b, a) for (a, b) in relation_R])
     return relation_R == inverse_R
 
 is_symmetric_set(R)
 </script></pre>
-<div class="para" id="equivalence-18">
+<div class="para" id="equivalence-20">
 <dfn class="terminology">Transitive</dfn>: If person <span class="process-math">\(a\)</span> lives in the same floor as person <span class="process-math">\(b\)</span> and person <span class="process-math">\(b\)</span> lives in the same floor as person <span class="process-math">\(c\text{,}\)</span> then person <span class="process-math">\(a\)</span> lives in the same floor as person <span class="process-math">\(c\text{.}\)</span>
 </div>
-<pre id="equivalence-19" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = DiGraph(list(R), loops=true)
+<pre id="equivalence-21" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">G = DiGraph(list(R), loops=true)
 G.is_transitive()
 </script></pre></section></div>
 <div class="ptx-content-footer">
