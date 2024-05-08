@@ -14,12 +14,13 @@
             In Sage, functions can be defined using direct definition.
         </p>
         <p>
-            For example, defining a function to calculate the cube of a number:
+            For example, defining a function <m>f : \mathbb{R} \rightarrow \mathbb{R}</m> to calculate the cube of a number, such as 3:
         </p>
         <sage>
             <input>
                 f(x) = x^3
                 show(f)
+                f(3)
             </input>
             <output></output>
         </sage>
@@ -29,7 +30,7 @@
     <subsection>
         <title>Graphical Representations</title>
         <p>
-            Sage provides powerful tools for visualizing functions, enabling you to explore the graphical representations of mathematical relationships. Graphs can be plotted directly from function definitions, offering insights into function behavior, such as continuity, limits, and extrema.
+            Sage provides powerful tools for visualizing functions, enabling you to explore the graphical representations of mathematical relationships.
         </p>
         <aside>
             <title>Notes</title>
