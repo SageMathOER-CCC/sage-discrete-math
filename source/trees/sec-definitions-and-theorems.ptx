@@ -61,6 +61,13 @@
     </input>
   </sage>
 
+  <aside>
+    <title>Notes</title>
+    <p>
+      Trees play a crucial role in the design of network topologies, especially in ensuring that data is transferred efficiently without loops in network paths. Forests can represent disconnected networks, which are critical in scenarios where backup systems are designed to operate independently.
+    </p>
+  </aside>
+
   <p>
     Let's ask Sage if this graph is a tree.
   </p>
