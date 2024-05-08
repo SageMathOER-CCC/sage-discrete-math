@@ -20,6 +20,12 @@
                 # This will plot the poset that forms a lattice structure.
             </output>
         </sage>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Lattices play a critical role in computer science, particularly in structuring hierarchical access control in security systems and databases. They help in managing permissions through role-based access control, where roles and data can be organized in a lattice to determine the propagation of access rights.
+            </p>
+        </aside>   
         <p>
             We can also use <c>LatticePoset()</c> function to plot the lattice. The function <c>Poset()</c> can be used with any poset, even when the poset is not a lattice. The function <c>LatticePoset()</c> will give an error if the poset is not a lattice. The function is also more optimized and reduces the time needed when plotting complicated lattices.
         </p>
@@ -47,13 +53,7 @@
             <output>
                 # This will check if the poset is a lattice.
             </output>
-        </sage>  
-        <aside>
-            <title>Notes</title>
-            <p>
-                Lattices play a critical role in computer science, particularly in structuring hierarchical access control in security systems and databases. They help in managing permissions through role-based access control, where roles and data can be organized in a lattice to determine the propagation of access rights.
-            </p>
-        </aside>     
+        </sage>    
     </subsection>    
 
           
