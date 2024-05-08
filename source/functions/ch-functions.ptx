@@ -4,7 +4,9 @@
   <title>Functions</title>
 
   <introduction>
-    <p> Functions introduction paragraph here </p>
+    <p>
+      This chapter will discuss briefly the implementation of functions in Sage and delve deeper into the sequences defined by recursion, including the Fibonacci one. We show how to solve a recurrence relation using Sage.
+    </p>
   </introduction>
 
   <!-- include sections -->
