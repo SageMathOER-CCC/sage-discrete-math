@@ -4,7 +4,9 @@
   <title>Trees</title>
 
   <introduction>
-    <p> Trees introduction paragraph here </p>
+    <p>
+      This chapter completes the preceding one by explaining how to ask Sage to decide whether a given graph is a tree and then introduce further searching algorithms for trees.
+    </p>
   </introduction>
 
   <!-- include sections -->

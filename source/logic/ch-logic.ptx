@@ -4,7 +4,9 @@
   <title>Logic</title>
 
   <introduction>
-    <p> Logic introduction paragraph here </p>
+    <p>
+      In this chapter, we introduce different ways to create boolean formulas using the logical functions <c>not</c>, <c>and</c>, <c>or</c>, <c>if then</c>, and <c>iff</c>. Then, we show how to ask Sage to create a truth table from a formula and determine if an expression is a contradiction or a tautology.
+    </p>
   </introduction>
 
   <!-- include sections -->
