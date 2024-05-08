@@ -10,7 +10,8 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-boolean-definition.ptx" />
+  <xi:include href="sec-boolean-algebra.ptx" />
+  <xi:include href="sec-boolean-functions.ptx" />
 
   
 </chapter>

@@ -1,0 +1,25 @@
+<section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Boolean functions</title>
+    <p>
+        A Boolean function refers to a function having <m>n</m> number of entries or variables, so it has <m>2n</m> number of possible combinations of the given variables.
+    </p>
+    <p>
+        In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.
+    </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+          Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
+        </p>
+      </aside>  
+    <sage>
+        <input>
+            B = BooleanPolynomialRing(3, 'x')
+            f = B('x0 + x1 * x2')
+            show(f)
+        </input>
+        <output>
+            # Outputs the Boolean expression in polynomial form
+        </output>
+    </sage>
+</section>

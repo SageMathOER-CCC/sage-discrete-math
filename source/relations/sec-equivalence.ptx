@@ -28,6 +28,12 @@
     <p>
         Create sets for the people living on each floor of the building:
     </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+            Equivalence relations are fundamental in data classification systems where objects need to be grouped based on shared characteristics. This is crucial in fields ranging from library science, where books are grouped by genres, to digital marketing, where consumers are segmented by purchasing behaviors.
+        </p>
+    </aside>
     <sage>
         <input>
             import pprint
@@ -56,6 +62,12 @@
             R
         </input>
     </sage>
+    <aside>
+        <title>Notes</title>
+        <p>
+            In social sciences, equivalence classes help in the study of social groups and structures, analyzing how individuals within the same social class share certain characteristics and behaviors, facilitating targeted sociological studies and policy-making.
+        </p>
+    </aside>
     <p>
         This relation demonstrates the properties of an equivalence relation:
     </p>
