@@ -8,6 +8,12 @@
   <p>
     This means there is a bijection between the set of vertices such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph, and vice versa. Essentially, the two graphs have the same structure, but the vertices are labeled differently.
   </p>
+  <aside>
+    <title>Notes</title>
+    <p>
+      In chemistry, isomorphism is crucial in the study of molecules. Chemical isomers have the same molecular formula but different structures (or graphs), affecting their chemical properties and reactions. Understanding graph isomorphism helps chemists identify and differentiate these molecules efficiently.
+    </p>
+  </aside>
   <sage>
     <input>
       C = Graph({
@@ -57,6 +63,12 @@
       \text{degree sequence of } G = \text{ degree sequence of } G'
     </me>
   </p>
+  <aside>
+    <title>Notes</title>
+    <p>
+      Graph isomorphism has implications in computer science, particularly in data mining and machine learning. Algorithms that detect isomorphisms can help identify similar data structures in databases, facilitating the classification and clustering of data based on structural similarity.
+    </p>
+  </aside>
   <p>
     To summarize, if one graph is connected and the other is not, then the graphs are not isomorphic. If the number of vertices and edges are different, then the graphs are not isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all three invariants are satisfied, then the graphs may or may not be isomorphic.
   </p>
@@ -86,6 +98,12 @@
               print("The graphs are not isomorphic.")
     </input>
   </sage>
+  <aside>
+    <title>Notes</title>
+    <p>
+      Network theory uses graph isomorphism to analyze and understand different networks, such as social networks or communication networks. By identifying isomorphic subgraphs, researchers can detect patterns and anomalies across different network systems.
+    </p>
+  </aside>
   <sage>
     <input>
       A = Graph([('a', 'b'), ('b', 'c'), ('c', 'f'), ('f', 'd'), ('d', 'e'), ('e', 'a')])
