@@ -11,6 +11,12 @@
   <p>
     Here we have a function that takes a name as an argument and returns a greeting:
   </p>
+  <aside>
+    <title>Notes</title>
+    <p>
+      For an extra challenge, you can implement our <c>greetings</c> function more elegantly with string formatting.
+    </p>
+  </aside>
   <sage>
     <input>
       def greetings(name):
