@@ -1,7 +1,7 @@
 <section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean functions</title>
     <p>
-        A Boolean function refers to a function having <m>n</m> number of entries or variables, so it has <m>2n</m> number of possible combinations of the given variables.
+        A  Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
     <p>
         In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.
