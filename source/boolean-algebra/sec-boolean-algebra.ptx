@@ -1,10 +1,7 @@
 <section xml:id="sec-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean Algebra</title>
     <p>
-        Boolean algebra is the algebra of two-valued logic with only sentential connectives, or equivalently of algebras of sets under union and complementation.
-    </p>
-    <p>
-        A common structure analyzed in Boolean algebra is the lattice. Below, we show how to work with a divisor lattice, which is a specific type of lattice useful in various mathematical computations.
+        A  Boolean algebra is a bounded lattice that is both complemented and distributive.
     </p>
     <aside>
         <p>
