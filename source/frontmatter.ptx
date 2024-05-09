@@ -15,6 +15,13 @@
   </titlepage>
 
   <colophon>
+
+    <p>
+      <m>\textbf{PDF Download}:</m> This book is available for free download in PDF format by clicking
+      
+      <url href="https://github.com/SageMathOER-CCC/sage-discrete-math/blob/main/README.md">here</url>.
+    </p>
+
     <website>
       <url href="https://github.com/SageMathOER-CCC/sage-discrete-math">GitHub Repository</url>
     </website>
