@@ -148,7 +148,10 @@ sagecell.makeSagecell({
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="authors.html" class="internal"><span class="title">Authors</span></a></div></li>
+<li class="toc-item toc-preface">
+<div class="toc-title-box"><a href="authors.html" class="internal"><span class="title">Authors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-contributors"><div class="toc-title-box"><a href="authors.html#authors-2" class="internal"><span class="title"></span></a></div></li></ul>
+</li>
 <li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
 </ul>
@@ -322,17 +325,16 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-boolean-algebra"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">10.1</span><span class="space"> </span><span class="title">Boolean Algebra</span>
 </h2>
-<div class="para" id="sec-boolean-algebra-2">Boolean algebra is the algebra of two-valued logic with only sentential connectives, or equivalently of algebras of sets under union and complementation.</div>
-<div class="para" id="sec-boolean-algebra-3">A common structure analyzed in Boolean algebra is the lattice. Below, we show how to work with a divisor lattice, which is a specific type of lattice useful in various mathematical computations.</div>
-<aside class="aside aside-like" id="sec-boolean-algebra-4"><div class="para" id="sec-boolean-algebra-4-1">In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.</div></aside><pre id="sec-boolean-algebra-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
+<div class="para" id="sec-boolean-algebra-2">A  Boolean algebra is a bounded lattice that is both complemented and distributive.</div>
+<aside class="aside aside-like" id="sec-boolean-algebra-3"><div class="para" id="sec-boolean-algebra-3-1">In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.</div></aside><pre id="sec-boolean-algebra-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
 p.show()
 </script></pre>
-<div class="para" id="sec-boolean-algebra-6">The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.</div>
-<pre id="sec-boolean-algebra-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
+<div class="para" id="sec-boolean-algebra-5">The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.</div>
+<pre id="sec-boolean-algebra-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
 p.is_distributive()
 </script></pre>
-<aside class="aside aside-like" id="sec-boolean-algebra-8"><div class="para" id="sec-boolean-algebra-8-1">In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.</div></aside><div class="para" id="sec-boolean-algebra-9">Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.</div>
-<pre id="sec-boolean-algebra-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
+<aside class="aside aside-like" id="sec-boolean-algebra-7"><div class="para" id="sec-boolean-algebra-7-1">In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.</div></aside><div class="para" id="sec-boolean-algebra-8">Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.</div>
+<pre id="sec-boolean-algebra-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">p = Posets.DivisorLattice(20)
 p.is_complemented()
 </script></pre></section></div>
 <div class="ptx-content-footer">

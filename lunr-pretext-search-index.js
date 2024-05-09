@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "  GitHub Repository   copyright  "
+  "body": "  This book is available for free download in PDF format by clicking here .   GitHub Repository   copyright  "
 },
 {
   "id": "authors",
@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Authors",
-  "body": " Authors   Zunaid Ahmed  Computer Engineering  Truman College  zunaid.ahmed@hotmail.com    Hellen Colman  Math Department  Wright College  hcolman@ccc.edu    Samuel Lubliner  Computer Science  Wright College  sage.oer@gmail.com   "
+  "body": " Authors    Zunaid Ahmed  Computer Engineering  Truman College  zunaid.ahmed@hotmail.com    Hellen Colman  Math Department  Wright College  hcolman@ccc.edu    Samuel Lubliner  Computer Science  Wright College  sage.oer@gmail.com    "
 },
 {
   "id": "frontmatter-4",
@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Acknowledgements",
   "number": "",
   "title": "Acknowledgements",
-  "body": " We would like to acknowledge the following reviewers for their helpful comments and suggestions.   A B, University of Sheffield    C D, University of Wisconsin     We would like to acknowledge the following proof-readers for their helpful comments and suggestions.   A B, University of Sheffield    C D, University of Wisconsin     Testing sentence.  "
+  "body": " We would like to acknowledge the following peer-reviewers:   A B, University of Sheffield    C D, University of Wisconsin     We would like to acknowledge the following proof-readers:   A B, University of Sheffield    C D, University of Wisconsin     Special thanks to Ken Levasseur for guiding us sharing his considerable expertise in creating open source textbooks.  Wright College librarian Tineka Scalzo provided valuable advice on publishing and copyright issues.  We are very grateful to the many people who have worked to develop Sage and to the creators of PreTeXt.  "
 },
 {
   "id": "Cpq",
@@ -34,7 +34,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Preface",
-  "body": " This book was written by undergraduate students at Wright College who were enrolled in my Math 299 class, Writing in the Sciences.  For many years, I have been teaching Discrete Math using the open source mathematical software SageMath. Despite the fabulous capabilities of this software, students were often frustrated by the lack of specific documentation geared towards beginning undergrad students in Discrete Math.  This book was born out of this frustration and the desire to make our own contribution to the Open Education movement from which we have benefitted greatly. In the context of Open Pedagogy, my students and I ventured into a challenging learning experience based on the principles of freedom and responsibility. Each week students wrote a chapter of this book. They found the topics and found their voice. We critically analyzed their writing and they edited, and edited again and again. They wrote code, tested it and polished it. In the process we all learned so much about Sage and we found some bugs in the software that are now in the process of being fixed thanks to its very active community of developers.  The result is the book that we dreamed to have had when we first attempt Discrete Math with Sage.  Our book is intended to provide concise and complete instructions of how to use different Sage functions to solve problems in Discrete Math. Our goal is to streamline the learning process helping students focus more on mathematics and reducing the friction of learning how to code. Our textbook is interactive and designed for all math students, regardless of programming experience. Rooted in the open education philosophy, our textbook is, and always will be, free for all.  I am very proud of the work of my students and hope that this book will serve as inspiration for other students to take ownership of a commons-based education. Towards a future where higher education is equally accessible to all.     Hellen Colman  Chicago, May 2024   "
+  "body": " This book was written by undergraduate students at Wright College who were enrolled in my Math 299 class, Writing in the Sciences.  For many years, I have been teaching Discrete Math using the open source mathematical software SageMath. Despite the fabulous capabilities of this software, students were often frustrated by the lack of specific documentation geared towards beginning undergrad students in Discrete Math.  This book was born out of this frustration and the desire to make our own contribution to the Open Education movement from which we have benefitted greatly. In the context of Open Pedagogy, my students and I ventured into a challenging learning experience based on the principles of freedom and responsibility. Each week students wrote a chapter of this book. They found the topics and found their voice. We critically analyzed their writing and they edited, and edited again and again. They wrote code, tested it and polished it. In the process we all learned so much about Sage and we found some bugs in the software that are now in the process of being fixed thanks to its very active community of developers.  The result is the book that we dreamed to have had when we first attempt Discrete Math with Sage.  Our book is intended to provide concise and complete instructions of how to use different Sage functions to solve problems in Discrete Math. Our goal is to streamline the learning process helping students focus more on mathematics and reducing the friction of learning how to code. Our textbook is interactive and designed for all math students, regardless of programming experience. Rooted in the open education philosophy, our textbook is, and always will be, free for all.  I am very proud of the work of my students and hope that this book will serve as inspiration for other students to take ownership of a commons-based education. Towards a future where higher education is equally accessible to all.   Hellen Colman  Chicago, May 2024   "
 },
 {
   "id": "about-sage",
@@ -664,7 +664,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.1",
   "title": "Boolean Algebra",
-  "body": " Boolean Algebra  Boolean algebra is the algebra of two-valued logic with only sentential connectives, or equivalently of algebras of sets under union and complementation.  A common structure analyzed in Boolean algebra is the lattice. Below, we show how to work with a divisor lattice, which is a specific type of lattice useful in various mathematical computations.   In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.    The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.    In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.   Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.   "
+  "body": " Boolean Algebra  A Boolean algebra is a bounded lattice that is both complemented and distributive.   In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.    The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.    In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.   Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.   "
 },
 {
   "id": "sec-boolean-functions",
@@ -673,7 +673,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.2",
   "title": "Boolean functions",
-  "body": " Boolean functions  A Boolean function refers to a function having number of entries or variables, so it has number of possible combinations of the given variables.  In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.   Notes  Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.    "
+  "body": " Boolean functions  A Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product .  In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.   Notes  Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.    "
 },
 {
   "id": "backmatter-2",
