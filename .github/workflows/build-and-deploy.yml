@@ -15,6 +15,14 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x' # Specify the Python version
+
+      - name: Install PreTeXt
+        run: pip install pretextbook
+
       - name: Build web target with PreTeXt
         id: build
         uses: siefkenj/pretext-build-action@main
@@ -22,6 +30,9 @@ jobs:
             pretext-command: build web
             project-root: "."
             output-dir: "."
+
+      - name: Verify PreTeXt Installation
+        run: pretext --version
 
       - name: Deploy with PreTeXt
         if: success()
