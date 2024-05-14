@@ -15,10 +15,13 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Build with PreTeXt
+      - name: Build web target with PreTeXt
         id: build
-        run: pretext build
-        continue-on-error: false
+        uses: siefkenj/pretext-build-action@main
+        with:
+            pretext-command: build web
+            project-root: "."
+            output-dir: "."
 
       - name: Deploy with PreTeXt
         if: success()
