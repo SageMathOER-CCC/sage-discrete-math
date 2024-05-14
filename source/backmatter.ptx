@@ -16,30 +16,6 @@
 
   <!-- <index> <title>Index</title> <index-list/> </index> -->
 
-  <references xml:id="refs">
-    <introduction>
-      <p>
-        We based most of this text on the Discrete Math lectures at Wilbur Wright College, taught by Professor Hellen Colman. We focused our efforts on creating original work, and we drew inspiration from the following sources:
-      </p>
-    </introduction>
-    <biblio>
-      Doerr, Al, and Ken Levasseur. ADS Applied Discrete Structures. <url href="https://discretemath.org" />, 21 May 2023.
-    </biblio>
-
-    <biblio>
-      SageMath, the Sage Mathematics Software System (Version 10.2), The Sage Developers, 2024,  <url href="https://www.sagemath.org." />
-    </biblio>
-    
-    <biblio>
-      Beezer, Robert A., et al. The PreTeXt Guide. Pretextbook.org, 2024, <url href="https://pretextbook.org/doc/guide/html/guide-toc.html" />.
-    </biblio>
-
-    <biblio>
-      Zimmermann, Paul. Computational Mathematics with SageMath. Society For Industrial And Applied Mathematics, 2019.
-    </biblio>
-
-  </references>
-
   <colophon>
     <p> This book was authored in <pretext />. </p>
   </colophon>
