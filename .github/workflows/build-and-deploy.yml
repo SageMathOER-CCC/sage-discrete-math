@@ -18,10 +18,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x' # Specify the Python version
+          python-version: '3.x'
 
       - name: Install PreTeXt
-        run: pip install pretextbook
+        run: pip install pretextbook==2.3.4  # Install the specific version from requirements.txt
 
       - name: Build web target with PreTeXt
         id: build
@@ -31,9 +31,10 @@ jobs:
             project-root: "."
             output-dir: "."
 
-      - name: Verify PreTeXt Installation
-        run: pretext --version
-
       - name: Deploy with PreTeXt
         if: success()
-        run: pretext deploy
+        uses: siefkenj/pretext-build-action@main
+        with:
+            pretext-command: deploy
+            project-root: "."
+            output-dir: "."
