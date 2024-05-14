@@ -29,6 +29,10 @@
     <biblio>
       SageMath, the Sage Mathematics Software System (Version 10.2), The Sage Developers, 2024,  <url href="https://www.sagemath.org." />
     </biblio>
+    
+    <biblio>
+      Beezer, Robert A., et al. The PreTeXt Guide. Pretextbook.org, 2024, <url href="https://pretextbook.org/doc/guide/html/guide-toc.html" />.
+    </biblio>
 
     <biblio>
       Zimmermann, Paul. Computational Mathematics with SageMath. Society For Industrial And Applied Mathematics, 2019.
