@@ -1,7 +1,7 @@
 <section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Boolean functions</title>
+    <title>Boolean Functions</title>
     <p>
-        A  Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
+        A Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
     <p>
         In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.
@@ -11,7 +11,7 @@
         <p>
           Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
         </p>
-      </aside>  
+    </aside>
     <sage>
         <input>
             B = BooleanPolynomialRing(3, 'x')
@@ -19,7 +19,169 @@
             show(f)
         </input>
         <output>
-            # Outputs the Boolean expression in polynomial form
+            # Outputs the Boolean expression in polynomial form.
+        </output>
+    </sage>
+    <p>
+        For instance, if <m>B = \{0, 1\}</m>, we can show a function <m>f: B^3 \rightarrow B</m>:
+    </p>
+    <sage>
+        <input>
+            B = BooleanPolynomialRing(3, 'x')
+            f = B('x0 * x1 + x1 * x2')
+            show(f)
+        </input>
+        <output>
+            # This will display the Boolean function x0*x1 + x1*x2 in polynomial form.
+        </output>
+    </sage>
+    <p>
+        We can evaluate this function at any point in the domain, for instance:
+    </p>
+    <sage>
+        <input>
+            B = BooleanPolynomialRing(3, 'x')
+            f = B('x0 * x1 + x1 * x2')
+            f(1,1,0)
+        </input>
+        <output>
+            # Evaluates the function at the input (1,1,0) and returns the result.
+        </output>
+    </sage>
+    <p>
+        Visualizing the outcomes of Boolean functions can be insightful, especially when considering their application in digital circuits. Here's an example of creating a custom plot to visualize the output values of a Boolean function across all input combinations:
+    </p>
+    <sage>
+        <input>
+    # Define a Boolean function
+    B = BooleanPolynomialRing(3, 'x')
+    f = B('x0 * x1 + x1 * x2')
+    
+    # Generate a plot for the Boolean function
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    # Create a grid of input values
+    input_combinations = [(x, y, z) for x in [0, 1] for y in [0, 1] for z in [0, 1]]
+    outputs = [f(*vals) for vals in input_combinations]
+    
+    # Create a scatter plot
+    fig, ax = plt.subplots()
+    colors = ['red' if out == 1 else 'blue' for out in outputs]
+    ax.scatter(np.arange(len(outputs)), [0]*len(outputs), c=colors, s=100)
+    ax.set_yticks([])
+    ax.set_xticks(np.arange(len(outputs)))
+    ax.set_xticklabels([str(vals) for vals in input_combinations], rotation=45)
+    ax.set_title('Boolean Function Output Visualization')
+    plt.show()
+        </input>
+        <output>
+            # This will display a scatter plot showing the outputs of the Boolean function for each combination of inputs.
+        </output>
+    </sage>
+    <p>
+        Simplifying Boolean expressions is another powerful feature in SageMath. Here's how you can simplify a Boolean expression:
+    </p>
+    <p>
+        For instance, let's consider the expression: <m>x_0 \cdot x_0 + x_0 \cdot x_1 + x_1 + x_0 \cdot 1 + x_1 \cdot 0 + \neg x_1 + x_1</m>.
+    </p>
+    <sage>
+        <input>
+            def simplify_boolean_expr(expr):
+            """
+            Simplify a Boolean expression using comprehensive Boolean algebra rules.
+            - Idempotence: x * x = x
+            - Absorption: x + x*y = x
+            - Annihilation: x * 0 = 0, x + 1 = 1
+            - Identity: x * 1 = x, x + 0 = x
+            - Complement: x * ~x = 0, x + ~x = 1
+            - De Morgan's Laws: ~(x * y) = ~x + ~y, ~(x + y) = ~x * ~y
+            """
+            import re
+            from sage.all import BooleanPolynomialRing
+        
+            B = BooleanPolynomialRing(expr.nvariables(), 'x')
+            expr_str = str(expr)
+            
+            # Apply De Morgan's Laws
+            expr_str = re.sub(r'~\((\bx\d+\b)\s*\*\s*(\bx\d+\b)\)', r'~\1 + ~\2', expr_str)
+            expr_str = re.sub(r'~\((\bx\d+\b)\s*\+\s*(\bx\d+\b)\)', r'~\1 * ~\2', expr_str)
+            
+            # Simplify using basic Boolean algebra rules
+            patterns = {
+                r'(\bx\d+\b)\s*\*\s*\1': r'\1',  # Idempotence
+                r'(\bx\d+\b)\s*\+\s*\1\s*\*\s*\w+': r'\1',  # Absorption
+                r'(\bx\d+\b)\s*\*\s*0': '0',  # Annihilation
+                r'(\bx\d+\b)\s*\+\s*1': '1',  # Annihilation
+                r'(\bx\d+\b)\s*\*\s*1': r'\1',  # Identity
+                r'(\bx\d+\b)\s*\+\s*0': r'\1',  # Identity
+                r'(\bx\d+\b)\s*\*\s*~\1': '0',  # Complement
+                r'(\bx\d+\b)\s*\+\s*~\1': '1'  # Complement
+            }
+        
+            # Apply simplifications from patterns
+            for pattern, repl in patterns.items():
+                expr_str = re.sub(pattern, repl, expr_str)
+            
+            return B(expr_str)
+        
+        # Example usage in SageMath
+        B = BooleanPolynomialRing(3, 'x')
+        g = B('x0 * x0 + x0 * x1 + x1 + x0 * 1 + x1 * 0 + ~x1 + x1')
+        g_simplified = simplify_boolean_expr(g)
+        show(g_simplified)
+        
+        </input>
+        <output>
+            # Shows the simplified form of the Boolean expression.
+        </output>
+    </sage>
+    <aside>
+        <p>
+            For example, in cryptographic algorithms like AES, Boolean functions play a critical role in the encryption and decryption processes, providing the necessary operations to secure data.
+        </p>
+    </aside>
+    <p>
+        Boolean functions can also be converted into standard forms such as Disjunctive Normal Form (DNF), which is useful in various computational logic applications:
+    </p>
+    <p>
+        For instance, let's consider the expression <m>x_0 \rightarrow (x_1 \land x_2) \lor \neg x_3 \land (x_4 \rightarrow x_5)</m>.
+    </p>
+    <sage>
+        <input>
+            import re  
+
+            def convert_logical_expression(expr):
+                """
+                Convert a conventional logical expression into a format compatible with SageMath's Boolean Polynomial Ring.
+                - Replace "and" with "*"
+                - Replace "or" with "+"
+                - Replace "not" with "~"
+                - Convert implication "A -> B" into "~A + B" and handle nested expressions
+                """
+            
+                def handle_implication(match):
+                    left = convert_logical_expression(match.group(1).strip())
+                    right = convert_logical_expression(match.group(2).strip())
+                    return f'(~{left}) + ({right})'
+            
+                expr = re.sub(r'(.+?)\s*->\s*(.+)', handle_implication, expr)
+            
+                expr = expr.replace(' and ', ' * ').replace(' or ', ' + ').replace('not ', '~')
+            
+                return expr
+            
+            expression = 'x0 -> (x1 and x2) or not x3 and (x4 -> x5)'
+            converted_expression = convert_logical_expression(expression)
+            
+            max_var_index = max(int(num) for num in re.findall(r'x(\d+)', converted_expression))
+            
+            B = BooleanPolynomialRing(max_var_index + 1, 'x')  # Add 1 because the indices start at 0
+            h = B(converted_expression)
+            show(h)                   
+        </input>
+        <output>
+            # Displays the DNF of the Boolean function.
         </output>
     </sage>
 </section>
