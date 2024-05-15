@@ -676,9 +676,18 @@ var ptx_lunr_docs = [
   "body": " Boolean functions  A Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product .  In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.   Notes  Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.    "
 },
 {
-  "id": "backmatter-2",
+  "id": "refs",
   "level": "1",
-  "url": "backmatter-2.html",
+  "url": "refs.html",
+  "type": "References",
+  "number": "",
+  "title": "References",
+  "body": "  We based most of this text on the Discrete Math lectures at Wilbur Wright College, taught by Professor Hellen Colman. We focused our efforts on creating original work, and we drew inspiration from the following sources:   Doerr, Al, and Ken Levasseur. ADS Applied Discrete Structures. , 21 May 2023.  SageMath, the Sage Mathematics Software System (Version 10.2), The Sage Developers, 2024,   Beezer, Robert A., et al. The PreTeXt Guide. Pretextbook.org, 2024, .  Zimmermann, Paul. Computational Mathematics with SageMath. Society For Industrial And Applied Mathematics, 2019.  "
+},
+{
+  "id": "backmatter-3",
+  "level": "1",
+  "url": "backmatter-3.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
