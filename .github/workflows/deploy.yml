@@ -1,13 +1,8 @@
-# <!-- Managed automatically by PreTeXt authoring tools -->
-# (delete the above line to manage this file manually)
-
 name: Deploy to GitHub pages
 on:
-# Uncomment to automatically deploy when a commit is pushed to
-# the main (or otherwise configured) branch (and remove auto
-# management line at top of this file)
-    # push:
-    #     branches: ["main"]
+
+    push:
+        branches: ["main"]
 # The below allows for manually deploying by running the action
 # via GitHub.com
     workflow_dispatch:
