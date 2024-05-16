@@ -9,6 +9,7 @@
   <p>
     Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
   </p>
+  <idx><h>arithmetic operators</h></idx>
   <ul>
     <li>
       <p>
