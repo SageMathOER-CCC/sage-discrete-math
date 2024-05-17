@@ -7,7 +7,7 @@
     </introduction>
 
     <subsection xml:id="meet-operation-table">
-        <title>Meet Operation Table</title>
+        <title>Meet Operation Table</title><idx><h>meet matrix</h></idx>
         <p>
             The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice. 
         </p>
@@ -74,7 +74,7 @@
     </subsection>
 
     <subsection xml:id="join-operation-table">
-        <title>Join Operation Table</title>
+        <title>Join Operation Table</title><idx><h>join matrix</h></idx>
         <p>
             Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements. 
         </p>
@@ -139,6 +139,4 @@
             </output>
         </sage>
     </subsection>
-
-
 </section>

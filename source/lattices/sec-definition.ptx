@@ -1,5 +1,5 @@
 <section xml:id="sec-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Lattices</title>
+    <title>Lattices</title><idx><h>lattice</h></idx>
     
     <subsection xml:id="definition">        
         <title>Definition</title>
@@ -58,7 +58,7 @@
 
           
         <subsection xml:id="join">
-            <title>Join</title>
+            <title>Join</title><idx><h>join</h></idx>
             <p>
                 The join of two elements in a lattice is the least upper bound of those elements.
             </p>
@@ -92,7 +92,7 @@
         </subsection>
     
         <subsection xml:id="meet">
-            <title>Meet</title>
+            <title>Meet</title><idx><h>meet</h></idx>
             <p>
                 The meet of two elements in a lattice is their greatest lower bound.
             </p>
@@ -124,8 +124,5 @@
                 </output>
             </sage>
         </subsection>
-    
-
-    
     </section>
     
