@@ -1,6 +1,8 @@
 name: Deploy to GitHub pages
 on:
-
+# Uncomment to automatically deploy when a commit is pushed to
+# the main (or otherwise configured) branch (and remove auto
+# management line at top of this file)
     push:
         branches: ["main"]
 # The below allows for manually deploying by running the action
