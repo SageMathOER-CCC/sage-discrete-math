@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="intro-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Introduction to Relations</title>
+    <title>Introduction to Relations</title><idx><h>relation</h></idx>
     <p>
         A <term>relation</term> <m>R</m> from set <m>A</m> to set <m>B</m> is any subset of the Cartesian product <m>A \times B</m>, indicating that <m>R \subseteq A \times B</m>. We can ask Sage to decide if <m>R</m> is a relation from <m>A</m> to <m>B</m>. First construct the Cartesian product <m>C = A \times B</m>. Then build the set <m>S</m> of all subsets of <m>C</m>. Finally ask if <m>R</m> is a subset of <m>S</m>.
     </p>
