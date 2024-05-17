@@ -3,6 +3,10 @@
 
   <subsection>
     <title>Graph Definition</title>
+    <idx><h>graphs</h><h>graph definition</h></idx>
+    <idx><h>graphs</h><h>nodes</h></idx>
+    <idx><h>graphs</h><h>links</h></idx>
+    <idx><h>graphs</h><h>arcs</h></idx>
     <p>In discrete mathematics, a graph is a fundamental concept used to model pairwise relations between objects. A graph is defined as an ordered pair <m>G = (V, E)</m>, where:</p>
     <ul>
         <li>
@@ -111,7 +115,7 @@
 </subsection>
 
   <subsection>
-    <title>Weighted Graphs</title>
+    <title>Weighted Graphs</title><idx><h>graphs</h><h>weighted</h></idx>
     <p>
         Weighted graphs extend the concept of graphs by associating a weight, typically a numerical value, with each edge. These weights can represent distances, costs, capacities, or other quantities relevant to the problem being modeled. In Sage, weighted graphs are easily handled, allowing for the exploration of algorithms and properties specific to these types of graphs.
     </p>
@@ -154,6 +158,7 @@
             # Plot the graph.
         </output>
     </sage>
+    <idx><h>graphs</h><h>vertices</h></idx>
     <p>
         To list all vertices of a graph, we use the <c>G.vertices()</c> method, which returns a list of the graph's vertices.
     </p>
@@ -166,9 +171,11 @@
             # List of vertices in the graph.
         </output>
     </sage>
+    <idx><h>graphs</h><h>edges</h></idx>
     <p>
         To list all edges of a graph, the <c>G.edges()</c> method is used. This returns a list of tuples representing the graph's edges.
     </p>
+
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'C'), ('B', 'D')])
@@ -193,6 +200,7 @@
     <p>
         The order of a graph <m>G=(V,E)</m> is the number of vertices <m>|V|</m>.
     </p>
+    <idx><h>graphs</h><h>order</h></idx>
     <p>
         To find the order of the graph:
     </p>
@@ -205,6 +213,7 @@
             # The number of vertices in the graph G.
         </output>
     </sage>
+    <idx><h>graphs</h><h>size</h></idx>
     <p>
         The size of a graph <m>G=(V,E)</m> is the number of edges <m>|E|</m>.
     </p>
@@ -220,6 +229,7 @@
             # The number of edges in the graph G.
         </output>
     </sage>
+    <idx><h>graphs</h><h>degree</h></idx>
     <p>
         The degree of a vertex in <m>G</m> is the number of edges incident to the vertex.
     </p>
@@ -252,6 +262,7 @@
 
 <subsection>
   <title>Graphs and Matrices</title>
+  <idx><h>graphs</h><h>adjacency matrix</h></idx>
   <p>
       The <em>adjacency matrix</em> of a graph is a square matrix used to represent which vertices of the graph are adjacent to which other vertices. Each entry <m>a_{ij}</m> in the matrix is equal to 1 if there is an edge from vertex <c>i</c> to vertex <c>j</c>, and is equal to 0 otherwise.
   </p>
@@ -271,6 +282,7 @@
   <p>
       In this example, the matrix <c>A</c> represents the adjacency matrix of a graph, and <c>Graph(A)</c> creates the graph based on that matrix. The plot shows the resulting graph.
   </p>
+  <idx><h>graphs</h><h>incidence matrix</h></idx>
   <p>
       The <em>incidence matrix</em> is another matrix representation of a graph, which describes the relationship between vertices and edges. In this matrix, rows correspond to vertices, and columns correspond to edges, with entries indicating whether a vertex is incident to an edge.
   </p>
@@ -308,6 +320,7 @@
     <p>
         Modifying graphs by adding or removing vertices and edges allows us to observe how these changes affect graph properties. Sage provides user-friendly functions for these modifications, facilitating dynamic exploration of graphs.
     </p>
+    <idx><h>graphs</h><h>add vertex</h></idx>
     <p>
         To add a vertex to a graph:
     </p>
@@ -321,6 +334,7 @@
             # A graphical representation of the graph with an additional vertex.
         </output>
     </sage>
+    <idx><h>graphs</h><h>remove vertex</h></idx>
     <p>
         To remove a vertex from a graph:
     </p>
@@ -334,6 +348,7 @@
             # The graph with vertex 4 removed.
         </output>
     </sage>
+    <idx><h>graphs</h><h>add edge</h></idx>
     <p>
         To add an edge between two vertices in a graph:
     </p>
@@ -347,6 +362,7 @@
             # The graph with a new edge between vertices 1 and 3.
         </output>
     </sage>
+    <idx><h>graphs</h><h>delete vertex</h></idx>
     <p>
         To delete an edge from a graph:
     </p>
