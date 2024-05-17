@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="isomorphism" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Isomorphism</title>
+  <title>Isomorphism</title><idx><h>isomorphism</h></idx>
   <p>
     Informally, we can say that an <term>isomorphism</term> is a relation of sameness between graphs. Let's say that the graphs <m>G = (V, E)</m> and <m>G' = (V', E')</m> are isomorphic if there exists a bijection <m>f: V \rightarrow V'</m> such that <m>\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>.
   </p>

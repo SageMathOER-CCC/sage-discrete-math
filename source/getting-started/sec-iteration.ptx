@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="iteration" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Iteration</title>
+    <title>Iteration</title><idx><h>iteration</h><h>for loop</h></idx>
     <p>
         Iteration is used to create loops that allow a program to repeat a sequence of instructions until a certain condition is met. In a <c>for</c> loop, the loop variable is assigned a value from a sequence, and the body of the loop is executed once for each value.
     </p>
@@ -29,7 +29,7 @@
                 print(i)
         </input>
     </sage>
-
+    <idx><h>iteration</h><h>list comprehension</h></idx>
     <p>
         Lists are often used in iteration. Here is an example of list comprehension, which is a concise way to create lists.
     </p>

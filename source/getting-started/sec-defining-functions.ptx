@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="defining-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Defining Functions</title>
+  <title>Defining Functions</title><idx><h>functions (programming)</h></idx>
   <p>
     Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what these functions do and how to use them. In Sage, you can also define your own functions. Defining a function in Sage is similar to defining a function in Python.
   </p>

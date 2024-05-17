@@ -2,6 +2,8 @@
 
 <section xml:id="partial-order" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Partial Order</title>
+    <idx><h>partial order</h></idx>
+    <idx><h>poset</h></idx>
     <p>
         A relation <m>R</m> on a set is a Partial Order (PO) <m>\prec</m> if it satisfies the reflexive, antisymmetric, and transitive properties. A poset is a set with a partial order relation. For example, the following set of numbers with a relation given by divisibility is a poset.
     </p>
@@ -16,6 +18,8 @@
             plot(D)
         </input>
     </sage>
+
+    <idx><h>Hasse diagram</h></idx>
     
     <p>
         A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if <m>x</m> relates to <m>y</m>,  then the vertex <m>x</m> appears lower in the drawing than the vertex <m>y</m>. Self-loops are assumed and not shown. Similarly, the diagram assumes the transitive property and does not explicitly display the edges that are implied by the transitive property.

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-truth-table" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Truth Tables</title>
-
-     <!-- Truth Tables -->
-
-
+    <title>Truth Tables</title><idx><h>truth table</h></idx>
         <p>
             The <c>truthtable()</c> function in Sage generates the truth table for a given logical expression.
         </p>
@@ -37,11 +33,6 @@
         <p>
             <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c>statement()</c> defines the given statement. The <c>truthtable()</c> method generates a truth table for this statement, and <c>print_table()</c> displays it.
         </p>
-
-
-    <!-- Truth Tables for Three Variables -->
-
-
     <p>
         Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function accommodates expressions with any reasonable number of variables.
     </p>

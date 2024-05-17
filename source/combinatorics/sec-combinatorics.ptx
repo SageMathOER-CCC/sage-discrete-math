@@ -5,7 +5,7 @@
 
     <!-- Factorial Function Subsection -->
     <subsection>
-        <title>Factorial Function</title>
+        <title>Factorial Function</title><idx><h>factorial</h></idx>
         <p>
             The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c> function computes this value, which is essential in permutations and combinations calculations.
         </p>
@@ -28,7 +28,7 @@
 
     <!-- Combinations Subsection -->
     <subsection>
-        <title>Combinations</title>
+        <title>Combinations</title><idx><h>combination</h></idx>
         <p>
             The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set of <m>n</m> objects.
         </p>
@@ -47,6 +47,7 @@
             </input>
             <output></output>
         </sage>
+        <idx><h>binomial</h></idx>
         <p>
             Another method would be using the <c>binomial()</c> function.
         </p>
@@ -60,7 +61,7 @@
 
     <!-- Permutations Subsection -->
     <subsection>
-        <title>Permutations</title>
+        <title>Permutations</title><idx><h>permutation</h></idx>
         <p>
             A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>n</m> objects.
         </p>

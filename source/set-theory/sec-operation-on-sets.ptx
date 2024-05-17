@@ -10,7 +10,7 @@
 
         <!-- Set Union Subsection -->
         <subsection>
-            <title>Union of Sets</title>
+            <title>Union of Sets</title><idx><h>set operations</h><h>union</h></idx>
             <p>
                 There are two distinct methods available in Sage for calculating unions.
             </p>
@@ -48,7 +48,7 @@
 
         <!-- Set Intersection Subsection -->
         <subsection>
-            <title>Intersection of Sets</title>
+            <title>Intersection of Sets</title><idx><h>set operations</h><h>intersection</h></idx>
             <p>
                 Similar to union, there are two methods of using the intersection function in Sage.
             </p>
@@ -84,7 +84,7 @@
 
         <!-- Set Difference Subsection -->
         <subsection>
-            <title>Difference of Sets</title>
+            <title>Difference of Sets</title><idx><h>set operations</h><h>difference</h></idx>
             <p>
                 We have two methods to solve for difference as well.
             </p>
@@ -157,7 +157,7 @@
 
         <!-- Set Complement Subsection -->
         <subsection>
-            <title>Complement of Sets</title>
+            <title>Complement of Sets</title><idx><h>set operations</h><h>compliment</h></idx>
                 <p>
                     Let <m>U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}</m> be the universal set. Given the set <m>A = \{1, 2, 3, 4, 5\}</m>. We can use the <c>difference()</c> function to find the complement of <m>A</m>.
                 </p>
@@ -190,7 +190,7 @@
 
         <!-- Cartesian Product of Sets Subsection -->
         <subsection>
-            <title>Cartesian Product of Sets</title>
+            <title>Cartesian Product of Sets</title><idx><h>set operations</h><h>Cartesian product</h></idx>
                 <p>
                     Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the Cartesian product <m>A × D</m>.
                 </p>
@@ -224,7 +224,7 @@
 
         <!-- Powerset of Sets Subsection -->
         <subsection>
-            <title>Power Set of Sets</title>
+            <title>Power Set of Sets</title><idx><h>set operations</h><h>power set</h></idx>
                 <p>
                     The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. This Sage code defines a set <m>A = \{1, 2, 3, 4, 5\}</m> and uses the <c>powerset()</c> function to generate all subsets of <m>A</m>. The <c>list()</c> function is then used to convert the power set iterator into a list.
                 </p>

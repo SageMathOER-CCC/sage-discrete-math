@@ -1,5 +1,5 @@
 <section xml:id="sec-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Functions</title>
+    <title>Functions</title><idx><h>functions (math)</h></idx>
     <introduction>
         <p>
             A function from a set <m>A</m> into a set <m>B</m> is a relation from <m>A</m> into <m>B</m> such that each element of <m>A</m> is related to exactly one element of the set <m>B</m>. The set <m>A</m> is called the domain of the function, and the set <m>B</m> is called the co-domain. Functions are fundamental in both mathematics and computer science for describing mathematical relationships and implementing computational logic.
@@ -26,7 +26,6 @@
         </sage>
     </introduction>
 
-    <!-- Graphical Representations -->
     <subsection>
         <title>Graphical Representations</title>
         <p>

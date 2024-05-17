@@ -1,5 +1,10 @@
 <section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Logical Operators</title>
+    <idx><h>logical operators</h><h>and</h></idx>
+    <idx><h>logical operators</h><h>or</h></idx>
+    <idx><h>logical operators</h><h>not</h></idx>
+    <idx><h>logical operators</h><h>conditional</h></idx>
+    <idx><h>logical operators</h><h>biconditional</h></idx>
     <introduction>
         <p>
             In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.

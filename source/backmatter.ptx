@@ -14,8 +14,6 @@
 
   <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
 
-  <!-- <index> <title>Index</title> <index-list/> </index> -->
-
   <references xml:id="refs">
     <introduction>
       <p>
@@ -43,5 +41,7 @@
   <colophon>
     <p> This book was authored in <pretext />. </p>
   </colophon>
-</backmatter>
 
+  <index> <title>Index</title> <index-list/> </index>
+
+</backmatter>

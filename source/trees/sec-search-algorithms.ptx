@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="search-algorithms" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Search Algorithms</title>
+	<title>Search Algorithms</title><idx><h>search algorithms</h></idx>
     <p>
       The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
     </p>
+    <idx><h>subgraph</h></idx>
+    <idx><h>spanning subgraph</h></idx>
+    <idx><h>spanning tree</h></idx>
     <p>
       The subgraph <m>G' = (V', E')</m> is a <term>spanning subgraph</term> of <m>G = (V, E)</m> if <m>V' = V</m>.
     </p>
@@ -14,7 +17,7 @@
     <p>
         Given a graph, there are several algorithms to calculate a spanning tree. For instance the depth-first search algorithm and the breadth-first search algorithm are two of them.
     </p>
-
+    <idx><h>Breadth-first search</h></idx>
     <p>
         <term>Breadth-first search algorithm</term>
         <ol>
@@ -67,10 +70,11 @@
     <p>
         In this example, the breadth-first search algorithm function is initiated at vertex <m>0</m>, and it reports the length of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its length from the starting vertex. This length is measured in terms of the number of edges that must be traversed to reach that vertex from the start.
     </p>
-
+    <idx><h>minimal spanning tree</h></idx>
     <p>
         Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree including Prim's Algorithm.
     </p>
+    <idx><h>Prim's algorithm</h></idx>
     <p>
         <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growing spanning tree and the other <m>(R)</m> that are not in the growing spanning tree.
         <ol>

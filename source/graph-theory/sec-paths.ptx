@@ -1,5 +1,5 @@
 <section xml:id="paths" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Paths</title>
+  <title>Paths</title><idx><h>path</h></idx>
   <p>
     A path between two vertices <m>u</m> and <m>v</m> is a sequence of consecutive edges starting at <m>u</m> and ending at <m>v</m>.
   </p>
@@ -36,6 +36,7 @@
       Pathfinding in graphs is a key algorithm in logistics to determine the most efficient route between locations. It's used in GPS navigation systems to find the quickest route for vehicles, and in network design to optimize data flow between servers, enhancing the efficiency of network infrastructures.
     </p>
   </aside>
+  <idx><h>connected</h></idx>
   <p>
     A graph is said to be connected if there is a path between any two vertices in the graph.
   </p>
@@ -89,6 +90,7 @@
     <output>
     </output>
   </sage>
+  <idx><h>diameter</h></idx>
   <p>
     The diameter of a graph is the length of the longest shortest path between any two vertices.
   </p>
@@ -101,6 +103,7 @@
           # Calculates the diameter of the graph.
       </output>
   </sage>
+  <idx><h>bipartite</h></idx>
   <p>
      A graph is bipartite if its set of vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:
   </p>

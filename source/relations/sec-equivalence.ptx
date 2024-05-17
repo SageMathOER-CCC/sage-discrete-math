@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Equivalence</title>
+    <title>Equivalence</title><idx><h>equivalence</h></idx>
 
     <p>
         A relation on a set is called an <term>equivalence relation</term> if it is reflexive, symmetric, and transitive. The <term>equivalence class</term> of an element <m>a</m> in a set <m>A</m> is the set of all elements in <m>A</m> that are related to <m>a</m> by this relation, denoted by:

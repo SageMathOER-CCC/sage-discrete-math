@@ -47,7 +47,7 @@
     </introduction>
 
     <subsection xml:id="subsec-reflexive">
-        <title>Reflexive</title>
+        <title>Reflexive</title><idx><h>reflexive</h></idx>
         <p>
             A relation <m>R</m> is reflexive if <m>a</m> relates to <m>a</m> for all elements <m>a</m> in the set <m>A</m>. This means all the elements relate to themselves.
         </p>
@@ -90,7 +90,7 @@
     </subsection>
 
     <subsection xml:id="subsec-symmetric">
-        <title>Symmetric</title>
+        <title>Symmetric</title><idx><h>symmetric</h></idx>
         <p>
             A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>.
         </p>
@@ -124,7 +124,7 @@
         </sage>
     </subsection>
     <subsection xml:id="subsec-anti-symmetric">
-        <title>Antisymmetric</title>
+        <title>Antisymmetric</title><idx><h>antisymmetric</h></idx>
         <p>
             When a relation is antisymmetric, the only case that <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>a</m> is when <m>a</m> and <m>b</m> are equal.
         </p>
@@ -176,7 +176,7 @@
     </subsection>
 
     <subsection xml:id="subsec-transitive">
-        <title>Transitive</title>
+        <title>Transitive</title><idx><h>transitive</h></idx>
         <p>
             A relation is transitive if <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>c</m>, then <m>a</m> relates to <m>c</m>.
         </p>
