@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="cardinality" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Cardinality</title>
+	<title>Cardinality</title><idx><h>cardinality</h></idx>
     <p>
       To find the cardinality of a set, we use the <c>cardinality()</c> function.
     </p>
