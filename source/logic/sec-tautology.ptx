@@ -2,8 +2,6 @@
 
 <section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Analyzing Logical Equivalences</title>
-
-    <!-- Analyzing Logical Equivalences with Truth Tables -->
 <subsection>
     <title>Equivalent Statements</title>
     <p>
@@ -26,10 +24,8 @@
         <output></output>
     </sage>
 </subsection>
-
-    <!-- Tautologies -->
     <subsection>
-    <title>Tautologies</title>
+    <title>Tautologies</title><idx><h>tautology</h></idx>
     <p>
         A tautology is a logical statement that is always true.  The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
     </p>
@@ -48,9 +44,8 @@
     </sage>
     </subsection>
 
-    <!-- Tautologies and Contradictions -->
     <subsection>
-    <title>Contradictions</title>
+    <title>Contradictions</title><idx><h>contradiction</h></idx>
     <p>
         In contrast to tautologies, contradictions are statements that are always false.
     </p>
