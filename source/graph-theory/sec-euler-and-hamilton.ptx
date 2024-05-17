@@ -4,12 +4,13 @@
 
 	<subsection xml:id="subsec-Euler">
 		<title>Euler</title>
+		<idx><h>Euler path</h></idx>
+		<idx><h>Euler circuit</h></idx>
 
 		<p>
 			An <term>Euler path</term> is a path that uses every edge of a graph exactly once.
 			An Euler path that is a circuit is called an <term>Euler circuit</term>.
 		</p>
-	
 		<p>
 			The idea of an Euler path emerged from the study of the <term>Königsberg bridges</term> problem.
 			Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
@@ -112,11 +113,14 @@
 
 	<subsection xml:id="subsec-Hamilton">
 		<title>Hamilton</title>
+		<idx><h>Hamilton path</h></idx>
+		<idx><h>Hamilton circuit</h></idx>
 		<p>
 			A <term>Hamilton path</term> is a path that uses every vertex of a graph exactly once.
 			A Hamilton path that is a circuit is called a <term>Hamilton circuit</term>.
 			If a graph contains a Hamilton circuit, we say that the graph is <term>Hamiltonian</term>.
 		</p>
+		<idx><h>dodecahedron</h></idx>
 	
 		<p>
 			Hamilton created the "Around the World" puzzle.
@@ -151,7 +155,8 @@
 		<p>
 			By running <c>Graph.is_hamiltonian??</c> we see that Sage uses the <c>traveling_salesman_problem()</c> function to determine if a graph is Hamiltonian.
 		</p>
-	
+		<idx><h>traveling salesperson</h></idx>
+		<idx><h>NP-hard</h></idx>
 		<p>
 			The traveling salesperson problem is a classic optimization problem.
 			Given a list of cities and the lengths between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science.
@@ -175,7 +180,7 @@
 		G.show(edge_labels=True)
 		</input>
 		</sage>
-	
+		<idx><h>Hamiltonian cycle</h></idx>
 		<p>
 			We can ask Sage if the graph contains a Hamiltonian cycle.
 		</p>
