@@ -2,7 +2,9 @@
 
 <section xml:id="definitions-and-theorems" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Definitions and Theorems</title>
-
+  <idx><h>cycle</h></idx>
+  <idx><h>tree</h></idx>
+  <idx><h>forest</h></idx>
   <p>
     Given a graph, a <term>cycle</term> is a circuit with no repeated edges. A <term>tree</term> is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a <term>forest</term>.
   </p>
