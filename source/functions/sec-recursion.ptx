@@ -1,14 +1,13 @@
 <section xml:id="sec-recursion" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Recursion</title>
+    <title>Recursion</title><idx><h>recursion</h></idx>
     <introduction>
         <p>
             Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.
         </p>
     </introduction>
 
-    <!-- Recursion in Sequences -->
     <subsection>
-        <title>Recursion in Sequences</title>
+        <title>Recursion in Sequences</title><idx><h>sequence</h></idx>
         <p>
             A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.
         </p>
@@ -29,6 +28,7 @@
         <p>
             We can use the <c>show()</c> function to make the output visually more pleasing; you can try removing it and see how the output looks.
         </p>
+        <idx><h>Fibonacci</h></idx>
         <p>
             Similarly, the Fibonacci sequence is another example of a recursive sequence, defined by the base cases <m>F_0 = 0</m> and <m>F_1 = 1</m>, and the recursive relation <m>F_n = F_{n-1} + F_{n-2}</m> for <m>n &gt; 1</m>. This sequence is a cornerstone example in the study of recursion.
         </p>
@@ -82,13 +82,10 @@
             As we can see, we obtain the same number either by evaluating the closed form at <m>n = 3</m> or by finding the third Fibonacci number directly by iteration.
         </p>
 
-        
-        
-    </subsection>    
+    </subsection>
 
-    <!-- Recursion with Binomial Coefficients -->
     <subsection>
-        <title>Recursion with Binomial Coefficients</title>
+        <title>Recursion with Binomial Coefficients</title><idx><h>binomial coefficients</h></idx>
         <p>
             Binomial coefficients, denoted as <m>\binom{n}{k}</m>, count the number of ways to choose <m>k</m> elements from an <m>n</m>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <c>binomial(n, k)</c> function.
         </p>
