@@ -4,6 +4,7 @@
     <p>
         Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization options for graph visualization in Sage.
     </p>
+    <idx><h>graph plotting</h><h>edge color</h></idx>
     <p>
         To begin with, you can customize the color of vertices and edges. This is particularly useful for highlighting specific parts of a graph, such as a path or a subgraph.
     </p>
@@ -19,7 +20,7 @@
             # A graphical representation of the graph with blue vertices and red edges.
         </output>
     </sage>
-    
+    <idx><h>graph plotting</h><h>edge thickness</h></idx>
     <p>
         Adjusting the thickness of edges can also enhance the visualization, especially for weighted graphs or to emphasize certain edges over others.
     </p>
@@ -38,6 +39,7 @@
     <p>
         The <c>edge_thickness</c> parameter allows you to specify the thickness of the edges in the plot.
     </p>
+    <idx><h>graph plotting</h><h>vertex size</h></idx>
     <p>
         Another useful customization is adjusting the size of the vertices, which can be helpful when dealing with graphs that have a large number of vertices or when you want to fit certain texts inside of the vertices.
     </p>
@@ -53,9 +55,10 @@
             # A graphical representation of the graph with larger vertices.
         </output>
     </sage>
-<p>
+    <p>
         In order to avoid the previous graph cropping, we can use 
     </p>
+    <idx><h>graph plotting</h><h>border</h></idx>
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
@@ -68,6 +71,7 @@
     <p>
       While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c>plot</c> method is not supported.
   </p>
+  <idx><h>graph plotting</h><h>labels</h></idx>
   <p>
       To customize labels and enable them for vertices and edges:
   </p>
@@ -80,8 +84,7 @@
           # A graphical representation of the graph with vertex and edge labels enabled.
       </output>
   </sage>
-
-
+  <idx><h>graph plotting</h><h>layouts</h></idx>
   <p>
     Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph's structure.
 </p>
@@ -109,6 +112,7 @@
         # Displays the graph using a spring (force-directed) layout.
     </output>
 </sage>
+<idx><h>graph plotting</h><h>planar</h></idx>
 <p>
     Another common layout is the <c>planar</c> layout, which is applied to graphs that can be drawn without any edge crossings.
 </p>
@@ -185,6 +189,4 @@
         # A graphical representation of the graph incorporating multiple customization options for enhanced visualization.
     </output>
 </sage>
-
-
 </section>
