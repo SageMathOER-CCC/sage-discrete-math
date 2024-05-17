@@ -5,6 +5,11 @@
 
   <p> The easiest way to get started is by running SageMath online. However, if you do not have reliable internet, you can also install the software locally on your own computer. Begin your journey with SageMath by following these steps: </p>
 
+  <idx><h>run code</h><h>CoCalc</h></idx>
+  <idx><h>run code</h><h>SageMath worksheets</h></idx>
+  <idx><h>run code</h><h>Jupyter Notebook</h></idx>
+  <idx><h>run code</h><h>local</h></idx>
+
   <p>
     <ol>
       <li>
