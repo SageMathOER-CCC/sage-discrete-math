@@ -5,6 +5,7 @@
   <p>
     Sage has many different classes of objects. Sage is built on top of Python, so it has all the data types that Python has. Sage also has its own classes that are well suited for mathematical computations. Let's ask Sage what type of object this is.
   </p>
+  <idx><h>data types</h><h>integer</h></idx>
   <sage>
     <input>
         n = 2
@@ -14,7 +15,7 @@
   <p>
     Sage tells us that <c>2</c> is represented by an object which is an instance of the <term>Integer</term> class. Sage has many classes for different types of numbers and mathematical objects.
   </p>
-
+  <idx><h>data types</h><h>symbolic</h></idx>
   <p>
     In the following example Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the <term>symbolic</term> value.
   </p>
@@ -24,7 +25,7 @@
           type(n)
       </input>
   </sage>
-
+  <idx><h>data types</h><h>string</h></idx>
   <p>
     <term>String</term>: Sequence of characters used for text. You can use single or double quotes.
   </p>
@@ -34,7 +35,7 @@
           type(greeting)
       </input>
   </sage>
-
+  <idx><h>data types</h><h>boolean</h></idx>
   <p>
     <term>Boolean</term>: The type bool can be one of two values, <c>True</c> or <c>False</c>.
   </p>
@@ -45,7 +46,7 @@
         type(b)
     </input>
   </sage>
-
+  <idx><h>data types</h><h>list</h></idx>
   <p>
     <term>List</term>: Mutable collection of items within a pair of square brackets <c>[]</c>. If an object is mutable, the value can be changed after it is created.
   </p>
@@ -73,7 +74,7 @@
     len(l)
   </input>
 </sage>
-
+  <idx><h>data types</h><h>tuple</h></idx>
   <p>
       <term>Tuple</term>: Immutable collection within a pair of parenthesis <c>()</c>. If an object is immutable, the value cannot be changed after it is created.
   </p>
@@ -83,7 +84,7 @@
           type(t)
       </input>
   </sage>
-
+  <idx><h>data types</h><h>set (Python)</h></idx>
   <p>
     <term>set</term>: Collection of unique items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> is built into Python. Every item in a set is unique.
   </p>
@@ -93,7 +94,7 @@
           type(s)
       </input>
   </sage>
-
+  <idx><h>data types</h><h>Set (Sage)</h></idx>
   <p>
     <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c>S</c> have added functionality for mathematical operations.
   </p>
@@ -112,7 +113,7 @@
         print(S)
     </input>
 </sage>
-
+<idx><h>data types</h><h>dictionary</h></idx>
   <p>
       <term>Dictionary</term>: Collection of key-value pairs.
   </p>
