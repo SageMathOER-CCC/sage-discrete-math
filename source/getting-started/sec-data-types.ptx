@@ -94,7 +94,6 @@
           type(s)
       </input>
   </sage>
-  <idx><h>data types</h><h>Set (Sage)</h></idx>
   <p>
     <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c>S</c> have added functionality for mathematical operations.
   </p>
