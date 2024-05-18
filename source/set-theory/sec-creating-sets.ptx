@@ -82,14 +82,13 @@
 		</sage>
 	  </subsection>
 
-	  <!-- Set Membership Check Subsection -->
 	  <subsection>
 		<title>Set Membership Check</title>
 	   <p>
 		  Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
 	   </p>
 	   <p>
-		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set <m>A</m>:
+		   Let's consider the following: <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number <m>3</m> is in set <m>A</m>:
 	   </p>
 	   <aside>
 		   <title>Notes</title>
