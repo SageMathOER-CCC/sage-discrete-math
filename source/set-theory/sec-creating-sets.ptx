@@ -37,7 +37,7 @@
 		</sage>
 
 		<p>
-			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
+			If you are familiar with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
 		</p>
 
 	  </subsection>
