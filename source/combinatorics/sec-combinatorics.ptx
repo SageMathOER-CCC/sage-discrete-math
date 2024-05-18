@@ -118,7 +118,9 @@
         <sage>
             <input>
             A = Permutations(['a', 'b', 'c'])
-            Set(A)
+            
+            for f in Set(A):
+                print(f)
             </input>
             <output></output>
         </sage>

@@ -7,10 +7,10 @@
         A relation on a set is called an <term>equivalence relation</term> if it is reflexive, symmetric, and transitive. The <term>equivalence class</term> of an element <m>a</m> in a set <m>A</m> is the set of all elements in <m>A</m> that are related to <m>a</m> by this relation, denoted by:
     </p>
     <me>
-        |a| = \{x \in A \; | \; xRa\}
+        [a] = \{x \in A \; | \; xRa\}
     </me>
     <p>
-        Here, <m>|a|</m> represents the equivalence class of <m>a</m>, comprising all elements in <m>A</m> that are related to <m>a</m> through the relation <m>R</m>. This illustrates the grouping of elements into equivalence classes.
+        Here, <m>[a]</m> represents the equivalence class of <m>a</m>, comprising all elements in <m>A</m> that are related to <m>a</m> through the relation <m>R</m>. This illustrates the grouping of elements into equivalence classes.
     </p>
     <p>
         Consider a set <m>A</m> defined as:
