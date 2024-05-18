@@ -18,7 +18,7 @@
       </input>
     </sage>
       <p>
-        Alternatively, we can also use the <c>len()</c> function, built into Python. Instead of returning a Sage <c>Integer</c>, this will return a Python <c>int</c>.
+        Alternatively, we can also use the <c>len()</c> function, built into Python. Instead of returning a Sage <c>Integer</c>, the <c>len()</c> function returns a Python <c>int</c>.
     </p>
     <sage>
       <input>
