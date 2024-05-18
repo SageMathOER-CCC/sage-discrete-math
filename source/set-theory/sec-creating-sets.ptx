@@ -17,7 +17,7 @@
 		</sage>
 
 		<p>
-			We can ask Sage to compare two sets to see if they are equal or not. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+			We can ask Sage to compare two sets to see whether or not they are equal. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
 		</p>
 		<idx><h>equality operator</h></idx>
 		<p>
