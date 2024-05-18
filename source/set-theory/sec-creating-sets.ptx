@@ -45,7 +45,7 @@
 	  <subsection xml:id="subsec-set-builder-notation">
 		<title>Set Builder Notation</title>
 		<p>
-			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements.
+			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
 		</p>
 
 		<sage>
