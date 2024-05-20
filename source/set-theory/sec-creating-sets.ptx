@@ -17,7 +17,7 @@
 		</sage>
 
 		<p>
-			We can ask Sage to compare two sets to see if they are equal or not. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+			We can ask Sage to compare two sets to see whether or not they are equal. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
 		</p>
 		<idx><h>equality operator</h></idx>
 		<p>
@@ -37,7 +37,7 @@
 		</sage>
 
 		<p>
-			If you are familiar with Python, you may have used a Python <c>set</c> with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
+			If you are familiar with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
 		</p>
 
 	  </subsection>
@@ -45,7 +45,7 @@
 	  <subsection xml:id="subsec-set-builder-notation">
 		<title>Set Builder Notation</title>
 		<p>
-			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements.
+			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
 		</p>
 
 		<sage>
@@ -82,14 +82,13 @@
 		</sage>
 	  </subsection>
 
-	  <!-- Set Membership Check Subsection -->
 	  <subsection>
 		<title>Set Membership Check</title>
 	   <p>
 		  Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
 	   </p>
 	   <p>
-		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number 3 is in set <m>A</m>:
+		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number <m>3</m> is in set <m>A</m>:
 	   </p>
 	   <aside>
 		   <title>Notes</title>
