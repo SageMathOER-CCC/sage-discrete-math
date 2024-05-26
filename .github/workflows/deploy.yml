@@ -27,6 +27,13 @@ jobs:
                   project-root: "."
                   output-dir: "."
 
+            - name: Build print with PreTeXt
+              uses: siefkenj/pretext-build-action@main
+              with:
+                  pretext-command: build print
+                  project-root: "."
+                  output-dir: "."
+
             - name: Stage with PreTeXt
               uses: siefkenj/pretext-build-action@main
               with:
@@ -39,6 +46,18 @@ jobs:
               with:
                   name: website
                   path: output/stage
+
+            - name: Bundle print output as artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: print
+                  path: output/print/main.pdf
+
+            - name: Commit print output
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: "Add print PDF"
+                  file_pattern: "output/print/main.pdf"
 
     # This job deploys the artifact built in the previous job to Github pages.
     deploy:
