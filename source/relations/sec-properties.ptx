@@ -59,7 +59,7 @@
             </input>
           </sage>
           <p>
-            Let's define a function to check if the relation <m>R</m> on set <m>A</m> is reflexive. We'll create a set of <m>(a, a)</m> pairs for each element <m>a</m> in <m>A</m> and check if this set is a subset of <m>R</m>. This will return <c>True</c> if the relation is reflexive and <c>False</c> otherwise.
+            Let's define a function to check if the relation <m>R</m> on set <m>A</m> is reflexive. We will create a set of <m>(a, a)</m> pairs for each element <m>a</m> in <m>A</m> and check if this set is a subset of <m>R</m>. This will return <c>True</c> if the relation is reflexive and <c>False</c> otherwise.
           </p>
           <sage>
             <input>
