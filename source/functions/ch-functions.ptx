@@ -5,7 +5,7 @@
 
   <introduction>
     <p>
-      This chapter will discuss briefly the implementation of functions in Sage and delve deeper into the sequences defined by recursion, including the Fibonacci one. We show how to solve a recurrence relation using Sage.
+      This chapter will briefly discuss the implementation of functions in Sage and will delve deeper into the sequences defined by recursion, including Fibonacci's. We will show how to solve a recurrence relation using Sage.
     </p>
   </introduction>
 
