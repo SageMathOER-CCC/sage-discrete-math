@@ -42,7 +42,7 @@
             </ul>
         </p>
         <p>
-            Sage is open-source and many people work on the software for free, when they can find the available time. While Sage has many built-in methods, in some cases, we may need to define our own functions to check for certain properties. When you see the <c>def</c> keyword, it means that we are defining a function. The function is a block of code that only runs when it is called. If you would like to reuse the functions defined in this section, you can copy and paste the function definitions into your own Sage worksheet. For methods built into Sage, you can use them directly, without including the definitions. If you feel inspired, try <url href="https://doc.sagemath.org/html/en/faq/faq-contribute.html">contributing</url> to the official Sage project.
+            Sage is open-source and people work on the software for free. While Sage has many built-in methods, in some cases, we may need to define our own functions to check for certain properties. When you see the <c>def</c> keyword, we are defining a function. The function is a block of code that only runs when it is called. If you want to reuse the functions defined in this section, you can copy and paste the function definitions into your own Sage worksheet. You can use methods built into Sage directly without including the definitions. If you feel inspired, try <url href="https://doc.sagemath.org/html/en/faq/faq-contribute.html">contributing</url> to the official Sage project.
         </p>
     </introduction>
 
@@ -59,7 +59,7 @@
             </input>
           </sage>
           <p>
-            Let's define a function to check if the relation <m>R</m> on set <m>A</m> is reflexive. We'll create a set of <m>(a, a)</m> pairs for each element <m>a</m> in <m>A</m> and check if this set is a subset of <m>R</m>. This will return <c>True</c> if the relation is reflexive and <c>False</c> otherwise.
+            Let's define a function to check if the relation <m>R</m> on set <m>A</m> is reflexive. We will create a set of <m>(a, a)</m> pairs for each element <m>a</m> in <m>A</m> and check if this set is a subset of <m>R</m>. This will return <c>True</c> if the relation is reflexive and <c>False</c> otherwise.
           </p>
           <sage>
             <input>

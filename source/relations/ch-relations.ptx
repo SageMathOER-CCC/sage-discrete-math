@@ -5,7 +5,7 @@
 
   <introduction>
     <p>
-      In this chapter, we'll explore the relationships between elements in sets, building upon the concept of "Cartesian product" introduced earlier. We'll begin by learning how to visualize relations using Sage. Then, we'll introduce some new functions that can help us determine whether these relations are equivalence or partial order relations.
+      In this chapter, we will explore the relationships between elements in sets, building upon the concept of "Cartesian product" introduced earlier. We will begin by learning how to visualize relations using Sage. Then, we will introduce some new functions that can help us determine whether these relations are equivalence or partial order relations.
     </p>
   </introduction>
 
