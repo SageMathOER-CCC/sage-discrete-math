@@ -42,7 +42,7 @@
             </ul>
         </p>
         <p>
-            Sage is open-source and people work on the software for free. While Sage has many built-in methods, in some cases, we may need to define our own functions to check for certain properties. When you see the <c>def</c> keyword, we are defining a function. The function is a block of code that only runs when it is called. If you want to reuse the functions defined in this section, you can copy and paste the function definitions into your own Sage worksheet. You can use methods built into Sage directly without including the definitions. If you feel inspired, try <url href="https://doc.sagemath.org/html/en/faq/faq-contribute.html">contributing</url> to the official Sage project.
+            So far, we have learned about some of the built-in Sage methods that come out of the box, ready for use to use. Sometimes, we may need to define custom functions to meet specific requirements or check for particular properties. We define custom functions with the <c>def</c> keyword. If you want to reuse the custom functions defined in this book, copy and paste the function definitions into your own Sage worksheet and then call the function to use it.
         </p>
     </introduction>
 
