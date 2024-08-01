@@ -70,13 +70,25 @@
       <ul permid="ODI">
         <li permid="uKR">
           <p permid="EeD">
-            A B, University of Sheffield
+            Moty Katzman, University of Sheffield
           </p>
         </li>
 
         <li permid="XXu">
           <p permid="hrg">
-            C D, University of Wisconsin
+            Ken Levasseur, University of Massachusetts Lowell
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Simon King, University of Jena
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Vartuyi Manoyan, Wright College
           </p>
         </li>
       </ul>
@@ -87,32 +99,80 @@
       <ul permid="ODI">
         <li permid="uKR">
           <p permid="EeD">
-            A B, University of Sheffield
+            Ted Jankowski, Wright College
           </p>
         </li>
 
         <li permid="XXu">
           <p permid="hrg">
-            C D, University of Wisconsin
+            Yolanda Nieves, Wright College
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Tineka Scalzo, Wright College
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Fabio Re, Rosalind Franklin University
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Soma Dey, Wright College
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Sydney Hart, Wright College
+          </p>
+        </li>
+
+        <li permid="XXu">
+          <p permid="hrg">
+            Justin Lowry, Wright College
           </p>
         </li>
       </ul>
     </p>
 
     <p permid="KDJ">
-      Special thanks to Ken Levasseur for guiding us sharing his considerable expertise in creating
-      open source textbooks.
+      This textbook is a testament to the collaborative spirit of the Open Education movement, aiming to make higher education accessible to all by providing approachable resources for students to learn open-source mathematics software.
     </p>
 
     <p>
-      Wright College librarian Tineka Scalzo provided valuable advice on publishing and copyright
-      issues.
+      The creation of this textbook was a joint effort by a dedicated and inspirational team. The quality of our work reflects the collective contributions and enthusiasm of all involved.
     </p>
 
     <p>
-      We are very grateful to the many people who have worked to develop Sage and to the creators of
-      PreTeXt.
+      Hellen Colman, Professor of Mathematics at Wright College and co-author, served as our guiding star. Her mathematical expertise ensured the accuracy and relevance of our material. Inspired by her teaching and Discrete Math lectures at the City Colleges of Chicago-Wilbur Wright College, this project owes much to her mentorship and support. Her encouragement and trust have been invaluable, shaping the perspectives and approaches of both Zunaid Ahmed and Samuel Lubliner from their Discrete Math course through to this OER development.
     </p>
+
+    <p>
+      We extend our heartfelt gratitude to Ken Levasseur for his invaluable guidance and expertise in creating open-source textbooks. His contributions have significantly enhanced the quality and accessibility of our work.
+    </p>
+
+    <p>
+      A special thanks is due to Tineka Scalzo, Wright College librarian, for her valuable advice on publishing and copyright issues. Her insights have been instrumental in navigating the complexities of academic publishing.
+    </p>
+
+    <p>
+      We also express our gratitude to the many talented developers and mathematicians within the open-source communities. The PreTeXt community played an essential role in our authoring process, while the SageMath community provided crucial subject matter expertise. We are very grateful to the many people who have worked to develop Sage and to the creators of PreTeXt.
+    </p>
+
+    <p>
+      We would also like to thank our peer reviewers and proofreaders whose meticulous attention to detail ensured the clarity and quality of this textbook. Your contributions have been instrumental in bringing this project to fruition.
+    </p>
+
+    <p>
+      Finally, we express our deepest gratitude to all the contributors who made this project possible. Your dedication and collaborative spirit have made a lasting impact on this work and the field of open education.
+    </p>
+
   </acknowledgement>
 
 
