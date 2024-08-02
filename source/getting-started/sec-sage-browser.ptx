@@ -29,7 +29,7 @@
       </li>
       <li>
         <p>
-          Enter SageMath code into the worksheet. Try to evaluate a simple expression and use the worksheet like a calculator. Execute the code by clicking <c>Run</c> or using the shortcut <c>Shift + Enter</c>. We'll learn more ways to run code in the next section.
+          Enter SageMath code into the worksheet. Try to evaluate a simple expression and use the worksheet like a calculator. Execute the code by clicking <c>Run</c> or using the shortcut <c>Shift + Enter</c>. We will learn more ways to run code in the next section.
         </p>
       </li>
       <li>
