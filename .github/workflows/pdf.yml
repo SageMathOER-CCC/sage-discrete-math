@@ -1,0 +1,27 @@
+name: Generate PDF and Commit to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Build PDF with PreTeXt
+        uses: siefkenj/pretext-build-action@main
+        with:
+          pretext-command: build print
+          project-root: "."
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update PDF"
+          branch: main
+          file_pattern: output/print/main.pdf
