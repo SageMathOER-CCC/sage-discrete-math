@@ -1,4 +1,4 @@
-name: Generate PDF and Commit to Main
+name: Generate PDF and Commit to pdf-update
 
 on:
   push:
@@ -22,9 +22,24 @@ jobs:
           pretext-command: build print
           project-root: "."
 
+      - name: Fetch and switch to main branch
+        run: |
+          git fetch origin
+          git checkout main
+          git reset --hard origin/main
+
+      - name: Create or update pdf-update branch from main
+        run: git checkout -B pdf-update
+
+      - name: Set up Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Update PDF"
-          branch: main
-          file_pattern: output/print/main.pdf
+        run: |
+          git add output/print/main.pdf
+          git commit -m "Update PDF" || echo "No changes to commit"
+
+      - name: Force push to pdf-update branch
+        run: git push origin pdf-update --force
