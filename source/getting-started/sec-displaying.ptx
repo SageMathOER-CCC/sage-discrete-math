@@ -64,4 +64,12 @@
         show(b)
       </input>
     </sage>
+    <p>
+      Obtain raw <latex /> code for an expression.
+    </p>
+    <sage>
+      <input>
+        latex(sqrt(2) / log(3))
+      </input>
+    </sage>
 </section>
