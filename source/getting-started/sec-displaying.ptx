@@ -27,6 +27,11 @@
             <c>latex()</c> produces the raw <latex /> code for the expression inside the parentheses. You can paste this code into a <latex /> document to display the expression.
           </p>
         </li>
+        <li>
+          <p>
+            <c>%display latex</c> renders the output of commands as <latex /> automatically.
+          </p>
+        </li>
       </ul>
     </p>
     <p>
@@ -70,6 +75,39 @@
     <sage>
       <input>
         latex(sqrt(2) / log(3))
+      </input>
+    </sage>
+    <p>
+      If you are working in a Jupyter notebook or SageMathCell, <c>%display latex</c> sets the display mode.
+    </p>
+    <sage>
+      <input>
+        %display latex
+        # Notice we don't need the show() function
+        sqrt(2) / log(3)
+      </input>
+    </sage>
+    <p>
+      The expressions will continue to render as <latex /> until you change the display mode. The display mode is still set from the previous cell.
+    </p>
+    <sage>
+      <input>
+        # Natural numbers
+        NN
+      </input>
+    </sage>
+    <p>
+      Revert to the default output with <c>%display plain</c>.
+    </p>
+    <sage>
+      <input>
+        %display plain
+        sqrt(2) / log(3)
+      </input>
+    </sage>
+    <sage>
+      <input>
+        NN
       </input>
     </sage>
 </section>
