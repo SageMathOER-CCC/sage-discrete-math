@@ -4,7 +4,7 @@
   <title>Intro to Sage</title>
 
   <p>
-    You can run and edit the Sage code directly in the SageMathCells embedded in this webpage. All the cells on the same page share the same memory. Be sure to run the cells in order. If you run the cells on a given page out of order, you may get unexpected results.
+    You can execute and modify Sage code directly within the SageMathCells embedded on this webpage. Cells on the same page share a common memory space. To ensure accurate results, run the cells in the sequence they appear. Running them out of order may cause unexpected outcomes due to dependencies between the cells.
   </p>
   <p>
     Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
