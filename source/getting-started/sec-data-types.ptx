@@ -41,7 +41,7 @@
   </p>
   <sage>
     <input>
-        # Check if 5 in contained in the set of prime numbers
+        # Check if 5 is contained in the set of prime numbers
         b = 5 in Primes()
         type(b)
     </input>
