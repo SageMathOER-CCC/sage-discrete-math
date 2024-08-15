@@ -34,7 +34,7 @@
             <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c>statement()</c> defines the given statement. The <c>truthtable()</c> method generates a truth table for this statement, and <c>print_table()</c> displays it.
         </p>
     <p>
-        Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function supports expressions with a number of variables that is practical for computational purposes, typically up to a few dozen.
+        Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function supports expressions with a number of variables that is practical for computational purposes, if the list of variables becomes too lengthy (such as extending beyond the width of a LaTeX page), the truth table's columns may run off the screen. Additionally, the function's performance may degrade with a very large number of variables, potentially increasing the computation time.
     </p>
     <aside>
         <title>Notes</title>
