@@ -58,6 +58,6 @@
   </sage>
   
   <p>
-    While this concept might seem abstract at first, it becomes clearer as we dive deeper into Sage. We will learn how Sage utilizes OOP principles and built-in classes, offering a structured way to represent data and perform powerful mathematical operations.
+    While this concept might seem abstract at first, it becomes clearer as we dive deeper into Sage. We will learn how Sage utilizes OOP principles and built-in classes, offering a structured way to represent data and perform powerful mathematical operations. For a more in-depth look at OOP, check out the <url href="https://doc.sagemath.org/html/en/thematic_tutorials/tutorial-objects-and-classes.html">Sage tutorial</url>
   </p>
 </section>
