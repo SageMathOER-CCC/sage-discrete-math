@@ -7,7 +7,7 @@
     <term>Object-Oriented Programming</term> (OOP) is a programming paradigm that mirrors the world as a collection of <term>objects</term> that interact with each other. An object can be used to model almost anything. More specifically, an object is an <term>instance</term> of a <term>class</term>.
   </p>
   <p>
-    <term>Classes</term> are like blueprints and define the <term>attributes</term> and <term>methods</term> of the objects they create. An attribute is a characteristic or property. A method is a function associated with an object that can perform actions on it or related to it.
+    <term>Classes</term> are like blueprints that define the structure behavior of objects. A class defines the <term>attributes</term> and <term>methods</term> of on object. An attribute is a variable that stores information about the object. A method is a function that can be used to interact or modify the object. Many Sage commands are methods of objects.
   </p>
 
   <p>
