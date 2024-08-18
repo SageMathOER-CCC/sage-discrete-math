@@ -47,13 +47,27 @@
       </p>
     </li>
   </ul>
+
+  <p>
+    There are two ways to run the code within the cells:
+    <ul>
+      <li>
+        <p>
+          Click the <kbd>Evaluate (Sage)</kbd> button located under the cell.
+        </p>
+      </li>
+      <li>
+        <p>
+          If your cursor is active in the cell, you can use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd>.
+        </p>
+      </li>
+    </ul>
+  </p>
   
   <sage>
     <input>
       # Lines that start with a pound sign are comments
       # and ignored by Sage
-      # Run this cell by clicking the Evaluate (Sage) button
-      # or use the keyboard shortcut command + shift
       1+1
     </input>
   </sage>
