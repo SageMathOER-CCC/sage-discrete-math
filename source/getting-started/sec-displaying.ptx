@@ -32,6 +32,11 @@
             <c>%display latex</c> renders the output of commands as <latex /> automatically.
           </p>
         </li>
+        <li>
+          <p>
+            While Python string formatting is available, the output is unreliable for rendering rich text and <latex /> due to compatibility issues.
+          </p>
+        </li>
       </ul>
     </p>
     <p>
