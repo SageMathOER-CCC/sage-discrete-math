@@ -2,129 +2,149 @@
 
 <section xml:id="about-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Intro to Sage</title>
+  <introduction>
+    <p>
+      You can execute and modify Sage code directly within the SageMathCells embedded on this webpage. Cells on the same page share a common memory space. To ensure accurate results, run the cells in the sequence in which they appear. Running them out of order may cause unexpected outcomes due to dependencies between the cells.
+    </p>
+  </introduction>
 
-  <p>
-    You can execute and modify Sage code directly within the SageMathCells embedded on this webpage. Cells on the same page share a common memory space. To ensure accurate results, run the cells in the sequence in which they appear. Running them out of order may cause unexpected outcomes due to dependencies between the cells.
-  </p>
-  <p>
-    Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
-  </p>
-  <idx><h>arithmetic operators</h></idx>
-  <ul>
-    <li>
-      <p>
-        Addition: <c>+</c>
-      </p>
-    </li>
-    <li>
-      <p>
-        Subtraction: <c>-</c>
-      </p>
-    </li>
-    <li>
-      <p>
-        Multiplication: <c>*</c>
-      </p>
-    </li>
-    <li>
-      <p>
-        Exponentiation: <c>**</c>, or <c>^</c>
-      </p>
-    </li>
-    <li>
-      <p>
-        Division: <c>/</c>
-      </p>
-    </li>
-    <li>
-      <p>
-        Integer division: <c>//</c>
-      </p>
-    </li>
-    <li>
-      <p>
-        Modulo: <c>%</c>
-      </p>
-    </li>
-  </ul>
+  <subsection xml:id="subsec-Sage-as-a-Calculator">
+    <title>Sage as a Calculator</title>
 
-  <p>
-    There are two ways to run the code within the cells:
+    <p>
+      Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
+    </p>
+    <idx><h>arithmetic operators</h></idx>
     <ul>
       <li>
         <p>
-          Click the <kbd>Evaluate (Sage)</kbd> button located under the cell.
+          Addition: <c>+</c>
         </p>
       </li>
       <li>
         <p>
-          If your cursor is active in the cell, you can use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd>.
+          Subtraction: <c>-</c>
+        </p>
+      </li>
+      <li>
+        <p>
+          Multiplication: <c>*</c>
+        </p>
+      </li>
+      <li>
+        <p>
+          Exponentiation: <c>**</c>, or <c>^</c>
+        </p>
+      </li>
+      <li>
+        <p>
+          Division: <c>/</c>
+        </p>
+      </li>
+      <li>
+        <p>
+          Integer division: <c>//</c>
+        </p>
+      </li>
+      <li>
+        <p>
+          Modulo: <c>%</c>
         </p>
       </li>
     </ul>
-  </p>
   
-  <sage>
-    <input>
-      # Lines that start with a pound sign are comments
-      # and ignored by Sage
-      1+1
-    </input>
-  </sage>
+    <p>
+      There are two ways to run the code within the cells:
+      <ul>
+        <li>
+          <p>
+            Click the <kbd>Evaluate (Sage)</kbd> button located under the cell.
+          </p>
+        </li>
+        <li>
+          <p>
+            If your cursor is active in the cell, you can use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    
+    <sage>
+      <input>
+        # Lines that start with a pound sign are comments
+        # and ignored by Sage
+        1+1
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        100 - 1
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        3*4
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        # Sage uses two exponentiation operators
+        # ** is valid in Sage and Python
+        2**3
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        # Sage uses two exponentiation operators
+        # ^ is valid in Sage
+        2^3
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        # Returns a rational number
+        5/3
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        # Returns a floating point approximation
+        5/3.0
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        # Returns the quotient of the integer division
+        5//3
+      </input>
+    </sage>
+  
+    <sage>
+      <input>
+        # Returns the remainder of the integer division
+        5 % 3
+      </input>
+    </sage>
+  </subsection>
 
-  <sage>
-    <input>
-      100 - 1
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      3*4
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      # Sage uses two exponentiation operators
-      # ** is valid in Sage and Python
-      2**3
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      # Sage uses two exponentiation operators
-      # ^ is valid in Sage
-      2^3
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      # Returns a rational number
-      5/3
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      # Returns a floating point approximation
-      5/3.0
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      # Returns the quotient of the integer division
-      5//3
-    </input>
-  </sage>
-
-  <sage>
-    <input>
-      # Returns the remainder of the integer division
-      5 % 3
-    </input>
-  </sage>
+  <subsection xml:id="subsec-Variables-and-Names">
+    <title>Variables and Names</title>
+    <p>
+      We can assign the value of an expression to a variable. A variable is a name that refers to a value in the computer's memory. Use the assignment operator <c>=</c> to assign a value to a variable. The variable name is on the left side of the assignment operator, and the value is on the right side. Unlike the expressions above, the assignment statement does not display anything. To view the value of a variable, type the variable name and run the cell.
+    </p>
+    <sage>
+      <input>
+        a = 1
+        b = 2
+        sum = a + b
+        sum
+      </input>
+    </sage>
 </section>
