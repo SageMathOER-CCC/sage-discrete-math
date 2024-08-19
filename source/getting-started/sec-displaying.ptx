@@ -92,8 +92,7 @@
     </p>
     <sage>
       <input>
-        # Natural numbers
-        NN
+        ZZ
       </input>
     </sage>
     <p>
@@ -107,7 +106,7 @@
     </sage>
     <sage>
       <input>
-        NN
+        ZZ
       </input>
     </sage>
 </section>
