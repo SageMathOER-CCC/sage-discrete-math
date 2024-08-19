@@ -63,7 +63,7 @@
         </li>
         <li>
           <p>
-            If your cursor is active in the cell, you can use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd>.
+            Use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd> if your cursor is active in the cell.
           </p>
         </li>
       </ul>
@@ -147,4 +147,79 @@
         sum
       </input>
     </sage>
+
+    <p>
+      When choosing variable names, use valid identifiers.
+    </p>
+
+    <idx><h>identifiers</h></idx>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            Identifiers cannot start with a digit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identifiers are case-sensitive.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identifiers can include:
+            <ul>
+              <li>
+                <p>
+                  letters (<c>a</c> - <c>z</c>, <c>A</c> - <c>Z</c>)
+                </p>
+              </li>
+              <li>
+                <p>
+                  digits (<c>0</c> - <c>9</c>)
+                </p>
+              </li>
+              <li>
+                <p>
+                  underscore character <c>_</c>
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Do not use spaces, hyphens, punctuation, or special characters when naming identifiers.
+          </p>
+        </li>
+        <li>
+          <p>
+            Do not use keywords as identifiers.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Below are some reserved keywords that you cannot use as variable names:
+    </p>
+    
+    <p>
+      <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
+    </p>
+
+    <p>
+      Use the Python <c>keyword</c> module to check if a name is a keyword.
+    </p>
+    <sage>
+      <input>
+        import keyword
+        keyword.iskeyword('if')
+      </input>
+    </sage>
+    <p>
+      The output is <c>True</c> because <c>if</c> is a keyword. Try checking other names.
+    </p>
+  </subsection>
 </section>

@@ -15,58 +15,7 @@
   </sage>
 
   <p>
-    Why didn't this print <c>Hello, World!</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. It turns out there are rules about naming identifiers.
-  </p>
-
-  <idx><h>identifiers</h></idx>
-
-  <p>
-    Rules for naming identifiers in Python:
-
-    <ul>
-      <li>
-        <p>
-          Identifiers cannot start with a digit.
-        </p>
-      </li>
-      <li>
-        <p>
-          Identifiers are case-sensitive.
-        </p>
-      </li>
-      <li>
-        <p>
-          Identifiers can include:
-          <ul>
-            <li>
-              <p>
-                letters (<c>a</c> - <c>z</c>, <c>A</c> - <c>Z</c>)
-              </p>
-            </li>
-            <li>
-              <p>
-                digits (<c>0</c> - <c>9</c>)
-              </p>
-            </li>
-            <li>
-              <p>
-                underscore character <c>_</c>
-              </p>
-            </li>
-          </ul>
-        </p>
-      </li>
-      <li>
-        <p>
-          Do not use spaces, punctuation or special characters when naming identifiers.
-        </p>
-      </li>
-      <li>
-        <p>
-          Keywords cannot be used as identifiers.
-        </p>
-      </li>
-    </ul>
+    Why didn't this print <c>Hello, World!</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. We must use valid identifiers.
   </p>
 
   <p>
@@ -80,13 +29,7 @@
     </input>
   </sage>
 
-  <p>
-    Here are some more keywords that cannot be used for variable names
-  </p>
   
-  <p>
-    <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
-  </p>
   
   <p>
     Here is another error:
