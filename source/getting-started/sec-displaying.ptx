@@ -9,7 +9,7 @@
       <ul>
         <li>
           <p>
-            <c>print()</c> displays the value of the expression inside the parentheses to the screen.
+            <c>print()</c> displays the value of the expression inside the parentheses on the screen.
           </p>
         </li>
         <li>
