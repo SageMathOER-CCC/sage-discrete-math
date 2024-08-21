@@ -3,12 +3,12 @@
 <section xml:id="iteration" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Iteration</title><idx><h>iteration</h><h>for loop</h></idx>
     <p>
-        Iteration is used to create loops that allow a program to repeat a sequence of instructions until a certain condition is met. In a <c>for</c> loop, the loop variable is assigned a value from a sequence, and the body of the loop is executed once for each value.
+        Iteration is a programming technique that allows us to efficiently write code by repeating instructions with minimal syntax. The <c>for</c> loop assigns a value from a sequence to the loop variable and executes the loop body once for each value.
     </p>
     <sage>
         <input>
             # Print the numbers from 0 to 19
-            # Notice that 20 is not included
+            # Notice the loop is zero-indexed and excludes 20
             for i in range(20):
                 print(i)
         </input>
@@ -16,7 +16,7 @@
 
     <sage>
         <input>
-            # The starting value of the range is included, unlike the ending value
+            # Here, the starting value of the range is included
             for i in range(10, 20):
                 print(i)
         </input>
@@ -31,14 +31,25 @@
     </sage>
     <idx><h>iteration</h><h>list comprehension</h></idx>
     <p>
-        Lists are often used in iteration. Here is an example of list comprehension, which is a concise way to create lists.
+        Here is an example of list comprehension, a concise way to create lists. Unlike Python's <c>range()</c> function, the Sage range syntax for list comprehension includes the ending value.
     </p>
     <sage>
         <input>
-            # Create a list of the cubes of the numbers from 9 to 100
-            # In list comprehension, the for loop is written inside the square
-            # Unlike the range function, the ending value is included in the range
+            # Create a list of the cubes of the numbers from 9 to 20
+            # The for loop is written inside the square brackets
             [n**3 for n in [9..20]]
         </input>
     </sage>
+    <p>
+        We can also specify a condition in list comprehension. Let's create a list that only contains even numbers.
+    </p>
+    <sage>
+        <input>
+            [n**3 for n in [9..20] if n % 2 == 0]
+        </input>
+    </sage>
+    
+    <p>
+        For more information on iteration, see the <url href="https://doc.sagemath.org/html/en/thematic_tutorials/tutorial-comprehensions.html">Sage Thematic Tutorial</url>
+    </p>
 </section>
