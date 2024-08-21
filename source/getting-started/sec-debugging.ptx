@@ -52,4 +52,8 @@
       print(Hi)
     </input>
   </sage>
+
+  <p>
+    For more information, read the CoCalc <url href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about the top mathematical syntax errors in Sage</url>
+  </p>
 </section>
