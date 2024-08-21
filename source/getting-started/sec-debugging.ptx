@@ -3,7 +3,7 @@
 <section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Debugging</title><idx><h>error message</h></idx>
   <p>
-    When you learn how to program you will make many mistakes. This will always be part of the process. Please try your best to get comfortable with making mistakes and experimenting. Over time you will learn to recognize how to correct these mistakes quicker. Reading error messages is an essential element of programming. Sometimes error messages are helpful and descriptive. Other times they will seem confusing and will become more clear over time and with practice. Let's make some mistakes together!
+    Error messages are an inevitable part of programming for all levels of experience. With the right mindset, mistakes are valuable learning opportunities that help us develop our skills. Try to get comfortable making mistakes and embrace experimentation as part of the learning process. With experience, your debugging skills will improve. Reading error messages is a critical skill. While some error messages are helpful and descriptive, others may seem cryptic or confusing. However, with practice, error messages will become easier to understand. Let's dive in and make some mistakes together!
   </p>
 
   <sage>
@@ -15,11 +15,7 @@
   </sage>
 
   <p>
-    Why didn't this print <c>Hello, World!</c> to the screen? Sage told us we have a <c>SyntaxError</c>. In this case we are not too concerned with the meaning of <c>invalid decimal literal</c>. The problem is with how we named our variable. We must use valid identifiers.
-  </p>
-
-  <p>
-    Let's use an acceptable identifier to name our variable.
+    Why didn't this print <c>Hello, World!</c> on the screen? The error message informed us of a <c>SyntaxError</c>. While the phrase <c>invalid decimal literal</c> may seem confusing, the key issue here is the invalid variable name. Valid identifiers must start with a letter or underscore. They cannot begin with a number or use any special characters. Let's correct the variable name by using a valid identifier.
   </p>
 
   <sage>
@@ -29,8 +25,6 @@
     </input>
   </sage>
 
-  
-  
   <p>
     Here is another error:
   </p>
@@ -42,7 +36,7 @@
   </sage>
 
   <p>
-    It looks like we have a <c>NameError</c> because <c>Hi</c> is not defined. In this case Sage thinks that <c>Hi</c> is a variable because there are no quotes around it. Let's make it a string by adding quotes around it.
+    In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes that <c>Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by enclosing it in quotes to fix this.
   </p>
   <sage>
     <input>
@@ -50,7 +44,7 @@
     </input>
   </sage>
   <p>
-    Alternately, we could have kept <c>Hi</c> without quotes to use it as a variable and assign a value to it.
+    Alternatively, if we intended <c>Hi</c> to be a variable, we can assign a value to it before printing.
   </p>
   <sage>
     <input>
