@@ -3,7 +3,43 @@
 <section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Debugging</title><idx><h>error message</h></idx>
   <p>
-    Error messages are an inevitable part of programming for all levels of experience. With the right mindset, mistakes are valuable learning opportunities that help us develop our skills. Try to get comfortable making mistakes and embrace experimentation as part of the learning process. With experience, your debugging skills will improve. Reading error messages is a critical skill. While some error messages are helpful and descriptive, others may seem cryptic or confusing. However, with practice, error messages will become easier to understand. Let's dive in and make some mistakes together!
+    Error messages are an inevitable part of programming. When you make a syntax error and see a message, read it carefully for clues about the cause of the error. While some messages are helpful and descriptive, others may seem cryptic or confusing. With practice, you will develop valuable skills for debugging your code and resolving errors. Not all errors will produce an error message. Logical errors occur when the syntax is correct, but the program does not produce the expected output. Remember, mistakes are learning opportunities, and everyone makes them. Here are some tips for debugging your code:
+
+    <ul>
+      <li>
+        <p>
+          Read the error message carefully for information to help you identify and fix the problem.
+        </p>
+      </li>
+      <li>
+        <p>
+          Study the documentation.
+        </p>
+      </li>
+      <li>
+        <p>
+          Google the error message. Someone else has likely encountered the same issue.
+        </p>
+      </li>
+      <li>
+        <p>
+          Search for previous posts on the <url href="https://groups.google.com/g/sage-support">Sage Support Group</url> or <url href="https://ask.sagemath.org/">https://ask.sagemath.org/</url>.  
+        </p>
+      </li>
+      <li>
+        <p>
+          Take a break and return with a fresh perspective.
+        </p>
+      </li>
+      <li>
+        <p>
+          If you are still stuck on the bug after trying these steps, ask the Sage community for help. When you post, be specific about the issue and the steps you have taken to resolve it.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    Let's dive in and make some mistakes together!
   </p>
 
   <sage>
@@ -36,7 +72,7 @@
   </sage>
 
   <p>
-    In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes that <c>Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by enclosing it in quotes to fix this.
+    In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes that <c>Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by enclosing it in quotes.
   </p>
   <sage>
     <input>
@@ -52,7 +88,147 @@
       print(Hi)
     </input>
   </sage>
+  <p>
+    Reading the documentation is essential to understanding how to use methods correctly. If we incorrectly use a method, we will likely get a <c>NameError</c>, <c>AttributeError</c>, <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake.
+  </p>
 
+  <p>
+    Here is an example of a <c>NameError</c>:
+  </p>
+  <sage>
+    <input>
+      l = [6, 1, 5, 2, 4, 3]
+      sort(l)
+    </input>
+  </sage>
+  <p>
+    The <c>sort()</c> method must be called on the list object using dot notation.
+  </p>
+  <sage>
+    <input>
+      l = [4, 1, 2, 3]
+      l.sort()
+      print(l)
+    </input>
+  </sage>
+
+  <p>
+    Here is an example of an <c>AttributeError</c>:
+  </p>
+  <sage>
+    <input>
+      l = [1, 2, 3]
+      l.len()
+    </input>
+  </sage>
+  <p>
+    Here is the correct way to use the <c>len()</c> method:
+  </p>
+  <sage>
+    <input>
+      l = [1, 2, 3]
+      len(l)
+    </input>
+  </sage>
+
+  <p>
+    Here is an example of a <c>TypeError</c>:
+  </p>
+  <sage>
+    <input>
+      l = [1, 2, 3]
+      l.append(4, 5)
+    </input>
+  </sage>
+  <p>
+    The <c>append()</c> method only takes one argument. To add multiple elements to a list, use the <c>extend()</c> method.
+  </p>
+  <sage>
+    <input>
+      l = [1, 2, 3]
+      l.extend([4, 5])
+      print(l)
+    </input>
+  </sage>
+
+  <p>
+    Here is an example of a <c>ValueError</c>:
+  </p>
+  <sage>
+    <input>
+      factorial(-5)
+    </input>
+  </sage>
+
+  <p>
+    Although the resulting error message is lengthy, the last line informs us that the argument must be a non-negative integer.
+  </p>
+  <sage>
+    <input>
+      factorial(5)
+    </input>
+  </sage>
+
+  <p>
+    We will get an error if we supply the arguments out of order. If we want to use Sage to download a GIF of Fibonacci Tiles by Sébastien Labbé, we can use the <c>save()</c> method.
+  </p>
+  <sage>
+    <input>
+      path_op = dict(rgbcolor='red', thickness=1)
+      fill_op = dict(rgbcolor='blue', alpha=0.3)
+      options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
+      G = [words.fibonacci_tile(i).plot(**options) for i in range(7)]
+      a = animate(G)
+      a.save(delay=150, 'LabbeFibonacciTiles.gif')
+    </input>
+  </sage>
+  <p>
+    In this example, <c>SyntaxError</c> occurs because the arguments in the <c>save()</c> method are in the wrong order. We can fix this by referring to the documentation and learning the correct argument positions. After running the following cell, the <c>save()</c> method saves the file to the cell. You can right-click on the file name and select the option to download the file locally. 
+  </p>
+  <sage>
+    <input>
+      path_op = dict(rgbcolor='red', thickness=1)
+      fill_op = dict(rgbcolor='blue', alpha=0.3)
+      options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
+      G = [words.fibonacci_tile(i).plot(**options) for i in range(7)]
+      a = animate(G)
+      a.save('LabbeFibonacciTiles.gif', delay=150)
+    </input>
+  </sage>
+  <p>
+    Sometimes, Sage offers flexibility when using a method with dot notation or as a function. Here is another valid way of using <c>save()</c>.
+  </p>
+  <sage>
+    <input>
+      path_op = dict(rgbcolor='red', thickness=1)
+      fill_op = dict(rgbcolor='blue', alpha=0.3)
+      options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
+      G = [words.fibonacci_tile(i).plot(**options) for i in range(7)]
+      a = animate(G)
+      save(a, 'LabbeFibonacciTiles.gif', delay=150)
+    </input>
+  </sage>
+  <p>
+    Finally, we will consider a logical error. If your task is to print the numbers from <m>1</m> to <m>10</m>, you may mistakenly write the following code:
+  </p>
+  <sage>
+    <input>
+      for i in range(10):
+          print(i)
+    </input>
+  </sage>
+  <p>
+    The output will be the numbers from <m>0</m> to <m>9</m>. To include <m>10</m>, we need to adjust the range because the start is inclusive and the stop is exclusive.
+  </p>
+  <sage>
+    <input>
+      for i in range(1, 11):
+          print(i)
+    </input>
+  </sage>
+  <p>
+    Remember Sage list comprehension behaves differently from <c>range()</c>. The range syntax for list comprehension includes the ending value.
+  </p>
   <p>
     For more information, read the CoCalc <url href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about the top mathematical syntax errors in Sage</url>
   </p>
