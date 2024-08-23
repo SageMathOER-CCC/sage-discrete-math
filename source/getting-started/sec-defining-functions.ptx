@@ -9,29 +9,20 @@
     To define a function in Sage, use the <c>def</c> keyword followed by the function name and the function's arguments. The function's body is indented. The <c>return</c> keyword is used to return a value from the function.
   </p>
   <p>
-    Here we have a function that takes a name as an argument and returns a greeting:
+    You may have heard of Pascal's Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is a function that returns the <m>n^{th}</m> (0-indexed) row of Pascal's Triangle:
   </p>
-  <aside>
-    <title>Notes</title>
-    <p>
-      For an extra challenge, you can implement our <c>greetings</c> function more elegantly with string formatting.
-    </p>
-  </aside>
   <sage>
     <input>
-      def greetings(name):
-          return 'Hello, ' + name + '!'
+      def print_pascal_row(n):
+          return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>
   <p>
-    Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells. When you run the cell that defines the function, you won't see any output. You will only see output when you call the function.
+    Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells. When you run the cell that defines the function, you won't see any output. You will only see output when you call the function. After running the above cell, you can call the <c>print_pascal_row()</c> function.
   </p>
   <sage>
     <input>
-      # Replace 'World' with your name
-      your_name = 'World'
-      
-      greetings(your_name)
+      print_pascal_row(5)
     </input>
   </sage>
   <p>
@@ -39,27 +30,15 @@
   </p>
   <sage>
     <input>
-      def greetings(name):
-          if not isinstance(name, str):
-              raise ValueError('Name must be a string')
-          
-          if not name:
-              raise ValueError('Name cannot be empty')
-          return 'Hello, ' + name + '!'
+
     </input>
   </sage>
   <p>
-    Try calling the function with an empty string or a non-string argument to see the input validation in action.
+    Try calling the function with invalid input to see the input validation in action.
   </p>
   <sage>
     <input>
-      no_name = ''
-      greetings(no_name)
-    </input>
-  </sage>
-  <sage>
-    <input>
-      greetings(9000)
+      
     </input>
   </sage>
   <p>
@@ -67,51 +46,7 @@
   </p>
   <sage>
     <input>
-      def greetings(name):
-          """
-          This function takes a name and returns a greeting. It ensures the name is a string and not empty, raising a ValueError with a message if these conditions are not met.
-
-          Parameters:
-          - name (str): The name to include in the greeting.
-
-          Returns:
-          - str: A greeting message which includes the given name.
-
-          Raises:
-          - ValueError: If 'name' is not a string or is an empty string.
-
-          Example:
-          >>> greetings("Alice")
-          'Hello, Alice!'
-          """
-          if not isinstance(name, str):
-              raise ValueError('Name must be a string')
-          
-          if not name:
-              raise ValueError('Name cannot be empty')
-          
-          return 'Hello, ' + name + '!'
-    </input>
-  </sage>
-
-  <p>
-    Let's use what we learned about functions to define a function that is relevant to mathematics. You may have heard of Pascal's Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is a function that generates the <m>n^{th}</m> (0-indexed) row of Pascal's Triangle:
-  </p>
-
-  <sage>
-    <input>
-      def print_pascal_row(n):
-          return [binomial(n, i) for i in range(n + 1)]
-    </input>
-  </sage>
-
-  <p>
-    After running the above cell, you can call the <c>print_pascal_row()</c> function.
-  </p>
-
-  <sage>
-    <input>
-      print_pascal_row(5)
+      
     </input>
   </sage>
 </section>
