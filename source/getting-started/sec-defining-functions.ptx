@@ -95,31 +95,23 @@
   </sage>
 
   <p>
-    Let's use what we learned about functions to define a function that is relevant to mathematics. You may have heard of Pascal's Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is a function that generates the <m>n^{th}</m> (0-indexed)row of Pascal's Triangle:
+    Let's use what we learned about functions to define a function that is relevant to mathematics. You may have heard of Pascal's Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is a function that generates the <m>n^{th}</m> (0-indexed) row of Pascal's Triangle:
   </p>
 
   <sage>
     <input>
-      def printPascalRow(n):
-          # List to store the nth row
-          nth_row = []
-          
-          # Generate each item in the nth row using the binomial coefficient
-          for k in range(n + 1):
-              nth_row.append(binomial(n, k))
-          
-          # Print the nth row
-          print(nth_row)
+      def print_pascal_row(n):
+          return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>
 
   <p>
-    After running the above cell, you can call the function <c>printPascalRow</c>.
+    After running the above cell, you can call the <c>print_pascal_row()</c> function.
   </p>
 
   <sage>
     <input>
-      printPascalRow(5)
+      print_pascal_row(5)
     </input>
   </sage>
 </section>
