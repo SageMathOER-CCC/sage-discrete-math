@@ -170,10 +170,16 @@
   </sage>
 
   <p>
-    We will get an error if we supply the arguments out of order. If we want to use Sage to download a GIF of Fibonacci Tiles by Sébastien Labbé, we can use the <c>save()</c> method.
+    Sage is capable of producing animations and pictures. To view more examples of Sage art, see <url href="https://wiki.sagemath.org/art">gallery on the Sage Wiki</url>. If you want to use Sage to download a GIF of Fibonacci Tiles by Sébastien Labbé, use the <c>save()</c> method.
+  </p>
+  <p>
+    We will get an error if we supply the arguments out of order.
   </p>
   <sage>
     <input>
+      # Originally created by Sébastien Labbé.
+      # This code is adapted from the original available at: https://wiki.sagemath.org/art licensed under GPLv2. For more information, visit: https://moinmo.in/GPL
+
       path_op = dict(rgbcolor='red', thickness=1)
       fill_op = dict(rgbcolor='blue', alpha=0.3)
       options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
@@ -187,6 +193,9 @@
   </p>
   <sage>
     <input>
+      # Originally created by Sébastien Labbé.
+      # Adapted from the original available at: https://wiki.sagemath.org/art licensed under GPLv2. For more information, visit: https://moinmo.in/GPL
+
       path_op = dict(rgbcolor='red', thickness=1)
       fill_op = dict(rgbcolor='blue', alpha=0.3)
       options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
@@ -200,6 +209,9 @@
   </p>
   <sage>
     <input>
+      # Originally created by Sébastien Labbé.
+      # Adapted from the original available at: https://wiki.sagemath.org/art licensed under GPLv2. For more information, visit: https://moinmo.in/GPL
+
       path_op = dict(rgbcolor='red', thickness=1)
       fill_op = dict(rgbcolor='blue', alpha=0.3)
       options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
