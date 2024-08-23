@@ -114,4 +114,7 @@
       # to see the source code, use pascal_row??
     </input>
   </sage>
+  <p>
+    If you are interested in learning more about code style conventions and writing documentation strings, see the <url href="https://doc.sagemath.org/html/en/developer/coding_basics.html">General Conventions</url> article from the Sage Developer's Guide.
+  </p>
 </section>
