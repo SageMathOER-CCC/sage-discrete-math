@@ -31,7 +31,7 @@
     </sage>
     <idx><h>iteration</h><h>list comprehension</h></idx>
     <p>
-        Here is an example of list comprehension, a concise way to create lists. Unlike Python's <c>range()</c> function, the Sage range syntax for list comprehension includes the ending value.
+        Here is an example of list comprehension, a concise way to create lists. Unlike Python's <c>range()</c>, the Sage range syntax for list comprehension includes the ending value.
     </p>
     <sage>
         <input>
