@@ -13,32 +13,51 @@
   </p>
   <sage>
     <input>
-      def print_pascal_row(n):
+      def pascal_row(n):
           return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>
   <p>
-    Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells. When you run the cell that defines the function, you won't see any output. You will only see output when you call the function. After running the above cell, you can call the <c>print_pascal_row()</c> function.
+    Try calling the function for yourself. Be sure to run the Sage cell with the function definition first to define the function and use it in other cells. When you run the cell that defines the function, you won't see any output. You will only see output when you call the function. After running the above cell, you can call the <c>pascal_row()</c> function.
   </p>
   <sage>
     <input>
-      print_pascal_row(5)
+      pascal_row(5)
     </input>
   </sage>
   <p>
-    You can also add input validation to your functions to make them more robust.
+    You can also add input validation to your functions to make them more robust. We may get some validation out of the box. For example, if we try to call the function using a string or decimal value as input, we will get a <c>TypeError</c>:
   </p>
   <sage>
     <input>
-
+      pascal_row("5")
     </input>
   </sage>
   <p>
-    Try calling the function with invalid input to see the input validation in action.
+    However, if we try to call the function with a negative integer, the function will return an empty list without raising an error.
   </p>
   <sage>
     <input>
-      
+      pascal_row(-5)
+    </input>
+  </sage>
+  <p>
+    This lack of error handling is risky because it can go undetected and cause unexpected behavior. Let's add a <c>ValueError</c> to handle negative input:
+  </p>
+  <sage>
+    <input>
+      def pascal_row(n):
+          if n &lt; 0:
+              raise ValueError("`n` must be a non-negative integer")
+          return [binomial(n, i) for i in range(n + 1)]
+    </input>
+  </sage>
+  <p>
+    Now try calling the function with a negative integer to see the input validation in action.
+  </p>
+  <sage>
+    <input>
+      pascal_row(-5)
     </input>
   </sage>
   <p>
@@ -46,7 +65,7 @@
   </p>
   <sage>
     <input>
-      
+
     </input>
   </sage>
 </section>
