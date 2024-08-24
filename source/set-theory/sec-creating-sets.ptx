@@ -104,17 +104,17 @@
 		   <output></output>
 	   </sage>
 	   <p>
-		   We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of <m>A</m> by using the <c>Subsets</c> function to generate a set <m>S</m> with all the subsets of <m>A</m>. Then we use the <c>in</c> operator to check whether <m>B</m> belongs to the set of subsets of <m>A</m>.
+		   We can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of <m>A</m> by using the <c>issubset</c> method.
 	   </p>
 	   <sage>
 		   <input>
 		   A = Set([1, 2, 3, 4, 5])
-		   S = Subsets(A)
 		   B = Set([3, 4, 5, 6])
-		   B in S
+		   B.issubset(A)
 		   </input>
-		   <output></output>
 	   </sage>
-   </subsection>
-	  
-	</section>
+	   <p>
+		When we evaluate <c>B.issubset(A)</c>, Sage returns <c>False</c> because <m>B</m> is not a subset of <m>A</m> since <m>6</m> is not in <m>A</m>.
+	   </p>
+    </subsection>
+</section>
