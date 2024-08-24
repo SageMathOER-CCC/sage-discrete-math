@@ -8,7 +8,7 @@
 <section xml:id="sec-operation-on-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Operations on Sets</title>
 
-        <!-- Set Union Subsection -->
+
         <subsection>
             <title>Union of Sets</title><idx><h>set operations</h><h>union</h></idx>
             <p>
@@ -46,7 +46,7 @@
 
         </subsection>
 
-        <!-- Set Intersection Subsection -->
+
         <subsection>
             <title>Intersection of Sets</title><idx><h>set operations</h><h>intersection</h></idx>
             <p>
@@ -82,7 +82,7 @@
                       </sage>
         </subsection>
 
-        <!-- Set Difference Subsection -->
+
         <subsection>
             <title>Difference of Sets</title><idx><h>set operations</h><h>difference</h></idx>
             <p>
@@ -118,7 +118,7 @@
                       </sage>           
         </subsection>
 
-        <!-- Multi Set Operation Subsection -->
+
         <subsection>
             <title>Multiple Sets</title>
             <p>
@@ -155,7 +155,7 @@
 
         </subsection>
 
-        <!-- Set Complement Subsection -->
+
         <subsection>
             <title>Complement of Sets</title><idx><h>set operations</h><h>compliment</h></idx>
                 <p>
@@ -188,7 +188,7 @@
                       </sage>  
         </subsection>
 
-        <!-- Cartesian Product of Sets Subsection -->
+
         <subsection>
             <title>Cartesian Product of Sets</title><idx><h>set operations</h><h>Cartesian product</h></idx>
                 <p>
@@ -222,7 +222,7 @@
                     </sage>
         </subsection>
 
-        <!-- Powerset of Sets Subsection -->
+
         <subsection>
             <title>Power Set of Sets</title><idx><h>set operations</h><h>power set</h></idx>
                 <p>
