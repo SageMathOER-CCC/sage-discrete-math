@@ -7,7 +7,7 @@
     <subsection>
         <title>Factorial Function</title><idx><h>factorial</h></idx>
         <p>
-            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c> function computes this value, which is essential in permutations and combinations calculations.
+            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c> function computes this value, which is essential in permutations and combinations.
         </p>
         <aside>
             <title>Notes</title>
