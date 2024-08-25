@@ -60,7 +60,7 @@
                     <p>
                         A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.
                     </p>
-                </aside>        
+                </aside> 
                 <sage>
                     <input>
                         A = Set([1, 2, 3, 4, 5])
@@ -96,7 +96,7 @@
                     <p>
                         In a real-life context, this can be seen as identifying items on a restaurant menu (set A) that you have not yet tried (set B), with A - B representing the new dishes to explore.
                     </p>
-                </aside>    
+                </aside>
                 <sage>
                     <input>
                         A = Set([1, 2, 3, 4, 5])
@@ -115,7 +115,7 @@
                             A - B 
                         </input>
                         <output></output>
-                      </sage>           
+                      </sage>
         </subsection>
 
 
@@ -127,7 +127,7 @@
 
                <p>
                     Suppose <m>A = \{1, 2, 3, 4, 5\}</m>, <m>B = \{3, 4, 5, 6\}</m> and <m>C = \{5, 6, 7\}</m>. To find the union of all three sets, we will repeat the <c>union()</c> function.
-               </p> 
+               </p>
             <sage>
                 <input>
                     A = Set([1, 2, 3, 4, 5])
@@ -138,7 +138,7 @@
                 <output></output>
                 </sage>
                 <p>
-                    Alternatively, we can also repeat the <c> | </c> operator to perform the union operation.  
+                    Alternatively, we can also repeat the <c> | </c> operator to perform the union operation.
                 </p>
                 <sage>
                     <input>
@@ -166,7 +166,7 @@
                     <p>
                         This is analogous to having a list of all possible ice cream flavors (U) and identifying those flavors you have yet to try (A').
                     </p>
-                </aside>    
+                </aside>
                 <sage>
                     <input>
                         U = Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
@@ -185,7 +185,7 @@
                             U - A
                         </input>
                         <output></output>
-                      </sage>  
+                      </sage>
         </subsection>
 
 
@@ -199,7 +199,7 @@
                     <p>
                         This concept can be applied in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
                     </p>
-                </aside>    
+                </aside>
                 <sage>
                     <input>
                         A = Set([1, 2, 3, 4, 5])
