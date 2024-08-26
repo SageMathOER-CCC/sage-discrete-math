@@ -65,6 +65,12 @@ The build command will inform you of any errors in the project and prompt you to
 pretext view
 ```
 
+To generate the pdf version locally (saved under `/output/print/main.pdf`)
+```bash
+pretext build print
+```
+_Note that `LaTeX` engine and all font dependencies would need to be installed -instructions varies per OS_
+
 If you are happy with the changes you have made, you can commit them to your forked repository and submit a pull request.
 
 ### Submitting a Pull Request
