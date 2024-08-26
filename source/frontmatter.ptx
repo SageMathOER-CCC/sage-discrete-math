@@ -64,7 +64,7 @@
     </contributors>
   </preface>
 
-  <dedication>
+  <acknowledgement>
 
     <p permid="KDJ">
       This textbook is a testament to our collaborative spirit and the Open Education movement, aiming to make higher education accessible to all by providing approachable resources for students to learn open-source mathematics software.
@@ -99,10 +99,10 @@
     </p>
 
     <p>
-      — <term>Zunaid Ahmed and Samuel Lubliner</term>
+      <em>Zunaid Ahmed and Samuel Lubliner</em>
     </p>
 
-  </dedication>
+  </acknowledgement>
 
   <acknowledgement>
     <p permid="ewA">
