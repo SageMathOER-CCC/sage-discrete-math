@@ -117,7 +117,7 @@
     <subsection>
         <title>Multiple Sets</title>
         <p>
-            When performing operations involving multiple sets, we can repeat the operations to get our results. Here is an example.
+            When performing operations involving multiple sets, we can repeat the operations to get our results. Here is an example:
         </p>
         <p>
             Suppose <m>A = \{1, 2, 3, 4, 5\}</m>, <m>B = \{3, 4, 5, 6\}</m> and <m>C = \{5, 6, 7\}</m>. To find the union of all three sets, we will repeat the <c>union()</c> function.
