@@ -45,56 +45,6 @@
     </attribution>
   </preface>
 
-  <colophon>
-
-    <p>
-      <m>\textbf{PDF Download}:</m> This book is available for free download in PDF format by clicking
-      
-      <url href="https://github.com/SageMathOER-CCC/sage-discrete-math/blob/pdf-update/output/print/main.pdf">here</url>.
-    </p>
-
-    <website>
-      <url href="https://github.com/SageMathOER-CCC/sage-discrete-math">GitHub Repository</url>
-    </website>
-
-    <copyright>
-      <year>2020<ndash />2023</year>
-      <holder>Zunaid Ahmed, Hellen Colman, Samuel Lubliner</holder>
-      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
-        International License. To view a copy of this license, visit <url
-          href="http://creativecommons.org/licenses/by-sa/4.0/"
-          visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
-      </shortlicense>
-    </copyright>
-  </colophon>
-
-
-  <preface xml:id="authors">
-    <title>Authors</title>
-    <contributors>
-      <contributor xml:id="za">
-        <personname>Zunaid Ahmed</personname>
-        <department>Computer Engineering</department>
-        <institution>Truman College</institution>
-        <email>zunaid.ahmed@hotmail.com</email>
-      </contributor>
-
-      <contributor xml:id="hc">
-        <personname>Hellen Colman</personname>
-        <department>Math Department</department>
-        <institution>Wright College</institution>
-        <email>hcolman@ccc.edu</email>
-      </contributor>
-
-      <contributor xml:id="sl">
-        <personname>Samuel Lubliner</personname>
-        <department>Computer Science</department>
-        <institution>Wright College</institution>
-        <email>sage.oer@gmail.com</email>
-      </contributor>
-    </contributors>
-  </preface>
-
   <acknowledgement>
 
     <p permid="KDJ">
@@ -213,5 +163,52 @@
       </ul>
     </p>
   </acknowledgement>
+
+  <preface xml:id="authors">
+    <title>Authors</title>
+    <contributors>
+      <contributor xml:id="za">
+        <personname>Zunaid Ahmed</personname>
+        <department>Computer Engineering</department>
+        <institution>Truman College</institution>
+        <email>zunaid.ahmed@hotmail.com</email>
+      </contributor>
+
+      <contributor xml:id="hc">
+        <personname>Hellen Colman</personname>
+        <department>Math Department</department>
+        <institution>Wright College</institution>
+        <email>hcolman@ccc.edu</email>
+      </contributor>
+
+      <contributor xml:id="sl">
+        <personname>Samuel Lubliner</personname>
+        <department>Computer Science</department>
+        <institution>Wright College</institution>
+        <email>sage.oer@gmail.com</email>
+      </contributor>
+    </contributors>
+  </preface>
+
+  <colophon>
+    <p>
+      <m>\textbf{PDF Download}:</m> This book is available for free download in PDF format by clicking
+      <url href="https://github.com/SageMathOER-CCC/sage-discrete-math/blob/pdf-update/output/print/main.pdf">here</url>.
+    </p>
+
+    <website>
+      <url href="https://github.com/SageMathOER-CCC/sage-discrete-math">GitHub Repository</url>
+    </website>
+
+    <copyright>
+      <year>2020<ndash />2023</year>
+      <holder>Zunaid Ahmed, Hellen Colman, Samuel Lubliner</holder>
+      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+        International License. To view a copy of this license, visit <url
+          href="http://creativecommons.org/licenses/by-sa/4.0/"
+          visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+      </shortlicense>
+    </copyright>
+  </colophon>
 
 </frontmatter>
