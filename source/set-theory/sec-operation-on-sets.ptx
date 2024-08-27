@@ -32,7 +32,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can also use the <c> | </c> operator to perform the union operation.
+            Alternatively, we can use the <c> | </c> operator to perform the union operation.
         </p>
         <sage>
             <input>
@@ -68,7 +68,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can also use the <c> &amp; </c> operator to perform the intersection operation.  
+            Alternatively, we can use the <c> &amp; </c> operator to perform the intersection operation.  
         </p>
         <sage>
             <input>
@@ -103,7 +103,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can also use the <c> - </c> operator to perform the difference operation.  
+            Alternatively, we can use the <c> - </c> operator to perform the difference operation.  
         </p>
         <sage>
             <input>
@@ -132,7 +132,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can also repeat the <c> | </c> operator to perform the union operation.
+            Alternatively, we can repeat the <c> | </c> operator to perform the union operation.
         </p>
         <sage>
             <input>
@@ -169,7 +169,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can also use the <c> - </c> operator as well.  
+            Alternatively, we can use the <c> - </c> operator.  
         </p>
         <sage>
             <input>
