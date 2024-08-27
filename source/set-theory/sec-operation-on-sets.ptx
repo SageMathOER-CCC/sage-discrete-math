@@ -224,6 +224,53 @@
         <p>
             The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the builtin <c>Set</c> methods.
         </p>
+        <p>
+            The <c>Subsets()</c> function returns the all subsets of a finite set in no particular order. Here we will find the power set of the set of colors of the rainbow.
+        </p>
+        <sage>
+            <input>
+                rainbow = Set(["red", "orange", "yellow", "green", "blue", "indigo", "violet"])
+                color_combos = Subsets(rainbow)
+                color_combos
+            </input>
+        </sage>
+        <p>
+            We can confirm that the empty set and the set itself are included in the power set.
+        </p>
+        <sage>
+            <input>
+                Set([]) in color_combos
+            </input>
+        </sage>
+        <sage>
+            <input>
+                rainbow in color_combos
+            </input>
+        </sage>
+        <p>
+            We can find the total number of subsets with <c>cardinality()</c> method.
+        </p>
+        <sage>
+            <input>
+                color_combos.cardinality()
+            </input>
+        </sage>
+        <p>
+            We can view the subsets of a set as a <c>list</c> of <c>Sets</c>.
+        </p>
+        <sage>
+            <input>
+                color_combos.list()
+            </input>
+        </sage>
+        <p>
+            We can retrieve a random element from the power set with the <c>random_element()</c> method.
+        </p>
+        <sage>
+            <input>
+                color_combos.random_element()
+            </input>
+        </sage>
     </subsection>
 
 </section>
