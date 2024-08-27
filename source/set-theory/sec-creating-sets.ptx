@@ -17,7 +17,7 @@
         </input>
         </sage>
         <p>
-            Use a <c>for</c> loop to view each elements of the set on a new line.
+            Use a <c>for</c> loop to view each element of the set on a new line.
         </p>
         <sage>
             <input>
@@ -35,11 +35,11 @@
         </p>
         <idx><h>equality operator</h></idx>
         <p>
-            The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
+            The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are equal. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
         </p>
         <idx><h>assignment operator</h></idx>
         <p>
-            The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.
+            The <term>assignment operator</term> <c>=</c> assigns the value on the right side to the variable on the left side.
         </p>
         <sage>
         <input>
@@ -52,7 +52,7 @@
         </sage>
 
         <p>
-            If you are familiar with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
+            If you have experience with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lowercase <c>s</c>. Even though Sage supports Python sets, we will use Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
         </p>
     </subsection>
 
@@ -61,7 +61,7 @@
         <title>Set Builder Notation</title>
 
         <p>
-            Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
+            Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here, we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
         </p>
         <sage>
         <input>
@@ -105,7 +105,7 @@
         <title>Set Membership Check</title>
 
         <p>
-            Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
+            Sage allows you to check whether an element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
         </p>
 
         <aside>
