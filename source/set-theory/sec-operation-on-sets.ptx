@@ -190,7 +190,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                This concept can be applied in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
+                The Cartesian product is relevant in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
             </p>
         </aside>
         <sage>
