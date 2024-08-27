@@ -20,7 +20,8 @@
         <aside>
             <title>Notes</title>
             <p>
-                This operation can be visualized in real-world scenarios such as merging two distinct music playlists into one. In this case, any song that appears in both playlists will only be listed once in the merged playlist.
+                The union operation is relevant in real-world scenarios, such as merging two distinct music playlists into one. In this case, any song that appears in both playlists will only be listed once in the merged playlist.
+
             </p>
         </aside>
         <sage>
