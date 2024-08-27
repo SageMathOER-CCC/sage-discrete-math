@@ -13,7 +13,7 @@
         <sage>
         <input>
             M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            show(M)
+            print(M)
         </input>
         </sage>
         <p>
@@ -22,7 +22,7 @@
         <sage>
             <input>
                 for month in M:
-                    show(month)
+                    print(month)
             </input>
         </sage>
         <p>
@@ -87,13 +87,16 @@
         <title>Subsets</title>
 
         <p>
-            To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
+            To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use a <c>for</c> loop to display each subset.
         </p>
         <sage>
         <input>
-            A = Subsets([1, 2, 3, 4, 5])
-            Set(A)
-        </input> <output></output>
+            W = Set(["Sun", "Cloud", "Rain", "Snow", "Hail", "Wind", "Fire" "Fog", "hurricane", "tornado"])
+            subsets_of_weather = Subsets(W)
+
+            for subset in subsets_of_weather:
+                print(subset)
+        </input>
         </sage>
     </subsection>
 
@@ -105,9 +108,6 @@
             Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
         </p>
 
-        <p>
-            Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number <m>3</m> is in set <m>A</m>:
-        </p>
         <aside>
         <title>Notes</title>
 
@@ -117,24 +117,27 @@
         </aside>
         <sage>
         <input>
-           A = Set([1, 2, 3, 4, 5])
-           3 in A
+            "earthquake" in W
         </input>
         </sage>
 
         <p>
-            We can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of <m>A</m> by using the <c>issubset</c> method.
+            We can check if <m>Severe = \{Tornado, Hurricane \}</m> is a subset of <m>W</m> by using the <c>issubset</c> method.
         </p>
         <sage>
         <input>
-           A = Set([1, 2, 3, 4, 5])
-           B = Set([3, 4, 5, 6])
-           B.issubset(A)
+            Severe = Set(["Tornado", "Hurricane"])
+            Severe.issubset(W)
         </input>
         </sage>
 
         <p>
-            When we evaluate <c>B.issubset(A)</c>, Sage returns <c>False</c> because <m>B</m> is not a subset of <m>A</m> since <m>6</m> is not in <m>A</m>.
+            When we evaluate <c>W.issubset(Severe)</c>, Sage returns <c>False</c> because <m>W</m> is not a subset of <m>Severe</m>.
         </p>
+        <sage>
+            <input>
+                W.issubset(Severe) 
+            </input>
+        </sage>
     </subsection>
 </section>
