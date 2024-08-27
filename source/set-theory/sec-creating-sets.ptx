@@ -12,9 +12,18 @@
         </p>
         <sage>
         <input>
-            A = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            print(A)
+            M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            show(M)
         </input>
+        </sage>
+        <p>
+            Use a <c>for</c> loop to view each elements of the set on a new line.
+        </p>
+        <sage>
+            <input>
+                for month in M:
+                    show(month)
+            </input>
         </sage>
 
         <p>
@@ -31,10 +40,11 @@
         </p>
         <sage>
         <input>
-            A = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            B = Set(["Jan", "Jan", "Jan", "Feb", "Feb", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            M_duplicates = Set(["Jan", "Jan", "Jan", "Feb", "Feb", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            
             # The Set function eliminates duplicates 
-            A == B
+            M == M_duplicates
         </input>
         </sage>
 
