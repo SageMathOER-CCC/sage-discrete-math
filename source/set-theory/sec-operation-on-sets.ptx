@@ -280,6 +280,47 @@
                 Subsets(non_hashable_elements).list() 
             </input>
         </sage>
+        <p>
+            The <c>powerset()</c> function returns an iterator over the <c>list</c> of all subsets in no particular order. The <c>powerset()</c> function is ideal when working with non-hashable objects.
+        </p>
+        <sage>
+            <input>
+                non_hashable_elements = [1, [2, 3], 4]
+                list(powerset(non_hashable_elements))
+            </input>
+        </sage>
+        <p>
+            The <c>powerset()</c> function supports infinite sets. Let's generate the first 7 subsets from the power set of integers.
+        </p>
+        <sage>
+            <input>
+                power_set_integers = powerset(ZZ)
+
+                i = 0
+                for subset in power_set_integers:
+                    print(subset)
+                    i += 1
+                    if i == 7:
+                        break
+            </input>
+        </sage>
+        <p>
+            While the <c>Subsets()</c> function can represent infinite sets symbolically, it is not practical. Observe the error message when trying to retrieve a random element from <c>Subsets(ZZ)</c>
+        </p>
+        <sage>
+            <input>
+                powerset_of_integers = Subsets(ZZ)
+                powerset_of_integers
+            </input>
+        </sage>
+        <sage>
+            <input>
+                powerset_of_integers.random_element()
+            </input>
+        </sage>
+        <p>
+            Pay close attention to the capitalization of function names. Notice the lowercase <c>s</c> in <c>subsets()</c>, which serves as an alias for <c>powerset()</c>.
+        </p>
     </subsection>
 
 </section>
