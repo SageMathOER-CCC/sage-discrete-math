@@ -13,7 +13,7 @@
         <sage>
         <input>
             M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            print(M)
+            M
         </input>
         </sage>
         <p>
@@ -91,7 +91,7 @@
         </p>
         <sage>
         <input>
-            W = Set(["Sun", "Cloud", "Rain", "Snow", "Hail", "Wind", "Fire" "Fog", "hurricane", "tornado"])
+            W = Set(["Sun", "Cloud", "Rain", "Snow", "Tornado", "Hurricane"])
             subsets_of_weather = Subsets(W)
 
             for subset in subsets_of_weather:
