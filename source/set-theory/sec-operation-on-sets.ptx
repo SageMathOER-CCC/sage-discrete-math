@@ -226,7 +226,7 @@
             The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the built-in <c>Set</c> methods.
         </p>
         <p>
-            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here we will find the power set of the set of colors of the rainbow.
+            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here, we will find the power set of the set of colors of the rainbow.
         </p>
         <sage>
             <input>
@@ -236,7 +236,7 @@
             </input>
         </sage>
         <p>
-            We can confirm that the empty set and the set itself are included in the power set.
+            We can confirm that the power set includes the empty set and the set itself.
         </p>
         <sage>
             <input>
