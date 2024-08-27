@@ -143,7 +143,7 @@
             </input>
         </sage>
         <p>
-            Similar operations can also be done using the <c>intersection()</c> and <c>difference()</c> functions as well as their operators.
+            The <c>intersection()</c> and <c>difference()</c> functions can perform similar chained operations on multiple sets.
         </p>
 
     </subsection>
