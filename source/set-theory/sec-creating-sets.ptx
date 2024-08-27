@@ -12,7 +12,7 @@
         </p>
         <sage>
         <input>
-            A = Set([5, 1, 2, 3, 4, 5, 2, 1])
+            A = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
             print(A)
         </input>
         </sage>
@@ -31,8 +31,9 @@
         </p>
         <sage>
         <input>
-            A = Set([1, 2, 3, 4, 5])
-            B = Set([5, 1, 2, 3, 4, 5, 2, 1])
+            A = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            B = Set(["Jan", "Jan", "Jan", "Feb", "Feb", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            # The Set function eliminates duplicates 
             A == B
         </input>
         </sage>
