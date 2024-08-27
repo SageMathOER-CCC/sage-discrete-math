@@ -271,6 +271,15 @@
                 color_combos.random_element()
             </input>
         </sage>
+        <p>
+            There are limitation to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function returns sets that often include non-hashable objects. Observe the error message when trying to create a power set of a list containing a list.
+        </p>
+        <sage>
+            <input>
+                non_hashable_elements = [1, [2, 3], 4]
+                Subsets(non_hashable_elements).list() 
+            </input>
+        </sage>
     </subsection>
 
 </section>
