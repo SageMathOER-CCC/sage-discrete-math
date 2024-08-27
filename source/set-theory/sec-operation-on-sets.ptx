@@ -84,7 +84,7 @@
         <title>Difference of Sets</title>
         <idx><h>set operations</h><h>difference</h></idx>
         <p>
-            We have two methods to solve for difference as well.
+            We have two methods to solve for the difference as well.
         </p>
         <p>
             Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>difference()</c> function to calculate the difference between 2 sets.
@@ -223,10 +223,10 @@
         <title>Power Set of Sets</title>
         <idx><h>set operations</h><h>power set</h></idx>
         <p>
-            The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the builtin <c>Set</c> methods.
+            The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the built-in <c>Set</c> methods.
         </p>
         <p>
-            The <c>Subsets()</c> function returns the all subsets of a finite set in no particular order. Here we will find the power set of the set of colors of the rainbow.
+            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here we will find the power set of the set of colors of the rainbow.
         </p>
         <sage>
             <input>
@@ -273,7 +273,7 @@
             </input>
         </sage>
         <p>
-            There are limitation to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function returns sets that often include non-hashable objects. Observe the error message when trying to create a power set of a list containing a list.
+            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function returns sets that often include non-hashable objects. Observe the error message when trying to create a power set of a list containing a list.
         </p>
         <sage>
             <input>
@@ -320,7 +320,7 @@
             </input>
         </sage>
         <p>
-            Pay close attention to the capitalization of function names. Notice the lowercase <c>s</c> in <c>subsets()</c>, which serves as an alias for <c>powerset()</c>.
+            Pay close attention to the capitalization of function names. Notice the lowercase <c>s</c> in <c>subsets()</c>, which is an alias for <c>powerset()</c>.
         </p>
     </subsection>
 
