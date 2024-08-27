@@ -25,6 +25,9 @@
                     show(month)
             </input>
         </sage>
+        <p>
+            Notice that the months in set <m>M</m> do not appear in the same order as when you created the set. Sets are unordered collections of elements.
+        </p>
 
         <p>
             We can ask Sage to compare two sets to see whether or not they are equal.
