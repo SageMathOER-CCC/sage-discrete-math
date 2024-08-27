@@ -213,23 +213,17 @@
 
 
     <subsection>
-        <title>Power Set of Sets</title>
-        <idx><h>set operations</h><h>power set</h></idx>
-        <p>
-            The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. This Sage code defines a set <m>A = \{1, 2, 3, 4, 5\}</m> and uses the <c>powerset()</c> function to generate all subsets of <m>A</m>. The <c>list()</c> function is then used to convert the power set iterator into a list.
-        </p>
         <aside>
             <title>Notes</title>
             <p>
                 Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
             </p>
         </aside>
-        <sage>
-            <input>
-                A = Set([1, 2, 3, 4, 5])
-                list(powerset(A))
-            </input>
-        </sage>
+        <title>Power Set of Sets</title>
+        <idx><h>set operations</h><h>power set</h></idx>
+        <p>
+            The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the builtin <c>Set</c> methods.
+        </p>
     </subsection>
 
 </section>
