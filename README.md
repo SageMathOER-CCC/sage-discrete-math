@@ -29,18 +29,20 @@ If you encounter any bugs, typos, have suggestions for improvements, or have any
 3. Fill in the title and describe the issue or suggestion in detail.
 4. Submit the issue.
 
-### Forking the Repository
+### Clone the Repository and Create a Branch
 
-To contribute to the codebase or content, you'll need to fork the repository. This creates your own copy of the project where you can make changes.
+To contribute to the codebase or content, you'll need to clone the repository and create a feature branch to work on your changes:
 
 1. Visit the [GitHub repository](https://github.com/SageMathOER-CCC/sage-discrete-math).
-2. At the top right corner, click the "Fork" button.
+2. Clone the repository.
+3. Create a feature branch with a short descriptive name.
+4. Make your changes in the branch.
 
 ### Setting Up a Codespace
 
 GitHub Codespaces allows you to develop in a cloud-based development environment. To set up a Codespace in a development container for this project:
 
-1. Go to the "Code" tab of your forked repository.
+1. Go to the "Code" tab of your cloned repository.
 2. Click the green "Code" button, then select "Open with Codespaces" > "New codespace".
 3. GitHub will prepare your codespace with the project's development environment.
 4. Alternatively, you can clone the repository to your local machine and set up the development environment with a development container.
@@ -65,16 +67,16 @@ The build command will inform you of any errors in the project and prompt you to
 pretext view
 ```
 
-If you are happy with the changes you have made, you can commit them to your forked repository and submit a pull request.
+If you are happy with the changes you have made, you can commit them to your branch and submit a pull request.
 
 ### Submitting a Pull Request
 
-After making your changes in the forked repository or in a codespace, you're ready to submit a pull request for review:
+After making your changes in the feature branch, you're ready to submit a pull request for review:
 
-1. Navigate to your fork on GitHub.
-2. Click on "Contribute" and then open a pull request.
-3. Ensure that the base repository and branch are correct.
-4. Fill in a clear title and description for your changes.
+1. Go to the GitHub repository and select the option to make a pull request for your feature branch.
+2. Ensure that the base repository and branch are correct.
+3. Fill in a clear title and description for your changes.
+4. Optionally, link the pull request to an issue.
 5. Submit the pull request.
 
 The project maintainers will review your pull request and may request changes or merge it into the main project. Your contributions are appreciated and crucial in making this resource more comprehensive and useful for math education.
