@@ -115,6 +115,6 @@
     </input>
   </sage>
   <p>
-    For more information on code style conventions and writing effective documentation strings, refer to the <url href="https://doc.sagemath.org/html/en/developer/coding_basics.html">General Conventions article</url> from the Sage Developer's Guide.
+    For more information on code style conventions and writing effective documentation strings, refer to the General Conventions article from the Sage Developer's Guide.
   </p>
 </section>

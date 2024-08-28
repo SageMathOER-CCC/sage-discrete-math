@@ -48,8 +48,4 @@
             [n**3 for n in [9..20] if n % 2 == 0]
         </input>
     </sage>
-    
-    <p>
-        For more information on iteration, see the <url href="https://doc.sagemath.org/html/en/thematic_tutorials/tutorial-comprehensions.html">Sage Thematic Tutorial</url>
-    </p>
 </section>

@@ -23,7 +23,7 @@
       </li>
       <li>
         <p>
-          Search for previous posts on the <url href="https://groups.google.com/g/sage-support">Sage Support Group</url> or <url href="https://ask.sagemath.org/">https://ask.sagemath.org/</url>.  
+          Search for previous posts on Sage forums.
         </p>
       </li>
       <li>
@@ -33,7 +33,7 @@
       </li>
       <li>
         <p>
-          If you are still stuck on the bug after trying these steps, ask the Sage community for help. When you post, be specific about the issue and the steps you have taken to resolve it.
+          If you are still stuck after trying these steps, ask the Sage community.
         </p>
       </li>
     </ul>
