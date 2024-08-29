@@ -5,7 +5,7 @@
 
   <introduction>
     <p>
-      Counting techniques arise naturally in computer algebra as well as in basic applications in daily life. This chapter covers the treatment in Sage of the enumeration problem, like counting combinations and counting permutations as well as listing them.
+      Counting techniques arise naturally in computer algebra as well as in basic applications in daily life. This chapter covers the treatment of the enumeration problem in Sage, including counting combinations, counting permutations, and listing them.
     </p>
   </introduction>
 
