@@ -5,7 +5,8 @@
 
   <introduction>
     <p>
-      This chapter presents the study of set theory with Sage, starting with a description of the <c>Set</c> function and its variations, then how to use it to calculate the basic set operations.
+      This chapter presents the study of set theory with Sage, starting with a description of the <c>Set()</c> function, its variations, and how to use it to calculate the basic set operations.
+
     </p>
   </introduction>
 

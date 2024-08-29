@@ -3,13 +3,13 @@
 <section xml:id="displaying" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Display Values</title>
     <p>
-      Sage offers various ways to display values to the screen. The simplest way is to just type the value into a cell and Sage will display it. Sage also has functions to display values to the screen.
+      Sage offers various ways to display values on the screen. The simplest way is to type the value into a cell, and Sage will display it. Sage also has functions that display values in different formats.
     </p>
     <p>
       <ul>
         <li>
           <p>
-            <c>print()</c> displays the value of the expression inside the parentheses to the screen.
+            <c>print()</c> displays the value of the expression inside the parentheses on the screen.
           </p>
         </li>
         <li>
@@ -30,6 +30,11 @@
         <li>
           <p>
             <c>%display latex</c> renders the output of commands as <latex /> automatically.
+          </p>
+        </li>
+        <li>
+          <p>
+            While Python string formatting is available, the output is unreliable for rendering rich text and <latex /> due to compatibility issues.
           </p>
         </li>
       </ul>
@@ -92,8 +97,7 @@
     </p>
     <sage>
       <input>
-        # Natural numbers
-        NN
+        ZZ
       </input>
     </sage>
     <p>
@@ -107,7 +111,7 @@
     </sage>
     <sage>
       <input>
-        NN
+        ZZ
       </input>
     </sage>
 </section>

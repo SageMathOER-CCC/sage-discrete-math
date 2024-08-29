@@ -1,120 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="creating-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Creating Sets</title>
+    <title>Creating Sets</title>
 
-	<subsection xml:id="subsec-Ways-to-create-a-set">
-		<title>Set Definitions</title><idx><h>data types</h><h>Set (Sage)</h></idx>
-		<p>
-			To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c>list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c>Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
-		</p>
+    <subsection xml:id="subsec-Ways-to-create-a-set">
+        <title>Set Definitions</title>
 
-		<sage>
-			<input>
-				A = Set([5, 1, 2, 3, 4, 5, 2, 1])
-				print(A)
-			</input>
-		</sage>
+        <idx><h>data types</h><h>Set (Sage)</h></idx>
+        <p>
+            To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c>list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c>Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
+        </p>
+        <sage>
+        <input>
+            M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            M
+        </input>
+        </sage>
+        <p>
+            Use a <c>for</c> loop to view each element of the set on a new line.
+        </p>
+        <sage>
+            <input>
+                for month in M:
+                    print(month)
+            </input>
+        </sage>
+        <p>
+            Notice that the months in set <m>M</m> do not appear in the same order as when you created the set. Sets are unordered collections of elements.
+        </p>
 
-		<p>
-			We can ask Sage to compare two sets to see whether or not they are equal. We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
-		</p>
-		<idx><h>equality operator</h></idx>
-		<p>
-			The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are the same. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
-		</p>
-		<idx><h>assignment operator</h></idx>
-		<p>
-			The <term>assignment operator</term> <c>=</c> is used to assign a value to a variable. The value on the right side of the operator is assigned to the variable on the left side.
-		</p>
+        <p>
+            We can ask Sage to compare two sets to see whether or not they are equal.
+            We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+        </p>
+        <idx><h>equality operator</h></idx>
+        <p>
+            The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are equal. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
+        </p>
+        <idx><h>assignment operator</h></idx>
+        <p>
+            The <term>assignment operator</term> <c>=</c> assigns the value on the right side to the variable on the left side.
+        </p>
+        <sage>
+        <input>
+            M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            M_duplicates = Set(["Jan", "Jan", "Jan", "Feb", "Feb", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+            
+            # The Set function eliminates duplicates 
+            M == M_duplicates
+        </input>
+        </sage>
 
-		<sage>
-			<input>
-				A = Set([1, 2, 3, 4, 5])
-				B = Set([5, 1, 2, 3, 4, 5, 2, 1])
-				A == B
-			</input>
-		</sage>
+        <p>
+            If you have experience with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lowercase <c>s</c>. Even though Sage supports Python sets, we will use Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
+        </p>
+    </subsection>
 
-		<p>
-			If you are familiar with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lower case <c>s</c>. Even though Sage supports Python sets, we will be using Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
-		</p>
 
-	  </subsection>
+    <subsection xml:id="subsec-set-builder-notation">
+        <title>Set Builder Notation</title>
 
-	  <subsection xml:id="subsec-set-builder-notation">
-		<title>Set Builder Notation</title>
-		<p>
-			Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
-		</p>
+        <p>
+            Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here, we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
+        </p>
+        <sage>
+        <input>
+            # Create a set of even numbers between 1 and 10
+            A = Set([x for x in srange(1, 11) if x % 2 == 0])
+            A
+        </input>
+        </sage>
 
-		<sage>
-			<input>
-				# Create a set of even numbers between 1 and 10
-				C = Set([x for x in srange(1, 11) if x % 2 == 0])
-				C
-			</input>
-		</sage>
+        <p>
+            Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> A = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
+        </p>
+        <sage>
+        <input>
+            B = Set([x for x in srange(1, 101) if x % 2 == 0])
+            B
+        </input>
+        </sage>
+    </subsection>
 
-		<p>
-			Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> C = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
-		</p>
 
-		<sage>
-			<input>
-				D = Set([x for x in srange(1, 101) if x % 2 == 0])
-				D
-			</input>
-		</sage>
-	  </subsection>
+    <subsection xml:id="subsec-subsets">
+        <title>Subsets</title>
 
-	  <subsection xml:id="subsec-subsets">
-		<title>Subsets</title>
-		<p>
-			To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use the <c>Set()</c> function to display the set of subsets.
-		</p>
-		<sage>
-		  <input>
-			A = Subsets([1, 2, 3, 4, 5])
-			Set(A)
-		  </input>
-		  <output></output>
-		</sage>
-	  </subsection>
+        <p>
+            To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use a <c>for</c> loop to display each subset.
+        </p>
+        <sage>
+        <input>
+            W = Set(["Sun", "Cloud", "Rain", "Snow", "Tornado", "Hurricane"])
+            subsets_of_weather = Subsets(W)
 
-	  <subsection>
-		<title>Set Membership Check</title>
-	   <p>
-		  Sage allows you to easily check whether a certain element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
-	   </p>
-	   <p>
-		   Let's consider <m>A = \{1, 2, 3, 4, 5\}</m>. We can check if the number <m>3</m> is in set <m>A</m>:
-	   </p>
-	   <aside>
-		   <title>Notes</title>
-		   <p>
-			   For organizations such as clubs, gyms, or online subscription services, set membership checks can be used to validate if a user is a member or subscriber. This can help control access to facilities or content.
-		   </p>
-	   </aside>        
-	   <sage>
-		   <input>
-		   A = Set([1, 2, 3, 4, 5])
-		   3 in A
-		   </input>
-		   <output></output>
-	   </sage>
-	   <p>
-		   We also can check if <m>B = \{3, 4, 5, 6\}</m> is a subset of <m>A</m> by using the <c>Subsets</c> function to generate a set <m>S</m> with all the subsets of <m>A</m>. Then we use the <c>in</c> operator to check whether <m>B</m> belongs to the set of subsets of <m>A</m>.
-	   </p>
-	   <sage>
-		   <input>
-		   A = Set([1, 2, 3, 4, 5])
-		   S = Subsets(A)
-		   B = Set([3, 4, 5, 6])
-		   B in S
-		   </input>
-		   <output></output>
-	   </sage>
-   </subsection>
-	  
-	</section>
+            for subset in subsets_of_weather:
+                print(subset)
+        </input>
+        </sage>
+    </subsection>
+
+
+    <subsection>
+        <title>Set Membership Check</title>
+
+        <p>
+            Sage allows you to check whether an element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
+        </p>
+
+        <aside>
+        <title>Notes</title>
+
+        <p>
+            Organizations such as clubs, gyms, or online subscription services can use set membership checks to validate if a user is a member or subscriber. Set membership checks can help control access to facilities or content.
+        </p>
+        </aside>
+        <sage>
+        <input>
+            "earthquake" in W
+        </input>
+        </sage>
+
+        <p>
+            We can check if <m>Severe = \{Tornado, Hurricane \}</m> is a subset of <m>W</m> by using the <c>issubset</c> method.
+        </p>
+        <sage>
+        <input>
+            Severe = Set(["Tornado", "Hurricane"])
+            Severe.issubset(W)
+        </input>
+        </sage>
+
+        <p>
+            When we evaluate <c>W.issubset(Severe)</c>, Sage returns <c>False</c> because <m>W</m> is not a subset of <m>Severe</m>.
+        </p>
+        <sage>
+            <input>
+                W.issubset(Severe) 
+            </input>
+        </sage>
+    </subsection>
+</section>
