@@ -1,13 +1,28 @@
 <section xml:id="sec-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean Algebra</title><idx><h>Boolean Algebra</h></idx>
-    <p>
-        A  Boolean algebra is a bounded lattice that is both complemented and distributive.
-    </p>
     <aside>
         <p>
             In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.
         </p>
     </aside>
+    <p>
+        A  Boolean algebra is a bounded lattice that is both complemented and distributive. Let's define a function, <c>is_boolean_algebra()</c> to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
+    </p>
+    <sage>
+        <input>
+            def is_boolean_algebra(P):
+                if not P.is_lattice():
+                    return False, "The poset is not a lattice."
+                if not P.is_bounded():
+                    return False, "The lattice is not bounded."
+                if not P.is_distributive():
+                    return False, "The lattice is not distributive."
+                if not P.is_complemented():
+                    return False, "The lattice is not complemented."
+                return True, "The poset is a Boolean algebra."
+        </input>
+    </sage>
+    
     <sage>
         <input>
             p = Posets.DivisorLattice(20)
