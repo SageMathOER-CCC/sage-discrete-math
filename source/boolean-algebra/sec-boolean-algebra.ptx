@@ -22,31 +22,24 @@
                 return True, "The poset is a Boolean algebra."
         </input>
     </sage>
-    
-    <sage>
-        <input>
-            p = Posets.DivisorLattice(20)
-            p.show()
-        </input>
-    </sage>
     <p>
-        The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.
+        Let's check if the following poset is a Boolean algebra.
     </p>
     <sage>
         <input>
-            p = Posets.DivisorLattice(20)
-            p.is_distributive()
+            P = [1, 2, 3, 4, 5, 6]
+            
+            poset_divisors_6 = Poset((P, attrcall("divides")))
+
+            show(poset_divisors_6)
         </input>
     </sage>
-    <p>
-        Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.
-    </p>
     <sage>
         <input>
-            p = Posets.DivisorLattice(20)
-            p.is_complemented()
+            is_boolean_algebra(poset_divisors_6)
         </input>
     </sage>
+
     <aside>
         <p>
             Software engineers use Boolean algebra to simplify conditions, refactor code, and optimize logic. These skills are crucial for identifying bottlenecks and improving efficiency in real-time systems and performance-critical applications.
