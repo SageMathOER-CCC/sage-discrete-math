@@ -5,7 +5,7 @@
     </p>
     <aside>
         <p>
-            In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.
+            In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.
         </p>
     </aside>
     <sage>
@@ -29,11 +29,6 @@
             # Returns True if the lattice is distributive, along with a certificate if applicable.
         </output>
     </sage>
-    <aside>
-        <p>
-            In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.
-        </p>
-    </aside>
     <p>
         Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.
     </p>
@@ -46,4 +41,9 @@
             # Returns True if the lattice is complemented, along with a certificate if applicable.
         </output>
     </sage>
+    <aside>
+        <p>
+            Software engineers use Boolean algebra to simplify conditions, refactor code, and optimize logic. These skills are crucial for identifying bottlenecks and improving efficiency in real-time systems and performance-critical applications.
+        </p>
+    </aside>
 </section>
