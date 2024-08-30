@@ -13,9 +13,6 @@
             p = Posets.DivisorLattice(20)
             p.show()
         </input>
-        <output>
-            # This will display the lattice structure for divisors of the number 20.
-        </output>
     </sage>
     <p>
         The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.
@@ -25,9 +22,6 @@
             p = Posets.DivisorLattice(20)
             p.is_distributive()
         </input>
-        <output>
-            # Returns True if the lattice is distributive, along with a certificate if applicable.
-        </output>
     </sage>
     <p>
         Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.
@@ -37,9 +31,6 @@
             p = Posets.DivisorLattice(20)
             p.is_complemented()
         </input>
-        <output>
-            # Returns True if the lattice is complemented, along with a certificate if applicable.
-        </output>
     </sage>
     <aside>
         <p>
