@@ -50,6 +50,11 @@
             P.plot(vertex_size=1000,vertex_shape="")
         </input>
     </sage>
+    <sage>
+        <input>
+            is_boolean_algebra(P)
+        </input>
+    </sage>
 
     <aside>
         <p>
