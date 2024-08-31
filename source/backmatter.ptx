@@ -6,7 +6,7 @@
 <!-- solutions in the next. Then there is an appendix -->
 <!-- with all notation generated, and finally the index. -->
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
-  <title>Backmatter</title>
+  <title>Back Matter</title>
 
   <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
 
@@ -27,7 +27,7 @@
     <biblio>
       SageMath, the Sage Mathematics Software System (Version 10.2), The Sage Developers, 2024,  <url href="https://www.sagemath.org." />
     </biblio>
-    
+
     <biblio>
       Beezer, Robert A., et al. The PreTeXt Guide. Pretextbook.org, 2024, <url href="https://pretextbook.org/doc/guide/html/guide-toc.html" />.
     </biblio>
