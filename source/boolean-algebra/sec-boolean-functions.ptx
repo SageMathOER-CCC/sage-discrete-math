@@ -75,6 +75,12 @@
             h_idempotent.truthtable()
         </input>
     </sage>
+    <sage>
+        <input>
+            # Why is this False?
+            h_idempotent.truthtable() == h.truthtable()
+        </input>
+    </sage>
     
     <idx><h>polynomial</h></idx>
     <sage>
