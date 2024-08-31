@@ -11,13 +11,15 @@
     <sage>
         <input>
             def is_boolean_algebra(P):
-                if not P.is_lattice():
-                    return False, "The poset is not a lattice."
-                if not P.is_bounded():
+                try:
+                    L = LatticePoset(P)
+                except ValueError as e:
+                    return False, str(e)
+                if not L.is_bounded():
                     return False, "The lattice is not bounded."
-                if not P.is_distributive():
+                if not L.is_distributive():
                     return False, "The lattice is not distributive."
-                if not P.is_complemented():
+                if not L.is_complemented():
                     return False, "The lattice is not complemented."
                 return True, "The poset is a Boolean algebra."
         </input>
@@ -39,6 +41,10 @@
             is_boolean_algebra(poset_divisors_6)
         </input>
     </sage>
+    <p>
+        Since we get the message <c>(False, 'not a join-semilattice: no top element')
+        </c>, we know that the <c>poset_divisors_6</c> is not a not a Boolean algebra because it is not bounded. Let's try another example.
+    </p>
     <sage>
         <input>
             S = {'a', 'b', 'c'}
