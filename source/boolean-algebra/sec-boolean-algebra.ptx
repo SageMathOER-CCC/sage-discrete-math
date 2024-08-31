@@ -42,8 +42,7 @@
         </input>
     </sage>
     <p>
-        Since we get the message <c>(False, 'not a join-semilattice: no top element')
-        </c>, we know that the <c>poset_divisors_6</c> is not a not a Boolean algebra because it is not bounded. Let's try another example.
+        Since we get the message <c>(False, 'not a join-semilattice: no top element')</c>, we know that the <c>poset_divisors_6</c> is not a not a Boolean algebra because it is not bounded. Let's try another example.
     </p>
     <sage>
         <input>
@@ -61,7 +60,26 @@
             is_boolean_algebra(P)
         </input>
     </sage>
-
+    <p>
+        Let's examine the divisor lattice of 30:
+    </p>
+    <sage>
+        <input>
+            dl30 = Posets.DivisorLattice(30)
+            show(dl30)
+            is_boolean_algebra(dl30)
+        </input>
+    </sage>
+    <p>
+        Now for the divisor lattice of 20:
+    </p>
+    <sage>
+        <input>
+            dl20 = Posets.DivisorLattice(20)
+            show(dl20)
+            is_boolean_algebra(dl20)
+        </input>
+    </sage>
     <aside>
         <p>
             Software engineers use Boolean algebra to simplify conditions, refactor code, and optimize logic. These skills are crucial for identifying bottlenecks and improving efficiency in real-time systems and performance-critical applications.
