@@ -28,7 +28,7 @@
     <sage>
         <input>
             P = [1, 2, 3, 4, 5, 6]
-            
+
             poset_divisors_6 = Poset((P, attrcall("divides")))
 
             show(poset_divisors_6)
@@ -37,6 +37,17 @@
     <sage>
         <input>
             is_boolean_algebra(poset_divisors_6)
+        </input>
+    </sage>
+    <sage>
+        <input>
+            S = {'a', 'b', 'c'}
+
+            power_set = Subsets(S)
+
+            P = Poset((power_set, lambda x, y: x.issubset(y)))
+
+            P.plot(vertex_size=1000,vertex_shape="")
         </input>
     </sage>
 
