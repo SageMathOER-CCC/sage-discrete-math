@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <chapter xml:id="ch-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Combinatorics</title>
-
   <introduction>
     <p>
-      Counting techniques arise naturally in computer algebra as well as in basic applications in daily life. This chapter covers the treatment of the enumeration problem in Sage, including counting combinations, counting permutations, and listing them.
+      Counting techniques arise naturally in computer algebra as well as in basic applications in
+      daily life. This chapter covers the treatment of the enumeration problem in Sage, including
+      counting combinations, counting permutations, and listing them.
     </p>
   </introduction>
-
   <!-- include sections -->
   <xi:include href="sec-combinatorics.ptx" />
-  
 </chapter>

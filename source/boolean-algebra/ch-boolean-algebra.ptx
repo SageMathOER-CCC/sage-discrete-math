@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <chapter xml:id="ch-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Boolean Algebra</title>
-
   <introduction>
     <p>
-      This chapter completes the preceding one by explaining how to ask Sage to decide whether a given lattice is a Boolean algebra. We also illustrate basic operations with Boolean functions.
+      This chapter completes the preceding one by explaining how to ask Sage to decide whether a
+      given lattice is a Boolean algebra. We also illustrate basic operations with Boolean
+      functions.
     </p>
   </introduction>
-
   <!-- include sections -->
   <xi:include href="sec-boolean-algebra.ptx" />
   <xi:include href="sec-boolean-functions.ptx" />
-
-  
 </chapter>

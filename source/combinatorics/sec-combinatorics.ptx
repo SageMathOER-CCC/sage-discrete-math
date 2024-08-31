@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="sec-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Combinatorics</title>
-
     <!-- Factorial Function Subsection -->
     <subsection>
-        <title>Factorial Function</title><idx><h>factorial</h></idx>
-        <p>
-            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c> function computes this value, which is essential in permutations and combinations.
-        </p>
+        <title>Factorial Function</title>
+        <idx>
+            <h>factorial</h>
+        </idx>
+        <p> The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product
+            of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c>
+            function computes this value, which is essential in permutations and combinations. </p>
         <aside>
             <title>Notes</title>
             <p>
-                Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.
+                Factorials are widely used in probability problems, such as determining the number
+                of possible ways a set of items can be arranged.
             </p>
         </aside>
         <p>
@@ -25,17 +27,19 @@
             <output></output>
         </sage>
     </subsection>
-
     <!-- Combinations Subsection -->
     <subsection>
-        <title>Combinations</title><idx><h>combination</h></idx>
-        <p>
-            The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set of <m>n</m> objects.
-        </p>
+        <title>Combinations</title>
+        <idx>
+            <h>combination</h>
+        </idx>
+        <p> The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set
+            of <m>n</m> objects. </p>
         <aside>
             <title>Notes</title>
             <p>
-                Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.
+                Combinations are useful in scenarios like determining the number of possible
+                committees that can be formed from a larger group.
             </p>
         </aside>
         <p>
@@ -47,10 +51,10 @@
             </input>
             <output></output>
         </sage>
-        <idx><h>binomial</h></idx>
-        <p>
-            Another method would be using the <c>binomial()</c> function.
-        </p>
+        <idx>
+            <h>binomial</h>
+        </idx>
+        <p> Another method would be using the <c>binomial()</c> function. </p>
         <sage>
             <input>
                 binomial(5, 3)
@@ -58,31 +62,32 @@
             <output></output>
         </sage>
     </subsection>
-
     <!-- Permutations Subsection -->
     <subsection>
-        <title>Permutations</title><idx><h>permutation</h></idx>
-        <p>
-            A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>n</m> objects.
-        </p>
+        <title>Permutations</title>
+        <idx>
+            <h>permutation</h>
+        </idx>
+        <p> A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>
+            n</m> objects. </p>
         <aside>
             <title>Notes</title>
             <p>
-                Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.
+                Understanding permutations can help solve problems like scheduling where the order
+                of tasks or events matters.
             </p>
         </aside>
-        <p>
-            For instance, to calculate the number of ways to choose 3 elements from a set of 5 when the order matters, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
-        </p>
+        <p> For instance, to calculate the number of ways to choose 3 elements from a set of 5 when
+            the order matters, we use the <c>Permutations()</c> and the <c>cardinality()</c>
+            functions. </p>
         <sage>
             <input>
                 Permutations(5, 3).cardinality()
             </input>
             <output></output>
         </sage>
-        <p>
-            To display the set of permutations for 3 chosen elements from a set of 5 in order, we use the <c>Permutations()</c> function and the use the <c>Set()</c> function.
-        </p>
+        <p> To display the set of permutations for 3 chosen elements from a set of 5 in order, we
+            use the <c>Permutations()</c> function and the use the <c>Set()</c> function. </p>
         <sage>
             <input>
                 A = Permutations(5, 3)
@@ -90,12 +95,9 @@
             </input>
             <output></output>
         </sage>
-        <p>
-            When <m>n = k</m>, we can calculate permutations of <m>n</m> elements.
-        </p>
-        <p>
-            To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
-        </p>
+        <p> When <m>n = k</m>, we can calculate permutations of <m>n</m> elements. </p>
+        <p> To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c>
+            and the <c>cardinality()</c> functions. </p>
         <sage>
             <input>
                 Permutations(3).cardinality()
@@ -117,13 +119,12 @@
         </p>
         <sage>
             <input>
-            A = Permutations(['a', 'b', 'c'])
-            
-            for f in Set(A):
+                A = Permutations(['a', 'b', 'c'])
+
+                for f in Set(A):
                 print(f)
             </input>
             <output></output>
         </sage>
     </subsection>
-
 </section>

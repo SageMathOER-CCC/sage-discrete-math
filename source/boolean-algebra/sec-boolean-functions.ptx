@@ -1,18 +1,26 @@
 <section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Boolean functions</title><idx><h>Boolean functions</h></idx>
+    <title>Boolean functions</title>
+    <idx>
+        <h>Boolean functions</h>
+    </idx>
+    <p> A Boolean function is a function that takes only values 0 or 1 and whose domain is the
+        Cartesian product <m>{\{0, 1\}^n}</m>. </p>
     <p>
-        A  Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
-    </p>
-    <p>
-        In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.
+        In SageMath, Boolean functions can be manipulated through various built-in functions
+        designed for handling Boolean variables and expressions.
     </p>
     <aside>
         <title>Notes</title>
         <p>
-          Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
+            Boolean algebra is crucial in digital circuit design. For example, simplifying the
+            expression of a digital circuit can minimize the number of gates used, which reduces
+            cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification
+            are common in the industry.
         </p>
     </aside>
-    <idx><h>polynomial</h></idx>
+    <idx>
+        <h>polynomial</h>
+    </idx>
     <sage>
         <input>
             B = BooleanPolynomialRing(3, 'x')
