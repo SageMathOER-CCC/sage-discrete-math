@@ -31,18 +31,18 @@
         <input>
             P = [1, 2, 3, 4, 5, 6]
 
-            poset_divisors_6 = Poset((P, attrcall("divides")))
+            divisibility_poset = Poset((P, attrcall("divides")))
 
-            show(poset_divisors_6)
+            show(divisibility_poset)
         </input>
     </sage>
     <sage>
         <input>
-            is_boolean_algebra(poset_divisors_6)
+            is_boolean_algebra(divisibility_poset)
         </input>
     </sage>
     <p>
-        When we pass <m>P</m> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <m>P</m> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>poset_divisors_6</c> is not a Boolean algebra.
+        When we pass <m>P</m> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <m>P</m> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>divisibility_poset</c> is not a Boolean algebra.
     </p>
     <sage>
         <input>
