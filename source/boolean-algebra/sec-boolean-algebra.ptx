@@ -6,7 +6,7 @@
         </p>
     </aside>
     <p>
-        A  Boolean algebra is a bounded lattice that is both complemented and distributive. Let's define a function, <c>is_boolean_algebra()</c> to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
+        A  Boolean algebra is a bounded lattice that is both complemented and distributive. Let's define the <c>is_boolean_algebra()</c> function to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
     </p>
     <sage>
         <input>
@@ -42,7 +42,7 @@
         </input>
     </sage>
     <p>
-        Since we get the message <c>(False, 'not a join-semilattice: no top element')</c>, we know that the <c>poset_divisors_6</c> is not a not a Boolean algebra because it is not bounded. Let's try another example.
+        When we pass <m>P</m> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <m>P</m> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>poset_divisors_6</c> is not a Boolean algebra.
     </p>
     <sage>
         <input>
