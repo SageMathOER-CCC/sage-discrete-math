@@ -12,6 +12,27 @@
           Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
         </p>
     </aside>
+    <p>
+        Before we begin lets import the necessary modules. This will reduce the amount of code we need to type.
+    </p>
+    <sage>
+        <input>
+            from sage.logic.propcalc import formula
+        </input>
+    </sage>
+    <p>
+        Now let's examine the truth table of the Boolean function <m>h(x, y) = x + \bar{y}</m>.
+    </p>
+    <sage>
+        <input>
+            h = formula("x | ~y")
+            h.truthtable()
+        </input>
+    </sage>
+    <p>
+        Every Boolean function can be written as a sum-of-products expansion by applying the Boolean identities. Let's find the sum-of-products expansion of the Boolean function <m>h(x, y) = x + \bar{y}</m>.
+    </p>
+    
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
