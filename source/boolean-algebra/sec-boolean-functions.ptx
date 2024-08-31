@@ -32,6 +32,49 @@
     <p>
         Every Boolean function can be written as a sum-of-products expansion by applying the Boolean identities. Let's find the sum-of-products expansion of the Boolean function <m>h(x, y) = x + \bar{y}</m>.
     </p>
+    <sage>
+        <input>
+            # Applying the identity law
+            # Warning: Do not use 
+            # formula("x &amp; True | True &amp; ~y")
+            # h == formula("x &amp; True | True &amp; ~y")
+            # True and False are not boolean supported with formula
+            # Instead we can assume the &amp; True
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # Applying the complement law
+            h_complement = formula("x &amp; (y | ~y) | (x | ~x) &amp;  ~y")
+            h_complement == h
+        </input>
+    </sage>
+    <sage>
+        <input>
+            # Applying the distributive law
+            h_distributive = formula("x &amp; y | x &amp; ~y | x &amp; ~y | ~x &amp; ~y")
+            h_distributive == h
+        </input>
+    </sage>
+    <p>
+        Here is the sum-of-products expansion of the Boolean function <m>h(x, y) = x + \bar{y}</m>. After applying the identity, complement, and distributive laws, we get <m>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</m>.
+    </p>
+    <sage>
+        <input>
+            # Applying the idempotent law
+            h_idempotent = formula("x &amp; y | x &amp; ~y | ~x &amp; ~y")
+            h_idempotent == h
+        </input>
+    </sage>
+    <p>
+        We can also confirm the truth table of the <m>h(x, y) = x + \bar{y}</m> and <m>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</m> are the same.
+    </p>
+    <sage>
+        <input>
+            h_idempotent.truthtable()
+        </input>
+    </sage>
     
     <idx><h>polynomial</h></idx>
     <sage>
