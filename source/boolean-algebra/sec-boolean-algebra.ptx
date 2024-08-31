@@ -80,6 +80,16 @@
             is_boolean_algebra(dl20)
         </input>
     </sage>
+    <p>
+        Here is a classic example in the field of computer science:
+    </p>
+    <sage>
+        <input>
+            B = posets.BooleanLattice(1)
+            show(B)
+            is_boolean_algebra(B)
+        </input>
+    </sage>
     <aside>
         <p>
             Software engineers use Boolean algebra to simplify conditions, refactor code, and optimize logic. These skills are crucial for identifying bottlenecks and improving efficiency in real-time systems and performance-critical applications.
