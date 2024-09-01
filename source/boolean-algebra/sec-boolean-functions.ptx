@@ -86,7 +86,7 @@
         </input>
     </sage>
     <p>
-        Here is the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. After applying the identity, complement, and distributive laws, we get <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>.
+        Here is the sum-of-products expansion of the Boolean function: <me>h(x, y) = x + \bar{y}</me> After applying the identity, complement, and distributive laws, we get: <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>
     </p>
     <sage>
         <input>
@@ -116,8 +116,16 @@
         </input>
     </sage>
     <p>
-        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Let's find a more programmatic way to find the sum-of-products expansion of the Boolean function.
+        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Let's find a more programmatic way to find the sum-of-products expansion of the Boolean function. The <c>truthtable()</c> function is not iterable, so we must represent the table as a <c>list</c> with <c>get_table_list()</c>.
     </p>
+    <sage>
+        <input>
+            from sage.logic.propcalc import formula
+            h = formula("x | ~y")
+            truth_table = h.truthtable()
+            truth_table.get_table_list()
+        </input>
+    </sage>
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
