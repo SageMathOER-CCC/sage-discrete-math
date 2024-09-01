@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="creating-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Creating Sets</title>
 
@@ -8,7 +7,10 @@
 
         <idx><h>data types</h><h>Set (Sage)</h></idx>
         <p>
-            To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c>list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c>Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
+            To construct a set, encase the elements within square brackets <c
+            >[]</c>. Then, pass this <c>list</c> as an argument to the <c
+            >Set()</c> function. It's important to note that the <c>S</c> in <c
+            >Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
         </p>
         <sage>
         <input>
@@ -26,20 +28,27 @@
             </input>
         </sage>
         <p>
-            Notice that the months in set <m>M</m> do not appear in the same order as when you created the set. Sets are unordered collections of elements.
+            Notice that the months in set <m
+            >M</m> do not appear in the same order as when you created the set. Sets are unordered collections of elements.
         </p>
 
         <p>
             We can ask Sage to compare two sets to see whether or not they are equal.
-            We can use the <c>==</c> operator to compare two values. A single equal sign <c>=</c> and double equal sign <c>==</c> have different meanings.
+            We can use the <c
+            >==</c> operator to compare two values. A single equal sign <c
+            >=</c> and double equal sign <c>==</c> have different meanings.
         </p>
         <idx><h>equality operator</h></idx>
         <p>
-            The <term>equality operator</term> <c>==</c> is used to ask Sage if two values are equal. Sage compares the values on each side of the operator and returns the Boolean value. The <c>==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
+            The <term>equality operator</term> <c
+            >==</c> is used to ask Sage if two values are equal. Sage compares the values on each side of the operator and returns the Boolean value. The <c
+            >==</c> operator returns <c>True</c> if the sets are equal and <c
+            >False</c> if they are not equal.
         </p>
         <idx><h>assignment operator</h></idx>
         <p>
-            The <term>assignment operator</term> <c>=</c> assigns the value on the right side to the variable on the left side.
+            The <term>assignment operator</term> <c
+            >=</c> assigns the value on the right side to the variable on the left side.
         </p>
         <sage>
         <input>
@@ -52,7 +61,12 @@
         </sage>
 
         <p>
-            If you have experience with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lowercase <c>s</c>. Even though Sage supports Python sets, we will use Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
+            If you have experience with Python, you may have used a Python <c
+            >set</c>. Notice how the Python <c
+            >set</c> begins with a lowercase <c
+            >s</c>. Even though Sage supports Python sets, we will use Sage <c
+            >Set</c> for the added features. Be sure to define <c
+            >Set()</c> with an upper case <c>S</c>.
         </p>
     </subsection>
 
@@ -61,7 +75,9 @@
         <title>Set Builder Notation</title>
 
         <p>
-            Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here, we use the Sage <c>srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
+            Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here, we use the Sage <c
+            >srange</c> instead of the Python <c
+            >range</c> function for increased flexibility and functionality.
         </p>
         <sage>
         <input>
@@ -72,7 +88,8 @@
         </sage>
 
         <p>
-            Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c> A = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
+            Iteration is a way to repeat a block of code multiple times and can be used to automate repetitive tasks. We could have created the same set by typing <c
+            > A = Set([2, 4, 6, 8, 10])</c>. Imagine if we wanted to create a set of even numbers between 1 and 100. It would be much easier to use iteration.
         </p>
         <sage>
         <input>
@@ -87,7 +104,9 @@
         <title>Subsets</title>
 
         <p>
-            To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use a <c>for</c> loop to display each subset.
+            To list all the subsets included in a set, we can use the <c
+            >Subsets()</c> function and then use a <c
+            >for</c> loop to display each subset.
         </p>
         <sage>
         <input>
@@ -105,7 +124,9 @@
         <title>Set Membership Check</title>
 
         <p>
-            Sage allows you to check whether an element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
+            Sage allows you to check whether an element belongs to a set. You can use the <c
+            >in</c> operator to check membership, which returns <c
+            >True</c> if the element is in the set and <c>False</c> otherwise.
         </p>
 
         <aside>
@@ -122,7 +143,9 @@
         </sage>
 
         <p>
-            We can check if <m>Severe = \{Tornado, Hurricane \}</m> is a subset of <m>W</m> by using the <c>issubset</c> method.
+            We can check if <m
+            >Severe = \{Tornado, Hurricane \}</m> is a subset of <m
+            >W</m> by using the <c>issubset</c> method.
         </p>
         <sage>
         <input>
@@ -132,7 +155,8 @@
         </sage>
 
         <p>
-            When we evaluate <c>W.issubset(Severe)</c>, Sage returns <c>False</c> because <m>W</m> is not a subset of <m>Severe</m>.
+            When we evaluate <c>W.issubset(Severe)</c>, Sage returns <c
+            >False</c> because <m>W</m> is not a subset of <m>Severe</m>.
         </p>
         <sage>
             <input>

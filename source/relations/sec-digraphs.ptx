@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="digraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Digraphs</title><idx><h>digraph</h></idx>
     <p>
-        A digraph, or directed graph, is a visual representation of a relation <m>R</m> on the set <m>A</m>. Every element in set <m>A</m> is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represents the pair <m>(a,b)</m> on the relation <m>R</m>.
+        A digraph, or directed graph, is a visual representation of a relation <m
+        >R</m> on the set <m>A</m>. Every element in set <m
+        >A</m> is shown as a node (vertex). An arrow from the node <m
+        >a</m> to the node <m>b</m> represents the pair <m
+        >(a,b)</m> on the relation <m>R</m>.
     </p>
     <aside>
         <title>Notes</title>
@@ -37,7 +40,8 @@
         </input>
     </sage>
     <p>
-        If the digraph does not contain a relation from a node to itself, we can omit the <c>loops=true</c> parameter. If we happen to forgot to include the parameter when we need to, Sage will give us a descriptive error message.
+        If the digraph does not contain a relation from a node to itself, we can omit the <c
+        >loops=true</c> parameter. If we happen to forgot to include the parameter when we need to, Sage will give us a descriptive error message.
     </p>
     <sage>
         <input>
@@ -65,7 +69,9 @@
     </sage>
 
     <p>
-        Alternatively, we can define the digraph directly. The element on the left of the <c>:</c> is a node. The node relates to the elements in the list on the right of the <c>:</c>.
+        Alternatively, we can define the digraph directly. The element on the left of the <c
+        >:</c> is a node. The node relates to the elements in the list on the right of the <c
+        >:</c>.
     </p>
     <sage>
         <input>

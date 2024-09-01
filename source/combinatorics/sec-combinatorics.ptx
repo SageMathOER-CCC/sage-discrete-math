@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Combinatorics</title>
     <!-- Factorial Function Subsection -->
@@ -7,8 +7,10 @@
         <idx>
             <h>factorial</h>
         </idx>
-        <p> The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product
-            of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c>
+        <p> The factorial of a non-negative integer <m>n</m>, denoted by <m
+            >n!</m>, is the product
+            of all positive integers less than or equal to <m
+            >n</m>. In Sage, the <c>factorial()</c>
             function computes this value, which is essential in permutations and combinations. </p>
         <aside>
             <title>Notes</title>
@@ -24,7 +26,7 @@
             <input>
                 factorial(5)
             </input>
-            <output></output>
+            <output />
         </sage>
     </subsection>
     <!-- Combinations Subsection -->
@@ -33,7 +35,8 @@
         <idx>
             <h>combination</h>
         </idx>
-        <p> The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set
+        <p> The combination <m>(n, k)</m> is an unordered selection of <m
+            >k</m> objects from a set
             of <m>n</m> objects. </p>
         <aside>
             <title>Notes</title>
@@ -49,7 +52,7 @@
             <input>
                 Combinations(5, 3).cardinality()
             </input>
-            <output></output>
+            <output />
         </sage>
         <idx>
             <h>binomial</h>
@@ -59,7 +62,7 @@
             <input>
                 binomial(5, 3)
             </input>
-            <output></output>
+            <output />
         </sage>
     </subsection>
     <!-- Permutations Subsection -->
@@ -68,7 +71,8 @@
         <idx>
             <h>permutation</h>
         </idx>
-        <p> A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>
+        <p> A permutation <m>(n, k)</m> is an ordered selection of <m
+            >k</m> objects from a set of <m>
             n</m> objects. </p>
         <aside>
             <title>Notes</title>
@@ -77,32 +81,38 @@
                 of tasks or events matters.
             </p>
         </aside>
-        <p> For instance, to calculate the number of ways to choose 3 elements from a set of 5 when
-            the order matters, we use the <c>Permutations()</c> and the <c>cardinality()</c>
+        <p
+        > For instance, to calculate the number of ways to choose 3 elements from a set of 5 when
+            the order matters, we use the <c>Permutations()</c> and the <c
+            >cardinality()</c>
             functions. </p>
         <sage>
             <input>
                 Permutations(5, 3).cardinality()
             </input>
-            <output></output>
+            <output />
         </sage>
-        <p> To display the set of permutations for 3 chosen elements from a set of 5 in order, we
-            use the <c>Permutations()</c> function and the use the <c>Set()</c> function. </p>
+        <p
+        > To display the set of permutations for 3 chosen elements from a set of 5 in order, we
+            use the <c>Permutations()</c> function and the use the <c
+            >Set()</c> function. </p>
         <sage>
             <input>
                 A = Permutations(5, 3)
                 Set(A)
             </input>
-            <output></output>
+            <output />
         </sage>
-        <p> When <m>n = k</m>, we can calculate permutations of <m>n</m> elements. </p>
-        <p> To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c>
+        <p> When <m>n = k</m>, we can calculate permutations of <m
+            >n</m> elements. </p>
+        <p> To calculate the permutation of a set with 3 elements, we use the <c
+            >Permutations()</c>
             and the <c>cardinality()</c> functions. </p>
         <sage>
             <input>
                 Permutations(3).cardinality()
             </input>
-            <output></output>
+            <output />
         </sage>
         <p>
             Similarly, we can also show the sets of permutations:
@@ -112,7 +122,7 @@
                 A = Permutations(3)
                 Set(A)
             </input>
-            <output></output>
+            <output />
         </sage>
         <p>
             We can also specify the elements:
@@ -124,7 +134,7 @@
                 for f in Set(A):
                 print(f)
             </input>
-            <output></output>
+            <output />
         </sage>
     </subsection>
 </section>

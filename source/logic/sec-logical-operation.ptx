@@ -1,4 +1,7 @@
-<section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section
+    xml:id="sec-logical-operation"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+>
     <title>Logical Operators</title>
     <idx><h>logical operators</h><h>and</h></idx>
     <idx><h>logical operators</h><h>or</h></idx>
@@ -7,7 +10,9 @@
     <idx><h>logical operators</h><h>biconditional</h></idx>
     <introduction>
         <p>
-            In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
+            In Sage, logical operations such as AND <c>&amp;</c>, OR <c
+            >|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c
+            >&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
         </p>
         <tabular>
             <row>
@@ -54,7 +59,9 @@
         <title>Boolean Formula</title>
         
         <p>
-            Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c>show</c> function to display the mathematical notations.
+            Sage's <c
+            >propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c
+            >show</c> function to display the mathematical notations.
         </p>
         <sage>
             <input>

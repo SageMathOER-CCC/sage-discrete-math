@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- This file contains all of the "backmatter" material -->
 <!-- In comments, we show examples of how to have hints to divisional -->
 <!-- excercies appear in a section, and then their -->
@@ -21,15 +20,21 @@
       </p>
     </introduction>
     <biblio>
-      Doerr, Al, and Ken Levasseur. ADS Applied Discrete Structures. <url href="https://discretemath.org" />, 21 May 2023.
+      Doerr, Al, and Ken Levasseur. ADS Applied Discrete Structures. <url
+                href="https://discretemath.org"
+            />, 21 May 2023.
     </biblio>
 
     <biblio>
-      SageMath, the Sage Mathematics Software System (Version 10.2), The Sage Developers, 2024,  <url href="https://www.sagemath.org." />
+      SageMath, the Sage Mathematics Software System (Version 10.2), The Sage Developers, 2024,  <url
+                href="https://www.sagemath.org."
+            />
     </biblio>
 
     <biblio>
-      Beezer, Robert A., et al. The PreTeXt Guide. Pretextbook.org, 2024, <url href="https://pretextbook.org/doc/guide/html/guide-toc.html" />.
+      Beezer, Robert A., et al. The PreTeXt Guide. Pretextbook.org, 2024, <url
+                href="https://pretextbook.org/doc/guide/html/guide-toc.html"
+            />.
     </biblio>
 
     <biblio>
@@ -42,6 +47,6 @@
     <p> This book was authored in <pretext />. </p>
   </colophon>
 
-  <index> <title>Index</title> <index-list/> </index>
+  <index> <title>Index</title> <index-list /> </index>
 
 </backmatter>

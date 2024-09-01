@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- This is the publication file for a newly generated PreTeXt book.     -->
 <!-- By changing the values of attributes here, you can change how        -->
 <!-- the output looks and functions.  For the complete documentation      -->
 <!-- of publication-file options, see                                     -->
 <!-- https://pretextbook.org/doc/guide/html/publisher-file-reference.html -->
-
 <publication>
   <common>
     <!-- Level at which are html files generated (chapter/section/etc): -->
@@ -23,8 +21,6 @@
     <!-- You can set a watermark: -->
     <!-- <watermark scale="0.5">DRAFT</watermark> -->
   </common>
-
-
   <!-- Set where external assets and generated assets will be   -->
   <!-- stored or created.  Directories are relative to the main -->
   <!-- source PreTeXt file                                      -->
@@ -35,7 +31,6 @@
     https://pretextbook.org/doc/guide/html/publication-file-source.html#publication-file-source-version -->
     <!-- <version include="videos labs"/> -->
   </source>
-
   <numbering>
     <!-- the divisions element describes the numbering of divisions.  -->
     <!-- @part-structure should be "decorative" or "structural",      -->
@@ -55,7 +50,6 @@
     <equations level="2" />
     <footnotes level="2" />
   </numbering>
-
   <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
   <!-- for printing; set @sides="two" if the printing would be two- -->
   <!-- sided.  @pageref="yes/no" controls whether page number are   -->
@@ -71,46 +65,44 @@
     <!-- Set @formatted to "no" to remove formatting on worksheets: -->
     <worksheets formatted="yes" />
   </latex>
-
   <html>
-    <platform host="web"/>
+    <platform host="web" />
     <!-- The host above could also be "runestone" -->
-
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
     <knowl
-      theorem="no"
-      proof="yes"
-      definition="no"
-      example="yes"
-      example-solution="yes"
-      project="no"
-      task="no"
-      remark="no"
-      objectives="no"
-      outcomes="no"
-      figure="no"
-      table="no"
-      listing="no"
-      list="no"
-      exercise-inline="yes"
-      exercise-divisional="no"
-      exercise-worksheet="no"
-      exercise-readingquestion="no"
-    />
+            theorem="no"
+            proof="yes"
+            definition="no"
+            example="yes"
+            example-solution="yes"
+            project="no"
+            task="no"
+            remark="no"
+            objectives="no"
+            outcomes="no"
+            figure="no"
+            table="no"
+            listing="no"
+            list="no"
+            exercise-inline="yes"
+            exercise-divisional="no"
+            exercise-worksheet="no"
+            exercise-readingquestion="no"
+        />
     <!-- Specify the style of the html by giving names to      -->
     <!-- override defaults.  Ex: to use "style_oscarlevin.css" -->
     <!-- put <css style="oscarlevin"/>                         -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
     <css
-        style="default"
-        colors="blue_red"
-        knowls="default"
-        toc="default"
-        banner="default"
-        navbar="default"
-    />
+            style="default"
+            colors="blue_red"
+            knowls="default"
+            toc="default"
+            banner="default"
+            navbar="default"
+        />
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->
     <search variant="default" />
@@ -122,19 +114,18 @@
     <!-- <baseurl href="changetomywebsite.org"/> -->
     <!-- Control behavior of online WeBWorK, per type: -->
     <webwork
-      inline="dynamic"
-      divisional="static"
-      reading="static"
-      worksheet="static"
-      project="dynamic"
-    />
+            inline="dynamic"
+            divisional="static"
+            reading="static"
+            worksheet="static"
+            project="dynamic"
+        />
     <!-- Magic IDs identify HTML pages to analytics services   -->
     <!-- Presence implies relevant Javascript will be added    -->
     <!-- StatCounter requires both values to be set            -->
     <!-- <analytics google-gst="UA-0123456-1" statcounter-project="0123456"
     statcounter-security="0123456"/> -->
   </html>
-
   <!-- To use WeBWorK, you need a server.  -->
   <!-- <webwork server="https://webwork-ptx.aimath.org"> -->
 </publication>

@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "files": "*.ptx",
+      "options": {
+        "parser": "xml",
+        "tabWidth": 4,
+        "useTabs": false,
+        "printWidth": 80,
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Debugging</title><idx><h>error message</h></idx>
   <p>
@@ -51,7 +50,10 @@
   </sage>
 
   <p>
-    Why didn't this print <c>Hello, World!</c> on the screen? The error message informed us of a <c>SyntaxError</c>. While the phrase <c>invalid decimal literal</c> may seem confusing, the key issue here is the invalid variable name. Valid identifiers must start with a letter or underscore. They cannot begin with a number or use any special characters. Let's correct the variable name by using a valid identifier.
+    Why didn't this print <c
+        >Hello, World!</c> on the screen? The error message informed us of a <c
+        >SyntaxError</c>. While the phrase <c
+        >invalid decimal literal</c> may seem confusing, the key issue here is the invalid variable name. Valid identifiers must start with a letter or underscore. They cannot begin with a number or use any special characters. Let's correct the variable name by using a valid identifier.
   </p>
 
   <sage>
@@ -72,7 +74,10 @@
   </sage>
 
   <p>
-    In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes that <c>Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by enclosing it in quotes.
+    In this case, we encounter a <c>NameError</c> because <c
+        >Hi</c> is not defined. Sage assumes that <c
+        >Hi</c> is a variable because there are no quotes. We can make <c
+        >Hi</c> a string by enclosing it in quotes.
   </p>
   <sage>
     <input>
@@ -80,7 +85,8 @@
     </input>
   </sage>
   <p>
-    Alternatively, if we intended <c>Hi</c> to be a variable, we can assign a value to it before printing.
+    Alternatively, if we intended <c
+        >Hi</c> to be a variable, we can assign a value to it before printing.
   </p>
   <sage>
     <input>
@@ -89,7 +95,9 @@
     </input>
   </sage>
   <p>
-    Reading the documentation is essential to understanding how to use methods correctly. If we incorrectly use a method, we will likely get a <c>NameError</c>, <c>AttributeError</c>, <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake.
+    Reading the documentation is essential to understanding how to use methods correctly. If we incorrectly use a method, we will likely get a <c
+        >NameError</c>, <c>AttributeError</c>, <c>TypeError</c>, or <c
+        >ValueError</c>, depending on the mistake.
   </p>
 
   <p>
@@ -102,7 +110,8 @@
     </input>
   </sage>
   <p>
-    The <c>sort()</c> method must be called on the list object using dot notation.
+    The <c
+        >sort()</c> method must be called on the list object using dot notation.
   </p>
   <sage>
     <input>
@@ -141,7 +150,9 @@
     </input>
   </sage>
   <p>
-    The <c>append()</c> method only takes one argument. To add multiple elements to a list, use the <c>extend()</c> method.
+    The <c
+        >append()</c> method only takes one argument. To add multiple elements to a list, use the <c
+        >extend()</c> method.
   </p>
   <sage>
     <input>
@@ -170,7 +181,10 @@
   </sage>
 
   <p>
-    Sage is capable of producing animations and pictures. To view more examples of Sage art, see <url href="https://wiki.sagemath.org/art">gallery on the Sage Wiki</url>. If you want to use Sage to download a GIF of Fibonacci Tiles by Sébastien Labbé, use the <c>save()</c> method.
+    Sage is capable of producing animations and pictures. To view more examples of Sage art, see <url
+            href="https://wiki.sagemath.org/art"
+        >gallery on the Sage Wiki</url>. If you want to use Sage to download a GIF of Fibonacci Tiles by Sébastien Labbé, use the <c
+        >save()</c> method.
   </p>
   <p>
     We will get an error if we supply the arguments out of order.
@@ -189,7 +203,9 @@
     </input>
   </sage>
   <p>
-    In this example, <c>SyntaxError</c> occurs because the arguments in the <c>save()</c> method are in the wrong order. We can fix this by referring to the documentation and learning the correct argument positions. After running the following cell, the <c>save()</c> method saves the file to the cell. You can right-click on the file name and select the option to download the file locally. 
+    In this example, <c>SyntaxError</c> occurs because the arguments in the <c
+        >save()</c> method are in the wrong order. We can fix this by referring to the documentation and learning the correct argument positions. After running the following cell, the <c
+        >save()</c> method saves the file to the cell. You can right-click on the file name and select the option to download the file locally. 
   </p>
   <sage>
     <input>
@@ -205,7 +221,8 @@
     </input>
   </sage>
   <p>
-    Sometimes, Sage offers flexibility when using a method with dot notation or as a function. Here is another valid way of using <c>save()</c>.
+    Sometimes, Sage offers flexibility when using a method with dot notation or as a function. Here is another valid way of using <c
+        >save()</c>.
   </p>
   <sage>
     <input>
@@ -221,7 +238,8 @@
     </input>
   </sage>
   <p>
-    Finally, we will consider a logical error. If your task is to print the numbers from <m>1</m> to <m>10</m>, you may mistakenly write the following code:
+    Finally, we will consider a logical error. If your task is to print the numbers from <m
+        >1</m> to <m>10</m>, you may mistakenly write the following code:
   </p>
   <sage>
     <input>
@@ -230,7 +248,8 @@
     </input>
   </sage>
   <p>
-    The output will be the numbers from <m>0</m> to <m>9</m>. To include <m>10</m>, we need to adjust the range because the start is inclusive and the stop is exclusive.
+    The output will be the numbers from <m>0</m> to <m>9</m>. To include <m
+        >10</m>, we need to adjust the range because the start is inclusive and the stop is exclusive.
   </p>
   <sage>
     <input>
@@ -239,9 +258,12 @@
     </input>
   </sage>
   <p>
-    Remember Sage list comprehension behaves differently from <c>range()</c>. The range syntax for list comprehension includes the ending value.
+    Remember Sage list comprehension behaves differently from <c
+        >range()</c>. The range syntax for list comprehension includes the ending value.
   </p>
   <p>
-    For more information, read the CoCalc <url href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about the top mathematical syntax errors in Sage</url>
+    For more information, read the CoCalc <url
+            href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors"
+        >article about the top mathematical syntax errors in Sage</url>
   </p>
 </section>

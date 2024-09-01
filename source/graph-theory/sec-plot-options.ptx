@@ -37,7 +37,8 @@
         </output>
     </sage>
     <p>
-        The <c>edge_thickness</c> parameter allows you to specify the thickness of the edges in the plot.
+        The <c
+        >edge_thickness</c> parameter allows you to specify the thickness of the edges in the plot.
     </p>
     <idx><h>graph plotting</h><h>vertex size</h></idx>
     <p>
@@ -69,7 +70,8 @@
         </output>
     </sage>
     <p>
-        While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c>plot</c> method is not supported.
+        While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c
+        >plot</c> method is not supported.
     </p>
     <idx><h>graph plotting</h><h>labels</h></idx>
     <p>
@@ -89,7 +91,8 @@
     Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph's structure.
 </p>
 <p>
-    For instance, the <c>circular</c> layout places vertices in a circle, which can highlight the symmetry and regular structure of a graph.
+    For instance, the <c
+        >circular</c> layout places vertices in a circle, which can highlight the symmetry and regular structure of a graph.
 </p>
 <sage>
     <input>
@@ -101,7 +104,8 @@
     </output>
 </sage>
 <p>
-    The <c>spring</c> layout, also known as a force-directed layout, positions vertices to minimize edge intersections and edge length variance, resembling a system of springs. This layout often reveals the underlying structure of the graph by separating clusters of nodes.
+    The <c
+        >spring</c> layout, also known as a force-directed layout, positions vertices to minimize edge intersections and edge length variance, resembling a system of springs. This layout often reveals the underlying structure of the graph by separating clusters of nodes.
 </p>
 <sage>
     <input>
@@ -114,7 +118,8 @@
 </sage>
 <idx><h>graph plotting</h><h>planar</h></idx>
 <p>
-    Another common layout is the <c>planar</c> layout, which is applied to graphs that can be drawn without any edge crossings.
+    Another common layout is the <c
+        >planar</c> layout, which is applied to graphs that can be drawn without any edge crossings.
 </p>
 <sage>
     <input>
@@ -126,7 +131,14 @@
     </output>
 </sage>
 <p>
-    After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <c>layout</c> option to <c>graphviz</c>, you can access various Graphviz layout engines. For instance, <c>prog='dot'</c> is great for hierarchical graphs, <c>prog='neato'</c> for undirected graphs with spring model layouts, <c>prog='fdp'</c> for force-directed layouts, <c>prog='twopi'</c> for radial layouts, and <c>prog='circo'</c> for circular layouts. These layouts are particularly useful when the graph's structure needs to be visualized in a way that standard layouts cannot accommodate.
+    After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <c
+        >layout</c> option to <c
+        >graphviz</c>, you can access various Graphviz layout engines. For instance, <c
+        >prog='dot'</c> is great for hierarchical graphs, <c
+        >prog='neato'</c> for undirected graphs with spring model layouts, <c
+        >prog='fdp'</c> for force-directed layouts, <c
+        >prog='twopi'</c> for radial layouts, and <c
+        >prog='circo'</c> for circular layouts. These layouts are particularly useful when the graph's structure needs to be visualized in a way that standard layouts cannot accommodate.
 </p>
 <p>
     Here is an example using a Graphviz layout:

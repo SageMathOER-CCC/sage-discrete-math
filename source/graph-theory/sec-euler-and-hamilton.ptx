@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="euler-and-hamilton" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Euler and Hamilton</title>
 
@@ -8,11 +8,14 @@
         <idx><h>Euler circuit</h></idx>
 
         <p>
-            An <term>Euler path</term> is a path that uses every edge of a graph exactly once.
-            An Euler path that is a circuit is called an <term>Euler circuit</term>.
+            An <term
+            >Euler path</term> is a path that uses every edge of a graph exactly once.
+            An Euler path that is a circuit is called an <term
+            >Euler circuit</term>.
         </p>
         <p>
-            The idea of an Euler path emerged from the study of the <term>Königsberg bridges</term> problem.
+            The idea of an Euler path emerged from the study of the <term
+            >Königsberg bridges</term> problem.
             Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
             This problem can be modeled as a graph, with the land masses as vertices and the bridges as edges.
         </p>
@@ -42,17 +45,20 @@
             <ul>
                 <li>
                     <p>
-                        A connected graph has an <term>Euler circuit</term> iff every vertex has an even degree.
+                        A connected graph has an <term
+                        >Euler circuit</term> iff every vertex has an even degree.
                     </p>
                 </li>
 
                 <li>
                     <p>
-                        A connected graph has an <term>Euler path</term> iff there are at most two vertices with an odd degree.
+                        A connected graph has an <term
+                        >Euler path</term> iff there are at most two vertices with an odd degree.
                     </p>
                 </li>
             </ul>
-            We say that a graph is <term>Eulerian</term> if contains an Euler circuit.
+            We say that a graph is <term
+            >Eulerian</term> if contains an Euler circuit.
         </p>
 
         <p>
@@ -71,12 +77,14 @@
         </sage>
 
         <p>
-            Since this returns <c>False</c>, we know that the graph is not Eulerian.
+            Since this returns <c
+            >False</c>, we know that the graph is not Eulerian.
             Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
         </p>
 
         <p>
-            We can use <c>path=True</c> to determine if a graph contains an Euler path.
+            We can use <c
+            >path=True</c> to determine if a graph contains an Euler path.
             Sage will return the beginning and the end of the path.
         </p>
         <sage>
@@ -88,7 +96,8 @@
         </sage>
 
         <p>
-            If the graph is Eulerian, we can ask Sage to find an Euler circuit with the <c>eulerian_circuit</c> function. Let's take a look at the following graph.
+            If the graph is Eulerian, we can ask Sage to find an Euler circuit with the <c
+            >eulerian_circuit</c> function. Let's take a look at the following graph.
         </p>
         <sage>
         <input>
@@ -99,8 +108,10 @@
         </sage>
 
         <p>
-            If we are not interested in the edge labels, we can set <c>labels=False</c>.
-            We can also set <c>return_vertices=True</c> to get a list of vertices for the path
+            If we are not interested in the edge labels, we can set <c
+            >labels=False</c>.
+            We can also set <c
+            >return_vertices=True</c> to get a list of vertices for the path
         </p>
         <sage>
         <input>
@@ -116,9 +127,12 @@
         <idx><h>Hamilton path</h></idx>
         <idx><h>Hamilton circuit</h></idx>
         <p>
-            A <term>Hamilton path</term> is a path that uses every vertex of a graph exactly once.
-            A Hamilton path that is a circuit is called a <term>Hamilton circuit</term>.
-            If a graph contains a Hamilton circuit, we say that the graph is <term>Hamiltonian</term>.
+            A <term
+            >Hamilton path</term> is a path that uses every vertex of a graph exactly once.
+            A Hamilton path that is a circuit is called a <term
+            >Hamilton circuit</term>.
+            If a graph contains a Hamilton circuit, we say that the graph is <term
+            >Hamiltonian</term>.
         </p>
         <idx><h>dodecahedron</h></idx>
 
@@ -153,14 +167,17 @@
         </sage>
 
         <p>
-            By running <c>Graph.is_hamiltonian??</c> we see that Sage uses the <c>traveling_salesman_problem()</c> function to determine if a graph is Hamiltonian.
+            By running <c
+            >Graph.is_hamiltonian??</c> we see that Sage uses the <c
+            >traveling_salesman_problem()</c> function to determine if a graph is Hamiltonian.
         </p>
         <idx><h>traveling salesperson</h></idx>
         <idx><h>NP-hard</h></idx>
         <p>
             The traveling salesperson problem is a classic optimization problem.
             Given a list of cities and the lengths between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science.
-            It is <term>NP-hard</term>, meaning that no efficient algorithm is known to solve it.
+            It is <term
+            >NP-hard</term>, meaning that no efficient algorithm is known to solve it.
             The complexity of the problem increases with the number of nodes.
             When working with many nodes, the algorithm can take a long time to run.
         </p>
@@ -191,7 +208,9 @@
         </sage>
 
         <p>
-            The function <c>hamiltonian_cycle</c> returns <c>True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c>[1, 2, 3, 4, 5]</c>.
+            The function <c>hamiltonian_cycle</c> returns <c
+            >True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c
+            >[1, 2, 3, 4, 5]</c>.
             This is just one of the many Hamiltonian cycles that exist in the graph.
             Now lets find the minimum Hamiltonian cycle.
         </p>
@@ -217,7 +236,8 @@
 
         <p>
             If there is no Hamiltonian cycle, Sage will return <c>False</c>.
-            If we use the <c>backtrack</c> algorithm, Sage will return a list that represents the longest path found.
+            If we use the <c
+            >backtrack</c> algorithm, Sage will return a list that represents the longest path found.
         </p>
         <sage>
         <input>

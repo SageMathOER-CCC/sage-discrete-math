@@ -4,9 +4,13 @@
         <h>functions (math)</h>
     </idx>
     <introduction>
-        <p> A function from a set <m>A</m> into a set <m>B</m> is a relation from <m>A</m> into <m>B</m>
-            such that each element of <m>A</m> is related to exactly one element of the set <m>B</m>.
-            The set <m>A</m> is called the domain of the function, and the set <m>B</m> is called
+        <p> A function from a set <m>A</m> into a set <m
+            >B</m> is a relation from <m>A</m> into <m>B</m>
+            such that each element of <m
+            >A</m> is related to exactly one element of the set <m>B</m>.
+            The set <m
+            >A</m> is called the domain of the function, and the set <m
+            >B</m> is called
             the co-domain. Functions are fundamental in both mathematics and computer science for
             describing mathematical relationships and implementing computational logic. </p>
         <aside>
@@ -20,7 +24,8 @@
         <p>
             In Sage, functions can be defined using direct definition.
         </p>
-        <p> For example, defining a function <m>f : \mathbb{R} \rightarrow \mathbb{R}</m> to
+        <p> For example, defining a function <m
+            >f : \mathbb{R} \rightarrow \mathbb{R}</m> to
             calculate the cube of a number, such as 3: </p>
         <sage>
             <input>
@@ -28,7 +33,7 @@
                 show(f)
                 f(3)
             </input>
-            <output></output>
+            <output />
         </sage>
     </introduction>
     <subsection>
@@ -45,13 +50,14 @@
                 by providing a visual context.
             </p>
         </aside>
-        <p> For example, to plot the function <m>f(x) = x^3</m> over the interval <m>[-2, 2]</m>: </p>
+        <p> For example, to plot the function <m
+            >f(x) = x^3</m> over the interval <m>[-2, 2]</m>: </p>
         <sage>
             <input>
                 f(x) = x^3
                 plot(f(x), x, -2, 2)
             </input>
-            <output></output>
+            <output />
         </sage>
     </subsection>
 </section>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sage-browser" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Run Sage in the browser</title>
 
-  <p> The easiest way to get started is by running SageMath online. However, if you do not have reliable internet, you can also install the software locally on your own computer. Begin your journey with SageMath by following these steps: </p>
+  <p
+    > The easiest way to get started is by running SageMath online. However, if you do not have reliable internet, you can also install the software locally on your own computer. Begin your journey with SageMath by following these steps: </p>
 
   <idx><h>run code</h><h>CoCalc</h></idx>
   <idx><h>run code</h><h>SageMath worksheets</h></idx>
@@ -13,36 +13,57 @@
   <p>
     <ol>
       <li>
-        Navigate to <url href="https://www.sagemath.org/" visual="https://www.sagemath.org/">the SageMath website</url>
+        Navigate to <url
+                    href="https://www.sagemath.org/"
+                    visual="https://www.sagemath.org/"
+                >the SageMath website</url>
       </li>
       <li>
-        Click on <url href="https://cocalc.com/features/sage" visual="https://cocalc.com/features/sage">Sage on CoCalc</url>
+        Click on <url
+                    href="https://cocalc.com/features/sage"
+                    visual="https://cocalc.com/features/sage"
+                >Sage on CoCalc</url>
       </li>
       <li>
-        <url href="https://cocalc.com/auth/sign-up" visual="https://cocalc.com/auth/sign-up">Create a CoCalc account</url>
+        <url
+                    href="https://cocalc.com/auth/sign-up"
+                    visual="https://cocalc.com/auth/sign-up"
+                >Create a CoCalc account</url>
       </li>
       <li>
-        Go to <url href="https://cocalc.com/projects" visual="https://cocalc.com/projects">Your Projects</url> on CoCalc and create a new project.
+        Go to <url
+                    href="https://cocalc.com/projects"
+                    visual="https://cocalc.com/projects"
+                >Your Projects</url> on CoCalc and create a new project.
       </li>
       <li>
         Start your new project and create a new worksheet. Choose the SageMath Worksheet option.
       </li>
       <li>
         <p>
-          Enter SageMath code into the worksheet. Try to evaluate a simple expression and use the worksheet like a calculator. Execute the code by clicking <c>Run</c> or using the shortcut <c>Shift + Enter</c>. We will learn more ways to run code in the next section.
+          Enter SageMath code into the worksheet. Try to evaluate a simple expression and use the worksheet like a calculator. Execute the code by clicking <c
+                    >Run</c> or using the shortcut <c
+                    >Shift + Enter</c>. We will learn more ways to run code in the next section.
         </p>
       </li>
       <li>
         Save your worksheet as a PDF for your records.
       </li>
       <li>
-        To learn more about SageMath worksheets, refer to the <url href="https://doc.cocalc.com/sagews.html" visual="https://doc.cocalc.com/sagews.html">documentation</url>
+        To learn more about SageMath worksheets, refer to the <url
+                    href="https://doc.cocalc.com/sagews.html"
+                    visual="https://doc.cocalc.com/sagews.html"
+                >documentation</url>
       </li>
       <li>
-        Alternatively, you can run Sage code in a <url href="https://doc.cocalc.com/jupyter-start.html">Jupyter Notebook</url> for some additional features.
+        Alternatively, you can run Sage code in a <url
+                    href="https://doc.cocalc.com/jupyter-start.html"
+                >Jupyter Notebook</url> for some additional features.
       </li>
       <li>
-        If you are feeling adventurous, you can <url href="https://doc.sagemath.org/html/en/installation/index.html">install Sage</url> and run it locally on your own computer. Keep in mind that a local install will be the most involved way to run Sage code.
+        If you are feeling adventurous, you can <url
+                    href="https://doc.sagemath.org/html/en/installation/index.html"
+                >install Sage</url> and run it locally on your own computer. Keep in mind that a local install will be the most involved way to run Sage code.
       </li>
     </ol>
   </p>

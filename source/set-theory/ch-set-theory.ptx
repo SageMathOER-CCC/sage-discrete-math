@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <chapter xml:id="ch-set-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Set Theory</title>
 
   <introduction>
     <p>
-      This chapter presents the study of set theory with Sage, starting with a description of the <c>Set()</c> function, its variations, and how to use it to calculate the basic set operations.
+      This chapter presents the study of set theory with Sage, starting with a description of the <c
+            >Set()</c> function, its variations, and how to use it to calculate the basic set operations.
 
     </p>
   </introduction>

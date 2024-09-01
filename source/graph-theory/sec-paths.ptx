@@ -1,7 +1,9 @@
 <section xml:id="paths" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Paths</title><idx><h>path</h></idx>
   <p>
-    A path between two vertices <m>u</m> and <m>v</m> is a sequence of consecutive edges starting at <m>u</m> and ending at <m>v</m>.
+    A path between two vertices <m>u</m> and <m
+        >v</m> is a sequence of consecutive edges starting at <m
+        >u</m> and ending at <m>v</m>.
   </p>
   <p>
     To get all paths between two vertices:
@@ -19,7 +21,8 @@
     The length of a path is defined as the number of edges that make up the path.
   </p>
   <p>
-    Finding the shortest path between two vertices can be achieved using the <c>shortest_path()</c> function:
+    Finding the shortest path between two vertices can be achieved using the <c
+        >shortest_path()</c> function:
   </p>
   <sage>
       <input>
@@ -41,7 +44,8 @@
     A graph is said to be connected if there is a path between any two vertices in the graph.
   </p>
   <p>
-    To determine if a graph is connected, we can use the <c>is_connected()</c> function:
+    To determine if a graph is connected, we can use the <c
+        >is_connected()</c> function:
   </p>
   <sage>
       <input>
@@ -53,7 +57,9 @@
       </output>
   </sage>
   <p>
-    A connected component of a graph <m>G </m> is a maximal connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it has only one connected component.
+    A connected component of a graph <m
+        >G </m> is a maximal connected subgraph of <m>G </m>. If the graph <m
+        >G </m> is connected, then it has only one connected component.
   </p>
   <p>
     For example, the following graph is not connected:
@@ -68,7 +74,8 @@
       </output>
   </sage>
   <p>
-    To identify all connected components of a graph, the <c>connected_components()</c> function can be utilized:
+    To identify all connected components of a graph, the <c
+        >connected_components()</c> function can be utilized:
   </p>
   <sage>
       <input>

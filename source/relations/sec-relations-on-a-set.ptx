@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="relations-on-a-set" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Relations on a set</title>
     
     <p>
-        When <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
+        When <m>A = B</m> we refer to the relation as a relation <term
+        >on</term> <m>A</m>.
     </p>
     <p>
-        Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
+        Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m
+        >R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m
+        >a</m> divides <m>b</m>). The relation <m
+        >R</m> can be represented by the set of ordered pairs where the first element divides the second:
     </p>
     <sage>
         <input>

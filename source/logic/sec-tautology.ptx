@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Analyzing Logical Equivalences</title>
 <subsection>
@@ -21,13 +20,14 @@
             T2 = E2.truthtable()
             T1 == T2
         </input>
-        <output></output>
+        <output />
     </sage>
 </subsection>
     <subsection>
     <title>Tautologies</title><idx><h>tautology</h></idx>
     <p>
-        A tautology is a logical statement that is always true.  The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
+        A tautology is a logical statement that is always true.  The <c
+            >is_tautology()</c> function checks whether a given logical expression is a tautology.
     </p>
     <aside>
         <title>Notes</title>
@@ -40,7 +40,7 @@
             a = propcalc.formula('p | ~p')
             a.is_tautology()
         </input>
-        <output></output>
+        <output />
     </sage>
     </subsection>
 
@@ -60,7 +60,7 @@
             A = propcalc.formula('p &amp; ~p')
             A.is_contradiction()  
         </input>
-        <output></output>
+        <output />
     </sage>
     </subsection>
 

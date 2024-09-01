@@ -7,16 +7,20 @@
     <idx><h>graphs</h><h>nodes</h></idx>
     <idx><h>graphs</h><h>links</h></idx>
     <idx><h>graphs</h><h>arcs</h></idx>
-    <p>In discrete mathematics, a graph is a fundamental concept used to model pairwise relations between objects. A graph is defined as an ordered pair <m>G = (V, E)</m>, where:</p>
+    <p
+        >In discrete mathematics, a graph is a fundamental concept used to model pairwise relations between objects. A graph is defined as an ordered pair <m
+            >G = (V, E)</m>, where:</p>
     <ul>
         <li>
             <p><m>V</m> is a set of vertices (also called nodes).</p>
         </li>
         <li>
-            <p><m>E</m> is a set of edges (also called links or arcs), which are unordered pairs of vertices (in an undirected graph) or ordered pairs of vertices (in a directed graph).</p>
+            <p><m
+                    >E</m> is a set of edges (also called links or arcs), which are unordered pairs of vertices (in an undirected graph) or ordered pairs of vertices (in a directed graph).</p>
         </li>
     </ul>    
-    <p>The vertices represent the objects, and the edges represent the connections or relationships between these objects.</p>
+    <p
+        >The vertices represent the objects, and the edges represent the connections or relationships between these objects.</p>
     
     <p>
         We can define a graph in Sage by listing the vertices and edges:
@@ -137,7 +141,10 @@
         </output>
     </sage>
     <p>
-        In the code above, the graph <c>G</c> is defined with vertices and edges, where each edge is a tuple containing two vertices and the weight of the edge. The <c>weighted=True</c> parameter indicates that the graph is weighted, and the <c>plot(edge_labels=True)</c> method visualizes the graph with edge weights displayed.
+        In the code above, the graph <c
+            >G</c> is defined with vertices and edges, where each edge is a tuple containing two vertices and the weight of the edge. The <c
+            >weighted=True</c> parameter indicates that the graph is weighted, and the <c
+            >plot(edge_labels=True)</c> method visualizes the graph with edge weights displayed.
     </p>
 </subsection>
 
@@ -160,7 +167,8 @@
     </sage>
     <idx><h>graphs</h><h>vertices</h></idx>
     <p>
-        To list all vertices of a graph, we use the <c>G.vertices()</c> method, which returns a list of the graph's vertices.
+        To list all vertices of a graph, we use the <c
+            >G.vertices()</c> method, which returns a list of the graph's vertices.
     </p>
     <sage>
         <input>
@@ -173,7 +181,8 @@
     </sage>
     <idx><h>graphs</h><h>edges</h></idx>
     <p>
-        To list all edges of a graph, the <c>G.edges()</c> method is used. This returns a list of tuples representing the graph's edges.
+        To list all edges of a graph, the <c
+            >G.edges()</c> method is used. This returns a list of tuples representing the graph's edges.
     </p>
 
     <sage>
@@ -198,7 +207,8 @@
         </output>
     </sage>
     <p>
-        The order of a graph <m>G=(V,E)</m> is the number of vertices <m>|V|</m>.
+        The order of a graph <m>G=(V,E)</m> is the number of vertices <m
+            >|V|</m>.
     </p>
     <idx><h>graphs</h><h>order</h></idx>
     <p>
@@ -231,7 +241,8 @@
     </sage>
     <idx><h>graphs</h><h>degree</h></idx>
     <p>
-        The degree of a vertex in <m>G</m> is the number of edges incident to the vertex.
+        The degree of a vertex in <m
+            >G</m> is the number of edges incident to the vertex.
     </p>
     <p>
         To find the degree of vertex <m>A</m>:
@@ -246,7 +257,8 @@
         </output>
     </sage>
     <p>
-        The method <c>G.degree_sequence()</c> provides a list of degrees of all vertices in the graph in decreasing order.
+        The method <c
+            >G.degree_sequence()</c> provides a list of degrees of all vertices in the graph in decreasing order.
     </p>
     <sage>
         <input>
@@ -264,7 +276,10 @@
   <title>Graphs and Matrices</title>
   <idx><h>graphs</h><h>adjacency matrix</h></idx>
   <p>
-      The <em>adjacency matrix</em> of a graph is a square matrix used to represent which vertices of the graph are adjacent to which other vertices. Each entry <m>a_{ij}</m> in the matrix is equal to 1 if there is an edge from vertex <c>i</c> to vertex <c>j</c>, and is equal to 0 otherwise.
+      The <em
+            >adjacency matrix</em> of a graph is a square matrix used to represent which vertices of the graph are adjacent to which other vertices. Each entry <m
+            >a_{ij}</m> in the matrix is equal to 1 if there is an edge from vertex <c
+            >i</c> to vertex <c>j</c>, and is equal to 0 otherwise.
   </p>
   <p>
       To create a graph from an adjacency matrix:
@@ -280,11 +295,14 @@
       </output>
   </sage>
   <p>
-      In this example, the matrix <c>A</c> represents the adjacency matrix of a graph, and <c>Graph(A)</c> creates the graph based on that matrix. The plot shows the resulting graph.
+      In this example, the matrix <c
+            >A</c> represents the adjacency matrix of a graph, and <c
+            >Graph(A)</c> creates the graph based on that matrix. The plot shows the resulting graph.
   </p>
   <idx><h>graphs</h><h>incidence matrix</h></idx>
   <p>
-      The <em>incidence matrix</em> is another matrix representation of a graph, which describes the relationship between vertices and edges. In this matrix, rows correspond to vertices, and columns correspond to edges, with entries indicating whether a vertex is incident to an edge.
+      The <em
+            >incidence matrix</em> is another matrix representation of a graph, which describes the relationship between vertices and edges. In this matrix, rows correspond to vertices, and columns correspond to edges, with entries indicating whether a vertex is incident to an edge.
   </p>
   <p>
       Besides creating graphs from matrices, you can also obtain these matrix representations from a given graph in Sage.

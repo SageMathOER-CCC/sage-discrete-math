@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="properties" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Properties</title>
     <introduction>
@@ -42,14 +41,17 @@
             </ul>
         </p>
         <p>
-            So far, we have learned about some of the built-in Sage methods that come out of the box, ready for us to use. Sometimes, we may need to define custom functions to meet specific requirements or check for particular properties. We define custom functions with the <c>def</c> keyword. If you want to reuse the custom functions defined in this book, copy and paste the function definitions into your own Sage worksheet and then call the function to use it.
+            So far, we have learned about some of the built-in Sage methods that come out of the box, ready for us to use. Sometimes, we may need to define custom functions to meet specific requirements or check for particular properties. We define custom functions with the <c
+            >def</c> keyword. If you want to reuse the custom functions defined in this book, copy and paste the function definitions into your own Sage worksheet and then call the function to use it.
         </p>
     </introduction>
 
     <subsection xml:id="subsec-reflexive">
         <title>Reflexive</title><idx><h>reflexive</h></idx>
         <p>
-            A relation <m>R</m> is reflexive if <m>a</m> relates to <m>a</m> for all elements <m>a</m> in the set <m>A</m>. This means all the elements relate to themselves.
+            A relation <m>R</m> is reflexive if <m>a</m> relates to <m
+            >a</m> for all elements <m>a</m> in the set <m
+            >A</m>. This means all the elements relate to themselves.
         </p>
         <sage>
             <input>
@@ -59,7 +61,12 @@
             </input>
           </sage>
           <p>
-            Let's define a function to check if the relation <m>R</m> on set <m>A</m> is reflexive. We will create a set of <m>(a, a)</m> pairs for each element <m>a</m> in <m>A</m> and check if this set is a subset of <m>R</m>. This will return <c>True</c> if the relation is reflexive and <c>False</c> otherwise.
+            Let's define a function to check if the relation <m>R</m> on set <m
+            >A</m> is reflexive. We will create a set of <m
+            >(a, a)</m> pairs for each element <m>a</m> in <m
+            >A</m> and check if this set is a subset of <m
+            >R</m>. This will return <c
+            >True</c> if the relation is reflexive and <c>False</c> otherwise.
           </p>
           <sage>
             <input>
@@ -72,7 +79,8 @@
           </sage>
 
           <p>
-            If we are working with <c>DiGraphs</c>, we can use the method <c>has_edge</c> to check if the graph has a loop for each vertex.
+            If we are working with <c>DiGraphs</c>, we can use the method <c
+            >has_edge</c> to check if the graph has a loop for each vertex.
           </p>
           <sage>
             <input>
@@ -92,7 +100,8 @@
     <subsection xml:id="subsec-symmetric">
         <title>Symmetric</title><idx><h>symmetric</h></idx>
         <p>
-            A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>.
+            A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m
+            >b</m> relates to <m>a</m>.
         </p>
         <sage>
             <input>
@@ -108,7 +117,10 @@
             </input>
         </sage>
         <p>
-            We can check if a <c>DiGraph</c> is symmetric by comparing the edges of the graph with the <c>reverse</c> edges. In our definition of symmetry, we are only interested in the relation of nodes, so we set edge <c>labels=False</c>.
+            We can check if a <c
+            >DiGraph</c> is symmetric by comparing the edges of the graph with the <c
+            >reverse</c> edges. In our definition of symmetry, we are only interested in the relation of nodes, so we set edge <c
+            >labels=False</c>.
         </p>
         <sage>
             <input>
@@ -126,7 +138,9 @@
     <subsection xml:id="subsec-anti-symmetric">
         <title>Antisymmetric</title><idx><h>antisymmetric</h></idx>
         <p>
-            When a relation is antisymmetric, the only case that <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>a</m> is when <m>a</m> and <m>b</m> are equal.
+            When a relation is antisymmetric, the only case that <m
+            >a</m> relates to <m>b</m> and <m>b</m> relates to <m
+            >a</m> is when <m>a</m> and <m>b</m> are equal.
         </p>
         <sage>
             <input>
@@ -142,7 +156,11 @@
             </input>
         </sage>
         <p>
-            While Sage offers a built-in <c>antisymmetric()</c> method for <c>Graphs</c>, it checks for a more restricted property than the standard definition of antisymmetry. Specifically, it checks if the existence of a path from a vertex <m>x</m> to a vertex <m>y</m> implies that there is no path from <m>y</m> to <m>x</m> unless <m>x=y</m>. Observe that while the standard antisymmetric property forbids the edges to be bidirectional, the Sage antisymmetric property forbids cycles.
+            While Sage offers a built-in <c>antisymmetric()</c> method for <c
+            >Graphs</c>, it checks for a more restricted property than the standard definition of antisymmetry. Specifically, it checks if the existence of a path from a vertex <m
+            >x</m> to a vertex <m>y</m> implies that there is no path from <m
+            >y</m> to <m>x</m> unless <m
+            >x=y</m>. Observe that while the standard antisymmetric property forbids the edges to be bidirectional, the Sage antisymmetric property forbids cycles.
         </p>
         <sage>
             <input>
@@ -156,7 +174,8 @@
             </input>
         </sage>
         <p>
-            Let's define a function to check for the standard definition of antisymmetry in a <c>DiGraph</c>.
+            Let's define a function to check for the standard definition of antisymmetry in a <c
+            >DiGraph</c>.
         </p>
         <sage>
             <input>
@@ -178,10 +197,12 @@
     <subsection xml:id="subsec-transitive">
         <title>Transitive</title><idx><h>transitive</h></idx>
         <p>
-            A relation is transitive if <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>c</m>, then <m>a</m> relates to <m>c</m>.
+            A relation is transitive if <m>a</m> relates to <m>b</m> and <m
+            >b</m> relates to <m>c</m>, then <m>a</m> relates to <m>c</m>.
         </p>
         <p>
-            Let's define a function to check for the transitive property in a <c>Set</c>:
+            Let's define a function to check for the transitive property in a <c
+            >Set</c>:
         </p>
         <sage>
             <input>
@@ -202,7 +223,10 @@
             </input>
         </sage>
         <p>
-            You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set <m>A</m> three times. We can improve the time complexity by using a dictionary to store the relation <m>R</m>. Alternatively, we can use built-in Sage <c>DiGraph</c> methods.
+            You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set <m
+            >A</m> three times. We can improve the time complexity by using a dictionary to store the relation <m
+            >R</m>. Alternatively, we can use built-in Sage <c
+            >DiGraph</c> methods.
         </p>
 
         <sage>

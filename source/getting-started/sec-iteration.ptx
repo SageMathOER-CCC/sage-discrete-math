@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="iteration" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Iteration</title><idx><h>iteration</h><h>for loop</h></idx>
     <p>
-        Iteration is a programming technique that allows us to efficiently write code by repeating instructions with minimal syntax. The <c>for</c> loop assigns a value from a sequence to the loop variable and executes the loop body once for each value.
+        Iteration is a programming technique that allows us to efficiently write code by repeating instructions with minimal syntax. The <c
+        >for</c> loop assigns a value from a sequence to the loop variable and executes the loop body once for each value.
     </p>
     <sage>
         <input>
@@ -31,7 +31,8 @@
     </sage>
     <idx><h>iteration</h><h>list comprehension</h></idx>
     <p>
-        Here is an example of list comprehension, a concise way to create lists. Unlike Python's <c>range()</c>, the Sage range syntax for list comprehension includes the ending value.
+        Here is an example of list comprehension, a concise way to create lists. Unlike Python's <c
+        >range()</c>, the Sage range syntax for list comprehension includes the ending value.
     </p>
     <sage>
         <input>

@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title><idx><h>equivalence</h></idx>
 
     <p>
-        A relation on a set is called an <term>equivalence relation</term> if it is reflexive, symmetric, and transitive. The <term>equivalence class</term> of an element <m>a</m> in a set <m>A</m> is the set of all elements in <m>A</m> that are related to <m>a</m> by this relation, denoted by:
+        A relation on a set is called an <term
+        >equivalence relation</term> if it is reflexive, symmetric, and transitive. The <term
+        >equivalence class</term> of an element <m>a</m> in a set <m
+        >A</m> is the set of all elements in <m>A</m> that are related to <m
+        >a</m> by this relation, denoted by:
     </p>
     <me>
         [a] = \{x \in A \; | \; xRa\}
     </me>
     <p>
-        Here, <m>[a]</m> represents the equivalence class of <m>a</m>, comprising all elements in <m>A</m> that are related to <m>a</m> through the relation <m>R</m>. This illustrates the grouping of elements into equivalence classes.
+        Here, <m>[a]</m> represents the equivalence class of <m
+        >a</m>, comprising all elements in <m>A</m> that are related to <m
+        >a</m> through the relation <m
+        >R</m>. This illustrates the grouping of elements into equivalence classes.
     </p>
     <p>
         Consider a set <m>A</m> defined as:
@@ -85,7 +91,9 @@
     </sage>
 
     <p>
-        <term>Symmetric</term>: If person <m>a</m> lives in the same floor as person <m>b</m>, then person <m>b</m> lives in the same floor as person <m>a</m>.
+        <term>Symmetric</term>: If person <m
+        >a</m> lives in the same floor as person <m>b</m>, then person <m
+        >b</m> lives in the same floor as person <m>a</m>.
     </p>
     <sage>
         <input>
@@ -98,7 +106,10 @@
     </sage>
 
     <p>
-        <term>Transitive</term>: If person <m>a</m> lives in the same floor as person <m>b</m> and person <m>b</m> lives in the same floor as person <m>c</m>, then person <m>a</m> lives in the same floor as person <m>c</m>.
+        <term>Transitive</term>: If person <m
+        >a</m> lives in the same floor as person <m>b</m> and person <m
+        >b</m> lives in the same floor as person <m>c</m>, then person <m
+        >a</m> lives in the same floor as person <m>c</m>.
     </p>
     <sage>
         <input>

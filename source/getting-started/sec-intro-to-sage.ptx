@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="about-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Intro to Sage</title>
   <introduction>
@@ -63,7 +62,8 @@
         </li>
         <li>
           <p>
-            Use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd> if your cursor is active in the cell.
+            Use the keyboard shortcut <kbd>Shift</kbd> + <kbd
+                        >Enter</kbd> if your cursor is active in the cell.
           </p>
         </li>
       </ul>
@@ -137,7 +137,8 @@
   <subsection xml:id="subsec-Variables-and-Names">
     <title>Variables and Names</title>
     <p>
-      We can assign the value of an expression to a variable. A variable is a name that refers to a value in the computer's memory. Use the assignment operator <c>=</c> to assign a value to a variable. The variable name is on the left side of the assignment operator, and the value is on the right side. Unlike the expressions above, the assignment statement does not display anything. To view the value of a variable, type the variable name and run the cell.
+      We can assign the value of an expression to a variable. A variable is a name that refers to a value in the computer's memory. Use the assignment operator <c
+            >=</c> to assign a value to a variable. The variable name is on the left side of the assignment operator, and the value is on the right side. Unlike the expressions above, the assignment statement does not display anything. To view the value of a variable, type the variable name and run the cell.
     </p>
     <sage>
       <input>
@@ -206,7 +207,14 @@
     </p>
     
     <p>
-      <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
+      <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c
+            >assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c
+            >class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c
+            >else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c
+            >from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c
+            >is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c
+            >pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c
+            >with</c>, <c>yield</c>.
     </p>
 
     <p>
@@ -219,7 +227,8 @@
       </input>
     </sage>
     <p>
-      The output is <c>True</c> because <c>if</c> is a keyword. Try checking other names.
+      The output is <c>True</c> because <c
+            >if</c> is a keyword. Try checking other names.
     </p>
   </subsection>
 </section>

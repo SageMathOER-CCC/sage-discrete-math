@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="cardinality" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Cardinality</title><idx><h>cardinality</h></idx>
     <p>
-      To find the cardinality of a set, we use the <c>cardinality()</c> function.
+      To find the cardinality of a set, we use the <c
+        >cardinality()</c> function.
     </p>
     <aside>
       <title>Notes</title>
@@ -18,7 +18,9 @@
       </input>
     </sage>
       <p>
-        Alternatively, we can also use the <c>len()</c> function, built into Python. Instead of returning a Sage <c>Integer</c>, the <c>len()</c> function returns a Python <c>int</c>.
+        Alternatively, we can also use the <c
+        >len()</c> function, built into Python. Instead of returning a Sage <c
+        >Integer</c>, the <c>len()</c> function returns a Python <c>int</c>.
     </p>
     <sage>
       <input>
@@ -28,7 +30,8 @@
     </sage>
 
     <p>
-      In many cases, using Sage classes and functions will provide more functionality. In the following example, <c>cardinality()</c> gives us a valid output while <c>len()</c> does not.
+      In many cases, using Sage classes and functions will provide more functionality. In the following example, <c
+        >cardinality()</c> gives us a valid output while <c>len()</c> does not.
     </p>
     <sage>
       <input>

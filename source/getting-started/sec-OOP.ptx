@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="OOP" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Object-Oriented Programming</title>
 
   <p>
-    <term>Object-Oriented Programming</term> (OOP) is a programming paradigm that models the world as a collection of interacting <term>objects</term>. More specifically, an object is an <term>instance</term> of a <term>class</term>. A class can represent almost anything.
+    <term
+        >Object-Oriented Programming</term> (OOP) is a programming paradigm that models the world as a collection of interacting <term
+        >objects</term>. More specifically, an object is an <term
+        >instance</term> of a <term
+        >class</term>. A class can represent almost anything.
   </p>
   <p>
-    <term>Classes</term> are like blueprints that define the structure and behavior of objects. A class defines the <term>attributes</term> and <term>methods</term> of an object. An attribute is a variable that stores information about the object. A method is a function that can interact with or modify the object. Although you can create your own custom classes, the open-source community has already defined thousands of classes for us to use. For example, there are specialized classes for working with integers, lists, strings, graphs, and more.
+    <term
+        >Classes</term> are like blueprints that define the structure and behavior of objects. A class defines the <term
+        >attributes</term> and <term
+        >methods</term> of an object. An attribute is a variable that stores information about the object. A method is a function that can interact with or modify the object. Although you can create your own custom classes, the open-source community has already defined thousands of classes for us to use. For example, there are specialized classes for working with integers, lists, strings, graphs, and more.
   </p>
 
   <p>
@@ -36,11 +42,18 @@
   </sage>
 
   <p>
-    The <c>type()</c> function confirms that <c>'a'</c> is an instance of the <c>string</c> class and <c>vowels</c> is an instance of the <c>list</c> class. We create a <c>list</c> object named <c>vowels</c> by assigning a series of characters within square brackets to a variable. This object, <c>vowels</c>, now represents a <c>list</c> of <c>string</c> elements, and we can interact with it using various methods.
+    The <c>type()</c> function confirms that <c>'a'</c> is an instance of the <c
+        >string</c> class and <c>vowels</c> is an instance of the <c
+        >list</c> class. We create a <c>list</c> object named <c
+        >vowels</c> by assigning a series of characters within square brackets to a variable. This object, <c
+        >vowels</c>, now represents a <c>list</c> of <c
+        >string</c> elements, and we can interact with it using various methods.
   </p>
 
   <p>
-    <term>Dot notation</term> is a syntax used to access an object's attributes and call an object's methods. For example, the list class has an <c>append</c> method, allowing us to add elements to the list.
+    <term
+        >Dot notation</term> is a syntax used to access an object's attributes and call an object's methods. For example, the list class has an <c
+        >append</c> method, allowing us to add elements to the list.
   </p>
 
   <sage>
@@ -51,7 +64,13 @@
   </sage>
 
   <p>    
-    A <term>parameter</term> is a variable passed to a method. In this case, the parameter is the string <c>'y'</c>. The <c>append</c> method adds the string <c>'y'</c> to the end of the list. The list class has many more methods that we can use to interact with the list object. While <c>list</c> is a built-in Python class, Sage offers many more classes specialized for mathematical applications. For example, we will learn about the Sage <c>Set</c> class in the next chapter. Objects instantiated from the <c>Set</c> class have methods and attributes useful for working with sets.
+    A <term
+        >parameter</term> is a variable passed to a method. In this case, the parameter is the string <c
+        >'y'</c>. The <c>append</c> method adds the string <c
+        >'y'</c> to the end of the list. The list class has many more methods that we can use to interact with the list object. While <c
+        >list</c> is a built-in Python class, Sage offers many more classes specialized for mathematical applications. For example, we will learn about the Sage <c
+        >Set</c> class in the next chapter. Objects instantiated from the <c
+        >Set</c> class have methods and attributes useful for working with sets.
   </p>
 
   <sage>

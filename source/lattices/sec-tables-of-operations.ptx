@@ -2,7 +2,9 @@
     <title>Tables of Operations</title>
     <introduction>
         <p>
-            This section delves into the representation of meet <m>(∧)</m> and join <m>(∨)</m> operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.
+            This section delves into the representation of meet <m
+            >(∧)</m> and join <m
+            >(∨)</m> operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.
         </p>
     </introduction>
 
@@ -12,7 +14,9 @@
             The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice. 
         </p>
         <p>
-            For outputting the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c>LatticePoset()</c>. Then we can use the function <c>meet_matrix()</c> to process the table. 
+            For outputting the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c
+            >LatticePoset()</c>. Then we can use the function <c
+            >meet_matrix()</c> to process the table. 
         </p>
         <sage>
             <input>
@@ -27,7 +31,10 @@
             </output>
         </sage>
         <p>
-            From the output matrix, we can see that each entry <m>a_{ij}</m> is not the actual value of the meet of the elements <m>a_{i}</m> and <m>a_{j}</m> but just its position in the lattice. Sage does not have a specific function to output the exact meet, but we can define our own function for this purpose.
+            From the output matrix, we can see that each entry <m
+            >a_{ij}</m> is not the actual value of the meet of the elements <m
+            >a_{i}</m> and <m
+            >a_{j}</m> but just its position in the lattice. Sage does not have a specific function to output the exact meet, but we can define our own function for this purpose.
         </p>
         <sage>
             <input>
@@ -79,7 +86,8 @@
             Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements. 
         </p>
         <p>
-            Similarly, we can use the function <c>join_matrix()</c> to process the table. 
+            Similarly, we can use the function <c
+            >join_matrix()</c> to process the table. 
         </p>
         <sage>
             <input>

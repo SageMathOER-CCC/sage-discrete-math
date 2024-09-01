@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="displaying" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Display Values</title>
     <p>
@@ -9,7 +8,8 @@
       <ul>
         <li>
           <p>
-            <c>print()</c> displays the value of the expression inside the parentheses on the screen.
+            <c
+                    >print()</c> displays the value of the expression inside the parentheses on the screen.
           </p>
         </li>
         <li>
@@ -24,17 +24,21 @@
         </li>
         <li>
           <p>
-            <c>latex()</c> produces the raw <latex /> code for the expression inside the parentheses. You can paste this code into a <latex /> document to display the expression.
+            <c>latex()</c> produces the raw <latex
+                    /> code for the expression inside the parentheses. You can paste this code into a <latex
+                    /> document to display the expression.
           </p>
         </li>
         <li>
           <p>
-            <c>%display latex</c> renders the output of commands as <latex /> automatically.
+            <c>%display latex</c> renders the output of commands as <latex
+                    /> automatically.
           </p>
         </li>
         <li>
           <p>
-            While Python string formatting is available, the output is unreliable for rendering rich text and <latex /> due to compatibility issues.
+            While Python string formatting is available, the output is unreliable for rendering rich text and <latex
+                    /> due to compatibility issues.
           </p>
         </li>
       </ul>
@@ -83,7 +87,8 @@
       </input>
     </sage>
     <p>
-      If you are working in a Jupyter notebook or SageMathCell, <c>%display latex</c> sets the display mode.
+      If you are working in a Jupyter notebook or SageMathCell, <c
+        >%display latex</c> sets the display mode.
     </p>
     <sage>
       <input>
@@ -93,7 +98,8 @@
       </input>
     </sage>
     <p>
-      The expressions will continue to render as <latex /> until you change the display mode. The display mode is still set from the previous cell.
+      The expressions will continue to render as <latex
+        /> until you change the display mode. The display mode is still set from the previous cell.
     </p>
     <sage>
       <input>
