@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="search-algorithms" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Search Algorithms</title><idx><h>search algorithms</h></idx>
+    <title>Search Algorithms</title>
+    <idx>
+        <h>search algorithms</h>
+    </idx>
+    <p> The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V'
+        \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>. </p>
+    <idx>
+        <h>subgraph</h>
+    </idx>
+    <idx>
+        <h>spanning subgraph</h>
+    </idx>
+    <idx>
+        <h>spanning tree</h>
+    </idx>
+    <p> The subgraph <m>G' = (V', E')</m> is a <term>spanning subgraph</term> of <m>G = (V, E)</m>
+        if <m>V' = V</m>. </p>
+    <p> A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that
+        is a tree. </p>
     <p>
-      The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
+        Given a graph, there are several algorithms to calculate a spanning tree. For instance the
+        depth-first search algorithm and the breadth-first search algorithm are two of them.
     </p>
-    <idx><h>subgraph</h></idx>
-    <idx><h>spanning subgraph</h></idx>
-    <idx><h>spanning tree</h></idx>
-    <p>
-      The subgraph <m>G' = (V', E')</m> is a <term>spanning subgraph</term> of <m>G = (V, E)</m> if <m>V' = V</m>.
-    </p>
-    <p>
-      A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
-    </p>
-    <p>
-        Given a graph, there are several algorithms to calculate a spanning tree. For instance the depth-first search algorithm and the breadth-first search algorithm are two of them.
-    </p>
-    <idx><h>Breadth-first search</h></idx>
+    <idx>
+        <h>Breadth-first search</h>
+    </idx>
     <p>
         <term>Breadth-first search algorithm</term>
         <ol>
@@ -38,7 +47,8 @@
             </li>
             <li>
                 <p>
-                    Consider each of these vertices as a root, in order, and add all the unvisited incident edges that do not produce a cycle.
+                    Consider each of these vertices as a root, in order, and add all the unvisited
+        incident edges that do not produce a cycle.
                 </p>
             </li>
             <li>
@@ -52,11 +62,11 @@
                 </p>
             </li>
         </ol>
-        The output of this algorithm is a spanning tree.
-    </p>
-    <p>
-        The <c>breadth_first_search()</c> function provides a flexible method for traversing graphs. This function can be employed to explore a graph from a specified starting point (or points) and can be adapted for various applications such as finding the shortest path, generating a spanning tree, or simply exploring the structure of a graph.
-    </p>
+        The output of this algorithm is a spanning tree. </p>
+    <p> The <c>breadth_first_search()</c> function provides a flexible method for traversing graphs.
+        This function can be employed to explore a graph from a specified starting point (or points)
+        and can be adapted for various applications such as finding the shortest path, generating a
+        spanning tree, or simply exploring the structure of a graph. </p>
     <p>
         Let's consider the following graph:
     </p>
@@ -67,35 +77,40 @@
             print(list(G.breadth_first_search(start=0, report_distance=True)))
         </input>
     </sage>
+    <p> In this example, the breadth-first search algorithm function is initiated at vertex <m>0</m>,
+        and it reports the length of each vertex from the starting point. Each element in the output
+        is a tuple consisting of a vertex and its length from the starting vertex. This length is
+        measured in terms of the number of edges that must be traversed to reach that vertex from
+        the start. </p>
+    <idx>
+        <h>minimal spanning tree</h>
+    </idx>
+    <p> Given a weighted graph, of all possible spanning trees that we can calculate, we may be
+        interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose
+        sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree
+        including Prim's Algorithm. </p>
+    <idx>
+        <h>Prim's algorithm</h>
+    </idx>
     <p>
-        In this example, the breadth-first search algorithm function is initiated at vertex <m>0</m>, and it reports the length of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its length from the starting vertex. This length is measured in terms of the number of edges that must be traversed to reach that vertex from the start.
-    </p>
-    <idx><h>minimal spanning tree</h></idx>
-    <p>
-        Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree including Prim's Algorithm.
-    </p>
-    <idx><h>Prim's algorithm</h></idx>
-    <p>
-        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growing spanning tree and the other <m>(R)</m> that are not in the growing spanning tree.
-        <ol>
+        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains
+        vertices that are in the growing spanning tree and the other <m>(R)</m> that are not in the
+        growing spanning tree. <ol>
             <li>
-                <p>
-                    Choose a vertex <m>u \in V</m> arbitrarily. At this step, <m>L = \{u\}</m> and <m>R = V - \{u\}</m>.
+                <p> Choose a vertex <m>u \in V</m> arbitrarily. At this step, <m>L = \{u\}</m> and <m>R
+        = V - \{u\}</m>. </p>
+            </li>
+            <li>
+                <p> Select the cheapest vertex in <m>R</m> that is connected to the growing spanning
+        tree <m>L</m> and add it into <m>L</m>
                 </p>
             </li>
             <li>
-                <p>
-                    Select the cheapest vertex in <m>R</m> that is connected to the growing spanning tree <m>L</m> and add it into <m>L</m>
-                </p>
-            </li>
-            <li>
-                <p>
-                    Follow the same procedure until all the vertices are in <m>L</m>
+                <p> Follow the same procedure until all the vertices are in <m>L</m>
                 </p>
             </li>
         </ol>
-        The output of this algorithm is a minimal spanning tree.
-    </p>
+        The output of this algorithm is a minimal spanning tree. </p>
     <p>
         Let's explore the following graph:
     </p>
@@ -109,12 +124,16 @@
     <aside>
         <title>Notes</title>
         <p>
-            Spanning trees are crucial in network design, ensuring that all nodes are connected without any cycles, minimizing the overall layout cost while maintaining network connectivity. Prim's algorithm, in particular, is vital in constructing efficient road, electrical, and computer networks.
+            Spanning trees are crucial in network design, ensuring that all nodes are connected
+            without any cycles, minimizing the overall layout cost while maintaining network
+            connectivity. Prim's algorithm, in particular, is vital in constructing efficient road,
+            electrical, and computer networks.
         </p>
     </aside>
-    <p>
-        We can ask Sage for the minimal spanning tree of this graph. By running <c>Graph.min_spanning_tree??</c> We can see that <c>min_spanning_tree()</c> uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.
-    </p>
+    <p> We can ask Sage for the minimal spanning tree of this graph. By running <c>
+        Graph.min_spanning_tree??</c> We can see that <c>min_spanning_tree()</c> uses a variation of
+        Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or
+        NetworkX. </p>
     <sage>
         <input>
             G.min_spanning_tree(by_weight=True)
