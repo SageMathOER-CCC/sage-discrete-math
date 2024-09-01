@@ -123,9 +123,32 @@
             from sage.logic.propcalc import formula
             h = formula("x | ~y")
             truth_table = h.truthtable()
-            truth_table.get_table_list()
+            table_list = truth_table.get_table_list()
         </input>
     </sage>
+    <p>
+        Now, we can iterate over the truth table to find the Sum-of-Products expansion of the Boolean function. For each row where the output is <c>True</c>, we will construct a product term by examining the input values. For each variable, if its value is <c>True</c>, we include the variable in the product; if its value is <c>False</c>, we include its negation in the product.
+     </p>
+     <sage>
+        <input>
+            # Initialize the SOP expression
+            sop_expression = []
+
+            # Iterate through the truth table
+            for row in table_list[1:]:  # Skip the header row ['x', 'y']
+                if row[-1]:  # If the output is True
+                    # Construct the minterm
+                    minterm = []
+                    for var, value in zip(table_list[0], row[:-1]):  # Iterate over variables and their values
+                        if value:
+                            minterm.append(var)  # Include variable as is if True
+                        else:
+                            minterm.append(f'~{var}')  # Include negation if False
+                    
+                    sop_expression.append(' &amp; '.join(minterm))  # Combine using AND
+        </input>
+     </sage>
+
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
