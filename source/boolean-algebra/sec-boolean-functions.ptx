@@ -148,7 +148,15 @@
                     sop_expression.append(' &amp; '.join(minterm))  # Combine using AND
         </input>
      </sage>
-
+     <p>
+        Now, we can combine all minterms:
+     </p>
+     <sage>
+        <input>
+            sop_result = ' | '.join(f'({m})' for m in sop_expression)
+            print("SOP Expression:", sop_result)
+        </input>
+     </sage>
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
