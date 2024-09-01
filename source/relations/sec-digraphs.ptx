@@ -2,11 +2,9 @@
 <section xml:id="digraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Digraphs</title><idx><h>digraph</h></idx>
     <p>
-        A digraph, or directed graph, is a visual representation of a relation <m
-        >R</m> on the set <m>A</m>. Every element in set <m
-        >A</m> is shown as a node (vertex). An arrow from the node <m
-        >a</m> to the node <m>b</m> represents the pair <m
-        >(a,b)</m> on the relation <m>R</m>.
+        A digraph, or directed graph, is a visual representation of a relation <m>R</m> on the set <m
+        >A</m>. Every element in set <m>A</m> is shown as a node (vertex). An arrow from the node <m
+        >a</m> to the node <m>b</m> represents the pair <m>(a,b)</m> on the relation <m>R</m>.
     </p>
     <aside>
         <title>Notes</title>
@@ -18,10 +16,8 @@
         <input>
             # Define the set A
             A = Set([2, 3, 4, 6, 8])
-
             # Define the relation R on A: aRb iff a divides b
             R = [(a, b) for a in A for b in A if a.divides(b)]
-
             DiGraph(R, loops=true)
         </input>
     </sage>
@@ -47,7 +43,6 @@
         <input>
             # Define the set A
             A = Set([2, 3, 4, 6, 8])
-
             # Define the relation R on A: aRb iff a &lt; b
             R = [(a, b) for a in A for b in A if a &lt; b]
             DiGraph(R)
@@ -67,11 +62,9 @@
             DiGraph([(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)])
         </input>
     </sage>
-
     <p>
         Alternatively, we can define the digraph directly. The element on the left of the <c
-        >:</c> is a node. The node relates to the elements in the list on the right of the <c
-        >:</c>.
+        >:</c> is a node. The node relates to the elements in the list on the right of the <c>:</c>.
     </p>
     <sage>
         <input>

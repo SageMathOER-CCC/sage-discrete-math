@@ -43,7 +43,6 @@
         <output />
     </sage>
     </subsection>
-
     <subsection>
     <title>Contradictions</title><idx><h>contradiction</h></idx>
     <p>
@@ -58,10 +57,9 @@
     <sage>
         <input>
             A = propcalc.formula('p &amp; ~p')
-            A.is_contradiction()  
+            A.is_contradiction()
         </input>
         <output />
     </sage>
     </subsection>
-
 </section>

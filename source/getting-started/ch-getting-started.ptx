@@ -10,8 +10,7 @@
       embedded directly in this book. We will also cover how to use CoCalc, a cloud-based platform
       that provides a collaborative environment for running Sage code.
     </p>
-    <p
-        > Sage is a free open-source mathematics software system that integrates <url
+    <p> Sage is a free open-source mathematics software system that integrates <url
                 href="https://doc.sagemath.org/html/en/reference/spkg/"
             >various open-source mathematics
       software packages</url>. We will cover the basics, including SageMath's syntax, data types,

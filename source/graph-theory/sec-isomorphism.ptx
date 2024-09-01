@@ -3,10 +3,8 @@
   <title>Isomorphism</title><idx><h>isomorphism</h></idx>
   <p>
     Informally, we can say that an <term
-        >isomorphism</term> is a relation of sameness between graphs. Let's say that the graphs <m
-        >G = (V, E)</m> and <m
-        >G' = (V', E')</m> are isomorphic if there exists a bijection <m
-        >f: V \rightarrow V'</m> such that <m
+        >isomorphism</term> is a relation of sameness between graphs. Let's say that the graphs <m>G = (V, E)</m> and <m
+        >G' = (V', E')</m> are isomorphic if there exists a bijection <m>f: V \rightarrow V'</m> such that <m
         >\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>.
   </p>
   <p>
@@ -51,17 +49,14 @@
     </input>
   </sage>
   <p>
-    The sage <c
-        >is_isomorphic()</c> method can be used to check if two graphs are isomorphic. The method returns <c
-        >True</c> if the graphs are isomorphic and <c
-        >False</c> if the graphs are not isomorphic.
+    The sage <c>is_isomorphic()</c> method can be used to check if two graphs are isomorphic. The method returns <c
+        >True</c> if the graphs are isomorphic and <c>False</c> if the graphs are not isomorphic.
   </p>
   <sage>
     <input>
       C.is_isomorphic(D)
     </input>
   </sage>
-
   <p>
     The <term
         >invariants under isomorphism</term> are conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:
@@ -155,8 +150,7 @@ def invariant_under_isomorphism(G1, G2):
     </p>
   </aside>
   <p>
-    Let's construct a different pair of graphs <m>A</m> and <m
-        >B</m> defined as follow
+    Let's construct a different pair of graphs <m>A</m> and <m>B</m> defined as follow
   </p>
   <sage>
     <input>
@@ -187,8 +181,7 @@ def invariant_under_isomorphism(G1, G2):
     </input>
   </sage>
   <p>
-    This time, if we apply <c>invariant_under_isomorphism</c> function on <m
-        >A</m> and <m
+    This time, if we apply <c>invariant_under_isomorphism</c> function on <m>A</m> and <m
         >B</m>, the output will show us that they are not isomorphic.
   </p>
   <sage>

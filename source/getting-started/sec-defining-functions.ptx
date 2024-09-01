@@ -67,8 +67,7 @@
     </input>
   </sage>
   <p>
-    Functions can also include a <c
-        >docstring</c> to provide documentation for the function. The <c
+    Functions can also include a <c>docstring</c> to provide documentation for the function. The <c
         >docstring</c> is a string that appears as the first statement in the function body. It describes what the function does and how to use it.
   </p>
   <sage>
@@ -76,46 +75,33 @@
       def pascal_row(n):
           r"""
           Return row `n` of Pascal's triangle.
-      
           INPUT:
-      
           - ``n`` -- non-negative integer; the row number of Pascal's triangle to return. 
             The row index starts from 0, which corresponds to the top row.
-      
           OUTPUT: list; row `n` of Pascal's triangle as a list of integers.
-      
           EXAMPLES:
-      
           This example illustrates how to get various rows of Pascal's triangle (0-indexed) ::
-      
               sage: pascal_row(0)  # the top row
               [1]
-      
               sage: pascal_row(4)
               [1, 4, 6, 4, 1]
-      
           It is an error to provide a negative value for `n` ::
-      
               sage: pascal_row(-1)
               Traceback (most recent call last):
               ...
               ValueError: `n` must be a non-negative integer
-      
           .. NOTE::
-      
               This function uses the `binomial` function to compute each
               element of the row.
           """
           if n &lt; 0:
               raise ValueError("`n` must be a non-negative integer")
-          
           return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>
   <p>
     We can view the <c>docstring</c> by calling the <c
-        >help()</c> function on the function name. You can also access the <c
-        >docstring</c> with the <c>?</c> operator.
+        >help()</c> function on the function name. You can also access the <c>docstring</c> with the <c>?</c> operator.
   </p>
   <sage>
     <input>

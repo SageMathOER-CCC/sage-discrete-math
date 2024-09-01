@@ -6,10 +6,8 @@
       You can execute and modify Sage code directly within the SageMathCells embedded on this webpage. Cells on the same page share a common memory space. To ensure accurate results, run the cells in the sequence in which they appear. Running them out of order may cause unexpected outcomes due to dependencies between the cells.
     </p>
   </introduction>
-
   <subsection xml:id="subsec-Sage-as-a-Calculator">
     <title>Sage as a Calculator</title>
-
     <p>
       Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
     </p>
@@ -51,7 +49,6 @@
         </p>
       </li>
     </ul>
-  
     <p>
       There are two ways to run the code within the cells:
       <ul>
@@ -62,13 +59,11 @@
         </li>
         <li>
           <p>
-            Use the keyboard shortcut <kbd>Shift</kbd> + <kbd
-                        >Enter</kbd> if your cursor is active in the cell.
+            Use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd> if your cursor is active in the cell.
           </p>
         </li>
       </ul>
     </p>
-    
     <sage>
       <input>
         # Lines that start with a pound sign are comments
@@ -76,19 +71,16 @@
         1+1
       </input>
     </sage>
-  
     <sage>
       <input>
         100 - 1
       </input>
     </sage>
-  
     <sage>
       <input>
         3*4
       </input>
     </sage>
-  
     <sage>
       <input>
         # Sage uses two exponentiation operators
@@ -96,7 +88,6 @@
         2**3
       </input>
     </sage>
-  
     <sage>
       <input>
         # Sage uses two exponentiation operators
@@ -104,28 +95,24 @@
         2^3
       </input>
     </sage>
-  
     <sage>
       <input>
         # Returns a rational number
         5/3
       </input>
     </sage>
-  
     <sage>
       <input>
         # Returns a floating point approximation
         5/3.0
       </input>
     </sage>
-  
     <sage>
       <input>
         # Returns the quotient of the integer division
         5//3
       </input>
     </sage>
-  
     <sage>
       <input>
         # Returns the remainder of the integer division
@@ -133,7 +120,6 @@
       </input>
     </sage>
   </subsection>
-
   <subsection xml:id="subsec-Variables-and-Names">
     <title>Variables and Names</title>
     <p>
@@ -148,13 +134,10 @@
         sum
       </input>
     </sage>
-
     <p>
       When choosing variable names, use valid identifiers.
     </p>
-
     <idx><h>identifiers</h></idx>
-
     <p>
       <ul>
         <li>
@@ -201,22 +184,16 @@
         </li>
       </ul>
     </p>
-
     <p>
       Below are some reserved keywords that you cannot use as variable names:
     </p>
-    
     <p>
-      <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c
-            >assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c
-            >class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c
-            >else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c
-            >from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c
-            >is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c
-            >pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c
-            >with</c>, <c>yield</c>.
+      <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c
+            >break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c
+            >except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c
+            >is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c
+            >try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
     </p>
-
     <p>
       Use the Python <c>keyword</c> module to check if a name is a keyword.
     </p>
@@ -227,8 +204,7 @@
       </input>
     </sage>
     <p>
-      The output is <c>True</c> because <c
-            >if</c> is a keyword. Try checking other names.
+      The output is <c>True</c> because <c>if</c> is a keyword. Try checking other names.
     </p>
   </subsection>
 </section>

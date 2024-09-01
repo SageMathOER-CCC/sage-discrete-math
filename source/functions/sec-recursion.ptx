@@ -20,18 +20,12 @@
             A recursive sequence is defined by one or more base cases and a recursive step that
             relates each term to its predecessors.
         </p>
-        <p
-        > Given a sequence defined by a recursive formula, we can ask Sage to find its closed
-            form. Here, <c
-            >s</c> is a function representing the sequence defined by recursion. The
-            equation <c>eqn</c> defines the recursive relation <m
-            >s_n = s_{n-1} + 2\cdot s_{n-2}</m>.
-            The <c
-            >rsolve()</c> function is then used to find a closed-form solution to this
-            recurrence, given the initial conditions <m>s_0 = 2</m> and <m
-            >s_1 = 7</m>. At last, we
-            use the <c
-            >SR()</c> function to convert from Python notation to mathematical notation. </p>
+        <p> Given a sequence defined by a recursive formula, we can ask Sage to find its closed
+            form. Here, <c>s</c> is a function representing the sequence defined by recursion. The
+            equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>.
+            The <c>rsolve()</c> function is then used to find a closed-form solution to this
+            recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we
+            use the <c>SR()</c> function to convert from Python notation to mathematical notation. </p>
         <sage>
             <input>
                 from sympy import Function, rsolve
@@ -43,18 +37,14 @@
             </input>
             <output />
         </sage>
-        <p> We can use the <c
-            >show()</c> function to make the output visually more pleasing; you can
+        <p> We can use the <c>show()</c> function to make the output visually more pleasing; you can
             try removing it and see how the output looks. </p>
         <idx>
             <h>Fibonacci</h>
         </idx>
-        <p
-        > Similarly, the Fibonacci sequence is another example of a recursive sequence, defined by
-            the base cases <m>F_0 = 0</m> and <m
-            >F_1 = 1</m>, and the recursive relation <m>F_n =
-            F_{n-1} + F_{n-2}</m> for <m
-            >n &gt; 1</m>. This sequence is a cornerstone example in the
+        <p> Similarly, the Fibonacci sequence is another example of a recursive sequence, defined by
+            the base cases <m>F_0 = 0</m> and <m>F_1 = 1</m>, and the recursive relation <m>F_n =
+            F_{n-1} + F_{n-2}</m> for <m>n &gt; 1</m>. This sequence is a cornerstone example in the
             study of recursion. </p>
         <sage>
             <input>
@@ -67,12 +57,10 @@
             </input>
             <output />
         </sage>
-        <p> The <c
-            >show()</c> function is again used here to present the solution in a more
+        <p> The <c>show()</c> function is again used here to present the solution in a more
             accessible mathematical notation, illustrating the power of recursive functions to
             describe complex sequences with simple rules. </p>
-        <p> We can also write a function <c>fib()</c> to compute the <m
-            >n</m>th Fibonacci number by
+        <p> We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by
             iterating and updating the values of two consecutive Fibonacci numbers in the sequence.
             Let us calculate the third Fibonacci number. </p>
         <sage>
@@ -88,9 +76,7 @@
             </input>
             <output />
         </sage>
-        <p
-        > We go back to the previous method where we calculated the closed form <c
-            >fib_sol</c> and
+        <p> We go back to the previous method where we calculated the closed form <c>fib_sol</c> and
             evaluate it now at <m>n = 3</m>. </p>
         <sage>
             <input>
@@ -105,9 +91,7 @@
             </input>
             <output />
         </sage>
-        <p
-        > As we can see, we obtain the same number either by evaluating the closed form at <m
-            >n =
+        <p> As we can see, we obtain the same number either by evaluating the closed form at <m>n =
             3</m> or by finding the third Fibonacci number directly by iteration. </p>
     </subsection>
     <subsection>
@@ -115,12 +99,9 @@
         <idx>
             <h>binomial coefficients</h>
         </idx>
-        <p> Binomial coefficients, denoted as <m
-            >\binom{n}{k}</m>, count the number of ways to
-            choose <m>k</m> elements from an <m
-            >n</m>-element set. They can be defined recursively.
-            Sage can compute binomial coefficients using the <c
-            >binomial(n, k)</c> function. </p>
+        <p> Binomial coefficients, denoted as <m>\binom{n}{k}</m>, count the number of ways to
+            choose <m>k</m> elements from an <m>n</m>-element set. They can be defined recursively.
+            Sage can compute binomial coefficients using the <c>binomial(n, k)</c> function. </p>
         <sage>
             <input>
                 binomial(5, 3)
@@ -142,9 +123,7 @@
             </input>
             <output />
         </sage>
-        <p> This function implements the recursive formula <m
-            >\binom{n}{k} = \binom{n-1}{k-1} +
-            \binom{n-1}{k}</m>, with base cases <m
-            >\binom{n}{0} = \binom{n}{n} = 1</m>. </p>
+        <p> This function implements the recursive formula <m>\binom{n}{k} = \binom{n-1}{k-1} +
+            \binom{n-1}{k}</m>, with base cases <m>\binom{n}{0} = \binom{n}{n} = 1</m>. </p>
     </subsection>
 </section>

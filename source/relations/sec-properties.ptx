@@ -2,237 +2,197 @@
 <section xml:id="properties" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Properties</title>
     <introduction>
-        <p>
-            A relation on <m>A</m> may satisfy certain properties:
-        
-            <ul>
+        <p> A relation on <m>A</m> may satisfy certain properties: <ul>
                 <li>
                     <p>
-                        <term>Reflexive</term>:
-                        <m>
+                        <term>Reflexive</term>: <m>
                             aRa \: \forall a \in A
                         </m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <term>Symmetric</term>:
-                        <m>
+                        <term>Symmetric</term>: <m>
                             \text{If } aRb \text{ then } bRa \: \forall a, b \in A
                         </m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <term>Antisymmetric</term>:
-                        <m>
-                            \text{If } aRb \text{ and } bRa \text{ then } a = b \: \forall a, b \in A
+                        <term>Antisymmetric</term>: <m>
+                            \text{If } aRb \text{ and } bRa \text{ then } a = b \: \forall a, b \in
+            A
                         </m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <term>Transitive</term>:
-                        <m>
-                            \text{If } aRb \text{ and } bRc \text{ then } aRc \: \forall a, b, c \in A
+                        <term>Transitive</term>: <m>
+                            \text{If } aRb \text{ and } bRc \text{ then } aRc \: \forall a, b, c \in
+            A
                         </m>
                     </p>
                 </li>
             </ul>
         </p>
-        <p>
-            So far, we have learned about some of the built-in Sage methods that come out of the box, ready for us to use. Sometimes, we may need to define custom functions to meet specific requirements or check for particular properties. We define custom functions with the <c
-            >def</c> keyword. If you want to reuse the custom functions defined in this book, copy and paste the function definitions into your own Sage worksheet and then call the function to use it.
-        </p>
+        <p> So far, we have learned about some of the built-in Sage methods that come out of the
+            box, ready for us to use. Sometimes, we may need to define custom functions to meet
+            specific requirements or check for particular properties. We define custom functions
+            with the <c>def</c> keyword. If you want to reuse the custom functions defined in this
+            book, copy and paste the function definitions into your own Sage worksheet and then call
+            the function to use it. </p>
     </introduction>
-
     <subsection xml:id="subsec-reflexive">
-        <title>Reflexive</title><idx><h>reflexive</h></idx>
-        <p>
-            A relation <m>R</m> is reflexive if <m>a</m> relates to <m
-            >a</m> for all elements <m>a</m> in the set <m
-            >A</m>. This means all the elements relate to themselves.
-        </p>
+        <title>Reflexive</title>
+        <idx>
+            <h>reflexive</h>
+        </idx>
+        <p> A relation <m>R</m> is reflexive if <m>a</m> relates to <m>a</m> for all elements <m>a</m>
+            in the set <m>A</m>. This means all the elements relate to themselves. </p>
         <sage>
             <input>
                 A = Set([1, 2, 3])
                 R = Set([(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)])
                 show(R)
             </input>
-          </sage>
-          <p>
-            Let's define a function to check if the relation <m>R</m> on set <m
-            >A</m> is reflexive. We will create a set of <m
-            >(a, a)</m> pairs for each element <m>a</m> in <m
-            >A</m> and check if this set is a subset of <m
-            >R</m>. This will return <c
-            >True</c> if the relation is reflexive and <c>False</c> otherwise.
-          </p>
-          <sage>
+        </sage>
+        <p> Let's define a function to check if the relation <m>R</m> on set <m>A</m> is reflexive.
+            We will create a set of <m>(a, a)</m> pairs for each element <m>a</m> in <m>A</m> and
+            check if this set is a subset of <m>R</m>. This will return <c>True</c> if the relation
+            is reflexive and <c>False</c> otherwise. </p>
+        <sage>
             <input>
                 def is_reflexive_set(A, R):
-                    reflexive_pairs = Set([(a, a) for a in A])
-                    return reflexive_pairs.issubset(R)
-
+                reflexive_pairs = Set([(a, a) for a in A])
+                return reflexive_pairs.issubset(R)
                 is_reflexive_set(A, R)
             </input>
-          </sage>
-
-          <p>
-            If we are working with <c>DiGraphs</c>, we can use the method <c
-            >has_edge</c> to check if the graph has a loop for each vertex.
-          </p>
-          <sage>
+        </sage>
+        <p> If we are working with <c>DiGraphs</c>, we can use the method <c>has_edge</c> to check
+            if the graph has a loop for each vertex. </p>
+        <sage>
             <input>
                 def is_reflexive_digraph(A, G):
-                    return all(G.has_edge(a, a) for a in A)
-
+                return all(G.has_edge(a, a) for a in A)
                 A = [1, 2, 3]
                 R = [(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)]
-
                 G = DiGraph(R, loops=True)
-
                 is_reflexive_digraph(A, G)
             </input>
-          </sage>
+        </sage>
     </subsection>
-
     <subsection xml:id="subsec-symmetric">
-        <title>Symmetric</title><idx><h>symmetric</h></idx>
-        <p>
-            A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m
-            >b</m> relates to <m>a</m>.
+        <title>Symmetric</title>
+        <idx>
+            <h>symmetric</h>
+        </idx>
+        <p> A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>
+            .
         </p>
         <sage>
             <input>
                 def is_symmetric_set(relation_R):
-                    inverse_R = Set([(b, a) for (a, b) in relation_R])
-                    return relation_R == inverse_R
-
+                inverse_R = Set([(b, a) for (a, b) in relation_R])
+                return relation_R == inverse_R
                 A = Set([1, 2, 3])
-
                 R = Set([(1, 2), (2, 1), (3, 3)])
-
                 is_symmetric_set(R)
             </input>
         </sage>
-        <p>
-            We can check if a <c
-            >DiGraph</c> is symmetric by comparing the edges of the graph with the <c
-            >reverse</c> edges. In our definition of symmetry, we are only interested in the relation of nodes, so we set edge <c
-            >labels=False</c>.
-        </p>
+        <p> We can check if a <c>DiGraph</c> is symmetric by comparing the edges of the graph with
+            the <c>reverse</c> edges. In our definition of symmetry, we are only interested in the
+            relation of nodes, so we set edge <c>labels=False</c>. </p>
         <sage>
             <input>
                 def is_symmetric_digraph(digraph):
-                    return digraph.edges(labels=False) == digraph.reverse().edges(labels=False)
-
+                return digraph.edges(labels=False) == digraph.reverse().edges(labels=False)
                 relation_R = [(1, 2), (2, 1), (3, 3)]
-
                 G = DiGraph(relation_R, loops=true)
-                
                 is_symmetric_digraph(G)
             </input>
         </sage>
     </subsection>
     <subsection xml:id="subsec-anti-symmetric">
-        <title>Antisymmetric</title><idx><h>antisymmetric</h></idx>
-        <p>
-            When a relation is antisymmetric, the only case that <m
-            >a</m> relates to <m>b</m> and <m>b</m> relates to <m
-            >a</m> is when <m>a</m> and <m>b</m> are equal.
-        </p>
+        <title>Antisymmetric</title>
+        <idx>
+            <h>antisymmetric</h>
+        </idx>
+        <p> When a relation is antisymmetric, the only case that <m>a</m> relates to <m>b</m> and <m>
+            b</m> relates to <m>a</m> is when <m>a</m> and <m>b</m> are equal. </p>
         <sage>
             <input>
                 def is_antisymmetric_set(relation):
-                    for a, b in relation:
-                        if (b, a) in relation and a != b:
-                            return False
-                    return True
-
+                for a, b in relation:
+                if (b, a) in relation and a != b:
+                return False
+                return True
                 relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
-
                 is_antisymmetric_set(relation)
             </input>
         </sage>
-        <p>
-            While Sage offers a built-in <c>antisymmetric()</c> method for <c
-            >Graphs</c>, it checks for a more restricted property than the standard definition of antisymmetry. Specifically, it checks if the existence of a path from a vertex <m
-            >x</m> to a vertex <m>y</m> implies that there is no path from <m
-            >y</m> to <m>x</m> unless <m
-            >x=y</m>. Observe that while the standard antisymmetric property forbids the edges to be bidirectional, the Sage antisymmetric property forbids cycles.
-        </p>
+        <p> While Sage offers a built-in <c>antisymmetric()</c> method for <c>Graphs</c>, it checks
+            for a more restricted property than the standard definition of antisymmetry.
+            Specifically, it checks if the existence of a path from a vertex <m>x</m> to a vertex <m>
+            y</m> implies that there is no path from <m>y</m> to <m>x</m> unless <m>x=y</m>. Observe
+            that while the standard antisymmetric property forbids the edges to be bidirectional,
+            the Sage antisymmetric property forbids cycles. </p>
         <sage>
             <input>
                 # Example with the more restricted
                 # Sage built-in antisymmetric method
                 # Warning: returns False
-                
                 relation = [(1, 2), (2, 3), (3, 4), (4, 1)]
-                
                 DiGraph(relation).antisymmetric()
             </input>
         </sage>
-        <p>
-            Let's define a function to check for the standard definition of antisymmetry in a <c
-            >DiGraph</c>.
-        </p>
+        <p> Let's define a function to check for the standard definition of antisymmetry in a <c>
+            DiGraph</c>. </p>
         <sage>
             <input>
                 def is_antisymmetric_digraph(digraph):
-                    for edge in digraph.edges(labels=False):
-                        a, b = edge
-                        # Check if there is an edge in both directions (a to b and b to a) and a is not equal to b
-                        if digraph.has_edge(b, a) and a != b:
-                            return False
-                    return True
-
+                for edge in digraph.edges(labels=False):
+                a, b = edge
+                # Check if there is an edge in both directions (a to b and b to a) and a is not
+                equal to b
+                if digraph.has_edge(b, a) and a != b:
+                return False
+                return True
                 relation = DiGraph([(1, 2), (2, 3), (3, 4), (4, 1)])
-
                 is_antisymmetric_digraph(relation)
             </input>
         </sage>
     </subsection>
-
     <subsection xml:id="subsec-transitive">
-        <title>Transitive</title><idx><h>transitive</h></idx>
-        <p>
-            A relation is transitive if <m>a</m> relates to <m>b</m> and <m
-            >b</m> relates to <m>c</m>, then <m>a</m> relates to <m>c</m>.
-        </p>
-        <p>
-            Let's define a function to check for the transitive property in a <c
-            >Set</c>:
-        </p>
+        <title>Transitive</title>
+        <idx>
+            <h>transitive</h>
+        </idx>
+        <p> A relation is transitive if <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>c</m>,
+            then <m>a</m> relates to <m>c</m>. </p>
+        <p> Let's define a function to check for the transitive property in a <c>Set</c>: </p>
         <sage>
             <input>
                 def is_transitive_set(A, R):
-                    for a in A:
-                        for b in A:
-                            if (a, b) in R:
-                                for c in A:
-                                    if (b, c) in R and not (a, c) in R:
-                                        return False
-                    return True
-
+                for a in A:
+                for b in A:
+                if (a, b) in R:
+                for c in A:
+                if (b, c) in R and not (a, c) in R:
+                return False
+                return True
                 A = Set([1, 2, 3])
-                
                 R = Set([(1, 2), (2, 3), (1, 3)])
-                
                 is_transitive_set(A, R)
             </input>
         </sage>
-        <p>
-            You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set <m
-            >A</m> three times. We can improve the time complexity by using a dictionary to store the relation <m
-            >R</m>. Alternatively, we can use built-in Sage <c
-            >DiGraph</c> methods.
-        </p>
-
+        <p> You may be tempted to write a function with a nested loop because the logic is easy to
+            follow. However, when working with larger sets, the time complexity of the function will
+            not be efficient. This is because we are iterating through the set <m>A</m> three times.
+            We can improve the time complexity by using a dictionary to store the relation <m>R</m>.
+            Alternatively, we can use built-in Sage <c>DiGraph</c> methods. </p>
         <sage>
             <input>
                 D = DiGraph([(1, 2), (2, 3), (1, 3)], loops=True)
-
                 D.is_transitive()
             </input>
         </sage>

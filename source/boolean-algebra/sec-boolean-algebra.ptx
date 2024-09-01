@@ -1,7 +1,4 @@
-<section
-    xml:id="sec-boolean-algebra"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
->
+<section xml:id="sec-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean Algebra</title>
     <idx>
         <h>Boolean Algebra</h>

@@ -1,6 +1,5 @@
 <section xml:id="sec-plot-options" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Plot Options</title>
-
     <p>
         Visualizing graphs in Sage not only provides insights into the structure and properties of the graph but also offers flexibility through customization options. These options include adjusting colors, edge thickness, vertex size, and more, allowing for clearer representation and better understanding of complex graphs. This subsection will guide you through various customization options for graph visualization in Sage.
     </p>
@@ -37,8 +36,7 @@
         </output>
     </sage>
     <p>
-        The <c
-        >edge_thickness</c> parameter allows you to specify the thickness of the edges in the plot.
+        The <c>edge_thickness</c> parameter allows you to specify the thickness of the edges in the plot.
     </p>
     <idx><h>graph plotting</h><h>vertex size</h></idx>
     <p>
@@ -132,12 +130,10 @@
 </sage>
 <p>
     After exploring the standard layouts, you might want to delve into more sophisticated layout algorithms offered by Graphviz. By setting the <c
-        >layout</c> option to <c
-        >graphviz</c>, you can access various Graphviz layout engines. For instance, <c
+        >layout</c> option to <c>graphviz</c>, you can access various Graphviz layout engines. For instance, <c
         >prog='dot'</c> is great for hierarchical graphs, <c
         >prog='neato'</c> for undirected graphs with spring model layouts, <c
-        >prog='fdp'</c> for force-directed layouts, <c
-        >prog='twopi'</c> for radial layouts, and <c
+        >prog='fdp'</c> for force-directed layouts, <c>prog='twopi'</c> for radial layouts, and <c
         >prog='circo'</c> for circular layouts. These layouts are particularly useful when the graph's structure needs to be visualized in a way that standard layouts cannot accommodate.
 </p>
 <p>
@@ -152,8 +148,6 @@
         # The graph is rendered using the Graphviz 'neato' layout.
     </output>
 </sage>
-
-
     <p>
         Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.
     </p>
@@ -170,7 +164,6 @@
             # A graphical representation of the graph with square-shaped vertices.
         </output>
     </sage>
-
     <p>
         Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.
     </p>
@@ -187,7 +180,6 @@
             # A graphical representation of the graph with dashed edges.
         </output>
     </sage>
-
     <p>
     Below is an example how to apply multiple options to a plot:
     </p>

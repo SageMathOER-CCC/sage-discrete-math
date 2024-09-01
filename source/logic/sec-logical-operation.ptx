@@ -1,7 +1,4 @@
-<section
-    xml:id="sec-logical-operation"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
->
+<section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Logical Operators</title>
     <idx><h>logical operators</h><h>and</h></idx>
     <idx><h>logical operators</h><h>or</h></idx>
@@ -10,8 +7,8 @@
     <idx><h>logical operators</h><h>biconditional</h></idx>
     <introduction>
         <p>
-            In Sage, logical operations such as AND <c>&amp;</c>, OR <c
-            >|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c
+            In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c
+            >-&gt;</c>, and biconditional <c
             >&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
         </p>
         <tabular>
@@ -52,12 +49,10 @@
                 Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
             </p>
         </aside>
-        
     </introduction>
     <!-- Logical Operations in Sage -->
     <subsection>
         <title>Boolean Formula</title>
-        
         <p>
             Sage's <c
             >propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c
@@ -73,5 +68,4 @@
             </output>
         </sage>
     </subsection>
-
 </section>

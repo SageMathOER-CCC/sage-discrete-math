@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="data-types" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Data Types</title>
-  <p> In computer science, <term
-        >Data types</term> represent data based on properties of the data.
+  <p> In computer science, <term>Data types</term> represent data based on properties of the data.
     Python and Sage use data types to implement these classes. Since Sage builds upon Python, it
     inherits all the built-in Python data types. Sage also provides classes that are well-suited for
     mathematical computations. </p>
@@ -20,15 +19,13 @@
       type(n)
     </input>
   </sage>
-  <p> The <c>type()</c> function reveals that <c
-        >2</c> is an instance of the <term>Integer</term>
+  <p> The <c>type()</c> function reveals that <c>2</c> is an instance of the <term>Integer</term>
     class. Sage includes numerous classes for different types of mathematical objects. </p>
   <idx>
     <h>data types</h>
     <h>symbolic</h>
   </idx>
-  <p> In the following example, Sage does not evaluate an approximation of <c
-        >sqrt(2) * log(3)</c>.
+  <p> In the following example, Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>.
     Sage will retain the <term>symbolic</term> value. </p>
   <sage>
     <input>
@@ -42,8 +39,7 @@
     <h>string</h>
   </idx>
   <p>
-    <term>String</term>: a <c
-        >str</c> is a sequence of characters used for text. You can use single
+    <term>String</term>: a <c>str</c> is a sequence of characters used for text. You can use single
     or double quotes. </p>
   <sage>
     <input>
@@ -57,8 +53,7 @@
     <h>boolean</h>
   </idx>
   <p>
-    <term>Boolean</term>: The type <c>bool</c> can be one of two values, <c
-        >True</c> or <c>False</c>
+    <term>Boolean</term>: The type <c>bool</c> can be one of two values, <c>True</c> or <c>False</c>
     .
   </p>
   <sage>
@@ -73,9 +68,7 @@
     <h>list</h>
   </idx>
   <p>
-    <term
-        >List</term>: A mutable collection of items within a pair of square brackets <c
-        >[]</c>. If
+    <term>List</term>: A mutable collection of items within a pair of square brackets <c>[]</c>. If
     an object is mutable, you can change its value after creating it. </p>
   <sage>
     <input>
@@ -84,9 +77,7 @@
       print(type(l))
     </input>
   </sage>
-
-  <p> Lists are indexed starting at <c
-        >0</c>. Here, we access the first element of a list by asking
+  <p> Lists are indexed starting at <c>0</c>. Here, we access the first element of a list by asking
     for the value at index zero. </p>
   <sage>
     <input>
@@ -107,8 +98,7 @@
     <h>tuple</h>
   </idx>
   <p>
-    <term>Tuple</term>: An immutable collection within a pair of parenthesis <c
-        >()</c>. If an object
+    <term>Tuple</term>: An immutable collection within a pair of parenthesis <c>()</c>. If an object
     is immutable, you cannot change the value after creating it. </p>
   <sage>
     <input>
@@ -122,10 +112,8 @@
     <h>set (Python)</h>
   </idx>
   <p>
-    <term>set</term>: A collection of items within a pair of curly braces <c
-        >{}</c>. <c>set()</c>
-    with lowercase <c
-        >s</c> is built into Python. The items in a set are unique and unordered. After
+    <term>set</term>: A collection of items within a pair of curly braces <c>{}</c>. <c>set()</c>
+    with lowercase <c>s</c> is built into Python. The items in a set are unique and unordered. After
     printing the set, we see there are no duplicate values. </p>
   <sage>
     <input>
@@ -135,8 +123,7 @@
     </input>
   </sage>
   <p>
-    <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c
-        >S</c> has added
+    <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c>S</c> has added
     functionality for mathematical operations. </p>
   <sage>
     <input>
@@ -144,8 +131,7 @@
       type(S)
     </input>
   </sage>
-  <p> We start by defining a <c>list</c> within square brackets <c
-        >[]</c>. Then, the <c>Set()</c>
+  <p> We start by defining a <c>list</c> within square brackets <c>[]</c>. Then, the <c>Set()</c>
     function creates the Sage set object. </p>
   <sage>
     <input>
@@ -180,12 +166,10 @@
       ],
       "format": ["Web", "PDF"]
       }
-
       type(d)
     </input>
   </sage>
-  <p> Use the <c
-        >pprint</c> module to print the dictionary in a more readable format. </p>
+  <p> Use the <c>pprint</c> module to print the dictionary in a more readable format. </p>
   <sage>
     <input>
       import pprint

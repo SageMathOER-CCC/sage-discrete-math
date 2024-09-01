@@ -2,27 +2,30 @@
     <title>Tables of Operations</title>
     <introduction>
         <p>
-            This section delves into the representation of meet <m
-            >(∧)</m> and join <m
+            This section delves into the representation of meet <m>(∧)</m> and join <m
             >(∨)</m> operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.
         </p>
     </introduction>
-
     <subsection xml:id="meet-operation-table">
         <title>Meet Operation Table</title><idx><h>meet matrix</h></idx>
         <p>
-            The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice. 
+            The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.
         </p>
         <p>
             For outputting the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c
-            >LatticePoset()</c>. Then we can use the function <c
-            >meet_matrix()</c> to process the table. 
+            >LatticePoset()</c>. Then we can use the function <c>meet_matrix()</c> to process the table.
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                L = LatticePoset(
+                    (
+                        ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                        [
+                            ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                        ]
+                    )
+                )
                 P = L.meet_matrix(); L
                 show(P)
             </input>
@@ -32,15 +35,21 @@
         </sage>
         <p>
             From the output matrix, we can see that each entry <m
-            >a_{ij}</m> is not the actual value of the meet of the elements <m
-            >a_{i}</m> and <m
+            >a_{ij}</m> is not the actual value of the meet of the elements <m>a_{i}</m> and <m
             >a_{j}</m> but just its position in the lattice. Sage does not have a specific function to output the exact meet, but we can define our own function for this purpose.
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                <!-- TODO. remove duplicated code -->
+                L = LatticePoset(
+                    (
+                        ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                        [
+                            ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                        ]
+                    )
+                )
                 P = L.meet_matrix()
                 elements = L.list()
                 K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
@@ -58,42 +67,51 @@
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                                  [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                                   ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))               
+                L = LatticePoset(
+                    (
+                        ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                        [
+                            ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                        ]
+                    )
+                )
                 P = L.meet_matrix()
-                elements = L.list()               
+                elements = L.list()
                 def create_table(elements, P):
                     column_widths = max(len(element) for element in elements) + 2
-                    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)                    
-                    divider = "-" * len(header)                 
-                    table = [header, divider]                
+                    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)
+                    divider = "-" * len(header)
+                    table = [header, divider]
                     for i, row_label in enumerate(elements):
                         row = f"{row_label:>{column_widths}} | " + " ".join(f"{elements[P[i,j]]:>{column_widths}}" for j in range(len(elements)))
-                        table.append(row)                 
-                    return "\n".join(table)               
-                print(create_table(elements, P))                
+                        table.append(row)
+                    return "\n".join(table)
+                print(create_table(elements, P))
             </input>
             <output>
             </output>
         </sage>
-
     </subsection>
-
     <subsection xml:id="join-operation-table">
         <title>Join Operation Table</title><idx><h>join matrix</h></idx>
         <p>
-            Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements. 
+            Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.
         </p>
         <p>
-            Similarly, we can use the function <c
-            >join_matrix()</c> to process the table. 
+            Similarly, we can use the function <c>join_matrix()</c> to process the table.
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                L = LatticePoset(
+                    (
+                        ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                        [
+                            ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                        ]
+                    )
+                )
                 P = L.join_matrix(); L
                 show(P)
             </input>
@@ -106,16 +124,21 @@
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                L = LatticePoset(
+                    (
+                        ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                        [
+                            ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                        ]
+                    )
+                )
                 P = L.join_matrix()
                 elements = L.list()
                 K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
                 for i in range(P.nrows()):
                     for j in range(P.ncols()):
                         K[i][j] = elements[P[i,j]]
-
                 for row in K:
                     print(row)
             </input>
@@ -127,21 +150,27 @@
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                                  [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
-                                   ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))               
+                L = LatticePoset(
+                    (
+                        ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                        [
+                            ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                        ]
+                    )
+                )
                 P = L.join_matrix()
-                elements = L.list()               
+                elements = L.list()
                 def create_table(elements, P):
                     column_widths = max(len(element) for element in elements) + 2
-                    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)                    
-                    divider = "-" * len(header)                 
-                    table = [header, divider]                
+                    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)
+                    divider = "-" * len(header)
+                    table = [header, divider]
                     for i, row_label in enumerate(elements):
                         row = f"{row_label:>{column_widths}} | " + " ".join(f"{elements[P[i,j]]:>{column_widths}}" for j in range(len(elements)))
-                        table.append(row)                 
-                    return "\n".join(table)               
-                print(create_table(elements, P))                
+                        table.append(row)
+                    return "\n".join(table)
+                print(create_table(elements, P))
             </input>
             <output>
             </output>

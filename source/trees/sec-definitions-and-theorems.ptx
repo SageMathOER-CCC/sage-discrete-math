@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section
-    xml:id="definitions-and-theorems"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
->
+<section xml:id="definitions-and-theorems" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Definitions and Theorems</title>
   <idx><h>cycle</h></idx>
   <idx><h>tree</h></idx>
   <idx><h>forest</h></idx>
   <p>
-    Given a graph, a <term
-        >cycle</term> is a circuit with no repeated edges. A <term
+    Given a graph, a <term>cycle</term> is a circuit with no repeated edges. A <term
         >tree</term> is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a <term
         >forest</term>.
   </p>
@@ -28,14 +24,12 @@
       </li>
       <li>
         <p>
-          <m>G</m> is connected, and if <m>e \in E</m> then the graph <m
-                    >(V, E - {e})</m> is disconnected.
+          <m>G</m> is connected, and if <m>e \in E</m> then the graph <m>(V, E - {e})</m> is disconnected.
         </p>
       </li>
       <li>
         <p>
-          <m
-                    >G</m> contains no cycles, but by adding one edge, you create a cycle.
+          <m>G</m> contains no cycles, but by adding one edge, you create a cycle.
         </p>
       </li>
       <li>
@@ -48,7 +42,6 @@
   <p>
     Let's explore the following graph:
   </p>
-
   <sage>
     <input>
       data = {
@@ -64,19 +57,16 @@
         10: [8],
         11: [6]
         }
-
       G = Graph(data)
       G.show()
     </input>
   </sage>
-
   <aside>
     <title>Notes</title>
     <p>
       Trees play a crucial role in the design of network topologies, especially in ensuring that data is transferred efficiently without loops in network paths. Forests can represent disconnected networks, which are critical in scenarios where backup systems are designed to operate independently.
     </p>
   </aside>
-
   <p>
     Let's ask Sage if this graph is a tree.
   </p>
@@ -85,11 +75,9 @@
       G.is_tree()
     </input>
   </sage>
-
   <p>
     If we remove an edge, we can see that the graph is no longer a tree.
   </p>
-
   <sage>
     <input>
       G_removed_edge = G.copy()
@@ -109,7 +97,6 @@
   <p>
     If we add an edge, we can see that the graph contains a cycle and is no longer a tree.
   </p>
-
   <sage>
     <input>
       G_added_edge = G.copy()

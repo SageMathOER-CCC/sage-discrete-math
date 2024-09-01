@@ -20,8 +20,7 @@
     </p>
     <p>
         You can quickly reference Sage documentation with the <c
-        >?</c> operator. You may also view the source code with the <c
-        >??</c> operator.
+        >?</c> operator. You may also view the source code with the <c>??</c> operator.
     </p>
     <sage>
         <input>

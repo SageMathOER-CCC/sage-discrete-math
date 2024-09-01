@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Equivalence</title><idx><h>equivalence</h></idx>
-
     <p>
         A relation on a set is called an <term
         >equivalence relation</term> if it is reflexive, symmetric, and transitive. The <term
-        >equivalence class</term> of an element <m>a</m> in a set <m
-        >A</m> is the set of all elements in <m>A</m> that are related to <m
-        >a</m> by this relation, denoted by:
+        >equivalence class</term> of an element <m>a</m> in a set <m>A</m> is the set of all elements in <m
+        >A</m> that are related to <m>a</m> by this relation, denoted by:
     </p>
     <me>
         [a] = \{x \in A \; | \; xRa\}
     </me>
     <p>
-        Here, <m>[a]</m> represents the equivalence class of <m
-        >a</m>, comprising all elements in <m>A</m> that are related to <m
-        >a</m> through the relation <m
+        Here, <m>[a]</m> represents the equivalence class of <m>a</m>, comprising all elements in <m
+        >A</m> that are related to <m>a</m> through the relation <m
         >R</m>. This illustrates the grouping of elements into equivalence classes.
     </p>
     <p>
@@ -43,18 +40,15 @@
     <sage>
         <input>
             import pprint
-
             # Define the floors as a dictionary, mapping floor names to sets of people
             floors = {
                 'first_floor': Set(['p_1', 'p_2', 'p_3', 'p_4']),
                 'second_floor': Set(['p_5', 'p_6', 'p_7']),
                 'third_floor': Set(['p_8', 'p_9', 'p_10'])
             }
-
             pprint.pprint(floors)
         </input>
     </sage>
-
     <p>
         Let <m>R</m> be the relation on <m>A</m> described as follows:
     </p>
@@ -85,14 +79,11 @@
             def is_reflexive_set(A, R):
                 reflexive_pairs = Set([(a, a) for a in A])
                 return reflexive_pairs.issubset(R)
-
             is_reflexive_set(A, R)
         </input>
     </sage>
-
     <p>
-        <term>Symmetric</term>: If person <m
-        >a</m> lives in the same floor as person <m>b</m>, then person <m
+        <term>Symmetric</term>: If person <m>a</m> lives in the same floor as person <m>b</m>, then person <m
         >b</m> lives in the same floor as person <m>a</m>.
     </p>
     <sage>
@@ -100,16 +91,13 @@
             def is_symmetric_set(relation_R):
                 inverse_R = Set([(b, a) for (a, b) in relation_R])
                 return relation_R == inverse_R
-
             is_symmetric_set(R)
         </input>
     </sage>
-
     <p>
-        <term>Transitive</term>: If person <m
-        >a</m> lives in the same floor as person <m>b</m> and person <m
-        >b</m> lives in the same floor as person <m>c</m>, then person <m
-        >a</m> lives in the same floor as person <m>c</m>.
+        <term>Transitive</term>: If person <m>a</m> lives in the same floor as person <m>b</m> and person <m
+        >b</m> lives in the same floor as person <m>c</m>, then person <m>a</m> lives in the same floor as person <m
+        >c</m>.
     </p>
     <sage>
         <input>

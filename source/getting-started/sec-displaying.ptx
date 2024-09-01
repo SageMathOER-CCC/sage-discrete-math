@@ -8,8 +8,7 @@
       <ul>
         <li>
           <p>
-            <c
-                    >print()</c> displays the value of the expression inside the parentheses on the screen.
+            <c>print()</c> displays the value of the expression inside the parentheses on the screen.
           </p>
         </li>
         <li>
@@ -31,8 +30,7 @@
         </li>
         <li>
           <p>
-            <c>%display latex</c> renders the output of commands as <latex
-                    /> automatically.
+            <c>%display latex</c> renders the output of commands as <latex /> automatically.
           </p>
         </li>
         <li>
@@ -87,8 +85,7 @@
       </input>
     </sage>
     <p>
-      If you are working in a Jupyter notebook or SageMathCell, <c
-        >%display latex</c> sets the display mode.
+      If you are working in a Jupyter notebook or SageMathCell, <c>%display latex</c> sets the display mode.
     </p>
     <sage>
       <input>

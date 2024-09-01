@@ -2,8 +2,7 @@
 <section xml:id="sec-truth-table" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Truth Tables</title><idx><h>truth table</h></idx>
         <p>
-            The <c
-        >truthtable()</c> function in Sage generates the truth table for a given logical expression.
+            The <c>truthtable()</c> function in Sage generates the truth table for a given logical expression.
         </p>
         <aside>
             <title>Notes</title>
@@ -20,8 +19,7 @@
         </sage>
         <p>
             An alternative way to display the table with better separation and visuals would be to use <c
-        >SymbolicLogic()</c>, <c>statement()</c>, <c>truthtable()</c> and the <c
-        >print_table()</c> functions.
+        >SymbolicLogic()</c>, <c>statement()</c>, <c>truthtable()</c> and the <c>print_table()</c> functions.
         </p>
         <sage>
             <input>
@@ -33,11 +31,9 @@
             <output />
         </sage>
         <p>
-            <c
-        >SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c
+            <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c
         >statement()</c> defines the given statement. The <c
-        >truthtable()</c> method generates a truth table for this statement, and <c
-        >print_table()</c> displays it.
+        >truthtable()</c> method generates a truth table for this statement, and <c>print_table()</c> displays it.
         </p>
     <p>
         Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c
@@ -56,5 +52,4 @@
         </input>
         <output />
     </sage>
-
 </section>

@@ -1,13 +1,9 @@
-<section
-    xml:id="sec-boolean-functions"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
->
+<section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean functions</title>
     <idx>
         <h>Boolean functions</h>
     </idx>
-    <p
-    > A Boolean function is a function that takes only values 0 or 1 and whose domain is the
+    <p> A Boolean function is a function that takes only values 0 or 1 and whose domain is the
         Cartesian product <m>{\{0, 1\}^n}</m>. </p>
     <p>
         In SageMath, Boolean functions can be manipulated through various built-in functions

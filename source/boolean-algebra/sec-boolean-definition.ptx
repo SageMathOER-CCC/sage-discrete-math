@@ -1,7 +1,4 @@
-<section
-    xml:id="sec-boolean-definition"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
->
+<section xml:id="sec-boolean-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Definition</title>
     <p>
         Boolean algebra is a branch of algebra that deals with variables that can take two values:

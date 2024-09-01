@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xml:id="ch-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Relations</title>
-
   <introduction>
     <p>
       In this chapter, we will explore the relationships between elements in sets, building upon the concept of "Cartesian product" introduced earlier. We will begin by learning how to visualize relations using Sage. Then, we will introduce some new functions that can help us determine whether these relations are equivalence or partial order relations.
     </p>
   </introduction>
-
   <!-- include sections -->
   <xi:include href="sec-intro-relations.ptx" />
   <xi:include href="sec-relations-on-a-set.ptx" />

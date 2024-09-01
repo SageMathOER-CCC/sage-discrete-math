@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xml:id="ch-lattices" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Lattices</title>
-
   <introduction>
     <p>
       This chapter builds on the partial order sets introduced earlier and explains how to ask Sage to decide whether a given poset is a lattice. Then, we show how to calculate the meet and join tables using built-in and customized Sage functions.
     </p>
   </introduction>
-
   <!-- include sections -->
   <xi:include href="sec-definition.ptx" />
   <xi:include href="sec-tables-of-operations.ptx" />
-
 </chapter>

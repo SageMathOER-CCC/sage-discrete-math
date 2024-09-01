@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xml:id="ch-graph-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Graph Theory</title>
-
   <introduction>
     <p>
       Sage is extremely powerful for graph theory. This chapter presents the study of graph theory with Sage, starting with a description of the Graph class through the implementation of optimization algorithms. We also illustrate Sage's graphical capabilities for visualizing graphs.
     </p>
   </introduction>
-
   <!-- include sections -->
   <xi:include href="sec-basics.ptx" />
   <xi:include href="sec-plot-options.ptx" />

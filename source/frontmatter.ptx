@@ -15,56 +15,63 @@
   </titlepage>
   <preface permid="Cpq">
     <p>
-      This book was written by undergraduate students at Wright College who were enrolled in my Math 299 class, Writing in the Sciences.
+      This book was written by undergraduate students at Wright College who were enrolled in my Math
+      299 class, Writing in the Sciences.
     </p>
-
     <p>
-      For many years, I have been teaching Discrete Math using the open source mathematical software SageMath. Despite the fabulous capabilities of this software, students were often frustrated by the lack of specific documentation geared towards beginning undergrad students in Discrete Math.
+      For many years, I have been teaching Discrete Math using the open source mathematical software
+      SageMath. Despite the fabulous capabilities of this software, students were often frustrated
+      by the lack of specific documentation geared towards beginning undergrad students in Discrete
+      Math.
     </p>
-
     <p>
-      This book was born out of this frustration and the desire to make our own contribution to the Open Education movement, from which we have benefitted greatly. In the context of Open Pedagogy, my students and I ventured into a challenging learning experience based on the principles of freedom and responsibility. Each week, students wrote a chapter of this book. They found the topics and found their voice. We critically analyzed their writing, and they edited and edited again and again. They wrote code, tested it and polished it. In the process, we all learned so much about Sage, and we found some bugs in the software that are now in the process of being fixed thanks to its very active community of developers.
+      This book was born out of this frustration and the desire to make our own contribution to the
+      Open Education movement, from which we have benefitted greatly. In the context of Open
+      Pedagogy, my students and I ventured into a challenging learning experience based on the
+      principles of freedom and responsibility. Each week, students wrote a chapter of this book.
+      They found the topics and found their voice. We critically analyzed their writing, and they
+      edited and edited again and again. They wrote code, tested it and polished it. In the process,
+      we all learned so much about Sage, and we found some bugs in the software that are now in the
+      process of being fixed thanks to its very active community of developers.
     </p>
-
     <p>
       The result is the book we dreamed of having when we first attempted Discrete Math with Sage.
     </p>
-
     <p>
-      Our book is intended to provide concise and complete instructions on how to use different Sage functions to solve problems in Discrete Math. Our goal is to streamline the learning process, helping students focus more on mathematics and reducing the friction of learning how to code. Our textbook is interactive and designed for all math students, regardless of programming experience. Rooted in the open education philosophy, our textbook is, and always will be, free for all.
+      Our book is intended to provide concise and complete instructions on how to use different Sage
+      functions to solve problems in Discrete Math. Our goal is to streamline the learning process,
+      helping students focus more on mathematics and reducing the friction of learning how to code.
+      Our textbook is interactive and designed for all math students, regardless of programming
+      experience. Rooted in the open education philosophy, our textbook is, and always will be, free
+      for all.
     </p>
-
     <p>
-      I am very proud of the work of my students and hope that this book will serve as inspiration for other students to take ownership of a commons-based education. Towards a future where higher education is equally accessible to all.
+      I am very proud of the work of my students and hope that this book will serve as inspiration
+      for other students to take ownership of a commons-based education. Towards a future where
+      higher education is equally accessible to all.
     </p>
     <attribution>
       <line>Hellen Colman</line>
       <line>Chicago, May 2024</line>
     </attribution>
   </preface>
-
   <acknowledgement>
-    <p permid="ewA">
-      We would like to acknowledge the following peer-reviewers:
-      <ul permid="ODI">
+    <p permid="ewA"> We would like to acknowledge the following peer-reviewers: <ul permid="ODI">
         <li permid="uKR">
           <p permid="EeD">
             Ken Levasseur, University of Massachusetts Lowell
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Moty Katzman, University of Sheffield
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Simon King, University of Jena*
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Vartuyi Manoyan, Wright College
@@ -72,47 +79,37 @@
         </li>
       </ul>
     </p>
-
-    <p permid="ewA">
-      We would like to acknowledge the following proof-readers:
-      <ul permid="ODI">
+    <p permid="ewA"> We would like to acknowledge the following proof-readers: <ul permid="ODI">
         <li permid="uKR">
           <p permid="EeD">
             Fabio Re, Rosalind Franklin University
-
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Justin Lowry, Wright College
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Soma Dey, Wright College*
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Sydney Hart, Wright College*
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Ted Jankowski, Wright College
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Tineka Scalzo, Wright College
           </p>
         </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Yolanda Nieves, Wright College
@@ -121,48 +118,55 @@
       </ul>
     </p>
   </acknowledgement>
-
   <preface>
     <title>From the Student Authors</title>
-
     <p permid="KDJ">
-      This textbook is a testament to our collaborative spirit and the Open Education movement, aiming to make higher education accessible to all by providing approachable resources for students to learn open-source mathematics software.
+      This textbook is a testament to our collaborative spirit and the Open Education movement,
+      aiming to make higher education accessible to all by providing approachable resources for
+      students to learn open-source mathematics software.
     </p>
-
     <p>
-      The creation of this textbook was a joint effort by a dedicated and inspirational team. The quality of our work reflects our collective contributions and enthusiasm.
+      The creation of this textbook was a joint effort by a dedicated and inspirational team. The
+      quality of our work reflects our collective contributions and enthusiasm.
     </p>
-
     <p>
-      We would like to acknowledge Hellen Colman, Professor of Mathematics at Wright College, our co-author, and our guiding star. Her mathematical expertise ensured the accuracy and relevance of our material. Inspired by her teaching and Discrete Math lectures at the City Colleges of Chicago-Wilbur Wright College, this project owes much to her mentorship and support. Her encouragement and trust have been invaluable, shaping our perspectives and approaches from our Discrete Math course to this OER development.
+      We would like to acknowledge Hellen Colman, Professor of Mathematics at Wright College, our
+      co-author, and our guiding star. Her mathematical expertise ensured the accuracy and relevance
+      of our material. Inspired by her teaching and Discrete Math lectures at the City Colleges of
+      Chicago-Wilbur Wright College, this project owes much to her mentorship and support. Her
+      encouragement and trust have been invaluable, shaping our perspectives and approaches from our
+      Discrete Math course to this OER development.
     </p>
-
     <p>
-      We extend our heartfelt gratitude to Ken Levasseur for his invaluable guidance and expertise in creating open-source textbooks. His contributions have significantly enhanced the quality and accessibility of our work.
+      We extend our heartfelt gratitude to Ken Levasseur for his invaluable guidance and expertise
+      in creating open-source textbooks. His contributions have significantly enhanced the quality
+      and accessibility of our work.
     </p>
-
     <p>
-      A special thanks is due to Tineka Scalzo, Wright College librarian, for her valuable advice on publishing and copyright issues. Her insights have been instrumental in helping us navigate the complexities of academic publishing.
+      A special thanks is due to Tineka Scalzo, Wright College librarian, for her valuable advice on
+      publishing and copyright issues. Her insights have been instrumental in helping us navigate
+      the complexities of academic publishing.
     </p>
-
     <p>
-      We also express our gratitude to the many talented developers and mathematicians within the open-source communities. The PreTeXt community played an essential role in our authoring process, while the SageMath community provided crucial subject matter expertise. We are very grateful to everyone who has worked to develop Sage and to the creators of PreTeXt.
+      We also express our gratitude to the many talented developers and mathematicians within the
+      open-source communities. The PreTeXt community played an essential role in our authoring
+      process, while the SageMath community provided crucial subject matter expertise. We are very
+      grateful to everyone who has worked to develop Sage and to the creators of PreTeXt.
     </p>
-
     <p>
-      We would also like to thank our peer reviewers and proofreaders, whose meticulous attention to detail ensured the clarity and quality of this textbook. Your contributions have been instrumental in bringing this project to fruition.
+      We would also like to thank our peer reviewers and proofreaders, whose meticulous attention to
+      detail ensured the clarity and quality of this textbook. Your contributions have been
+      instrumental in bringing this project to fruition.
     </p>
-
     <p>
-      Finally, we express our deepest gratitude to all the contributors who made this project possible. Your dedication and collaborative spirit have made a lasting impact on this work and the field of open education.
+      Finally, we express our deepest gratitude to all the contributors who made this project
+      possible. Your dedication and collaborative spirit have made a lasting impact on this work and
+      the field of open education.
     </p>
-
     <p>
       <em>Zunaid Ahmed and Samuel Lubliner</em>
     </p>
-
   </preface>
-
   <preface xml:id="authors">
     <title>Authors and Contributors</title>
     <contributors>
@@ -172,51 +176,38 @@
         <institution>Truman College</institution>
         <email>zunaid.ahmed@hotmail.com</email>
       </contributor>
-
       <contributor xml:id="hc">
         <personname>Hellen Colman</personname>
         <department>Math Department</department>
         <institution>Wright College</institution>
         <email>hcolman@ccc.edu</email>
       </contributor>
-
       <contributor xml:id="sl">
         <personname>Samuel Lubliner</personname>
         <department>Computer Science</department>
         <institution>Wright College</institution>
         <email>sage.oer@gmail.com</email>
       </contributor>
-
       <contributor xml:id="ab">
         <personname>Allaoua Boughrira (Contrib.)</personname>
         <department>Math Department*</department>
         <institution>Wright College</institution>
         <email>a.boughrira@gmail.com</email>
       </contributor>
-
     </contributors>
   </preface>
-
   <colophon>
     <p>
-      <m
-            >\textbf{PDF Download}:</m> This book is available for free download in PDF format by clicking
-      <url
-                href="https://github.com/SageMathOER-CCC/sage-discrete-math/blob/pdf-update/output/print/main.pdf"
-            >here</url>.
-    </p>
-
+      <m>\textbf{PDF Download}:</m> This book is available for free download in PDF format by
+      clicking <url href="https://github.com/SageMathOER-CCC/sage-discrete-math/blob/pdf-update/output/print/main.pdf">
+      here</url>. </p>
     <website>
-      <url
-                href="https://github.com/SageMathOER-CCC/sage-discrete-math"
-            >GitHub Repository</url>
+      <url href="https://github.com/SageMathOER-CCC/sage-discrete-math">GitHub Repository</url>
     </website>
-
     <copyright>
       <year>2020<ndash />2024</year>
       <holder>Zunaid Ahmed, Hellen Colman, Samuel Lubliner</holder>
-      <shortlicense
-            > This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
         International License. To view a copy of this license, visit <url
                     href="http://creativecommons.org/licenses/by-sa/4.0/"
                     visual="creativecommons.org/licenses/by-sa/4.0"
@@ -224,5 +215,4 @@
       </shortlicense>
     </copyright>
   </colophon>
-
 </frontmatter>

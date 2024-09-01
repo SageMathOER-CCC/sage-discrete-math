@@ -13,7 +13,6 @@
                 print(i)
         </input>
     </sage>
-
     <sage>
         <input>
             # Here, the starting value of the range is included
@@ -21,7 +20,6 @@
                 print(i)
         </input>
     </sage>
-
     <sage>
         <input>
             # We can also specify a step value

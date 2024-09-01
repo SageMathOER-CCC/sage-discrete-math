@@ -7,9 +7,8 @@
 
         <idx><h>data types</h><h>Set (Sage)</h></idx>
         <p>
-            To construct a set, encase the elements within square brackets <c
-            >[]</c>. Then, pass this <c>list</c> as an argument to the <c
-            >Set()</c> function. It's important to note that the <c>S</c> in <c
+            To construct a set, encase the elements within square brackets <c>[]</c>. Then, pass this <c
+            >list</c> as an argument to the <c>Set()</c> function. It's important to note that the <c>S</c> in <c
             >Set()</c> should be uppercase to define a Sage set. In a set, each element is unique.
         </p>
         <sage>
@@ -34,16 +33,14 @@
 
         <p>
             We can ask Sage to compare two sets to see whether or not they are equal.
-            We can use the <c
-            >==</c> operator to compare two values. A single equal sign <c
+            We can use the <c>==</c> operator to compare two values. A single equal sign <c
             >=</c> and double equal sign <c>==</c> have different meanings.
         </p>
         <idx><h>equality operator</h></idx>
         <p>
             The <term>equality operator</term> <c
             >==</c> is used to ask Sage if two values are equal. Sage compares the values on each side of the operator and returns the Boolean value. The <c
-            >==</c> operator returns <c>True</c> if the sets are equal and <c
-            >False</c> if they are not equal.
+            >==</c> operator returns <c>True</c> if the sets are equal and <c>False</c> if they are not equal.
         </p>
         <idx><h>assignment operator</h></idx>
         <p>
@@ -61,12 +58,9 @@
         </sage>
 
         <p>
-            If you have experience with Python, you may have used a Python <c
-            >set</c>. Notice how the Python <c
-            >set</c> begins with a lowercase <c
-            >s</c>. Even though Sage supports Python sets, we will use Sage <c
-            >Set</c> for the added features. Be sure to define <c
-            >Set()</c> with an upper case <c>S</c>.
+            If you have experience with Python, you may have used a Python <c>set</c>. Notice how the Python <c
+            >set</c> begins with a lowercase <c>s</c>. Even though Sage supports Python sets, we will use Sage <c
+            >Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
         </p>
     </subsection>
 
@@ -76,8 +70,7 @@
 
         <p>
             Instead of explicitly listing the elements of a set, we can use a set builder notation to define a set. The set builder notation is a way to define a set by describing the properties of its elements. Here, we use the Sage <c
-            >srange</c> instead of the Python <c
-            >range</c> function for increased flexibility and functionality.
+            >srange</c> instead of the Python <c>range</c> function for increased flexibility and functionality.
         </p>
         <sage>
         <input>
@@ -104,8 +97,7 @@
         <title>Subsets</title>
 
         <p>
-            To list all the subsets included in a set, we can use the <c
-            >Subsets()</c> function and then use a <c
+            To list all the subsets included in a set, we can use the <c>Subsets()</c> function and then use a <c
             >for</c> loop to display each subset.
         </p>
         <sage>
@@ -125,8 +117,8 @@
 
         <p>
             Sage allows you to check whether an element belongs to a set. You can use the <c
-            >in</c> operator to check membership, which returns <c
-            >True</c> if the element is in the set and <c>False</c> otherwise.
+            >in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c
+            >False</c> otherwise.
         </p>
 
         <aside>
@@ -143,9 +135,8 @@
         </sage>
 
         <p>
-            We can check if <m
-            >Severe = \{Tornado, Hurricane \}</m> is a subset of <m
-            >W</m> by using the <c>issubset</c> method.
+            We can check if <m>Severe = \{Tornado, Hurricane \}</m> is a subset of <m>W</m> by using the <c
+            >issubset</c> method.
         </p>
         <sage>
         <input>
@@ -155,8 +146,8 @@
         </sage>
 
         <p>
-            When we evaluate <c>W.issubset(Severe)</c>, Sage returns <c
-            >False</c> because <m>W</m> is not a subset of <m>Severe</m>.
+            When we evaluate <c>W.issubset(Severe)</c>, Sage returns <c>False</c> because <m>W</m> is not a subset of <m
+            >Severe</m>.
         </p>
         <sage>
             <input>

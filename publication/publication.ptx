@@ -95,14 +95,7 @@
     <!-- put <css style="oscarlevin"/>                         -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-    <css
-            style="default"
-            colors="blue_red"
-            knowls="default"
-            toc="default"
-            banner="default"
-            navbar="default"
-        />
+    <css style="default" colors="blue_red" knowls="default" toc="default" banner="default" navbar="default" />
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->
     <search variant="default" />
@@ -113,13 +106,7 @@
     <!-- Set the base URL of where the online version is hosted to have links in other formats -->
     <!-- <baseurl href="changetomywebsite.org"/> -->
     <!-- Control behavior of online WeBWorK, per type: -->
-    <webwork
-            inline="dynamic"
-            divisional="static"
-            reading="static"
-            worksheet="static"
-            project="dynamic"
-        />
+    <webwork inline="dynamic" divisional="static" reading="static" worksheet="static" project="dynamic" />
     <!-- Magic IDs identify HTML pages to analytics services   -->
     <!-- Presence implies relevant Javascript will be added    -->
     <!-- StatCounter requires both values to be set            -->

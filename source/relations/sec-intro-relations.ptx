@@ -2,14 +2,11 @@
 <section xml:id="intro-relations" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Introduction to Relations</title><idx><h>relation</h></idx>
     <p>
-        A <term>relation</term> <m>R</m> from set <m>A</m> to set <m
-        >B</m> is any subset of the Cartesian product <m
-        >A \times B</m>, indicating that <m
-        >R \subseteq A \times B</m>. We can ask Sage to decide if <m
-        >R</m> is a relation from <m>A</m> to <m
-        >B</m>. First, construct the Cartesian product <m
-        >C = A \times B</m>. Then, build the set <m>S</m> of all subsets of <m
-        >C</m>. Finally, ask if <m>R</m> is a subset of <m>S</m>.
+        A <term>relation</term> <m>R</m> from set <m>A</m> to set <m>B</m> is any subset of the Cartesian product <m
+        >A \times B</m>, indicating that <m>R \subseteq A \times B</m>. We can ask Sage to decide if <m
+        >R</m> is a relation from <m>A</m> to <m>B</m>. First, construct the Cartesian product <m
+        >C = A \times B</m>. Then, build the set <m>S</m> of all subsets of <m>C</m>. Finally, ask if <m
+        >R</m> is a subset of <m>S</m>.
     </p>
     <aside>
         <title>Notes</title>
@@ -18,31 +15,24 @@
         </p>
     </aside>
     <p>
-        Recall the Cartesian product consists of all possible ordered pairs <m
-        >(a, b)</m>, where <m>a \in A</m> and <m
-        >b \in B</m>. Each pair combines an element from set <m
-        >A</m> with an element from set <m>B</m>.
+        Recall the Cartesian product consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m
+        >b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
-        In this example, an element in the set <m
-        >A</m> relates to an element in <m>B</m> if the element from <m
+        In this example, an element in the set <m>A</m> relates to an element in <m>B</m> if the element from <m
         >A</m> is twice the element from <m>B</m>.
     </p>
     <sage>
         <input>
             A = Set([1, 2, 3, 4, 5, 6])
             B = Set([1, 2, 7])
-
             C = Set(cartesian_product([A, B]))
             S = Subsets(C)
-
             R = Set([(a, b) for a in A for b in B if a==2*b])
-            
             print("R =", R)
             print("Is R a relation from set A to set B?", R in S)
         </input>
     </sage>
-
     <p>
         Let's use relations to explore matching items of clothes. Let's define two sets, jackets and shirts, as examples:
     </p>
@@ -68,10 +58,8 @@
             # Define the sets of jackets and shirts
             jackets = Set(['j1', 'j2', 'j3'])
             shirts = Set(['s1', 's2', 's3', 's4'])
-
             # View all the possible combinations of jackets and shirts
             C = cartesian_product([jackets, shirts])
-            
             Set(C)
         </input>
     </sage>
@@ -88,7 +76,6 @@
         <input>
             # Define a matching relation between jackets and shirts
             R = Set([('j1', 's1'), ('j2', 's3'), ('j3', 's4'), ('j1', 's2')])
-
             print("Matching relation R =", R)
         </input>
     </sage>

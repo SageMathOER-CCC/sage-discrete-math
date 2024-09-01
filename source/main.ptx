@@ -2,15 +2,12 @@
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
-
   <book xml:id="Discrete-Math-with-SageMath">
     <title>Discrete Math with SageMath</title>
     <subtitle>Learn math with open-source software</subtitle>
-
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
-
-   <!-- Include chapters -->
+    <!-- Include chapters -->
     <xi:include href="./getting-started/ch-getting-started.ptx" />
     <xi:include href="./set-theory/ch-set-theory.ptx" />
     <xi:include href="./combinatorics/ch-combinatorics.ptx" />
@@ -19,10 +16,9 @@
     <xi:include href="./functions/ch-functions.ptx" />
     <xi:include href="./graph-theory/ch-graph-theory.ptx" />
     <xi:include href="./trees/ch-trees.ptx" />
-    <xi:include href="./lattices/ch-lattices.ptx" /> 
+    <xi:include href="./lattices/ch-lattices.ptx" />
     <xi:include href="./boolean-algebra/ch-boolean-algebra.ptx" />
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
-
   </book>
 </pretext>

@@ -3,7 +3,6 @@
   <title>Debugging</title><idx><h>error message</h></idx>
   <p>
     Error messages are an inevitable part of programming. When you make a syntax error and see a message, read it carefully for clues about the cause of the error. While some messages are helpful and descriptive, others may seem cryptic or confusing. With practice, you will develop valuable skills for debugging your code and resolving errors. Not all errors will produce an error message. Logical errors occur when the syntax is correct, but the program does not produce the expected output. Remember, mistakes are learning opportunities, and everyone makes them. Here are some tips for debugging your code:
-
     <ul>
       <li>
         <p>
@@ -40,7 +39,6 @@
   <p>
     Let's dive in and make some mistakes together!
   </p>
-
   <sage>
     <input>
       # Run this cell and see what happens
@@ -48,36 +46,28 @@
       print(1message)
     </input>
   </sage>
-
   <p>
-    Why didn't this print <c
-        >Hello, World!</c> on the screen? The error message informed us of a <c
+    Why didn't this print <c>Hello, World!</c> on the screen? The error message informed us of a <c
         >SyntaxError</c>. While the phrase <c
         >invalid decimal literal</c> may seem confusing, the key issue here is the invalid variable name. Valid identifiers must start with a letter or underscore. They cannot begin with a number or use any special characters. Let's correct the variable name by using a valid identifier.
   </p>
-
   <sage>
     <input>
       message = "Hello, World!"
       print(message)
     </input>
   </sage>
-
   <p>
     Here is another error:
   </p>
-
   <sage>
     <input>
       print(Hi)
     </input>
   </sage>
-
   <p>
-    In this case, we encounter a <c>NameError</c> because <c
-        >Hi</c> is not defined. Sage assumes that <c
-        >Hi</c> is a variable because there are no quotes. We can make <c
-        >Hi</c> a string by enclosing it in quotes.
+    In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes that <c
+        >Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by enclosing it in quotes.
   </p>
   <sage>
     <input>
@@ -85,8 +75,7 @@
     </input>
   </sage>
   <p>
-    Alternatively, if we intended <c
-        >Hi</c> to be a variable, we can assign a value to it before printing.
+    Alternatively, if we intended <c>Hi</c> to be a variable, we can assign a value to it before printing.
   </p>
   <sage>
     <input>
@@ -96,10 +85,8 @@
   </sage>
   <p>
     Reading the documentation is essential to understanding how to use methods correctly. If we incorrectly use a method, we will likely get a <c
-        >NameError</c>, <c>AttributeError</c>, <c>TypeError</c>, or <c
-        >ValueError</c>, depending on the mistake.
+        >NameError</c>, <c>AttributeError</c>, <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake.
   </p>
-
   <p>
     Here is an example of a <c>NameError</c>:
   </p>
@@ -110,8 +97,7 @@
     </input>
   </sage>
   <p>
-    The <c
-        >sort()</c> method must be called on the list object using dot notation.
+    The <c>sort()</c> method must be called on the list object using dot notation.
   </p>
   <sage>
     <input>
@@ -120,7 +106,6 @@
       print(l)
     </input>
   </sage>
-
   <p>
     Here is an example of an <c>AttributeError</c>:
   </p>
@@ -139,7 +124,6 @@
       len(l)
     </input>
   </sage>
-
   <p>
     Here is an example of a <c>TypeError</c>:
   </p>
@@ -150,8 +134,7 @@
     </input>
   </sage>
   <p>
-    The <c
-        >append()</c> method only takes one argument. To add multiple elements to a list, use the <c
+    The <c>append()</c> method only takes one argument. To add multiple elements to a list, use the <c
         >extend()</c> method.
   </p>
   <sage>
@@ -161,7 +144,6 @@
       print(l)
     </input>
   </sage>
-
   <p>
     Here is an example of a <c>ValueError</c>:
   </p>
@@ -170,7 +152,6 @@
       factorial(-5)
     </input>
   </sage>
-
   <p>
     Although the resulting error message is lengthy, the last line informs us that the argument must be a non-negative integer.
   </p>
@@ -179,7 +160,6 @@
       factorial(5)
     </input>
   </sage>
-
   <p>
     Sage is capable of producing animations and pictures. To view more examples of Sage art, see <url
             href="https://wiki.sagemath.org/art"
@@ -193,7 +173,6 @@
     <input>
       # Originally created by Sébastien Labbé.
       # This code is adapted from the original available at: https://wiki.sagemath.org/art licensed under GPLv2. For more information, visit: https://moinmo.in/GPL
-
       path_op = dict(rgbcolor='red', thickness=1)
       fill_op = dict(rgbcolor='blue', alpha=0.3)
       options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
@@ -205,13 +184,12 @@
   <p>
     In this example, <c>SyntaxError</c> occurs because the arguments in the <c
         >save()</c> method are in the wrong order. We can fix this by referring to the documentation and learning the correct argument positions. After running the following cell, the <c
-        >save()</c> method saves the file to the cell. You can right-click on the file name and select the option to download the file locally. 
+        >save()</c> method saves the file to the cell. You can right-click on the file name and select the option to download the file locally.
   </p>
   <sage>
     <input>
       # Originally created by Sébastien Labbé.
       # Adapted from the original available at: https://wiki.sagemath.org/art licensed under GPLv2. For more information, visit: https://moinmo.in/GPL
-
       path_op = dict(rgbcolor='red', thickness=1)
       fill_op = dict(rgbcolor='blue', alpha=0.3)
       options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
@@ -228,7 +206,6 @@
     <input>
       # Originally created by Sébastien Labbé.
       # Adapted from the original available at: https://wiki.sagemath.org/art licensed under GPLv2. For more information, visit: https://moinmo.in/GPL
-
       path_op = dict(rgbcolor='red', thickness=1)
       fill_op = dict(rgbcolor='blue', alpha=0.3)
       options = dict(pathoptions=path_op, filloptions=fill_op, endarrow=False, startpoint=False)
@@ -238,8 +215,8 @@
     </input>
   </sage>
   <p>
-    Finally, we will consider a logical error. If your task is to print the numbers from <m
-        >1</m> to <m>10</m>, you may mistakenly write the following code:
+    Finally, we will consider a logical error. If your task is to print the numbers from <m>1</m> to <m
+        >10</m>, you may mistakenly write the following code:
   </p>
   <sage>
     <input>
