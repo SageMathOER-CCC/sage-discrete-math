@@ -10,7 +10,7 @@
         </p>
     </aside>
     <p>
-        Before we begin lets import the necessary modules. This will reduce the amount of code we need to type.
+        Before we begin, let's import the necessary modules. The import statement reduces the amount of code we need to write by allowing us to reference the module by its alias and without the module prefix.
     </p>
     <sage>
         <input>
@@ -18,7 +18,7 @@
         </input>
     </sage>
     <p>
-        Every Boolean function can be written as a sum-of-products expansion by applying the Boolean identities. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Right now we have a sum of two terms, but no products. We can apply the identity law to introduce the product terms. Now we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
+        Boolean identities allow us to write every Boolean function as a sum-of-products expansion. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Currently, we have a sum of two terms, but no products. We can apply the identity law to introduce the product terms. Now, we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
     </p>
     <p>
         Warning: Do not attempt to apply the identity law or null law within the <c>formula</c> function. The <c>formula</c> function only supports variables and the following operators:
@@ -131,8 +131,8 @@
      </p>
      <sage>
         <input>
-            # Initialize the SOP expression
-            sop_expression = []
+            # Initialize the SOP expansion
+            sop_expansion = []
 
             # Iterate through the truth table
             for row in table_list[1:]:  # Skip the header row ['x', 'y']
@@ -145,7 +145,7 @@
                         else:
                             minterm.append(f'~{var}')  # Include negation if False
                     
-                    sop_expression.append(' &amp; '.join(minterm))  # Combine using AND
+                    sop_expansion.append(' &amp; '.join(minterm))  # Combine using AND
         </input>
      </sage>
      <p>
@@ -153,9 +153,20 @@
      </p>
      <sage>
         <input>
-            sop_result = ' | '.join(f'({m})' for m in sop_expression)
-            print("SOP Expression:", sop_result)
+            sop_result = ' | '.join(f'({m})' for m in sop_expansion)
+            print("SOP expansion:", sop_result)
         </input>
+     </sage>
+     <p>
+        Let's verify that the sum-of-products expansion we found with the truth table is the same as the one we found using boolean identities.
+     </p>
+     <sage>
+        <input>
+            sop_result == h
+        </input>
+        <output>
+            
+        </output>
      </sage>
     <idx><h>polynomial</h></idx>
     <sage>
