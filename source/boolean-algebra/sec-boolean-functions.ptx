@@ -1,10 +1,7 @@
 <section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean functions</title><idx><h>Boolean functions</h></idx>
     <p>
-        A  Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
-    </p>
-    <p>
-        In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.
+        A  <term>Boolean function</term> is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
     <aside>
         <title>Notes</title>
@@ -21,25 +18,56 @@
         </input>
     </sage>
     <p>
-        Now let's examine the truth table of the Boolean function <m>h(x, y) = x + \bar{y}</m>.
+        Every Boolean function can be written as a sum-of-products expansion by applying the Boolean identities. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Right now we have a sum of two terms, but no products. We can apply the identity law to introduce the product terms. Now we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
+    </p>
+    <p>
+        Warning: Do not attempt to apply the identity law or null law within the <c>formula</c> function. The <c>formula</c> function only supports variables and the following operators:
+        <ul>
+            <li>
+                <p>
+                    <c>&amp;</c> <m>and</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>|</c> <m>or</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>~</c> <m>not</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>^</c> <m>xor</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>-&gt;</c> <m>if\; then</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>&lt;-&gt;</c> <m>if\; and\; only\; if</m>
+                </p>
+            </li>
+        </ul>
     </p>
     <sage>
         <input>
             h = formula("x | ~y")
-            h.truthtable()
         </input>
     </sage>
-    <p>
-        Every Boolean function can be written as a sum-of-products expansion by applying the Boolean identities. Let's find the sum-of-products expansion of the Boolean function <m>h(x, y) = x + \bar{y}</m>.
-    </p>
     <sage>
         <input>
-            # Applying the identity law
-            # Warning: Do not use 
-            # formula("x &amp; True | True &amp; ~y")
-            # h == formula("x &amp; True | True &amp; ~y")
-            # True and False are not boolean supported with formula
-            # Instead we can assume the &amp; True
+            # Warning: Do not directly apply the identity law
+            # within the formula function
+            # This will raise an error because
+            # `1` is interpreted as a variable
+            # variables cannot start with a number
+            formula("x &amp; 1 | True 1 ~y")
         </input>
     </sage>
 
@@ -58,7 +86,7 @@
         </input>
     </sage>
     <p>
-        Here is the sum-of-products expansion of the Boolean function <m>h(x, y) = x + \bar{y}</m>. After applying the identity, complement, and distributive laws, we get <m>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</m>.
+        Here is the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. After applying the identity, complement, and distributive laws, we get <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>.
     </p>
     <sage>
         <input>
@@ -67,9 +95,6 @@
             h_idempotent == h
         </input>
     </sage>
-    <p>
-        We can also confirm the truth table of the <m>h(x, y) = x + \bar{y}</m> and <m>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</m> are the same.
-    </p>
     <sage>
         <input>
             h_idempotent.truthtable()
@@ -81,7 +106,18 @@
             h_idempotent.truthtable() == h.truthtable()
         </input>
     </sage>
-    
+    <p>
+        Now let's examine the truth table of the Boolean function <m>h(x, y) = x + \bar{y}</m>.
+    </p>
+    <sage>
+        <input>
+            h = formula("x | ~y")
+            h.truthtable()
+        </input>
+    </sage>
+    <p>
+        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Let's find a more programmatic way to find the sum-of-products expansion of the Boolean function.
+    </p>
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
@@ -89,8 +125,5 @@
             f = B('x0 + x1 * x2')
             show(f)
         </input>
-        <output>
-            # Outputs the Boolean expression in polynomial form
-        </output>
     </sage>
 </section>
