@@ -23,7 +23,7 @@ jobs:
 
             - name: build deploy targets
               run: pretext build --deploys
-              
+
             - name: stage deployment
               run: pretext deploy --stage-only
 
