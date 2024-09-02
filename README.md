@@ -71,7 +71,7 @@ To generate the pdf version locally (saved under `/output/print/main.pdf`)
 ```bash
 pretext build print
 ```
-_Note that `LaTeX` engine and all font dependencies would need to be installed -instructions varies per OS_
+_Note that `LaTeX` engine and all font dependencies would need to be installed -instructions varies per OS. Alternatively, `.devcontainer.json` is configured with the necessary dependencies to build the pdf version._
 
 If you are happy with your changes, you can commit them to your branch and submit a pull request.
 
