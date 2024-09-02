@@ -67,6 +67,12 @@ The `build` command will inform you of any errors in the project. View the proje
 pretext view
 ```
 
+To generate the pdf version locally (saved under `/output/print/main.pdf`)
+```bash
+pretext build print
+```
+_Note that `LaTeX` engine and all font dependencies would need to be installed -instructions varies per OS_
+
 If you are happy with your changes, you can commit them to your branch and submit a pull request.
 
 ### Submitting a Pull Request
