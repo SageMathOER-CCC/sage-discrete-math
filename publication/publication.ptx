@@ -57,7 +57,7 @@
   </numbering>
 
   <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
-  <!-- for printing; set @sides="two" if the printing woudl be two- -->
+  <!-- for printing; set @sides="two" if the printing would be two- -->
   <!-- sided.  @pageref="yes/no" controls whether page number are   -->
   <!-- included in cross-references                                 -->
   <latex print="no" sides="one" font-size="10" draft="no">
