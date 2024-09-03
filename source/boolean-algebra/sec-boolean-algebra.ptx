@@ -1,49 +1,98 @@
 <section xml:id="sec-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean Algebra</title><idx><h>Boolean Algebra</h></idx>
-    <p>
-        A  Boolean algebra is a bounded lattice that is both complemented and distributive.
-    </p>
-    <aside>
-        <p>
-            In computer software, Boolean algebra is used to construct and simplify expressions in programming languages that support logical decision-making processes. This simplification is critical in developing efficient algorithms and software that perform millions of calculations and logical operations per second.
-        </p>
-    </aside>
-    <sage>
-        <input>
-            p = Posets.DivisorLattice(20)
-            p.show()
-        </input>
-        <output>
-            # This will display the lattice structure for divisors of the number 20.
-        </output>
-    </sage>
-    <p>
-        The following Sage cell checks whether the divisor lattice is distributive. A distributive lattice is one where the operations of join and meet distribute over each other.
-    </p>
-    <sage>
-        <input>
-            p = Posets.DivisorLattice(20)
-            p.is_distributive()
-        </input>
-        <output>
-            # Returns True if the lattice is distributive, along with a certificate if applicable.
-        </output>
-    </sage>
     <aside>
         <p>
             In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.
         </p>
     </aside>
     <p>
-        Another important property in Boolean algebra is the complemented lattice. A complemented lattice is one where every element has a complement in the lattice.
+        A  Boolean algebra is a bounded lattice that is both complemented and distributive. Let's define the <c>is_boolean_algebra()</c> function to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
     </p>
     <sage>
         <input>
-            p = Posets.DivisorLattice(20)
-            p.is_complemented()
+            def is_boolean_algebra(P):
+                try:
+                    L = LatticePoset(P)
+                except ValueError as e:
+                    return False, str(e)
+                if not L.is_bounded():
+                    return False, "The lattice is not bounded."
+                if not L.is_distributive():
+                    return False, "The lattice is not distributive."
+                if not L.is_complemented():
+                    return False, "The lattice is not complemented."
+                return True, "The poset is a Boolean algebra."
         </input>
-        <output>
-            # Returns True if the lattice is complemented, along with a certificate if applicable.
-        </output>
     </sage>
+    <p>
+        Let's check if the following poset is a Boolean algebra.
+    </p>
+    <sage>
+        <input>
+            P = [1, 2, 3, 4, 5, 6]
+
+            divisibility_poset = Poset((P, attrcall("divides")))
+
+            show(divisibility_poset)
+        </input>
+    </sage>
+    <sage>
+        <input>
+            is_boolean_algebra(divisibility_poset)
+        </input>
+    </sage>
+    <p>
+        When we pass <m>P</m> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <m>P</m> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>divisibility_poset</c> is not a Boolean algebra.
+    </p>
+    <sage>
+        <input>
+            S = {'a', 'b', 'c'}
+
+            power_set = Subsets(S)
+
+            P = Poset((power_set, lambda x, y: x.issubset(y)))
+
+            P.plot(vertex_size=1000,vertex_shape="")
+        </input>
+    </sage>
+    <sage>
+        <input>
+            is_boolean_algebra(P)
+        </input>
+    </sage>
+    <p>
+        Let's examine the divisor lattice of 30:
+    </p>
+    <sage>
+        <input>
+            dl30 = Posets.DivisorLattice(30)
+            show(dl30)
+            is_boolean_algebra(dl30)
+        </input>
+    </sage>
+    <p>
+        Now for the divisor lattice of 20:
+    </p>
+    <sage>
+        <input>
+            dl20 = Posets.DivisorLattice(20)
+            show(dl20)
+            is_boolean_algebra(dl20)
+        </input>
+    </sage>
+    <p>
+        Here is a classic example in the field of computer science:
+    </p>
+    <sage>
+        <input>
+            B = posets.BooleanLattice(1)
+            show(B)
+            is_boolean_algebra(B)
+        </input>
+    </sage>
+    <aside>
+        <p>
+            Software engineers use Boolean algebra to simplify conditions, refactor code, and optimize logic. These skills are crucial for identifying bottlenecks and improving efficiency in real-time systems and performance-critical applications.
+        </p>
+    </aside>
 </section>

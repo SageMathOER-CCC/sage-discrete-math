@@ -1,10 +1,7 @@
 <section xml:id="sec-boolean-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean functions</title><idx><h>Boolean functions</h></idx>
     <p>
-        A  Boolean function is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
-    </p>
-    <p>
-        In SageMath, Boolean functions can be manipulated through various built-in functions designed for handling Boolean variables and expressions.
+        A  <term>Boolean function</term> is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
     <aside>
         <title>Notes</title>
@@ -12,6 +9,154 @@
           Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
         </p>
     </aside>
+    <p>
+        Before we begin, let's import the necessary modules. The import statement reduces the amount of code we need to write by allowing us to reference the module by its alias and without the module prefix.
+    </p>
+    <sage>
+        <input>
+            from sage.logic.propcalc import formula
+        </input>
+    </sage>
+    <p>
+        Boolean identities allow us to write every Boolean function as a sum-of-products expansion. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Currently, we have a sum of two terms, but no products. We can apply the identity law to introduce the product terms. Now, we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
+    </p>
+    <p>
+        Warning: Do not attempt to apply the identity law or null law within the <c>formula</c> function. The <c>formula</c> function only supports variables and the following operators:
+        <ul>
+            <li>
+                <p>
+                    <c>&amp;</c> <m>and</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>|</c> <m>or</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>~</c> <m>not</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>^</c> <m>xor</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>-&gt;</c> <m>if\; then</m>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>&lt;-&gt;</c> <m>if\; and\; only\; if</m>
+                </p>
+            </li>
+        </ul>
+    </p>
+    <sage>
+        <input>
+            h = formula("x | ~y")
+            show(h)
+        </input>
+    </sage>
+    <sage>
+        <input>
+            # Warning: Do not directly apply the identity law
+            # within the formula function
+            # This will raise an error because
+            # `1` is interpreted as a variable
+            # variables cannot start with a number
+            formula("x &amp; 1 | True 1 ~y")
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # Applying the complement law
+            h_complement = formula("x &amp; (y | ~y) | (x | ~x) &amp;  ~y")
+            show(latex(h_complement) + "==" + latex(h))
+            h_complement == h
+        </input>
+    </sage>
+    <sage>
+        <input>
+            # Applying the distributive law
+            h_distributive = formula("x &amp; y | x &amp; ~y | x &amp; ~y | ~x &amp; ~y")
+            show(latex(h_distributive) + "==" + latex(h))
+            h_distributive == h
+        </input>
+    </sage>
+    <p>
+        Here is the sum-of-products expansion of the Boolean function: <me>h(x, y) = x + \bar{y}</me> After applying the identity, complement, and distributive laws, we get: <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>
+    </p>
+    <sage>
+        <input>
+            # Applying the idempotent law
+            h_idempotent = formula("x &amp; y | x &amp; ~y | ~x &amp; ~y")
+            show(latex(h_idempotent) + "==" + latex(h))
+            h_idempotent == h
+        </input>
+    </sage>
+    <p>
+        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Let's find a more programmatic way to find the sum-of-products expansion of the Boolean function using the truth table.
+    </p>
+    <sage>
+        <input>
+            h = formula("x | ~y")
+            h.truthtable()
+        </input>
+    </sage>
+    <p>
+        The <c>truthtable()</c> function is not iterable, so we must represent the table as a <c>list</c> with <c>get_table_list()</c>.
+    </p>
+    <sage>
+        <input>
+            h = formula("x | ~y")
+            truth_table = h.truthtable()
+            table_list = truth_table.get_table_list()
+            print(table_list)
+        </input>
+    </sage>
+    <p>
+        Now, we can iterate over the truth table to find the Sum-of-Products expansion of the Boolean function. For each row where the output is <c>True</c>, we will construct a product term by examining the input values. For each variable, if its value is <c>True</c>, we include the variable in the product; if its value is <c>False</c>, we include its negation in the product.
+     </p>
+     <sage>
+        <input>
+            sop_expansion = []
+            for row in table_list[1:]:  # Skip the header row
+                if row[-1]:  # If the output is True
+                    minterm = []
+                    for var, value in zip(table_list[0], row[:-1]):  # Iterate over variables and their values
+                        if value:
+                            minterm.append(var)  # Include variable as is if True
+                        else:
+                            minterm.append(f'~{var}')  # Include negation if False
+                    
+                    sop_expansion.append(' &amp; '.join(minterm))  # Combine using AND
+        </input>
+     </sage>
+     <p>
+        Now, we can combine all minterms to form the sum-of-products expansion:
+     </p>
+     <sage>
+        <input>
+            sop_result = ' | '.join(f'({m})' for m in sop_expansion)
+            print("SOP expansion:", sop_result)
+        </input>
+     </sage>
+     <p>
+        Let's verify that the sum-of-products expansion we found with the truth table is the same as the one we found using boolean identities.
+     </p>
+     <sage>
+        <input>
+            formula(sop_result) == h
+        </input>
+     </sage>
+     <p>
+        We can also use <c>BooleanPolynomialRing</c> to create Boolean polynomials and perform operations on them. For instance, if <m> B = {0, 1}</m>, we can show a function <m>f: B^3 \to B</m>
+     </p>
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
@@ -19,8 +164,21 @@
             f = B('x0 + x1 * x2')
             show(f)
         </input>
-        <output>
-            # Outputs the Boolean expression in polynomial form
-        </output>
+    </sage>
+    <p>
+        We can evaluate the function at any 3-uple:
+    </p>
+    <sage>
+        <input>
+            f(1,1,0)
+        </input>
+    </sage>
+    <p>
+        The Sage <c>BooleanPolynomialRing</c> treats <c>+</c> as <m>XOR</m>
+    </p>
+    <sage>
+        <input>
+            f(1,1,1)
+        </input>
     </sage>
 </section>
