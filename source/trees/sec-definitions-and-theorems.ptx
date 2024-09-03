@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="definitions-and-theorems" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Definitions and Theorems</title>
+  <title>Definitions and Theorems</title>
   <idx><h>cycle</h></idx>
   <idx><h>tree</h></idx>
   <idx><h>forest</h></idx>
@@ -41,7 +41,7 @@
   <p>
     Let's explore the following graph:
   </p>
-    
+
   <sage>
     <input>
       data = {
@@ -57,7 +57,7 @@
         10: [8],
         11: [6]
         }
-        
+
       G = Graph(data)
       G.show()
     </input>

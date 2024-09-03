@@ -1,232 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="euler-and-hamilton" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Euler and Hamilton</title>
+    <title>Euler and Hamilton</title>
 
-	<subsection xml:id="subsec-Euler">
-		<title>Euler</title>
-		<idx><h>Euler path</h></idx>
-		<idx><h>Euler circuit</h></idx>
+    <subsection xml:id="subsec-Euler">
+        <title>Euler</title>
+        <idx><h>Euler path</h></idx>
+        <idx><h>Euler circuit</h></idx>
 
-		<p>
-			An <term>Euler path</term> is a path that uses every edge of a graph exactly once.
-			An Euler path that is a circuit is called an <term>Euler circuit</term>.
-		</p>
-		<p>
-			The idea of an Euler path emerged from the study of the <term>Königsberg bridges</term> problem.
-			Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
-			This problem can be modeled as a graph, with the land masses as vertices and the bridges as edges.
-		</p>
-		<sage>
-		<input>
-		  konigsberg = [('A', 'B', 'b_1'),
-						('A', 'B', 'b_2'),
-						('A', 'C', 'b_3'),
-						('A', 'C', 'b_4'),
-						('D', 'A', 'b_5'),
-						('D', 'B', 'b_6'),
-						('D', 'C', 'b_7')]
-		  G = Graph(konigsberg, multiedges=True)
-		  G.show(edge_labels=True)
-		</input>
-		</sage>
+        <p>
+            An <term>Euler path</term> is a path that uses every edge of a graph exactly once.
+            An Euler path that is a circuit is called an <term>Euler circuit</term>.
+        </p>
+        <p>
+            The idea of an Euler path emerged from the study of the <term>Königsberg bridges</term> problem.
+            Leonhard Euler wanted to know if it was possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
+            This problem can be modeled as a graph, with the land masses as vertices and the bridges as edges.
+        </p>
+        <sage>
+        <input>
+          konigsberg = [('A', 'B', 'b_1'),
+                        ('A', 'B', 'b_2'),
+                        ('A', 'C', 'b_3'),
+                        ('A', 'C', 'b_4'),
+                        ('D', 'A', 'b_5'),
+                        ('D', 'B', 'b_6'),
+                        ('D', 'C', 'b_7')]
+          G = Graph(konigsberg, multiedges=True)
+          G.show(edge_labels=True)
+        </input>
+        </sage>
 
-		<aside>
-			<title>Notes</title>
-			<p>
-				Eulerian circuits are not only academic but have practical applications in logistics and waste management. For example, garbage collection routes can be planned as Eulerian circuits to minimize travel and costs. Similarly, postmen use Eulerian paths to optimize mail delivery routes.
-			</p>
-		</aside>
-	
-		<p>
-			While exploring this problem, Euler discovered the following:
-			<ul>
-				<li>
-					<p>
-						A connected graph has an <term>Euler circuit</term> iff every vertex has an even degree.
-					</p>
-				</li>
-	
-				<li>
-					<p>
-						A connected graph has an <term>Euler path</term> iff there are at most two vertices with an odd degree.
-					</p>
-				</li>
-			</ul>
-			We say that a graph is <term>Eulerian</term> if contains an Euler circuit.
-		</p>
-	
-		<p>
-			We can use Sage to determine if a graph is Eulerian.
-		</p>
-		<aside>
-			<title>Notes</title>
-			<p>
-				In computer networking, designing networks to ensure resilience and fault tolerance often involves constructing Eulerian graphs, where a network can remain operational even if a connection fails.
-			</p>
-		</aside>
-		<sage>
-		<input>
-		G.is_eulerian()
-		</input>
-		</sage>
-	
-		<p>
-			Since this returns <c>False</c>, we know that the graph is not Eulerian.
-			Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
-		</p>
-	
-		<p>
-			We can use <c>path=True</c> to determine if a graph contains an Euler path.
-			Sage will return the beginning and the end of the path.
-		</p>
-		<sage>
-		<input>
-		G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-		G.show()
-		G.is_eulerian(path=True)
-		</input>
-		</sage>
-	
-		<p>
-			If the graph is Eulerian, we can ask Sage to find an Euler circuit with the <c>eulerian_circuit</c> function. Let's take a look at the following graph.
-		</p>
-		<sage>
-		<input>
-			G = Graph([(1, 2), (2, 3), (2, 3),(3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-			G.show()
-			G.eulerian_circuit()
-		</input>
-		</sage>
-	
-		<p>
-			If we are not interested in the edge labels, we can set <c>labels=False</c>.
-			We can also set <c>return_vertices=True</c> to get a list of vertices for the path
-		</p>
-		<sage>
-		<input>
-		G = graphs.CycleGraph(6)
-		G.eulerian_circuit(labels=False, return_vertices=True)
-		</input>
-		</sage>
-		
-	</subsection>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Eulerian circuits are not only academic but have practical applications in logistics and waste management. For example, garbage collection routes can be planned as Eulerian circuits to minimize travel and costs. Similarly, postmen use Eulerian paths to optimize mail delivery routes.
+            </p>
+        </aside>
 
-	<subsection xml:id="subsec-Hamilton">
-		<title>Hamilton</title>
-		<idx><h>Hamilton path</h></idx>
-		<idx><h>Hamilton circuit</h></idx>
-		<p>
-			A <term>Hamilton path</term> is a path that uses every vertex of a graph exactly once.
-			A Hamilton path that is a circuit is called a <term>Hamilton circuit</term>.
-			If a graph contains a Hamilton circuit, we say that the graph is <term>Hamiltonian</term>.
-		</p>
-		<idx><h>dodecahedron</h></idx>
-	
-		<p>
-			Hamilton created the "Around the World" puzzle.
-			The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.
-		</p>
-	
-		<p>
-			We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian.
-			See for yourself if the dodecahedron is Hamiltonian.
-		</p>
-		<aside>
-			<title>Real-world Application</title>
-			<p>
-				Hamiltonian circuits are integral to creating efficient routing algorithms used by services like Google Maps and UPS for finding the shortest path through multiple points, optimizing travel and delivery times.
-			</p>
-		</aside>
-		<sage>
-		<input>
-		graphs.DodecahedralGraph().show()
-		</input>
-		</sage>
-	
-		<p>
-			We can ask Sage to determine if the dodecahedron is Hamiltonian.
-		</p>
-		<sage>
-		<input>
-		graphs.DodecahedralGraph().is_hamiltonian()
-		</input>
-		</sage>
-	
-		<p>
-			By running <c>Graph.is_hamiltonian??</c> we see that Sage uses the <c>traveling_salesman_problem()</c> function to determine if a graph is Hamiltonian.
-		</p>
-		<idx><h>traveling salesperson</h></idx>
-		<idx><h>NP-hard</h></idx>
-		<p>
-			The traveling salesperson problem is a classic optimization problem.
-			Given a list of cities and the lengths between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science.
-			It is <term>NP-hard</term>, meaning that no efficient algorithm is known to solve it.
-			The complexity of the problem increases with the number of nodes.
-			When working with many nodes, the algorithm can take a long time to run.
-		</p>
-	
-		<p>
-			Let's explore the following graph:
-		</p>
-		<aside>
-			<title>Scientific Research</title>
-			<p>
-				In scientific research, especially in genetics, Hamiltonian paths are used to solve the DNA sequencing problem by finding the shortest possible unique sequence that can represent a set of observed sequences.
-			</p>
-		</aside>
-		<sage>
-		<input>
-		G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
-		G.show(edge_labels=True)
-		</input>
-		</sage>
-		<idx><h>Hamiltonian cycle</h></idx>
-		<p>
-			We can ask Sage if the graph contains a Hamiltonian cycle.
-		</p>
-		<sage>
-		<input>
-		G.hamiltonian_cycle(algorithm='backtrack')
-		</input>
-		</sage>
-	
-		<p>
-			The function <c>hamiltonian_cycle</c> returns <c>True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c>[1, 2, 3, 4, 5]</c>.
-			This is just one of the many Hamiltonian cycles that exist in the graph.
-			Now lets find the minimum Hamiltonian cycle.
-		</p>
-		<sage>
-		<input>
-		h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
-		h.show(edge_labels=True)
-		</input>
-		</sage>
-	
-		<p>
-			Now we have the plot of the minimum Hamiltonian cycle.
-			The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city.
-			The minimum Hamiltonian cycle is the solution to the traveling salesperson problem.
-			We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.
-		</p>
-		<sage>
-		<input>
-		sumWeights = sum(h.edge_labels())
-		print(sumWeights)
-		</input>
-		</sage>
-	
-		<p>
-			If there is no Hamiltonian cycle, Sage will return <c>False</c>.
-			If we use the <c>backtrack</c> algorithm, Sage will return a list that represents the longest path found.
-		</p>
-		<sage>
-		<input>
-		G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
-		G.show()
-		G.hamiltonian_cycle(algorithm='backtrack')
-		</input>
-		</sage>
-		
-	</subsection>
+        <p>
+            While exploring this problem, Euler discovered the following:
+            <ul>
+                <li>
+                    <p>
+                        A connected graph has an <term>Euler circuit</term> iff every vertex has an even degree.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        A connected graph has an <term>Euler path</term> iff there are at most two vertices with an odd degree.
+                    </p>
+                </li>
+            </ul>
+            We say that a graph is <term>Eulerian</term> if contains an Euler circuit.
+        </p>
+
+        <p>
+            We can use Sage to determine if a graph is Eulerian.
+        </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                In computer networking, designing networks to ensure resilience and fault tolerance often involves constructing Eulerian graphs, where a network can remain operational even if a connection fails.
+            </p>
+        </aside>
+        <sage>
+        <input>
+        G.is_eulerian()
+        </input>
+        </sage>
+
+        <p>
+            Since this returns <c>False</c>, we know that the graph is not Eulerian.
+            Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
+        </p>
+
+        <p>
+            We can use <c>path=True</c> to determine if a graph contains an Euler path.
+            Sage will return the beginning and the end of the path.
+        </p>
+        <sage>
+        <input>
+        G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+        G.show()
+        G.is_eulerian(path=True)
+        </input>
+        </sage>
+
+        <p>
+            If the graph is Eulerian, we can ask Sage to find an Euler circuit with the <c>eulerian_circuit</c> function. Let's take a look at the following graph.
+        </p>
+        <sage>
+        <input>
+            G = Graph([(1, 2), (2, 3), (2, 3),(3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+            G.show()
+            G.eulerian_circuit()
+        </input>
+        </sage>
+
+        <p>
+            If we are not interested in the edge labels, we can set <c>labels=False</c>.
+            We can also set <c>return_vertices=True</c> to get a list of vertices for the path
+        </p>
+        <sage>
+        <input>
+        G = graphs.CycleGraph(6)
+        G.eulerian_circuit(labels=False, return_vertices=True)
+        </input>
+        </sage>
+
+    </subsection>
+
+    <subsection xml:id="subsec-Hamilton">
+        <title>Hamilton</title>
+        <idx><h>Hamilton path</h></idx>
+        <idx><h>Hamilton circuit</h></idx>
+        <p>
+            A <term>Hamilton path</term> is a path that uses every vertex of a graph exactly once.
+            A Hamilton path that is a circuit is called a <term>Hamilton circuit</term>.
+            If a graph contains a Hamilton circuit, we say that the graph is <term>Hamiltonian</term>.
+        </p>
+        <idx><h>dodecahedron</h></idx>
+
+        <p>
+            Hamilton created the "Around the World" puzzle.
+            The object of the puzzle was to start at a city and travel along the edges of the dodecahedron, visiting all of the other cities exactly once, and returning back to the starting city.
+        </p>
+
+        <p>
+            We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian.
+            See for yourself if the dodecahedron is Hamiltonian.
+        </p>
+        <aside>
+            <title>Real-world Application</title>
+            <p>
+                Hamiltonian circuits are integral to creating efficient routing algorithms used by services like Google Maps and UPS for finding the shortest path through multiple points, optimizing travel and delivery times.
+            </p>
+        </aside>
+        <sage>
+        <input>
+        graphs.DodecahedralGraph().show()
+        </input>
+        </sage>
+
+        <p>
+            We can ask Sage to determine if the dodecahedron is Hamiltonian.
+        </p>
+        <sage>
+        <input>
+        graphs.DodecahedralGraph().is_hamiltonian()
+        </input>
+        </sage>
+
+        <p>
+            By running <c>Graph.is_hamiltonian??</c> we see that Sage uses the <c>traveling_salesman_problem()</c> function to determine if a graph is Hamiltonian.
+        </p>
+        <idx><h>traveling salesperson</h></idx>
+        <idx><h>NP-hard</h></idx>
+        <p>
+            The traveling salesperson problem is a classic optimization problem.
+            Given a list of cities and the lengths between each pair of cities, what is the shortest possible route that visits each city and returns to the original city? This is one of the most difficult problems in computer science.
+            It is <term>NP-hard</term>, meaning that no efficient algorithm is known to solve it.
+            The complexity of the problem increases with the number of nodes.
+            When working with many nodes, the algorithm can take a long time to run.
+        </p>
+
+        <p>
+            Let's explore the following graph:
+        </p>
+        <aside>
+            <title>Scientific Research</title>
+            <p>
+                In scientific research, especially in genetics, Hamiltonian paths are used to solve the DNA sequencing problem by finding the shortest possible unique sequence that can represent a set of observed sequences.
+            </p>
+        </aside>
+        <sage>
+        <input>
+        G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
+        G.show(edge_labels=True)
+        </input>
+        </sage>
+        <idx><h>Hamiltonian cycle</h></idx>
+        <p>
+            We can ask Sage if the graph contains a Hamiltonian cycle.
+        </p>
+        <sage>
+        <input>
+        G.hamiltonian_cycle(algorithm='backtrack')
+        </input>
+        </sage>
+
+        <p>
+            The function <c>hamiltonian_cycle</c> returns <c>True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c>[1, 2, 3, 4, 5]</c>.
+            This is just one of the many Hamiltonian cycles that exist in the graph.
+            Now lets find the minimum Hamiltonian cycle.
+        </p>
+        <sage>
+        <input>
+        h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
+        h.show(edge_labels=True)
+        </input>
+        </sage>
+
+        <p>
+            Now we have the plot of the minimum Hamiltonian cycle.
+            The minimum Hamiltonian cycle is the shortest possible route that visits each city and returns to the original city.
+            The minimum Hamiltonian cycle is the solution to the traveling salesperson problem.
+            We can ask Sage for the sum of the weights of the edges in the minimum Hamiltonian cycle.
+        </p>
+        <sage>
+        <input>
+        sumWeights = sum(h.edge_labels())
+        print(sumWeights)
+        </input>
+        </sage>
+
+        <p>
+            If there is no Hamiltonian cycle, Sage will return <c>False</c>.
+            If we use the <c>backtrack</c> algorithm, Sage will return a list that represents the longest path found.
+        </p>
+        <sage>
+        <input>
+        G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
+        G.show()
+        G.hamiltonian_cycle(algorithm='backtrack')
+        </input>
+        </sage>
+
+    </subsection>
 
 </section>
