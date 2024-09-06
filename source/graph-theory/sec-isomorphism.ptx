@@ -80,53 +80,50 @@
     Let's define a function to check if two graphs satisfy the invariants under isomorphism. Make sure you run the next cell to define the function before using the function.
   </p>
   <sage>
-    <!-- language="python" -->
     <input>
-      <pre language="python">
-def invariant_under_isomorphism(G1, G2):
-    print("Are both graphs connected? ", end="")
-    are_connected: bool = (
-        G1.is_connected() == G2.is_connected()
-    )
-    print("Yes" if are_connected else "No")
+      def invariant_under_isomorphism(G1, G2):
+          print("Are both graphs connected? ", end="")
+          are_connected: bool = (
+              G1.is_connected() == G2.is_connected()
+          )
+          print("Yes" if are_connected else "No")
 
-    print(
-        "Do both graphs have same number of "
-        "vertices and edges? ", end=""
-    )
-    have_equal_vertex_and_edge_counts: bool = (
-        G1.order() == G2.order() and
-        G1.size() == G2.size()
-    )
-    print(
-        "Yes" if have_equal_vertex_and_edge_counts else "No"
-    )
+          print(
+              "Do both graphs have same number of "
+              "vertices and edges? ", end=""
+          )
+          have_equal_vertex_and_edge_counts: bool = (
+              G1.order() == G2.order() and
+              G1.size() == G2.size()
+          )
+          print(
+              "Yes" if have_equal_vertex_and_edge_counts else "No"
+          )
 
-    # Sort the degree-sequences because
-    # the order of vertices doesn't matter.
-    print(
-        "Do both graphs have the same degree sequence? ",
-        end=""
-    )
-    have_same_degree_sequence: bool = (
-        sorted(G1.degree_sequence()) ==
-        sorted(G2.degree_sequence())
-    )
-    print("Yes" if have_same_degree_sequence else "No")
+          # Sort the degree-sequences because
+          # the order of vertices doesn't matter.
+          print(
+              "Do both graphs have the same degree sequence? ",
+              end=""
+          )
+          have_same_degree_sequence: bool = (
+              sorted(G1.degree_sequence()) ==
+              sorted(G2.degree_sequence())
+          )
+          print("Yes" if have_same_degree_sequence else "No")
 
-    # All checks
-    are_invariant_under_isomorphism =(
-        are_connected and
-        have_equal_vertex_and_edge_counts and
-        have_same_degree_sequence
-    )
-    print(
-        "\nTherefore, the graphs {0} isomorphic.".format(
-            "may be" if are_invariant_under_isomorphism
-            else "are not"
-        )
-    )
-      </pre>
+          # All checks
+          are_invariant_under_isomorphism =(
+              are_connected and
+              have_equal_vertex_and_edge_counts and
+              have_same_degree_sequence
+          )
+          print(
+              "\nTherefore, the graphs {0} isomorphic.".format(
+                  "may be" if are_invariant_under_isomorphism
+                  else "are not"
+              )
+          )
     </input>
     <output></output>
   </sage>
