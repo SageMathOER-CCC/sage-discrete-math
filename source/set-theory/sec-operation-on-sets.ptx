@@ -137,7 +137,6 @@
         <p>
             The <c>intersection()</c> and <c>difference()</c> functions can perform similar chained operations on multiple sets.
         </p>
-
     </subsection>
 
 
@@ -228,6 +227,103 @@
             </input>
         </sage>
         <p>
+            Viewing all the subsets at once can be overwhelming when a power set contains many elements. We can specify a range of elements with a technique called slicing. For example, here are the first 5 elements of the power set.
+        </p>
+        <sage>
+            <input>
+                S.list()[:5]
+            </input>
+        </sage>
+        <p>
+            Now, let's retrieve the next 5 elements of the power set.
+        </p>
+        <sage>
+            <input>
+                # Slicing to get elements from index 5 to 9
+                S.list()[5:10]
+            </input>
+        </sage>
+        <p>
+            We can also use a generator expression with the <c>next</c> method to iterate through the elements of the power set one by one.
+        </p>
+        <sage>
+            <input>
+                it = (subset for subset in S)
+                next(it)
+            </input>
+        </sage>
+        <p>
+            Continuing to call the <code>next</code> method allows us to view subsequent elements of the power one by one. After iterating through all the batches, the generator raises a <c>StopIteration</c> error.
+        </p>
+        <sage>
+            <input>
+                next(it)
+            </input>
+        </sage>
+        <p>
+            Instead of iterating through subsets one at a time, we can iterate through the power set in batches.
+        </p>
+        <program>
+            <input>
+                def get_subsets_batches(power_set, batch_size):
+                    """
+                    Generate subsets from a power set in batches.
+
+                    INPUT:
+                    - `power_set` -- iterable; the power set, with each element being a subset.
+                    - `batch_size` -- positive integer; the size of each batch to yield.
+
+                    OUTPUT:
+                    - A generator yielding batches of subsets from the power set.
+                    - A message indicating all batches have been processed.
+                    """
+            </input>
+        </program>
+        <sage>
+            <input>
+                def get_subsets_batches(power_set, batch_size):
+                    iterator = iter(power_set)
+                    batch = []
+
+                    while True:
+                        for _ in range(batch_size):
+                            try:
+                                subset = next(iterator)  # Get the next subset from the iterator
+                                batch.append(subset)  # Add the subset to the current batch
+                            except StopIteration:
+                                # No more elements to iterate; yield the last batch if it is not empty
+                                if batch:
+                                    yield batch
+                                yield "All batches processed."
+                                return
+
+                        yield batch  # Yield the completed batch
+                        batch = []  # Reset the batch for the next iteration
+            </input>
+        </sage>
+        <sage>
+            <input>
+                batch_size = 50
+                subset_batches = get_subsets_batches(S, batch_size)
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <p>
             We can confirm that the power set includes the empty set and the set itself.
         </p>
         <sage>
@@ -264,7 +360,7 @@
             <ul>
                 <li>
                     <p>
-                        A hashable object has a hash value which never changes during its lifetime.
+                        A hashable object has a hash value that never changes during its lifetime.
                     </p>
                 </li>
                 <li>
@@ -343,5 +439,4 @@
             Pay close attention to the capitalization of function names. Notice the lowercase <c>s</c> in <c>subsets()</c>, which is an alias for <c>powerset()</c>.
         </p>
     </subsection>
-
 </section>
