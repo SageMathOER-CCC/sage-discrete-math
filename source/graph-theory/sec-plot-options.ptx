@@ -56,36 +56,36 @@
         </output>
     </sage>
     <p>
-        In order to avoid the previous graph cropping, we can use 
+        In order to avoid the previous graph cropping, we can use
     </p>
     <idx><h>graph plotting</h><h>border</h></idx>
     <sage>
         <input>
             G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-            G.plot(vertex_size=2000, graph_border=True)  
+            G.plot(vertex_size=2000, graph_border=True)
         </input>
         <output>
             # A graphical representation of the graph with larger vertices.
         </output>
     </sage>
     <p>
-      While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c>plot</c> method is not supported.
-  </p>
-  <idx><h>graph plotting</h><h>labels</h></idx>
-  <p>
-      To customize labels and enable them for vertices and edges:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          G.plot(vertex_labels=True, edge_labels=True)
-      </input>
-      <output>
-          # A graphical representation of the graph with vertex and edge labels enabled.
-      </output>
-  </sage>
-  <idx><h>graph plotting</h><h>layouts</h></idx>
-  <p>
+        While customizing labels, Sage allows you to enable or disable labels for both vertices and edges, providing clarity and additional context to the graph. However, note that setting specific colors for edge labels directly through the <c>plot</c> method is not supported.
+    </p>
+    <idx><h>graph plotting</h><h>labels</h></idx>
+    <p>
+        To customize labels and enable them for vertices and edges:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+            G.plot(vertex_labels=True, edge_labels=True)
+        </input>
+        <output>
+            # A graphical representation of the graph with vertex and edge labels enabled.
+        </output>
+    </sage>
+    <idx><h>graph plotting</h><h>layouts</h></idx>
+    <p>
     Layouts in Sage determine how vertices are positioned on the plane. SageMath provides several standard layout algorithms, each offering a unique perspective on the graph's structure.
 </p>
 <p>
@@ -142,48 +142,66 @@
 </sage>
 
 
-  <p>
-      Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.
-  </p>
-  <p>
-      To set the vertex shape to a square:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          # above from previous code
-          G.plot(vertex_shape='s')  # Changes the shape of vertices to squares
-      </input>
-      <output>
-          # A graphical representation of the graph with square-shaped vertices.
-      </output>
-  </sage>
+    <p>
+        Changing the shape of the vertices can be useful for differentiating types of vertices or just for aesthetic purposes.
+    </p>
+    <p>
+        To set the vertex shape to a square:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+            # above from previous code
+            G.plot(vertex_shape='s')  # Changes the shape of vertices to squares
+        </input>
+        <output>
+            # A graphical representation of the graph with square-shaped vertices.
+        </output>
+    </sage>
 
-  <p>
-      Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.
-  </p>
-  <p>
-      To change the edge style to dashed lines:
-  </p>
-  <sage>
-      <input>
-          G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-          # above from previous code
-          G.plot(edge_style='dashed')  # Changes the edges to dashed lines
-      </input>
-      <output>
-          # A graphical representation of the graph with dashed edges.
-      </output>
-  </sage>
+    <p>
+        Customizing the style of the edges can help in distinguishing different types of relationships or interactions between vertices.
+    </p>
+    <p>
+        To change the edge style to dashed lines:
+    </p>
+    <sage>
+        <input>
+            G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
+            # above from previous code
+            G.plot(edge_style='dashed')  # Changes the edges to dashed lines
+        </input>
+        <output>
+            # A graphical representation of the graph with dashed edges.
+        </output>
+    </sage>
 
-  <p>
+    <p>
     Below is an example how to apply multiple options to a plot:
-  </p>
-  <sage>
+    </p>
+    <sage>
     <input>
         # Creating the graph with its edges
-        G = Graph([('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A')])
-        G.plot(layout='circular', vertex_color='blue', edge_color='red', edge_thickness=2.5, vertex_size=2000, vertex_labels=True, edge_labels=True, vertex_shape='s', edge_style='dashed')
+        G = Graph(
+            [
+                ('A', 'B'),
+                ('B', 'C'),
+                ('C', 'D'),
+                ('D', 'E'),
+                ('E', 'A')
+            ]
+        )
+        G.plot(
+            layout='circular',
+            vertex_color='blue',
+            edge_color='red',
+            edge_thickness=2.5,
+            vertex_size=2000,
+            vertex_labels=True,
+            edge_labels=True,
+            vertex_shape='s',
+            edge_style='dashed'
+        )
     </input>
     <output>
         # A graphical representation of the graph incorporating multiple customization options for enhanced visualization.

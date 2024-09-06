@@ -45,7 +45,7 @@
 
   <acknowledgement>
     <p permid="ewA">
-      We would like to acknowledge the following peer-reviewers: 
+      We would like to acknowledge the following peer-reviewers:
       <ul permid="ODI">
         <li permid="uKR">
           <p permid="EeD">
@@ -79,7 +79,7 @@
         <li permid="uKR">
           <p permid="EeD">
             Fabio Re, Rosalind Franklin University
-            
+
           </p>
         </li>
 
@@ -164,7 +164,7 @@
   </preface>
 
   <preface xml:id="authors">
-    <title>Authors</title>
+    <title>Authors and Contributors</title>
     <contributors>
       <contributor xml:id="za">
         <personname>Zunaid Ahmed</personname>
@@ -186,6 +186,14 @@
         <institution>Wright College</institution>
         <email>sage.oer@gmail.com</email>
       </contributor>
+
+      <contributor xml:id="ab">
+        <personname>Allaoua Boughrira (Contrib.)</personname>
+        <department>Math Department*</department>
+        <institution>Wright College</institution>
+        <email>a.boughrira@gmail.com</email>
+      </contributor>
+
     </contributors>
   </preface>
 
@@ -200,7 +208,7 @@
     </website>
 
     <copyright>
-      <year>2020<ndash />2023</year>
+      <year>2020<ndash />2024</year>
       <holder>Zunaid Ahmed, Hellen Colman, Samuel Lubliner</holder>
       <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
         International License. To view a copy of this license, visit <url

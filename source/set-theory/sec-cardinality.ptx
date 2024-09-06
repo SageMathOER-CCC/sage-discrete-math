@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="cardinality" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Cardinality</title><idx><h>cardinality</h></idx>
+  <title>Cardinality</title><idx><h>cardinality</h></idx>
     <p>
       To find the cardinality of a set, we use the <c>cardinality()</c> function.
     </p>
@@ -10,7 +10,7 @@
       <p>
         In social networks like Facebook or Twitter, cardinality can represent the number of friends or followers a user has. Understanding the cardinality of social connections can help in personalization, targeted advertising, and studying social influence.
       </p>
-  </aside>  
+  </aside>
     <sage>
       <input>
         A = Set([1, 2, 3, 4, 5])

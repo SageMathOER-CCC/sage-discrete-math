@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="search-algorithms" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Search Algorithms</title><idx><h>search algorithms</h></idx>
+    <title>Search Algorithms</title><idx><h>search algorithms</h></idx>
     <p>
       The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
     </p>
