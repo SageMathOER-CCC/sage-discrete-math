@@ -3,22 +3,8 @@
     <p>
         A  <term>Boolean function</term> is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
-    <aside>
-        <title>Notes</title>
-        <p>
-          Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
-        </p>
-    </aside>
     <p>
-        Before we begin, let's import the necessary modules. The import statement reduces the amount of code we need to write by allowing us to reference the module by its alias and without the module prefix.
-    </p>
-    <sage>
-        <input>
-            from sage.logic.propcalc import formula
-        </input>
-    </sage>
-    <p>
-        Boolean identities allow us to write every Boolean function as a sum-of-products expansion. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Currently, we have a sum of two terms, but no products. We can apply the identity law to introduce the product terms. Now, we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
+        Boolean identities allow us to write every Boolean function as a sum-of-products expansion. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Currently, we have a sum of two terms but no products. We can apply the identity law to introduce the product terms. Now, we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
     </p>
     <p>
         Warning: Do not attempt to apply the identity law or null law within the <c>formula</c> function. The <c>formula</c> function only supports variables and the following operators:
@@ -57,7 +43,7 @@
     </p>
     <sage>
         <input>
-            h = formula("x | ~y")
+            h = propcalc.formula("x | ~y")
             show(h)
         </input>
     </sage>
@@ -68,14 +54,14 @@
             # This will raise an error because
             # `1` is interpreted as a variable
             # variables cannot start with a number
-            formula("x &amp; 1 | True 1 ~y")
+            propcalc.formula("x &amp; 1 | True 1 ~y")
         </input>
     </sage>
 
     <sage>
         <input>
             # Applying the complement law
-            h_complement = formula("x &amp; (y | ~y) | (x | ~x) &amp;  ~y")
+            h_complement = propcalc.formula("x &amp; (y | ~y) | (x | ~x) &amp;  ~y")
             show(latex(h_complement) + "==" + latex(h))
             h_complement == h
         </input>
@@ -83,7 +69,7 @@
     <sage>
         <input>
             # Applying the distributive law
-            h_distributive = formula("x &amp; y | x &amp; ~y | x &amp; ~y | ~x &amp; ~y")
+            h_distributive = propcalc.formula("x &amp; y | x &amp; ~y | x &amp; ~y | ~x &amp; ~y")
             show(latex(h_distributive) + "==" + latex(h))
             h_distributive == h
         </input>
@@ -94,69 +80,141 @@
     <sage>
         <input>
             # Applying the idempotent law
-            h_idempotent = formula("x &amp; y | x &amp; ~y | ~x &amp; ~y")
+            h_idempotent = propcalc.formula("x &amp; y | x &amp; ~y | ~x &amp; ~y")
             show(latex(h_idempotent) + "==" + latex(h))
             h_idempotent == h
         </input>
     </sage>
     <p>
-        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Let's find a more programmatic way to find the sum-of-products expansion of the Boolean function using the truth table.
+        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Truth tables are also helpful for sum-of-products expansion.
     </p>
     <sage>
         <input>
-            h = formula("x | ~y")
-            h.truthtable()
+            g = propcalc.formula("x &amp; (y | z)")
+            g.truthtable()
         </input>
     </sage>
     <p>
-        The <c>truthtable()</c> function is not iterable, so we must represent the table as a <c>list</c> with <c>get_table_list()</c>.
+        The <c>truthtable()</c> function is not iterable. To work with the truth table, we must convert it to a <c>list</c> with <c>get_table_list()</c>.
     </p>
     <sage>
         <input>
-            h = formula("x | ~y")
-            truth_table = h.truthtable()
-            table_list = truth_table.get_table_list()
-            print(table_list)
+            table_list = g.truthtable().get_table_list()
+            table_list
         </input>
     </sage>
     <p>
-        Now, we can iterate over the truth table to find the Sum-of-Products expansion of the Boolean function. For each row where the output is <c>True</c>, we will construct a product term by examining the input values. For each variable, if its value is <c>True</c>, we include the variable in the product; if its value is <c>False</c>, we include its negation in the product.
-     </p>
-     <sage>
+        Now, we can iterate over each truth table row, excluding the header row. For every row where the output value is <c>True</c>, we construct a minterm:
+        <ul>
+            <li>
+                <p>
+                    Include the variable as is if its value is <c>True</c>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Include the negation of the variable if its value is <c>False</c>
+                </p>
+            </li>
+            <li>
+                <p>
+                    The <c>zip</c> function pairs each variable with its corresponding value, allowing us to create minterms efficiently.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We add each minterm to the <c>sop_expansion</c> <c>list</c> using the <c>&amp;</c> operator.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Finally, we join all minterms with the <c>|</c> operator to form the sum-of-products expansion.
+                </p>
+            </li>
+        </ul>
+    </p>
+    <sage auto-evaluate="yes">
         <input>
-            sop_expansion = []
-            for row in table_list[1:]:  # Skip the header row
-                if row[-1]:  # If the output is True
-                    minterm = []
-                    for var, value in zip(table_list[0], row[:-1]):  # Iterate over variables and their values
-                        if value:
-                            minterm.append(var)  # Include variable as is if True
-                        else:
-                            minterm.append(f'~{var}')  # Include negation if False
-                    
-                    sop_expansion.append(' &amp; '.join(minterm))  # Combine using AND
+            def sop_expansion(expression):
+                # Check if the input is a string, and if so, convert it to a formula object
+                if isinstance(expression, str):
+                    h = propcalc.formula(expression)
+                elif isinstance(expression, sage.logic.boolformula.BooleanFormula):
+                    h = expression
+                else:
+                    raise ValueError
+
+                table_list = h.truthtable().get_table_list()
+                sop_expansion = []
+
+                for row in table_list[1:]:  # Skip the header row
+                    if row[-1]:  # If the output value is True
+                        minterm = []
+                        for var, value in zip(table_list[0], row[:-1]):  # Iterate over each variable and its value in this row
+                            if value:
+                                minterm.append(var)  # Include variable as is if True
+                            else:
+                                minterm.append(f'~{var}')  # Include the negated variable if False
+                        sop_expansion.append(' &amp; '.join(minterm))  # Join variables in the minterm using the AND operator
+
+                sop_result = ' | '.join(f'({m})' for m in sop_expansion)  # Join minterms using the OR operator
+                return propcalc.formula(sop_result)
         </input>
-     </sage>
-     <p>
-        Now, we can combine all minterms to form the sum-of-products expansion:
-     </p>
-     <sage>
+    </sage>
+    <p>
+        For your convenience, our <c>sop_expansion</c> function converts <c>String</c> input with <c>propcalc.formula</c>. Therefore, the input accepts <c>String</c> representations of Boolean expressions without needing to pass an instance of <c>sage.logic.boolformula.BooleanFormula</c>. You may also pass an instance of <c>sage.logic.boolformula.BooleanFormula</c> directly to the function. The function returns the sum-of-products expansion as a <c>sage.logic.boolformula.BooleanFormula</c> instance.
+    </p>
+    <sage>
         <input>
-            sop_result = ' | '.join(f'({m})' for m in sop_expansion)
-            print("SOP expansion:", sop_result)
+            truth_table_sop = sop_expansion("x &amp; (y | z)")
+            truth_table_sop
         </input>
-     </sage>
-     <p>
+    </sage>
+    <p>
         Let's verify that the sum-of-products expansion we found with the truth table is the same as the one we found using boolean identities.
-     </p>
-     <sage>
+    </p>
+    <sage>
         <input>
-            formula(sop_result) == h
+            truth_table_sop == g
         </input>
-     </sage>
-     <p>
-        We can also use <c>BooleanPolynomialRing</c> to create Boolean polynomials and perform operations on them. For instance, if <m> B = {0, 1}</m>, we can show a function <m>f: B^3 \to B</m>
-     </p>
+    </sage>
+    <p>
+        Our <c>sop_expansion</c> function mimics the manual process of finding the sum-of-products expansion of a Boolean function. This process does not guarantee the minimal form of the Boolean expression.
+    </p>
+
+    <p>
+        If we dig around in the Sage source code, we can find a commented-out <c>Simplify()</c> function that relied on the <c>Boolopt</c> package and the Quine-McCluskey algorithm. The Quine-McCluskey algorithm guarantees the minimal form of the Boolean expression, but the exponential complexity of the algorithm makes it impractical for large expressions. Moreover, in the Sage documentation, we see a placeholder function called <c>Simplify()</c> that returns a <c>NotImplementedError</c> message. 
+    </p>
+    <p>
+        The Sage community is waiting for someone to implement this function with the Espresso algorithm. While the Espresso algorithm does not guarantee the minimal form of the Boolean expression, it is more efficient than the Quine-McCluskey algorithm. As fun as it would be to implement the Espresso or Quine-McCluskey algorithm, a more straightforward approach relies on Sage's integration with Python. Luckily, SageCells already has the <c>sympy</c> package installed.
+    </p>
+    <sage auto-evaluate="yes">
+        <input>
+            from sympy.logic.boolalg import to_dnf
+
+            def minimize_sop(formula):
+                formula_str = str(formula)
+                minimized_expr = to_dnf(formula_str, simplify=True)
+                return propcalc.formula(str(minimized_expr))
+        </input>
+    </sage>
+    <sage>
+        <input>
+            min_sop = minimize_sop(g)
+            min_sop
+        </input>
+    </sage>
+    <p>
+        Observe the truth table sum-of-products expansion and the minimized sum-of-products expansion are equivalent.
+    </p>
+    <sage>
+        <input>
+            truth_table_sop == min_sop
+        </input>
+    </sage>
+    <p>
+        We can also use <c>BooleanPolynomialRing</c> to create Boolean polynomials and perform operations. For instance, if <m> B = {0, 1}</m>, we can show a function <m>f: B^3 \to B</m>
+    </p>
     <idx><h>polynomial</h></idx>
     <sage>
         <input>
@@ -181,4 +239,10 @@
             f(1,1,1)
         </input>
     </sage>
+    <aside>
+        <title>Notes</title>
+        <p>
+          Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
+        </p>
+    </aside>
 </section>
