@@ -1,10 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section [
-    <!ENTITY cup "entity-value">
-    <!ENTITY cap "entity-value">
-    <!ENTITY Cross "entity-value">
-]>
-
 <section xml:id="sec-operation-on-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Operations on Sets</title>
 
@@ -15,13 +8,12 @@
             There are two distinct methods available in Sage for calculating unions.
         </p>
         <p>
-            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>union()</c> function to calculate <m>A ∪ B</m>.
+            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>union()</c> function to calculate <m>A \cup B</m>.
         </p>
         <aside>
             <title>Notes</title>
             <p>
                 The union operation is relevant in real-world scenarios, such as merging two distinct music playlists into one. In this case, any song that appears in both playlists will only be listed once in the merged playlist.
-
             </p>
         </aside>
         <sage>
@@ -52,7 +44,7 @@
             Similar to union, there are two methods of using the intersection function in Sage.
         </p>
         <p>
-            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>intersection()</c> function to calculate <m>A ∩ B</m>.
+            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>intersection()</c> function to calculate <m>A \cap B</m>.
         </p>
         <aside>
             <title>Notes</title>
@@ -87,7 +79,7 @@
             We have two methods to solve for the difference as well.
         </p>
         <p>
-            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>difference()</c> function to calculate the difference between 2 sets.
+            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>difference()</c> function to calculate the difference between sets.
         </p>
         <aside>
             <title>Notes</title>
@@ -121,7 +113,7 @@
             When performing operations involving multiple sets, we can repeat the operations to get our results. Here is an example:
         </p>
         <p>
-            Suppose <m>A = \{1, 2, 3, 4, 5\}</m>, <m>B = \{3, 4, 5, 6\}</m> and <m>C = \{5, 6, 7\}</m>. To find the union of all three sets, we will repeat the <c>union()</c> function.
+            Suppose <m>A = \{1, 2, 3, 4, 5\}</m>, <m>B = \{3, 4, 5, 6\}</m> and <m>C = \{5, 6, 7\}</m>. To find the union of all three sets, we repeat the <c>union()</c> function.
         </p>
         <sage>
             <input>
@@ -145,7 +137,6 @@
         <p>
             The <c>intersection()</c> and <c>difference()</c> functions can perform similar chained operations on multiple sets.
         </p>
-
     </subsection>
 
 
@@ -185,7 +176,7 @@
         <title>Cartesian Product of Sets</title>
         <idx><h>set operations</h><h>Cartesian product</h></idx>
         <p>
-            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the Cartesian product <m>A × D</m>.
+            Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the Cartesian product <m>A \times D</m>.
         </p>
         <aside>
             <title>Notes</title>
@@ -220,19 +211,116 @@
                 Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
             </p>
         </aside>
-        <title>Power Set of Sets</title>
+        <title>Power Sets</title>
         <idx><h>set operations</h><h>power set</h></idx>
         <p>
-            The power set of a set <m>A</m> is the set of all subsets of <m>A</m>, including the empty set and <m>A</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the built-in <c>Set</c> methods.
+            The power set of a set <m>R</m> is the set of all subsets of <m>R</m>, including the empty set and <m>R</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the built-in <c>Set</c> methods.
         </p>
         <p>
-            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here, we will find the power set of the set of colors of the rainbow.
+            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here, we find the power set of the set of colors of the rainbow and view the subsets as a <c>list</c> where each element is a <c>Set</c>.
         </p>
         <sage>
             <input>
-                rainbow = Set(["red", "orange", "yellow", "green", "blue", "indigo", "violet"])
-                color_combos = Subsets(rainbow)
-                color_combos
+                R = Set(["red", "orange", "yellow", "green", "blue", "indigo", "violet"])
+                S = Subsets(R)
+                list(S)
+            </input>
+        </sage>
+        <p>
+            Viewing all the subsets at once can be overwhelming when a power set contains many elements. We can specify a range of elements with a technique called slicing. For example, here are the first 5 elements of the power set.
+        </p>
+        <sage>
+            <input>
+                S.list()[:5]
+            </input>
+        </sage>
+        <p>
+            Now, let's retrieve the next 5 elements of the power set.
+        </p>
+        <sage>
+            <input>
+                # Slicing to get elements from index 5 to 9
+                S.list()[5:10]
+            </input>
+        </sage>
+        <p>
+            We can also use a generator expression with the <c>next</c> method to iterate through the elements of the power set one by one.
+        </p>
+        <sage>
+            <input>
+                it = (subset for subset in S)
+                next(it)
+            </input>
+        </sage>
+        <p>
+            Continuing to call the <code>next</code> method allows us to view subsequent elements of the power one by one. After iterating through all the batches, the generator raises a <c>StopIteration</c> error.
+        </p>
+        <sage>
+            <input>
+                next(it)
+            </input>
+        </sage>
+        <p>
+            Instead of iterating through subsets one at a time, we can iterate through the power set in batches.
+        </p>
+        <program>
+            <input>
+                def get_subsets_batches(power_set, batch_size):
+                    """
+                    Generate subsets from a power set in batches.
+
+                    INPUT:
+                    - `power_set` -- iterable; the power set, with each element being a subset.
+                    - `batch_size` -- positive integer; the size of each batch to yield.
+
+                    OUTPUT:
+                    - A generator yielding batches of subsets from the power set.
+                    - A message indicating all batches have been processed.
+                    """
+            </input>
+        </program>
+        <sage>
+            <input>
+                def get_subsets_batches(power_set, batch_size):
+                    iterator = iter(power_set)
+                    batch = []
+
+                    while True:
+                        for _ in range(batch_size):
+                            try:
+                                subset = next(iterator)  # Get the next subset from the iterator
+                                batch.append(subset)  # Add the subset to the current batch
+                            except StopIteration:
+                                # No more elements to iterate; yield the last batch if it is not empty
+                                if batch:
+                                    yield batch
+                                yield "All batches processed."
+                                return
+
+                        yield batch  # Yield the completed batch
+                        batch = []  # Reset the batch for the next iteration
+            </input>
+        </sage>
+        <sage>
+            <input>
+                batch_size = 50
+                subset_batches = get_subsets_batches(S, batch_size)
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
             </input>
         </sage>
         <p>
@@ -240,12 +328,12 @@
         </p>
         <sage>
             <input>
-                Set([]) in color_combos
+                Set([]) in S
             </input>
         </sage>
         <sage>
             <input>
-                rainbow in color_combos
+                R in S
             </input>
         </sage>
         <p>
@@ -253,15 +341,7 @@
         </p>
         <sage>
             <input>
-                color_combos.cardinality()
-            </input>
-        </sage>
-        <p>
-            We can view the subsets of a set as a <c>list</c> of <c>Sets</c>.
-        </p>
-        <sage>
-            <input>
-                color_combos.list()
+                S.cardinality()
             </input>
         </sage>
         <p>
@@ -269,16 +349,49 @@
         </p>
         <sage>
             <input>
-                color_combos.random_element()
+                S.random_element()
             </input>
         </sage>
         <p>
-            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function returns sets that often include non-hashable objects. Observe the error message when trying to create a power set of a list containing a list.
+            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function returns sets that often include non-hashable objects.
+        </p>
+        <p>
+            About hashable objects:
+            <ul>
+                <li>
+                    <p>
+                        A hashable object has a hash value that never changes during its lifetime.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        A hashable object can be compared to other objects.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Most of Python’s immutable built-in objects are hashable.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Mutable containers (lists or dictionaries) are not hashable.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Immutable containers (tuples) are only hashable if their elements are hashable.
+                    </p>
+                </li>
+            </ul>
+        </p>
+        <p>
+            Observe the <c>unhashable type</c> error message when trying to create a power set of a list containing a list:
         </p>
         <sage>
             <input>
-                non_hashable_elements = [1, [2, 3], 4]
-                Subsets(non_hashable_elements).list() 
+                N = [1, [2, 3], 4]
+                Subsets(N).list() 
             </input>
         </sage>
         <p>
@@ -286,8 +399,8 @@
         </p>
         <sage>
             <input>
-                non_hashable_elements = [1, [2, 3], 4]
-                list(powerset(non_hashable_elements))
+                N = [1, [2, 3], 4]
+                list(powerset(N))
             </input>
         </sage>
         <p>
@@ -295,10 +408,10 @@
         </p>
         <sage>
             <input>
-                power_set_integers = powerset(ZZ)
+                P = powerset(ZZ)
 
                 i = 0
-                for subset in power_set_integers:
+                for subset in P:
                     print(subset)
                     i += 1
                     if i == 7:
@@ -306,22 +419,24 @@
             </input>
         </sage>
         <p>
-            While the <c>Subsets()</c> function can represent infinite sets symbolically, it is not practical. Observe the error message when trying to retrieve a random element from <c>Subsets(ZZ)</c>
+            While the <c>Subsets()</c> function can represent infinite sets symbolically, it is not practical.
         </p>
         <sage>
             <input>
-                powerset_of_integers = Subsets(ZZ)
-                powerset_of_integers
+                P = Subsets(ZZ)
+                P
             </input>
         </sage>
+        <p>
+            Observe the <c>TypeError</c> message when trying to retrieve a random element from <c>Subsets(ZZ)</c>
+        </p>
         <sage>
             <input>
-                powerset_of_integers.random_element()
+                P.random_element()
             </input>
         </sage>
         <p>
             Pay close attention to the capitalization of function names. Notice the lowercase <c>s</c> in <c>subsets()</c>, which is an alias for <c>powerset()</c>.
         </p>
     </subsection>
-
 </section>
