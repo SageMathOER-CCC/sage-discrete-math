@@ -1,15 +1,525 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-extended-example" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <title>Extended Example</title>
+    <!-- TODO. clean up commented code that is no longer needed -->
     <!-- <idx>
         <h>state machines</h>
     </idx> -->
     <introduction>
-        <p></p>
+        <title>Controlling Traffic Lights and Pedestrian Crossing Signals</title>
+        <p>
+            On a small city street, vehicles and pedestrians need to move safely and efficiently
+            (traffic and pedestrian flows are unpredictable). The task lies in coordinating the
+            traffic lights and pedestrian crossing signals.</p>
+        <p>
+            Safety is top priority, but must not hinder or disrupt the flow of vehicles:
+            <ul>
+                <li>
+                    <p>
+                        The traffic light prioritizes vehicle movement when no pedestrians are
+                        present (reducing unnecessary stops and congestion). However, when a
+                        pedestrian presses the crosswalk button, the system ensures that vehicles
+                        slow down and come to a complete stop, allowing pedestrians to cross safely.</p>
+                </li>
+                <li>
+                    <p>
+                        Small preset delays are introduced to give both drivers and pedestrians
+                        enough time to react safely, this will significantly reduce the likelihood
+                        of accidents or confusion (ex. The time for yellow light for cars, and the
+                        flashing orange light for pedestrians).
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Additionally, the system must ensure that there is no simultaneous conflicting
+                        signal, where cars and pedestrians are told to move at the same time, which
+                        could lead to dangerous situations.
+                    </p>
+                </li>
+            </ul>
+            To tackle these requirements, a state machine-based traffic control system is installed.
+            This system reacts to pedestrian inputs (pressing a crosswalk button) and to an internal
+            automatic timer to regulate traffic flow.</p>
     </introduction>
     <subsection>
-        <title>Problem Statement</title>
-        <p></p>
+        <title>Problem Overview (System model and States)</title>
+        <p>
+            Breaking down a full lifecycle of traffic signaling into distinctive states:
+            <ul>
+                <li>
+                    <p>
+                        State <m>s_{0}</m> : Regular Traffic Flow (Initial state): This is the
+                        initial state with normal traffic flow (with green lights for
+                        vehicles and red lights for pedestrians): there are no pedestrians,
+                        this ensures efficient movement for vehicles.</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{1}</m> : Pedestrian Request to Cross: When pedestrians are
+                        present, and the crosswalk button is pressed (at least once and
+                        from either side of the road), the system transitions to this state.
+                        The car light stays green for a few seconds to avoid immediately
+                        disrupting traffic flow.</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{2}</m> : Slowing Down Traffic: After waiting for a short
+                        interval, the system transitions to State 2, turning the traffic
+                        light yellow to signal cars to slow down and prepare to stop.
+                        Pedestrians are still waiting (the traffic is about to halt for them).</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{3}</m> : Stopping Traffic: In this state, the traffic
+                        light turns red, bringing vehicles to a stop. However, pedestrians
+                        still need to wait for a few more seconds to ensure that all cars
+                        have fully halted, and the intersection is safe for crossing. This
+                        state is a critical buffer period for added safety.</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{4}</m> : Pedestrians Cross: Here, the pedestrian signal turns
+                        white (steady), allowing pedestrians to cross the road. During this
+                        time, traffic is fully stopped, and the intersection is exclusively
+                        reserved for pedestrian movement. Pedestrians are given a reasonable
+                        amount of time to cross the road.</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{5}</m> : Warning Pedestrians to Hurry: In this state, the
+                        pedestrian signal begins flashing orange, warning pedestrians that
+                        the signal is about to turn red, and that they need to hurry and
+                        complete their crossing before traffic resumes.</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{6}</m> : Pedestrians Stop: Now, the pedestrian light is red
+                        again, signaling that crossing is no longer allowed. At this point,
+                        traffic lights remain red for a brief period to ensure there are no
+                        pedestrians left in the intersection.</p>
+                </li>
+                <li>
+                    <p>
+                        State <m>s_{7}</m> : Traffic Resumes with Holding Time: Finally, the
+                        traffic light turns back green again, allowing vehicles to move
+                        once more. This is a hold phase to allow traffic to flow before
+                        the intersection returns to its initial state and is ready to
+                        process pedestrian request to cross (this hold time is essential
+                        to avoid traffic congestion).</p>
+                </li>
+            </ul>
+        </p>
     </subsection>
-    <!-- TODO -->
+    <subsection>
+        <title>Solution</title>
+        <!-- TODO -->
+        <!-- <p>
+            Attempt to construct a library-like solution that could be generalized/fine-tuned ...
+        </p> -->
+        <subsection>
+            <title>Blueprints: States, Inputs and Outputs</title>
+            <p>
+                <!-- .. TODO .. -->
+                <sage>
+                    <input>
+                        # BLUEPRINTS
+                        from dataclasses import dataclass
+                        import time
+
+                        @dataclass
+                        class State:
+                            """Class for keeping track of the state objects and their representation."""
+                            idx: int = -1
+                            description: str = ''
+
+                            @property
+                            def tex(self) -> str:
+                                """Needed for the graph display of the State Machine (SM)."""
+                                return f'$S_{{{self.idx}}}$' if self.idx >= 0 else '*'
+
+                            def __str__(self) -> str:
+                                """Display the state (Running the SM)."""
+                                return f'S{self.idx}' if self.idx >= 0 else '*'
+
+                            def __repr__(self) -> str:
+                                """Console representation of the state."""
+                                return (
+                                    f"State(idx={self.idx}, description='{self.description}')"
+                                    if self.idx >= 0 else "State()"
+                                )
+
+                            def __eq__(self, other) -> bool:
+                                """Needed for dictionary lookups."""
+                                return isinstance(other, State) and self.idx == other.idx
+
+                            def __hash__(self):
+                                """Needed for dictionary lookups."""
+                                return hash(self.__str__())
+
+
+                        @dataclass
+                        class Input:
+                            """Class for keeping track of SM inputs."""
+                            label: str
+                            description: str
+                            input_action: any
+                            input_param: any = None
+                            action: any = time.sleep  # apply a delay/wait time
+
+                            @staticmethod
+                            def _header() -> str:
+                                """Display the input column when running the SM."""
+                                return (
+                                    '| Input Event    '
+                                )
+
+                            def execute(self):
+                                """Execute the task associated with the input (Running the SM)."""
+                                if self.action:
+                                    return self.action(self.input_param)
+
+                            def __str__(self) -> str:
+                                """Display the input (Running the SM)."""
+                                event = (
+                                    self.input_action if isinstance(self.input_action, str)
+                                    else self.input_action(self.input_param)
+                                )
+                                return f'| {event:14} '
+
+                            def __eq__(self, other) -> bool:
+                                """Needed for dictionary lookups."""
+                                return (
+                                    isinstance(other, Input) and
+                                    self.label == other.label and
+                                    self.input_param == other.input_param
+                                )
+
+                            def __hash__(self):
+                                """Needed for dictionary lookups."""
+                                return hash(self.label+str(self.input_param))
+
+
+                        @dataclass
+                        class Output:
+                            """Class for managing and displaying the SM outputs."""
+                            traffic_light: str
+                            pedestrian_signal: str
+                            timer_status: str
+
+                            @staticmethod
+                            def _header() -> str:
+                                """Display the output column while running the SM."""
+                                return (
+                                    '| Outputs:'
+                                    '    CARS         PEDESTRIANS      Timer |'
+                                )
+
+                            def __str__(self) -> str:
+                                """Display the output (Running the SM)."""
+                                return '|         {cars}    {peds}     {timer_tag:3}  |'.format(
+                                    cars=self.traffic_light.replace('.', ' '),
+                                    peds=self.pedestrian_signal.replace('.', ' '),
+                                    timer_tag=self.timer_status,
+                                )
+                    </input>
+                    <output></output>
+                </sage>
+            </p>
+        </subsection>
+        <subsection>
+            <title>State Machine Engine</title>
+            <p>
+                <!-- .. The runner .. -->
+                <sage>
+                    <input>
+                        class StateMachine:
+                            """Generic StateMachine Engine to display and run a state-machine."""
+
+                            def __init__(
+                                self,
+                                initial_state,
+                                transition_matrix,
+                                states_outputs
+                            ):
+                                self.initial_state = initial_state
+                                self.transition_matrix = transition_matrix
+                                self.states_outputs = states_outputs
+
+                            def draw(self, plot):
+                                """Call the custom plotter for the state machine model/graph"""
+                                plot(
+                                    initial_state=self.initial_state,
+                                    transition_matrix=self.transition_matrix,
+                                )
+
+                            def run(self, input_events):
+                                """Simulate the SM run (Table view)."""
+                                # print the header
+                                header = f"| State {Input._header()}| State' {Output._header()}"
+                                HORIZONTAL_LINE_1 = '=' * len(header)
+                                HORIZONTAL_LINE_2 = '-' * len(header)
+                                print(
+                                    HORIZONTAL_LINE_1 + '\n' + header + '\n' + HORIZONTAL_LINE_2
+                                )
+
+                                # main run
+                                current_state = self.initial_state
+                                for trigger_event in input_events:
+                                    print(f"|{str(current_state):^6} ", end='')
+
+                                    # triggering input event
+                                    trigger_event.execute()
+                                    print(trigger_event, end='')
+
+                                    # new state
+                                    next_state = (
+                                        self.transition_matrix[current_state][trigger_event]
+                                        if current_state in self.transition_matrix and
+                                        trigger_event in self.transition_matrix[current_state]
+                                        else current_state
+                                    )
+                                    print(f"|{str(next_state):^7} ", end='')
+
+                                    # state output
+                                    state_output = self.states_outputs[next_state]
+                                    print(state_output)
+
+                                    # prepare the next iteration
+                                    current_state = next_state
+
+                                # print the footer
+                                print(HORIZONTAL_LINE_1)
+                    </input>
+                    <output></output>
+                </sage>
+            </p>
+        </subsection>
+        <subsection>
+            <title>Model Definition and Instantiation</title>
+            <p>
+                <!-- .. TODO .. -->
+                <sage>
+                    <input>
+                        # DEFINE STATE-MACHINE: states, inputs/outputs, and transitions
+                        import random
+
+                        # CONSTANTS
+                        CARS_GO   = '..GREEN:GO..'
+                        CARS_SLOW = '.YELLOW:SLOW'
+                        CARS_STOP = '..RED:STOP..'
+
+                        PEDS_WALK  = '..WHITE:WALK..'
+                        PEDS_HURRY = '.ORANGE:HURRY.'
+                        PEDS_WAIT  = 'RED:HOLD/STAND'
+
+                        TIMER_ON  = 'ON'  # Enable the Timer (only if currently disabled)
+                        TIMER_OFF = 'OFF' # Disable/Stop the Timer
+                        _         = '>>'  # Timer running ...
+
+
+                        # Define the different states
+                        s0 = State(
+                            idx=0,
+                            description='Initial/default state: Light is green for traffic, no pedestrians'
+                        )
+
+                        s1 = State(
+                            idx=1,
+                            description='Light is green for traffic, pedestrian press cross-walk button'
+                        )
+
+                        s2 = State(
+                            idx=2,
+                            description='Light is yellow for traffic (slowing down)'
+                        )
+
+                        s3 = State(
+                            idx=3,
+                            description='Light is red. traffic stopped. Do not cross yet'
+                        )
+
+                        s4 = State(
+                            idx=4,
+                            description='Crosswalk signal is steady white for pedestrian to cross'
+                        )
+
+                        s5 = State(
+                            idx=5,
+                            description='Crosswalk signal is blinking orange (about to turn red)'
+                        )
+
+                        s6 = State(
+                            idx=6,
+                            description='Crosswalk signal is red. Do not cross'
+                        )
+
+                        s7 = State(
+                            idx=7,
+                            description='Light is green for traffic (hold time)'
+                        )
+
+                        # Define the triggers for each state
+                        BUTTON_PRESS = Input(
+                            label='BP',
+                            description='Pedestrian pressing the crosswalk button',
+                            input_action=lambda _: 'Button pressed',
+                            # some random wait time before button is pressed
+                            input_param=random.randint(1, 15),
+                        )
+
+                        TIMER_WAIT = lambda t_sec: Input(
+                            label='CK',
+                            description='Timer automatically emits events at preset intervals',
+                            input_action=lambda t: f'{t}s passed',
+                            input_param=t_sec,
+                        )
+
+                        # Define the Transition matrix
+                        event_and_state_transitions = {
+                            # current-state: {input-event/action: next-state}
+                            s0: {
+                                BUTTON_PRESS  : s1,
+                            },
+                            s1: {
+                                TIMER_WAIT( 5): s2,
+                            },
+                            s2: {
+                                TIMER_WAIT( 3): s3,
+                            },
+                            s3: {
+                                TIMER_WAIT( 2): s4,
+                            },
+                            s4: {
+                                TIMER_WAIT(10): s5,
+                            },
+                            s5: {
+                                TIMER_WAIT(10): s6,
+                            },
+                            s6: {
+                                TIMER_WAIT( 2): s7,
+                            },
+                            s7: {
+                                TIMER_WAIT(30): s0,
+                            },
+                            # All other combinations of $state x $input gives
+                            # out the same current state (no transition)
+                        }
+
+                        # Define the Output(s) for each state
+                        states_outputs = {
+                            s0: Output(CARS_GO,   PEDS_WAIT,  TIMER_OFF),
+                            s1: Output(CARS_GO,   PEDS_WAIT,  TIMER_ON ),
+                            s2: Output(CARS_SLOW, PEDS_WAIT,  _        ),
+                            s3: Output(CARS_STOP, PEDS_WAIT,  _        ),
+                            s4: Output(CARS_STOP, PEDS_WALK,  _        ),
+                            s5: Output(CARS_STOP, PEDS_HURRY, _        ),
+                            s6: Output(CARS_STOP, PEDS_WAIT,  _        ),
+                            s7: Output(CARS_GO,   PEDS_WAIT,  _        ),
+                        }
+
+                        # Construct the SM
+                        sm = StateMachine(
+                            initial_state=s0,
+                            transition_matrix=event_and_state_transitions,
+                            states_outputs=states_outputs,
+                        )
+                    </input>
+                    <output></output>
+                </sage>
+            </p>
+        </subsection>
+        <subsection>
+            <title>Visualize the Finite State Machine Model</title>
+            <p>
+                <!-- .. TODO .. -->
+                <sage>
+                    <input>
+                        from sage.graphs.digraph import DiGraph
+
+                        def draw_crosswalk_and_traffic_light_state_machine(
+                            initial_state,
+                            transition_matrix,
+                        ):
+                            # Initialize an empty directed graph
+                            G = DiGraph(multiedges=True, loops=True)
+
+                            # Build the SM graph/model
+                            G.add_vertices(
+                                [state.tex for state in transition_matrix.keys()]
+                            )
+
+                            # Add the root/origin vertex/node
+                            fr, to = (origin:=State()).tex, initial_state.tex
+                            G.add_edge(fr, to, label='start')
+
+                            for state, transition in transition_matrix.items():
+                                fr = state.tex
+                                for event, next_state in transition.items():
+                                    to = next_state.tex
+
+                                    if event.label == 'CK':
+                                        # label for the transition edge
+                                        event_label = 'T:'+(str(event)[2:]).strip().split()[0]
+
+                                        # Add self-loop: no-state change transition
+                                        G.add_edge(fr, fr, label='BP')
+                                    else:
+                                        # label for the transition edge
+                                        event_label = 'BP'
+
+                                        # Add self-loop: no-state change transition
+                                        G.add_edge(fr, fr, label='CK')
+
+                                    # The Transiting edge
+                                    G.add_edge(fr, to, label=event_label)
+
+                            # Display the StateMachine
+                            G.show(
+                                figsize=[6, 6],
+                                layout='circular',
+                                vertex_size=200,
+                                edge_labels=True,
+                                vertex_labels=True,
+                                edge_color=(.2,.4,1),
+                                edge_thickness=1.0,
+                            )
+
+                        # Display the SM model/graph
+                        sm.draw(
+                            plot=draw_crosswalk_and_traffic_light_state_machine
+                        )
+                    </input>
+                    <output></output>
+                </sage>
+            </p>
+        </subsection>
+        <subsection>
+            <title>Running the State Machine (Simulation)</title>
+            <p>
+                <!-- .. TODO .. -->
+                <sage>
+                    <input>
+                        # Run the SM for a test scenario
+                        sm.run(
+                            input_events=[
+                                TIMER_WAIT( 6),  # No impact/state change
+                                BUTTON_PRESS  ,
+                                TIMER_WAIT( 5),
+                                TIMER_WAIT( 3),
+                                TIMER_WAIT( 2),
+                                BUTTON_PRESS  ,  # No impact/state change
+                                TIMER_WAIT(10),
+                                TIMER_WAIT(10),
+                                TIMER_WAIT( 2),
+                                BUTTON_PRESS  ,  # No impact/state change
+                                TIMER_WAIT(30),
+                                BUTTON_PRESS  ,
+                            ],
+                        )
+                    </input>
+                    <output></output>
+                </sage>
+            </p>
+        </subsection>
+    </subsection>
 </section>
