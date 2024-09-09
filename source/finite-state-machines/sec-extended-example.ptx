@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-extended-example" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <title>Extended Example</title>
-    <!-- TODO. clean up commented code that is no longer needed -->
-    <!-- <idx>
-        <h>state machines</h>
-    </idx> -->
     <introduction>
         <title>Controlling Traffic Lights and Pedestrian Crossing Signals</title>
         <p>
@@ -112,15 +108,10 @@
     </subsection>
     <subsection>
         <title>Solution</title>
-        <!-- TODO -->
-        <!-- <p>
-            Attempt to construct a library-like solution that could be generalized/fine-tuned ...
-        </p> -->
         <subsection>
             <title>Blueprints: States, Inputs and Outputs</title>
             <p>
-                <!-- .. TODO .. -->
-                <sage>
+                <sage auto-evaluate="yes">
                     <input>
                         # BLUEPRINTS
                         from dataclasses import dataclass
@@ -229,8 +220,7 @@
         <subsection>
             <title>State Machine Engine</title>
             <p>
-                <!-- .. The runner .. -->
-                <sage>
+                <sage auto-evaluate="yes">
                     <input>
                         class StateMachine:
                             """Generic StateMachine Engine to display and run a state-machine."""
@@ -297,7 +287,6 @@
         <subsection>
             <title>Model Definition and Instantiation</title>
             <p>
-                <!-- .. TODO .. -->
                 <sage>
                     <input>
                         # DEFINE STATE-MACHINE: states, inputs/outputs, and transitions
@@ -431,7 +420,6 @@
         <subsection>
             <title>Visualize the Finite State Machine Model</title>
             <p>
-                <!-- .. TODO .. -->
                 <sage>
                     <input>
                         from sage.graphs.digraph import DiGraph
@@ -496,7 +484,6 @@
         <subsection>
             <title>Running the State Machine (Simulation)</title>
             <p>
-                <!-- .. TODO .. -->
                 <sage>
                     <input>
                         # Run the SM for a test scenario
