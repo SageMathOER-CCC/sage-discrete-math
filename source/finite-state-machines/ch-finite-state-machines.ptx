@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-finite-state-machines" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Finite State Machines</title>
+
+  <introduction>
+    <p>
+      In this chapter, we explore a powerful abstract model: <b>finite-state machine</b> (<em>finite
+      automata</em>). Beyond its theory, we'll see how to use SageMath to define, model, then build,
+      visualize and run an example of a state machine to solve a real-world problem.</p>
+    <aside>
+      <title>Notes</title>
+      <p>
+        State machines are often associated with tasks in relation with digital computers. However, the vast domain of applications of state machines extends from simple simulations to full control of complex industrial processes. These tasks can vary in complexity, be as simple as a parity check
+        or a complex as managing traffic patterns, and natural language recognition and processing.</p>
+    </aside>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-state-machine-definition.ptx" />
+  <xi:include href="sec-modeling-finite-state-machines.ptx" />
+  <xi:include href="sec-extended-example.ptx" />
+
+</chapter>
