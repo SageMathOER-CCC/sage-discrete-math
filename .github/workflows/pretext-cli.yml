@@ -40,7 +40,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: pdf
-                  path: output/print/main.pdf
+                  path: output/print
 
     deploy-ghpages:
         runs-on: ubuntu-latest
@@ -94,7 +94,7 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   name: pdf
-                  path: output/print/main.pdf
+                  path: output/print
 
             - name: Create or update pdf-update branch from main
               run: git checkout -B pdf-update
