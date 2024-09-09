@@ -11,7 +11,7 @@
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
-   <!-- Include chapters -->
+    <!-- Include chapters -->
     <xi:include href="./getting-started/ch-getting-started.ptx" />
     <xi:include href="./set-theory/ch-set-theory.ptx" />
     <xi:include href="./combinatorics/ch-combinatorics.ptx" />
@@ -20,8 +20,10 @@
     <xi:include href="./functions/ch-functions.ptx" />
     <xi:include href="./graph-theory/ch-graph-theory.ptx" />
     <xi:include href="./trees/ch-trees.ptx" />
-    <xi:include href="./lattices/ch-lattices.ptx" /> 
+    <xi:include href="./lattices/ch-lattices.ptx" />
     <xi:include href="./boolean-algebra/ch-boolean-algebra.ptx" />
+    <xi:include href="./finite-state-machines/ch-finite-state-machines.ptx" />
+
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
 

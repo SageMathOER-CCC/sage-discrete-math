@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-state-machine-definition" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xml:lang="en">
+    <title>Finite-State Machines</title>
+    <introduction>
+        <p> The defining feature of any abstract machine is its memory structure, ranging from a <em>
+            finite</em> set of states in the case of finite-state machines to more complex memory
+            systems (<em>Turing machines</em>).</p>
+        <p> A <term>Finite-State Machine</term> has an input device (that physically could represent
+            a tape, data stream, memory space ...etc), divided into segments, each holding an
+            instruction symbol or a blank. This abstract machine also has a read head that scans the
+            current symbol from the input alphabet <m>X</m>. After each read, the head always moves
+            to the next segment. The machine may also have an output device, with symbols drawn from
+            an output alphabet <m>Z</m>, which may differ from the input alphabet.</p>
+    </introduction>
+    <subsection xml:id="sm-definition">
+        <title>Definition</title>
+        <idx>
+            <h>state machines</h>
+            <h>definition</h>
+        </idx>
+        <p> A finite-state machine is defined by a sextuple <m>(S, X, Z, w, t, s_1)</m> where:
+            <ul>
+                <li>
+                    <p>
+                        <m>S=\{s_1, s_2,\ldots , s_r\}</m> is the state set, a finite set that
+                        corresponds to the set of memory configurations that the machine can have at
+                        any time, where <m>s_1</m> is the <em>initial state</em>.</p>
+                </li>
+                <li>
+                    <p>
+                        <m>X=\{x_1, x_2, \ldots ,x_m\}</m> is the input alphabet.</p>
+                </li>
+                <li>
+                    <p>
+                        <m>Z=\{z_1,z_2, \ldots ,z_n\}</m> is the output alphabet.</p>
+                </li>
+                <li>
+                    <p>
+                        <m>w: X\times S \to Z</m> is the output function, which specifies which
+                        output symbol <m>w(x, s) \in Z</m> is written onto the output device when
+                        the machine is in state <m>s</m> and the input symbol <m>x</m> is read.</p>
+                </li>
+                <li>
+                    <p>
+                        <m>t:X\times S\to S</m> is the next-state (or transition) function, which
+                        specifies which state <m>t(x, s) \in S</m> the machine should enter when
+                        it is in state <m>s</m> and it reads the symbol <m>x</m>.</p>
+                </li>
+            </ul>
+        </p>
+    </subsection>
+</section>

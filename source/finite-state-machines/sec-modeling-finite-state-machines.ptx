@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-modeling-finite-state-machines" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xml:lang="en">
+    <title>State Machine in SageMath</title>
+    <idx>
+        <h>state machines</h>
+        <h>model</h>
+    </idx>
+    <introduction>
+        <p>
+            Although <b>SageMath</b> does not have a dedicated built-in module to handle state
+            machines, it can still be used to model, construct, display, and run relatively
+            simple state machines, leveraging the general-purpose tools, such as graphs and
+            transition matrices, to represent and work with state machines.</p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                While SageMath provides basic tools to represent and simulate state machines,
+                it may not natively support more complex state machine features such as parallel
+                states or hierarchical transitions.</p>
+        </aside>
+        <p>
+            In this section, we'll explore how to define states, create a state transition graph,
+            visualize the state machine, and simulate its execution in SageMath.</p>
+    </introduction>
+    <subsection>
+        <title>1. Define States and Transitions</title>
+        <p> The first step is to define the states and transitions in the state machine. We can
+            represent these using lists and dictionaries.
+        </p>
+        <sage>
+            <input>
+                # Define states
+                states = ['S0', 'S1', 'S2', 'S3', 'S4']
+
+                # Assume there are 2 possible input events (actions) {A0, A1}, we then
+                # define transitions as a dictionary {current_state: {input: next_state}}
+                transitions = {
+                    'S0': {
+                        'A0': 'S1'
+                    },
+                    'S1': {
+                        'A0': 'S2',
+                        'A1': 'S3'
+                    },
+                    'S2': {
+                        'A0': 'S0',
+                        'A1': 'S4'
+                    },
+                    'S3': {
+                        'A0': 'S4'
+                    },
+                    'S4': {
+                        'A0': 'S0'
+                    }
+                }
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            The states are defined as vertices in the graph, and transitions are defined as directed
+            edges between these vertices.</p>
+    </subsection>
+    <subsection>
+        <title>2. Create a State Transition Graph</title>
+        <p> In SageMath, we can use the <c>DiGraph</c> class to represent the states and transitions
+            of the state machine as a directed graph, and use the graph structure to visualize the
+            state machine representation.</p>
+        <sage>
+            <input>
+                # Import DiGraph from SageMath
+                from sage.graphs.digraph import DiGraph
+
+                # Initialize a directed graph
+                SM = DiGraph()
+
+                # Add states as vertices
+                SM.add_vertices(states)
+
+                # Add transitions as edges
+                for state, transition in transitions.items():
+                    for action, next_state in transition.items():
+                        SM.add_edge(state, next_state, label=action)
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+    <subsection>
+        <title>3. Display the State Machine</title>
+        <p>
+            The <c>SM.show()</c> command renders a graphical representation of the state machine.
+            Each vertex in the graph represents a state, and each directed edge represents a
+            transition, labeled with the input.</p>
+        <sage>
+            <input>
+                # Display the graph (state machine)
+                SM.show(edge_labels=True)
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+    <subsection>
+        <title>4. Run the State Machine</title>
+        <p>
+            Next, we can simulate the state machine's behavior by creating a function that
+            processes a list of inputs and transitions through the states accordingly.</p>
+        <sage>
+            <input>
+                # Function to run the state machine
+                def run_state_machine(start_state, inputs):
+                    current_state = start_state
+                    for action in inputs:
+                        print(f"Current State: {current_state}, Action: {action}")
+
+                        if action in transitions[current_state]:
+                            current_state = transitions[current_state][action]
+                            print(f"Transitioned to: {current_state}")
+                        else:
+                            print(f"No transition available for action {action} in state {current_state}")
+                            break
+
+                    print(f"Final State: {current_state}")
+
+
+                # Example of running the state machine
+                start_state = 'S0'
+                inputs = ['A0', 'A0', 'A1', 'A0']
+
+                run_state_machine(start_state, inputs)
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            The <c>run_state_machine</c> function simulates the state machine by processing
+            a list of inputs starting from an initial state.</p>
+    </subsection>
+    <conclusion>
+        <p>
+            This simple example shows a typical workflow of the use of a simple finite state
+            machine. It can be customized and fine-tuned to reflect more complex scenarios
+            (more states, different input sequences, ...etc). The general structure of a
+            state machine can be adapted for different use cases.</p>
+    </conclusion>
+</section>
