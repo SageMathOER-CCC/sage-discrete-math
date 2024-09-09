@@ -16,4 +16,5 @@
   <xi:include href="sec-properties.ptx" />
   <xi:include href="sec-equivalence.ptx" />
   <xi:include href="sec-partial-order.ptx" />
+  <xi:include href="sec-proofs-inductions.ptx" />
 </chapter>
