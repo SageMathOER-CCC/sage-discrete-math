@@ -222,24 +222,30 @@
             <p>
                 <sage auto-evaluate="yes">
                     <input>
+                        import json
                         class StateMachine:
                             """Generic StateMachine Engine to display and run a state-machine."""
 
                             def __init__(
                                 self,
                                 initial_state,
-                                transition_matrix,
+                                transitions_map,
                                 states_outputs
                             ):
                                 self.initial_state = initial_state
-                                self.transition_matrix = transition_matrix
+                                self.transitions_map = transitions_map
                                 self.states_outputs = states_outputs
+
+                            def __repr__(self):
+                                n_states = len(self.states_outputs)
+                                m_transitions = sum([len(_) for _ in self.transitions_map.values()])
+                                return f"StateMachine(nStates:{n_states}, mTransitions:{m_transitions}, initialState:{self.initial_state})"
 
                             def draw(self, plot):
                                 """Call the custom plotter for the state machine model/graph"""
                                 plot(
                                     initial_state=self.initial_state,
-                                    transition_matrix=self.transition_matrix,
+                                    transitions_map=self.transitions_map,
                                 )
 
                             def run(self, input_events):
@@ -263,9 +269,9 @@
 
                                     # new state
                                     next_state = (
-                                        self.transition_matrix[current_state][trigger_event]
-                                        if current_state in self.transition_matrix and
-                                        trigger_event in self.transition_matrix[current_state]
+                                        self.transitions_map[current_state][trigger_event]
+                                        if current_state in self.transitions_map and
+                                        trigger_event in self.transitions_map[current_state]
                                         else current_state
                                     )
                                     print(f"|{str(next_state):^7} ", end='')
@@ -409,9 +415,11 @@
                         # Construct the SM
                         sm = StateMachine(
                             initial_state=s0,
-                            transition_matrix=event_and_state_transitions,
+                            transitions_map=event_and_state_transitions,
                             states_outputs=states_outputs,
                         )
+
+                        sm.__repr__()
                     </input>
                     <output></output>
                 </sage>
@@ -426,21 +434,21 @@
 
                         def draw_crosswalk_and_traffic_light_state_machine(
                             initial_state,
-                            transition_matrix,
+                            transitions_map,
                         ):
                             # Initialize an empty directed graph
                             G = DiGraph(multiedges=True, loops=True)
 
                             # Build the SM graph/model
                             G.add_vertices(
-                                [state.tex for state in transition_matrix.keys()]
+                                [state.tex for state in transitions_map.keys()]
                             )
 
                             # Add the root/origin vertex/node
                             fr, to = (origin:=State()).tex, initial_state.tex
                             G.add_edge(fr, to, label='start')
 
-                            for state, transition in transition_matrix.items():
+                            for state, transition in transitions_map.items():
                                 fr = state.tex
                                 for event, next_state in transition.items():
                                     to = next_state.tex
