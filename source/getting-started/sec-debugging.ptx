@@ -173,7 +173,7 @@
     Sage is capable of producing animations and pictures. To view more examples of Sage art, see <url href="https://wiki.sagemath.org/art">gallery on the Sage Wiki</url>. If you want to use Sage to download a GIF of Fibonacci Tiles by Sébastien Labbé, use the <c>save()</c> method.
   </p>
   <p>
-    We will get an error if we supply the arguments out of order.
+    The following cell demonstrates the <c>SyntaxError</c> Sage will raise when we supply function arguments that are out of order. The <c>save()</c> method requires the filename as the first argument and the delay as the second argument.
   </p>
   <sage>
     <input>
@@ -189,7 +189,7 @@
     </input>
   </sage>
   <p>
-    In this example, <c>SyntaxError</c> occurs because the arguments in the <c>save()</c> method are in the wrong order. We can fix this by referring to the documentation and learning the correct argument positions. After running the following cell, the <c>save()</c> method saves the file to the cell. You can right-click on the file name and select the option to download the file locally. 
+    In this example, <c>SyntaxError</c> occurs because the arguments in the <c>save()</c> method are in the wrong order. We can fix this by referring to the documentation and learning the correct argument positions. After running the following cell, the <c>save()</c> method saves the file to the cell and the filename appears below. You can right-click on the filename and select the option to download the file locally.
   </p>
   <sage>
     <input>
@@ -238,9 +238,6 @@
           print(i)
     </input>
   </sage>
-  <p>
-    Remember Sage list comprehension behaves differently from <c>range()</c>. The range syntax for list comprehension includes the ending value.
-  </p>
   <p>
     For more information, read the CoCalc <url href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about the top mathematical syntax errors in Sage</url>
   </p>
