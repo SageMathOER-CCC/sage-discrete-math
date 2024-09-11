@@ -42,20 +42,20 @@
         </input>
     </sage>
     <p>
-        When we pass <c>P</c> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <c>D</c> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>divisibility_poset</c> is not a Boolean algebra.
+        When we pass <c>P</c> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <c>P</c> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>P</c> is not a Boolean algebra.
     </p>
     <sage>
         <input>
             T = Subsets(['a', 'b', 'c'])
 
-            P = Poset((T, lambda x, y: x.issubset(y)))
+            Q = Poset((T, lambda x, y: x.issubset(y)))
 
-            P.plot(vertex_size=3500, border=True)
+            Q.plot(vertex_size=3500, border=True)
         </input>
     </sage>
     <sage>
         <input>
-            is_boolean_algebra(P)
+            is_boolean_algebra(Q)
         </input>
     </sage>
     <p>
