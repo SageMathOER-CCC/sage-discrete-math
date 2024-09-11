@@ -251,7 +251,7 @@
             </input>
         </sage>
         <p>
-            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function does not support non-hashable objects. 
+            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function does not support non-hashable objects.
         </p>
         <p>
             About hashable objects:
