@@ -24,7 +24,7 @@
             visualize the state machine, and simulate its execution in SageMath.</p>
     </introduction>
     <subsection>
-        <title>1. Define States and Transitions</title>
+        <title>Define States, Transitions and Outputs</title>
         <p> The first step is to define the states and transitions in the state machine. We can
             represent these using lists and dictionaries.
         </p>
@@ -54,18 +54,33 @@
                         'A0': 'S0'
                     }
                 }
+
+                # The machine output controls a locking mechanism that can be either LOCKED, or UNLOCKED
+                outputs = {
+                    'S0': 'LOCKED',
+                    'S1': 'LOCKED',
+                    'S2': 'LOCKED',
+                    'S3': 'UNLOCKED',
+                    'S4': 'UNLOCKED'
+                }
+
+                # Display the machine configuration
+                import json
+                print('States: ', states, '\n')
+                print('Transitions: ', json.dumps(transitions, indent=2), '\n')
+                print('Outputs: ', json.dumps(outputs, indent=2), '\n')
             </input>
             <output></output>
         </sage>
         <p>
-            The states are defined as vertices in the graph, and transitions are defined as directed
+            The states are defined as vertices in the graph, the transitions (along with the outputs) are defined as directed
             edges between these vertices.</p>
     </subsection>
     <subsection>
-        <title>2. Create a State Transition Graph</title>
-        <p> In SageMath, we can use the <c>DiGraph</c> class to represent the states and transitions
-            of the state machine as a directed graph, and use the graph structure to visualize the
-            state machine representation.</p>
+        <title>Create Graph Model of State Machine</title>
+        <p> In SageMath, we can use the <c>DiGraph</c> class to represent the states, transitions
+            and outputs of the state machine as a directed graph, and use the graph structure to
+            visualize the state machine representation.</p>
         <sage>
             <input>
                 # Import DiGraph from SageMath
@@ -77,16 +92,26 @@
                 # Add states as vertices
                 SM.add_vertices(states)
 
-                # Add transitions as edges
+                # Add transitions and outputs as edges
                 for state, transition in transitions.items():
+                    if outputs[state] == 'LOCKED':
+                        output = 'L'
+                    elif outputs[state] == 'UNLOCKED':
+                        output = 'U'
+                    else:
+                        output = '?'
+
                     for action, next_state in transition.items():
-                        SM.add_edge(state, next_state, label=action)
+                        edge_label = f"{action},{output}"
+                        SM.add_edge(state, next_state, label=edge_label)
+
+                SM.__repr__()
             </input>
             <output></output>
         </sage>
     </subsection>
     <subsection>
-        <title>3. Display the State Machine</title>
+        <title>Display the State Machine</title>
         <p>
             The <c>SM.show()</c> command renders a graphical representation of the state machine.
             Each vertex in the graph represents a state, and each directed edge represents a
@@ -100,7 +125,7 @@
         </sage>
     </subsection>
     <subsection>
-        <title>4. Run the State Machine</title>
+        <title>Run the State Machine</title>
         <p>
             Next, we can simulate the state machine's behavior by creating a function that
             processes a list of inputs and transitions through the states accordingly.</p>
