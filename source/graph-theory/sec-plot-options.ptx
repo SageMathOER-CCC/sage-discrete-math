@@ -1,5 +1,227 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec-plot-options" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Plot Options</title>
-    
+    <p>
+        The <c>show()</c> method displays the graphics object immediately with default settings. The <c>plot()</c> method accepts options for customizing the presentation of the graphics object. You can import more features from Matplotlib or <latex /> for fine-tuned customization options. Let's examine how the plotting options improve the presentation and help us discover insights into the structure and properties of a graph. The presentation of a Sage graphics object may differ depending on your environment.
+    </p>
+    <p>
+        Here is a graph that models the primary colors of the RGB color wheel:
+    </p>
+    <sage>
+        <input>
+            E = [
+                ('red', 'green'),
+                ('green', 'blue'),
+                ('blue', 'red')
+            ]
+
+            Graph(E).show()
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>vertex size</h></idx>
+    <p>
+        Increase the <c>vertex_size</c> to fit the vertex label.
+    </p>
+    <sage>
+        <input>
+            Graph(E).plot(vertex_size=1000).show()
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>figsize</h></idx>
+    <p>
+        Resolve the cropping by increasing the <c>figsize</c>. Specify a single number or a <c>[width, height]</c> list.
+    </p>
+    <sage>
+        <input>
+            Graph(E).plot(vertex_size=1000, figsize=10).show()
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>figsize</h></idx>
+    <p>
+        Increasing the <c>figsize</c> works well in a notebook environment. However, in a SageCell, a large <c>figsize</c> introduces scrolling. Setting <c>graph_border=True</c> is an alternate way to resolve the cropping while maintaining the size of the graph.
+    </p>
+    <sage>
+        <input>
+            Graph(E).plot(vertex_size=1000, graph_border=True).show()
+        </input>
+    </sage>
+    <p>
+        Let's add some edge labels:
+    </p>
+    <sage>
+        <input>
+            E = [
+                ('red', 'green', 'yellow'),
+                ('green', 'blue', 'cyan'),
+                ('blue', 'red', 'magenta')
+            ]
+
+            G = Graph(E).plot(
+                edge_labels=True,
+                vertex_size=1000,
+                graph_border=True
+            )
+            
+            G.show()
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>vertex color</h></idx>
+    <p>
+        There are various ways to set the <c>vertex_colors</c>, including hexadecimal, RGB, and color name. Hexadecimal and RGB offer greater flexibility for color names that Sage does not recognize. The color is the dictionary key and the vertex is the value.
+    </p> 
+    <sage>
+        <input>
+            set_vertex_colors = {
+                'red': ['red'],
+                'green': ['green'],
+                'blue': ['blue'],
+            }
+            
+            G = Graph(E).plot(
+                vertex_colors=set_vertex_colors,
+                edge_labels=True,
+                vertex_size=1000,
+                graph_border=True
+            )
+
+            G.show()
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>edge color</h></idx>
+    <p>
+        Now let's set the <c>edge_colors</c>:
+    </p>
+    <sage>
+        <input>
+            set_edge_colors = {
+                'yellow': [('red', 'green')],
+                'cyan': [('green', 'blue')],
+                'magenta': [('blue', 'red')]
+            }
+
+            G = Graph(E).plot(
+                edge_colors=set_edge_colors,
+                vertex_colors=set_vertex_colors,
+                edge_labels=True,
+                vertex_size=1000,
+                graph_border=True
+            )
+
+            G.show()
+        </input>
+    </sage>
+    <p>
+        Consider accessibility when setting colors on a graph. For example, the red and green on the above graph look indistinguishable to people with color blindness. If you are trying to contrast between two colors, Blue and Red are usually a safe bet. 
+    </p>
+    <p>
+        Let's examine the following graph. Evaluate this cell multiple times and notice the vertex positions are not consistent.
+    </p>
+    <sage>
+        <input>
+            N = [
+                ('g', 'b',),
+                ('g', 'd',),
+                ('g', 'f',),
+                ('b', 'd',),
+                ('b', 'f',),
+                ('d', 'f',),
+            ]
+
+            G = Graph(N)
+            
+            G.show()
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>layout</h></idx>
+    <p>
+        Setting the layout to <c>planar</c> ensures the lines are not overlapping. If the graph does not support a planar layout, Sage will return an error.
+    </p>
+    <sage>
+        <input>
+            G.plot(layout='planar').show()
+        </input>
+    </sage>
+    <p>
+        Sage's <c>planar</c> algorithm sets the vertex positions. Alteratively, we can set the positions in a dictionary. Let's set the position of the G node in the center.
+    </p>
+    <sage>
+        <input>
+            positions = {
+                'g': (0, 0),
+                'd': (-1, 1),
+                'b': (1, 1),
+                'f': (0, -1)
+            }
+            
+            G.plot(pos=positions).show()
+        </input>
+    </sage>
+    <p>
+        The following graph modeling the intervals in the C major scale is challenging to read. Let's think about how we can improve the presentation.
+    </p>
+    <sage>
+        <input>
+            I = [
+                ("c", "d", "M2"), ("c", "e", "M3"), ("c", "f", "P4"), ("c", "g", "P5"), ("c", "a", "M6"), ("c", "b", "M7"),
+                ("d", "e", "M2"), ("d", "f", "m3"), ("d", "g", "P4"), ("d", "a", "P5"), ("d", "b", "M6"), ("d", "c", "m7"),
+                ("e", "f", "m2"), ("e", "g", "m3"), ("e", "a", "P4"), ("e", "b", "P5"), ("e", "c", "m6"), ("e", "d", "m7"),
+                ("f", "g", "M2"), ("f", "a", "M3"), ("f", "b", "a4"), ("f", "c", "P5"), ("f", "d", "M6"), ("f", "e", "M7"),
+                ("g", "a", "M2"), ("g", "b", "M3"), ("g", "c", "P4"), ("g", "d", "P5"), ("g", "e", "M6"), ("g", "f", "m7"),
+                ("a", "b", "M2"), ("a", "c", "m3"), ("a", "d", "P4"), ("a", "e", "P5"), ("a", "f", "m6"), ("a", "g", "m7"), 
+                ("b", "c", "m2"), ("b", "d", "m3"), ("b", "e", "P4"), ("b", "f", "d5"), ("b", "g", "m6"), ("b", "a", "m7"),
+            ]
+
+            C = DiGraph(I, multiedges=True,)
+            
+            C.plot(edge_labels=True)
+        </input>
+    </sage>
+    <p>
+        In this case, the graph is incompatible with a planar layout. The <c>circular</c> layout organizes the vertices for improved readability.
+    </p>
+    <sage>
+        <input>
+            C.plot(edge_labels=True, layout='circular')
+        </input>
+    </sage>
+    <p>
+        Increasing the <c>figsize</c> improves the definition of the arrows. For an even better view of the Graph, right-click the image and view in a new tab.
+    </p>
+    <sage>
+        <input>
+            C.plot(
+                edge_labels=True,
+                layout='circular',
+                figsize=30
+            )
+        </input>
+    </sage>
+    <idx><h>graph plotting</h><h>edge style</h></idx>
+    <p>
+        The options for <c>edge_style</c> include <c>“solid”</c>, <c>“dashed”</c>, <c>“dotted”</c>, or <c>"dashdot”</c>.
+    </p>
+    <sage>
+        <input>
+            C.plot(
+                edge_style='dashed',
+                edge_labels=True,
+                layout='circular',
+                figsize=30
+            )
+        </input>
+    </sage>
+    <p>
+        Improve the definition between the edges by using a different color for each edge. The <c>color_by_label</c> method automatically maps the colors to edges.
+    </p>
+    <sage>
+        <input>
+            C.plot(
+                edge_style='dashed',
+                color_by_label=True,
+                edge_labels=True,
+                layout='circular',
+                figsize=30
+            )
+        </input>
+    </sage>
 </section>
