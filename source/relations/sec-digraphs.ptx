@@ -8,7 +8,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            Digraphs are essential in the modeling of computer networks where nodes represent computers or routers and directed edges represent the direction of data flow. This aids in understanding and optimizing network traffic and routing protocols.
+            Digraphs are essential in the modeling of computer networks, where nodes represent computers or routers, and directed edges represent the direction of data flow. This aids in understanding and optimizing network traffic and routing protocols, ensuring efficient and secure communication between devices. Network administrators can use digraphs to visualize and identify bottlenecks or vulnerabilities in the flow of information across the network, which helps in improving overall system performance.
         </p>
     </aside>
     <sage>
@@ -28,7 +28,7 @@
     <aside>
         <title>Real-world Application: Social Network Analysis</title>
         <p>
-            In social network analysis, digraphs are used to represent relationships where direction matters, such as Twitter followers or citations in academic papers. This helps in identifying influential users or key research papers.
+            In social network analysis, digraphs are used to represent relationships where direction matters, such as Twitter followers or citations in academic papers. A digraph helps identify influential users in social media platforms by visualizing who follows whom. In the academic world, citation digraphs reveal which research papers are most referenced, indicating key research influences. This helps researchers and analysts determine the impact and importance of users or documents within a network.
         </p>
     </aside>
     <sage>
@@ -52,7 +52,7 @@
     <aside>
         <title>Real-world Application: Systems Biology</title>
         <p>
-            Directed graphs are crucial in systems biology to model regulatory networks where nodes represent genes or proteins, and edges represent regulatory influences, helping to decode complex biological systems and interactions.
+            Directed graphs are crucial in systems biology, where they model regulatory networks. Nodes represent genes or proteins, and directed edges illustrate regulatory influences, such as how one gene activates or represses another. These models are fundamental for decoding complex biological systems and interactions, helping biologists understand genetic pathways, disease mechanisms, and potential therapeutic targets by analyzing how genes or proteins influence each other in biological processes.
         </p>
     </aside>
     <p>

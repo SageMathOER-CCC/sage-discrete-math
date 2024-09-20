@@ -51,6 +51,12 @@
         <p>
             A relation <m>R</m> is reflexive if <m>a</m> relates to <m>a</m> for all elements <m>a</m> in the set <m>A</m>. This means all the elements relate to themselves.
         </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Reflexive relations are critical in database design, particularly when modeling entity relationships. For example, when tracking employees within a company, a reflexive relation helps represent hierarchical structures where an employee can be related to themselves, such as through self-management or autonomous work groups. Reflexivity ensures the consistency of relationships within an organization’s internal structure, making sure all entities are correctly represented.
+            </p>  
+        </aside>
         <sage>
             <input>
                 A = Set([1, 2, 3])
@@ -94,6 +100,12 @@
         <p>
             A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>.
         </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Symmetric relations are essential in peer-to-peer networks where communication is bidirectional. For example, in file-sharing systems, if one user (node) can send data to another, the other must be able to return the favor, creating a symmetric relationship. This is crucial for load balancing and ensuring equitable resource distribution across the network, which improves efficiency and fairness in data exchanges between peers.
+            </p>  
+        </aside>
         <sage>
             <input>
                 def is_symmetric_set(relation_R):
@@ -128,6 +140,12 @@
         <p>
             When a relation is antisymmetric, the only case that <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>a</m> is when <m>a</m> and <m>b</m> are equal.
         </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Antisymmetric relations often appear in task scheduling systems where precedence is required. For example, if task A must precede task B, and B cannot precede A unless they are the same task, this creates an antisymmetric relationship. This property ensures that workflows are organized in a logical sequence, avoiding circular dependencies and ensuring smooth task execution, which is vital in project management and complex system operations.
+            </p>  
+        </aside>
         <sage>
             <input>
                 def is_antisymmetric_set(relation):
@@ -180,6 +198,12 @@
         <p>
             A relation is transitive if <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>c</m>, then <m>a</m> relates to <m>c</m>.
         </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Transitive relations are fundamental in supply chain management, where products move through different stages of production. If a component from supplier A is used in manufacturing a part by supplier B, and that part is then used by supplier C, transitivity ensures that the relation between A and C is maintained. This helps businesses track dependencies, optimize logistics, and ensure that the final product can be efficiently assembled from its components.
+            </p>  
+        </aside>
         <p>
             Let's define a function to check for the transitive property in a <c>Set</c>:
         </p>
