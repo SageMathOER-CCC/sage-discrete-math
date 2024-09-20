@@ -54,7 +54,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Reflexive relations are critical in database design, particularly when modeling entity relationships. For example, when tracking employees within a company, a reflexive relation helps represent hierarchical structures where an employee can be related to themselves, such as through self-management or autonomous work groups. Reflexivity ensures the consistency of relationships within an organization’s internal structure, making sure all entities are correctly represented.
+                Reflexive relations are super useful in database design, especially when you’re mapping out how things relate to themselves. For example, in a company, an employee might manage themselves or work in a way that doesn't need outside oversight. Reflexivity helps keep the structure consistent, making sure everyone and everything is represented properly in the system.
             </p>  
         </aside>
         <sage>
@@ -103,7 +103,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Symmetric relations are essential in peer-to-peer networks where communication is bidirectional. For example, in file-sharing systems, if one user (node) can send data to another, the other must be able to return the favor, creating a symmetric relationship. This is crucial for load balancing and ensuring equitable resource distribution across the network, which improves efficiency and fairness in data exchanges between peers.
+                Symmetric relations are really important in peer-to-peer networks, where both sides need to communicate equally. In file-sharing, for instance, if one user can send data to another, the other should be able to send data back. This creates a balanced relationship, which helps spread the load evenly and ensures resources are shared fairly across the network.
             </p>  
         </aside>
         <sage>
@@ -143,7 +143,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Antisymmetric relations often appear in task scheduling systems where precedence is required. For example, if task A must precede task B, and B cannot precede A unless they are the same task, this creates an antisymmetric relationship. This property ensures that workflows are organized in a logical sequence, avoiding circular dependencies and ensuring smooth task execution, which is vital in project management and complex system operations.
+                Antisymmetric relations pop up a lot in task scheduling. If Task A needs to happen before Task B, but B can’t happen before A (unless they’re the same task), that’s an antisymmetric relationship. This keeps workflows organized and ensures tasks get done in the right order, avoiding messy situations like circular dependencies that could slow everything down.
             </p>  
         </aside>
         <sage>
@@ -201,7 +201,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                If Company A supplies parts to Company B, and Company B uses those parts to create products for Company C, transitivity connects the dots. This helps businesses track where their materials come from and where they’re headed, making the whole process from raw materials to finished products more efficient.
+                Transitive relations are a big deal in supply chain management. Imagine supplier A provides parts to supplier B, and B uses those parts to make something that goes to supplier C. Transitivity helps maintain the connection between A and C, making sure that everything flows smoothly. It’s crucial for keeping track of dependencies and ensuring the production process runs efficiently from start to finish.
             </p>  
         </aside>
         <p>
