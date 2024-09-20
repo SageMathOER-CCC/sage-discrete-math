@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Understanding tautologies is fundamental in mathematical proof strategies, such as proof by contradiction.
+                Tautologies are essential in cybersecurity protocols, particularly in creating airtight security policies. For example, when setting firewall rules, tautologies can ensure that certain conditions, like blocking all traffic if no authentication is provided, always hold true. This guarantees that no matter how complex the rules get, the system will default to a secure state, helping prevent vulnerabilities from being exploited by potential attackers.
             </p>
         </aside>
         <sage>
