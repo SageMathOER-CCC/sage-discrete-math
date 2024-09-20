@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-extended-example" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
-    <title>Extended Example</title>
+    <title>FSM in Action</title>
     <introduction>
         <title>Controlling Traffic Lights and Pedestrian Crossing Signals</title>
         <p>
@@ -14,8 +14,9 @@
                     <p>
                         The traffic light prioritizes vehicle movement when no pedestrians are
                         present (reducing unnecessary stops and congestion). However, when a
-                        pedestrian presses the crosswalk button, the system ensures that vehicles
-                        slow down and come to a complete stop, allowing pedestrians to cross safely.</p>
+                        pedestrian presses the crosswalk button (on either side of the street),
+                        the system ensures that vehicles slow down and come to a complete stop,
+                        allowing pedestrians to cross safely.</p>
                 </li>
                 <li>
                     <p>
@@ -33,6 +34,14 @@
                     </p>
                 </li>
             </ul>
+        </p>
+        <figure>
+            <media>
+                <image source="finite-state-machines/intersection_2_ways.png" width="67%"/>
+            </media>
+            <caption>Simple street intersection</caption>
+        </figure>
+        <p>
             To tackle these requirements, a state machine-based traffic control system is installed.
             This system reacts to pedestrian inputs (pressing a crosswalk button) and to an internal
             automatic timer to regulate traffic flow.</p>
@@ -108,10 +117,14 @@
     </subsection>
     <subsection>
         <title>Solution</title>
-        <subsection>
+        <example>
             <title>Blueprints: States, Inputs and Outputs</title>
             <p>
                 <sage auto-evaluate="yes">
+                    <!-- TODO.
+                        long code snippet seems to overflow the page int he printed version,
+                        may need to break the code into smaller chunks.
+                    -->
                     <input>
                         # BLUEPRINTS
                         from dataclasses import dataclass
@@ -216,30 +229,36 @@
                     <output></output>
                 </sage>
             </p>
-        </subsection>
-        <subsection>
+        </example>
+        <example>
             <title>State Machine Engine</title>
             <p>
                 <sage auto-evaluate="yes">
                     <input>
+                        import json
                         class StateMachine:
                             """Generic StateMachine Engine to display and run a state-machine."""
 
                             def __init__(
                                 self,
                                 initial_state,
-                                transition_matrix,
+                                transitions_map,
                                 states_outputs
                             ):
                                 self.initial_state = initial_state
-                                self.transition_matrix = transition_matrix
+                                self.transitions_map = transitions_map
                                 self.states_outputs = states_outputs
+
+                            def __repr__(self):
+                                n_states = len(self.states_outputs)
+                                m_transitions = sum([len(_) for _ in self.transitions_map.values()])
+                                return f"StateMachine(nStates:{n_states}, mTransitions:{m_transitions}, initialState:{self.initial_state})"
 
                             def draw(self, plot):
                                 """Call the custom plotter for the state machine model/graph"""
                                 plot(
                                     initial_state=self.initial_state,
-                                    transition_matrix=self.transition_matrix,
+                                    transitions_map=self.transitions_map,
                                 )
 
                             def run(self, input_events):
@@ -263,9 +282,9 @@
 
                                     # new state
                                     next_state = (
-                                        self.transition_matrix[current_state][trigger_event]
-                                        if current_state in self.transition_matrix and
-                                        trigger_event in self.transition_matrix[current_state]
+                                        self.transitions_map[current_state][trigger_event]
+                                        if current_state in self.transitions_map and
+                                        trigger_event in self.transitions_map[current_state]
                                         else current_state
                                     )
                                     print(f"|{str(next_state):^7} ", end='')
@@ -283,8 +302,8 @@
                     <output></output>
                 </sage>
             </p>
-        </subsection>
-        <subsection>
+        </example>
+        <example>
             <title>Model Definition and Instantiation</title>
             <p>
                 <sage>
@@ -409,15 +428,17 @@
                         # Construct the SM
                         sm = StateMachine(
                             initial_state=s0,
-                            transition_matrix=event_and_state_transitions,
+                            transitions_map=event_and_state_transitions,
                             states_outputs=states_outputs,
                         )
+
+                        sm.__repr__()
                     </input>
                     <output></output>
                 </sage>
             </p>
-        </subsection>
-        <subsection>
+        </example>
+        <example>
             <title>Visualize the Finite State Machine Model</title>
             <p>
                 <sage>
@@ -426,21 +447,21 @@
 
                         def draw_crosswalk_and_traffic_light_state_machine(
                             initial_state,
-                            transition_matrix,
+                            transitions_map,
                         ):
                             # Initialize an empty directed graph
                             G = DiGraph(multiedges=True, loops=True)
 
                             # Build the SM graph/model
                             G.add_vertices(
-                                [state.tex for state in transition_matrix.keys()]
+                                [state.tex for state in transitions_map.keys()]
                             )
 
                             # Add the root/origin vertex/node
                             fr, to = (origin:=State()).tex, initial_state.tex
                             G.add_edge(fr, to, label='start')
 
-                            for state, transition in transition_matrix.items():
+                            for state, transition in transitions_map.items():
                                 fr = state.tex
                                 for event, next_state in transition.items():
                                     to = next_state.tex
@@ -463,7 +484,7 @@
 
                             # Display the StateMachine
                             G.show(
-                                figsize=[6, 6],
+                                figsize=[5.6, 5.6],
                                 layout='circular',
                                 vertex_size=200,
                                 edge_labels=True,
@@ -480,8 +501,8 @@
                     <output></output>
                 </sage>
             </p>
-        </subsection>
-        <subsection>
+        </example>
+        <example>
             <title>Running the State Machine (Simulation)</title>
             <p>
                 <sage>
@@ -507,6 +528,32 @@
                     <output></output>
                 </sage>
             </p>
-        </subsection>
+        </example>
     </subsection>
+    <conclusion>
+        <title>A More Challenging Example</title>
+        <p>
+            Similar to the previous use case, except that this time, we have a more complex 4-ways intersection,
+            with dedicated left-turn lanes controlled via left-arrow signal, in addition, we want to allow
+            right-turn-on-red while the left-turn signal is enabled for the other way. Both left and right turn
+            arrows have 3 distinct states that need to be managed and synchronized with the rest of signals,
+            inputs and timers.
+            <aside>
+                <title>Note</title>
+                <p>
+                    We can leverage the same model and blueprints defined earlier, and expand on the input
+                    events and triggers, as well as the different added outputs to be managed in this case.
+                </p>
+            </aside>
+        </p>
+        <figure>
+            <media>
+                <image source="finite-state-machines/intersection_4_ways.png" width="100%"/>
+            </media>
+            <caption>4-ways intersection with controlled left-turn lanes</caption>
+        </figure>
+        <p>
+            Once again, in the absence of pedestrians, we want to prioritize traffic movement. But also have
+            built-in transition buffer before allowing pedestrian crossing or resuming vehicles traffic.</p>
+    </conclusion>
 </section>

@@ -6,7 +6,7 @@
         <p> The defining feature of any abstract machine is its memory structure, ranging from a <em>
             finite</em> set of states in the case of finite-state machines to more complex memory
             systems (<em>Turing machines</em>).</p>
-        <p> A <term>Finite-State Machine</term> has an input device (that physically could represent
+        <p> A <term>Finite-State Machine (FSM)</term> has an input device (that physically could represent
             a tape, data stream, memory space ...etc), divided into segments, each holding an
             instruction symbol or a blank. This abstract machine also has a read head that scans the
             current symbol from the input alphabet <m>X</m>. After each read, the head always moves

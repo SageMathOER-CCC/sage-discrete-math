@@ -47,15 +47,15 @@
     <p permid="ewA">
       We would like to acknowledge the following peer-reviewers:
       <ul permid="ODI">
-        <li permid="uKR">
-          <p permid="EeD">
-            Ken Levasseur, University of Massachusetts Lowell
-          </p>
-        </li>
-
         <li permid="XXu">
           <p permid="hrg">
             Moty Katzman, University of Sheffield
+          </p>
+        </li> 
+        
+        <li permid="uKR">
+          <p permid="EeD">
+            Ken Levasseur, University of Massachusetts Lowell
           </p>
         </li>
 
@@ -70,10 +70,9 @@
     <p permid="ewA">
       We would like to acknowledge the following proof-readers:
       <ul permid="ODI">
-        <li permid="uKR">
-          <p permid="EeD">
-            Fabio Re, Rosalind Franklin University
-
+        <li permid="XXu">
+          <p permid="hrg">
+            Ted Jankowski, Wright College
           </p>
         </li>
 
@@ -85,7 +84,14 @@
 
         <li permid="XXu">
           <p permid="hrg">
-            Ted Jankowski, Wright College
+            Yolanda Nieves, Wright College
+          </p>
+        </li>
+
+        <li permid="uKR">
+          <p permid="EeD">
+            Fabio Re, Rosalind Franklin University
+
           </p>
         </li>
 
@@ -93,13 +99,7 @@
           <p permid="hrg">
             Tineka Scalzo, Wright College
           </p>
-        </li>
-
-        <li permid="XXu">
-          <p permid="hrg">
-            Yolanda Nieves, Wright College
-          </p>
-        </li>
+        </li> 
       </ul>
     </p>
   </acknowledgement>
