@@ -12,7 +12,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.
+                Factorials play a crucial role in machine learning, particularly in algorithms like Naive Bayes and Hidden Markov Models. These models use probabilities, and when dealing with large datasets, factorial calculations help in determining how different sequences of events or features might occur, especially when considering all possible permutations of events over time.
             </p>
         </aside>
         <p>
@@ -35,7 +35,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.
+                Combinations are frequently used in genetics to determine how traits are passed down from parents to offspring. For example, given a set of genes, combinations help calculate how many different ways a particular trait can be inherited by offspring. This has practical implications in predicting probabilities of diseases or genetic disorders in families.
             </p>
         </aside>
         <p>
@@ -68,7 +68,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.
+                Permutations are essential in cryptography, where the order of elements (such as characters in a password or keys) determines the strength of encryption. By understanding all possible permutations of a set of characters, cryptographers can estimate the complexity of breaking encryption algorithms, making systems more secure from attacks like brute-forcing.
             </p>
         </aside>
         <p>
