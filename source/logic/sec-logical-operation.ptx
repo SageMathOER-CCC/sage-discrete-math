@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
+                Logical operators like AND, OR, and NOT are at the heart of decision-making in AI and machine learning systems. Take an autonomous vehicle, for instance. The car uses these operators to process inputs from different sensors—such as speed, distance from obstacles, and road conditions—to make decisions. Whether it should brake, accelerate, or steer depends on how these inputs combine. These logical operations allow the vehicle to quickly analyze real-time data and make safe, efficient decisions on the fly.
             </p>
         </aside>
 

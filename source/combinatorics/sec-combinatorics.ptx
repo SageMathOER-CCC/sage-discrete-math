@@ -8,12 +8,6 @@
         <p>
             The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.
-            </p>
-        </aside>
         <p>
             Compute the factorial of <m>5</m>:
         </p>
@@ -33,7 +27,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.
+                Combinations come in handy in genetics, helping scientists figure out how traits get passed down from parents to kids. When you have a set of genes, combinations allow you to calculate how many different ways certain traits can be inherited. This is really useful for predicting the chances of diseases or genetic conditions showing up in a family.
             </p>
         </aside>
         <p>
@@ -74,7 +68,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.
+                In cryptography, permutations are key to making strong passwords or encryption systems. The order of characters or keys makes all the difference. By understanding how many different ways a set of characters can be arranged, cryptographers can measure how tough it would be for someone to crack the code using methods like brute force. The more permutations, the harder it is to break in, which keeps systems more secure.
             </p>
         </aside>
         <p>

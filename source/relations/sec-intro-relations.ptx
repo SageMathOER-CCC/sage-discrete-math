@@ -8,7 +8,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            In database management, relations model the connections between different entities (e.g., customers and orders). Each record in one table can relate to records in another, facilitating complex queries and data analytics essential for operational intelligence and decision making.
+            Relations are key in social networks—they're what model the connections between people. Take Facebook, for example: it uses relations to show who's friends with who (like someone from set A being friends with someone from set B). These connections form social graphs, which Facebook then analyzes to suggest new friends, groups, or content to keep you engaged and connected with others.
         </p>
     </aside>
     <p>
@@ -38,7 +38,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            In online shopping platforms, relations help personalize customer experiences. Products and user preferences can be modeled as sets, with relations based on past purchases or browsing history to recommend new products effectively.
+            In fashion retail, understanding the relationship between items like jackets and shirts helps create better recommendation systems. When companies know how people tend to pair clothing, they can suggest full outfits that work well together. It’s a great way to help customers visualize complete looks, making them more likely to buy items that fit their style and preferences.
         </p>
     </aside>
     <p>
@@ -64,12 +64,6 @@
             Set(C)
         </input>
     </sage>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Recommendation systems in services like streaming and e-commerce use relations to connect users to products or media they are likely to enjoy, based on similar user preferences and behaviors, enhancing user engagement and satisfaction.
-        </p>
-    </aside>
     <p>
         Since the Cartesian product returns all the possible combinations, some jackets and shirts will clash. Let's create a relation from jackets to shirts based on matching the items of clothing.
     </p>

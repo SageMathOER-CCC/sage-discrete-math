@@ -102,7 +102,7 @@
         <title>Notes</title>
 
         <p>
-            Organizations such as clubs, gyms, or online subscription services can use set membership checks to validate if a user is a member or subscriber. Set membership checks can help control access to facilities or content.
+            One well-known tool for this is the Bloom filter, a clever data structure used in systems like Google Bigtable. It quickly checks if something, like a URL, might be part of a set. While it can sometimes say something's in the set when it's not (a false positive), it will never miss something that's actually there (no false negatives). This makes Bloom filters great for high-speed searches in systems where memory is tight.
         </p>
         </aside>
         <sage>

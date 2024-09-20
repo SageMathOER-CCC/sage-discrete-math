@@ -49,7 +49,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.
+                when two companies merge their customer databases, the intersection of the two sets of customers can help identify shared users. This is crucial for ensuring that duplicate marketing communications are avoided, improving customer experience and reducing redundancy in data storage.
             </p>
         </aside>
         <sage>
@@ -81,7 +81,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                In a real-life context, this can be seen as identifying items on a restaurant menu (set A) that you have not yet tried (set B), with A - B representing the new dishes to explore.
+                In the world of e-commerce, difference operations are useful when comparing customer purchase histories. Imagine set A represents all items on sale, and set B contains the items you’ve already bought. The difference A - B shows all the sale items you haven’t purchased yet. This helps businesses recommend products more effectively by focusing on new, relevant items.
             </p>
         </aside>
         <sage>
@@ -146,7 +146,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                This is analogous to having a list of all possible ice cream flavors (U) and identifying those flavors you have yet to try (A').
+                In spam filtering, email servers use set complements to ensure only desired emails reach your inbox. Set U might represent all incoming emails, and set A could be the list of emails identified as spam. The complement, U - A, is the set of non-spam emails, ensuring you only receive the messages you want. This approach improves user experience and ensures efficiency in communication.
             </p>
         </aside>
         <sage>
@@ -178,7 +178,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                The Cartesian product is relevant in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
+                The Cartesian product finds practical application in product combinations for online retailers. Suppose a clothing store sells shirts and pants. By using the Cartesian product of available shirts and pants, the store can automatically generate all possible outfit combinations, helping customers visualize their options more easily when shopping for a complete outfit.
             </p>
         </aside>
         <sage>
@@ -205,7 +205,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
+                The concept of power sets is highly useful in cryptography and network security. When securing a system, administrators often need to analyze all possible combinations of access permissions (represented by subsets of available privileges). Understanding these subsets helps identify security weaknesses or over-privileged users, ensuring tighter control over sensitive data and reducing security vulnerabilities.
             </p>
         </aside>
         <title>Power Sets</title>
