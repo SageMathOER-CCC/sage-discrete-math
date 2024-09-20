@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Tautologies are essential in cybersecurity protocols, particularly in creating airtight security policies. For example, when setting firewall rules, tautologies can ensure that certain conditions, like blocking all traffic if no authentication is provided, always hold true. This guarantees that no matter how complex the rules get, the system will default to a secure state, helping prevent vulnerabilities from being exploited by potential attackers.
+                Tautologies are very helpful in cybersecurity, especially when you're setting up security policies. Let’s say you’re working on firewall rules—using a tautology makes sure that certain things always happen, like blocking all traffic if someone isn’t authenticated. This way, no matter how complicated the system gets, it’ll always default to a safe, secure state. It’s a smart way to make sure there aren’t any weak spots that hackers could take advantage of.
             </p>
         </aside>
         <sage>

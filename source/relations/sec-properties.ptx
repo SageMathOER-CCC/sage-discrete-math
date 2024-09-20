@@ -201,7 +201,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Transitive relations are fundamental in supply chain management, where products move through different stages of production. If a component from supplier A is used in manufacturing a part by supplier B, and that part is then used by supplier C, transitivity ensures that the relation between A and C is maintained. This helps businesses track dependencies, optimize logistics, and ensure that the final product can be efficiently assembled from its components.
+                If Company A supplies parts to Company B, and Company B uses those parts to create products for Company C, transitivity connects the dots. This helps businesses track where their materials come from and where they’re headed, making the whole process from raw materials to finished products more efficient.
             </p>  
         </aside>
         <p>

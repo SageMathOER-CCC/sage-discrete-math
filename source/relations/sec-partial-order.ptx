@@ -10,7 +10,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            Partial orders are widely used in task scheduling and project management. For example, tasks within a project may have dependencies where certain tasks must be completed before others can start. This creates a partial order where tasks are arranged based on their dependencies, but not all tasks are directly related. Using a Hasse diagram helps visualize these relationships, allowing project managers to plan efficiently by identifying critical tasks and ensuring the correct order of operations, ultimately improving workflow and preventing bottlenecks.
+            Partial orders are really useful in project management, especially when you're dealing with tasks that have dependencies. Some tasks need to be finished before others can start, but not everything is directly related. This creates a partial order, where you can see the order of tasks based on what depends on what. A Hasse diagram is a great way to visualize these relationships, making it easier for project managers to spot critical tasks and keep things moving smoothly. It helps make sure everything happens in the right order, avoiding any workflow slowdowns or bottlenecks.
         </p>
     </aside>
     <sage>

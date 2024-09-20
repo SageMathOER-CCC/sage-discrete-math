@@ -8,7 +8,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Truth tables are invaluable in network security, particularly for analyzing access control systems. Each input in a truth table can represent a security condition (e.g., user authentication, access rights, or resource availability). By mapping out all possible scenarios using truth tables, security engineers can ensure that systems only allow access under the right conditions, preventing unauthorized users from gaining entry while still allowing seamless access for legitimate users. This systematic approach is vital for maintaining the integrity of sensitive data in complex security infrastructures.
+                Truth tables are used in network security, especially when designing access control systems. Think of each input in a truth table as a condition that needs to be met—like user authentication, access rights, or whether a resource is available. By laying out all the possible combinations, security engineers can make sure that only the right people get access while blocking unauthorized users. It’s a clear and structured way to ensure that sensitive data stays safe, even in complex systems with a lot of moving parts.
             </p>
         </aside>
         <sage>

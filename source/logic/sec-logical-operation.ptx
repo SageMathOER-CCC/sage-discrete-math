@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Logical operators are essential in artificial intelligence and machine learning algorithms, particularly in decision-making systems. For example, in an autonomous vehicle, the car’s system uses AND, OR, and NOT gates to decide whether to brake, accelerate, or steer based on inputs from multiple sensors (like speed, distance from obstacles, or road conditions). The combination of these logical decisions ensures that the vehicle operates safely and efficiently by evaluating real-time data and making split-second choices.
+                Logical operators like AND, OR, and NOT are at the heart of decision-making in AI and machine learning systems. Take an autonomous vehicle, for instance. The car uses these operators to process inputs from different sensors—such as speed, distance from obstacles, and road conditions—to make decisions. Whether it should brake, accelerate, or steer depends on how these inputs combine. These logical operations allow the vehicle to quickly analyze real-time data and make safe, efficient decisions on the fly.
             </p>
         </aside>
         

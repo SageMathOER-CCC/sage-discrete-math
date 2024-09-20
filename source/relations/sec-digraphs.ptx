@@ -8,7 +8,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            Digraphs are essential in the modeling of computer networks, where nodes represent computers or routers, and directed edges represent the direction of data flow. This aids in understanding and optimizing network traffic and routing protocols, ensuring efficient and secure communication between devices. Network administrators can use digraphs to visualize and identify bottlenecks or vulnerabilities in the flow of information across the network, which helps in improving overall system performance.
+            Think of digraphs as maps that show how data flows between computers in a network. Each computer or router is like a city, and the roads between them show the direction of the data. By using digraphs, network engineers can see where the traffic jams are happening and fix them to make everything run smoothly. The same idea applies to social networks, like Twitter. For example, someone might follow you, but you don’t have to follow them back—that’s where the direction matters. Digraphs make it easy to see who the big influencers are. They even help researchers figure out how academic papers are connected by citations, which is useful for spotting groundbreaking research.
         </p>
     </aside>
     <sage>
@@ -28,7 +28,7 @@
     <aside>
         <title>Real-world Application: Social Network Analysis</title>
         <p>
-            In social network analysis, digraphs are used to represent relationships where direction matters, such as Twitter followers or citations in academic papers. A digraph helps identify influential users in social media platforms by visualizing who follows whom. In the academic world, citation digraphs reveal which research papers are most referenced, indicating key research influences. This helps researchers and analysts determine the impact and importance of users or documents within a network.
+            Digraphs come in handy when relationships have a clear direction, like who follows who on Twitter or how academic papers cite one another. By mapping these connections, digraphs make it easy to spot influential figures on social media—those who are followed by many, even if they don’t follow back. In the academic world, citation digraphs work similarly, showing which papers are referenced the most. This helps researchers figure out which studies have had the biggest impact and are considered key to the field.
         </p>
     </aside>
     <sage>
@@ -52,7 +52,7 @@
     <aside>
         <title>Real-world Application: Systems Biology</title>
         <p>
-            Directed graphs are crucial in systems biology, where they model regulatory networks. Nodes represent genes or proteins, and directed edges illustrate regulatory influences, such as how one gene activates or represses another. These models are fundamental for decoding complex biological systems and interactions, helping biologists understand genetic pathways, disease mechanisms, and potential therapeutic targets by analyzing how genes or proteins influence each other in biological processes.
+            In biology, digraphs help scientists figure out how genes or proteins interact with each other. Imagine each gene as a person and the edges as their interactions—whether they’re helping, hindering, or ignoring each other. This type of mapping is crucial when trying to understand which genes cause certain behaviors or diseases.
         </p>
     </aside>
     <p>

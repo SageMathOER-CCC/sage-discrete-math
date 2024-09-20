@@ -112,7 +112,7 @@
         <title>Notes</title>
 
         <p>
-            Bloom filter, a probabilistic data structure used in large-scale systems like Google Bigtable. A Bloom filter quickly checks if an element (such as a URL) is a potential member of a set. While it may sometimes give false positives, it never gives false negatives, making it ideal for high-speed, low-memory search applications.
+            One well-known tool for this is the Bloom filter, a clever data structure used in systems like Google Bigtable. It quickly checks if something, like a URL, might be part of a set. While it can sometimes say something’s in the set when it’s not (a false positive), it will never miss something that’s actually there (no false negatives). This makes Bloom filters great for high-speed searches in systems where memory is tight.
         </p>
         </aside>
         <sage>

@@ -8,7 +8,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            Relations are pivotal in social networks, where they model connections between users. For example, Facebook uses relations to represent friendships (a user from set A is friends with a user from set B). These relations form the foundation of social graphs, which are analyzed to recommend new friends, groups, or content, enhancing user engagement and building stronger connections within the platform.
+            Relations are key in social networks—they’re what model the connections between people. Take Facebook, for example: it uses relations to show who’s friends with who (like someone from set A being friends with someone from set B). These connections form social graphs, which Facebook then analyzes to suggest new friends, groups, or content to keep you engaged and connected with others.
         </p>
     </aside>
     <p>
@@ -38,7 +38,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            In fashion retail, relations between items like jackets and shirts help build recommendation engines. By understanding how customers typically combine clothing items, companies can suggest complete outfits that complement each other. This approach, powered by relations, increases the likelihood of purchases by helping customers visualize and create cohesive looks based on their shopping habits and preferences.
+            In fashion retail, understanding the relationship between items like jackets and shirts helps create better recommendation systems. When companies know how people tend to pair clothing, they can suggest full outfits that work well together. It’s a great way to help customers visualize complete looks, making them more likely to buy items that fit their style and preferences.
         </p>
     </aside>
     <p>
