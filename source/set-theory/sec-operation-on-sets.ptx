@@ -214,130 +214,36 @@
         <title>Power Sets</title>
         <idx><h>set operations</h><h>power set</h></idx>
         <p>
-            The power set of a set <m>R</m> is the set of all subsets of <m>R</m>, including the empty set and <m>R</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. We will demonstrate the use cases of both functions. While the <c>powerset()</c> function is more flexible, the <c>Subsets()</c> function is more user-friendly due to the built-in <c>Set</c> methods.
+            The power set of the set <m>V</m> is the set of all subsets, including the empty set <m> \{ \emptyset \} </m> and the set <m>V</m> itself. Sage offers several ways to create a power set including the <c>Subsets()</c> and <c>powerset()</c> functions. First, we will explore the the <c>Subsets()</c> function. The <c>Subsets()</c> function is more user-friendly due to the built-in <c>Set</c> methods. Next, we will examine some limitations of the <c>Subsets()</c> function. We introduce the <c>powerset()</c> function as an alternative for working with advanced sets not supported by <c>Subsets()</c>.
         </p>
         <p>
-            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here, we find the power set of the set of colors of the rainbow and view the subsets as a <c>list</c> where each element is a <c>Set</c>.
+            The <c>Subsets()</c> function returns all subsets of a finite set in no particular order. Here, we find the power set of the set of vowels and view the subsets as a <c>list</c> where each element is a <c>Set</c>.
         </p>
         <sage>
             <input>
-                R = Set(["red", "orange", "yellow", "green", "blue", "indigo", "violet"])
-                S = Subsets(R)
+                V = Set(["a", "e", "i", "o", "u"])
+                S = Subsets(V)
                 list(S)
             </input>
         </sage>
         <p>
-            Viewing all the subsets at once can be overwhelming when a power set contains many elements. We can specify a range of elements with a technique called slicing. For example, here are the first 5 elements of the power set.
-        </p>
-        <sage>
-            <input>
-                S.list()[:5]
-            </input>
-        </sage>
-        <p>
-            Now, let's retrieve the next 5 elements of the power set.
-        </p>
-        <sage>
-            <input>
-                # Slicing to get elements from index 5 to 9
-                S.list()[5:10]
-            </input>
-        </sage>
-        <p>
-            We can also use a generator expression with the <c>next</c> method to iterate through the elements of the power set one by one.
-        </p>
-        <sage>
-            <input>
-                it = (subset for subset in S)
-                next(it)
-            </input>
-        </sage>
-        <p>
-            Continuing to call the <code>next</code> method allows us to view subsequent elements of the power one by one. After iterating through all the batches, the generator raises a <c>StopIteration</c> error.
-        </p>
-        <sage>
-            <input>
-                next(it)
-            </input>
-        </sage>
-        <p>
-            Instead of iterating through subsets one at a time, we can iterate through the power set in batches.
-        </p>
-        <program>
-            <input>
-                def get_subsets_batches(power_set, batch_size):
-                    """
-                    Generate subsets from a power set in batches.
-
-                    INPUT:
-                    - `power_set` -- iterable; the power set, with each element being a subset.
-                    - `batch_size` -- positive integer; the size of each batch to yield.
-
-                    OUTPUT:
-                    - A generator yielding batches of subsets from the power set.
-                    - A message indicating all batches have been processed.
-                    """
-            </input>
-        </program>
-        <sage>
-            <input>
-                def get_subsets_batches(power_set, batch_size):
-                    iterator = iter(power_set)
-                    batch = []
-
-                    while True:
-                        for _ in range(batch_size):
-                            try:
-                                subset = next(iterator)  # Get the next subset from the iterator
-                                batch.append(subset)  # Add the subset to the current batch
-                            except StopIteration:
-                                # No more elements to iterate; yield the last batch if it is not empty
-                                if batch:
-                                    yield batch
-                                yield "All batches processed."
-                                return
-
-                        yield batch  # Yield the completed batch
-                        batch = []  # Reset the batch for the next iteration
-            </input>
-        </sage>
-        <sage>
-            <input>
-                batch_size = 50
-                subset_batches = get_subsets_batches(S, batch_size)
-                next(subset_batches)
-            </input>
-        </sage>
-        <sage>
-            <input>
-                next(subset_batches)
-            </input>
-        </sage>
-        <sage>
-            <input>
-                next(subset_batches)
-            </input>
-        </sage>
-        <sage>
-            <input>
-                next(subset_batches)
-            </input>
-        </sage>
-        <p>
-            We can confirm that the power set includes the empty set and the set itself.
+            We can confirm that the power set includes the empty set.
         </p>
         <sage>
             <input>
                 Set([]) in S
             </input>
         </sage>
+        <p>
+            We can also confirm that the power set includes the original set.
+        </p>
         <sage>
             <input>
-                R in S
+                V in S
             </input>
         </sage>
         <p>
-            We can find the total number of subsets with <c>cardinality()</c> method.
+            The <c>cardinality()</c> method returns the total number of subsets.
         </p>
         <sage>
             <input>
@@ -345,15 +251,7 @@
             </input>
         </sage>
         <p>
-            We can retrieve a random element from the power set with the <c>random_element()</c> method.
-        </p>
-        <sage>
-            <input>
-                S.random_element()
-            </input>
-        </sage>
-        <p>
-            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function returns sets that often include non-hashable objects.
+            There are limitations to the <c>Subsets()</c> function. For example, the <c>Subsets()</c> function does not support non-hashable objects.
         </p>
         <p>
             About hashable objects:
@@ -391,7 +289,7 @@
         <sage>
             <input>
                 N = [1, [2, 3], 4]
-                Subsets(N).list() 
+                Subsets(N) 
             </input>
         </sage>
         <p>
@@ -436,7 +334,113 @@
             </input>
         </sage>
         <p>
-            Pay close attention to the capitalization of function names. Notice the lowercase <c>s</c> in <c>subsets()</c>, which is an alias for <c>powerset()</c>.
+            Pay close attention to the capitalization of function names. There is a difference between the functions <c>Subsets()</c> and <c>subsets()</c>. Notice the lowercase <c>s</c> in <c>subsets()</c>, which is an alias for <c>powerset()</c>.
         </p>
+    </subsection>
+    <subsection xml:id="subsec-Viewing-Power-Sets">
+        <title>Viewing Power Sets</title>
+        <p>
+            Power sets can contain many elements. The powerset of the set <m>R</m> contains elements <m>128</m> elements.
+        </p>
+        <sage>
+            <input>
+                R = Set(["red", "orange", "yellow", "green", "blue", "indigo", "violet"])
+                S = Subsets(R)
+                S.cardinality()
+            </input>
+        </sage>
+        <p>
+            If we only want to view part of the power set, we can specify a range of elements with a technique called slicing. For example, here are the first 5 elements of the power set.
+        </p>
+        <sage>
+            <input>
+                S.list()[:5]
+            </input>
+        </sage>
+        <p>
+            Now, let's retrieve the following 5 elements of the power set.
+        </p>
+        <sage>
+            <input>
+                # Slicing to get elements from index 5 to 9
+                S.list()[5:10]
+            </input>
+        </sage>
+        <p>
+            We can also use a generator expression with the <c>next</c> method to iterate through the elements of the power set one by one.
+        </p>
+        <sage>
+            <input>
+                it = (subset for subset in S)
+                next(it)
+            </input>
+        </sage>
+        <p>
+            Continuing to call the <code>next</code> method allows us to view subsequent elements of the power one by one. Every time you reevaluate the cell below, you will return the next iteration. Try running the below cell multiple times. After iterating through all the batches, the generator raises a <c>StopIteration</c> error.
+        </p>
+        <sage>
+            <input>
+                next(it)
+            </input>
+        </sage>
+        <p>
+            Instead of iterating through subsets one at a time, we can iterate through the power set in batches.
+        </p>
+        <sage>
+            <input>
+                def get_subsets_batches(power_set, batch_size):
+                    """
+                    Generate subsets from a power set in batches.
+
+                    INPUT:
+                    - `power_set` -- iterable; the power set, with each element being a subset.
+                    - `batch_size` -- positive integer; the size of each batch to yield.
+
+                    OUTPUT:
+                    - A generator yielding batches of subsets from the power set.
+                    - A message indicating all batches are processed.
+                    """
+
+                    iterator = iter(power_set)
+                    batch = []
+
+                    while True:
+                        for _ in range(batch_size):
+                            try:
+                                subset = next(iterator)  # Get the next subset from the iterator
+                                batch.append(subset)  # Add the subset to the current batch
+                            except StopIteration:
+                                # No more elements to iterate; yield the last batch if it is not empty
+                                if batch:
+                                    yield batch
+                                yield "All batches processed."
+                                return
+
+                        yield batch  # Yield the completed batch
+                        batch = []  # Reset the batch for the next iteration
+            </input>
+        </sage>
+        <sage>
+            <input>
+                batch_size = 50
+                subset_batches = get_subsets_batches(S, batch_size)
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
+        <sage>
+            <input>
+                next(subset_batches)
+            </input>
+        </sage>
     </subsection>
 </section>
