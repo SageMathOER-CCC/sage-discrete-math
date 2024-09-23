@@ -3,16 +3,16 @@
 <section xml:id="search-algorithms" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Search Algorithms</title><idx><h>search algorithms</h></idx>
     <p>
-      The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
+        The graph <m>G' = (V', E')</m> is a <term>subgraph</term> of <m>G = (V, E)</m> if <m>V' \subseteq V</m> and <m>E' \subseteq \{\{u, v\} \in E \ |\ u, v \in V'\}</m>.
     </p>
     <idx><h>subgraph</h></idx>
     <idx><h>spanning subgraph</h></idx>
     <idx><h>spanning tree</h></idx>
     <p>
-      The subgraph <m>G' = (V', E')</m> is a <term>spanning subgraph</term> of <m>G = (V, E)</m> if <m>V' = V</m>.
+        The subgraph <m>G' = (V', E')</m> is a <term>spanning subgraph</term> of <m>G = (V, E)</m> if <m>V' = V</m>.
     </p>
     <p>
-      A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
+        A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
     </p>
     <p>
         Given a graph, various algorithms can calculate a spanning tree, including depth-first search and breadth-first search.
