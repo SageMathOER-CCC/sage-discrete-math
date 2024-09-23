@@ -10,9 +10,9 @@
     <sage>
         <input>
             E = [
-                ('red', 'green'),
-                ('green', 'blue'),
-                ('blue', 'red')
+                ('r', 'g'),
+                ('g', 'b'),
+                ('b', 'r')
             ]
 
             Graph(E).show()
@@ -20,7 +20,7 @@
     </sage>
     <idx><h>graph plotting</h><h>vertex size</h></idx>
     <p>
-        Increase the <c>vertex_size</c> to fit the vertex label.
+        Let's increase the <c>vertex_size</c>:
     </p>
     <sage>
         <input>
@@ -51,15 +51,13 @@
     <sage>
         <input>
             E = [
-                ('red', 'green', 'yellow'),
-                ('green', 'blue', 'cyan'),
-                ('blue', 'red', 'magenta')
+                ('r', 'g', 'yellow'),
+                ('g', 'b', 'cyan'),
+                ('b', 'r', 'magenta')
             ]
 
             G = Graph(E).plot(
                 edge_labels=True,
-                vertex_size=1000,
-                graph_border=True
             )
             
             G.show()
@@ -67,21 +65,41 @@
     </sage>
     <idx><h>graph plotting</h><h>vertex color</h></idx>
     <p>
-        There are various ways to set the <c>vertex_colors</c>, including hexadecimal, RGB, and color name. Hexadecimal and RGB offer greater flexibility for color names that Sage does not recognize. The color is the dictionary key and the vertex is the value.
-    </p> 
+        There are various ways to set <c>vertex_colors</c>, including hexadecimal, RGB, and color name. Hexadecimal and RGB offer greater flexibility for color names that Sage does not recognize. The color is the dictionary key, and the vertex is the value.
+    </p>
+    <p>
+        The following example uses <c>(R,G,B)</c> set the color. Color the vertex <c>r</c> red by setting the first element in the <c>(R,G,B)</c> tuple at full intensity with a value of <c>1</c>. Next ensure vertex <c>r</c> contains no green or blue light by setting the remaining tuple elements to <c>0</c>.
+    </p>
     <sage>
         <input>
             set_vertex_colors = {
-                'red': ['red'],
-                'green': ['green'],
-                'blue': ['blue'],
+                (1,0,0): ['r'], # Color vertex `r` all red
+                (0,1,0): ['g'], # Color vertex `g` all green
+                (0,0,1): ['b'] # Color vertex `b` all blue
             }
             
             G = Graph(E).plot(
                 vertex_colors=set_vertex_colors,
                 edge_labels=True,
-                vertex_size=1000,
-                graph_border=True
+            )
+
+            G.show()
+        </input>
+    </sage>
+    <p>
+        The following example sets the color by name instead of <c>(R,G,B)</c> value.
+    </p>
+    <sage>
+        <input>
+            set_vertex_colors = {
+                'red': ['r'],
+                'green': ['g'],
+                'blue': ['b']
+            }
+            
+            G = Graph(E).plot(
+                vertex_colors=set_vertex_colors,
+                edge_labels=True,
             )
 
             G.show()
@@ -89,29 +107,47 @@
     </sage>
     <idx><h>graph plotting</h><h>edge color</h></idx>
     <p>
-        Now let's set the <c>edge_colors</c>:
+        Let's set the <c>edge_colors</c> with <c>(R,G,B)</c> values. The edge from vertex <c>r</c> to vertex <c>g</c> is yellow because the <c>(R,G,B)</c> tuple sets red and green light at full intensity with no blue light.
     </p>
     <sage>
         <input>
             set_edge_colors = {
-                'yellow': [('red', 'green')],
-                'cyan': [('green', 'blue')],
-                'magenta': [('blue', 'red')]
+                (1,1,0): [('r', 'g')],
+                (0,1,1): [('g', 'b')],
+                (1,0,1): [('b', 'r')]
             }
 
             G = Graph(E).plot(
                 edge_colors=set_edge_colors,
                 vertex_colors=set_vertex_colors,
                 edge_labels=True,
-                vertex_size=1000,
-                graph_border=True
             )
 
             G.show()
         </input>
     </sage>
     <p>
-        Consider accessibility when setting colors on a graph. For example, the red and green on the above graph look indistinguishable to people with color blindness. If you are trying to contrast between two colors, Blue and Red are usually a safe bet. 
+        This alternate method identifies the color by name instead:
+    </p>
+    <sage>
+        <input>
+            set_edge_colors = {
+                'yellow': [('r', 'g')],
+                'cyan': [('g', 'b')],
+                'magenta': [('b', 'r')]
+            }
+
+            G = Graph(E).plot(
+                edge_colors=set_edge_colors,
+                vertex_colors=set_vertex_colors,
+                edge_labels=True,
+            )
+
+            G.show()
+        </input>
+    </sage>
+    <p>
+        Consider accessibility when setting colors on a graph. For example, the red and green on the above graph look indistinguishable to people with color blindness. Blue and Red are usually a safe bet for contrasting two colors. 
     </p>
     <p>
         Let's examine the following graph. Evaluate this cell multiple times and notice the vertex positions are not consistent.
@@ -124,7 +160,7 @@
                 ('g', 'f',),
                 ('b', 'd',),
                 ('b', 'f',),
-                ('d', 'f',),
+                ('d', 'f',)
             ]
 
             G = Graph(N)
@@ -134,7 +170,7 @@
     </sage>
     <idx><h>graph plotting</h><h>layout</h></idx>
     <p>
-        Setting the layout to <c>planar</c> ensures the lines are not overlapping. If the graph does not support a planar layout, Sage will return an error.
+        The <c>planar</c> layout ensures the lines are not overlapping. Sage will return an error if the graph does not support a planar layout.
     </p>
     <sage>
         <input>
@@ -142,7 +178,7 @@
         </input>
     </sage>
     <p>
-        Sage's <c>planar</c> algorithm sets the vertex positions. Alteratively, we can set the positions in a dictionary. Let's set the position of the G node in the center.
+        Sage's <c>planar</c> algorithm sets the vertex positions. Alternatively, we can set the positions in a dictionary. Let's set the position of the G node in the center.
     </p>
     <sage>
         <input>
@@ -173,7 +209,7 @@
 
             C = DiGraph(I, multiedges=True,)
             
-            C.plot(edge_labels=True)
+            C.plot(edge_labels=True).show()
         </input>
     </sage>
     <p>
@@ -185,7 +221,7 @@
         </input>
     </sage>
     <p>
-        Increasing the <c>figsize</c> improves the definition of the arrows. For an even better view of the Graph, right-click the image and view in a new tab.
+        Increasing the <c>figsize</c> improves the definition of the arrows. For an even better view of the Graph, right-click the image and view it in a new tab.
     </p>
     <sage>
         <input>
@@ -193,7 +229,7 @@
                 edge_labels=True,
                 layout='circular',
                 figsize=30
-            )
+            ).show()
         </input>
     </sage>
     <idx><h>graph plotting</h><h>edge style</h></idx>
@@ -207,7 +243,7 @@
                 edge_labels=True,
                 layout='circular',
                 figsize=30
-            )
+            ).show()
         </input>
     </sage>
     <p>
@@ -221,7 +257,40 @@
                 edge_labels=True,
                 layout='circular',
                 figsize=30
-            )
+            ).show()
+        </input>
+    </sage>
+    <p>
+        View a 3D representation of graph with <c>show3d()</c>. Click and drag the image to change the perspective. Zoom in on the image by pinching your computer's touch pad.
+    </p>
+    <sage>
+        <input>
+            G = graphs.CubeGraph(3)
+            G.show3d()
+        </input>
+    </sage>
+    <sage>
+        <input>
+            G = graphs.TetrahedralGraph()
+            G.show3d()
+        </input>
+    </sage>
+    <sage>
+        <input>
+            G = graphs.IcosahedralGraph()
+            G.show3d()
+        </input>
+    </sage>
+    <sage>
+        <input>
+            G = graphs.DodecahedralGraph()
+            G.show3d()
+        </input>
+    </sage>
+    <sage>
+        <input>
+            G = graphs.CompleteGraph(5)
+            G.show3d()
         </input>
     </sage>
 </section>
