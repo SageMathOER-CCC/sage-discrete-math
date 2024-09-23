@@ -15,7 +15,7 @@
       A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
     </p>
     <p>
-        Given a graph, there are several algorithms to calculate a spanning tree. For instance the depth-first search algorithm and the breadth-first search algorithm are two of them.
+        Given a graph, various algorithms can calculate a spanning tree, including depth-first search and breadth-first search.
     </p>
     <idx><h>Breadth-first search</h></idx>
     <p>
@@ -23,7 +23,7 @@
         <ol>
             <li>
                 <p>
-                    Choose a vertex of the graph (root), arbitrarily.
+                    Choose a vertex of the graph (root) arbitrarily.
                 </p>
             </li>
             <li>
@@ -48,17 +48,14 @@
             </li>
             <li>
                 <p>
-                    Follow the same procedure until all the vertices have been visited.
+                    Follow the same procedure until all the vertices are visited.
                 </p>
             </li>
         </ol>
         The output of this algorithm is a spanning tree.
     </p>
     <p>
-        The <c>breadth_first_search()</c> function provides a flexible method for traversing graphs. This function can be employed to explore a graph from a specified starting point (or points) and can be adapted for various applications such as finding the shortest path, generating a spanning tree, or simply exploring the structure of a graph.
-    </p>
-    <p>
-        Let's consider the following graph:
+        The <c>breadth_first_search()</c> function provides a flexible method for traversing graphs. Let's consider the following graph:
     </p>
     <sage>
         <input>
@@ -68,15 +65,15 @@
         </input>
     </sage>
     <p>
-        In this example, the breadth-first search algorithm function is initiated at vertex <m>0</m>, and it reports the length of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its length from the starting vertex. This length is measured in terms of the number of edges that must be traversed to reach that vertex from the start.
+        In the example above, the breadth-first search algorithm function starts at vertex <c>0</c>, and reports the length of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its length from the starting vertex.
     </p>
     <idx><h>minimal spanning tree</h></idx>
     <p>
-        Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. There are several algorithms to calculate a minimal spanning tree including Prim's Algorithm.
+        Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. Prim's Algorithm calculates a minimal spanning tree including.
     </p>
     <idx><h>Prim's algorithm</h></idx>
     <p>
-        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growing spanning tree and the other <m>(R)</m> that are not in the growing spanning tree.
+        <term>Prim's Algorithm</term>: Keep two disjoint sets of vertices. One <m>(L)</m> contains vertices that are in the growing spanning tree, and the other <m>(R)</m> that are not in the growing spanning tree.
         <ol>
             <li>
                 <p>
@@ -85,7 +82,7 @@
             </li>
             <li>
                 <p>
-                    Select the cheapest vertex in <m>R</m> that is connected to the growing spanning tree <m>L</m> and add it into <m>L</m>
+                    In <m>R</m>, select the cheapest vertex connected to the growing spanning tree <m>L</m> and add it to <m>L</m>
                 </p>
             </li>
             <li>
@@ -97,9 +94,8 @@
         The output of this algorithm is a minimal spanning tree.
     </p>
     <p>
-        Let's explore the following graph:
+        Let's examine the following graph:
     </p>
-
     <sage>
         <input>
             G = Graph({1:{3:8, 5:1}, 2:{3:6, 4:4}, 3:{5:2}, 4:{1:5, 3:4}})
@@ -109,7 +105,7 @@
     <aside>
         <title>Notes</title>
         <p>
-            Spanning trees are crucial in network design, ensuring that all nodes are connected without any cycles, minimizing the overall layout cost while maintaining network connectivity. Prim's algorithm, in particular, is vital in constructing efficient road, electrical, and computer networks.
+            Spanning trees influence network design, ensuring all nodes are connected without any cycles, minimizing the overall layout cost while maintaining network connectivity. Prim's algorithm determines efficient road, electrical, and computer networks.
         </p>
     </aside>
     <p>
@@ -127,6 +123,101 @@
         <input>
             h = Graph(G.min_spanning_tree(by_weight=True))
             h.show(edge_labels = True)
+        </input>
+    </sage>
+    <p>
+        Let's define a function to view the minimal spanning tree in the context of the original graph. The function parameters include:
+        <ul>
+            <li>
+                <p>
+                    <c>graph</c>: A SageMath Graph object.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>mst_color</c>: Color for edges part of the MST (default: <c>'darkred'</c>).
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>non_mst_color</c>: Color for edges not part of the MST (default: <c>'lightblue'</c>).
+                </p>
+            </li>
+            <li>
+                <p>
+                    <c>figsize</c>: Dimensions for the graph image.
+                </p>
+            </li>
+        </ul>
+    </p>
+    <sage>
+        <input>
+            def visualize_mst(input_graph, mst_color='darkred', non_mst_color='lightblue', figsize=None):
+                try:
+                    if not input_graph.is_connected():
+                        print("The graph must be connected")
+                        return
+
+                    mst_edges = input_graph.min_spanning_tree(by_weight=True)
+                    print("MST Edges:", mst_edges)
+                    Graph(mst_edges).show(edge_labels=True, figsize=figsize, edge_color=mst_color)
+
+                    edge_colors = {mst_color: [], non_mst_color: []}
+
+                    mst_edge_set = set((v1, v2) for v1, v2, _ in mst_edges)
+                    
+                    for edge in input_graph.edges():
+                        v1, v2, _ = edge
+                        if (v1, v2) in mst_edge_set or (v2, v1) in mst_edge_set:
+                            edge_colors[mst_color].append((v1, v2))
+                        else:
+                            edge_colors[non_mst_color].append((v1, v2))
+                    
+                    print("MST overlaid on the original graph:")
+                    p = input_graph.plot(edge_labels=True, edge_colors=edge_colors, figsize=figsize)
+                    show(p)
+
+                except Exception as e:
+                    print("Error:", e)
+        </input>
+    </sage>
+    <p>
+        Let's generate a random graph and view the minimal spanning tree.
+    </p>
+    <sage>
+        <input>
+            import random
+
+            vertices = 5
+            G = Graph([(i, j, random.randint(1, 20)) for i in range(vertices) for j in range(i+1, vertices)])
+
+            visualize_mst(G)
+        </input>
+    </sage>
+    <p>
+        The following graph contains 9 vertices.
+    </p>
+    <sage>
+        <input>
+            import random
+
+            vertices = 9
+            G = Graph([(i, j, random.randint(1, 20)) for i in range(vertices) for j in range(i+1, vertices)])
+
+            visualize_mst(G, figsize=10)
+        </input>
+    </sage>
+    <p>
+        The following graph contains 15 vertices.
+    </p>
+    <sage>
+        <input>
+            import random
+
+            vertices = 15
+            G = Graph([(i, j, random.randint(1, 20)) for i in range(vertices) for j in range(i+1, vertices)])
+
+            visualize_mst(G, figsize=10)
         </input>
     </sage>
 </section>
