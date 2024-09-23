@@ -13,17 +13,8 @@
         <sage>
         <input>
             M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            M
+            show(M)
         </input>
-        </sage>
-        <p>
-            Use a <c>for</c> loop to view each element of the set on a new line.
-        </p>
-        <sage>
-            <input>
-                for month in M:
-                    print(month)
-            </input>
         </sage>
         <p>
             Notice that the months in set <m>M</m> do not appear in the same order as when you created the set. Sets are unordered collections of elements.
@@ -94,8 +85,7 @@
             W = Set(["Sun", "Cloud", "Rain", "Snow", "Tornado", "Hurricane"])
             subsets_of_weather = Subsets(W)
 
-            for subset in subsets_of_weather:
-                print(subset)
+            subsets_of_weather.list()
         </input>
         </sage>
     </subsection>

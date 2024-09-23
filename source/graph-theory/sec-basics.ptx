@@ -126,7 +126,7 @@
         <idx><h>graphs</h><h>weighted</h></idx>
         <p>
             A <term>weighted graph</term> has a weight, or number, associated with each edge.
-            These weights can model anything including represent distances, costs, or other relevant quantities.
+            These weights can model anything including distances, costs, or other relevant quantities.
         </p>
 
         <p>
@@ -279,7 +279,7 @@
 
         <idx><h>graphs</h><h>add vertex</h></idx>
         <p>
-            To add a vertex to a graph:
+            Add a vertex to a graph:
         </p>
         <sage>
         <input>
@@ -289,7 +289,7 @@
         </input>
         </sage>
         <p>
-            To add a list of vertices:
+            Add a list of vertices:
         </p>
         <sage>
         <input>
@@ -299,7 +299,7 @@
         </sage>
         <idx><h>graphs</h><h>remove vertex</h></idx>
         <p>
-            To remove a vertex from a graph:
+            Remove a vertex from a graph:
         </p>
         <sage>
         <input>
@@ -307,9 +307,18 @@
             G.show()
         </input>
         </sage>
+        <p>
+            Remove a list of vertices from a graph:
+        </p>
+        <sage>
+        <input>
+            G.delete_vertices([5,10,11])
+            G.show()
+        </input>
+        </sage>
         <idx><h>graphs</h><h>add edge</h></idx>
         <p>
-            To add an edge between two vertices:
+            Add an edge between two vertices:
         </p>
         <sage>
         <input>
@@ -319,7 +328,7 @@
         </sage>
         <idx><h>graphs</h><h>delete vertex</h></idx>
         <p>
-            To delete an edge from a graph:
+            Delete an edge from a graph:
         </p>
         <sage>
         <input>
