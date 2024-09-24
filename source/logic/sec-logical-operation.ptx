@@ -7,37 +7,37 @@
     <idx><h>logical operators</h><h>biconditional</h></idx>
     <introduction>
         <p>
-            In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
+            In Sage, the logical operators are AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c>.
         </p>
         <tabular>
             <row>
-                <cell>Operator</cell>
-                <cell>Symbol</cell>
+                <cell>Name</cell>
+                <cell>Sage Operator</cell>
                 <cell>Mathematical Notation</cell>
             </row>
             <row>
                 <cell>AND</cell>
-                <cell>&amp;</cell>
+                <cell><c>&amp;</c></cell>
                 <cell><m>\land</m></cell>
             </row>
             <row>
                 <cell>OR</cell>
-                <cell>|</cell>
+                <cell><c>|</c></cell>
                 <cell><m>\lor</m></cell>
             </row>
             <row>
                 <cell>NOT</cell>
-                <cell>~</cell>
+                <cell><c>~</c></cell>
                 <cell><m>\lnot</m></cell>
             </row>
             <row>
                 <cell>Conditional</cell>
-                <cell>-&gt;</cell>
+                <cell><c>-&gt;</c></cell>
                 <cell><m>\rightarrow</m></cell>
             </row>
             <row>
                 <cell>Biconditional</cell>
-                <cell>&lt;-&gt;</cell>
+                <cell><c>&lt;-&gt;</c></cell>
                 <cell><m>\leftrightarrow</m></cell>
             </row>
         </tabular>
@@ -61,9 +61,6 @@
                 A = propcalc.formula('(p &amp; q) | (~p)')
                 show(A)
             </input>
-            <output>
-                # Displays the Boolean formula (p AND q) OR (NOT p) in mathematical notation.
-            </output>
         </sage>
     </subsection>
 
