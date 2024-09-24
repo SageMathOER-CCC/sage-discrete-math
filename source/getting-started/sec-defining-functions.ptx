@@ -68,39 +68,39 @@
       def pascal_row(n):
           r"""
           Return row `n` of Pascal's triangle.
-      
+
           INPUT:
-      
-          - ``n`` -- non-negative integer; the row number of Pascal's triangle to return. 
+
+          - ``n`` -- non-negative integer; the row number of Pascal's triangle to return.
             The row index starts from 0, which corresponds to the top row.
-      
+
           OUTPUT: list; row `n` of Pascal's triangle as a list of integers.
-      
+
           EXAMPLES:
-      
+
           This example illustrates how to get various rows of Pascal's triangle (0-indexed) ::
-      
+
               sage: pascal_row(0)  # the top row
               [1]
-      
+
               sage: pascal_row(4)
               [1, 4, 6, 4, 1]
-      
+
           It is an error to provide a negative value for `n` ::
-      
+
               sage: pascal_row(-1)
               Traceback (most recent call last):
               ...
               ValueError: `n` must be a non-negative integer
-      
+
           .. NOTE::
-      
+
               This function uses the `binomial` function to compute each
               element of the row.
           """
           if n &lt; 0:
               raise ValueError("`n` must be a non-negative integer")
-          
+
           return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>

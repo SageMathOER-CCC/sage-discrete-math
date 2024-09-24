@@ -26,7 +26,7 @@
             S = Subsets(C)
 
             R = Set([(a, b) for a in A for b in B if a==2*b])
-            
+
             print("R =", R)
             print("Is R a relation from set A to set B?", R in S)
         </input>
@@ -60,7 +60,7 @@
 
             # View all the possible combinations of jackets and shirts
             C = cartesian_product([jackets, shirts])
-            
+
             Set(C)
         </input>
     </sage>

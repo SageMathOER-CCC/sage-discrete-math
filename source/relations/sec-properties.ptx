@@ -5,7 +5,7 @@
     <introduction>
         <p>
             A relation on <m>A</m> may satisfy certain properties:
-        
+
             <ul>
                 <li>
                     <p>
@@ -118,7 +118,7 @@
                 relation_R = [(1, 2), (2, 1), (3, 3)]
 
                 G = DiGraph(relation_R, loops=true)
-                
+
                 is_symmetric_digraph(G)
             </input>
         </sage>
@@ -149,9 +149,9 @@
                 # Example with the more restricted
                 # Sage built-in antisymmetric method
                 # Warning: returns False
-                
+
                 relation = [(1, 2), (2, 3), (3, 4), (4, 1)]
-                
+
                 DiGraph(relation).antisymmetric()
             </input>
         </sage>
@@ -195,9 +195,9 @@
                     return True
 
                 A = Set([1, 2, 3])
-                
+
                 R = Set([(1, 2), (2, 3), (1, 3)])
-                
+
                 is_transitive_set(A, R)
             </input>
         </sage>

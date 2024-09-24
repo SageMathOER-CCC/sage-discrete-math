@@ -59,7 +59,7 @@
             G = Graph(E).plot(
                 edge_labels=True,
             )
-            
+
             G.show()
         </input>
     </sage>
@@ -77,7 +77,7 @@
                 (0,1,0): ['g'], # Color vertex `g` all green
                 (0,0,1): ['b'] # Color vertex `b` all blue
             }
-            
+
             G = Graph(E).plot(
                 vertex_colors=set_vertex_colors,
                 edge_labels=True,
@@ -96,7 +96,7 @@
                 'green': ['g'],
                 'blue': ['b']
             }
-            
+
             G = Graph(E).plot(
                 vertex_colors=set_vertex_colors,
                 edge_labels=True,
@@ -147,7 +147,7 @@
         </input>
     </sage>
     <p>
-        Consider accessibility when setting colors on a graph. For example, the red and green on the above graph look indistinguishable to people with color blindness. Blue and Red are usually a safe bet for contrasting two colors. 
+        Consider accessibility when setting colors on a graph. For example, the red and green on the above graph look indistinguishable to people with color blindness. Blue and Red are usually a safe bet for contrasting two colors.
     </p>
     <p>
         Let's examine the following graph. Evaluate this cell multiple times and notice the vertex positions are not consistent.
@@ -164,7 +164,7 @@
             ]
 
             G = Graph(N)
-            
+
             G.show()
         </input>
     </sage>
@@ -188,7 +188,7 @@
                 'b': (1, 1),
                 'f': (0, -1)
             }
-            
+
             G.plot(pos=positions).show()
         </input>
     </sage>
@@ -203,12 +203,12 @@
                 ("e", "f", "m2"), ("e", "g", "m3"), ("e", "a", "P4"), ("e", "b", "P5"), ("e", "c", "m6"), ("e", "d", "m7"),
                 ("f", "g", "M2"), ("f", "a", "M3"), ("f", "b", "a4"), ("f", "c", "P5"), ("f", "d", "M6"), ("f", "e", "M7"),
                 ("g", "a", "M2"), ("g", "b", "M3"), ("g", "c", "P4"), ("g", "d", "P5"), ("g", "e", "M6"), ("g", "f", "m7"),
-                ("a", "b", "M2"), ("a", "c", "m3"), ("a", "d", "P4"), ("a", "e", "P5"), ("a", "f", "m6"), ("a", "g", "m7"), 
+                ("a", "b", "M2"), ("a", "c", "m3"), ("a", "d", "P4"), ("a", "e", "P5"), ("a", "f", "m6"), ("a", "g", "m7"),
                 ("b", "c", "m2"), ("b", "d", "m3"), ("b", "e", "P4"), ("b", "f", "d5"), ("b", "g", "m6"), ("b", "a", "m7"),
             ]
 
             C = DiGraph(I, multiedges=True,)
-            
+
             C.plot(edge_labels=True).show()
         </input>
     </sage>

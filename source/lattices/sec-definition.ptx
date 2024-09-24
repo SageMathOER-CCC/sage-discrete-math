@@ -1,18 +1,18 @@
 <section xml:id="sec-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Lattices</title><idx><h>lattice</h></idx>
-    
-    <subsection xml:id="definition">        
+
+    <subsection xml:id="definition">
         <title>Definition</title>
         <p>
-            A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet). 
+            A lattice is defined as a partially ordered set (poset) in which any two elements have a least upper bound (also known as join) and greatest lower bound (also known as meet).
         </p>
         <p>
             In Sage, a lattice can be represented as a poset using the <c>Poset()</c> function. This function takes a tuple as its argument, where the first element is the set of elements in the poset, and the second element is a list of ordered pairs representing the partial order relations between those elements.
         </p>
         <sage>
             <input>
-                L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                 L.plot()
             </input>
@@ -25,14 +25,14 @@
             <p>
                 Lattices play a critical role in computer science, particularly in structuring hierarchical access control in security systems and databases. They help in managing permissions through role-based access control, where roles and data can be organized in a lattice to determine the propagation of access rights.
             </p>
-        </aside>   
+        </aside>
         <p>
             We can also use <c>LatticePoset()</c> function to plot the lattice. The function <c>Poset()</c> can be used with any poset, even when the poset is not a lattice. The function <c>LatticePoset()</c> will give an error if the poset is not a lattice. The function is also more optimized and reduces the time needed when plotting complicated lattices.
         </p>
         <sage>
             <input>
-                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                 L.plot()
             </input>
@@ -45,18 +45,18 @@
         </p>
         <sage>
             <input>
-                L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                             ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                 L.is_lattice()
             </input>
             <output>
                 # This will check if the poset is a lattice.
             </output>
-        </sage>    
-    </subsection>    
+        </sage>
+    </subsection>
 
-          
+
         <subsection xml:id="join">
             <title>Join</title><idx><h>join</h></idx>
             <p>
@@ -67,8 +67,8 @@
             </p>
             <sage>
                 <input>
-                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                                 ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.is_join_semilattice()
                 </input>
@@ -81,8 +81,8 @@
             </p>
             <sage>
                 <input>
-                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                                 ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.join('b', 'f')
                 </input>
@@ -90,7 +90,7 @@
                 </output>
             </sage>
         </subsection>
-    
+
         <subsection xml:id="meet">
             <title>Meet</title><idx><h>meet</h></idx>
             <p>
@@ -101,8 +101,8 @@
             </p>
             <sage>
                 <input>
-                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                                 ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.is_meet_semilattice()
                 </input>
@@ -115,8 +115,8 @@
             </p>
             <sage>
                 <input>
-                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
-                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                    L = Poset((['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+                               [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
                                 ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
                     L.meet('a', 'b')
                 </input>
@@ -125,4 +125,3 @@
             </sage>
         </subsection>
     </section>
-    

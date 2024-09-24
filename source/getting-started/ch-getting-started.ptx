@@ -23,7 +23,7 @@
   <xi:include href="sec-displaying.ptx" />
   <xi:include href="sec-OOP.ptx" />
   <xi:include href="sec-data-types.ptx" />
-  <xi:include href="sec-iteration.ptx" /> 
+  <xi:include href="sec-iteration.ptx" />
   <xi:include href="sec-debugging.ptx" />
   <xi:include href="sec-defining-functions.ptx" />
   <xi:include href="sec-documentation.ptx" />

@@ -62,7 +62,7 @@
         <sage>
             <input>
                 A = propcalc.formula('p &amp; ~p')
-                A.is_contradiction()  
+                A.is_contradiction()
             </input>
         </sage>
     </subsection>
