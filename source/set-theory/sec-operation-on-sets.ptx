@@ -19,7 +19,7 @@
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
-                B = Set([3, 4, 5, 6]) 
+                B = Set([3, 4, 5, 6])
                 A.union(B)
             </input>
         </sage>
@@ -30,7 +30,7 @@
             <input>
                 A = Set([1, 2, 3, 4, 5])
                 B = Set([3, 4, 5, 6])
-                A | B 
+                A | B
             </input>
         </sage>
 
@@ -51,7 +51,7 @@
             <p>
                 A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.
             </p>
-        </aside> 
+        </aside>
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
@@ -60,7 +60,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can use the <c> &amp; </c> operator to perform the intersection operation.  
+            Alternatively, we can use the <c> &amp; </c> operator to perform the intersection operation.
         </p>
         <sage>
             <input>
@@ -92,13 +92,13 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can use the <c> - </c> operator to perform the difference operation.  
+            Alternatively, we can use the <c> - </c> operator to perform the difference operation.
         </p>
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
                 B = Set([3, 4, 5, 6])
-                A - B 
+                A - B
             </input>
         </sage>
     </subsection>
@@ -115,8 +115,8 @@
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
-                B = Set([3, 4, 5, 6]) 
-                C = Set([5, 6, 7]) 
+                B = Set([3, 4, 5, 6])
+                C = Set([5, 6, 7])
                 A.union(B).union(C)
             </input>
         </sage>
@@ -157,7 +157,7 @@
             </input>
         </sage>
         <p>
-            Alternatively, we can use the <c> - </c> operator.  
+            Alternatively, we can use the <c> - </c> operator.
         </p>
         <sage>
             <input>

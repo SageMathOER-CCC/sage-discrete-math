@@ -80,7 +80,7 @@
       </output>
   </sage>
   <p>
-    We can visualize the graph as a disjoint union of its connected components, by plotting it. 
+    We can visualize the graph as a disjoint union of its connected components, by plotting it.
   </p>
   <sage>
     <input>

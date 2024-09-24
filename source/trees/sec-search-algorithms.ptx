@@ -165,14 +165,14 @@
                     edge_colors = {mst_color: [], non_mst_color: []}
 
                     mst_edge_set = set((v1, v2) for v1, v2, _ in mst_edges)
-                    
+
                     for edge in input_graph.edges():
                         v1, v2, _ = edge
                         if (v1, v2) in mst_edge_set or (v2, v1) in mst_edge_set:
                             edge_colors[mst_color].append((v1, v2))
                         else:
                             edge_colors[non_mst_color].append((v1, v2))
-                    
+
                     print("MST overlaid on the original graph:")
                     p = input_graph.plot(edge_labels=True, edge_colors=edge_colors, figsize=figsize)
                     show(p)

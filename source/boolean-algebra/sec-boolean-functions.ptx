@@ -111,7 +111,7 @@
         </input>
     </sage>
     <p>
-        We make the variables compatible with the SymPy <c>SOPform</c> function by converting them to SymPy symbols. 
+        We make the variables compatible with the SymPy <c>SOPform</c> function by converting them to SymPy symbols.
     </p>
     <sage>
         <input>
@@ -145,7 +145,7 @@
                     formula_object = expression
                 else:
                     raise ValueError("Invalid input: expression must be a string or a BooleanFormula object.")
-                
+
                 # Generate the truth table from the formula object
                 truth_table = formula_object.truthtable()
                 table_list = truth_table.get_table_list()
@@ -254,7 +254,7 @@
         </input>
     </sage>
     <p>
-        We started with the expression, <me>h(x, y) = x + \bar{y}</me> 
+        We started with the expression, <me>h(x, y) = x + \bar{y}</me>
     </p>
     <p>
         After applying the identity, complement, and distributive laws, we transformed the Boolean function into the sum-of-products expansion <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>.

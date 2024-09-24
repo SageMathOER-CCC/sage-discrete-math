@@ -47,12 +47,12 @@
                 Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
             </p>
         </aside>
-        
+
     </introduction>
     <!-- Logical Operations in Sage -->
     <subsection>
         <title>Boolean Formula</title>
-        
+
         <p>
             Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c>show</c> function to display the mathematical notations.
         </p>

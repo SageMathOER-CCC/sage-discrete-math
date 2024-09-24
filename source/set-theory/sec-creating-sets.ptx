@@ -36,8 +36,8 @@
         <input>
             M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
             M_duplicates = Set(["Jan", "Jan", "Jan", "Feb", "Feb", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            
-            # The Set function eliminates duplicates 
+
+            # The Set function eliminates duplicates
             M == M_duplicates
         </input>
         </sage>
@@ -126,7 +126,7 @@
         </p>
         <sage>
             <input>
-                W.issubset(Severe) 
+                W.issubset(Severe)
             </input>
         </sage>
     </subsection>
