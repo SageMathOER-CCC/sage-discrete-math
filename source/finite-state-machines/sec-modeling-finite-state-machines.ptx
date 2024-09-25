@@ -8,12 +8,11 @@
     </idx>
     <introduction>
         <p>
-            Although <term>SageMath</term> does have a dedicated built-in module to handle state
-            machines, we can still model, construct, display, and run relatively
+            Although <b>SageMath</b> does not have a dedicated built-in module to handle state
+            machines, it can still be used to model, construct, display, and run relatively
             simple state machines, leveraging the general-purpose tools, such as graphs and
             transition matrices, to represent and work with state machines.</p>
         <aside>
-            <!-- TODO. to be confirmed -->
             <title>Notes</title>
             <p>
                 While SageMath provides basic tools to represent and simulate state machines,
@@ -84,8 +83,8 @@
             visualize the state machine representation.</p>
         <sage>
             <input>
-                # 'DiGraph' is imported by default. If not, it can be imported as follow
-                # from sage.graphs.digraph import DiGraph
+                # Import DiGraph from SageMath
+                from sage.graphs.digraph import DiGraph
 
                 # Initialize a directed graph
                 SM = DiGraph()
@@ -160,146 +159,11 @@
             The <c>run_state_machine</c> function simulates the state machine by processing
             a list of inputs starting from an initial state.</p>
     </subsection>
-
-    <subsection>
-        <title>Using Sage built-in 'FiniteStateMachine'</title>
-        <p>
-            <c>FiniteStateMachine()</c> is used define an <em>empty</em> state machine.</p>
-        <sage>
-            <input>
-                from sage.combinat.finite_state_machine import FSMState
-                fsm = FiniteStateMachine()
-                fsm
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>FSMState()</c> helps define state for the given label, the <c>is_initial</c>
-            flag can be set to true to indicate the current state will be the <em>initial state</em>
-            of the finite state machine. <c>add_state()</c> method is then used to append the state
-            to the state machine</p>
-        <sage>
-            <input>
-                go = FSMState('GO', is_initial=True)
-                fsm.add_state(go)
-
-                # Adding more states
-                hold = fsm.add_state('HOLD')
-                stop = fsm.add_state('STOP')
-
-                # the FiniteStateMachine instance
-                fsm
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            To check whether or not a finite state machine has a state defined, <c>has_state()</c>
-            method can be used by passing in the state label (case-sensitive).</p>
-        <sage>
-            <input>
-                fsm.has_state('GO')
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>states()</c> method is used to enumerate the list of all defined states
-            of the state machine.</p>
-        <sage>
-            <input>
-                fsm.states()
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>initial_states()</c> method lists the defined initial state(s)
-            of the state machine.</p>
-        <sage>
-            <input>
-                fsm.initial_states()
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>FSMTransition()</c> defines a new transition between two states,
-            as well as the input (the transition trigger) and output associated
-            with the new state after teh transition.<c>add_transition()</c> method
-            attach the defined transition to the state machine. <c>transitions()</c>
-            method is used to enumerate the list of all defined transitions of the
-            state machine.</p>
-        <sage>
-            <input>
-                from sage.combinat.finite_state_machine import FSMTransition
-
-                # defining 3 transitions, and associating them the state machine
-                drive = fsm.add_transition(FSMTransition(stop, go, 0,10))
-                wait = fsm.add_transition(FSMTransition(go, hold, 1,20))
-                walk = fsm.add_transition(FSMTransition(hold, stop, 2,40))
-
-                fsm.transitions()
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            Once the states and transitions as defined, the state machine can be<em>run</em>
-            using <c>process()</c> method.
-            </p>
-        <sage>
-            <input>
-                # pass in the initial state and the list of inputs
-                _, final_state, outputs_history = fsm.process(
-                    initial_state=go,
-                    input_tape=[1, 2, 0],
-                )
-
-                # display final/current state
-                final_state
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>process()</c> method also returned the list of intermediary outputs during
-            the state machine run.</p>
-        <sage>
-            <input>
-                # print out the outputs of the state machine run
-                outputs_history
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>graph()</c> command displays the graph representation of the state machine.</p>
-        <sage>
-            <input>
-                fsm.graph()
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            The <c>FiniteStateMachine</c> class also offers LATEX representation of the state
-            machine using the <c>latex_options()</c> method.</p>
-            <sage>
-                <input>
-                    # define LATEX printout options
-                    fsm.latex_options(
-                        coordinates={
-                            'day': (0, 0),
-                            'night': (6, 0)},
-                        initial_where={'day': 'below'},
-                        format_letter=fsm.format_letter_negative,
-                        format_state_label=lambda x: x.label(),
-                    )
-
-                    # display LATEX commands
-                    print(latex(fsm))
-                </input>
-                <output></output>
-            </sage>
-        </subsection>
     <conclusion>
         <p>
-            The above are basic commands with a typical workflow of defining and running of simple finite
-            state machines. The general structure of the state machine can be adapted to fit different use
-            cases. The examples shown can be customized and fine-tuned to reflect more complex scenarios
-            (more states, different input sequences, ...etc).</p>
+            This simple example shows a typical workflow of the use of a simple finite state
+            machine. It can be customized and fine-tuned to reflect more complex scenarios
+            (more states, different input sequences, ...etc). The general structure of a
+            state machine can be adapted for different use cases.</p>
     </conclusion>
 </section>

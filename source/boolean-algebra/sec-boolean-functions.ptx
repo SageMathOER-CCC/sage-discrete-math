@@ -4,186 +4,10 @@
         A  <term>Boolean function</term> is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
     <p>
-        A <term>minterm</term> of the Boolean variables <m>x_1, x_2, \ldots, x_n</m> is the Boolean product <m>y_1 \cdot y_2 \cdot \ldots \cdot y_n</m> where each <m>y_i = x_i</m> or <m>y_i = \overline{x_i}</m>.
+        Boolean identities allow us to write every Boolean function as a sum-of-products expansion. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. Currently, we have a sum of two terms but no products. We can apply the identity law to introduce the product terms. Now, we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
     </p>
     <p>
-        A sum of minterms is called a <term>sum-of-products</term> expansion. In this section, we will examine various methods for finding the sum-of-products expansion of a Boolean function.
-    </p>
-    <p>
-        To find the sum-of-products expansion using a truth table, we first convert the <c>truthtable()</c> into a form that is iterable with <c>get_table_list()</c>. For every row where the output value is <c>True</c>, we construct a minterm:
-    </p>
-    <p>
-        <ul>
-            <li>
-                <p>
-                    Include the variable as is if its value is <c>True</c>
-                </p>
-            </li>
-            <li>
-                <p>
-                    Include the negation of the variable if its value is <c>False</c>
-                </p>
-            </li>
-            <li>
-                <p>
-                    The <c>zip</c> function pairs each variable with its corresponding value, allowing us to create minterms efficiently.
-                </p>
-            </li>
-            <li>
-                <p>
-                    We add each minterm to the <c>sop_expansion</c> <c>list</c> using the <c>&amp;</c> operator.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Finally, we join all minterms with the <c>|</c> operator to form the sum-of-products expansion.
-                </p>
-            </li>
-            <li>
-                <p>
-                    The function returns the sum-of-products expansion as a <c>sage.logic.boolformula.BooleanFormula</c> instance.
-                </p>
-            </li>
-        </ul>
-    </p>
-    <sage>
-        <input>
-            def truth_table_sop(expression):
-                # Check if the input is a string, and if so, convert it to a formula object
-                if isinstance(expression, str):
-                    h = propcalc.formula(expression)
-                elif isinstance(expression, sage.logic.boolformula.BooleanFormula):
-                    h = expression
-                else:
-                    raise ValueError
-
-                table_list = h.truthtable().get_table_list()
-                sop_expansion = []
-
-                for row in table_list[1:]:  # Skip the header row
-                    if row[-1]:  # If the output value is True
-                        minterm = []
-                        for var, value in zip(table_list[0], row[:-1]):  # Iterate over each variable and its value in this row
-                            if value:
-                                minterm.append(var)  # Include variable as is if True
-                            else:
-                                minterm.append(f'~{var}')  # Include the negated variable if False
-                        sop_expansion.append(' &amp; '.join(minterm))  # Join variables in the minterm using the AND operator
-
-                sop_result = ' | '.join(f'({m})' for m in sop_expansion)  # Join minterms using the OR operator
-                return propcalc.formula(sop_result)
-        </input>
-    </sage>
-    <p>
-        For your convenience, our <c>truth_table_sop</c> function converts <c>String</c> input with <c>propcalc.formula</c>. Therefore, the input accepts <c>String</c> representations of Boolean expressions. Alternatively, you may pass an instance of <c>sage.logic.boolformula.BooleanFormula</c> directly to the function.
-    </p>
-    <sage>
-        <input>
-            truth_table_sop("x &amp; (y | z)")
-        </input>
-    </sage>
-    <p>
-        Let's verify that the sum-of-products expansion we found with the truth table is equivalent to the original expression.
-    </p>
-    <sage>
-        <input>
-            truth_table_sop("x &amp; (y | z)") == propcalc.formula("x &amp; (y | z)")
-        </input>
-    </sage>
-    <p>
-        Our <c>sop_expansion</c> function mimics the manual process of finding the sum-of-products expansion of a Boolean function. This process does not guarantee the minimal form of the Boolean expression.
-    </p>
-    <p>
-        If we dig around in the Sage source code, we can find a commented-out <c>Simplify()</c> function that relied on the <c>Boolopt</c> package and the Quine-McCluskey algorithm. The Quine-McCluskey algorithm guarantees the minimal form of the Boolean expression, but the exponential complexity of the algorithm makes it impractical for large expressions. Moreover, in the Sage documentation, we see a placeholder function called <c>Simplify()</c> that returns a <c>NotImplementedError</c> message. The Sage community is waiting for someone to implement this function with the Espresso algorithm. While the Espresso algorithm does not guarantee the minimal form of the Boolean expression, it is more efficient than the Quine-McCluskey algorithm.
-    </p>
-    <p>
-        Sage integrates well with Python libraries like SymPy, which have built-in functions for Boolean simplification. The SymPy <c>SOPform</c> function takes the variables as the first argument and the minterms as the second argument. The function returns the sum-of-products expansion of the Boolean function in the smallest sum-of-products form. To use the SymPy <c>SOPform</c> function in Sage, first extract the variables and minterms of an expression.
-    </p>
-    <p>
-        We extract the variables from the first row of the truth table.
-    </p>
-    <sage>
-        <input>
-            expression = propcalc.formula("x &amp; (y | z)")
-            table_list = expression.truthtable().get_table_list()
-            variables = table_list[0]
-            print(variables)
-        </input>
-    </sage>
-    <p>
-        We make the variables compatible with the SymPy <c>SOPform</c> function by converting them to SymPy symbols.
-    </p>
-    <sage>
-        <input>
-            from sympy import symbols
-            sympy_variables = symbols(' '.join(variables))
-            print(sympy_variables)
-        </input>
-    </sage>
-    <p>
-        We extract the minterms from the rows where the output is <c>True</c>.
-    </p>
-    <sage>
-        <input>
-            minterms = [row[:-1] for row in table_list[1:] if row[-1]]
-            print(minterms)
-        </input>
-    </sage>
-    <p>
-        Now that we have the variables and minterms, we can use the SymPy <c>SOPform</c> function to find the sum-of-products expansion of the Boolean function.
-    </p>
-    <sage>
-        <input>
-            from sympy.logic import SOPform
-            from sympy import symbols
-
-            def sympy_sop(expression):
-                # Convert input expression to a SageMath formula object if necessary
-                if isinstance(expression, str):
-                    formula_object = propcalc.formula(expression)
-                elif isinstance(expression, sage.logic.boolformula.BooleanFormula):
-                    formula_object = expression
-                else:
-                    raise ValueError("Invalid input: expression must be a string or a BooleanFormula object.")
-
-                # Generate the truth table from the formula object
-                truth_table = formula_object.truthtable()
-                table_list = truth_table.get_table_list()
-
-                # Extract variables and minterms from the truth table
-                variables = table_list[0]
-                minterms = [row[:-1] for row in table_list[1:] if row[-1]]
-
-                # Convert the SageMath variables to SymPy symbols
-                sympy_variables = symbols(' '.join(variables))
-
-                # Use SymPy to compute the SOP form
-                sop_result = SOPform(sympy_variables, minterms)
-
-                return propcalc.formula(str(sop_result))
-        </input>
-    </sage>
-    <sage>
-        <input>
-            sympy_sop("x &amp; (y | z)")
-        </input>
-    </sage>
-    <p>
-        Let's verify that the sum-of-products expansion we found with SymPy is equivalent to the original expression.
-    </p>
-    <sage>
-        <input>
-            sympy_sop("x &amp; (y | z)") == propcalc.formula("x &amp; (y | z)")
-        </input>
-    </sage>
-    <p>
-        Now, we present a manual method for finding the sum of products by applying the Boolean identities. Let's find the sum-of-products expansion of the Boolean function <me>h(x, y) = x + \bar{y}</me>. We can apply the Boolean identities and use Sage to verify our work. Currently, we have a sum of two terms but no products. We can apply the identity law to introduce the product terms. Now, we have the equivalent expression <me>h(x, y) = x \cdot 1 + 1 \cdot \bar{y}</me>.
-    </p>
-    <p>
-        Warning: Do not attempt to apply the identity law or null law within the <c>formula</c> function. If you try to directly apply the identity law within the formula function like so, <c>propcalc.formula("x &amp; 1 | 1 ~y")</c>, Sage will raise an error because <c>propcalc.formula</c> interprets <c>1</c> as a variable. Variables cannot start with a number.
-    </p>
-    <p>
-        The <c>formula</c> function only supports variables and the following operators:
+        Warning: Do not attempt to apply the identity law or null law within the <c>formula</c> function. The <c>formula</c> function only supports variables and the following operators:
         <ul>
             <li>
                 <p>
@@ -223,42 +47,198 @@
             show(h)
         </input>
     </sage>
-    <p>
-        Apply the complement law and verify that our transformed expression is equivalent to the original expression.
-    </p>
     <sage>
         <input>
+            # Warning: Do not directly apply the identity law
+            # within the formula function
+            # This will raise an error because
+            # `1` is interpreted as a variable
+            # variables cannot start with a number
+            propcalc.formula("x &amp; 1 | True 1 ~y")
+        </input>
+    </sage>
+
+    <sage>
+        <input>
+            # Applying the complement law
             h_complement = propcalc.formula("x &amp; (y | ~y) | (x | ~x) &amp;  ~y")
-            show(h_complement)
+            show(latex(h_complement) + "==" + latex(h))
             h_complement == h
         </input>
     </sage>
-    <p>
-        Apply the distributive law and verify that our transformed expression is equivalent to the original expression.
-    </p>
     <sage>
         <input>
+            # Applying the distributive law
             h_distributive = propcalc.formula("x &amp; y | x &amp; ~y | x &amp; ~y | ~x &amp; ~y")
-            show(h_distributive)
+            show(latex(h_distributive) + "==" + latex(h))
             h_distributive == h
         </input>
     </sage>
     <p>
-        Apply the idempotent law and verify that our transformed expression is equivalent to the original expression.
+        Here is the sum-of-products expansion of the Boolean function: <me>h(x, y) = x + \bar{y}</me> After applying the identity, complement, and distributive laws, we get: <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>
     </p>
     <sage>
         <input>
+            # Applying the idempotent law
             h_idempotent = propcalc.formula("x &amp; y | x &amp; ~y | ~x &amp; ~y")
-            show(h_idempotent)
+            show(latex(h_idempotent) + "==" + latex(h))
             h_idempotent == h
         </input>
     </sage>
     <p>
-        We started with the expression, <me>h(x, y) = x + \bar{y}</me>
+        Using boolean identities is one way of finding the sum-of-products expansion of a Boolean function. Truth tables are also helpful for sum-of-products expansion.
+    </p>
+    <sage>
+        <input>
+            g = propcalc.formula("x &amp; (y | z)")
+            g.truthtable()
+        </input>
+    </sage>
+    <p>
+        The <c>truthtable()</c> function is not iterable. To work with the truth table, we must convert it to a <c>list</c> with <c>get_table_list()</c>.
+    </p>
+    <sage>
+        <input>
+            table_list = g.truthtable().get_table_list()
+            table_list
+        </input>
+    </sage>
+    <p>
+        Now, we can iterate over each truth table row, excluding the header row. For every row where the output value is <c>True</c>, we construct a minterm:
+        <ul>
+            <li>
+                <p>
+                    Include the variable as is if its value is <c>True</c>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Include the negation of the variable if its value is <c>False</c>
+                </p>
+            </li>
+            <li>
+                <p>
+                    The <c>zip</c> function pairs each variable with its corresponding value, allowing us to create minterms efficiently.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We add each minterm to the <c>sop_expansion</c> <c>list</c> using the <c>&amp;</c> operator.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Finally, we join all minterms with the <c>|</c> operator to form the sum-of-products expansion.
+                </p>
+            </li>
+        </ul>
+    </p>
+    <sage auto-evaluate="yes">
+        <input>
+            def sop_expansion(expression):
+                # Check if the input is a string, and if so, convert it to a formula object
+                if isinstance(expression, str):
+                    h = propcalc.formula(expression)
+                elif isinstance(expression, sage.logic.boolformula.BooleanFormula):
+                    h = expression
+                else:
+                    raise ValueError
+
+                table_list = h.truthtable().get_table_list()
+                sop_expansion = []
+
+                for row in table_list[1:]:  # Skip the header row
+                    if row[-1]:  # If the output value is True
+                        minterm = []
+                        for var, value in zip(table_list[0], row[:-1]):  # Iterate over each variable and its value in this row
+                            if value:
+                                minterm.append(var)  # Include variable as is if True
+                            else:
+                                minterm.append(f'~{var}')  # Include the negated variable if False
+                        sop_expansion.append(' &amp; '.join(minterm))  # Join variables in the minterm using the AND operator
+
+                sop_result = ' | '.join(f'({m})' for m in sop_expansion)  # Join minterms using the OR operator
+                return propcalc.formula(sop_result)
+        </input>
+    </sage>
+    <p>
+        For your convenience, our <c>sop_expansion</c> function converts <c>String</c> input with <c>propcalc.formula</c>. Therefore, the input accepts <c>String</c> representations of Boolean expressions without needing to pass an instance of <c>sage.logic.boolformula.BooleanFormula</c>. You may also pass an instance of <c>sage.logic.boolformula.BooleanFormula</c> directly to the function. The function returns the sum-of-products expansion as a <c>sage.logic.boolformula.BooleanFormula</c> instance.
+    </p>
+    <sage>
+        <input>
+            truth_table_sop = sop_expansion("x &amp; (y | z)")
+            truth_table_sop
+        </input>
+    </sage>
+    <p>
+        Let's verify that the sum-of-products expansion we found with the truth table is the same as the one we found using boolean identities.
+    </p>
+    <sage>
+        <input>
+            truth_table_sop == g
+        </input>
+    </sage>
+    <p>
+        Our <c>sop_expansion</c> function mimics the manual process of finding the sum-of-products expansion of a Boolean function. This process does not guarantee the minimal form of the Boolean expression.
+    </p>
+
+    <p>
+        If we dig around in the Sage source code, we can find a commented-out <c>Simplify()</c> function that relied on the <c>Boolopt</c> package and the Quine-McCluskey algorithm. The Quine-McCluskey algorithm guarantees the minimal form of the Boolean expression, but the exponential complexity of the algorithm makes it impractical for large expressions. Moreover, in the Sage documentation, we see a placeholder function called <c>Simplify()</c> that returns a <c>NotImplementedError</c> message. 
     </p>
     <p>
-        After applying the identity, complement, and distributive laws, we transformed the Boolean function into the sum-of-products expansion <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>.
+        The Sage community is waiting for someone to implement this function with the Espresso algorithm. While the Espresso algorithm does not guarantee the minimal form of the Boolean expression, it is more efficient than the Quine-McCluskey algorithm. As fun as it would be to implement the Espresso or Quine-McCluskey algorithm, a more straightforward approach relies on Sage's integration with Python. Luckily, SageCells already has the <c>sympy</c> package installed.
     </p>
+    <sage auto-evaluate="yes">
+        <input>
+            from sympy.logic.boolalg import to_dnf
+
+            def minimize_sop(formula):
+                formula_str = str(formula)
+                minimized_expr = to_dnf(formula_str, simplify=True)
+                return propcalc.formula(str(minimized_expr))
+        </input>
+    </sage>
+    <sage>
+        <input>
+            min_sop = minimize_sop(g)
+            min_sop
+        </input>
+    </sage>
+    <p>
+        Observe the truth table sum-of-products expansion and the minimized sum-of-products expansion are equivalent.
+    </p>
+    <sage>
+        <input>
+            truth_table_sop == min_sop
+        </input>
+    </sage>
+    <p>
+        We can also use <c>BooleanPolynomialRing</c> to create Boolean polynomials and perform operations. For instance, if <m> B = {0, 1}</m>, we can show a function <m>f: B^3 \to B</m>
+    </p>
+    <idx><h>polynomial</h></idx>
+    <sage>
+        <input>
+            B = BooleanPolynomialRing(3, 'x')
+            f = B('x0 + x1 * x2')
+            show(f)
+        </input>
+    </sage>
+    <p>
+        We can evaluate the function at any 3-uple:
+    </p>
+    <sage>
+        <input>
+            f(1,1,0)
+        </input>
+    </sage>
+    <p>
+        The Sage <c>BooleanPolynomialRing</c> treats <c>+</c> as <m>XOR</m>
+    </p>
+    <sage>
+        <input>
+            f(1,1,1)
+        </input>
+    </sage>
     <aside>
         <title>Notes</title>
         <p>

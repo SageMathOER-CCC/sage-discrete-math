@@ -12,5 +12,5 @@
   <!-- include sections -->
   <xi:include href="sec-functions.ptx" />
   <xi:include href="sec-recursion.ptx" />
-
+  
 </chapter>

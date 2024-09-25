@@ -14,5 +14,5 @@
   <xi:include href="sec-creating-sets.ptx" />
   <xi:include href="sec-cardinality.ptx" />
   <xi:include href="sec-operation-on-sets.ptx" />
-
+  
 </chapter>

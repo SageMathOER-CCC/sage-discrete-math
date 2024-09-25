@@ -3,10 +3,11 @@
 <section xml:id="sec-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Combinatorics</title>
 
+    <!-- Factorial Function Subsection -->
     <subsection>
         <title>Factorial Function</title><idx><h>factorial</h></idx>
         <p>
-            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>.
+            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>. In Sage, the <c>factorial()</c> function computes this value, which is essential in permutations and combinations.
         </p>
         <aside>
             <title>Notes</title>
@@ -15,7 +16,7 @@
             </p>
         </aside>
         <p>
-            Compute the factorial of <m>5</m>:
+            For example, to compute the factorial of 5:
         </p>
         <sage>
             <input>
@@ -25,6 +26,7 @@
         </sage>
     </subsection>
 
+    <!-- Combinations Subsection -->
     <subsection>
         <title>Combinations</title><idx><h>combination</h></idx>
         <p>
@@ -37,7 +39,7 @@
             </p>
         </aside>
         <p>
-            Calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m>:
+            For instance, to calculate the number of ways to choose 3 elements from a set of 5:
         </p>
         <sage>
             <input>
@@ -45,18 +47,9 @@
             </input>
             <output></output>
         </sage>
-        <p>
-            List the combinations:
-        </p>
-        <sage>
-            <input>
-                Combinations(5, 3).list()
-            </input>
-            <output></output>
-        </sage>
         <idx><h>binomial</h></idx>
         <p>
-            The <c>binomial()</c> function provides an alternative method to compute the number of combinations.
+            Another method would be using the <c>binomial()</c> function.
         </p>
         <sage>
             <input>
@@ -66,6 +59,7 @@
         </sage>
     </subsection>
 
+    <!-- Permutations Subsection -->
     <subsection>
         <title>Permutations</title><idx><h>permutation</h></idx>
         <p>
@@ -78,7 +72,7 @@
             </p>
         </aside>
         <p>
-            To calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m> when the order matters, use the <c>Permutations()</c> method.
+            For instance, to calculate the number of ways to choose 3 elements from a set of 5 when the order matters, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
         </p>
         <sage>
             <input>
@@ -87,11 +81,12 @@
             <output></output>
         </sage>
         <p>
-            List the permutations:
+            To display the set of permutations for 3 chosen elements from a set of 5 in order, we use the <c>Permutations()</c> function and the use the <c>Set()</c> function.
         </p>
         <sage>
             <input>
-                Permutations(5, 3).list()
+                A = Permutations(5, 3)
+                Set(A)
             </input>
             <output></output>
         </sage>
@@ -99,7 +94,7 @@
             When <m>n = k</m>, we can calculate permutations of <m>n</m> elements.
         </p>
         <p>
-            Calculate the number of permutations of a set with <m>3</m> elements:
+            To calculate the permutation of a set with 3 elements, we use the <c>Permutations()</c> and the <c>cardinality()</c> functions.
         </p>
         <sage>
             <input>
@@ -108,42 +103,27 @@
             <output></output>
         </sage>
         <p>
-            List the permutations:
+            Similarly, we can also show the sets of permutations:
         </p>
         <sage>
             <input>
-                Permutations(3).list()
+                A = Permutations(3)
+                Set(A)
             </input>
             <output></output>
         </sage>
         <p>
-            The following is an example of permutations of specified elements:
+            We can also specify the elements:
         </p>
         <sage>
             <input>
-                A = Permutations(['a', 'b', 'c'])
-
-                A.list()
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            Choose <m>2</m>:
-        </p>
-        <sage>
-            <input>
-                A = Permutations(['a', 'b', 'c'], 2)
-
-                A.list()
+            A = Permutations(['a', 'b', 'c'])
+            
+            for f in Set(A):
+                print(f)
             </input>
             <output></output>
         </sage>
     </subsection>
 
 </section>
-
-
-
-
-
-

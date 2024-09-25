@@ -1,151 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="data-types" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Data Types</title>
-
-    <p>
-        In computer science, <term>Data types</term> represent data based on properties of the data.
-        Python and Sage use data types to implement these classes.
-        Since Sage builds upon Python, it inherits all the built-in Python data types.
-        Sage also provides classes that are well-suited for mathematical computations.
-    </p>
-
-    <p>
-        Let's ask Sage what type of object this is.
-    </p>
-    <idx><h>data types</h><h>integer</h></idx>
-    <sage>
+  <title>Data Types</title>
+  <p>
+    In computer science, <term>Data types</term> represent data based on properties of the data. Python and Sage use data types to implement these classes. Since Sage builds upon Python, it inherits all the built-in Python data types. Sage also provides classes that are well-suited for mathematical computations.
+  </p>
+  <p>
+    Let's ask Sage what type of object this is.
+  </p>
+  <idx><h>data types</h><h>integer</h></idx>
+  <sage>
     <input>
         n = 2
         print(n)
         type(n)
     </input>
-    </sage>
-
-    <p>
-        The <c>type()</c> function reveals that <c>2</c> is an instance of the <term>Integer</term> class.
-        Sage includes numerous classes for different types of mathematical objects.
-    </p>
-    <idx><h>data types</h><h>symbolic</h></idx>
-    <p>
-        In the following example, Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>.
-        Sage will retain the <term>symbolic</term> value.
-    </p>
-    <sage>
-    <input>
-        sym = sqrt(2) / log(3)
-        show(sym)
-        type(sym)
-    </input>
-    </sage>
-    <idx><h>data types</h><h>string</h></idx>
-    <p>
-        <term>String</term>: a <c>str</c> is a sequence of characters used for text. You can use single or double quotes.
-    </p>
-    <sage>
-    <input>
-        greeting = "Hello, World!"
-        print(greeting)
-        print(type(greeting))
-    </input>
-    </sage>
-    <idx><h>data types</h><h>boolean</h></idx>
-    <p>
-        <term>Boolean</term>: The type <c>bool</c> can be one of two values, <c>True</c> or <c>False</c>.
-    </p>
-    <sage>
+  </sage>
+  <p>
+    The <c>type()</c> function reveals that <c>2</c> is an instance of the <term>Integer</term> class. Sage includes numerous classes for different types of mathematical objects.
+  </p>
+  <idx><h>data types</h><h>symbolic</h></idx>
+  <p>
+    In the following example, Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>. Sage will retain the <term>symbolic</term> value.
+  </p>
+  <sage>
+      <input>
+          sym = sqrt(2) / log(3)
+          show(sym)
+          type(sym)
+      </input>
+  </sage>
+  <idx><h>data types</h><h>string</h></idx>
+  <p>
+    <term>String</term>: a <c>str</c> is a sequence of characters used for text. You can use single or double quotes.
+  </p>
+  <sage>
+      <input>
+          greeting = "Hello, World!"
+          print(greeting)
+          print(type(greeting))
+      </input>
+  </sage>
+  <idx><h>data types</h><h>boolean</h></idx>
+  <p>
+    <term>Boolean</term>: The type <c>bool</c> can be one of two values, <c>True</c> or <c>False</c>.
+  </p>
+  <sage>
     <input>
         # Check if 5 is contained in the set of prime numbers
         b = 5 in Primes()
         print(f"{b} is {type(b)}")
     </input>
-    </sage>
-    <idx><h>data types</h><h>list</h></idx>
-    <p>
-        <term>List</term>: A mutable collection of items within a pair of square brackets <c>[]</c>. If an object is mutable, you can change its value after creating it.
-    </p>
-    <sage>
-    <input>
-        l = [1, 3, 3, 2]
-        print(l)
-        print(type(l))
-    </input>
-    </sage>
+  </sage>
+  <idx><h>data types</h><h>list</h></idx>
+  <p>
+    <term>List</term>: A mutable collection of items within a pair of square brackets <c>[]</c>. If an object is mutable, you can change its value after creating it.
+  </p>
+  <sage>
+      <input>
+          l = [1, 3, 3, 2]
+          print(l)
+          print(type(l))
+      </input>
+  </sage>
 
-    <p>
-        Lists are indexed starting at <c>0</c>.
-        Here, we access the first element of a list by asking for the value at index zero.
-    </p>
-    <sage>
+  <p>
+    Lists are indexed starting at <c>0</c>. Here, we access the first element of a list by asking for the value at index zero.
+  </p>
+  <sage>
     <input>
         l[0]
     </input>
-    </sage>
-
-    <p>
-        Lists have many helpful methods.
-    </p>
-    <sage>
-    <input>
-        # Find the number of elements in the list
-        len(l)
-    </input>
-    </sage>
-    <idx><h>data types</h><h>tuple</h></idx>
-    <p>
-        <term>Tuple</term>: An immutable collection within a pair of parenthesis <c>()</c>. If an object is immutable, you cannot change the value after creating it.
-    </p>
-    <sage>
-    <input>
-        t = (1, 3, 3, 2)
-        print(t)
-        type(t)
-    </input>
-    </sage>
-    <idx><h>data types</h><h>set (Python)</h></idx>
-    <p>
-        <term>set</term>: A collection of items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> is built into Python. The items in a set are unique and unordered. After printing the set, we see there are no duplicate values.
-    </p>
-    <sage>
-    <input>
-        s = {1, 3, 3, 2}
-        print(s)
-        type(s)
-    </input>
-    </sage>
-
-    <p>
-        <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c>S</c> has added functionality for mathematical operations.
-    </p>
-    <sage>
-    <input>
-        S = Set([1, 3, 3, 2])
-        type(S)
-    </input>
-    </sage>
-
-    <p>
-        We start by defining a <c>list</c> within square brackets <c>[]</c>.
-        Then, the <c>Set()</c> function creates the Sage set object.
-    </p>
-    <sage>
+</sage>
+<p>
+  Lists have many helpful methods.
+</p>
+<sage>
+  <input>
+    # Find the number of elements in the list
+    len(l)
+  </input>
+</sage>
+  <idx><h>data types</h><h>tuple</h></idx>
+  <p>
+      <term>Tuple</term>: An immutable collection within a pair of parenthesis <c>()</c>. If an object is immutable, you cannot change the value after creating it.
+  </p>
+  <sage>
+      <input>
+          t = (1, 3, 3, 2)
+          print(t)
+          type(t)
+      </input>
+  </sage>
+  <idx><h>data types</h><h>set (Python)</h></idx>
+  <p>
+    <term>set</term>: A collection of items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> is built into Python. The items in a set are unique and unordered. After printing the set, we see there are no duplicate values.
+  </p>
+  <sage>
+      <input>
+          s = {1, 3, 3, 2}
+          print(s)
+          type(s)
+      </input>
+  </sage>
+  <p>
+    <term>Set</term> is a built-in Sage class. <c>Set</c> with a capital <c>S</c> has added functionality for mathematical operations.
+  </p>
+  <sage>
+      <input>
+          S = Set([1, 3, 3, 2])
+          type(S)
+      </input>
+  </sage>
+  <p>
+    We start by defining a <c>list</c> within square brackets <c>[]</c>. Then, the <c>Set()</c> function creates the Sage set object.
+  </p>
+  <sage>
     <input>
         S = Set([5, 5, 1, 3, 5, 3, 2, 2, 3])
         print(S)
     </input>
-    </sage>
-    <idx><h>data types</h><h>dictionary</h></idx>
-    <p>
-        <term>Dictionary</term>: A collection of key-value pairs.
-    </p>
-    <sage>
-    <input>
+</sage>
+<idx><h>data types</h><h>dictionary</h></idx>
+  <p>
+      <term>Dictionary</term>: A collection of key-value pairs.
+  </p>
+  <sage>
+      <input>
         d = {
             "title": "Discrete Math with SageMath",
+            "authors": ["Zunaid Ahmed", "Hellen Colman", "Samuel Lubliner"],
             "institution": "City Colleges of Chicago",
             "topics_covered": [
                 "Set Theory",
-                "Combinations and Permutations",
+                "Combinations and permutations",
                 "Logic",
                 "Quantifiers",
                 "Relations",
@@ -154,22 +142,21 @@
                 "Graphs",
                 "Trees",
                 "Lattices",
-                "Boolean Algebras",
-                "Finite State Machines"
-            ],
-            "format": ["Web", "PDF"]
-        }
-        type(d)
-    </input>
-    </sage>
+                "Boolean algebras"
+                ],
+                "format": ["Web", "PDF"]
+            }
 
-    <p>
-        Use the <c>pprint</c> module to print the dictionary in a more readable format.
-    </p>
-    <sage>
+        type(d)
+      </input>
+  </sage>
+  <p>
+    Use the <c>pprint</c> module to print the dictionary in a more readable format.
+  </p>
+  <sage>
     <input>
-        import pprint
-        pprint.pprint(d)
+      import pprint
+      pprint.pprint(d)
     </input>
-    </sage>
+</sage>
 </section>
