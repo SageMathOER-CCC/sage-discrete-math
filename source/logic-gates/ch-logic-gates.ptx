@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Logic Gates</title>
+
+  <introduction>
+    <p>
+      In this chapter, we introduce different ways to create Boolean formulas using the logical functions <c>not</c>, <c>and</c>, <c>or</c>, <c>if then</c>, and <c>iff</c>. Then, we show how to ask Sage to create a truth table from a formula and determine if an expression is a contradiction or a tautology.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-intro-logic-gates.ptx" />
+  <xi:include href="sec-combined-logic-gates.ptx" />
+  <xi:include href="ch-practical-application.ptx" />
+
+</chapter>
