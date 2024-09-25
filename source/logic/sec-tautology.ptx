@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -44,7 +45,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Understanding tautologies is fundamental in mathematical proof strategies, such as proof by contradiction.
+                Tautologies are very helpful in cybersecurity, especially when you're setting up security policies. Let’s say you’re working on firewall rules—using a tautology makes sure that certain things always happen, like blocking all traffic if someone isn’t authenticated. This way, no matter how complicated the system gets, it’ll always default to a safe, secure state. It’s a smart way to make sure there aren’t any weak spots that hackers could take advantage of.
             </p>
         </aside>
         <sage>
@@ -62,8 +63,9 @@
         <sage>
             <input>
                 A = propcalc.formula('p &amp; ~p')
-                A.is_contradiction()
+                A.is_contradiction()  
             </input>
         </sage>
     </subsection>
 </section>
+

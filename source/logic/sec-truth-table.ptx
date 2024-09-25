@@ -8,7 +8,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.
+                Truth tables are used in network security, especially when designing access control systems. Think of each input in a truth table as a condition that needs to be met—like user authentication, access rights, or whether a resource is available. By laying out all the possible combinations, security engineers can make sure that only the right people get access while blocking unauthorized users. It’s a clear and structured way to ensure that sensitive data stays safe, even in complex systems with a lot of moving parts.
             </p>
         </aside>
         <sage>
@@ -36,12 +36,6 @@
     <p>
         Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function supports expressions with a number of variables that is practical for computational purposes, if the list of variables becomes too lengthy (such as extending beyond the width of a LaTeX page), the truth table's columns may run off the screen. Additionally, the function's performance may degrade with a very large number of variables, potentially increasing the computation time.
     </p>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.
-        </p>
-    </aside>
     <sage>
         <input>
             B = propcalc.formula('(p &amp; q) -&gt; r')
@@ -50,4 +44,5 @@
         <output></output>
     </sage>
 
-</section>
+</section> 
+

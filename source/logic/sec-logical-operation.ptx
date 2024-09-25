@@ -7,52 +7,52 @@
     <idx><h>logical operators</h><h>biconditional</h></idx>
     <introduction>
         <p>
-            In Sage, the logical operators are AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c>.
+            In Sage, logical operations such as AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c> play crucial roles in constructing and evaluating logical expressions.
         </p>
         <tabular>
             <row>
-                <cell>Name</cell>
-                <cell>Sage Operator</cell>
+                <cell>Operator</cell>
+                <cell>Symbol</cell>
                 <cell>Mathematical Notation</cell>
             </row>
             <row>
                 <cell>AND</cell>
-                <cell><c>&amp;</c></cell>
+                <cell>&amp;</cell>
                 <cell><m>\land</m></cell>
             </row>
             <row>
                 <cell>OR</cell>
-                <cell><c>|</c></cell>
+                <cell>|</cell>
                 <cell><m>\lor</m></cell>
             </row>
             <row>
                 <cell>NOT</cell>
-                <cell><c>~</c></cell>
+                <cell>~</cell>
                 <cell><m>\lnot</m></cell>
             </row>
             <row>
                 <cell>Conditional</cell>
-                <cell><c>-&gt;</c></cell>
+                <cell>-&gt;</cell>
                 <cell><m>\rightarrow</m></cell>
             </row>
             <row>
                 <cell>Biconditional</cell>
-                <cell><c>&lt;-&gt;</c></cell>
+                <cell>&lt;-&gt;</cell>
                 <cell><m>\leftrightarrow</m></cell>
             </row>
         </tabular>
         <aside>
             <title>Notes</title>
             <p>
-                Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
+                Logical operators like AND, OR, and NOT are at the heart of decision-making in AI and machine learning systems. Take an autonomous vehicle, for instance. The car uses these operators to process inputs from different sensors—such as speed, distance from obstacles, and road conditions—to make decisions. Whether it should brake, accelerate, or steer depends on how these inputs combine. These logical operations allow the vehicle to quickly analyze real-time data and make safe, efficient decisions on the fly.
             </p>
         </aside>
-
+        
     </introduction>
     <!-- Logical Operations in Sage -->
     <subsection>
         <title>Boolean Formula</title>
-
+        
         <p>
             Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c>show</c> function to display the mathematical notations.
         </p>
@@ -61,7 +61,11 @@
                 A = propcalc.formula('(p &amp; q) | (~p)')
                 show(A)
             </input>
+            <output>
+                # Displays the Boolean formula (p AND q) OR (NOT p) in mathematical notation.
+            </output>
         </sage>
     </subsection>
 
 </section>
+

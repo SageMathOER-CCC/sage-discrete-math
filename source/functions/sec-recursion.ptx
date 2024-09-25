@@ -11,6 +11,12 @@
         <p>
             A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.
         </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Recursion is widely used in everyday tech, like navigating a website or solving puzzles. For example, think about how file systems on your computer are organized into folders and subfolders—finding a file often involves recursively searching through each folder. Recursion is also used in video game development, where actions like rendering objects on the screen or generating game worlds are done by breaking them into smaller, manageable tasks. Students can relate to recursion when they use apps that require repeated tasks, like solving a math problem step-by-step or generating suggestions in a chatbot.
+            </p>
+        </aside>
         <p>
             Given a sequence defined by a recursive formula, we can ask Sage to find its closed form. Here, <c>s</c> is a function representing the sequence defined by recursion. The equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we use the <c>SR()</c> function to convert from Python notation to mathematical notation.
         </p>
@@ -116,3 +122,4 @@
     </subsection>
 
 </section>
+   

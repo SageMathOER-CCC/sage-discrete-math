@@ -2,57 +2,79 @@
     <title>Tables of Operations</title>
     <introduction>
         <p>
-            This section examines the representation of meet <m>(∧)</m> and join <m>(∨)</m> operations within lattices using operation tables.
+            This section delves into the representation of meet <m>(∧)</m> and join <m>(∨)</m> operations within lattices using operation tables. Such tables are pivotal for visualizing the algebraic structure of lattices and understanding how elements combine under each operation.
         </p>
     </introduction>
 
     <subsection xml:id="meet-operation-table">
         <title>Meet Operation Table</title><idx><h>meet matrix</h></idx>
         <p>
-            The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.
+            The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice. 
         </p>
+        <aside>
+            <title>notes</title>
+            <p>
+                The meet operation table shows how elements share a common "lowest" value. Think of it like comparing two sets of preferences between friends—what’s the most basic thing they agree on? The meet operation helps find that shared agreement. For students, it’s similar to when you and a group of friends all like different things, but you find one thing everyone’s okay with. This makes it easier to visualize how different choices or elements overlap in a structured way.
+            </p>
+        </aside>
         <p>
-            To output the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c>LatticePoset()</c>. Then, we can use the function <c>meet_matrix()</c> to process the table.
+            For outputting the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c>LatticePoset()</c>. Then we can use the function <c>meet_matrix()</c> to process the table. 
         </p>
         <sage>
             <input>
-                elements = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-
-                relations = [
-                    ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
-                    ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
-                ]
-
-                L = LatticePoset((elements, relations))
-                M = L.meet_matrix()
-                show(M)
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.meet_matrix(); L
+                show(P)
             </input>
+            <output>
+                # Displays the meet operation table as a matrix.
+            </output>
         </sage>
         <p>
-            From the output matrix, we can see that each entry <m>a_{ij}</m> is not the actual value of the meet of the elements <m>a_{i}</m> and <m>a_{j}</m> but just its position in the lattice. Let's show the values:
+            From the output matrix, we can see that each entry <m>a_{ij}</m> is not the actual value of the meet of the elements <m>a_{i}</m> and <m>a_{j}</m> but just its position in the lattice. Sage does not have a specific function to output the exact meet, but we can define our own function for this purpose.
         </p>
         <sage>
             <input>
-                linear_extension = L.linear_extension()
-
-                values_meet_matrix = [[linear_extension[M[i, j]] for j in range(len(elements))] for i in range(len(elements))]
-
-                values_meet_matrix
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.meet_matrix()
+                elements = L.list()
+                K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
+                for i in range(P.nrows()):
+                    for j in range(P.ncols()):
+                        K[i][j] = elements[P[i,j]]
+                for row in K:
+                    print(row)
             </input>
             <output>
             </output>
         </sage>
         <p>
-            Show the output as a table:
+            We can further improve our function to show the output as a table instead of a matrix.
         </p>
         <sage>
             <input>
-                import pandas as pd
-
-                df = pd.DataFrame(values_meet_matrix)
-
-                df
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                                  [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                                   ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))               
+                P = L.meet_matrix()
+                elements = L.list()               
+                def create_table(elements, P):
+                    column_widths = max(len(element) for element in elements) + 2
+                    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)                    
+                    divider = "-" * len(header)                 
+                    table = [header, divider]                
+                    for i, row_label in enumerate(elements):
+                        row = f"{row_label:>{column_widths}} | " + " ".join(f"{elements[P[i,j]]:>{column_widths}}" for j in range(len(elements)))
+                        table.append(row)                 
+                    return "\n".join(table)               
+                print(create_table(elements, P))                
             </input>
+            <output>
+            </output>
         </sage>
 
     </subsection>
@@ -60,38 +82,73 @@
     <subsection xml:id="join-operation-table">
         <title>Join Operation Table</title><idx><h>join matrix</h></idx>
         <p>
-            Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.
+            Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements. 
+        </p>
+        <aside>
+            <title>notes</title>
+            <p>
+                The join operation table is about finding the "highest" shared element between different parts. Imagine you’re working on a group project, and you need to combine ideas from different people. The join helps figure out the most complete version of your ideas without missing anything important. It’s like taking the best suggestions from each person and merging them to create the ultimate solution that works for everyone.
+            </p>
+        </aside>
+        <p>
+            Similarly, we can use the function <c>join_matrix()</c> to process the table. 
         </p>
         <sage>
             <input>
-                J = L.join_matrix()
-
-                show(J)
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.join_matrix(); L
+                show(P)
             </input>
+            <output>
+                # Displays the join operation table as a matrix.
+            </output>
         </sage>
         <p>
-            Output the elements of the poset:
+            We can also output the elements of the poset by slightly changing the function we previously defined.
         </p>
         <sage>
             <input>
-                linear_extension = L.linear_extension()
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                           [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                            ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))
+                P = L.join_matrix()
+                elements = L.list()
+                K = [['' for _ in range(P.ncols())] for _ in range(P.nrows())]
+                for i in range(P.nrows()):
+                    for j in range(P.ncols()):
+                        K[i][j] = elements[P[i,j]]
 
-                values_join_matrix = [[linear_extension[J[i, j]] for j in range(len(elements))] for i in range(len(elements))]
-
-                values_join_matrix
+                for row in K:
+                    print(row)
             </input>
+            <output>
+            </output>
         </sage>
         <p>
-            Show the output as a table instead of a matrix.
+            We can also output the join table just as shown above for meet.
         </p>
         <sage>
             <input>
-                import pandas as pd
-
-                df = pd.DataFrame(values_join_matrix)
-
-                df
+                L = LatticePoset((['a', 'b', 'c', 'd', 'e', 'f', 'g'], 
+                                  [['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'], 
+                                   ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']]))               
+                P = L.join_matrix()
+                elements = L.list()               
+                def create_table(elements, P):
+                    column_widths = max(len(element) for element in elements) + 2
+                    header = " " * column_widths + "| " + " ".join(f"{elem:>{column_widths}}" for elem in elements)                    
+                    divider = "-" * len(header)                 
+                    table = [header, divider]                
+                    for i, row_label in enumerate(elements):
+                        row = f"{row_label:>{column_widths}} | " + " ".join(f"{elements[P[i,j]]:>{column_widths}}" for j in range(len(elements)))
+                        table.append(row)                 
+                    return "\n".join(table)               
+                print(create_table(elements, P))                
             </input>
+            <output>
+            </output>
         </sage>
     </subsection>
 </section>

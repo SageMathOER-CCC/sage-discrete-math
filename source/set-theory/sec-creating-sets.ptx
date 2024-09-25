@@ -13,8 +13,17 @@
         <sage>
         <input>
             M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-            show(M)
+            M
         </input>
+        </sage>
+        <p>
+            Use a <c>for</c> loop to view each element of the set on a new line.
+        </p>
+        <sage>
+            <input>
+                for month in M:
+                    print(month)
+            </input>
         </sage>
         <p>
             Notice that the months in set <m>M</m> do not appear in the same order as when you created the set. Sets are unordered collections of elements.
@@ -36,8 +45,8 @@
         <input>
             M = Set(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
             M_duplicates = Set(["Jan", "Jan", "Jan", "Feb", "Feb", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-
-            # The Set function eliminates duplicates
+            
+            # The Set function eliminates duplicates 
             M == M_duplicates
         </input>
         </sage>
@@ -85,7 +94,8 @@
             W = Set(["Sun", "Cloud", "Rain", "Snow", "Tornado", "Hurricane"])
             subsets_of_weather = Subsets(W)
 
-            subsets_of_weather.list()
+            for subset in subsets_of_weather:
+                print(subset)
         </input>
         </sage>
     </subsection>
@@ -102,7 +112,7 @@
         <title>Notes</title>
 
         <p>
-            Organizations such as clubs, gyms, or online subscription services can use set membership checks to validate if a user is a member or subscriber. Set membership checks can help control access to facilities or content.
+            One well-known tool for this is the Bloom filter, a clever data structure used in systems like Google Bigtable. It quickly checks if something, like a URL, might be part of a set. While it can sometimes say something’s in the set when it’s not (a false positive), it will never miss something that’s actually there (no false negatives). This makes Bloom filters great for high-speed searches in systems where memory is tight.
         </p>
         </aside>
         <sage>
@@ -126,7 +136,7 @@
         </p>
         <sage>
             <input>
-                W.issubset(Severe)
+                W.issubset(Severe) 
             </input>
         </sage>
     </subsection>
