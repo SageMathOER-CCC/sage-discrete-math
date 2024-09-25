@@ -2,7 +2,7 @@
 
 <section xml:id="relations-on-a-set" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Relations on a set</title>
-    
+
     <p>
         When <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
     </p>
