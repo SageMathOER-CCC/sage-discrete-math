@@ -1,3 +1,4 @@
+notes2
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -127,3 +128,148 @@
     </subsection>
 
 </section>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Combinatorics</title>
+
+    <subsection>
+        <title>Factorial Function</title><idx><h>factorial</h></idx>
+        <p>
+            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>.
+        </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Factorials are widely used in probability problems, such as determining the number of possible ways a set of items can be arranged.
+            </p>
+        </aside>
+        <p>
+            Compute the factorial of <m>5</m>:
+        </p>
+        <sage>
+            <input>
+                factorial(5)
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+    <subsection>
+        <title>Combinations</title><idx><h>combination</h></idx>
+        <p>
+            The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set of <m>n</m> objects.
+        </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Combinations are useful in scenarios like determining the number of possible committees that can be formed from a larger group.
+            </p>
+        </aside>
+        <p>
+            Calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m>:
+        </p>
+        <sage>
+            <input>
+                Combinations(5, 3).cardinality()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            List the combinations:
+        </p>
+        <sage>
+            <input>
+                Combinations(5, 3).list()
+            </input>
+            <output></output>
+        </sage>
+        <idx><h>binomial</h></idx>
+        <p>
+            The <c>binomial()</c> function provides an alternative method to compute the number of combinations.
+        </p>
+        <sage>
+            <input>
+                binomial(5, 3)
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+    <subsection>
+        <title>Permutations</title><idx><h>permutation</h></idx>
+        <p>
+            A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>n</m> objects.
+        </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Understanding permutations can help solve problems like scheduling where the order of tasks or events matters.
+            </p>
+        </aside>
+        <p>
+            To calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m> when the order matters, use the <c>Permutations()</c> method.
+        </p>
+        <sage>
+            <input>
+                Permutations(5, 3).cardinality()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            List the permutations:
+        </p>
+        <sage>
+            <input>
+                Permutations(5, 3).list()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            When <m>n = k</m>, we can calculate permutations of <m>n</m> elements.
+        </p>
+        <p>
+            Calculate the number of permutations of a set with <m>3</m> elements:
+        </p>
+        <sage>
+            <input>
+                Permutations(3).cardinality()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            List the permutations:
+        </p>
+        <sage>
+            <input>
+                Permutations(3).list()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            The following is an example of permutations of specified elements:
+        </p>
+        <sage>
+            <input>
+                A = Permutations(['a', 'b', 'c'])
+
+                A.list()
+            </input>
+            <output></output>
+        </sage>
+        <p>
+            Choose <m>2</m>:
+        </p>
+        <sage>
+            <input>
+                A = Permutations(['a', 'b', 'c'], 2)
+
+                A.list()
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
+
+</section>
+main

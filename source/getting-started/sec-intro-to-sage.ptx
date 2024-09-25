@@ -52,7 +52,7 @@
         </p>
       </li>
     </ul>
-  
+
     <p>
       There are two ways to run the code within the cells:
       <ul>
@@ -68,7 +68,7 @@
         </li>
       </ul>
     </p>
-    
+
     <sage>
       <input>
         # Lines that start with a pound sign are comments
@@ -76,19 +76,19 @@
         1+1
       </input>
     </sage>
-  
+
     <sage>
       <input>
         100 - 1
       </input>
     </sage>
-  
+
     <sage>
       <input>
         3*4
       </input>
     </sage>
-  
+
     <sage>
       <input>
         # Sage uses two exponentiation operators
@@ -96,7 +96,7 @@
         2**3
       </input>
     </sage>
-  
+
     <sage>
       <input>
         # Sage uses two exponentiation operators
@@ -104,28 +104,28 @@
         2^3
       </input>
     </sage>
-  
+
     <sage>
       <input>
         # Returns a rational number
         5/3
       </input>
     </sage>
-  
+
     <sage>
       <input>
         # Returns a floating point approximation
         5/3.0
       </input>
     </sage>
-  
+
     <sage>
       <input>
         # Returns the quotient of the integer division
         5//3
       </input>
     </sage>
-  
+
     <sage>
       <input>
         # Returns the remainder of the integer division
@@ -204,7 +204,7 @@
     <p>
       Below are some reserved keywords that you cannot use as variable names:
     </p>
-    
+
     <p>
       <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
     </p>

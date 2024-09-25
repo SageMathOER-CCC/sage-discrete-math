@@ -13,5 +13,5 @@
   <xi:include href="sec-logical-operation.ptx" />
   <xi:include href="sec-truth-table.ptx" />
   <xi:include href="sec-tautology.ptx" />
-  
+
 </chapter>

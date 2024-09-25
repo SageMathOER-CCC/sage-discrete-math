@@ -29,35 +29,33 @@
     </p>
     <sage>
         <input>
-            P = [1, 2, 3, 4, 5, 6]
+            S = Set([1, 2, 3, 4, 5, 6])
 
-            divisibility_poset = Poset((P, attrcall("divides")))
+            P = Poset((S, attrcall("divides")))
 
-            show(divisibility_poset)
-        </input>
-    </sage>
-    <sage>
-        <input>
-            is_boolean_algebra(divisibility_poset)
-        </input>
-    </sage>
-    <p>
-        When we pass <m>P</m> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <m>P</m> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>divisibility_poset</c> is not a Boolean algebra.
-    </p>
-    <sage>
-        <input>
-            S = {'a', 'b', 'c'}
-
-            power_set = Subsets(S)
-
-            P = Poset((power_set, lambda x, y: x.issubset(y)))
-
-            P.plot(vertex_size=1000,vertex_shape="")
+            show(P)
         </input>
     </sage>
     <sage>
         <input>
             is_boolean_algebra(P)
+        </input>
+    </sage>
+    <p>
+        When we pass <c>P</c> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <c>P</c> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>P</c> is not a Boolean algebra.
+    </p>
+    <sage>
+        <input>
+            T = Subsets(['a', 'b', 'c'])
+
+            Q = Poset((T, lambda x, y: x.issubset(y)))
+
+            Q.plot(vertex_size=3500, border=True)
+        </input>
+    </sage>
+    <sage>
+        <input>
+            is_boolean_algebra(Q)
         </input>
     </sage>
     <p>

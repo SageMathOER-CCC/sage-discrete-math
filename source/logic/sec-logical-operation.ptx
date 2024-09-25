@@ -1,3 +1,4 @@
+notes2
 <section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Logical Operators</title>
     <idx><h>logical operators</h><h>and</h></idx>
@@ -68,3 +69,72 @@
     </subsection>
 
 </section>
+=======
+<section xml:id="sec-logical-operation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Logical Operators</title>
+    <idx><h>logical operators</h><h>and</h></idx>
+    <idx><h>logical operators</h><h>or</h></idx>
+    <idx><h>logical operators</h><h>not</h></idx>
+    <idx><h>logical operators</h><h>conditional</h></idx>
+    <idx><h>logical operators</h><h>biconditional</h></idx>
+    <introduction>
+        <p>
+            In Sage, the logical operators are AND <c>&amp;</c>, OR <c>|</c>, NOT <c>~</c>, conditional <c>-&gt;</c>, and biconditional <c>&lt;-&gt;</c>.
+        </p>
+        <tabular>
+            <row>
+                <cell>Name</cell>
+                <cell>Sage Operator</cell>
+                <cell>Mathematical Notation</cell>
+            </row>
+            <row>
+                <cell>AND</cell>
+                <cell><c>&amp;</c></cell>
+                <cell><m>\land</m></cell>
+            </row>
+            <row>
+                <cell>OR</cell>
+                <cell><c>|</c></cell>
+                <cell><m>\lor</m></cell>
+            </row>
+            <row>
+                <cell>NOT</cell>
+                <cell><c>~</c></cell>
+                <cell><m>\lnot</m></cell>
+            </row>
+            <row>
+                <cell>Conditional</cell>
+                <cell><c>-&gt;</c></cell>
+                <cell><m>\rightarrow</m></cell>
+            </row>
+            <row>
+                <cell>Biconditional</cell>
+                <cell><c>&lt;-&gt;</c></cell>
+                <cell><m>\leftrightarrow</m></cell>
+            </row>
+        </tabular>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
+            </p>
+        </aside>
+
+    </introduction>
+    <!-- Logical Operations in Sage -->
+    <subsection>
+        <title>Boolean Formula</title>
+
+        <p>
+            Sage's <c>propcalc.formula()</c> function allows for the creation of Boolean formulas using variables and logical operators. We can then use <c>show</c> function to display the mathematical notations.
+        </p>
+        <sage>
+            <input>
+                A = propcalc.formula('(p &amp; q) | (~p)')
+                show(A)
+            </input>
+        </sage>
+    </subsection>
+
+</section>
+main

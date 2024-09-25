@@ -1,3 +1,4 @@
+notes2
 <section xml:id="sec-tables-of-operations">
     <title>Tables of Operations</title>
     <introduction>
@@ -152,3 +153,102 @@
         </sage>
     </subsection>
 </section>
+=======
+<section xml:id="sec-tables-of-operations">
+    <title>Tables of Operations</title>
+    <introduction>
+        <p>
+            This section examines the representation of meet <m>(∧)</m> and join <m>(∨)</m> operations within lattices using operation tables.
+        </p>
+    </introduction>
+
+    <subsection xml:id="meet-operation-table">
+        <title>Meet Operation Table</title><idx><h>meet matrix</h></idx>
+        <p>
+            The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.
+        </p>
+        <p>
+            To output the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c>LatticePoset()</c>. Then, we can use the function <c>meet_matrix()</c> to process the table.
+        </p>
+        <sage>
+            <input>
+                elements = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+                relations = [
+                    ['a', 'b'], ['a', 'c'], ['b', 'd'], ['c', 'd'],
+                    ['c', 'e'], ['d', 'f'], ['e', 'f'], ['f', 'g']
+                ]
+
+                L = LatticePoset((elements, relations))
+                M = L.meet_matrix()
+                show(M)
+            </input>
+        </sage>
+        <p>
+            From the output matrix, we can see that each entry <m>a_{ij}</m> is not the actual value of the meet of the elements <m>a_{i}</m> and <m>a_{j}</m> but just its position in the lattice. Let's show the values:
+        </p>
+        <sage>
+            <input>
+                linear_extension = L.linear_extension()
+
+                values_meet_matrix = [[linear_extension[M[i, j]] for j in range(len(elements))] for i in range(len(elements))]
+
+                values_meet_matrix
+            </input>
+            <output>
+            </output>
+        </sage>
+        <p>
+            Show the output as a table:
+        </p>
+        <sage>
+            <input>
+                import pandas as pd
+
+                df = pd.DataFrame(values_meet_matrix)
+
+                df
+            </input>
+        </sage>
+
+    </subsection>
+
+    <subsection xml:id="join-operation-table">
+        <title>Join Operation Table</title><idx><h>join matrix</h></idx>
+        <p>
+            Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.
+        </p>
+        <sage>
+            <input>
+                J = L.join_matrix()
+
+                show(J)
+            </input>
+        </sage>
+        <p>
+            Output the elements of the poset:
+        </p>
+        <sage>
+            <input>
+                linear_extension = L.linear_extension()
+
+                values_join_matrix = [[linear_extension[J[i, j]] for j in range(len(elements))] for i in range(len(elements))]
+
+                values_join_matrix
+            </input>
+        </sage>
+        <p>
+            Show the output as a table instead of a matrix.
+        </p>
+        <sage>
+            <input>
+                import pandas as pd
+
+                df = pd.DataFrame(values_join_matrix)
+
+                df
+            </input>
+        </sage>
+    </subsection>
+</section>
+main

@@ -11,7 +11,7 @@
         <p>
           Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
         </p>
-      </aside>  
+      </aside>
     <sage>
         <input>
             B = BooleanPolynomialRing(3, 'x')

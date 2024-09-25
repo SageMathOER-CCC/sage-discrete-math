@@ -1,3 +1,4 @@
+notes2
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -67,3 +68,74 @@
         </sage>
     </subsection>
 </section>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-tautology" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Analyzing Logical Equivalences</title>
+    <subsection>
+        <title>Equivalent Statements</title>
+        <p>
+            When working with Sage symbolic logic, the <c>==</c> operator compares semantic equivalence.
+        </p>
+        <sage>
+            <input>
+                h = propcalc.formula("x | ~y")
+                s = propcalc.formula("x &amp; y | x &amp; ~y | ~x &amp; ~y")
+                h == s
+            </input>
+        </sage>
+        <p>
+            Do not attempt to compare equivalence of truth tables.
+        </p>
+        <sage>
+            <input>
+                # Warning:
+                # Even though these truth tables look identical,
+                # the comparison will return False.
+                h.truthtable() == s.truthtable()
+            </input>
+        </sage>
+        <p>
+            However, we can compare equivalence of truth table <c>lists</c>.
+        </p>
+        <sage>
+            <input>
+                h_list = h.truthtable().get_table_list()
+                s_list = s.truthtable().get_table_list()
+                h_list == s_list
+            </input>
+        </sage>
+    </subsection>
+    <subsection>
+        <title>Tautologies</title><idx><h>tautology</h></idx>
+        <p>
+            A tautology is a logical statement that is always true.  The <c>is_tautology()</c> function checks whether a given logical expression is a tautology.
+        </p>
+        <aside>
+            <title>Notes</title>
+            <p>
+                Understanding tautologies is fundamental in mathematical proof strategies, such as proof by contradiction.
+            </p>
+        </aside>
+        <sage>
+            <input>
+                a = propcalc.formula('p | ~p')
+                a.is_tautology()
+            </input>
+        </sage>
+    </subsection>
+    <subsection>
+        <title>Contradictions</title><idx><h>contradiction</h></idx>
+        <p>
+            In contrast to tautologies, contradictions are statements that are always false.
+        </p>
+        <sage>
+            <input>
+                A = propcalc.formula('p &amp; ~p')
+                A.is_contradiction()
+            </input>
+        </sage>
+    </subsection>
+</section>
+main

@@ -3,10 +3,10 @@
 <section xml:id="defining-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Defining Functions</title><idx><h>functions (programming)</h></idx>
   <p>
-    Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what these functions do and how to use them. In Sage, you can also define functions yourself. Defining a function in Sage is similar to defining a function in Python.
+    Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what these functions do and how to use them. You can also define custom functions yourself. You are welcome to use the custom functions we define in this book. However, since these custom functions are not part of the Sage source code, you will need to copy and paste the functions into your Sage environment. If you try to use a custom function without defining it, you will get a <c>NameError</c>.
   </p>
   <p>
-    To define a function in Sage, use the <c>def</c> keyword followed by the function name and the function's arguments. The function's body is indented. The <c>return</c> keyword returns a value from the function.
+    To define a custom function in Sage, use the <c>def</c> keyword followed by the function name and the function's arguments. The function's body is indented. When you call the function, the <c>return</c> keyword returns a value from the function. The function definition is only stored in memory after you run the cell. You will not see any output when you run the cell that defines the function. You will see output only when you call the function. A green box under the cell indicates the successful execution of the cell. If the box is not green, you must run the cell to define the function.
   </p>
   <p>
     You may have heard of Pascal's Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is an example function that returns the <m>n^{th}</m> (0-indexed) row of Pascal's Triangle:
@@ -18,7 +18,7 @@
     </input>
   </sage>
   <p>
-    Try calling the function for yourself. First, run the Sage cell with the function definition to define the function. If you try to call a function without defining it, you will get a <c>NameError</c>. After defining the function, you can use it in other cells. You won't see any output when you run the cell that defines the function. The function definition is stored in memory, and you will see output only when you call the function. After running the above cell, you can call the <c>pascal_row()</c> function.
+    Try calling the function for yourself. First, run the Sage cell with the function definition to define the function. If you try to call a function without defining it, you will get a <c>NameError</c>. After defining the function, you can use it in other cells. You won't see any output when you run the cell that defines the function. The Sage cells store the function definition memory. You will see output only when you call the function. After running the above cell, you can call the <c>pascal_row()</c> function.
   </p>
   <sage>
     <input>
@@ -26,7 +26,7 @@
     </input>
   </sage>
   <p>
-    You can also add input validation to your functions to make them more robust. We may get some validation out of the box. For example, if we try to call the function using a string or decimal value as input, we will get a <c>TypeError</c>:
+    Input validation makes functions more robust. We may get some validation out of the box. For example, if we try to call the function using a string or decimal value as input, we will get a <c>TypeError</c>:
   </p>
   <sage>
     <input>
@@ -53,7 +53,7 @@
     </input>
   </sage>
   <p>
-    Try calling the function with a negative integer to see the input validation.
+    Running the above cell redefines the function. Try calling the function with a negative integer to see the input validation.
   </p>
   <sage>
     <input>
@@ -68,44 +68,44 @@
       def pascal_row(n):
           r"""
           Return row `n` of Pascal's triangle.
-      
+
           INPUT:
-      
-          - ``n`` -- non-negative integer; the row number of Pascal's triangle to return. 
+
+          - ``n`` -- non-negative integer; the row number of Pascal's triangle to return.
             The row index starts from 0, which corresponds to the top row.
-      
+
           OUTPUT: list; row `n` of Pascal's triangle as a list of integers.
-      
+
           EXAMPLES:
-      
+
           This example illustrates how to get various rows of Pascal's triangle (0-indexed) ::
-      
+
               sage: pascal_row(0)  # the top row
               [1]
-      
+
               sage: pascal_row(4)
               [1, 4, 6, 4, 1]
-      
+
           It is an error to provide a negative value for `n` ::
-      
+
               sage: pascal_row(-1)
               Traceback (most recent call last):
               ...
               ValueError: `n` must be a non-negative integer
-      
+
           .. NOTE::
-      
+
               This function uses the `binomial` function to compute each
               element of the row.
           """
           if n &lt; 0:
               raise ValueError("`n` must be a non-negative integer")
-          
+
           return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>
   <p>
-    We can view the <c>docstring</c> by calling the <c>help()</c> function on the function name. You can also access the <c>docstring</c> with the <c>?</c> operator.
+    After redefining the function and running the above cell, view the <c>docstring</c> by calling the <c>help()</c> function on the function name. You can also access the <c>docstring</c> with the <c>?</c> operator.
   </p>
   <sage>
     <input>
@@ -115,6 +115,6 @@
     </input>
   </sage>
   <p>
-    For more information on code style conventions and writing effective documentation strings, refer to the General Conventions article from the Sage Developer's Guide.
+    For more information on code style conventions and writing documentation strings, refer to the General Conventions article from the Sage Developer's Guide.
   </p>
 </section>
