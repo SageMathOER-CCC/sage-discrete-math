@@ -1,9 +1,11 @@
 <section xml:id="sec-practical-applications">
     <title>Practical Applications of Logic Gates</title>
+    <introduction>
+        <p>
+            Logic gates are everywhere in the devices we use daily, from smartphones to computers. They form the foundation of how digital systems process data, perform calculations, and store information. Let's explore a few key applications of logic gates that students can relate to and encounter in real-world scenarios.
+        </p>
+    </introduction>
 
-    <p>
-        Logic gates are everywhere in the devices we use daily, from smartphones to computers. They form the foundation of how digital systems process data, perform calculations, and store information. Let's explore a few key applications of logic gates that students can relate to and encounter in real-world scenarios.
-    </p>
 
     <subsection xml:id="sec-full-adder">
         <title>Full Adder: Arithmetic with Logic Gates</title>
@@ -11,7 +13,7 @@
             One of the most important uses of logic gates is in performing arithmetic operations, specifically addition. A full adder is a logic circuit that adds three bits—two input bits and a carry bit from the previous stage. It produces a sum and a carry-out value. Full adders are a crucial component in building arithmetic logic units (ALUs) within processors, where they handle addition and subtraction operations.
         </p>
         <p>
-            The full adder is built using a combination of XOR, AND, and OR gates. The XOR gate is used to calculate the sum, while the AND and OR gates are used to handle the carry bits.
+            The full adder is built using a combination of <c>XOR</c>, <c>AND</c>, and <c>OR</c> gates. The <c>XOR</c> gate is used to calculate the sum, while the <c>AND</c> and <c>OR</c> gates are used to handle the carry bits.
         </p>
         <sage>
             <input>
@@ -35,7 +37,6 @@
                             print(f"{int(bool(A_val))} {int(bool(B_val))} {int(bool(C_val))} | {int(bool(sum_output))}   {int(bool(carry_output))}")
             </input>
             <output>
-                # Displays the full truth table for the Full Adder
             </output>
         </sage>
         <p>
@@ -77,7 +78,6 @@
                 evaluated_mux
             </input>
             <output>
-                # Displays the evaluated output for the multiplexer
             </output>
         </sage>
 
@@ -89,10 +89,10 @@
     <subsection xml:id="sec-memory-circuits">
         <title>Memory Circuits: Storing Data</title>
         <p>
-            Another critical application of logic gates is in memory circuits, which are responsible for storing data in digital systems. Basic memory elements like SR flip-flops are made using combinations of NAND or NOR gates. These flip-flops act as 1-bit memory cells, where the state of the gates determines whether the circuit stores a 0 or a 1.
+            Another critical application of logic gates is in memory circuits, which are responsible for storing data in digital systems. Basic memory elements like SR flip-flops are made using combinations of <c>NAND</c> or <c>NOR</c> gates. These flip-flops act as 1-bit memory cells, where the state of the gates determines whether the circuit stores a 0 or a 1.
         </p>
         <p>
-            Here's an example of a simple SR flip-flop, which uses two cross-coupled NAND gates. The SR flip-flop can "remember" its state, making it one of the fundamental circuits in building larger memory units like RAM.
+            Here's an example of a simple SR flip-flop, which uses two cross-coupled <c>NAND</c> gates. The SR flip-flop can "remember" its state, making it one of the fundamental circuits in building larger memory units like RAM.
         </p>
         <sage>
             <input>
@@ -117,7 +117,6 @@ evaluated_Q = Q.subs({S: S_val, Q_not: evaluated_Q_not})
 evaluated_Q, evaluated_Q_not
             </input>
             <output>
-                # Displays the output Q and Q_not for the SR flip-flop
             </output>
         </sage>
 
@@ -126,7 +125,10 @@ evaluated_Q, evaluated_Q_not
         </p>
     </subsection>
 
-    <p>
-        These are just a few examples of how logic gates are used in real-world applications. From performing arithmetic operations in processors, routing data in communication systems, to storing data in memory circuits, logic gates form the backbone of modern computing systems.
-    </p>
+    <conclusion>
+        <p>
+            These are just a few examples of how logic gates are used in real-world applications. From performing arithmetic operations in processors, routing data in communication systems, to storing data in memory circuits, logic gates form the backbone of modern computing systems.
+        </p>
+    </conclusion>
+
 </section>

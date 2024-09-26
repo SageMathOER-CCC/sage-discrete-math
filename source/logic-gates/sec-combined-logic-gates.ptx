@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="sec-combined-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Combining Logic Gates and Simplifying Circuits</title>
 
     <subsection>
         <title>Combinations of Logic Gates</title>
         <p>
-            Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an AND gate and a NOT gate results in a NAND gate, which inverts the output of the AND gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
+            Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
         </p>
         <p>
-            Let's look at a simple example where an OR gate is combined with a NOT gate. The OR gate takes two inputs and produces a 1 if either input is 1. By applying a NOT gate to the output, the circuit produces the opposite, meaning it will only produce 1 if both inputs are 0.
+            Let's look at a simple example where an <c>OR</c> gate is combined with a <c>NOT</c> gate. The <c>OR</c> gate takes two inputs and produces a 1 if either input is 1. By applying a <c>NOT</c> gate to the output, the circuit produces the opposite, meaning it will only produce 1 if both inputs are 0.
         </p>
         <sage>
             <input>
@@ -28,20 +26,18 @@
                 evaluated_output
             </input>
             <output>
-                # Shows the evaluated result of the NOT(OR(A, B)) circuit
             </output>
         </sage>
 
-
         <p>
-            Combining basic gates allows us to create circuits for various practical applications. For example, combining AND and OR gates is a key part of building circuits like arithmetic logic units (ALUs) inside CPUs.
+            Combining basic gates allows us to create circuits for various practical applications. For example, combining <c>AND</c> and <c>OR</c> gates is a key part of building circuits like arithmetic logic units (ALUs) inside CPUs.
         </p>
     </subsection>
 
     <subsection>
         <title>Boolean Algebra and Logic Gates</title>
         <p>
-            Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A AND B) OR (A AND NOT B)</m> can be simplified to just <m>A</m>.
+            Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A * B) + (A * \overline{B})</m> can be simplified to just <m>A</m>.
         </p>
         <p>
             Here's a practical example. Consider the following Boolean expression, which combines several gates:
@@ -56,7 +52,6 @@
                 simplified_expr
             </input>
             <output>
-                # Shows the simplified form of the Boolean expression
             </output>
         </sage>
 
@@ -71,7 +66,7 @@
             Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding output, making it easier to analyze and understand the behavior of the circuit.
         </p>
         <p>
-            Let’s create a truth table for a circuit that combines an AND gate and an OR gate. This will help us visualize how the output changes with different input values.
+            Let’s create a truth table for a circuit that combines an <c>AND</c> gate and an <c>OR</c> gate. This will help us visualize how the output changes with different input values.
         </p>
         <sage>
             <input>
@@ -88,11 +83,10 @@
                 generate_truth_table()
             </input>
             <output>
-                # Shows the truth table for AND and OR gates with two inputs
             </output>
         </sage>
         <p>
-            In this example, the truth table helps us see how the AND gate only produces 1 when both inputs are 1, while the OR gate produces 1 whenever at least one input is 1.
+            In this example, the truth table helps us see how the <c>AND</c> gate only produces 1 when both inputs are 1, while the <c>OR</c> gate produces 1 whenever at least one input is 1.
         </p>
 
         <p>
