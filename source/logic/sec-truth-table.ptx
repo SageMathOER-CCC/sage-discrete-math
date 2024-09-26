@@ -8,7 +8,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                When you're designing a circuit, truth tables make it easy to map out how different logic gates—like AND, OR, and NOT—work together. They're the foundation for creating circuits that do things like add numbers, compare data, or route signals. Working with truth tables is a great way to get a clear picture of how digital logic flows through a system, helping you understand how devices like calculators or processors actually work.
+                Truth tables aid in the design of digital circuits.
             </p>
         </aside>
         <sage>

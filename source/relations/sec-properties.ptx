@@ -51,12 +51,6 @@
         <p>
             A relation <m>R</m> is reflexive if <m>a</m> relates to <m>a</m> for all elements <m>a</m> in the set <m>A</m>. This means all the elements relate to themselves.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Reflexive relations are super useful in database design, especially when you’re mapping out how things relate to themselves. For example, in a company, an employee might manage themselves or work in a way that doesn't need outside oversight. Reflexivity helps keep the structure consistent, making sure everyone and everything is represented properly in the system.
-            </p>  
-        </aside>
         <sage>
             <input>
                 A = Set([1, 2, 3])
@@ -100,12 +94,6 @@
         <p>
             A relation is symmetric if <m>a</m> relates to <m>b</m>, then <m>b</m> relates to <m>a</m>.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Symmetric relations are really important in peer-to-peer networks, where both sides need to communicate equally. In file-sharing, for instance, if one user can send data to another, the other should be able to send data back. This creates a balanced relationship, which helps spread the load evenly and ensures resources are shared fairly across the network.
-            </p>  
-        </aside>
         <sage>
             <input>
                 def is_symmetric_set(relation_R):
@@ -140,12 +128,6 @@
         <p>
             When a relation is antisymmetric, the only case that <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>a</m> is when <m>a</m> and <m>b</m> are equal.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Antisymmetric relations pop up a lot in task scheduling. If Task A needs to happen before Task B, but B can’t happen before A (unless they’re the same task), that’s an antisymmetric relationship. This keeps workflows organized and ensures tasks get done in the right order, avoiding messy situations like circular dependencies that could slow everything down.
-            </p>  
-        </aside>
         <sage>
             <input>
                 def is_antisymmetric_set(relation):
@@ -198,12 +180,6 @@
         <p>
             A relation is transitive if <m>a</m> relates to <m>b</m> and <m>b</m> relates to <m>c</m>, then <m>a</m> relates to <m>c</m>.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Transitive relations are a big deal in supply chain management. Imagine supplier A provides parts to supplier B, and B uses those parts to make something that goes to supplier C. Transitivity helps maintain the connection between A and C, making sure that everything flows smoothly. It’s crucial for keeping track of dependencies and ensuring the production process runs efficiently from start to finish.
-            </p>  
-        </aside>
         <p>
             Let's define a function to check for the transitive property in a <c>Set</c>:
         </p>

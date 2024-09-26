@@ -102,15 +102,15 @@
             G.show(edge_labels = True)
         </input>
     </sage>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Spanning trees influence network design, ensuring all nodes are connected without any cycles, minimizing the overall layout cost while maintaining network connectivity. Prim's algorithm determines efficient road, electrical, and computer networks.
-        </p>
-    </aside>
     <p>
         We can ask Sage for the minimal spanning tree of this graph. By running <c>Graph.min_spanning_tree??</c> We can see that <c>min_spanning_tree()</c> uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.
     </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+            Minimal spanning trees influence the efficient design of networks and roads.
+        </p>
+    </aside>
     <sage>
         <input>
             G.min_spanning_tree(by_weight=True)

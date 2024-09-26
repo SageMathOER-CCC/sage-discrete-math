@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Tautologies are statements that are always true, and while they are important in logic circuits, they also play a big role in cybersecurity, particularly in SQL injection attacks. In SQL injection, attackers exploit vulnerabilities in web applications by inserting tautological conditions into SQL queries. For example, a query like SELECT * FROM users WHERE username = 'admin' OR 1=1 will always return true because 1=1 is a tautology, allowing unauthorized access to the system.
+                Tautologies are relevant in the field of cybersecurity. Attackers exploit vulnerabilities by injecting SQL code that turns a <c>WHERE</c> clause into a tautology, granting unintended access to the system.
             </p>
         </aside>
         <sage>

@@ -28,12 +28,6 @@
     <p>
         Create sets for the people living on each floor of the building:
     </p>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Equivalence relations help when you need to organize things into groups. For example, libraries group books by genre, or companies segment customers based on their buying habits. This makes large sets of data more manageable and allows businesses to target specific groups of customers more effectively.
-        </p>
-    </aside>
     <sage>
         <input>
             import pprint
@@ -48,7 +42,6 @@
             pprint.pprint(floors)
         </input>
     </sage>
-
     <p>
         Let <m>R</m> be the relation on <m>A</m> described as follows:
     </p>
@@ -62,12 +55,6 @@
             R
         </input>
     </sage>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Equivalence classes help us understand how people form groups. For example, people in the same social group often have things in common, like education level or income. Studying these groups gives us insight into social patterns and behaviors, which helps inform better policy decisions and solutions for social issues.
-        </p>
-    </aside>
     <p>
         This relation demonstrates the properties of an equivalence relation:
     </p>
@@ -83,7 +70,6 @@
             is_reflexive_set(A, R)
         </input>
     </sage>
-
     <p>
         <term>Symmetric</term>: If person <m>a</m> lives in the same floor as person <m>b</m>, then person <m>b</m> lives in the same floor as person <m>a</m>.
     </p>
@@ -96,7 +82,6 @@
             is_symmetric_set(R)
         </input>
     </sage>
-
     <p>
         <term>Transitive</term>: If person <m>a</m> lives in the same floor as person <m>b</m> and person <m>b</m> lives in the same floor as person <m>c</m>, then person <m>a</m> lives in the same floor as person <m>c</m>.
     </p>

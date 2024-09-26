@@ -14,7 +14,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Recursion is widely used in everyday tech, like navigating a website or solving puzzles. For example, think about how file systems on your computer are organized into folders and subfolders—finding a file often involves recursively searching through each folder. Recursion is also used in video game development, where actions like rendering objects on the screen or generating game worlds are done by breaking them into smaller, manageable tasks. Students can relate to recursion when they use apps that require repeated tasks, like solving a math problem step-by-step or generating suggestions in a chatbot.
+                Use recursion to solve problems by breaking them down into similar steps. In programming, recursively defined functions often improve code readability.
             </p>
         </aside>
         <p>

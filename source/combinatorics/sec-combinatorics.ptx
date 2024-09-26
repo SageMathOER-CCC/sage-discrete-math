@@ -27,7 +27,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Combinations come in handy in genetics, helping scientists figure out how traits get passed down from parents to kids. When you have a set of genes, combinations allow you to calculate how many different ways certain traits can be inherited. This is really useful for predicting the chances of diseases or genetic conditions showing up in a family.
+                Use combinations when order does not matter, such as determining possible Poker hands. The order in which a player holds cards does not affect the kind of hand. For example, the following hand is a royal flush: <m>10</m>, <m>J</m>, <m>Q</m>, <m>K</m>, <m>A</m>. The following hand is also a royal flush: <m>A</m>, <m>K</m>, <m>J</m>, <m>10</m>, <m>Q</m>.
             </p>
         </aside>
         <p>
@@ -68,7 +68,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                In cryptography, permutations are key to making strong passwords or encryption systems. The order of characters or keys makes all the difference. By understanding how many different ways a set of characters can be arranged, cryptographers can measure how tough it would be for someone to crack the code using methods like brute force. The more permutations, the harder it is to break in, which keeps systems more secure.
+                Use permutations in situations where order does matter, such as when creating passwords. Longer passwords have more permutations, making them more challenging to guess by brute force.
             </p>
         </aside>
         <p>

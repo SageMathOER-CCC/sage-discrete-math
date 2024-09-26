@@ -62,12 +62,6 @@
         <p>
             Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.
         </p>
-        <aside>
-            <title>notes</title>
-            <p>
-                When a compiler analyzes a program, it uses lattices to track data flow. The join operation helps merge different execution paths in the program, ensuring that the most optimal path is taken without any ambiguity.
-            </p>
-        </aside>
         <sage>
             <input>
                 J = L.join_matrix()

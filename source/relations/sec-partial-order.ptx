@@ -7,12 +7,6 @@
     <p>
         A relation <m>R</m> on a set is a Partial Order (PO) <m>\prec</m> if it satisfies the reflexive, antisymmetric, and transitive properties. A poset is a set with a partial order relation. For example, the following set of numbers with a relation given by divisibility is a poset.
     </p>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Partial orders are really useful in project management, especially when you're dealing with tasks that have dependencies. Some tasks need to be finished before others can start, but not everything is directly related. This creates a partial order, where you can see the order of tasks based on what depends on what. A Hasse diagram is a great way to visualize these relationships, making it easier for project managers to spot critical tasks and keep things moving smoothly. It helps make sure everything happens in the right order, avoiding any workflow slowdowns or bottlenecks.
-        </p>
-    </aside>
     <sage>
         <input>
             A = Set([1, 2, 3, 4, 5, 6, 8])
@@ -26,10 +20,15 @@
     </sage>
 
     <idx><h>Hasse diagram</h></idx>
-
     <p>
         A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if <m>x</m> relates to <m>y</m>,  then the vertex <m>x</m> appears lower in the drawing than the vertex <m>y</m>. Self-loops are assumed and not shown. Similarly, the diagram assumes the transitive property and does not explicitly display the edges that are implied by the transitive property.
     </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+            Partial orders and Hasse diagrams help analyze task dependencies in scheduling applications.
+        </p>
+    </aside>
     <p>
         If <m>R</m> is a partial order relation on <m>A</m>, then the function <c>Poset((A, R))</c> computes the Hasse diagram associated to <m>R</m>.
     </p>

@@ -18,22 +18,22 @@
         </p>
         <sage>
         <input>
-          konigsberg = [('A', 'B', 'b_1'),
+            konigsberg = [('A', 'B', 'b_1'),
                         ('A', 'B', 'b_2'),
                         ('A', 'C', 'b_3'),
                         ('A', 'C', 'b_4'),
                         ('D', 'A', 'b_5'),
                         ('D', 'B', 'b_6'),
                         ('D', 'C', 'b_7')]
-          G = Graph(konigsberg, multiedges=True)
-          G.show(edge_labels=True)
+            G = Graph(konigsberg, multiedges=True)
+            G.show(edge_labels=True)
         </input>
         </sage>
 
         <aside>
             <title>Notes</title>
             <p>
-                Eulerian circuits are not only academic but have practical applications in logistics and waste management. For example, garbage collection routes can be planned as Eulerian circuits to minimize travel and costs. Similarly, postmen use Eulerian paths to optimize mail delivery routes.
+                Eulerian circuits and paths have practical applications for reducing travel and costs in logistics, waste management, the airline industry, and postal service.
             </p>
         </aside>
 
@@ -58,15 +58,9 @@
         <p>
             We can use Sage to determine if a graph is Eulerian.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                In computer networking, designing networks to ensure resilience and fault tolerance often involves constructing Eulerian graphs, where a network can remain operational even if a connection fails.
-            </p>
-        </aside>
         <sage>
         <input>
-        G.is_eulerian()
+            G.is_eulerian()
         </input>
         </sage>
 
@@ -81,9 +75,9 @@
         </p>
         <sage>
         <input>
-        G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-        G.show()
-        G.is_eulerian(path=True)
+            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+            G.show()
+            G.is_eulerian(path=True)
         </input>
         </sage>
 
@@ -104,8 +98,8 @@
         </p>
         <sage>
         <input>
-        G = graphs.CycleGraph(6)
-        G.eulerian_circuit(labels=False, return_vertices=True)
+            G = graphs.CycleGraph(6)
+            G.eulerian_circuit(labels=False, return_vertices=True)
         </input>
         </sage>
 
@@ -131,15 +125,9 @@
             We can represent the dodecahedron as a graph and use Sage to determine if it is Hamiltonian.
             See for yourself if the dodecahedron is Hamiltonian.
         </p>
-        <aside>
-            <title>Real-world Application</title>
-            <p>
-                Hamiltonian circuits are integral to creating efficient routing algorithms used by services like Google Maps and UPS for finding the shortest path through multiple points, optimizing travel and delivery times.
-            </p>
-        </aside>
         <sage>
         <input>
-        graphs.DodecahedralGraph().show()
+            graphs.DodecahedralGraph().show()
         </input>
         </sage>
 
@@ -148,7 +136,7 @@
         </p>
         <sage>
         <input>
-        graphs.DodecahedralGraph().is_hamiltonian()
+            graphs.DodecahedralGraph().is_hamiltonian()
         </input>
         </sage>
 
@@ -168,16 +156,10 @@
         <p>
             Let's explore the following graph:
         </p>
-        <aside>
-            <title>Scientific Research</title>
-            <p>
-                In scientific research, especially in genetics, Hamiltonian paths are used to solve the DNA sequencing problem by finding the shortest possible unique sequence that can represent a set of observed sequences.
-            </p>
-        </aside>
         <sage>
         <input>
-        G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
-        G.show(edge_labels=True)
+            G = Graph({1:{3:2, 2:1, 4:3, 5:1}, 2:{3:6, 4:3, 5:1}, 3:{4:5, 5:3}, 4:{5:5}})
+            G.show(edge_labels=True)
         </input>
         </sage>
         <idx><h>Hamiltonian cycle</h></idx>
@@ -186,7 +168,7 @@
         </p>
         <sage>
         <input>
-        G.hamiltonian_cycle(algorithm='backtrack')
+            G.hamiltonian_cycle(algorithm='backtrack')
         </input>
         </sage>
 
@@ -197,8 +179,8 @@
         </p>
         <sage>
         <input>
-        h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
-        h.show(edge_labels=True)
+            h = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
+            h.show(edge_labels=True)
         </input>
         </sage>
 
@@ -210,8 +192,8 @@
         </p>
         <sage>
         <input>
-        sumWeights = sum(h.edge_labels())
-        print(sumWeights)
+            sumWeights = sum(h.edge_labels())
+            print(sumWeights)
         </input>
         </sage>
 
@@ -221,9 +203,9 @@
         </p>
         <sage>
         <input>
-        G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
-        G.show()
-        G.hamiltonian_cycle(algorithm='backtrack')
+            G = Graph([(1, 2), (1, 3), (2, 3), (1,4), (4, 7), (3, 5), (5, 8), (8, 9), (2,6), (6, 9), (7, 9)])
+            G.show()
+            G.hamiltonian_cycle(algorithm='backtrack')
         </input>
         </sage>
 
