@@ -4,12 +4,6 @@
         <p>
             A function from a set <m>A</m> into a set <m>B</m> is a relation from <m>A</m> into <m>B</m> such that each element of <m>A</m> is related to exactly one element of the set <m>B</m>. The set <m>A</m> is called the domain of the function, and the set <m>B</m> is called the co-domain. Functions are fundamental in both mathematics and computer science for describing mathematical relationships and implementing computational logic.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Defining functions in Sage is not only useful for mathematical calculations but also for creating complex algorithms, modeling data, and simulating real-world scenarios in various fields of science and engineering.
-            </p>
-        </aside>
         <p>
             In Sage, functions can be defined using direct definition.
         </p>
@@ -31,12 +25,6 @@
         <p>
             Sage provides powerful tools for visualizing functions, enabling you to explore the graphical representations of mathematical relationships.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Utilizing graphical representations of functions can greatly aid in understanding complex concepts in calculus and analysis, such as differentiation and integration, by providing a visual context.
-            </p>
-        </aside>
         <p>
             For example, to plot the function <m>f(x) = x^3</m> over the interval <m>[-2, 2]</m>:
         </p>

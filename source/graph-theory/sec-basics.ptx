@@ -57,13 +57,8 @@
             E = [('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'A'), ('A', 'D'), ('C', 'E')]
             G = Graph([V, E])
             G.plot()
-        </input> </sage> <aside>
-        <title>Notes</title>
-
-        <p>
-            Graph theory is pivotal in areas such as network routing and social networking. For example, in telecommunications, graphs are used to model and optimize routing of communications like telephone traffic or internet data packets through a network of nodes and links, ensuring efficient and fault-tolerant network design.
-        </p>
-        </aside>
+        </input>
+        </sage>
 
         <p>
             We can define a graph with an edge list. Each edge is a pair of vertices:
@@ -117,6 +112,13 @@
               graphs.HexahedralGraph().show()
         </input>
         </sage>
+
+        <aside>
+        <title>Notes</title>
+        <p>
+            Concepts from graph theory have practical applications related to social networks, computer networks, transportation, biology, chemistry, and more.
+        </p>
+        </aside>
     </subsection>
 
 
@@ -288,6 +290,7 @@
             G.show()
         </input>
         </sage>
+
         <p>
             Add a list of vertices:
         </p>
@@ -307,6 +310,7 @@
             G.show()
         </input>
         </sage>
+
         <p>
             Remove a list of vertices from a graph:
         </p>
@@ -336,6 +340,7 @@
             G.show()
         </input>
         </sage>
+
         <p>
             Deleting a nonexistent vertex returns an error.
             Deleting a nonexistent edge leaves the graph unchanged.

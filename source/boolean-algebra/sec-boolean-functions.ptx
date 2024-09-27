@@ -3,6 +3,12 @@
     <p>
         A  <term>Boolean function</term> is a function that takes only values 0 or 1 and whose domain is the Cartesian product <m>{\{0, 1\}^n}</m>.
     </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+          Boolean algebra influences the design of digital circuits. For example, simplifying a digital circuit can minimize the number of gates used and reduce the manufacturing cost.
+        </p>
+    </aside>
     <p>
         A <term>minterm</term> of the Boolean variables <m>x_1, x_2, \ldots, x_n</m> is the Boolean product <m>y_1 \cdot y_2 \cdot \ldots \cdot y_n</m> where each <m>y_i = x_i</m> or <m>y_i = \overline{x_i}</m>.
     </p>
@@ -259,10 +265,4 @@
     <p>
         After applying the identity, complement, and distributive laws, we transformed the Boolean function into the sum-of-products expansion <me>h(x, y) = x \cdot y + x \cdot \bar{y} + x \cdot \bar{y} + \bar{x} \cdot \bar{y}</me>.
     </p>
-    <aside>
-        <title>Notes</title>
-        <p>
-          Boolean algebra is crucial in digital circuit design. For example, simplifying the expression of a digital circuit can minimize the number of gates used, which reduces cost and power consumption. Techniques such as Karnaugh maps and Boolean simplification are common in the industry.
-        </p>
-    </aside>
 </section>

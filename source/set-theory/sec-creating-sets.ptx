@@ -97,14 +97,6 @@
         <p>
             Sage allows you to check whether an element belongs to a set. You can use the <c>in</c> operator to check membership, which returns <c>True</c> if the element is in the set and <c>False</c> otherwise.
         </p>
-
-        <aside>
-        <title>Notes</title>
-
-        <p>
-            Organizations such as clubs, gyms, or online subscription services can use set membership checks to validate if a user is a member or subscriber. Set membership checks can help control access to facilities or content.
-        </p>
-        </aside>
         <sage>
         <input>
             "earthquake" in W

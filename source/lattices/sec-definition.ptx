@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Lattices play a role in structuring hierarchical access control in security systems and databases. They help manage permissions through role-based access control, where roles and data can be organized in a lattice to determine the propagation of access rights.
+                Lattices have practical applications in computer science, such as static program analysis and distributed programming.
             </p>
         </aside>
         <p>

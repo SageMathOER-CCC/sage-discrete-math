@@ -12,7 +12,6 @@
       G.all_paths(1, 4)
     </input>
     <output>
-        # Lists all paths from vertex 1 to vertex 4.
     </output>
   </sage>
   <p>
@@ -27,15 +26,8 @@
           G.shortest_path(1, 4)
       </input>
       <output>
-          # Retrieves the shortest path from vertex 1 to vertex 4, if it exists.
       </output>
   </sage>
-  <aside>
-    <title>Notes</title>
-    <p>
-      Pathfinding in graphs is a key algorithm in logistics to determine the most efficient route between locations. It's used in GPS navigation systems to find the quickest route for vehicles, and in network design to optimize data flow between servers, enhancing the efficiency of network infrastructures.
-    </p>
-  </aside>
   <idx><h>connected</h></idx>
   <p>
     A graph is said to be connected if there is a path between any two vertices in the graph.
@@ -49,7 +41,6 @@
           G.is_connected()
       </input>
       <output>
-          # Checks if the graph is connected, returning a boolean value.
       </output>
   </sage>
   <p>
@@ -64,7 +55,6 @@
           G.is_connected()
       </input>
       <output>
-          # Checks if the graph is connected, returning a boolean value.
       </output>
   </sage>
   <p>
@@ -76,7 +66,6 @@
           G.connected_components()
       </input>
       <output>
-          # Returns a list of connected components, with each component represented as a list of vertices.
       </output>
   </sage>
   <p>
@@ -113,7 +102,6 @@
           G.is_bipartite()
       </input>
       <output>
-          # Checks if the graph is bipartite, returning a boolean value along with the partition sets if it is bipartite.
       </output>
   </sage>
 </section>
