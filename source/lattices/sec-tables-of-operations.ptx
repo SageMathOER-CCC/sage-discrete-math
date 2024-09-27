@@ -35,7 +35,13 @@
             <input>
                 linear_extension = L.linear_extension()
 
-                values_meet_matrix = [[linear_extension[M[i, j]] for j in range(len(elements))] for i in range(len(elements))]
+                values_meet_matrix = [
+                    [
+                        linear_extension[M[i, j]]
+                        for j in range(len(elements))
+                    ]
+                    for i in range(len(elements))
+                ]
 
                 values_meet_matrix
             </input>
@@ -49,7 +55,11 @@
             <input>
                 import pandas as pd
 
-                df = pd.DataFrame(values_meet_matrix)
+                df = pd.DataFrame(
+                    values_meet_matrix,
+                    index=elements,
+                    columns=elements
+                )
 
                 df
             </input>
@@ -76,7 +86,13 @@
             <input>
                 linear_extension = L.linear_extension()
 
-                values_join_matrix = [[linear_extension[J[i, j]] for j in range(len(elements))] for i in range(len(elements))]
+                values_join_matrix = [
+                    [
+                        linear_extension[J[i, j]]
+                        for j in range(len(elements))
+                    ]
+                    for i in range(len(elements))
+                ]
 
                 values_join_matrix
             </input>
@@ -88,7 +104,11 @@
             <input>
                 import pandas as pd
 
-                df = pd.DataFrame(values_join_matrix)
+                df = pd.DataFrame(
+                    values_join_matrix,
+                    index=elements,
+                    columns=elements
+                )
 
                 df
             </input>
