@@ -76,6 +76,13 @@
             </output>
         </sage>
 
+        <aside>
+            <title>Notes</title>
+            <p>
+                These logic gates are used to design everything from simple calculators to complex CPUs. Understanding the behavior of each gate is like learning the alphabet of digital logic.
+            </p>
+        </aside>
+
         <p>
             <c>NAND</c> gate: Produces a 0 only if both inputs are 1.
         </p>
@@ -132,11 +139,6 @@
             These basic gates form the foundation for more complex circuits, allowing us to build anything from simple logic operations to entire computer processors.
         </p>
 
-        <aside>
-            <title>Notes</title>
-            <p>
-                These logic gates are used to design everything from simple calculators to complex CPUs. Understanding the behavior of each gate is like learning the alphabet of digital logic.
-            </p>
-        </aside>
+
 
 </section>
