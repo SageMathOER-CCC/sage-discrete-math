@@ -46,12 +46,6 @@
         <p>
             Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>intersection()</c> function to calculate <m>A \cap B</m>.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                A practical application of set intersection could be finding common members between two different social media groups. Members who belong to both groups represent the intersection of these groups.
-            </p>
-        </aside>
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
@@ -78,12 +72,6 @@
         <p>
             Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>B = \{3, 4, 5, 6\}</m>. We can use the <c>difference()</c> function to calculate the difference between sets.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                In a real-life context, this can be seen as identifying items on a restaurant menu (set A) that you have not yet tried (set B), with A - B representing the new dishes to explore.
-            </p>
-        </aside>
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
@@ -143,12 +131,6 @@
         <p>
             Let <m>U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}</m> be the universal set. Given the set <m>A = \{1, 2, 3, 4, 5\}</m>. We can use the <c>difference()</c> function to find the complement of <m>A</m>.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                This is analogous to having a list of all possible ice cream flavors (U) and identifying those flavors you have yet to try (A').
-            </p>
-        </aside>
         <sage>
             <input>
                 U = Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
@@ -175,12 +157,6 @@
         <p>
             Suppose <m>A = \{1, 2, 3, 4, 5\}</m> and <m>D = \{x, y\}</m>. We can use the <c>cartesian_product()</c> and <c>Set()</c> functions to display the Cartesian product <m>A \times D</m>.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                The Cartesian product is relevant in situations like determining all possible combinations of two different sets, such as shirt colors and pants styles in a wardrobe.
-            </p>
-        </aside>
         <sage>
             <input>
                 A = Set([1, 2, 3, 4, 5])
@@ -202,12 +178,6 @@
 
 
     <subsection>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Exploring the power set of a set can be particularly useful in fields such as combinatorics, probability theory, and computer science, where understanding the relationships between subsets of a given set is crucial.
-            </p>
-        </aside>
         <title>Power Sets</title>
         <idx><h>set operations</h><h>power set</h></idx>
         <p>

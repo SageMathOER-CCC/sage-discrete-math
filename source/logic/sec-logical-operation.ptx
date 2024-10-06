@@ -41,15 +41,7 @@
                 <cell><m>\leftrightarrow</m></cell>
             </row>
         </tabular>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Logical operators are fundamental in digital circuit design. They are used to create complex circuits like ALUs (Arithmetic Logic Units) in computer processors, where operations such as addition, subtraction, and bit shifting rely on combinations of AND, OR, and NOT gates. Understanding these basics is essential for designing efficient electronic and software solutions.
-            </p>
-        </aside>
-
     </introduction>
-    <!-- Logical Operations in Sage -->
     <subsection>
         <title>Boolean Formula</title>
 

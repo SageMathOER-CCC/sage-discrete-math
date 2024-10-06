@@ -20,10 +20,15 @@
     </sage>
 
     <idx><h>Hasse diagram</h></idx>
-
     <p>
         A Hasse diagram is a simplified visual representation of a poset. Unlike a digraph, the relative position of vertices has meaning: if <m>x</m> relates to <m>y</m>,  then the vertex <m>x</m> appears lower in the drawing than the vertex <m>y</m>. Self-loops are assumed and not shown. Similarly, the diagram assumes the transitive property and does not explicitly display the edges that are implied by the transitive property.
     </p>
+    <aside>
+        <title>Notes</title>
+        <p>
+            Partial orders and Hasse diagrams help analyze task dependencies in scheduling applications.
+        </p>
+    </aside>
     <p>
         If <m>R</m> is a partial order relation on <m>A</m>, then the function <c>Poset((A, R))</c> computes the Hasse diagram associated to <m>R</m>.
     </p>

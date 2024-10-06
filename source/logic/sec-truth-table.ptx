@@ -8,7 +8,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Constructing truth tables is a practical method for debugging complex logical conditions in software development, ensuring all scenarios are accounted for.
+                Truth tables aid in the design of digital circuits.
             </p>
         </aside>
         <sage>
@@ -36,12 +36,6 @@
     <p>
         Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function supports expressions with a number of variables that is practical for computational purposes, if the list of variables becomes too lengthy (such as extending beyond the width of a LaTeX page), the truth table's columns may run off the screen. Additionally, the function's performance may degrade with a very large number of variables, potentially increasing the computation time.
     </p>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Truth tables for three variables are particularly useful in the study of digital circuits and Boolean algebra, where each variable represents a different input or condition.
-        </p>
-    </aside>
     <sage>
         <input>
             B = propcalc.formula('(p &amp; q) -&gt; r')

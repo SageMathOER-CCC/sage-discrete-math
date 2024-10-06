@@ -44,7 +44,7 @@
         <aside>
             <title>Notes</title>
             <p>
-                Understanding tautologies is fundamental in mathematical proof strategies, such as proof by contradiction.
+                Tautologies are relevant in the field of cybersecurity. Attackers exploit vulnerabilities by injecting SQL code that turns a <c>WHERE</c> clause into a tautology, granting unintended access to the system.
             </p>
         </aside>
         <sage>

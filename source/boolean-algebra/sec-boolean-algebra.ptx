@@ -1,10 +1,5 @@
 <section xml:id="sec-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean Algebra</title><idx><h>Boolean Algebra</h></idx>
-    <aside>
-        <p>
-            In digital electronics, the principles of Boolean algebra guide the design of circuits such as multiplexers, demultiplexers, encoders, and decoders, essential components in telecommunications and signal processing.
-        </p>
-    </aside>
     <p>
         A  Boolean algebra is a bounded lattice that is both complemented and distributive. Let's define the <c>is_boolean_algebra()</c> function to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
     </p>
@@ -88,9 +83,4 @@
             is_boolean_algebra(B)
         </input>
     </sage>
-    <aside>
-        <p>
-            Software engineers use Boolean algebra to simplify conditions, refactor code, and optimize logic. These skills are crucial for identifying bottlenecks and improving efficiency in real-time systems and performance-critical applications.
-        </p>
-    </aside>
 </section>

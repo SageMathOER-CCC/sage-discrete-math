@@ -11,7 +11,7 @@
   <aside>
     <title>Notes</title>
     <p>
-      In chemistry, isomorphism is crucial in the study of molecules. Chemical isomers have the same molecular formula but different structures (or graphs), affecting their chemical properties and reactions. Understanding graph isomorphism helps chemists identify and differentiate these molecules efficiently.
+      Graph isomorphism identifies structures relevant to chemistry, biology, machine learning, and neural networks.
     </p>
   </aside>
   <sage>
@@ -67,12 +67,6 @@
       \text{degree sequence of } G = \text{ degree sequence of } G'
     </me>
   </p>
-  <aside>
-    <title>Notes</title>
-    <p>
-      Graph isomorphism has implications in computer science, particularly in data mining and machine learning. Algorithms that detect isomorphisms can help identify similar data structures in databases, facilitating the classification and clustering of data based on structural similarity.
-    </p>
-  </aside>
   <p>
     To summarize, if one graph is connected and the other is not, then the graphs are not isomorphic. If the number of vertices and edges are different, then the graphs are not isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all three invariants are satisfied, then the graphs may or may not be isomorphic.
   </p>
@@ -135,12 +129,6 @@
       invariant_under_isomorphism(C, D)
     </input>
   </sage>
-  <aside>
-    <title>Notes</title>
-    <p>
-      Network theory uses graph isomorphism to analyze and understand different networks, such as social networks or communication networks. By identifying isomorphic subgraphs, researchers can detect patterns and anomalies across different network systems.
-    </p>
-  </aside>
   <p>
     Let's construct a different pair of graphs <m>A</m> and <m>B</m> defined as follow
   </p>
