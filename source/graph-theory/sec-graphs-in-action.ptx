@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-graphs-in-action">
+    <title>Graphs in Action</title>
+    <introduction>
+        <p>
+            Imagine you are a bike courier tasked with making deliveries to each Chicago City College campus location. Per your contract, you get paid per delivery, not per hour. Therefore, finding the most efficient delivery route is in your best interest. We assume the bike delivery routes are the same distance in each direction.
+        </p>
+    </introduction>
+    <subsection xml:id="subsec-Bike-Courier-Delivery-Route-Problem">
+        <title>Bike Courier Delivery Route Problem</title>
+        <p>
+            Let's make a plan to solve our delivery route problem.
+            <ol>
+                <li>
+                    <p>
+                        Find the distances between each City College location
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Make a Graph of the City Colleges. Each location is a node. The weight of the edges between location nodes has a weight representing the distance between locations.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Use the traveling salesperson algorithm to calculate the optimal delivery route.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </subsection>
+    <subsection xml:id="subsec-locations">
+        <title>Locations</title>
+        <table>
+            <title>City College Addresses</title>
+            <tabular row-headers="no" left="medium" right="medium" top="medium" bottom="medium">
+                <row header="yes" bottom="medium">
+                    <cell>Name</cell>
+                    <cell>Address</cell>
+                </row>
+                <row>
+                    <cell>Harold Washington College</cell>
+                    <cell>30 E. Lake Street, Chicago, IL 60601</cell>
+                </row>
+                <row>
+                    <cell>Harry S Truman College</cell>
+                    <cell>1145 West Wilson Ave, Chicago, IL 60640</cell>
+                </row>
+                <row>
+                    <cell>Kennedy-King College</cell>
+                    <cell>6301 South Halsted St, Chicago, IL 60621</cell>
+                </row>
+                <row>
+                    <cell>Malcolm X College</cell>
+                    <cell>1900 W. Jackson, Chicago, IL 60612</cell>
+                </row>
+                <row>
+                    <cell>Olive-Harvey College</cell>
+                    <cell>10001 South Woodlawn Ave, Chicago, IL 60628</cell>
+                </row>
+                <row>
+                    <cell>Richard J. Daley College</cell>
+                    <cell>7500 South Pulaski Rd, Chicago, IL 60652</cell>
+                </row>
+                <row>
+                    <cell>Wilbur Wright College</cell>
+                    <cell>4300 N. Narragansett Ave, Chicago, IL 60634</cell>
+                </row>
+            </tabular>
+        </table>
+    </subsection>
+    <subsection xml:id="subsec-Graph">
+        <title>Graph</title>
+        <p>
+            We will represent each College as a node with the initials of the College name. The weight of the edge will represent the miles in between the locations. Since we are using bike routes, we are assuming each direction between two locations has the same distance. For example, express the route between Harold Washington College and Harry S Truman College as <c>("HW", "HT", 6.5)</c>.
+        </p>
+        <sage>
+            <input>
+                routes = [
+                    ("HW", "HT", 6.5),
+                    ("HW", "KK", 8.3),
+                    ("HW", "MX", 3.2),
+                    ("HW", "OH", 15.4),
+                    ("HW", "RD", 11.9),
+                    ("HW", "WW", 10.7),
+
+                    ("HT", "KK", 13.6),
+                    ("HT", "MX", 7.1),
+                    ("HT", "OH", 22.1),
+                    ("HT", "RD", 17.3),
+                    ("HT", "WW", 7.9),
+
+                    ("KK", "MX", 8.3),
+                    ("KK", "OH", 8.1),
+                    ("KK", "RD", 5.7),
+                    ("KK", "WW", 16.9),
+
+                    ("MX", "OH", 16.2),
+                    ("MX", "RD", 10.2),
+                    ("MX", "WW", 10.2),
+
+                    ("OH", "RD", 10.0),
+                    ("OH", "WW", 24.9),
+
+                    ("RD", "WW", 18.3)
+                ]
+                routes
+            </input>
+        </sage>
+        <p>
+            Create a <c>Graph</c> from the edge <c>list</c>:
+        </p>
+        <sage>
+            <input>
+                G = Graph(routes)
+                G.show(edge_labels=True)
+            </input>
+        </sage>
+        <p>
+            The trailing zeros of the floating point values are hard to read. Let's loop through the edge <c>list</c> and display the numbers with <m>3</m> points of precision.
+        </p>
+        <sage>
+            <input>
+                for u, v, label in G.edge_iterator():
+                    G.set_edge_label(u, v, n(label, digits=3))
+
+                G.show(edge_labels=True)
+            </input>
+        </sage>
+        <p>
+            Since this graph is not planar, improve the layout with the <c>"circular"</c> parameter. We can also improve the readability by increasing the <c>vertex_size</c> and <c>figsize</c>.
+        </p>
+        <sage>
+            <input>
+                G.show(
+                    edge_labels=True,
+                    layout="circular",
+                    vertex_size=500,
+                    figsize=10,
+                )
+            </input>
+        </sage>
+        <p>
+            Now that we have a clearer idea of the routes let's find the most efficient delivery route using the traveling salesperson algorithm.
+        </p>
+        <sage>
+            <input>
+                optimal_route = G.traveling_salesman_problem(use_edge_labels=True, maximize=False)
+                optimal_route.show(
+                    edge_labels=True,
+                    vertex_size=500,
+                )
+            </input>
+        </sage>
+        <p>
+            We can set the vertex positions to resemble their positions on the map. We can use the latitude and longitude values of the locations and then reverse them when we supply the values to the position <c>dictionary</c>.
+        </p>
+        <sage>
+            <input>
+                positions = {
+                    'HW': (-87.62682604591349, 41.88609733324964),
+                    'HT': (-87.65901943241516, 41.9646769664519),
+                    'KK': (-87.6435785385309, 41.77847328856264),
+                    'MX': (-87.67453475017268, 41.87800548491064),
+                    'OH': (-87.5886722734757, 41.71006715754713),
+                    'RD': (-87.72315805813204, 41.75677704810169),
+                    'WW': (-87.78738482318016, 41.95836512405638),
+                }
+
+                Graph(optimal_route).show(
+                    pos=positions,
+                    edge_labels=True,
+                    vertex_size=500,
+                    figsize=10,
+                )
+            </input>
+        </sage>
+    </subsection>
+</section>
