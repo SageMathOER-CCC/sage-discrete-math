@@ -7,7 +7,7 @@
             Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
         </p>
         <p>
-            Let's look at a simple example where an <c>OR</c> gate is combined with a <c>NOT</c> gate. The <c>OR</c> gate takes two inputs and produces a 1 if either input is 1. By applying a <c>NOT</c> gate to the output, the circuit produces the opposite, meaning it will only produce 1 if both inputs are 0.
+            Let's look at a simple example where an <c>OR</c> gate is combined with a <c>NOT</c> gate. The <c>OR</c> gate takes two inputs and produces a <c>1</c> if either input is <c>1</c>. By applying a <c>NOT</c> gate to the output, the circuit produces the opposite, meaning it will only produce <c>1</c> if both inputs are <c>0</c>.
         </p>
         <sage>
             <input>
@@ -70,23 +70,29 @@
         </p>
         <sage>
             <input>
-                from sympy.logic.boolalg import And, Or
+                from sympy.logic.boolalg import And, Or, truth_table
                 from sympy.abc import A, B
-                def generate_truth_table():
-                    table = []
-                    for A_val in [False, True]:
-                        for B_val in [False, True]:
-                            and_output = And(A_val, B_val)
-                            or_output = Or(A_val, B_val)
-                            table.append([A_val, B_val, and_output, or_output])
-                    return table
-                generate_truth_table()
+
+                # Define a function to generate a truth table for any list of logic gate expressions
+                def generate_truth_table(expressions, variables):
+                    for expr in expressions:
+                        print(f"Truth table for expression: {expr}")
+                        table = truth_table(expr, variables)
+                        for row in table:
+                            print(row)
+                        print("-" * 20)
+
+                # Example usage with AND and OR gates
+                expressions = [And(A, B), Or(A, B)]
+                variables = [A, B]
+                generate_truth_table(expressions, variables)
+
             </input>
             <output>
             </output>
         </sage>
         <p>
-            In this example, the truth table helps us see how the <c>AND</c> gate only produces 1 when both inputs are 1, while the <c>OR</c> gate produces 1 whenever at least one input is 1.
+            In this example, the truth table helps us see how the <c>AND</c> gate only produces <c>1</c> when both inputs are <c>1</c>, while the <c>OR</c> gate produces <c>1</c> whenever at least one input is <c>1</c>.
         </p>
 
         <p>

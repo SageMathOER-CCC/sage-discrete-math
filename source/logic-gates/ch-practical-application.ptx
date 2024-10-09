@@ -2,13 +2,12 @@
     <title>Practical Applications of Logic Gates</title>
     <introduction>
         <p>
-            Logic gates are fundamental building blocks in digital circuits and play a crucial role in the design of modern computing systems. They operate based on binary principles, where the input and output values are either high (1) or low (0), corresponding to different logical conditions. Their importance spans from simple devices like calculators to advanced systems like microprocessors, enabling core operations like arithmetic, data routing, and memory storage.
+            Logic gates are fundamental building blocks in digital circuits and play a crucial role in the design of modern computing systems. They operate based on binary principles, where the input and output values are either high (<c>1</c>) or low (<c>0</c>), corresponding to different logical conditions. Their importance spans from simple devices like calculators to advanced systems like microprocessors, enabling core operations like arithmetic, data routing, and memory storage.
         </p>
         <p>
             To better understand how logic gates impact our daily lives, let's explore a few real-world applications. These examples showcase how simple logic circuits contribute to sophisticated operations within digital devices.
         </p>
     </introduction>
-
 
     <subsection xml:id="sec-full-adder">
         <title>Full Adder: Arithmetic with Logic Gates</title>
@@ -17,7 +16,7 @@
         </p>
 
         <p>
-            <term>Binary Addition Basics</term>: In binary, numbers are represented by just 0s and 1s. When adding two binary numbers, if the result is 1 + 1, the sum is 0, and a carry of 1 is generated (similar to how 9 + 1 in decimal gives 10, where 0 is the sum, and 1 is carried to the next column). A full adder can handle this carry, making it an essential part of multi-bit addition.
+            <term>Binary Addition Basics</term>: In binary, numbers are represented by just <c>0</c>s and <c>1</c>s. When adding two binary numbers, if the result is <c>1 + 1</c>, the sum is <c>0</c>, and a carry of <c>1</c> is generated (similar to how <c>9 + 1</c> in decimal gives <c>10</c>, where <c>0</c> is the sum, and <c>1</c> is carried to the next column). A full adder can handle this carry, making it an essential part of multi-bit addition.
         </p>
 
         <p>
@@ -40,12 +39,12 @@
         </p>
 
         <p>
-            <term>Detailed Example</term>: Let’s consider adding two binary digits, A = 1, B = 1, with a carry-in of 1:
+            <term>Detailed Example</term>: Let’s consider adding two binary digits, <c>A = 1</c>, <c>B = 1</c>, with a carry-in of <c>1</c>:
             <itemizedlist>
-                <item>The XOR gate first adds A and B: 1 XOR 1 = 0 (because XOR outputs 1 only if one input is 1 but not both).</item>
-                <item>The result is XORed with the carry-in: 0 XOR 1 = 1.</item>
-                <item>The sum is 1.</item>
-                <item>The AND gate checks if both A and B are 1, which they are, so the result is 1.</item>
+                <item>The XOR gate first adds A and B: <c>1 XOR 1 = 0</c> (because XOR outputs <c>1</c> only if one input is <c>1</c> but not both).</item>
+                <item>The result is XORed with the carry-in: <c>0 XOR 1 = 1</c>.</item>
+                <item>The sum is <c>1</c>.</item>
+                <item>The AND gate checks if both A and B are <c>1</c>, which they are, so the result is <c>1</c>.</item>
                 <item>This carry-out bit is passed to the next full adder in a sequence if needed.</item>
             </itemizedlist>
         </p>
@@ -90,7 +89,7 @@
         </p>
 
         <p>
-            For instance, consider a 4-to-1 multiplexer, which has four input signals but only one output. The selection of which input is sent to the output is controlled by two additional signals called select lines. Depending on the values of these select lines, the multiplexer connects one of the four inputs to the output.
+            For instance, consider a <c>4-to-1</c> multiplexer, which has four input signals but only one output. The selection of which input is sent to the output is controlled by two additional signals called select lines. Depending on the values of these select lines, the multiplexer connects one of the four inputs to the output.
         </p>
 
         <p>
@@ -137,11 +136,11 @@
         </p>
 
         <p>
-            The basic building block of memory circuits is a type of circuit called a <term>flip-flop</term>. Flip-flops are used to store a single bit of data, which can either be a 0 or a 1. Flip-flops are created using logic gates such as <c>NAND</c> or <c>NOR</c> gates, arranged in specific configurations to allow them to "remember" their state even after the input signal has been removed. This property makes flip-flops fundamental in storing data temporarily in a system.
+            The basic building block of memory circuits is a type of circuit called a <term>flip-flop</term>. Flip-flops are used to store a single bit of data, which can either be a <c>0</c> or a <c>1</c>. Flip-flops are created using logic gates such as <c>NAND</c> or <c>NOR</c> gates, arranged in specific configurations to allow them to "remember" their state even after the input signal has been removed. This property makes flip-flops fundamental in storing data temporarily in a system.
         </p>
 
         <p>
-            One common example of a flip-flop is the <term>SR (Set-Reset) flip-flop</term>, which is used to set a bit to 1 or reset it to 0. The SR flip-flop is typically built using two cross-coupled NAND gates. It operates with two inputs: the Set input (S) and the Reset input (R). Depending on the combination of these inputs, the flip-flop will either store a 1, store a 0, or retain its previous value. This ability to hold a state is what allows SR flip-flops to act as 1-bit memory elements.
+            One common example of a flip-flop is the <term>SR (Set-Reset) flip-flop</term>, which is used to set a bit to <c>1</c> or reset it to <c>0</c>. The SR flip-flop is typically built using two cross-coupled NAND gates. It operates with two inputs: the Set input (<c>S</c>) and the Reset input (<c>R</c>). Depending on the combination of these inputs, the flip-flop will either store a <c>1</c>, store a <c>0</c>, or retain its previous value. This ability to hold a state is what allows SR flip-flops to act as <c>1</c>-bit memory elements.
         </p>
 
         <p>
@@ -149,25 +148,25 @@
         </p>
         <sage>
             <input>
-from sympy.logic.boolalg import Nand
-from sympy import symbols
+                from sympy.logic.boolalg import Nand
+                from sympy import symbols
 
-# Define variables S, R
-S, R = symbols('S R')
+                # Define variables S, R
+                S, R = symbols('S R')
 
-# SR Flip-flop using NAND gates
-Q_not = Nand(R, True)  # Assume initial state for Q (True in this case)
-Q = Nand(S, Q_not)     # Set input (S)
+                # SR Flip-flop using NAND gates
+                Q_not = Nand(R, True)  # Assume initial state for Q (True in this case)
+                Q = Nand(S, Q_not)     # Set input (S)
 
-# Assign initial values for Set and Reset
-S_val = True
-R_val = False
+                # Assign initial values for Set and Reset
+                S_val = True
+                R_val = False
 
-# Now evaluate both Q and Q_not with the given S and R values
-evaluated_Q_not = Q_not.subs({R: R_val})
-evaluated_Q = Q.subs({S: S_val, Q_not: evaluated_Q_not})
+                # Now evaluate both Q and Q_not with the given S and R values
+                evaluated_Q_not = Q_not.subs({R: R_val})
+                evaluated_Q = Q.subs({S: S_val, Q_not: evaluated_Q_not})
 
-evaluated_Q, evaluated_Q_not
+                evaluated_Q, evaluated_Q_not
             </input>
             <output>
             </output>
