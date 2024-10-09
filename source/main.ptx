@@ -22,6 +22,7 @@
     <xi:include href="./trees/ch-trees.ptx" />
     <xi:include href="./lattices/ch-lattices.ptx" />
     <xi:include href="./boolean-algebra/ch-boolean-algebra.ptx" />
+    <xi:include href="./logic-gates/ch-logic-gates.ptx" />
     <xi:include href="./finite-state-machines/ch-finite-state-machines.ptx" />
 
     <!-- Include backmatter -->

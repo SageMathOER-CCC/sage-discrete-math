@@ -1,0 +1,144 @@
+<section xml:id="sec-intro-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Introduction to Logic Gates</title>
+
+    <p>
+        Logic gates are the building blocks of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) and produce a single binary output. Logic gates are fundamental to how computers and other digital devices function, as they make decisions based on inputs and perform tasks like arithmetic, data storage, and control operations. In this chapter, we will explore the most common types of logic gates, how they are used, and how they form the basis of complex circuits.
+    </p>
+
+    <sage>
+        <input>
+            from sympy.logic.boolalg import And, Or, Not, Nand, Nor, Xor, Equivalent
+            from sympy.abc import A, B
+            A = True
+            B = False
+            # Example: AND gate with inputs A and B
+            And(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <aside>
+        <title>Notes</title>
+        <p>
+            Logic gates are the foundation of modern computing. Every operation your computer performs, from adding numbers to displaying images, is made up of logic gates that process binary signals (<c>0</c>s and <c>1</c>s).
+        </p>
+    </aside>
+
+    <p>
+        The most common logic gates include <c>AND</c>, <c>OR</c>, <c>NOT</c>, <c>NAND</c>, <c>NOR</c>, <c>XOR</c>, and <c>XNOR</c>. Each gate has its own symbol and truth table that defines how it processes inputs to produce an output. Understanding these basic gates is the first step to learning how digital systems work, as more complex circuits are built by combining these gates.
+    </p>
+
+    <idx><h>AND</h></idx>
+    <idx><h>OR</h></idx>
+    <idx><h>NOT</h></idx>
+    <idx><h>NAND</h></idx>
+    <idx><h>NOR</h></idx>
+    <idx><h>XOR</h></idx>
+    <idx><h>XNOR</h></idx>
+
+    <p>
+        <c>AND</c> gate: Produces a <c>1</c> only if both inputs are <c>1</c>.
+    </p>
+    <sage>
+        <input>
+            A = True
+            B = False
+            And(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <p>
+        <c>OR</c> gate: Produces a <c>1</c> if at least one input is <c>1</c>.
+    </p>
+    <sage>
+        <input>
+            A = True
+            B = False
+            Or(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <p>
+        <c>NOT</c> gate: Produces the opposite of the input, <c>1</c> becomes <c>0</c> and <c>0</c> becomes <c>1</c>.
+    </p>
+    <sage>
+        <input>
+            A = True
+            Not(A)
+        </input>
+        <output>
+            # Shows the result of NOT gate when A is True
+        </output>
+    </sage>
+
+    <aside>
+        <title>Notes</title>
+        <p>
+            These logic gates are used to design everything from simple calculators to complex CPUs. Understanding the behavior of each gate is like learning the alphabet of digital logic.
+        </p>
+    </aside>
+
+    <p>
+        <c>NAND</c> gate: Produces a <c>0</c> only if both inputs are <c>1</c>.
+    </p>
+    <sage>
+        <input>
+            A = True
+            B = True
+            Nand(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <p>
+        <c>NOR</c> gate: Produces a <c>1</c> only if both inputs are <c>0</c>.
+    </p>
+    <sage>
+        <input>
+            A = False
+            B = False
+            Nor(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <p>
+        <c>XOR</c> gate: Produces a <c>1</c> if exactly one input is <c>1</c>, but not both.
+    </p>
+    <sage>
+        <input>
+            A = True
+            B = False
+            Xor(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <p>
+        <c>XNOR</c> gate (equivalent gate): Produces a <c>1</c> if both inputs are the same.
+    </p>
+    <sage>
+        <input>
+            A = True
+            B = True
+            Equivalent(A, B)
+        </input>
+        <output>
+        </output>
+    </sage>
+
+    <p>
+        These basic gates form the foundation for more complex circuits, allowing us to build anything from simple logic operations to entire computer processors.
+    </p>
+
+
+
+</section>

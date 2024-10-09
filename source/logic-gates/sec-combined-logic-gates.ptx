@@ -1,0 +1,103 @@
+<section xml:id="sec-combined-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Combining Logic Gates and Simplifying Circuits</title>
+
+    <subsection>
+        <title>Combinations of Logic Gates</title>
+        <p>
+            Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
+        </p>
+        <p>
+            Let's look at a simple example where an <c>OR</c> gate is combined with a <c>NOT</c> gate. The <c>OR</c> gate takes two inputs and produces a <c>1</c> if either input is <c>1</c>. By applying a <c>NOT</c> gate to the output, the circuit produces the opposite, meaning it will only produce <c>1</c> if both inputs are <c>0</c>.
+        </p>
+        <sage>
+            <input>
+                from sympy.logic.boolalg import Or, Not
+                from sympy.abc import A, B
+
+                # Define the logic circuit: NOT(OR(A, B))
+                circuit_output = Not(Or(A, B))
+
+                # Assign values to A and B
+                A_val = False
+                B_val = False
+
+                # Substitute values of A and B into the circuit and evaluate
+                evaluated_output = circuit_output.subs({A: A_val, B: B_val})
+                evaluated_output
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            Combining basic gates allows us to create circuits for various practical applications. For example, combining <c>AND</c> and <c>OR</c> gates is a key part of building circuits like arithmetic logic units (ALUs) inside CPUs.
+        </p>
+    </subsection>
+
+    <subsection>
+        <title>Boolean Algebra and Logic Gates</title>
+        <p>
+            Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A * B) + (A * \overline{B})</m> can be simplified to just <m>A</m>.
+        </p>
+        <p>
+            Here's a practical example. Consider the following Boolean expression, which combines several gates:
+        </p>
+        <sage>
+            <input>
+                from sympy.logic.boolalg import And, Or, Not
+                from sympy import simplify
+                A, B, C = True, False, True
+                complex_expr = Or(And(A, B), And(A, Not(B)), And(C, B))
+                simplified_expr = simplify(complex_expr)
+                simplified_expr
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            Boolean algebra helps optimize circuits, reducing the number of gates needed and making the system more efficient. It's a key tool in designing everything from small circuits to large-scale computing systems.
+        </p>
+    </subsection>
+
+    <subsection>
+        <title>Truth Tables and Logic Circuits</title>
+        <p>
+            Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding output, making it easier to analyze and understand the behavior of the circuit.
+        </p>
+        <p>
+            Let’s create a truth table for a circuit that combines an <c>AND</c> gate and an <c>OR</c> gate. This will help us visualize how the output changes with different input values.
+        </p>
+        <sage>
+            <input>
+                from sympy.logic.boolalg import And, Or, truth_table
+                from sympy.abc import A, B
+
+                # Define a function to generate a truth table for any list of logic gate expressions
+                def generate_truth_table(expressions, variables):
+                    for expr in expressions:
+                        print(f"Truth table for expression: {expr}")
+                        table = truth_table(expr, variables)
+                        for row in table:
+                            print(row)
+                        print("-" * 20)
+
+                # Example usage with AND and OR gates
+                expressions = [And(A, B), Or(A, B)]
+                variables = [A, B]
+                generate_truth_table(expressions, variables)
+
+            </input>
+            <output>
+            </output>
+        </sage>
+        <p>
+            In this example, the truth table helps us see how the <c>AND</c> gate only produces <c>1</c> when both inputs are <c>1</c>, while the <c>OR</c> gate produces <c>1</c> whenever at least one input is <c>1</c>.
+        </p>
+
+        <p>
+            Truth tables are an essential tool for designing and analyzing logic circuits, allowing you to predict the behavior of even complex circuits by systematically evaluating every possible input combination.
+        </p>
+    </subsection>
+
+</section>
