@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-extended-example" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <title>FSM in Action</title>
+    <!-- TODO. revisit once the changes of the previous section is finalized -->
     <introduction>
         <title>Controlling Traffic Lights and Pedestrian Crossing Signals</title>
         <p>

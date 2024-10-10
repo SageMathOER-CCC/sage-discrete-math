@@ -1,29 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-modeling-finite-state-machines" xmlns:xi="http://www.w3.org/2001/XInclude"
     xml:lang="en">
-    <title>State Machine in SageMath</title>
+    <title>State Machine in Sage</title>
     <idx>
         <h>state machines</h>
         <h>model</h>
     </idx>
     <introduction>
         <p>
-            Although <term>SageMath</term> does have a dedicated built-in module to handle state
+            Although Sage does have a dedicated built-in module to handle state
             machines, we can still model, construct, display, and run relatively
             simple state machines, leveraging the general-purpose tools, such as graphs and
             transition matrices, to represent and work with state machines.</p>
         <aside>
-            <!-- TODO. to be confirmed -->
             <title>Notes</title>
-            <p>
-                While SageMath provides basic tools to represent and simulate state machines,
+            <p> While Sage provides basic tools to represent and simulate state machines,
                 it may not natively support more complex state machine features such as parallel
                 states or hierarchical transitions.</p>
         </aside>
         <p>
             In this section, we'll explore how to define states, create a state transition graph,
-            visualize the state machine, and simulate its execution in SageMath.</p>
+            visualize the state machine, and simulate its execution in Sage.</p>
     </introduction>
+
+    <subsection>
+        <title>Example of Application of FSMs</title>
+        <table>
+            <title>State Machine Transitions and Outputs</title>
+            <p> Assume there is a 3-levels elevator (floors 1 thru 3). this elevator moves in the
+                same direction (up or down) until it reaches the last floor while moving up, or
+                the first floor while moving down. It makes stop at every floor on its way up or
+                down. Each floor has 3 buttons to press while selecting the destination floor.
+            </p>
+            <p> Next, we'll see how to model and simulate this system using an FSM. In this example,
+                we have the various states <m>S={fl_1, fl_2, fl_3}</m> representing each of the
+                floors, the different user inputs <m>X={push-1, push-2, push-3}</m>, and the
+                possible outputs for the elevator <m>Z={go_up, go_down, no_action}</m> The different
+                components of this FSM can be transcribed in the following table. </p>
+            <tabular halign="center">
+                <row header="yes" bottom="major">
+                    <cell></cell>
+
+                    <cell>|</cell>
+
+                    <cell></cell>
+                    <cell>next state</cell>
+                    <cell></cell>
+
+                    <cell>|</cell>
+
+                    <cell></cell>
+                    <cell>output</cell>
+                    <cell></cell>
+                </row>
+                <row header="yes" bottom="minor">
+                    <cell>from</cell>
+                    <cell>|</cell>
+
+                    <cell>push-1</cell>
+                    <cell>push-2</cell>
+                    <cell>push-3</cell>
+
+                    <cell>|</cell>
+
+                    <cell>push-1</cell>
+                    <cell>push-2</cell>
+                    <cell>push-3</cell>
+                </row>
+
+                <row>
+                    <cell>fl_1</cell>
+
+                    <cell>|</cell>
+
+                    <cell>fl_1</cell>
+                    <cell>fl_2</cell>
+                    <cell>fl_3</cell>
+
+                    <cell>|</cell>
+
+                    <cell>no_change</cell>
+                    <cell>go_up</cell>
+                    <cell>go_up</cell>
+                </row>
+
+                <row>
+                    <cell>fl_2</cell>
+
+                    <cell>|</cell>
+
+                    <cell>fl_1</cell>
+                    <cell>fl_2</cell>
+                    <cell>fl_3</cell>
+
+                    <cell>|</cell>
+
+                    <cell>go_down</cell>
+                    <cell>no_change</cell>
+                    <cell>go_up</cell>
+                </row>
+
+                <row>
+                    <cell>fl_3</cell>
+
+                    <cell>|</cell>
+
+                    <cell>fl_1</cell>
+                    <cell>fl_2</cell>
+                    <cell>fl_3</cell>
+
+                    <cell>|</cell>
+
+                    <cell>go_down</cell>
+                    <cell>go_down</cell>
+                    <cell>no_change</cell>
+                </row>
+
+            </tabular>
+        </table>
+    </subsection>
+
     <subsection>
         <title>Define States, Transitions and Outputs</title>
         <p> The first step is to define the states and transitions in the state machine. We can
@@ -31,56 +127,57 @@
         </p>
         <sage>
             <input>
-                # Define states
-                states = ['S0', 'S1', 'S2', 'S3', 'S4']
+                # Define state, input and output sets
+                states = ['fl_1', 'fl_2', 'fl_3']
+                inputs = ['push-1', 'push-2', 'push-3']
+                outputs = ['go_up', 'go_down', 'no_change']
 
-                # Assume there are 2 possible input events (actions) {A0, A1}, we then
-                # define transitions as a dictionary {current_state: {input: next_state}}
+                # transitions are defined as a dictionary {(current_state, input): next_state}
                 transitions = {
-                    'S0': {
-                        'A0': 'S1'
-                    },
-                    'S1': {
-                        'A0': 'S2',
-                        'A1': 'S3'
-                    },
-                    'S2': {
-                        'A0': 'S0',
-                        'A1': 'S4'
-                    },
-                    'S3': {
-                        'A0': 'S4'
-                    },
-                    'S4': {
-                        'A0': 'S0'
-                    }
+                    ('fl_1', 'push-1'): 'fl_1',
+                    ('fl_1', 'push-2'): 'fl_2',
+                    ('fl_1', 'push-3'): 'fl_3',
+
+                    ('fl_2', 'push-1'): 'fl_1',
+                    ('fl_2', 'push-2'): 'fl_2',
+                    ('fl_2', 'push-3'): 'fl_3',
+
+                    ('fl_3', 'push-1'): 'fl_1',
+                    ('fl_3', 'push-2'): 'fl_2',
+                    ('fl_3', 'push-3'): 'fl_3',
                 }
 
-                # The machine output controls a locking mechanism that can be either LOCKED, or UNLOCKED
+                # The machine output controls how the elevator would move
                 outputs = {
-                    'S0': 'LOCKED',
-                    'S1': 'LOCKED',
-                    'S2': 'LOCKED',
-                    'S3': 'UNLOCKED',
-                    'S4': 'UNLOCKED'
+                    ('fl_1', 'push-1'): 'no_change',
+                    ('fl_1', 'push-2'): 'go_up',
+                    ('fl_1', 'push-3'): 'go_up',
+
+                    ('fl_2', 'push-1'): 'go_down',
+                    ('fl_2', 'push-2'): 'no_change',
+                    ('fl_2', 'push-3'): 'go_up',
+
+                    ('fl_3', 'push-1'): 'go_down',
+                    ('fl_3', 'push-2'): 'go_down',
+                    ('fl_3', 'push-3'): 'no_change',
                 }
 
                 # Display the machine configuration
-                import json
                 print('States: ', states, '\n')
-                print('Transitions: ', json.dumps(transitions, indent=2), '\n')
-                print('Outputs: ', json.dumps(outputs, indent=2), '\n')
+                print('Transitions: ', transitions, '\n')
+                print('Outputs: ', outputs, '\n')
             </input>
             <output></output>
         </sage>
         <p>
-            The states are defined as vertices in the graph, the transitions (along with the outputs) are defined as directed
+            The states are defined as vertices in the graph, the transitions (along with the
+            outputs) are defined as directed
             edges between these vertices.</p>
     </subsection>
     <subsection>
-        <title>Create Graph Model of State Machine</title>
-        <p> In SageMath, we can use the <c>DiGraph</c> class to represent the states, transitions
-            and outputs of the state machine as a directed graph, and use the graph structure to
+        <title>Create and Display the Graph Model of State Machine</title>
+        <p> In Sage, we can use the <c>DiGraph</c> class to represent the states, transitions and
+            outputs of the state machine as a directed graph, and use the graph structure to
             visualize the state machine representation.</p>
         <sage>
             <input>
@@ -88,43 +185,27 @@
                 # from sage.graphs.digraph import DiGraph
 
                 # Initialize a directed graph
-                SM = DiGraph()
+                SM = DiGraph(loops=True)
 
                 # Add states as vertices
                 SM.add_vertices(states)
 
                 # Add transitions and outputs as edges
-                for state, transition in transitions.items():
-                    if outputs[state] == 'LOCKED':
-                        output = 'L'
-                    elif outputs[state] == 'UNLOCKED':
-                        output = 'U'
-                    else:
-                        output = '?'
+                for (_state, _input), next_state in transitions.items():
+                    _output = outputs[(_state, _input)]
+                    edge_label = f"{_input}, {_output}"
+                    SM.add_edge(_state, next_state, label=edge_label)
 
-                    for action, next_state in transition.items():
-                        edge_label = f"{action},{output}"
-                        SM.add_edge(state, next_state, label=edge_label)
-
-                SM.__repr__()
-            </input>
-            <output></output>
-        </sage>
-    </subsection>
-    <subsection>
-        <title>Display the State Machine</title>
-        <p>
-            The <c>SM.show()</c> command renders a graphical representation of the state machine.
-            Each vertex in the graph represents a state, and each directed edge represents a
-            transition, labeled with the input.</p>
-        <sage>
-            <input>
                 # Display the graph (state machine)
                 SM.show(edge_labels=True)
             </input>
             <output></output>
         </sage>
+        <p> The <c>SM.show()</c> command renders a graphical representation of the state machine.
+            Each vertex in the graph represents a state, and each directed edge represents a
+            transition, labeled with the input.</p>
     </subsection>
+
     <subsection>
         <title>Run the State Machine</title>
         <p>
@@ -135,30 +216,28 @@
                 # Function to run the state machine
                 def run_state_machine(start_state, inputs):
                     current_state = start_state
-                    for action in inputs:
-                        print(f"Current State: {current_state}, Action: {action}")
+                    for _input in inputs:
+                        print(f"Current State: {current_state}, Input: {_input}")
 
-                        if action in transitions[current_state]:
-                            current_state = transitions[current_state][action]
-                            print(f"Transitioned to: {current_state}")
+                        if (current_state, _input) in transitions:
+                            current_state = transitions[(current_state, _input)]
+                            print(f"Transitioned to: {current_state}\n")
                         else:
-                            print(f"No transition available for action {action} in state {current_state}")
+                            print(f"No transition available for input {_input} in state {current_state}")
                             break
 
-                    print(f"Final State: {current_state}")
-
+                    print(f"New State: {current_state}")
 
                 # Example of running the state machine
-                start_state = 'S0'
-                inputs = ['A0', 'A0', 'A1', 'A0']
+                start_state = 'fl_2'
+                inputs = ['push-1', 'push-1', 'push-3', 'push-2']
 
                 run_state_machine(start_state, inputs)
             </input>
             <output></output>
         </sage>
-        <p>
-            The <c>run_state_machine</c> function simulates the state machine by processing
-            a list of inputs starting from an initial state.</p>
+        <p> The <c>run_state_machine</c> function simulates the state machine by processing a list
+            of inputs starting from an initial state.</p>
     </subsection>
 
     <subsection>
@@ -174,10 +253,10 @@
             <output></output>
         </sage>
         <p>
-            <c>FSMState()</c> helps define state for the given label, the <c>is_initial</c>
-            flag can be set to true to indicate the current state will be the <em>initial state</em>
-            of the finite state machine. <c>add_state()</c> method is then used to append the state
-            to the state machine</p>
+            <c>FSMState()</c> helps define state for the given label, the <c>is_initial</c> flag can
+            be set to true to indicate the current state will be the <em>initial state</em> of the
+            finite state machine. <c>add_state()</c> method is then used to append the state to the
+            state machine</p>
         <sage>
             <input>
                 go = FSMState('GO', is_initial=True)
@@ -192,8 +271,7 @@
             </input>
             <output></output>
         </sage>
-        <p>
-            To check whether or not a finite state machine has a state defined, <c>has_state()</c>
+        <p> To check whether or not a finite state machine has a state defined, <c>has_state()</c>
             method can be used by passing in the state label (case-sensitive).</p>
         <sage>
             <input>
@@ -202,8 +280,8 @@
             <output></output>
         </sage>
         <p>
-            <c>states()</c> method is used to enumerate the list of all defined states
-            of the state machine.</p>
+            <c>states()</c> method is used to enumerate the list of all defined states of the state
+            machine.</p>
         <sage>
             <input>
                 fsm.states()
@@ -211,8 +289,7 @@
             <output></output>
         </sage>
         <p>
-            <c>initial_states()</c> method lists the defined initial state(s)
-            of the state machine.</p>
+            <c>initial_states()</c> method lists the defined initial state(s) of the state machine.</p>
         <sage>
             <input>
                 fsm.initial_states()
@@ -220,11 +297,10 @@
             <output></output>
         </sage>
         <p>
-            <c>FSMTransition()</c> defines a new transition between two states,
-            as well as the input (the transition trigger) and output associated
-            with the new state after teh transition.<c>add_transition()</c> method
-            attach the defined transition to the state machine. <c>transitions()</c>
-            method is used to enumerate the list of all defined transitions of the
+            <c>FSMTransition()</c> defines a new transition between two states, as well as the input
+            (the transition trigger) and output associated with the new state after teh transition.<c>
+            add_transition()</c> method attach the defined transition to the state machine. <c>
+            transitions()</c> method is used to enumerate the list of all defined transitions of the
             state machine.</p>
         <sage>
             <input>
@@ -239,16 +315,14 @@
             </input>
             <output></output>
         </sage>
-        <p>
-            Once the states and transitions as defined, the state machine can be<em>run</em>
-            using <c>process()</c> method.
-            </p>
+        <p> Once the states and transitions as defined, the state machine can be<em>run</em> using <c>
+            process()</c> method. </p>
         <sage>
             <input>
                 # pass in the initial state and the list of inputs
                 _, final_state, outputs_history = fsm.process(
-                    initial_state=go,
-                    input_tape=[1, 2, 0],
+                initial_state=go,
+                input_tape=[1, 2, 0],
                 )
 
                 # display final/current state
@@ -257,8 +331,8 @@
             <output></output>
         </sage>
         <p>
-            <c>process()</c> method also returned the list of intermediary outputs during
-            the state machine run.</p>
+            <c>process()</c> method also returned the list of intermediary outputs during the state
+            machine run.</p>
         <sage>
             <input>
                 # print out the outputs of the state machine run
@@ -274,32 +348,34 @@
             </input>
             <output></output>
         </sage>
-        <p>
-            The <c>FiniteStateMachine</c> class also offers LATEX representation of the state
+        <p> The <c>FiniteStateMachine</c> class also offers LATEX representation of the state
             machine using the <c>latex_options()</c> method.</p>
-            <sage>
-                <input>
-                    # define LATEX printout options
-                    fsm.latex_options(
-                        coordinates={
-                            'day': (0, 0),
-                            'night': (6, 0)},
-                        initial_where={'day': 'below'},
-                        format_letter=fsm.format_letter_negative,
-                        format_state_label=lambda x: x.label(),
-                    )
+        <sage>
+            <input>
+                # define LATEX printout options
+                fsm.latex_options(
+                    coordinates={
+                        'day': (0, 0),
+                        'night': (6, 0)},
+                    initial_where={'day': 'below'},
+                    format_letter=fsm.format_letter_negative,
+                    format_state_label=lambda x: x.label(),
+                )
 
-                    # display LATEX commands
-                    print(latex(fsm))
-                </input>
-                <output></output>
-            </sage>
-        </subsection>
+                # display LATEX commands
+                print(latex(fsm))
+            </input>
+            <output></output>
+        </sage>
+    </subsection>
     <conclusion>
         <p>
-            The above are basic commands with a typical workflow of defining and running of simple finite
-            state machines. The general structure of the state machine can be adapted to fit different use
-            cases. The examples shown can be customized and fine-tuned to reflect more complex scenarios
-            (more states, different input sequences, ...etc).</p>
+            The above are basic commands with a typical workflow of defining and running of simple
+            finite
+            state machines. The general structure of the state machine can be adapted to fit
+            different use
+            cases. The examples shown can be customized and fine-tuned to reflect more complex
+            scenarios
+            (more states, different input sequences, etc.)</p>
     </conclusion>
 </section>
