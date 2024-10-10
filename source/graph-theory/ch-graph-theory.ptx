@@ -15,4 +15,5 @@
   <xi:include href="sec-paths.ptx" />
   <xi:include href="sec-isomorphism.ptx" />
   <xi:include href="sec-euler-and-hamilton.ptx" />
+  <xi:include href="sec-graphs-in-action.ptx" />
 </chapter>

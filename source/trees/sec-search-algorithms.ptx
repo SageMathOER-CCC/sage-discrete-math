@@ -55,21 +55,80 @@
         The output of this algorithm is a spanning tree.
     </p>
     <p>
-        The <c>breadth_first_search()</c> function provides a flexible method for traversing graphs. Let's consider the following graph:
+        The <c>breadth_first_search()</c> function provides a flexible method for traversing both directed and undirected graphs. Let's consider the following graph:
     </p>
     <sage>
         <input>
-            G = Graph({0: [1, 2], 1: [2], 2: [3], 4: [1, 2], 3: [1, 2]})
+            G = Graph({"a":{"c":8, "e":1}, "b":{"c":6, "d":4}, "c":{"e":2}, "d":{"a":5, "c":4}})
             G.show()
-            print(list(G.breadth_first_search(start=0, report_distance=True)))
+            print(list(G.breadth_first_search(start="a", report_distance=True)))
         </input>
     </sage>
     <p>
-        In the example above, the breadth-first search algorithm function starts at vertex <c>0</c>, and reports the length of each vertex from the starting point. Each element in the output is a tuple consisting of a vertex and its length from the starting vertex.
+        In the example above, the <c>start</c> parameter begins the traversal at vertex <c>a</c>. The <c>report_distance=True</c>, parameter reports pairs in the format <c>(vertex, distance)</c>. Distance is the length of the path from the start vertex. From the output above, we see:
+        <ul>
+            <li>
+                <p>
+                    The distance from vertex <c>a</c> to vertex <c>a</c> is <c>0</c>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The distance from vertex <c>a</c> to vertex <c>d</c> is <c>1</c>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The distance from vertex <c>a</c> to vertex <c>e</c> is <c>1</c>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The distance from vertex <c>a</c> to vertex <c>c</c> is <c>1</c>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The distance from vertex <c>a</c> to vertex <c>b</c> is <c>2</c>.
+                </p>
+            </li>
+        </ul>
     </p>
+    <p>
+        We can also set the parameter <c>edges=True</c> to return the edges of the BFS tree. Sage will raise an error if you use the <c>edges</c> and <c>report_distance</c> parameters simultaneously.
+    </p>
+    <sage>
+        <input>
+            G = Graph({"a":{"c":8, "e":1}, "b":{"c":6, "d":4}, "c":{"e":2}, "d":{"a":5, "c":4}})
+            s = list(G.breadth_first_search("a", edges=True))
+            print(s)
+            Graph(s)
+        </input>
+    </sage>
+    <p>
+        The above graph is a spanning tree, but not necessarily a minimum spanning tree. Let's check how many spanning trees exist.
+    </p>
+    <sage>
+        <input>
+            G.spanning_trees_count()
+        </input>
+    </sage>
+    <p>
+        Iterate over all the spanning trees of a graph with <c>spanning_trees()</c>.
+    </p>
+    <sage>
+        <input>
+            G = Graph({"a":{"c":8, "e":1}, "b":{"c":6, "d":4}, "c":{"e":2}, "d":{"a":5, "c":4}})
+            spanning_trees = list(G.spanning_trees(labels=True))
+            for i, tree in enumerate(spanning_trees):
+                print(f"Spanning Tree {i + 1}: {tree.edges()}")
+                show(tree.plot())
+        </input>
+    </sage>
+
     <idx><h>minimal spanning tree</h></idx>
     <p>
-        Given a weighted graph, of all possible spanning trees that we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of wights is minimal. Prim's Algorithm calculates a minimal spanning tree including.
+        Given a weighted graph of all possible spanning trees we can calculate, we may be interested in the minimal one. A <term>minimal spanning tree</term> is a spanning tree whose sum of weights is minimal. Prim's Algorithm calculates a minimal spanning tree.
     </p>
     <idx><h>Prim's algorithm</h></idx>
     <p>
@@ -93,12 +152,9 @@
         </ol>
         The output of this algorithm is a minimal spanning tree.
     </p>
-    <p>
-        Let's examine the following graph:
-    </p>
     <sage>
         <input>
-            G = Graph({1:{3:8, 5:1}, 2:{3:6, 4:4}, 3:{5:2}, 4:{1:5, 3:4}})
+            G = Graph({"a":{"c":8, "e":1}, "b":{"c":6, "d":4}, "c":{"e":2}, "d":{"a":5, "c":4}})
             G.show(edge_labels = True)
         </input>
     </sage>
@@ -116,6 +172,9 @@
             G.min_spanning_tree(by_weight=True)
         </input>
     </sage>
+    <p>
+        From the output of <c>min_spanning_tree(by_weight=True)</c>, we see an edge <c>list</c> of the minimal spanning tree. Each element of the edge lis is a <c>tuple</c> where the first two values are vertices, and the third value is the edge weight or label.
+    </p>
     <p>
         Let's visualize the minimal spanning tree.
     </p>
