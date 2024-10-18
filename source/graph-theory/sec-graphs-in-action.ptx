@@ -68,6 +68,13 @@
                 </row>
             </tabular>
         </table>
+        <figure xml:id="ccc-map-graph">
+            <caption>City Colleges of Chicago</caption>
+            <interactive xml:id="ccc-map-interactive-graph"
+              iframe="https://www.google.com/maps/d/embed?mid=1njebCG-GFKeCsZy9GFQy6u8CEFPjvt0&amp;ehbc=2E312F"
+              width="90%" height="100%"
+              preview="ccc_map.png"/>
+        </figure>
     </subsection>
     <subsection xml:id="subsec-Graph">
         <title>Graph</title>
