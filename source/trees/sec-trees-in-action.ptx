@@ -73,6 +73,12 @@
                 </row>
             </tabular>
         </table>
+        <figure>
+            <media>
+                <image source="ccc_map.png"/>
+            </media>
+            <caption>City Colleges of Chicago</caption>
+        </figure>
         <p>
             Now, let's calculate the distances between campus locations. We will first create a <c>dictionary</c> to store the campus name, latitude, and longitude values.
         </p>
