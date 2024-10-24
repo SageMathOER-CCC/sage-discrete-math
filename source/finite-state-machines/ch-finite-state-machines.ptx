@@ -4,18 +4,8 @@
 
   <introduction>
     <p> In this chapter, we explore a powerful abstract model: <em>finite-state machines</em>.
-      Beyond the theory, we'll see how to use <term>Sage</term> to define, model and build, then
+      Beyond the theory, we'll see how to use Sage to define, model and build, then
       visualize and run a few examples of state machines to solve real-world problems.</p>
-    <aside>
-      <title>Notes</title>
-      <p>
-        State machines are often associated with tasks in relation with system designs (circuits and
-        digital computers, algorithms, etc.) However, the vast and rich domain of applications of
-        state machines extends far beyond simple simulations to full control logic of complex
-        industrial processes and workflows. These tasks can vary in complexity, be as simple as a
-        parity check or a complex as managing traffic patterns, a programming language compiler, or
-        natural language recognition and processing.</p>
-    </aside>
   </introduction>
 
   <!-- include sections -->
