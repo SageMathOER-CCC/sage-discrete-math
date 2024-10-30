@@ -2,7 +2,7 @@
     <title>Introduction to Logic Gates</title>
 
     <p>
-        Logic gates are the building blocks of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) and produce a single binary output. Logic gates are fundamental to how computers and other digital devices function, as they make decisions based on inputs and perform tasks like arithmetic, data storage, and control operations. In this chapter, we will explore the most common types of logic gates, how they are used, and how they form the basis of complex circuits.
+        Logic gates are the building blocks of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) and produce a single binary output.
     </p>
     <aside>
         <title>Notes</title>
