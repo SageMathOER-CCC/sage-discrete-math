@@ -12,6 +12,6 @@
   <!-- include sections -->
   <xi:include href="sec-intro-logic-gates.ptx" />
   <xi:include href="sec-combined-logic-gates.ptx" />
-  <xi:include href="ch-practical-application.ptx" />
+  <xi:include href="sec-logic-gates-in-action.ptx" />
 
 </chapter>
