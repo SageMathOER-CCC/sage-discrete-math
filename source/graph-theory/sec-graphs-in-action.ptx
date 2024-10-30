@@ -68,6 +68,12 @@
                 </row>
             </tabular>
         </table>
+        <figure>
+            <media>
+                <image source="ccc_map.png"/>
+            </media>
+            <caption>City Colleges of Chicago</caption>
+        </figure>
     </subsection>
     <subsection xml:id="subsec-Graph">
         <title>Graph</title>
