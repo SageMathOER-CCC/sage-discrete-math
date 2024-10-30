@@ -1,5 +1,5 @@
 <section xml:id="sec-practical-applications">
-    <title>Logic Gates in action</title>
+    <title>Logic Gates in Action</title>
     <introduction>
         <p>
             Logic gates are fundamental building blocks in digital circuits and play a crucial role in the design of modern computing systems. They operate based on binary principles, where the input and output values are either high (<c>1</c>) or low (<c>0</c>), corresponding to different logical conditions. Their importance spans from simple devices like calculators to advanced systems like microprocessors, enabling core operations like arithmetic, data routing, and memory storage.
