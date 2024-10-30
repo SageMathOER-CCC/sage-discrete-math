@@ -1,5 +1,5 @@
 <section xml:id="sec-combined-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Combining Logic Gates and Simplifying Circuits</title>
+    <title>Logical Circuits</title>
 
     <subsection>
         <title>Combinations of Logic Gates</title>
@@ -14,16 +14,9 @@
                 from sympy.logic.boolalg import Or, Not
                 from sympy.abc import A, B
 
-                # Define the logic circuit: NOT(OR(A, B))
-                circuit_output = Not(Or(A, B))
-
-                # Assign values to A and B
-                A_val = False
-                B_val = False
-
-                # Substitute values of A and B into the circuit and evaluate
-                evaluated_output = circuit_output.subs({A: A_val, B: B_val})
-                evaluated_output
+                # Define and evaluate the logic circuit with values for A and B
+                circuit_output = Not(Or(A, B)).subs({A: False, B: False})
+                circuit_output
             </input>
             <output>
             </output>
@@ -35,7 +28,7 @@
     </subsection>
 
     <subsection>
-        <title>Boolean Algebra and Logic Gates</title>
+        <title>Simplifying Circuits</title>
         <p>
             Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A * B) + (A * \overline{B})</m> can be simplified to just <m>A</m>.
         </p>
@@ -44,12 +37,25 @@
         </p>
         <sage>
             <input>
+                # Original Boolean expression
                 from sympy.logic.boolalg import And, Or, Not
+                from sympy.abc import A, B, C
+
+                # Define the expression
+                D = Or(And(A, B), And(A, Not(B)), And(C, B))
+                D
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <sage>
+            <input>
+                # Simplified Boolean expression
                 from sympy import simplify
-                A, B, C = True, False, True
-                complex_expr = Or(And(A, B), And(A, Not(B)), And(C, B))
-                simplified_expr = simplify(complex_expr)
-                simplified_expr
+
+                # Simplify the expression
+                simplify(D)
             </input>
             <output>
             </output>
@@ -73,20 +79,16 @@
                 from sympy.logic.boolalg import And, Or, truth_table
                 from sympy.abc import A, B
 
-                # Define a function to generate a truth table for any list of logic gate expressions
-                def generate_truth_table(expressions, variables):
-                    for expr in expressions:
-                        print(f"Truth table for expression: {expr}")
-                        table = truth_table(expr, variables)
-                        for row in table:
-                            print(row)
-                        print("-" * 20)
-
-                # Example usage with AND and OR gates
+                # Define expressions and variables
                 expressions = [And(A, B), Or(A, B)]
                 variables = [A, B]
-                generate_truth_table(expressions, variables)
 
+                # Generate and print truth tables for each expression
+                for expr in expressions:
+                    print(f"Truth table for {expr}:")
+                    for row in truth_table(expr, variables):
+                        print(row)
+                    print("-" * 20)
             </input>
             <output>
             </output>

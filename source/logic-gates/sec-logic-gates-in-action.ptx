@@ -1,0 +1,351 @@
+<section xml:id="sec-practical-applications">
+    <title>Logic Gates in Action</title>
+    <introduction>
+        <p>
+            In this section, we’ll explore key components built with logic gates and show how they come together to create a basic computing system.
+        </p>
+    </introduction>
+
+    <subsection xml:id="sec-full-adder">
+        <title>Full Adder: Arithmetic with Logic Gates</title>
+        <p>
+            One fundamental operation in digital systems is addition. This is achieved through a circuit called the <term>full adder</term>, which combines three inputs (two binary numbers and a carry bit from a previous addition) to produce a sum and a carry-out bit. This carry bit can be passed to the next full adder, allowing multi-bit additions.
+        </p>
+
+        <p>
+            <term>Binary Addition Basics</term>: Binary addition follows a similar carry system to decimal addition:
+            <itemizedlist>
+                <item><c>0 + 0 = 0</c></item>
+                <item><c>0 + 1 = 1</c></item>
+                <item><c>1 + 0 = 1</c></item>
+                <item><c>1 + 1 = 10</c> (where <c>0</c> is the sum and <c>1</c> is the carry)</item>
+            </itemizedlist>
+            When performing multi-bit additions, each addition may produce a carry that must be added to the next column, similar to decimal arithmetic.
+        </p>
+
+        <p>
+            <term>How a Full Adder Works</term>: A full adder has three inputs:
+            <itemizedlist>
+                <item><term>A</term>: One of the input bits.</item>
+                <item><term>B</term>: The other input bit.</item>
+                <item><term>C (Carry-in)</term>: A carry bit from a previous addition.</item>
+            </itemizedlist>
+            The outputs are:
+            <itemizedlist>
+                <item><term>Sum</term>: The sum of the three inputs.</item>
+                <item><term>Carry-out</term>: The carry bit, passed to the next addition stage.</item>
+            </itemizedlist>
+            The full adder uses XOR gates for the sum and AND/OR gates for the carry-out.
+        </p>
+
+        <sage>
+            <input>
+                from sympy.logic.boolalg import Xor, And, Or
+                from sympy.abc import A, B, C
+
+                # Full Adder logic
+                def full_adder(A, B, C):
+                    sum_output = Xor(Xor(A, B), C)
+                    carry_output = Or(And(A, B), And(Xor(A, B), C))
+                    return sum_output, carry_output
+
+                # Print full truth table for Full Adder
+                print("A B C | Sum Carry")
+                print("-" * 20)
+                for A_val in [False, True]:
+                    for B_val in [False, True]:
+                        for C_val in [False, True]:
+                            sum_output, carry_output = full_adder(A_val, B_val, C_val)
+                            print(f"{int(bool(A_val))} {int(bool(B_val))} {int(bool(C_val))} | {int(bool(sum_output))}   {int(bool(carry_output))}")
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            Full adders are essential for multi-bit addition, which is crucial in performing arithmetic operations within a computer.
+        </p>
+    </subsection>
+
+    <subsection xml:id="sec-logical-unit">
+        <title>Logical Unit: Performing Logical Operations</title>
+        <p>
+            Apart from arithmetic operations, computers perform logical operations like AND, OR, and NOT. These operations are handled by a <term>Logical Unit (LU)</term>, which uses logic gates to compare or manipulate binary values based on logical rules.
+        </p>
+
+        <p>
+            For instance, a Logical Unit can perform:
+            <itemizedlist>
+                <item><c>AND</c>: Returns <c>1</c> if both inputs are <c>1</c>; otherwise, <c>0</c>.</item>
+                <item><c>OR</c>: Returns <c>1</c> if at least one input is <c>1</c>.</item>
+                <item><c>NOT</c>: Reverses the input (i.e., <c>1</c> becomes <c>0</c> and vice versa).</item>
+            </itemizedlist>
+            These logical operations are key for decision-making processes in digital systems.
+        </p>
+
+        <sage>
+            <input>
+                from sympy.logic.boolalg import And, Or, Not
+                from sympy.abc import A, B
+
+                # Define simple logical operations
+                and_result = And(A, B).subs({A: True, B: False})
+                or_result = Or(A, B).subs({A: True, B: False})
+                not_result = Not(A).subs({A: True})
+
+                and_result, or_result, not_result
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            These logical operations enable the Logical Unit to perform comparisons and make decisions, such as checking conditions or controlling data flow.
+        </p>
+    </subsection>
+
+    <subsection xml:id="sec-alu">
+        <title>Arithmetic Logic Unit (ALU): Combining Arithmetic and Logic</title>
+        <p>
+            The <term>Arithmetic Logic Unit (ALU)</term> combines the functionalities of both the Full Adder and the Logical Unit. It can perform arithmetic operations like addition and logical operations like AND or OR, depending on the control signals it receives.
+        </p>
+
+        <p>
+            An ALU is designed to perform various operations based on the desired outcome:
+            <itemizedlist>
+                <item><term>Addition</term> by utilizing the full adder circuit.</item>
+                <item><term>Logical operations</term> like AND, OR, and NOT through the Logical Unit.</item>
+                <item><term>Multiplexers</term> to select the specific operation.</item>
+            </itemizedlist>
+        </p>
+
+        <p>
+            With its ability to handle both arithmetic and logical functions, the ALU is the computational heart of the CPU.
+        </p>
+    </subsection>
+
+    <subsection xml:id="sec-multiplexer">
+        <title>Multiplexers: Routing Data</title>
+        <p>
+            In digital systems, data often needs to be routed from multiple sources to a single destination. For example, imagine a CPU that has to choose between different instructions or data points to process. A <term>multiplexer</term> (or <term>mux</term>) is a device that enables this selection by choosing one of several input signals and sending it to a single output. The specific input that gets sent to the output is determined by additional inputs known as <term>select lines</term>.
+        </p>
+
+        <p>
+            A multiplexer is essentially a "data selector." It has several input lines, one output line, and control lines (select lines) that decide which input is connected to the output. Think of it like a railway switchyard: only one track is connected to the train at a time, but the switchyard determines which track is connected based on the position of the levers.
+        </p>
+
+        <p>
+            <term>Example: 4-to-1 Multiplexer</term>: Let’s take a common example of a 4-to-1 multiplexer, which has four inputs (<c>I0</c>, <c>I1</c>, <c>I2</c>, and <c>I3</c>) but only one output (<c>Y</c>). This setup means we can choose one of the four inputs to connect to the output at any given time, depending on the values of two select lines (<c>S0</c> and <c>S1</c>):
+            <itemizedlist>
+                <item><c>S0 = 0</c> and <c>S1 = 0</c>: Selects <c>I0</c>, so <c>Y = I0</c>.</item>
+                <item><c>S0 = 1</c> and <c>S1 = 0</c>: Selects <c>I1</c>, so <c>Y = I1</c>.</item>
+                <item><c>S0 = 0</c> and <c>S1 = 1</c>: Selects <c>I2</c>, so <c>Y = I2</c>.</item>
+                <item><c>S0 = 1</c> and <c>S1 = 1</c>: Selects <c>I3</c>, so <c>Y = I3</c>.</item>
+            </itemizedlist>
+        </p>
+
+        <p>
+            Each combination of <c>S0</c> and <c>S1</c> directs the output to a specific input. In this way, the multiplexer allows a single output to be connected to any one of the inputs, depending on the current configuration of the select lines.
+        </p>
+
+        <p>
+            <term>How It Works</term>: The multiplexer uses a combination of <c>AND</c>, <c>OR</c>, and <c>NOT</c> gates to route the correct input to the output. For example:
+            <itemizedlist>
+                <item>If <c>S0 = 0</c> and <c>S1 = 0</c>, only the path for <c>I0</c> is enabled, connecting <c>I0</c> to the output.</item>
+                <item>All other paths are blocked by the <c>AND</c> and <c>NOT</c> gates, preventing the other inputs from reaching the output.</item>
+            </itemizedlist>
+            This way, only the chosen input can reach the output, and the selection can be dynamically changed by adjusting the select lines.
+        </p>
+
+        <sage>
+            <input>
+                from sympy.logic.boolalg import Or, And, Not
+                from sympy import symbols
+
+                # Define variables for inputs (I0, I1), select lines (S0, S1)
+                I0, I1, I2, I3, S0, S1 = symbols('I0 I1 I2 I3 S0 S1')
+
+                # 4-to-1 Multiplexer logic for selecting one of four inputs based on S0 and S1
+                mux_output = Or(
+                    And(Not(S0), Not(S1), I0),  # Select input I0 when S0=0 and S1=0
+                    And(S0, Not(S1), I1),       # Select input I1 when S0=1 and S1=0
+                    And(Not(S0), S1, I2),       # Select input I2 when S0=0 and S1=1
+                    And(S0, S1, I3)             # Select input I3 when S0=1 and S1=1
+                )
+
+                # Assign specific values for inputs and select lines
+                evaluated_mux = mux_output.subs({I0: True, I1: False, I2: False, I3: True, S0: True, S1: False})
+                evaluated_mux
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            Multiplexers are used extensively in digital systems, such as in CPUs and memory devices, to control data flow and select between multiple data sources efficiently.
+        </p>
+    </subsection>
+
+    <subsection xml:id="sec-memory-circuits">
+        <title>Memory Circuits: Storing Data</title>
+        <p>
+            In a computer, storing and retrieving data is crucial. This is where memory circuits come in. Memory circuits, built from logic gates, allow data to be stored in binary form (0s and 1s) and retained until it is needed for processing. One of the most basic memory circuits is the <term>SR (Set-Reset) flip-flop</term>.
+        </p>
+
+        <p>
+            <term>SR Flip-Flop</term>: The SR flip-flop is a simple circuit that can store a single bit of data (either 0 or 1). It has two inputs, <c>S</c> (Set) and <c>R</c> (Reset), and two outputs, <c>Q</c> and <c>Q'</c> (the inverse of <c>Q</c>):
+            <itemizedlist>
+                <item><c>S</c>: When this input is activated (set to 1), it sets <c>Q</c> to 1.</item>
+                <item><c>R</c>: When this input is activated, it resets <c>Q</c> to 0.</item>
+                <item><c>Q</c>: This is the stored bit, which represents the current state of the flip-flop.</item>
+                <item><c>Q'</c>: The inverse of <c>Q</c> (if <c>Q</c> is 1, <c>Q'</c> is 0 and vice versa).</item>
+            </itemizedlist>
+        </p>
+
+        <p>
+            <term>How It Works</term>: The SR flip-flop is typically implemented using two <c>NAND</c> gates. The outputs of these gates are cross-coupled, meaning the output of one gate feeds back as an input to the other. This feedback loop allows the flip-flop to "remember" its state.
+        </p>
+
+        <p>
+            Let’s go through the main states of the SR flip-flop:
+            <itemizedlist>
+                <item><c>S = 1</c> and <c>R = 0</c>: This condition sets <c>Q</c> to 1, storing a "1" in the flip-flop.</item>
+                <item><c>S = 0</c> and <c>R = 1</c>: This condition resets <c>Q</c> to 0, clearing the stored bit.</item>
+                <item><c>S = 0</c> and <c>R = 0</c>: This condition keeps the current state of <c>Q</c> unchanged, allowing the flip-flop to "remember" its previous value.</item>
+                <item><c>S = 1</c> and <c>R = 1</c>: This condition is typically avoided as it produces an indeterminate state for <c>Q</c> and <c>Q'</c>.</item>
+            </itemizedlist>
+        </p>
+
+        <p>
+            This ability to hold a state, even when the inputs change, makes the SR flip-flop a fundamental building block for memory in digital systems.
+        </p>
+
+        <sage>
+            <input>
+                from sympy.logic.boolalg import Nand
+                from sympy import symbols
+
+                # Define variables S, R for SR flip-flop
+                S, R = symbols('S R')
+
+                # SR Flip-flop using NAND gates
+                Q_not = Nand(R, True)  # Initial state assumption for Q_not
+                Q = Nand(S, Q_not)     # Q based on S input
+
+                # Evaluate flip-flop with specific values for S and R
+                evaluated_Q = Q.subs({S: True, R: False})
+                evaluated_Q
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            Flip-flops like the SR flip-flop are the building blocks of larger memory systems, like registers and Random Access Memory (RAM). By chaining multiple flip-flops together, we can store more data, enabling computers to hold and quickly access information.
+        </p>
+    </subsection>
+
+    <subsection xml:id="sec-basic-computer">
+        <title>Combining Components: Building a Simple Computer</title>
+        <p>
+            In this final section, we combine the Adder, Logical Unit, ALU, Multiplexer, and Memory Circuit to simulate a basic computing system. This setup will let you perform simple operations and see how each part of the system interacts. You can change inputs and control signals to observe different outcomes, mimicking the functionality of a simple computer.
+        </p>
+
+        <sage>
+            <input>
+                from sympy.logic.boolalg import And, Or, Xor, Not, Nand
+                from sympy import symbols
+
+                # Define inputs and control signals
+                A, B, C_in, S, R, S0, S1 = symbols('A B C_in S R S0 S1')
+
+                # Full Adder - performs addition with carry-in
+                def full_adder(A, B, C_in):
+                    sum_output = Xor(Xor(A, B), C_in)
+                    carry_out = Or(And(A, B), And(Xor(A, B), C_in))
+                    return sum_output, carry_out
+
+                # Logical Unit - performs basic logical operations
+                def logical_unit(A, B, operation):
+                    if operation == 'AND':
+                        return And(A, B)
+                    elif operation == 'OR':
+                        return Or(A, B)
+                    elif operation == 'NOT A':
+                        return Not(A)
+                    elif operation == 'NOT B':
+                        return Not(B)
+
+                # ALU - selects between addition and logic operations
+                def alu(A, B, C_in, control):
+                    if control == 'ADD':
+                        return full_adder(A, B, C_in)
+                    elif control == 'AND':
+                        return logical_unit(A, B, 'AND'), None
+                    elif control == 'OR':
+                        return logical_unit(A, B, 'OR'), None
+                    elif control == 'NOT A':
+                        return logical_unit(A, None, 'NOT A'), None
+                    elif control == 'NOT B':
+                        return logical_unit(None, B, 'NOT B'), None
+
+                # 2-to-1 Multiplexer - selects between two inputs based on S0
+                def mux(input1, input2, S0):
+                    return Or(And(Not(S0), input1), And(S0, input2))
+
+                # SR Flip-Flop - basic memory element
+                def sr_flip_flop(S, R, Q_prev):
+                    Q = Nand(S, Q_prev)
+                    Q_not = Nand(R, Q)
+                    return Q, Q_not
+
+                # Example usage with user inputs
+                # Set input values (A, B, C_in) and control signals (ALU control and Mux select)
+                A_val = True       # Example input for A
+                B_val = False      # Example input for B
+                C_in_val = True    # Example carry-in for addition
+                ALU_control = 'ADD' # Choose 'ADD', 'AND', 'OR', 'NOT A', or 'NOT B'
+                Mux_select = False  # Mux selection (False -> A, True -> B)
+                S_val = True       # Set input for SR Flip-Flop
+                R_val = False      # Reset input for SR Flip-Flop
+                Q_prev = False     # Previous state for SR Flip-Flop
+
+                # ALU Operation
+                alu_result, carry_out = alu(A_val, B_val, C_in_val, ALU_control)
+
+                # Mux Operation
+                mux_result = mux(A_val, B_val, Mux_select)
+
+                # SR Flip-Flop Operation
+                Q, Q_not = sr_flip_flop(S_val, R_val, Q_prev)
+
+                # Print Results
+                print("ALU Result:", alu_result)
+                if carry_out is not None:
+                    print("Carry Out:", carry_out)
+                print("Mux Result:", mux_result)
+                print("SR Flip-Flop State (Q):", Q)
+                print("SR Flip-Flop State (Q'):", Q_not)
+            </input>
+            <output>
+            </output>
+        </sage>
+
+        <p>
+            This Sage cell code allows you to simulate a simple computer by changing the values of the inputs and control signals. Here’s what each component does:
+            <itemizedlist>
+                <item><term>ALU Result</term>: Shows the output of the selected operation (addition or logical operation).</item>
+                <item><term>Carry Out</term>: Shows the carry from addition (if applicable).</item>
+                <item><term>Mux Result</term>: Selects between <c>A</c> and <c>B</c> based on the control signal (<c>S0</c>).</item>
+                <item><term>SR Flip-Flop State (Q, Q')</term>: Stores the output state, demonstrating simple memory functionality.</item>
+            </itemizedlist>
+            Try adjusting the control signals (like <c>ALU_control</c> and <c>Mux_select</c>) and inputs to observe different results.
+        </p>
+    </subsection>
+
+    <conclusion>
+        <p>
+            Logic gates, combined into various components, power modern computing. From performing arithmetic to storing data, these building blocks allow for complex digital systems like computers, demonstrating the power of logical operations in technology.
+        </p>
+    </conclusion>
+</section>

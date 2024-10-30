@@ -5,13 +5,13 @@
 
   <introduction>
     <p>
-      Logic gates are the fundamental building blocks of all digital systems, from simple calculators to complex computers. These gates process binary inputs (0s and 1s) and produce a specific output based on the type of gate used, like <c>AND</c>, <c>OR</c>, or <c>NOT</c>. Understanding how these gates work is key to grasping how digital circuits perform calculations, make decisions, and control operations. In this chapter, we’ll explore how logic gates function, how they combine to form more complex circuits, and how they integrate part of our everyday electronics.
+      This chapter builds on the fundamental building blocks of all digital systems, logic gates, and explains how to process binary inputs to produce specific outputs based on different gate types, such as AND, OR, and NOT. Then, we show how these gates combine to form more complex circuits and integrate into everyday electronics, using built-in and customized Sage functions to simulate and analyze their behavior.
     </p>
   </introduction>
 
   <!-- include sections -->
   <xi:include href="sec-intro-logic-gates.ptx" />
   <xi:include href="sec-combined-logic-gates.ptx" />
-  <xi:include href="ch-practical-application.ptx" />
+  <xi:include href="sec-logic-gates-in-action.ptx" />
 
 </chapter>
