@@ -2,7 +2,7 @@
     <title>Introduction to Logic Gates</title>
 
     <p>
-        Logic gates are the building blocks of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) and produce a single binary output.
+        Logic gates are the building blocks of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) and produce a single binary output. The most common logic gates include <c>AND</c>, <c>OR</c>, <c>NOT</c>, while we also have other gates derived from these such as <c>NAND</c>, <c>NOR</c>, <c>XOR</c>, and <c>XNOR</c>. Each gate has its own symbol and truth table that defines how it processes inputs to produce an output. Understanding these basic gates is the first step to learning how digital systems work, as more complex circuits are built by combining these gates.
     </p>
     <aside>
         <title>Notes</title>
@@ -31,6 +31,15 @@
         <caption>AND Gate</caption>
     </figure>
    </p>
+   <sage>
+    <input>
+        from sympy.logic.boolalg import And
+        from sympy.abc import A, B
+        And(A,B)
+    </input>
+    <output>
+    </output>
+   </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import And
@@ -60,6 +69,15 @@
             <caption>OR Gate</caption>
         </figure>
        </p>
+       <sage>
+        <input>
+            from sympy.logic.boolalg import Or
+            from sympy.abc import A, B
+            Or(A, B)
+        </input>
+        <output>
+        </output>
+       </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import Or
@@ -89,6 +107,15 @@
             <caption>NOT Gate</caption>
         </figure>
        </p>
+       <sage>
+        <input>
+            from sympy.logic.boolalg import Not
+            from sympy.abc import A
+            Not(A)
+        </input>
+        <output>
+        </output>
+       </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import Not
@@ -123,6 +150,15 @@
             <caption>NAND Gate</caption>
         </figure>
        </p>
+       <sage>
+        <input>
+            from sympy.logic.boolalg import Nand
+            from sympy.abc import A, B
+            Nand(A, B)
+        </input>
+        <output>
+        </output>
+       </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import Nand
@@ -152,6 +188,15 @@
             <caption>NOR Gate</caption>
         </figure>
        </p>
+       <sage>
+        <input>
+            from sympy.logic.boolalg import Nor
+            from sympy.abc import A, B
+            Nor(A, B)
+        </input>
+        <output>
+        </output>
+       </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import Nor
@@ -181,6 +226,15 @@
             <caption>XOR Gate</caption>
         </figure>
        </p>
+       <sage>
+        <input>
+            from sympy.logic.boolalg import Xor
+            from sympy.abc import A, B
+            Xor(A, B)
+        </input>
+        <output>
+        </output>
+       </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import Xor
@@ -210,6 +264,15 @@
             <caption>XNOR Gate</caption>
         </figure>
        </p>
+       <sage>
+        <input>
+            from sympy.logic.boolalg import Equivalent
+            from sympy.abc import A, B
+            Equivalent(A, B)
+        </input>
+        <output>
+        </output>
+       </sage>
     <sage>
         <input>
             from sympy.logic.boolalg import Equivalent
