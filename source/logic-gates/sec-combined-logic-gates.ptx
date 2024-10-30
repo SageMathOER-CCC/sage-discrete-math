@@ -35,7 +35,7 @@
     </subsection>
 
     <subsection>
-        <title>Boolean Algebra and Logic Gates</title>
+        <title>Simplifying Circuits</title>
         <p>
             Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A * B) + (A * \overline{B})</m> can be simplified to just <m>A</m>.
         </p>

@@ -4,20 +4,6 @@
     <p>
         Logic gates are the building blocks of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) and produce a single binary output. Logic gates are fundamental to how computers and other digital devices function, as they make decisions based on inputs and perform tasks like arithmetic, data storage, and control operations. In this chapter, we will explore the most common types of logic gates, how they are used, and how they form the basis of complex circuits.
     </p>
-
-    <sage>
-        <input>
-            from sympy.logic.boolalg import And, Or, Not, Nand, Nor, Xor, Equivalent
-            from sympy.abc import A, B
-            A = True
-            B = False
-            # Example: AND gate with inputs A and B
-            And(A, B)
-        </input>
-        <output>
-        </output>
-    </sage>
-
     <aside>
         <title>Notes</title>
         <p>
@@ -25,9 +11,6 @@
         </p>
     </aside>
 
-    <p>
-        The most common logic gates include <c>AND</c>, <c>OR</c>, <c>NOT</c>, <c>NAND</c>, <c>NOR</c>, <c>XOR</c>, and <c>XNOR</c>. Each gate has its own symbol and truth table that defines how it processes inputs to produce an output. Understanding these basic gates is the first step to learning how digital systems work, as more complex circuits are built by combining these gates.
-    </p>
 
     <idx><h>AND</h></idx>
     <idx><h>OR</h></idx>
@@ -40,11 +23,27 @@
     <p>
         <c>AND</c> gate: Produces a <c>1</c> only if both inputs are <c>1</c>.
     </p>
+    <p>
+    <figure>
+        <media>
+            <image source="logic-gates/and.png" width="50%"/>
+        </media>
+        <caption>AND Gate</caption>
+    </figure>
+   </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import And
             A = True
             B = False
             And(A, B)
+            print(int(bool(And(A, B))))
+
+            print("\nA | B | A AND B")
+            print("--|---|--------")
+            for A in [False, True]:
+                for B in [False, True]:
+                    print(f"{int(A)} | {int(B)} | {int(bool(And(A, B)))}")
         </input>
         <output>
         </output>
@@ -53,11 +52,27 @@
     <p>
         <c>OR</c> gate: Produces a <c>1</c> if at least one input is <c>1</c>.
     </p>
+    <p>
+        <figure>
+            <media>
+                <image source="logic-gates/or.png" width="50%"/>
+            </media>
+            <caption>OR Gate</caption>
+        </figure>
+       </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import Or
             A = True
             B = False
-            Or(A, B)
+            print(int(bool(Or(A, B))))
+
+            # Truth table for OR gate in table format
+            print("\nA | B | A OR B")
+            print("--|---|--------")
+            for A in [False, True]:
+                for B in [False, True]:
+                    print(f"{int(A)} | {int(B)} | {int(bool(Or(A, B)))}")
         </input>
         <output>
         </output>
@@ -66,13 +81,27 @@
     <p>
         <c>NOT</c> gate: Produces the opposite of the input, <c>1</c> becomes <c>0</c> and <c>0</c> becomes <c>1</c>.
     </p>
+    <p>
+        <figure>
+            <media>
+                <image source="logic-gates/not.png" width="50%"/>
+            </media>
+            <caption>NOT Gate</caption>
+        </figure>
+       </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import Not
             A = True
-            Not(A)
+            print(int(bool(Not(A))))
+
+            # Truth table for NOT gate in table format
+            print("\nA | NOT A")
+            print("--|-------")
+            for A in [False, True]:
+                print(f"{int(A)} | {int(bool(Not(A)))}")
         </input>
         <output>
-            # Shows the result of NOT gate when A is True
         </output>
     </sage>
 
@@ -86,11 +115,27 @@
     <p>
         <c>NAND</c> gate: Produces a <c>0</c> only if both inputs are <c>1</c>.
     </p>
+    <p>
+        <figure>
+            <media>
+                <image source="logic-gates/nand.png" width="50%"/>
+            </media>
+            <caption>NAND Gate</caption>
+        </figure>
+       </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import Nand
             A = True
             B = True
-            Nand(A, B)
+            print(int(bool(Nand(A, B))))
+
+            # Truth table for NAND gate in table format
+            print("\nA | B | A NAND B")
+            print("--|---|---------")
+            for A in [False, True]:
+                for B in [False, True]:
+                    print(f"{int(A)} | {int(B)} | {int(bool(Nand(A, B)))}")
         </input>
         <output>
         </output>
@@ -99,11 +144,27 @@
     <p>
         <c>NOR</c> gate: Produces a <c>1</c> only if both inputs are <c>0</c>.
     </p>
+    <p>
+        <figure>
+            <media>
+                <image source="logic-gates/nor.png" width="50%"/>
+            </media>
+            <caption>NOR Gate</caption>
+        </figure>
+       </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import Nor
             A = False
             B = False
-            Nor(A, B)
+            print(int(bool(Nor(A, B))))
+
+            # Truth table for NOR gate in table format
+            print("\nA | B | A NOR B")
+            print("--|---|--------")
+            for A in [False, True]:
+                for B in [False, True]:
+                    print(f"{int(A)} | {int(B)} | {int(bool(Nor(A, B)))}")
         </input>
         <output>
         </output>
@@ -112,11 +173,27 @@
     <p>
         <c>XOR</c> gate: Produces a <c>1</c> if exactly one input is <c>1</c>, but not both.
     </p>
+    <p>
+        <figure>
+            <media>
+                <image source="logic-gates/xor.png" width="50%"/>
+            </media>
+            <caption>XOR Gate</caption>
+        </figure>
+       </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import Xor
             A = True
             B = False
-            Xor(A, B)
+            print(int(bool(Xor(A, B))))
+
+            # Truth table for XOR gate in table format
+            print("\nA | B | A XOR B")
+            print("--|---|--------")
+            for A in [False, True]:
+                for B in [False, True]:
+                    print(f"{int(A)} | {int(B)} | {int(bool(Xor(A, B)))}")
         </input>
         <output>
         </output>
@@ -125,11 +202,27 @@
     <p>
         <c>XNOR</c> gate (equivalent gate): Produces a <c>1</c> if both inputs are the same.
     </p>
+    <p>
+        <figure>
+            <media>
+                <image source="logic-gates/xnor.png" width="50%"/>
+            </media>
+            <caption>XNOR Gate</caption>
+        </figure>
+       </p>
     <sage>
         <input>
+            from sympy.logic.boolalg import Equivalent
             A = True
             B = True
-            Equivalent(A, B)
+            print(int(bool(Equivalent(A, B))))
+
+            # Truth table for XNOR gate in table format
+            print("\nA | B | A XNOR B")
+            print("--|---|---------")
+            for A in [False, True]:
+                for B in [False, True]:
+                    print(f"{int(A)} | {int(B)} | {int(bool(Equivalent(A, B)))}")
         </input>
         <output>
         </output>
