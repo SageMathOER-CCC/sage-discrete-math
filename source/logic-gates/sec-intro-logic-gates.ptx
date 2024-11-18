@@ -45,37 +45,6 @@
         <p>
             Truth table for the <c>AND</c> gate:
         </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>A</th>
-                    <th>B</th>
-                    <th>A AND B</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
         <sage>
             <input>
                 # Generate truth table for AND gate
@@ -109,37 +78,6 @@
         <p>
             Truth table for the <c>OR</c> gate:
         </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>A</th>
-                    <th>B</th>
-                    <th>A OR B</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
         <sage>
             <input>
                 # Generate truth table for OR gate
@@ -173,24 +111,6 @@
         <p>
             Truth table for the <c>NOT</c> gate:
         </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>A</th>
-                    <th>NOT A</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
         <sage>
             <input>
                 # Generate truth table for NOT gate
