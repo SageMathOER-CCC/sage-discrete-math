@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-fsm-in-action" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xml:lang="en">
+    <title>State Machine in Action</title>
+    <idx>
+        <h>state machines</h>
+        <h>model</h>
+    </idx>
+    <introduction>
+        <title>FSM as Traffic Light Controller</title>
+        <p> The goal here is to design a finite state machine to model and control a simple traffic light system for a two-way road with pedestrian crossing. The traffic light operates with three states: Red (<c>R</c>), Yellow (<c>Y</c>), and Green (<c>G</c>). The pedestrian light also operates with three states: red (<c>r</c>), yellow (<c>y</c>), and green (<c>g</c>). State transitions in the FSM are triggered by a timer input that fires an event after a preset duration.</p>
+        <figure>
+            <media>
+                <image source="finite-state-machines/simple_traffic_light.png" width="67%" />
+            </media>
+            <caption>Simple street intersection</caption>
+        </figure>
+    </introduction>
+
+    <subsection>
+        <title>Inputs, Outputs and States</title>
+        <p> On the timer expiration event, the FSM must react accordingly, cycle through the specified states: <c>Rg</c>, <c>Ry</c>, <c>Yr</c>, and <c>Gr</c>, and print out the output description of the light state transitions for both traffic and pedestrian lights. The following defines the characteristics of the state machine</p>
+        <p>
+            <ul>
+                <li>
+                    <p>States: The FSM has the following states:</p>
+                    <ul>
+                        <li>State <c>Rg</c>: Traffic light is Red, Pedestrian light is green.</li>
+                        <li>State <c>Ry</c>: Traffic light is Red, Pedestrian light is yellow.</li>
+                        <li>State <c>Yr</c>: Traffic light is Yellow, Pedestrian light is red.</li>
+                        <li>State <c>Gr</c>: Traffic light is Green, Pedestrian light is red.</li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Inputs: Timer event fired when the preset duration expires, triggering the next state transition. The timer preset duration s periodic. Each cycle has 4 lapses as follow: 30sec, followed by another 30sec, then 5sec, and finally 10sec.</p>
+                </li>
+                <li>
+                    <p>Outputs: The FSM shall produce the following outputs:
+                        <ul>
+                            <li>
+                                Traffic light turning Red and the Pedestrian light turning green
+                            </li>
+                            <li>
+                                Traffic light turning Yellow and the Pedestrian light turning red
+                            </li>
+                            <li>
+                                Traffic light turning Green and the Pedestrian light turning red
+                            </li>
+                            <li>
+                                Traffic light turning Red and the Pedestrian light turning green
+                            </li>
+                        </ul>
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </subsection>
+
+    <subsection>
+        <title>Implementation and Simulation</title>
+        <p>Sage built-in module will be used to define the FSM, display its state transition graph, and run it through a full cycle.</p>
+
+        <example>
+            <title>Step 1: Define the FSM</title>
+            <sage>
+                <input>
+                    from sage.combinat.finite_state_machine import FSMState, FSMTransition
+
+                    # FSM states, inputs and outputs
+                    states = ['Gr', 'Yr', 'Rg', 'Ry']
+                    inputs = [30, 5, 30, 10]
+                    outputs = [
+                        'Traffic light turning Green, Pedestrian light turning red',
+                        'Traffic light turning Yellow, Pedestrian light turning red',
+                        'Traffic light turning Red, Pedestrian light turning green',
+                        'Traffic light turning Red, Pedestrian light turning yellow',
+                    ]
+
+                    # Create the state machine, define and add the states
+                    fsm = FiniteStateMachine()
+
+                    # the initial state
+                    Gr = FSMState('Gr', is_initial=True)
+                    fsm.add_state(Gr)
+
+                    # the other states
+                    Yr = fsm.add_state('Yr')
+                    Rg = fsm.add_state('Rg')
+                    Ry = fsm.add_state('Ry')
+
+                    # defining 4 transitions, and associating them the state machine
+                    # After 30sec, transition from Gr to Yr, set traffic light Yellow and Pedestrian light remains red
+                    fsm.add_transition(FSMTransition(Gr, Yr, 30, 'turning Yr'))
+
+                    # After 5sec, transition from Yr to Rg, set traffic light to Red, and Pedestrian light turns green
+                    fsm.add_transition(FSMTransition(Yr, Rg, 5, 'turning Rg'))
+
+                    # After 30sec, transition from Rg to Ry, traffic light remains Red , and Pedestrian light turns yellow
+                    fsm.add_transition(FSMTransition(Rg, Ry, 30, 'turning Ry'))
+
+                    # After 10sec, transition from Ry to Gr, traffic light turns back to Green , and Pedestrian light turns red
+                    fsm.add_transition(FSMTransition(Ry, Gr, 10, 'turning Gr'))
+
+                    print(fsm.states())
+                    print(fsm.transitions())
+                </input>
+            </sage>
+        </example>
+
+        <example>
+            <title>Step 2: Display the State Transition Graph</title>
+            <sage>
+                <input>
+                    # Display the graph of the FSM
+                    fsm.graph().show(
+                        figsize=[6, 6],
+                        vertex_size=800,
+                        edge_labels=True,
+                        vertex_labels=True,
+                        edge_color=(.2,.4,1),
+                        edge_thickness=1.0
+                    )
+                </input>
+            </sage>
+            <p>
+                This will visualize the FSM as a directed graph with nodes representing states and edges showing transitions.
+            </p>
+        </example>
+
+        <example>
+            <title>Step 3: Simulate a Full Cycle of the FSM</title>
+            <p> The simulation starts in the initial state (<c>Rg</c>) and transitions through all states, printing the action associated with each transition. </p>
+            <sage>
+                <input>
+                    # pass in the initial state and the list of inputs
+                    *_, outputs_history = fsm.process(
+                        initial_state=Gr,
+                        input_tape=[30, 5, 30, 10, 30],
+                    )
+
+                    # print out the outputs of the state machine run
+                    [print(_) for _ in outputs_history];
+                    print()
+                </input>
+            </sage>
+        </example>
+    </subsection>
+    <conclusion>
+        <p>One limitation of using Sage built-in module is that it fails handling transitions that weren't defined in the FSM. For instance, in the previous example, if the timer durations pattern for the input does not match the defined transitions, the run will raise an exception, instead of gracefully handling the exception and defaulting to no transition (similarly, the same issue arise if attempting to run the FSM starting at state that is not part of the FSM definition).</p>
+        <sage>
+            <input>
+                *_, outputs_history = fsm.process(
+                    initial_state=Gr,
+                    # passing inputs not defined in the FSM transitions
+                    input_tape=[5, 20, 30, 10],
+                )
+
+                [print(_) for _ in outputs_history];
+            </input>
+        </sage>
+</conclusion>
+</section>

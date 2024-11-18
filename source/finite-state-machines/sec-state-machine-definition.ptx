@@ -9,7 +9,7 @@
 
         <p>A <term>Finite-State Machine (FSM)</term> is a a computational model that has a finite
             set of possible states <m>S</m>, a finite set of possible input symbols (the input
-            alphabet) <m>X</m>, a finite set of possible output symbols (the output alphabet) <m>
+            alphabet) <m>X</m>, and a finite set of possible output symbols (the output alphabet) <m>
             Z</m>. The machine can exist in one of the states at any time, and based on the
             machine input and its current state, it can transition to any other state and produces
             an output. The functions that take in the machine current state and its input and map
@@ -88,7 +88,7 @@
                     <li>
                         <p>
                             <m>w: S \to Z</m> is the output function, which specifies which output
-                symbol <m>w(s) \in Z</m> maps to the machine current state <m>s</m>.</p>
+                symbol <m>w(s) \in Z</m> associated with the machine current state <m>s</m>.</p>
                     </li>
                     <li>
                         <p>
@@ -146,8 +146,13 @@
             <p> A <term>Deterministic Finite Automaton (DFA)</term> is a simplified automaton where each
                 state has exactly one transition for each input.</p>
             <p> DFAs are typically used for lexical analysis, language recognition, and pattern
-                matching (ex. a string-matching system to recognize specific languages or regular
-                expressions).</p>
+                matching.</p>
+            <aside>
+                <title>Note</title>
+                <p>
+                    a text-parser or a string-matching application that recognizes a specific language or regular
+                    expressions are real-world examples of DFA use.</p>
+            </aside>
         </subsubsection>
 
         <subsubsection>
@@ -169,7 +174,7 @@
     <conclusion>
         <p>
             Finite state machines are a foundational concept in computer science, often associated
-            with tasks in relation with system designs (circuits and digital computers, algorithms, etc.)
+            with tasks related to system designs (circuits and digital computers, algorithms, etc.)
             However, the vast and rich domain of applications of state machines extends far beyond simple
             simulations to full control logic of complex industrial processes and workflows. These tasks
             can vary in complexity, be as simple as a parity check or a complex as managing traffic patterns,
