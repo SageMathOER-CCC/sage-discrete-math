@@ -3,7 +3,7 @@
     <title>Graphs in Action</title>
     <introduction>
         <p>
-            Imagine you are a bike courier tasked with making deliveries to each Chicago City College campus location. Per your contract, you get paid per delivery, not per hour. Therefore, finding the most efficient delivery route is in your best interest. We assume the bike delivery routes are the same distance in each direction.
+            Imagine you are a bike courier tasked with making deliveries to each City Colleges of Chicago (CCC) campus location. Per your contract, you get paid per delivery, not per hour. Therefore, finding the most efficient delivery route is in your best interest. We assume the bike delivery routes are the same distance in each direction.
         </p>
     </introduction>
     <subsection xml:id="subsec-Bike-Courier-Delivery-Route-Problem">
@@ -13,12 +13,12 @@
             <ol>
                 <li>
                     <p>
-                        Find the distances between each City College location
+                        Find the distances between each CCC location.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Make a Graph of the City Colleges. Each location is a node. The weight of the edges between location nodes has a weight representing the distance between locations.
+                        Make a Graph of the CCC locations. Each location is a node. The weight of the edges between location nodes has a weight representing the distance between locations.
                     </p>
                 </li>
                 <li>
@@ -32,7 +32,7 @@
     <subsection xml:id="subsec-locations">
         <title>Locations</title>
         <table>
-            <title>City College Addresses</title>
+            <title>CCC Addresses</title>
             <tabular row-headers="no" left="medium" right="medium" top="medium" bottom="medium">
                 <row header="yes" bottom="medium">
                     <cell>Name</cell>
