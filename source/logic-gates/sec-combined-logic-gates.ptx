@@ -69,37 +69,52 @@
     <subsection>
         <title>Truth Tables and Logic Circuits</title>
         <p>
-            Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding output, making it easier to analyze and understand the behavior of the circuit.
+            Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding outputs, making it easier to analyze and understand the behavior of the circuit.
         </p>
         <p>
-            Let’s create a truth table for a circuit that combines an <c>AND</c> gate and an <c>OR</c> gate. This will help us visualize how the output changes with different input values.
+            Let’s create a truth table for a circuit that combines multiple gates: an <c>AND</c> gate, a <c>NOT</c> gate, and an <c>OR</c> gate, with three variables (<c>A</c>, <c>B</c>, <c>C</c>). The function is:
+        </p>
+        <p>
+            <m>
+                F = \left( (A \land B) \lor (\neg C) \right) \land B
+            </m>
         </p>
         <sage>
             <input>
-                from sympy.logic.boolalg import And, Or, truth_table
-                from sympy.abc import A, B
+                from sympy.logic.boolalg import And, Or, Not, truth_table
+                from sympy.abc import A, B, C
 
-                # Define expressions and variables
-                expressions = [And(A, B), Or(A, B)]
-                variables = [A, B]
+                # Define the logic function
+                intermediate1 = And(A, B)  # A AND B
+                intermediate2 = Not(C)     # NOT C
+                intermediate3 = Or(intermediate1, intermediate2)  # (A AND B) OR (NOT C)
+                final_output = And(intermediate3, B)  # F = ((A AND B) OR (NOT C)) AND B
 
-                # Generate and print truth tables for each expression
-                for expr in expressions:
-                    print(f"Truth table for {expr}:")
-                    for row in truth_table(expr, variables):
-                        print(row)
-                    print("-" * 20)
+                # Variables and expressions
+                variables = [A, B, C]
+                expressions = [intermediate1, intermediate2, intermediate3, final_output]
+
+                # Header names and column widths
+                headers = ["A", "B", "C", "A AND B", "NOT C", "(A AND B) OR (NOT C)", "F"]
+                column_widths = [5, 5, 5, 8, 6, 20, 5]  # Adjust widths as needed
+
+                # Print header row with adjusted spacing
+                header_row = " | ".join(h.ljust(w) for h, w in zip(headers, column_widths))
+                print(header_row)
+                print("-" * len(header_row))  
+
+                # Generate and print the truth table rows
+                for row in truth_table(final_output, variables):
+                    inputs = row[0]
+                    outputs = [int(bool(expr.subs(dict(zip(variables, inputs))))) for expr in expressions]
+                    table_row = " | ".join(str(int(bool(x))).ljust(w) for x, w in zip(list(inputs) + outputs, column_widths))
+                    print(table_row)
             </input>
             <output>
             </output>
         </sage>
-        <p>
-            In this example, the truth table helps us see how the <c>AND</c> gate only produces <c>1</c> when both inputs are <c>1</c>, while the <c>OR</c> gate produces <c>1</c> whenever at least one input is <c>1</c>.
-        </p>
-
-        <p>
-            Truth tables are an essential tool for designing and analyzing logic circuits, allowing you to predict the behavior of even complex circuits by systematically evaluating every possible input combination.
-        </p>
     </subsection>
+
+
 
 </section>
