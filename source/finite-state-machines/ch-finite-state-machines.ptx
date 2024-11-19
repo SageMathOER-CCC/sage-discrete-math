@@ -3,14 +3,16 @@
   <title>Finite State Machines</title>
 
   <introduction>
-    <p> In this chapter, we explore a powerful abstract model: <em>finite-state machines</em>.
-      Beyond the theory, we'll see how to use Sage to define, model and build, then
-      visualize and run a few examples of state machines to solve real-world problems.</p>
-  </introduction>
+      <p> This chapter delves into a powerful abstract model, namely the <em>finite-state machines</em>.
+      Beyond the theoretical framework, the content of this chapter demonstrates the use of Sage to define,
+      model, build, visualize, and execute examples of state machines, showcasing their application in
+      solving real-world problems.</p>
+    </introduction>
 
   <!-- include sections -->
   <xi:include href="sec-state-machine-definition.ptx" />
   <xi:include href="sec-modeling-finite-state-machines.ptx" />
+  <xi:include href="sec-fsm-in-action.ptx" />
   <xi:include href="sec-extended-example.ptx" />
 
 </chapter>
