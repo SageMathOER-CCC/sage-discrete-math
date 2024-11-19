@@ -3,7 +3,7 @@
     <title>Trees in Action</title>
     <introduction>
         <p>
-            Imagine your task is to create a railway between all the Chicago City College campus locations. The contract requests that you use minimal track material to save construction costs. For simplicity's sake, assume that there are no obstacles on each railway path between campus locations. Assume the railway paths do not need to take any turns.
+            Imagine your task is to create a railway between all the City Colleges of Chicago (CCC) campus locations. The contract requests that you use minimal track material to save construction costs. For simplicity's sake, assume each railway is a straight line.
         </p>
     </introduction>
     <subsection xml:id="subsec-Railway-Problem">
@@ -13,7 +13,7 @@
             <ol>
                 <li>
                     <p>
-                        Find the latitude and longitude of each City College campus location
+                        Find the latitude and longitude of each CCC campus location.
                     </p>
                 </li>
                 <li>
@@ -23,12 +23,12 @@
                 </li>
                 <li>
                     <p>
-                        Make a Graph of the City College campuses. Each location is a node. The weight of the edges represents the distance between locations.
+                        Make a Graph of the CCC campuses. Each location is a node. The weight of the edges represents the distance between locations.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Find the minimal spanning tree of the City Colleges Graph.
+                        Find the minimum spanning tree of the CCC Graph.
                     </p>
                 </li>
             </ol>
@@ -37,7 +37,7 @@
     <subsection xml:id="subsec-location-distances">
         <title>Location Distances</title>
         <table>
-            <title>City College Locations</title>
+            <title>City Colleges of Chicago Locations</title>
             <tabular row-headers="no" left="medium" right="medium" top="medium" bottom="medium">
                 <row header="yes" bottom="medium">
                     <cell>Name</cell>
@@ -168,15 +168,27 @@
                     edge_labels=True,
                     vertex_size=500,
                     figsize=20,
-                    title="City Colleges Distance Graph"
+                    title="CCC Distance Graph"
                 )
             </input>
         </sage>
     </subsection>
-    <subsection xml:id="subsec-Minimum-Spanning-Tree">
-        <title>Minimum Spanning Tree</title>
+    <subsection xml:id="subsec-Railway">
+        <title>Railway</title>
         <p>
-            Let's find the minimal spanning tree edge <c>list</c> of the campus locations with the <c>min_spanning_tree(by_weight=True)</c> function.
+            So far, we have encountered various concepts for connecting a graph's vertices, including a Hamilton path and a minimum spanning tree. Let's consider what technique is best suited for solving the problem of constructing a railway that optimizes material costs.
+        </p>
+        <p>
+            The previous chapter used the traveling salesperson algorithm to optimize a delivery route. Since we aim to optimize material costs, you might think of following a similar approach: apply the traveling salesperson algorithm, eliminate the greatest edge from the Hamilton circuit, and design the railway with the minimum Hamilton path. While the Hamiltonian path optimizes graph traversal by visiting each vertex exactly once in a single path, it does not necessarily guarantee that all vertices are connected with the minimal total weight.
+        </p>
+        <p>
+            In a Hamiltonian path, the requirement to visit each vertex in a single path can force the inclusion of high-weight edges. Alternatively, a minimum spanning tree is not restricted by the requirement of connecting vertices with a path. A minimum spanning tree can avoid high-weight edges by connecting vertices without regard to forming a path as long as the graph remains connected and acyclic. Although the minimum Hamilton path is one of many possible spanning trees, it is not a minimum spanning tree. Prim's Algorithm ensures the weight of the spanning tree is minimal because, at each iteration, it selects the smallest-weight edge.
+        </p>
+        <p>
+            We may want to create a railway that optimizes travel time and construction material costs in a real-world situation. When ignoring the downtown Loop, the Chicago L train system resembles a tree and is criticized for its lack of interconnectivity. For example, finding an efficient route connecting the end of the Blue Line with the end of the Red Line is challenging. In this challenge question, We will optimize construction material costs for simplicity.
+        </p>
+        <p>
+            Let's find the minimum spanning tree edge <c>list</c> of the campus locations with the <c>min_spanning_tree(by_weight=True)</c> function.
         </p>
         <sage>
             <input>
@@ -185,7 +197,7 @@
             </input>
         </sage>
         <p>
-            Visualize the minimal spanning tree with the vertex positions mapped to the geographical coordinates of each campus location.
+            Visualize the minimum spanning tree with the vertex positions mapped to the geographical coordinates of each campus location.
         </p>
         <sage>
             <input>
@@ -194,7 +206,7 @@
                     edge_labels=True,
                     vertex_size=500,
                     figsize=15,
-                    title="Minimum Spanning Tree of City Colleges"
+                    title="CCC Minimum Spanning Tree"
                 )
             </input>
         </sage>
