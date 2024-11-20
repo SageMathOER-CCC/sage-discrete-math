@@ -29,11 +29,15 @@
         <p>
             The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
         </p>
-        <figure>
-            <media>
-                <image source="logic-gates/and.png" width="50%"/>
-            </media>
+        <figure xml:id="fig-AND-Gate">
             <caption>AND Gate</caption>
+            <image width="50%" xml:id="AND-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[and port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
         </figure>
         <sage>
             <input>
@@ -62,11 +66,15 @@
         <p>
             The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
         </p>
-        <figure>
-            <media>
-                <image source="logic-gates/or.png" width="50%"/>
-            </media>
+        <figure xml:id="fig-OR-Gate">
             <caption>OR Gate</caption>
+            <image width="50%" xml:id="OR-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[or port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
         </figure>
         <sage>
             <input>
@@ -95,11 +103,15 @@
         <p>
             The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>.
         </p>
-        <figure>
-            <media>
-                <image source="logic-gates/not.png" width="50%"/>
-            </media>
+        <figure xml:id="fig-NOT-Gate">
             <caption>NOT Gate</caption>
+            <image width="50%" xml:id="NOT-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[not port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
         </figure>
         <sage>
             <input>
@@ -124,24 +136,54 @@
 
     <subsection>
         <title>Derived Gates</title>
-        <p>
-            Additional gates derive from <c>AND</c>, <c>OR</c>, and <c>NOT</c>, offering varied functionality:
-        </p>
-        <ul>
-            <li><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</li>
-            <li><c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.</li>
-            <li><c>XOR</c>: Produces <c>1</c> when inputs differ.</li>
-            <li><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</li>
-        </ul>
-        <figure>
-            <media>
-                <image source="logic-gates/nand.png" width="25%"/>
-                <image source="logic-gates/nor.png" width="25%"/>
-                <image source="logic-gates/xor.png" width="25%"/>
-                <image source="logic-gates/xnor.png" width="25%"/>
-            </media>
-            <caption>Symbols for Derived Gates</caption>
+        <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
+        <figure xml:id="fig-NAND-Gate">
+            <caption>NAND Gate</caption>
+            <image width="50%" xml:id="NAND-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[nand port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
         </figure>
+
+        <p><c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.</p>
+        <figure xml:id="fig-NOR-Gate">
+            <caption>NOR Gate</caption>
+            <image width="50%" xml:id="NOR-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[nor port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
+        </figure>
+
+        <p><c>XOR</c>: Produces <c>1</c> when inputs differ.</p>
+        <figure xml:id="fig-XOR-Gate">
+            <caption>XOR Gate</caption>
+            <image width="50%" xml:id="XOR-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[xor port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
+        </figure>
+
+        <p><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</p>
+        <figure xml:id="fig-XNOR-Gate">
+            <caption>XOR Gate</caption>
+            <image width="50%" xml:id="XNOR-Gate">
+            <latex-image >
+                \begin{circuitikz}
+                \draw (0,0) node[xnor port] {};
+                \end{circuitikz}
+            </latex-image>
+            </image>
+        </figure>
+
         <aside>
             <title>Notes</title>
             <p>
