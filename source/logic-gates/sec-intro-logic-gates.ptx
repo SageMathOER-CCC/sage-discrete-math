@@ -181,7 +181,7 @@
 
         <p><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</p>
         <figure xml:id="fig-XNOR-Gate">
-            <caption>XOR Gate</caption>
+            <caption>XNOR Gate</caption>
             <image width="25%" xml:id="XNOR-Gate">
             <latex-image >
                 \begin{circuitikz}
