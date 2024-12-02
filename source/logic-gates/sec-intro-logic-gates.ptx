@@ -14,7 +14,7 @@
             <h>XNOR</h>
         </idx>
         <p>
-            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables.The basic logic gates are AND, OR, and NOT which correspond to the logical operators reviewed in previous sections. Other commonly used gates as NAND, NOR, XOR, and XNOR are composites of the basic ones. Each gate has its own symbol and truth table representing outputs for all combinations of inputs. These gates combine to form complex systems such as CPUs and memory circuits.
+            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables. The basic logic gates are AND, OR, and NOT which correspond to the logical operators reviewed in previous sections. Other commonly used gates as NAND, NOR, XOR, and XNOR are composites of the basic ones. Each gate has its own symbol and truth table representing outputs for all combinations of inputs. These gates combine to form complex systems such as CPUs and memory circuits.
         </p>
         <aside>
             <title>Notes</title>
