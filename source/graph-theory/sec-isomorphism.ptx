@@ -122,7 +122,7 @@
     <output></output>
   </sage>
   <p>
-    If we use <c>invariant_under_isomorphism</c> on the <m>C</m> and <m>D</m>, the output will let us know that the graphs may or may not be isomorphic. We can use the <c>is_isomorphic()</c> method to check if the graphs are definitively isomorphic.
+    If we use <c>invariant_under_isomorphism</c> on the <m>C</m> and <m>D</m>, the output will let's know that the graphs may or may not be isomorphic. We can use the <c>is_isomorphic()</c> method to check if the graphs are definitively isomorphic.
   </p>
   <sage>
     <input>

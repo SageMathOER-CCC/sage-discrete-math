@@ -53,7 +53,7 @@
             The <c>show()</c> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.
         </p>
         <p>
-            We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let us calculate the third Fibonacci number.
+            We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let's calculate the third Fibonacci number.
         </p>
         <sage>
             <input>

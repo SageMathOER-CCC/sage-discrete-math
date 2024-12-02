@@ -45,14 +45,13 @@
             the first floor while moving down. It makes stop at every floor on its way up or
             down. Each floor has 3 buttons to press while selecting the destination floor.</p>
 
-        <p> Next, we'll see how to model and simulate this system using an FSM. In this example,
-            we have the various states <m>S=\{f_1, f_2, f_3\}</m> representing each of the
-            floors, the different user inputs <m>X=\{b_1, b_2, b_3\}</m> (<em>pb</em> stands
+        <p> Next, the process of modeling and simulating this system will be demonstrated using a finite
+            state machine (FSM). This example includes various states <m>S=\{f_1, f_2, f_3\}</m> representing
+            each of the floors, the different user inputs <m>X=\{b_1, b_2, b_3\}</m> (<em>pb</em> stands
             for push-button), and the possible outputs for the elevator <m>Z=\{U, D, N\}</m> for
             elevator going up, going down, or doing nothing. The different components of this FSM
             can be transcribed in the following table.</p>
         <p>
-            <!-- TODO. LaTEx Table, Tikz -->
             <table>
                 <title>Elevator State Machine: Transitions and Outputs</title>
                     <tabular halign="center">
@@ -399,7 +398,7 @@
         </sage>
         <p>
             The <latex /> printout may not have all elements displayed (the labels on the edges),
-            but it's a start and it can still be customized further. The following figure shows a
+            but it is a start and it can still be customized further. The following figure shows a
             rendering of the above <latex /> commands.</p>
         <figure>
             <media>

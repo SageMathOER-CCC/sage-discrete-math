@@ -129,7 +129,8 @@
 
         <example>
             <title>Step 3: Simulate a Full Cycle of the FSM</title>
-            <p> The simulation starts in the initial state (<c>Rg</c>) and transitions through all states, printing the action associated with each transition. </p>
+            <p> The simulation starts in the initial state (<c>Rg</c>) and transitions through all states, printing the action
+                associated with each transition.</p>
             <sage>
                 <input>
                     # pass in the initial state and the list of inputs
@@ -146,7 +147,10 @@
         </example>
     </subsection>
     <conclusion>
-        <p>One limitation of using Sage built-in module is that it fails handling transitions that weren't defined in the FSM. For instance, in the previous example, if the timer durations pattern for the input does not match the defined transitions, the run will raise an exception, instead of gracefully handling the exception and defaulting to no transition (similarly, the same issue arise if attempting to run the FSM starting at state that is not part of the FSM definition).</p>
+        <p>One limitation of using Sage built-in module is that it fails handling transitions that were not defined in the FSM.
+            For instance, in the previous example, if the timer durations pattern for the input does not match the defined transitions,
+            the run will raise an exception, instead of gracefully handling the exception and defaulting to no transition (similarly,
+            the same issue arise if attempting to run the FSM starting at state that is not part of the FSM definition).</p>
         <sage>
             <input>
                 *_, outputs_history = fsm.process(
