@@ -54,98 +54,98 @@
                 </li>
             </ul>
         </p>
+
+        <p>Next, Sage built-in module will be used to define the FSM, display its state transition graph,
+            and run it through a full cycle.</p>
     </subsection>
 
     <subsection>
-        <title>Implementation and Simulation</title>
-        <p>Sage built-in module will be used to define the FSM, display its state transition graph, and run it through a full cycle.</p>
+        <title>Construct the FSM</title>
+        <sage>
+            <input>
+                from sage.combinat.finite_state_machine import FSMState, FSMTransition
 
-        <example>
-            <title>Step 1: Define the FSM</title>
-            <sage>
-                <input>
-                    from sage.combinat.finite_state_machine import FSMState, FSMTransition
+                # FSM states, inputs and outputs
+                states = ['Gr', 'Yr', 'Rg', 'Ry']
+                inputs = [30, 5, 30, 10]
+                outputs = [
+                    'Traffic light turning Green, Pedestrian light turning red',
+                    'Traffic light turning Yellow, Pedestrian light turning red',
+                    'Traffic light turning Red, Pedestrian light turning green',
+                    'Traffic light turning Red, Pedestrian light turning yellow',
+                ]
 
-                    # FSM states, inputs and outputs
-                    states = ['Gr', 'Yr', 'Rg', 'Ry']
-                    inputs = [30, 5, 30, 10]
-                    outputs = [
-                        'Traffic light turning Green, Pedestrian light turning red',
-                        'Traffic light turning Yellow, Pedestrian light turning red',
-                        'Traffic light turning Red, Pedestrian light turning green',
-                        'Traffic light turning Red, Pedestrian light turning yellow',
-                    ]
+                # Create the state machine, define and add the states
+                fsm = FiniteStateMachine()
 
-                    # Create the state machine, define and add the states
-                    fsm = FiniteStateMachine()
+                # the initial state
+                Gr = FSMState('Gr', is_initial=True)
+                fsm.add_state(Gr)
 
-                    # the initial state
-                    Gr = FSMState('Gr', is_initial=True)
-                    fsm.add_state(Gr)
+                # the other states
+                Yr = fsm.add_state('Yr')
+                Rg = fsm.add_state('Rg')
+                Ry = fsm.add_state('Ry')
 
-                    # the other states
-                    Yr = fsm.add_state('Yr')
-                    Rg = fsm.add_state('Rg')
-                    Ry = fsm.add_state('Ry')
+                # defining 4 transitions, and associating them the state machine
+                # After 30sec, transition from Gr to Yr, set traffic light Yellow and Pedestrian light remains red
+                fsm.add_transition(FSMTransition(Gr, Yr, 30, 'turning Yr'))
 
-                    # defining 4 transitions, and associating them the state machine
-                    # After 30sec, transition from Gr to Yr, set traffic light Yellow and Pedestrian light remains red
-                    fsm.add_transition(FSMTransition(Gr, Yr, 30, 'turning Yr'))
+                # After 5sec, transition from Yr to Rg, set traffic light to Red, and Pedestrian light turns green
+                fsm.add_transition(FSMTransition(Yr, Rg, 5, 'turning Rg'))
 
-                    # After 5sec, transition from Yr to Rg, set traffic light to Red, and Pedestrian light turns green
-                    fsm.add_transition(FSMTransition(Yr, Rg, 5, 'turning Rg'))
+                # After 30sec, transition from Rg to Ry, traffic light remains Red , and Pedestrian light turns yellow
+                fsm.add_transition(FSMTransition(Rg, Ry, 30, 'turning Ry'))
 
-                    # After 30sec, transition from Rg to Ry, traffic light remains Red , and Pedestrian light turns yellow
-                    fsm.add_transition(FSMTransition(Rg, Ry, 30, 'turning Ry'))
+                # After 10sec, transition from Ry to Gr, traffic light turns back to Green , and Pedestrian light turns red
+                fsm.add_transition(FSMTransition(Ry, Gr, 10, 'turning Gr'))
 
-                    # After 10sec, transition from Ry to Gr, traffic light turns back to Green , and Pedestrian light turns red
-                    fsm.add_transition(FSMTransition(Ry, Gr, 10, 'turning Gr'))
-
-                    print(fsm.states())
-                    print(fsm.transitions())
-                </input>
-            </sage>
-        </example>
-
-        <example>
-            <title>Step 2: Display the State Transition Graph</title>
-            <sage>
-                <input>
-                    # Display the graph of the FSM
-                    fsm.graph().show(
-                        figsize=[6, 6],
-                        vertex_size=800,
-                        edge_labels=True,
-                        vertex_labels=True,
-                        edge_color=(.2,.4,1),
-                        edge_thickness=1.0
-                    )
-                </input>
-            </sage>
-            <p>
-                This will visualize the FSM as a directed graph with nodes representing states and edges showing transitions.
-            </p>
-        </example>
-
-        <example>
-            <title>Step 3: Simulate a Full Cycle of the FSM</title>
-            <p> The simulation starts in the initial state (<c>Rg</c>) and transitions through all states, printing the action
-                associated with each transition.</p>
-            <sage>
-                <input>
-                    # pass in the initial state and the list of inputs
-                    *_, outputs_history = fsm.process(
-                        initial_state=Gr,
-                        input_tape=[30, 5, 30, 10, 30],
-                    )
-
-                    # print out the outputs of the state machine run
-                    [print(_) for _ in outputs_history];
-                    print()
-                </input>
-            </sage>
-        </example>
+                print(fsm.states())
+                print(fsm.transitions())
+            </input>
+        </sage>
     </subsection>
+
+    <subsection>
+        <title>Display the State Transition Graph</title>
+        <p>
+            Here, the FSM is visualized as a directed graph with nodes representing states and edges showing transitions.
+        </p>
+        <sage>
+            <input>
+                # Display the graph of the FSM
+                fsm.graph().show(
+                    figsize=[6, 6],
+                    vertex_size=800,
+                    edge_labels=True,
+                    vertex_labels=True,
+                    edge_color=(.2,.4,1),
+                    edge_thickness=1.0
+                )
+            </input>
+        </sage>
+    </subsection>
+
+    <subsection>
+        <title>Simulate a Full Cycle Run of the FSM</title>
+        <p> The simulation starts in the initial state (<c>Rg</c>) and transitions through all states, printing the action
+            associated with each transition.</p>
+        <sage>
+            <input>
+                # pass in the initial state and the list of inputs
+                *_, outputs_history = fsm.process(
+                    initial_state=Gr,
+                    input_tape=[30, 5, 30, 10, 30],
+                )
+
+                # print out the outputs of the state machine run
+                print("FSM outputs:")
+                [print(_) for _ in outputs_history];
+                print()
+            </input>
+        </sage>
+    </subsection>
+
     <conclusion>
         <p>One limitation of using Sage built-in module is that it fails handling transitions that were not defined in the FSM.
             For instance, in the previous example, if the timer durations pattern for the input does not match the defined transitions,
@@ -159,6 +159,7 @@
                     input_tape=[5, 20, 30, 10],
                 )
 
+                # Error will be thrown while running the following
                 [print(_) for _ in outputs_history];
             </input>
         </sage>

@@ -116,420 +116,418 @@
             </ul>
         </p>
     </subsection>
+
     <subsection>
-        <title>Solution</title>
-        <example>
-            <title>Blueprints: States, Inputs and Outputs</title>
-            <p>
-                <sage auto-evaluate="yes">
-                    <!-- TODO.
-                        long code snippet seems to overflow the page int he printed version,
-                        may need to break the code into smaller chunks.
-                    -->
-                    <input>
-                        # BLUEPRINTS
-                        from dataclasses import dataclass
-                        import time
+        <title>Blueprints: States, Inputs and Outputs</title>
+        <p>
+            <sage auto-evaluate="yes">
+                <!-- TODO.
+                    long code snippet seems to overflow the page int he printed version,
+                    may need to break the code into smaller chunks.
+                -->
+                <input>
+                    # BLUEPRINTS
+                    from dataclasses import dataclass
+                    import time
 
-                        @dataclass
-                        class State:
-                            """Class for keeping track of the state objects and their representation."""
-                            idx: int = -1
-                            description: str = ''
+                    @dataclass
+                    class State:
+                        """Class for keeping track of the state objects and their representation."""
+                        idx: int = -1
+                        description: str = ''
 
-                            @property
-                            def tex(self) -> str:
-                                """Needed for the graph display of the State Machine (SM)."""
-                                return f'$S_{{{self.idx}}}$' if self.idx >= 0 else '*'
+                        @property
+                        def tex(self) -> str:
+                            """Needed for the graph display of the State Machine (SM)."""
+                            return f'$S_{{{self.idx}}}$' if self.idx >= 0 else '*'
 
-                            def __str__(self) -> str:
-                                """Display the state (Running the SM)."""
-                                return f'S{self.idx}' if self.idx >= 0 else '*'
+                        def __str__(self) -> str:
+                            """Display the state (Running the SM)."""
+                            return f'S{self.idx}' if self.idx >= 0 else '*'
 
-                            def __repr__(self) -> str:
-                                """Console representation of the state."""
-                                return (
-                                    f"State(idx={self.idx}, description='{self.description}')"
-                                    if self.idx >= 0 else "State()"
-                                )
+                        def __repr__(self) -> str:
+                            """Console representation of the state."""
+                            return (
+                                f"State(idx={self.idx}, description='{self.description}')"
+                                if self.idx >= 0 else "State()"
+                            )
 
-                            def __eq__(self, other) -> bool:
-                                """Needed for dictionary lookups."""
-                                return isinstance(other, State) and self.idx == other.idx
+                        def __eq__(self, other) -> bool:
+                            """Needed for dictionary lookups."""
+                            return isinstance(other, State) and self.idx == other.idx
 
-                            def __hash__(self):
-                                """Needed for dictionary lookups."""
-                                return hash(self.__str__())
+                        def __hash__(self):
+                            """Needed for dictionary lookups."""
+                            return hash(self.__str__())
 
 
-                        @dataclass
-                        class Input:
-                            """Class for keeping track of SM inputs."""
-                            label: str
-                            description: str
-                            input_action: any
-                            input_param: any = None
-                            action: any = time.sleep  # apply a delay/wait time
+                    @dataclass
+                    class Input:
+                        """Class for keeping track of SM inputs."""
+                        label: str
+                        description: str
+                        input_action: any
+                        input_param: any = None
+                        action: any = time.sleep  # apply a delay/wait time
 
-                            @staticmethod
-                            def _header() -> str:
-                                """Display the input column when running the SM."""
-                                return (
-                                    '| Input Event    '
-                                )
+                        @staticmethod
+                        def _header() -> str:
+                            """Display the input column when running the SM."""
+                            return (
+                                '| Input Event    '
+                            )
 
-                            def execute(self):
-                                """Execute the task associated with the input (Running the SM)."""
-                                if self.action:
-                                    return self.action(self.input_param)
+                        def execute(self):
+                            """Execute the task associated with the input (Running the SM)."""
+                            if self.action:
+                                return self.action(self.input_param)
 
-                            def __str__(self) -> str:
-                                """Display the input (Running the SM)."""
-                                event = (
-                                    self.input_action if isinstance(self.input_action, str)
-                                    else self.input_action(self.input_param)
-                                )
-                                return f'| {event:14} '
+                        def __str__(self) -> str:
+                            """Display the input (Running the SM)."""
+                            event = (
+                                self.input_action if isinstance(self.input_action, str)
+                                else self.input_action(self.input_param)
+                            )
+                            return f'| {event:14} '
 
-                            def __eq__(self, other) -> bool:
-                                """Needed for dictionary lookups."""
-                                return (
-                                    isinstance(other, Input) and
-                                    self.label == other.label and
-                                    self.input_param == other.input_param
-                                )
+                        def __eq__(self, other) -> bool:
+                            """Needed for dictionary lookups."""
+                            return (
+                                isinstance(other, Input) and
+                                self.label == other.label and
+                                self.input_param == other.input_param
+                            )
 
-                            def __hash__(self):
-                                """Needed for dictionary lookups."""
-                                return hash(self.label+str(self.input_param))
-
-
-                        @dataclass
-                        class Output:
-                            """Class for managing and displaying the SM outputs."""
-                            traffic_light: str
-                            pedestrian_signal: str
-                            timer_status: str
-
-                            @staticmethod
-                            def _header() -> str:
-                                """Display the output column while running the SM."""
-                                return (
-                                    '| Outputs:'
-                                    '    CARS         PEDESTRIANS      Timer |'
-                                )
-
-                            def __str__(self) -> str:
-                                """Display the output (Running the SM)."""
-                                return '|         {cars}    {peds}     {timer_tag:3}  |'.format(
-                                    cars=self.traffic_light.replace('.', ' '),
-                                    peds=self.pedestrian_signal.replace('.', ' '),
-                                    timer_tag=self.timer_status,
-                                )
-                    </input>
-                    <output></output>
-                </sage>
-            </p>
-        </example>
-        <example>
-            <title>State Machine Engine</title>
-            <p>
-                <sage auto-evaluate="yes">
-                    <input>
-                        import json
-                        class StateMachine:
-                            """Generic StateMachine Engine to display and run a state-machine."""
-
-                            def __init__(
-                                self,
-                                initial_state,
-                                transitions_map,
-                                states_outputs
-                            ):
-                                self.initial_state = initial_state
-                                self.transitions_map = transitions_map
-                                self.states_outputs = states_outputs
-
-                            def __repr__(self):
-                                n_states = len(self.states_outputs)
-                                m_transitions = sum([len(_) for _ in self.transitions_map.values()])
-                                return f"StateMachine(nStates:{n_states}, mTransitions:{m_transitions}, initialState:{self.initial_state})"
-
-                            def draw(self, plot):
-                                """Call the custom plotter for the state machine model/graph"""
-                                plot(
-                                    initial_state=self.initial_state,
-                                    transitions_map=self.transitions_map,
-                                )
-
-                            def run(self, input_events):
-                                """Simulate the SM run (Table view)."""
-                                # print the header
-                                header = f"| State {Input._header()}| State' {Output._header()}"
-                                HORIZONTAL_LINE_1 = '=' * len(header)
-                                HORIZONTAL_LINE_2 = '-' * len(header)
-                                print(
-                                    HORIZONTAL_LINE_1 + '\n' + header + '\n' + HORIZONTAL_LINE_2
-                                )
-
-                                # main run
-                                current_state = self.initial_state
-                                for trigger_event in input_events:
-                                    print(f"|{str(current_state):^6} ", end='')
-
-                                    # triggering input event
-                                    trigger_event.execute()
-                                    print(trigger_event, end='')
-
-                                    # new state
-                                    next_state = (
-                                        self.transitions_map[current_state][trigger_event]
-                                        if current_state in self.transitions_map and
-                                        trigger_event in self.transitions_map[current_state]
-                                        else current_state
-                                    )
-                                    print(f"|{str(next_state):^7} ", end='')
-
-                                    # state output
-                                    state_output = self.states_outputs[next_state]
-                                    print(state_output)
-
-                                    # prepare the next iteration
-                                    current_state = next_state
-
-                                # print the footer
-                                print(HORIZONTAL_LINE_1)
-                    </input>
-                    <output></output>
-                </sage>
-            </p>
-        </example>
-        <example>
-            <title>Model Definition and Instantiation</title>
-            <p>
-                <sage>
-                    <input>
-                        # DEFINE STATE-MACHINE: states, inputs/outputs, and transitions
-                        import random
-
-                        # CONSTANTS
-                        CARS_GO   = '..GREEN:GO..'
-                        CARS_SLOW = '.YELLOW:SLOW'
-                        CARS_STOP = '..RED:STOP..'
-
-                        PEDS_WALK  = '..WHITE:WALK..'
-                        PEDS_HURRY = '.ORANGE:HURRY.'
-                        PEDS_WAIT  = 'RED:HOLD/STAND'
-
-                        TIMER_ON  = 'ON'  # Enable the Timer (only if currently disabled)
-                        TIMER_OFF = 'OFF' # Disable/Stop the Timer
-                        _         = '>>'  # Timer running ...
+                        def __hash__(self):
+                            """Needed for dictionary lookups."""
+                            return hash(self.label+str(self.input_param))
 
 
-                        # Define the different states
-                        s0 = State(
-                            idx=0,
-                            description='Initial/default state: Light is green for traffic, no pedestrians'
-                        )
+                    @dataclass
+                    class Output:
+                        """Class for managing and displaying the SM outputs."""
+                        traffic_light: str
+                        pedestrian_signal: str
+                        timer_status: str
 
-                        s1 = State(
-                            idx=1,
-                            description='Light is green for traffic, pedestrian press cross-walk button'
-                        )
+                        @staticmethod
+                        def _header() -> str:
+                            """Display the output column while running the SM."""
+                            return (
+                                '| Outputs:'
+                                '    CARS         PEDESTRIANS      Timer |'
+                            )
 
-                        s2 = State(
-                            idx=2,
-                            description='Light is yellow for traffic (slowing down)'
-                        )
+                        def __str__(self) -> str:
+                            """Display the output (Running the SM)."""
+                            return '|         {cars}    {peds}     {timer_tag:3}  |'.format(
+                                cars=self.traffic_light.replace('.', ' '),
+                                peds=self.pedestrian_signal.replace('.', ' '),
+                                timer_tag=self.timer_status,
+                            )
+                </input>
+                <output></output>
+            </sage>
+        </p>
+    </subsection>
+    <subsection>
+        <title>State Machine Engine</title>
+        <p>
+            <sage auto-evaluate="yes">
+                <input>
+                    import json
+                    class StateMachine:
+                        """Generic StateMachine Engine to display and run a state-machine."""
 
-                        s3 = State(
-                            idx=3,
-                            description='Light is red. traffic stopped. Do not cross yet'
-                        )
-
-                        s4 = State(
-                            idx=4,
-                            description='Crosswalk signal is steady white for pedestrian to cross'
-                        )
-
-                        s5 = State(
-                            idx=5,
-                            description='Crosswalk signal is blinking orange (about to turn red)'
-                        )
-
-                        s6 = State(
-                            idx=6,
-                            description='Crosswalk signal is red. Do not cross'
-                        )
-
-                        s7 = State(
-                            idx=7,
-                            description='Light is green for traffic (hold time)'
-                        )
-
-                        # Define the triggers for each state
-                        BUTTON_PRESS = Input(
-                            label='BP',
-                            description='Pedestrian pressing the crosswalk button',
-                            input_action=lambda _: 'Button pressed',
-                            # some random wait time before button is pressed
-                            input_param=random.randint(1, 15),
-                        )
-
-                        TIMER_WAIT = lambda t_sec: Input(
-                            label='CK',
-                            description='Timer automatically emits events at preset intervals',
-                            input_action=lambda t: f'{t}s passed',
-                            input_param=t_sec,
-                        )
-
-                        # Define the Transition matrix
-                        event_and_state_transitions = {
-                            # current-state: {input-event/action: next-state}
-                            s0: {
-                                BUTTON_PRESS  : s1,
-                            },
-                            s1: {
-                                TIMER_WAIT( 5): s2,
-                            },
-                            s2: {
-                                TIMER_WAIT( 3): s3,
-                            },
-                            s3: {
-                                TIMER_WAIT( 2): s4,
-                            },
-                            s4: {
-                                TIMER_WAIT(10): s5,
-                            },
-                            s5: {
-                                TIMER_WAIT(10): s6,
-                            },
-                            s6: {
-                                TIMER_WAIT( 2): s7,
-                            },
-                            s7: {
-                                TIMER_WAIT(30): s0,
-                            },
-                            # All other combinations of $state x $input gives
-                            # out the same current state (no transition)
-                        }
-
-                        # Define the Output(s) for each state
-                        states_outputs = {
-                            s0: Output(CARS_GO,   PEDS_WAIT,  TIMER_OFF),
-                            s1: Output(CARS_GO,   PEDS_WAIT,  TIMER_ON ),
-                            s2: Output(CARS_SLOW, PEDS_WAIT,  _        ),
-                            s3: Output(CARS_STOP, PEDS_WAIT,  _        ),
-                            s4: Output(CARS_STOP, PEDS_WALK,  _        ),
-                            s5: Output(CARS_STOP, PEDS_HURRY, _        ),
-                            s6: Output(CARS_STOP, PEDS_WAIT,  _        ),
-                            s7: Output(CARS_GO,   PEDS_WAIT,  _        ),
-                        }
-
-                        # Construct the SM
-                        sm = StateMachine(
-                            initial_state=s0,
-                            transitions_map=event_and_state_transitions,
-                            states_outputs=states_outputs,
-                        )
-
-                        sm.__repr__()
-                    </input>
-                    <output></output>
-                </sage>
-            </p>
-        </example>
-        <example>
-            <title>Visualize the Finite State Machine Model</title>
-            <p>
-                <sage>
-                    <input>
-                        from sage.graphs.digraph import DiGraph
-
-                        def draw_crosswalk_and_traffic_light_state_machine(
+                        def __init__(
+                            self,
                             initial_state,
                             transitions_map,
+                            states_outputs
                         ):
-                            # Initialize an empty directed graph
-                            G = DiGraph(multiedges=True, loops=True)
+                            self.initial_state = initial_state
+                            self.transitions_map = transitions_map
+                            self.states_outputs = states_outputs
 
-                            # Build the SM graph/model
-                            G.add_vertices(
-                                [state.tex for state in transitions_map.keys()]
+                        def __repr__(self):
+                            n_states = len(self.states_outputs)
+                            m_transitions = sum([len(_) for _ in self.transitions_map.values()])
+                            return f"StateMachine(nStates:{n_states}, mTransitions:{m_transitions}, initialState:{self.initial_state})"
+
+                        def draw(self, plot):
+                            """Call the custom plotter for the state machine model/graph"""
+                            plot(
+                                initial_state=self.initial_state,
+                                transitions_map=self.transitions_map,
                             )
 
-                            # Add the root/origin vertex/node
-                            fr, to = (origin:=State()).tex, initial_state.tex
-                            G.add_edge(fr, to, label='start')
-
-                            for state, transition in transitions_map.items():
-                                fr = state.tex
-                                for event, next_state in transition.items():
-                                    to = next_state.tex
-
-                                    if event.label == 'CK':
-                                        # label for the transition edge
-                                        event_label = 'T:'+(str(event)[2:]).strip().split()[0]
-
-                                        # Add self-loop: no-state change transition
-                                        G.add_edge(fr, fr, label='BP')
-                                    else:
-                                        # label for the transition edge
-                                        event_label = 'BP'
-
-                                        # Add self-loop: no-state change transition
-                                        G.add_edge(fr, fr, label='CK')
-
-                                    # The Transiting edge
-                                    G.add_edge(fr, to, label=event_label)
-
-                            # Display the StateMachine
-                            G.show(
-                                figsize=[5.6, 5.6],
-                                layout='circular',
-                                vertex_size=200,
-                                edge_labels=True,
-                                vertex_labels=True,
-                                edge_color=(.2,.4,1),
-                                edge_thickness=1.0,
+                        def run(self, input_events):
+                            """Simulate the SM run (Table view)."""
+                            # print the header
+                            header = f"| State {Input._header()}| State' {Output._header()}"
+                            HORIZONTAL_LINE_1 = '=' * len(header)
+                            HORIZONTAL_LINE_2 = '-' * len(header)
+                            print(
+                                HORIZONTAL_LINE_1 + '\n' + header + '\n' + HORIZONTAL_LINE_2
                             )
 
-                        # Display the SM model/graph
-                        sm.draw(
-                            plot=draw_crosswalk_and_traffic_light_state_machine
+                            # main run
+                            current_state = self.initial_state
+                            for trigger_event in input_events:
+                                print(f"|{str(current_state):^6} ", end='')
+
+                                # triggering input event
+                                trigger_event.execute()
+                                print(trigger_event, end='')
+
+                                # new state
+                                next_state = (
+                                    self.transitions_map[current_state][trigger_event]
+                                    if current_state in self.transitions_map and
+                                    trigger_event in self.transitions_map[current_state]
+                                    else current_state
+                                )
+                                print(f"|{str(next_state):^7} ", end='')
+
+                                # state output
+                                state_output = self.states_outputs[next_state]
+                                print(state_output)
+
+                                # prepare the next iteration
+                                current_state = next_state
+
+                            # print the footer
+                            print(HORIZONTAL_LINE_1)
+                </input>
+                <output></output>
+            </sage>
+        </p>
+    </subsection>
+    <subsection>
+        <title>Model Definition and Instantiation</title>
+        <p>
+            <sage>
+                <input>
+                    # DEFINE STATE-MACHINE: states, inputs/outputs, and transitions
+                    import random
+
+                    # CONSTANTS
+                    CARS_GO   = '..GREEN:GO..'
+                    CARS_SLOW = '.YELLOW:SLOW'
+                    CARS_STOP = '..RED:STOP..'
+
+                    PEDS_WALK  = '..WHITE:WALK..'
+                    PEDS_HURRY = '.ORANGE:HURRY.'
+                    PEDS_WAIT  = 'RED:HOLD/STAND'
+
+                    TIMER_ON  = 'ON'  # Enable the Timer (only if currently disabled)
+                    TIMER_OFF = 'OFF' # Disable/Stop the Timer
+                    _         = '>>'  # Timer running ...
+
+
+                    # Define the different states
+                    s0 = State(
+                        idx=0,
+                        description='Initial/default state: Light is green for traffic, no pedestrians'
+                    )
+
+                    s1 = State(
+                        idx=1,
+                        description='Light is green for traffic, pedestrian press cross-walk button'
+                    )
+
+                    s2 = State(
+                        idx=2,
+                        description='Light is yellow for traffic (slowing down)'
+                    )
+
+                    s3 = State(
+                        idx=3,
+                        description='Light is red. traffic stopped. Do not cross yet'
+                    )
+
+                    s4 = State(
+                        idx=4,
+                        description='Crosswalk signal is steady white for pedestrian to cross'
+                    )
+
+                    s5 = State(
+                        idx=5,
+                        description='Crosswalk signal is blinking orange (about to turn red)'
+                    )
+
+                    s6 = State(
+                        idx=6,
+                        description='Crosswalk signal is red. Do not cross'
+                    )
+
+                    s7 = State(
+                        idx=7,
+                        description='Light is green for traffic (hold time)'
+                    )
+
+                    # Define the triggers for each state
+                    BUTTON_PRESS = Input(
+                        label='BP',
+                        description='Pedestrian pressing the crosswalk button',
+                        input_action=lambda _: 'Button pressed',
+                        # some random wait time before button is pressed
+                        input_param=random.randint(1, 15),
+                    )
+
+                    TIMER_WAIT = lambda t_sec: Input(
+                        label='CK',
+                        description='Timer automatically emits events at preset intervals',
+                        input_action=lambda t: f'{t}s passed',
+                        input_param=t_sec,
+                    )
+
+                    # Define the Transition matrix
+                    event_and_state_transitions = {
+                        # current-state: {input-event/action: next-state}
+                        s0: {
+                            BUTTON_PRESS  : s1,
+                        },
+                        s1: {
+                            TIMER_WAIT( 5): s2,
+                        },
+                        s2: {
+                            TIMER_WAIT( 3): s3,
+                        },
+                        s3: {
+                            TIMER_WAIT( 2): s4,
+                        },
+                        s4: {
+                            TIMER_WAIT(10): s5,
+                        },
+                        s5: {
+                            TIMER_WAIT(10): s6,
+                        },
+                        s6: {
+                            TIMER_WAIT( 2): s7,
+                        },
+                        s7: {
+                            TIMER_WAIT(30): s0,
+                        },
+                        # All other combinations of $state x $input gives
+                        # out the same current state (no transition)
+                    }
+
+                    # Define the Output(s) for each state
+                    states_outputs = {
+                        s0: Output(CARS_GO,   PEDS_WAIT,  TIMER_OFF),
+                        s1: Output(CARS_GO,   PEDS_WAIT,  TIMER_ON ),
+                        s2: Output(CARS_SLOW, PEDS_WAIT,  _        ),
+                        s3: Output(CARS_STOP, PEDS_WAIT,  _        ),
+                        s4: Output(CARS_STOP, PEDS_WALK,  _        ),
+                        s5: Output(CARS_STOP, PEDS_HURRY, _        ),
+                        s6: Output(CARS_STOP, PEDS_WAIT,  _        ),
+                        s7: Output(CARS_GO,   PEDS_WAIT,  _        ),
+                    }
+
+                    # Construct the SM
+                    sm = StateMachine(
+                        initial_state=s0,
+                        transitions_map=event_and_state_transitions,
+                        states_outputs=states_outputs,
+                    )
+
+                    sm.__repr__()
+                </input>
+                <output></output>
+            </sage>
+        </p>
+    </subsection>
+    <subsection>
+        <title>Visualize the Finite State Machine Model</title>
+        <p>
+            <sage>
+                <input>
+                    from sage.graphs.digraph import DiGraph
+
+                    def draw_crosswalk_and_traffic_light_state_machine(
+                        initial_state,
+                        transitions_map,
+                    ):
+                        # Initialize an empty directed graph
+                        G = DiGraph(multiedges=True, loops=True)
+
+                        # Build the SM graph/model
+                        G.add_vertices(
+                            [state.tex for state in transitions_map.keys()]
                         )
-                    </input>
-                    <output></output>
-                </sage>
-            </p>
-        </example>
-        <example>
-            <title>Running the State Machine (Simulation)</title>
-            <p>
-                <sage>
-                    <input>
-                        # Run the SM for a test scenario
-                        sm.run(
-                            input_events=[
-                                TIMER_WAIT( 6),  # No impact/state change
-                                BUTTON_PRESS  ,
-                                TIMER_WAIT( 5),
-                                TIMER_WAIT( 3),
-                                TIMER_WAIT( 2),
-                                BUTTON_PRESS  ,  # No impact/state change
-                                TIMER_WAIT(10),
-                                TIMER_WAIT(10),
-                                TIMER_WAIT( 2),
-                                BUTTON_PRESS  ,  # No impact/state change
-                                TIMER_WAIT(30),
-                                BUTTON_PRESS  ,
-                            ],
+
+                        # Add the root/origin vertex/node
+                        fr, to = (origin:=State()).tex, initial_state.tex
+                        G.add_edge(fr, to, label='start')
+
+                        for state, transition in transitions_map.items():
+                            fr = state.tex
+                            for event, next_state in transition.items():
+                                to = next_state.tex
+
+                                if event.label == 'CK':
+                                    # label for the transition edge
+                                    event_label = 'T:'+(str(event)[2:]).strip().split()[0]
+
+                                    # Add self-loop: no-state change transition
+                                    G.add_edge(fr, fr, label='BP')
+                                else:
+                                    # label for the transition edge
+                                    event_label = 'BP'
+
+                                    # Add self-loop: no-state change transition
+                                    G.add_edge(fr, fr, label='CK')
+
+                                # The Transiting edge
+                                G.add_edge(fr, to, label=event_label)
+
+                        # Display the StateMachine
+                        G.show(
+                            figsize=[5.6, 5.6],
+                            layout='circular',
+                            vertex_size=200,
+                            edge_labels=True,
+                            vertex_labels=True,
+                            edge_color=(.2,.4,1),
+                            edge_thickness=1.0,
                         )
-                    </input>
-                    <output></output>
-                </sage>
-            </p>
-        </example>
+
+                    # Display the SM model/graph
+                    sm.draw(
+                        plot=draw_crosswalk_and_traffic_light_state_machine
+                    )
+                </input>
+                <output></output>
+            </sage>
+        </p>
+    </subsection>
+    <subsection>
+        <title>Running the State Machine (Simulation)</title>
+        <p>
+            <sage>
+                <input>
+                    # Run the SM for a test scenario
+                    sm.run(
+                        input_events=[
+                            TIMER_WAIT( 6),  # No impact/state change
+                            BUTTON_PRESS  ,
+                            TIMER_WAIT( 5),
+                            TIMER_WAIT( 3),
+                            TIMER_WAIT( 2),
+                            BUTTON_PRESS  ,  # No impact/state change
+                            TIMER_WAIT(10),
+                            TIMER_WAIT(10),
+                            TIMER_WAIT( 2),
+                            BUTTON_PRESS  ,  # No impact/state change
+                            TIMER_WAIT(30),
+                            BUTTON_PRESS  ,
+                        ],
+                    )
+                </input>
+                <output></output>
+            </sage>
+        </p>
     </subsection>
     <conclusion>
         <title>A More Challenging Example</title>
