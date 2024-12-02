@@ -83,6 +83,19 @@ After making your changes in the feature branch, you're ready to submit a pull r
 2. Ensure that the base repository and branch are correct.
 3. Fill in a clear title and description for your changes.
 4. Optionally, link the pull request to an issue.
-5. Submit the pull request.
+5. Ensure the feature branch is up to date with the main branch.
+6. Review your changes locally.
+7. Submit the pull request.
 
 The project maintainers will review your pull request and may request changes or merge it into the main project. Your contributions are appreciated and crucial in making this resource more comprehensive and valuable for math education.
+
+### Style Guidelines
+
+1. Start sentences with English words.
+2. Do not start sentences with code or mathematical notation.
+3. Use the phrase "it is" instead of the contraction "it's".
+4. You may use a conversational tone that maintains academic and professional integrity.
+5. Do not use `example` or `definition` pretext tags.
+6. When possible, create diagrams in LaTeX.
+7. Do not include `help()`, `?`, `??`, or documentation within SageCell code blocks.
+8. Avoid links to other websites.
