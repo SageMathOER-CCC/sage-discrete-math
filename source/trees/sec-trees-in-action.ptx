@@ -13,17 +13,17 @@
             <ol>
                 <li>
                     <p>
-                        Find the latitude and longitude of each CCC campus location. We are using latitude and longitude because we are calculating new railway paths that do not already exist on roads. Therefore, we cannot use addresses.
+                        Find the latitude and longitude of each CCC campus location.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Calculate the distances between the locations. The distance is a straight line between campuses. By straight line, we mean there are no turns on the track. However, we do account for the curve of the Earth.
+                        Use the Haversine formula to calculate the distances between the locations. The Haversine formula requires latitude and longitude for inputs and computes the shortest path between two points on a sphere.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Make a Graph of the CCC campuses. Each location is a node. The weight of the edges represents the distance between locations.
+                        Make a Graph of the CCC campuses. Each location is a node. Each railway path is an edge. Each railway path is the shortest path between locations. The weight of the edges represents the distance between locations.
                     </p>
                 </li>
                 <li>
