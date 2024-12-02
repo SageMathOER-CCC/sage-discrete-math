@@ -14,7 +14,7 @@
             <h>XNOR</h>
         </idx>
         <p>
-            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables. Common gates include <c>AND</c>, <c>OR</c>, <c>NOT</c>, <c>NAND</c>, <c>NOR</c>, <c>XOR</c>, and <c>XNOR</c>. These gates combine to form complex systems such as CPUs and memory circuits.
+            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables.The basic logic gates are AND, OR, and NOT which correspond to the logical operators reviewed in previous sections. Other commonly used gates as NAND, NOR, XOR, and XNOR are composites of the basic ones. Each gate has its own symbol and truth table representing outputs for all combinations of inputs. These gates combine to form complex systems such as CPUs and memory circuits.
         </p>
         <aside>
             <title>Notes</title>
@@ -31,7 +31,7 @@
         </p>
         <figure xml:id="fig-AND-Gate">
             <caption>AND Gate</caption>
-            <image width="50%" xml:id="AND-Gate">
+            <image width="25%" xml:id="AND-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[and port] {};
@@ -68,7 +68,7 @@
         </p>
         <figure xml:id="fig-OR-Gate">
             <caption>OR Gate</caption>
-            <image width="50%" xml:id="OR-Gate">
+            <image width="25%" xml:id="OR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[or port] {};
@@ -105,7 +105,7 @@
         </p>
         <figure xml:id="fig-NOT-Gate">
             <caption>NOT Gate</caption>
-            <image width="50%" xml:id="NOT-Gate">
+            <image width="25%" xml:id="NOT-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[not port] {};
@@ -139,7 +139,7 @@
         <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
         <figure xml:id="fig-NAND-Gate">
             <caption>NAND Gate</caption>
-            <image width="50%" xml:id="NAND-Gate">
+            <image width="25%" xml:id="NAND-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[nand port] {};
@@ -148,10 +148,17 @@
             </image>
         </figure>
 
+                <aside>
+            <title>Notes</title>
+            <p>
+                These gates are critical for advanced functions, like error detection (<c>XOR</c>) and parity checking (<c>XNOR</c>).
+            </p>
+        </aside>
+
         <p><c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.</p>
         <figure xml:id="fig-NOR-Gate">
             <caption>NOR Gate</caption>
-            <image width="50%" xml:id="NOR-Gate">
+            <image width="25%" xml:id="NOR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[nor port] {};
@@ -163,7 +170,7 @@
         <p><c>XOR</c>: Produces <c>1</c> when inputs differ.</p>
         <figure xml:id="fig-XOR-Gate">
             <caption>XOR Gate</caption>
-            <image width="50%" xml:id="XOR-Gate">
+            <image width="25%" xml:id="XOR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[xor port] {};
@@ -175,7 +182,7 @@
         <p><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</p>
         <figure xml:id="fig-XNOR-Gate">
             <caption>XOR Gate</caption>
-            <image width="50%" xml:id="XNOR-Gate">
+            <image width="25%" xml:id="XNOR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[xnor port] {};
@@ -184,11 +191,6 @@
             </image>
         </figure>
 
-        <aside>
-            <title>Notes</title>
-            <p>
-                These gates are critical for advanced functions, like error detection (<c>XOR</c>) and parity checking (<c>XNOR</c>).
-            </p>
-        </aside>
+
     </subsection>
 </section>
