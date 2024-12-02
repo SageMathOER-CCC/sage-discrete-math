@@ -31,8 +31,8 @@
     <subsection>
         <title>Example of Application of FSMs</title>
         <p>
-            Let's consider the example of an elevator for 3 floors. Being in a given floor <m>i</m> would represent
-            a distinct state <m>f_i</m>, so that we can have the subset of states <m>S=\{f_1,\;f_2,\;f_3\}</m>.</p>
+            Consider the example of an elevator for 3 floors. Being on a given floor <m>i</m> represents a distinct
+            state <m>f_i</m>, forming a subset of states <m>S=\{f_1,\;f_2,\;f_3\}</m>.</p>
         <p>
             The elevator has 3 buttons for users to select the destination floor <m>X=\{1,\;2,\;3\}</m>.
             Depending on the selected floor, the elevator can either go up, go down, or remain on the same floor.</p>
@@ -176,8 +176,8 @@
             state to the other). The weight of a directed edge between two vertices represents the
             pair of input and output associated with the transition between the two states.</p>
 
-        <p> In Sage, we can use the <c>DiGraph</c> class to represent the states, transitions and
-            outputs of the state machine as a directed graph, and use the graph structure to
+        <p> In Sage, the <c>DiGraph</c> class can be used to represent the states, transitions, and
+            outputs of the state machine as a directed graph, leveraging the graph structure to
             visualize the state machine representation.</p>
         <sage>
             <input>
@@ -217,7 +217,7 @@
     <subsection>
         <title>Run the State Machine</title>
         <p>
-            Next, we can simulate the state machine's behavior by creating a function that
+            Next, the state machine's behavior can be simulated by defining a function that
             processes a list of inputs and transitions through the states accordingly.</p>
         <sage>
             <input>

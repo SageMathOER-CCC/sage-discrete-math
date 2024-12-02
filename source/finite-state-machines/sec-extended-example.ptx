@@ -532,11 +532,11 @@
     <conclusion>
         <title>A More Challenging Example</title>
         <p>
-            Similar to the previous use case, except that this time, we have a more complex 4-ways intersection,
-            with dedicated left-turn lanes controlled via left-arrow signal, in addition, we want to allow
-            right-turn-on-red while the left-turn signal is enabled for the other way. Both left and right turn
-            arrows have 3 distinct states that need to be managed and synchronized with the rest of signals,
-            inputs and timers.
+            Similar to the previous use case, this scenario involves a more complex 4-way intersection with
+            dedicated left-turn lanes controlled by left-arrow signals. Additionally, the goal is to allow
+            right-turn-on-red while the left-turn signal is enabled for the opposite direction. Both left and
+            right turn arrows have three distinct states that must be managed and synchronized with the other
+            signals, inputs, and timers.
             <aside>
                 <title>Note</title>
                 <p>
@@ -552,7 +552,8 @@
             <caption>4-ways intersection with controlled left-turn lanes</caption>
         </figure>
         <p>
-            Once again, in the absence of pedestrians, we want to prioritize traffic movement. But also have
-            built-in transition buffer before allowing pedestrian crossing or resuming vehicles traffic.</p>
+            Once again, in the absence of pedestrians, the goal is to prioritize traffic movement while
+            incorporating a built-in transition buffer before allowing pedestrian crossings or resuming
+            vehicle traffic.</p>
     </conclusion>
 </section>
