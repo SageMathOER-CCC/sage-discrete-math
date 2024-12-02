@@ -191,6 +191,47 @@
             </image>
         </figure>
 
+<sage>
+    <input>
+        from sympy.logic.boolalg import And, Or, Not, Xor
+
+        def nand(A, B):
+            return Not(And(A, B))
+
+        def nor(A, B):
+            return Not(Or(A, B))
+
+        def xor(A, B):
+            return Xor(A, B)
+
+        def xnor(A, B):
+            return Not(Xor(A, B))
+
+        # User-defined inputs
+        A = 1  # Replace with 0 or 1 for input A
+        B = 0  # Replace with 0 or 1 for input B
+        gate = "xor"  # Replace with "nand", "nor", "xor", or "xnor"
+
+
+        if gate == "nand":
+            result = nand(A, B)
+        elif gate == "nor":
+            result = nor(A, B)
+        elif gate == "xor":
+            result = xor(A, B)
+        elif gate == "xnor":
+            result = xnor(A, B)
+        else:
+            result = "Invalid gate type! Please use 'nand', 'nor', 'xor', or 'xnor'."
+
+        result
+    </input>
+    <output>
+    </output>
+</sage>
+
+
+
 
     </subsection>
 </section>
