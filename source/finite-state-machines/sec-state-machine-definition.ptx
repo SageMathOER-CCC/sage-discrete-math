@@ -3,19 +3,19 @@
     xml:lang="en">
     <title>Definitions and Components</title>
     <introduction xml:id="sm-definition-and-components">
-        <p>The defining feature of any abstract machine is its memory structure, ranging from a <em>
-            finite</em> set of states in the case of finite-state machines to more complex memory
-            systems (ex.<em>Turing machines</em>, and <em>Petri net</em>).</p>
+        <p>The defining feature of any abstract machine is its memory structure, ranging from
+            a <em>finite</em> set of states in the case of finite-state machines to more complex memory
+            systems (e.g., <em>Turing machines</em> and <em>Petri nets</em>).</p>
 
-        <p>A <term>Finite-State Machine (FSM)</term> is a a computational model that has a finite
+        <p>A <term>Finite-State Machine (FSM)</term> is a computational model that has a finite
             set of possible states <m>S</m>, a finite set of possible input symbols (the input
-            alphabet) <m>X</m>, and a finite set of possible output symbols (the output alphabet) <m>
-            Z</m>. The machine can exist in one of the states at any time, and based on the
-            machine input and its current state, it can transition to any other state and produces
-            an output. The functions that take in the machine current state and its input and map
-            them to the machine's future state and its output are referred to as the <em>state
-            transition</em> function and the <em>output</em> function respectively.The default state
-            of an FSM is referred to as the <em>initial state</em>.</p>
+            alphabet) <m>X</m>, and a finite set of possible output symbols (the output alphabet) <m>Z</m>.
+            The machine can exist in one of the states at any time, and based on the machine's input and
+            its current state, it can transition to any other state and produce an output. The functions
+            that take in the machine's current state and its input and map them to the machine's future
+            state and its output are referred to as the <em>state transition</em> function and
+            the <em>output</em> function, respectively. The default state of an FSM is referred to as
+            the <em>initial state</em>.</p>
     </introduction>
 
     <subsection xml:id="sm-definition">
@@ -92,7 +92,7 @@
                     </li>
                     <li>
                         <p>
-                            <m>t:S\times X \to S</m> is the transition function, which specifies
+                            <m>t:S \times X \to S</m> is the transition function, which specifies
                 which next state <m>t(s, x) \in S</m> the machine should move to when its current
                 state is <m>s</m> and it has the input symbol <m>x</m>.</p>
                     </li>
@@ -102,86 +102,79 @@
 
         <subsubsection>
             <title>Finite-State Automaton</title>
-            <p>We define a <em>final state</em> (also known as the accepted state) as a <em>
-                special</em> predefined state that indicates whether an input sequence is valid
-                or accepted by the finite state machine. The set <m>F</m> of all final states is
-                a subset of the states set <m>S</m>. </p>
+            <p>A <em>final state</em> (also known as the accepted state) is defined as a <em>special</em> predefined
+                state that indicates whether an input sequence is valid or accepted by the finite-state machine.
+                The set <m>F</m> of all final states is a subset of the states set <m>S</m>.</p>
 
-            <p> A <term>Finite-State Automaton</term> is a finite state machine <em>with no output</em>,
-                and it is represented by the 5-tuple <m>(S, X, t, s_0, F)</m> where: <ul>
-                    <li>
-                        <p>
-                            <m>S=\{s_0, s_1, s_2,\ldots , s_n\}</m> is the state set, and <m>s_0</m>
-                            is the initial state, and <m>F</m> is the set of finite states.</p>
-                    </li>
-                    <li>
-                        <p>The state <m>s_0</m> is called the <em>initial state</em>.</p>
-                    </li>
-                    <li>
-                        <p>
-                            The subset <m>F \subset S</m> is the subset of all final states of the machine.</p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>X=\{x_0, x_1, x_2, \ldots ,x_m\}</m> is the input alphabet.</p>
-                    </li>
-                    <li>
-                        <p>
-                            <m>t:S\times X \to S</m> is the transition function, which specifies
-                            which next state <m>t(s, x) \in S</m> the machine should move to when its current
-                            state is <m>s</m> and it has the input symbol <m>x</m>.</p>
-                    </li>
-                </ul>
+            <p>A <term>Finite-State Automaton</term> is a finite-state machine <em>with no output</em>, and it is
+                represented by the 5-tuple <m>(S, X, t, s_0, F)</m> where: <ul>
+                <li>
+                    <p>
+                        <m>S=\{s_0, s_1, s_2, \ldots , s_n\}</m> is the state set, <m>s_0</m> is the initial state,
+                        and <m>F</m> is the set of final states.</p>
+                </li>
+                <li>
+                    <p>The state <m>s_0</m> is called the <em>initial state</em>.</p>
+                </li>
+                <li>
+                    <p>The subset <m>F \subset S</m> is the set of all final states of the machine.</p>
+                </li>
+                <li>
+                    <p><m>X=\{x_0, x_1, x_2, \ldots , x_m\}</m> is the input alphabet.</p>
+                </li>
+                <li>
+                    <p><m>t: S \times X \to S</m> is the transition function, which specifies which next
+                        state <m>t(s, x) \in S</m> the machine should move to when its current state
+                        is <m>s</m> and it has the input symbol <m>x</m>.</p>
+                </li>
+            </ul>
             </p>
 
             <p>When the state machine processes a finite input sequence, it transitions through various
-                states based on each input in the sequence and the current state of the machine. If,
-                after processing the entire sequence, the machine lands in any of the <em>final state</em>,
-                then the input sequence is considered valid (or recognized according to the machine's rules).
+                states based on each input in the sequence and the current state of the machine. If, after
+                processing the entire sequence, the machine lands in any of the <em>final states</em>, then
+                the input sequence is considered valid (or recognized according to the machine's rules).
                 Otherwise, the input sequence is rejected as invalid.</p>
         </subsubsection>
 
         <subsubsection>
             <title>Deterministic Finite Automaton (DFA)</title>
-            <p> A <term>Deterministic Finite Automaton (DFA)</term> is a simplified automaton where each
-                state has exactly one transition for each input.</p>
-            <p> DFAs are typically used for lexical analysis, language recognition, and pattern
-                matching.</p>
+            <p>A <term>Deterministic Finite Automaton (DFA)</term> is a simplified automaton in which
+                each state has exactly one transition for each input. DFAs are typically used for lexical
+                analysis, language recognition, and pattern matching.</p>
             <aside>
                 <title>Note</title>
-                <p>
-                    a text-parser or a string-matching application that recognizes a specific language or regular
-                    expressions are real-world examples of DFA use.</p>
+                <p>A text parser or a string-matching application that recognizes a specific language or
+                    regular expressions are real-world examples of DFA use.</p>
             </aside>
         </subsubsection>
 
         <subsubsection>
             <title>Nondeterministic Finite Automaton (NFA)</title>
-            <p> Unlike DFA, an <term>NFA</term> allows multiple transitions for the same input or
+            <p> Unlike a DFA, an <term>NFA</term> allows multiple transitions for the same input or
                 even transitions without consuming input (<m>\epsilon</m>-transitions).</p>
         </subsubsection>
 
         <subsubsection>
             <title>Turing Machine</title>
-            <p> A <term>Turing Machine</term> is an expansion of FSM, which includes infinite tape memory
+            <p>A <term>Turing Machine</term> is an expansion of an FSM, which includes infinite tape memory
                 representing both the input and output streams (shared stream). Unlike all other FSMs, a Turing
-                machine can alter the input/output stream, and as such it is capable of simulating any algorithm.
+                machine can alter the input/output stream, and as such, it is capable of simulating any algorithm.
                 Turing machines are the theoretical foundation for modern computation (any general-purpose computer
                 executing any algorithm can be modeled as a Turing Machine).</p>
         </subsubsection>
     </subsection>
 
     <conclusion>
-        <p>
-            Finite state machines are a foundational concept in computer science, often associated
-            with tasks related to system designs (circuits and digital computers, algorithms, etc.)
+        <p>Finite state machines are a foundational concept in computer science, often associated
+            with tasks related to system designs (circuits and digital computers, algorithms, etc.).
             However, the vast and rich domain of applications of state machines extends far beyond simple
-            simulations to full control logic of complex industrial processes and workflows. These tasks
-            can vary in complexity, be as simple as a parity check or a complex as managing traffic patterns,
-            a programming language compiler, or natural language recognition and processing.</p>
-        <p>
-            State machines offer a structured way to model systems with discrete states and transitions.
-            Different variants like Mealy machine and Moore machine have distinct characteristics, and as such
+            simulations to the full control logic of complex industrial processes and workflows. These tasks
+            can vary in complexity, ranging from a simple parity check to managing traffic patterns, a programming
+            language compiler, or natural language recognition and processing.</p>
+
+        <p>State machines offer a structured way to model systems with discrete states and transitions. Different
+            variants, such as the Mealy machine and Moore machine, have distinct characteristics and, as such,
             can adapt to various applications.</p>
     </conclusion>
 </section>
