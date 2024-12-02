@@ -1,34 +1,73 @@
 <section xml:id="sec-combined-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Logical Circuits</title>
+    <title>Combinations of Logic Gates</title>
 
-    <subsection>
-        <title>Combinations of Logic Gates</title>
         <p>
             Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
         </p>
         <p>
-            Let's look at a simple example where an <c>OR</c> gate is combined with a <c>NOT</c> gate. The <c>OR</c> gate takes two inputs and produces a <c>1</c> if either input is <c>1</c>. By applying a <c>NOT</c> gate to the output, the circuit produces the opposite, meaning it will only produce <c>1</c> if both inputs are <c>0</c>.
+            Let's look at a circuit:
+        </p>
+<figure xml:id="fig-Logic-Circuit">
+    <caption>Logic Circuit for <m>F = \left( (A \land B) \lor (\neg C) \right) \land B</m> </caption>
+    <image width="50%" xml:id="Logic-Circuit">
+    <latex-image>
+        \begin{circuitikz}[american]
+            % Inputs
+            \node (A) at (0,4) [anchor=east] {\(A\)};
+            \node (B1) at (0,3) [anchor=east] {\(B\)};
+            \node (C) at (0,1) [anchor=east] {\(C\)};
+
+            % AND Gate
+            \node (AND1) at (2,3.5) [and port, anchor=in 1] {};
+            \draw (A) -- (AND1.in 1);
+            \draw (B1) |- (AND1.in 2);
+
+            % NOT Gate
+            \node (NOT) at (2,1) [not port, anchor=in] {};
+            \draw (C) -- (NOT.in);
+
+            % OR Gate
+            \node (OR) at (4,2.5) [or port, anchor=in 1] {};
+            \draw (AND1.out) |- (OR.in 1);
+            \draw (NOT.out) -- (OR.in 2);
+
+            % Second AND Gate
+            \node (AND2) at (6,2.5) [and port, anchor=in 1] {};
+            \draw (OR.out) -- (AND2.in 1);
+            \node at (5.5,2) [anchor=north] {\(B\)}; % Short \(B\) label
+            \draw (5.5,2) -- (AND2.in 2);
+
+            % Output
+            \node at (7.5,2.5) [anchor=west] {\(F\)};
+            \draw (AND2.out) -- ++(1,0);
+        \end{circuitikz}
+    </latex-image>
+    </image>
+</figure>
+
+
+
+        <p>
+            We will evaluate this circuit by setting True for <m>A</m>, <m>B</m> and False for <m>C</m> below using Sage.
         </p>
         <sage>
             <input>
-                from sympy.logic.boolalg import Or, Not
-                from sympy.abc import A, B
+                from sympy.logic.boolalg import And, Or, Not
+                from sympy.abc import A, B, C
 
-                # Define and evaluate the logic circuit with values for A and B
-                circuit_output = Not(Or(A, B)).subs({A: False, B: False})
+                #Define the logic circuit
+                F = And(Or(And(A, B), Not(C)), B)
+
+                # Evaluate the logic circuit with values for A, B and C
+                circuit_output = F.subs({A: True, B: True, C: False})
                 circuit_output
             </input>
             <output>
             </output>
         </sage>
 
-        <p>
-            Combining basic gates allows us to create circuits for various practical applications. For example, combining <c>AND</c> and <c>OR</c> gates is a key part of building circuits like arithmetic logic units (ALUs) inside CPUs.
-        </p>
-    </subsection>
 
-    <subsection>
-        <title>Simplifying Circuits</title>
+
         <p>
             Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A * B) + (A * \overline{B})</m> can be simplified to just <m>A</m>.
         </p>
@@ -64,20 +103,21 @@
         <p>
             Boolean algebra helps optimize circuits, reducing the number of gates needed and making the system more efficient. It's a key tool in designing everything from small circuits to large-scale computing systems.
         </p>
-    </subsection>
 
-    <subsection>
-        <title>Truth Tables and Logic Circuits</title>
+
         <p>
             Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding outputs, making it easier to analyze and understand the behavior of the circuit.
         </p>
         <p>
-            Let’s create a truth table for a circuit that combines multiple gates: an <c>AND</c> gate, a <c>NOT</c> gate, and an <c>OR</c> gate, with three variables (<c>A</c>, <c>B</c>, <c>C</c>). The function is:
+            Let’s create a truth table for the circuit we evaluated earlier.
         </p>
         <p>
             <m>
                 F = \left( (A \land B) \lor (\neg C) \right) \land B
             </m>
+        </p>
+        <p>
+            Here, we will show the intermediatory steps to find the final output of the function.
         </p>
         <sage>
             <input>
@@ -101,7 +141,7 @@
                 # Print header row with adjusted spacing
                 header_row = " | ".join(h.ljust(w) for h, w in zip(headers, column_widths))
                 print(header_row)
-                print("-" * len(header_row))  
+                print("-" * len(header_row))
 
                 # Generate and print the truth table rows
                 for row in truth_table(final_output, variables):
@@ -113,7 +153,6 @@
             <output>
             </output>
         </sage>
-    </subsection>
 
 
 
