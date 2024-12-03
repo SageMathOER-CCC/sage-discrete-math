@@ -13,12 +13,12 @@
             <ol>
                 <li>
                     <p>
-                        Find the distances between each CCC location.
+                        Find the distances in miles between each CCC location.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Make a Graph of the CCC locations. Each location is a node. The weight of the edges between location nodes has a weight representing the distance between locations.
+                        Make a graph of the CCC locations. Each location is a node. Each edge is a bike route. The weight of the edges represents the distance of the bike route between locations.
                     </p>
                 </li>
                 <li>
@@ -43,7 +43,7 @@
                     <cell>30 E. Lake Street, Chicago, IL 60601</cell>
                 </row>
                 <row>
-                    <cell>Harry S Truman College</cell>
+                    <cell>Harry Truman College</cell>
                     <cell>1145 West Wilson Ave, Chicago, IL 60640</cell>
                 </row>
                 <row>
@@ -78,7 +78,7 @@
     <subsection xml:id="subsec-Graph">
         <title>Graph</title>
         <p>
-            We will represent each College as a node with the initials of the College name. The weight of the edge will represent the miles in between the locations. Since we are using bike routes, we are assuming each direction between two locations has the same distance. For example, express the route between Harold Washington College and Harry S Truman College as <c>("HW", "HT", 6.5)</c>.
+            We will represent each College as a node with the initials of the College name. The weight of the edge will represent the miles in between the locations. Since we are using bike routes, we are assuming each direction between two locations has the same distance. For example, express the route between Harold Washington College and Harry Truman College as <c>("HW", "HT", 6.5)</c>.
         </p>
         <sage>
             <input>
@@ -147,7 +147,7 @@
             </input>
         </sage>
         <p>
-            Now that we have a clearer idea of the routes let's find the most efficient delivery route using the traveling salesperson algorithm.
+            Now that we have a clearer idea of the routes, let's find the most efficient delivery route using the traveling salesperson algorithm.
         </p>
         <sage>
             <input>
