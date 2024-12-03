@@ -1,159 +1,112 @@
 <section xml:id="sec-combined-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Combinations of Logic Gates</title>
 
-        <p>
-            Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
-        </p>
-        <p>
-            Let's look at a circuit:
-        </p>
-<figure xml:id="fig-Logic-Circuit">
-    <caption>Logic Circuit for <m>F = \left( (A \land B) \lor (\neg C) \right) \land B</m> </caption>
-    <image width="50%" xml:id="Logic-Circuit">
-    <latex-image>
-        \begin{circuitikz}[american]
-            % Inputs
-            \node (A) at (0,4) [anchor=east] {\(A\)};
-            \node (B1) at (0,3) [anchor=east] {\(B\)};
-            \node (C) at (0,1) [anchor=east] {\(C\)};
+    <p>
+        Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
+    </p>
+    <p>
+        Let's look at a circuit:
+    </p>
 
-            % AND Gate
-            \node (AND1) at (2,3.5) [and port, anchor=in 1] {};
-            \draw (A) -- (AND1.in 1);
-            \draw (B1) |- (AND1.in 2);
+    <p>
+        We will evaluate this circuit by setting True for <m>X</m>, <m>Y</m>, and False for <m>Z</m> below using Sage.
+    </p>
+    <sage>
+        <input>
+            from sympy.logic.boolalg import And, Or, Not
+            from sympy.abc import X, Y, Z
 
-            % NOT Gate
-            \node (NOT) at (2,1) [not port, anchor=in] {};
-            \draw (C) -- (NOT.in);
+            # Define the logic circuit
+            F = Or(And(Not(X), Y, Z), And(X, Not(Y), Z), And(X, Y, Not(Z)), And(X, Y, Z))
 
-            % OR Gate
-            \node (OR) at (4,2.5) [or port, anchor=in 1] {};
-            \draw (AND1.out) |- (OR.in 1);
-            \draw (NOT.out) -- (OR.in 2);
+            # Evaluate the logic circuit with values for X, Y, and Z
+            circuit_output = F.subs({X: True, Y: True, Z: False})
+            circuit_output
+        </input>
+        <output>
+        </output>
+    </sage>
 
-            % Second AND Gate
-            \node (AND2) at (6,2.5) [and port, anchor=in 1] {};
-            \draw (OR.out) -- (AND2.in 1);
-            \node at (5.5,2) [anchor=north] {\(B\)}; % Short \(B\) label
-            \draw (5.5,2) -- (AND2.in 2);
+<p>
+    Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality.
+</p>
+<p>
+    Here's a practical example. Consider the following Boolean expression, which combines several gates:
+</p>
+<sage>
+    <input>
+        # Original Boolean expression
+        from sympy import simplify
+        from sympy.logic.boolalg import And, Or, Not
+        from sympy.abc import x, y, z
 
-            % Output
-            \node at (7.5,2.5) [anchor=west] {\(F\)};
-            \draw (AND2.out) -- ++(1,0);
-        \end{circuitikz}
-    </latex-image>
-    </image>
-</figure>
+        # Define the expression
+        D = Or(And(Not(x), y, z), And(x, Not(y), z), And(x, y, Not(z)), And(x, y, z))
+        D
+    </input>
+    <output>
+    </output>
+</sage>
 
-
-
-        <p>
-            We will evaluate this circuit by setting True for <m>A</m>, <m>B</m> and False for <m>C</m> below using Sage.
-        </p>
-        <sage>
-            <input>
-                from sympy.logic.boolalg import And, Or, Not
-                from sympy.abc import A, B, C
-
-                #Define the logic circuit
-                F = And(Or(And(A, B), Not(C)), B)
-
-                # Evaluate the logic circuit with values for A, B and C
-                circuit_output = F.subs({A: True, B: True, C: False})
-                circuit_output
-            </input>
-            <output>
-            </output>
-        </sage>
+<sage>
+    <input>
+        # Simplified Boolean expression
+        simplified_D = simplify(D)
+        simplified_D
+    </input>
+    <output>
+    </output>
+</sage>
 
 
+<p>
+    Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding outputs, making it easier to analyze and understand the behavior of the circuit.
+</p>
+<p>
+    Let’s create a truth table for the simplified circuit.
+</p>
+<p>
+    <m>
+        F = (x \; and \; y) \; or \; (x \; and \; z) \; or \; (y \; and \; z)
+    </m>
+</p>
+<p>
+    Here, we will show the intermediary steps to find the final output of the function.
+</p>
+<sage>
+    <input>
+        from sympy.logic.boolalg import And, Or, truth_table
+        from sympy.abc import x, y, z
 
-        <p>
-            Boolean algebra provides a way to simplify complex logic circuits. By using Boolean algebra rules, you can take a complicated circuit and reduce it to a simpler form without changing its functionality. For example, the expression <m>(A * B) + (A * \overline{B})</m> can be simplified to just <m>A</m>.
-        </p>
-        <p>
-            Here's a practical example. Consider the following Boolean expression, which combines several gates:
-        </p>
-        <sage>
-            <input>
-                # Original Boolean expression
-                from sympy.logic.boolalg import And, Or, Not
-                from sympy.abc import A, B, C
+        # Define the logic function
+        intermediate1 = And(x, y)  # x AND y
+        intermediate2 = And(x, z)  # x AND z
+        intermediate3 = And(y, z)  # y AND z
+        final_output = Or(intermediate1, intermediate2, intermediate3)  # (x AND y) OR (x AND z) OR (y AND z)
 
-                # Define the expression
-                D = Or(And(A, B), And(A, Not(B)), And(C, B))
-                D
-            </input>
-            <output>
-            </output>
-        </sage>
+        # Variables and expressions
+        variables = [x, y, z]
+        expressions = [intermediate1, intermediate2, intermediate3, final_output]
 
-        <sage>
-            <input>
-                # Simplified Boolean expression
-                from sympy import simplify
+        # Header names and column widths
+        headers = ["x", "y", "z", "x AND y", "x AND z", "y AND z", "F"]
+        column_widths = [5, 5, 5, 10, 10, 10, 5]  # Adjust widths as needed
 
-                # Simplify the expression
-                simplify(D)
-            </input>
-            <output>
-            </output>
-        </sage>
+        # Print header row with adjusted spacing
+        header_row = " | ".join(h.ljust(w) for h, w in zip(headers, column_widths))
+        print(header_row)
+        print("-" * len(header_row))
 
-        <p>
-            Boolean algebra helps optimize circuits, reducing the number of gates needed and making the system more efficient. It's a key tool in designing everything from small circuits to large-scale computing systems.
-        </p>
-
-
-        <p>
-            Truth tables are a visual way to represent how inputs to a logic circuit map to its outputs. For each possible combination of inputs, the table shows the corresponding outputs, making it easier to analyze and understand the behavior of the circuit.
-        </p>
-        <p>
-            Let’s create a truth table for the circuit we evaluated earlier.
-        </p>
-        <p>
-            <m>
-                F = \left( (A \land B) \lor (\neg C) \right) \land B
-            </m>
-        </p>
-        <p>
-            Here, we will show the intermediatory steps to find the final output of the function.
-        </p>
-        <sage>
-            <input>
-                from sympy.logic.boolalg import And, Or, Not, truth_table
-                from sympy.abc import A, B, C
-
-                # Define the logic function
-                intermediate1 = And(A, B)  # A AND B
-                intermediate2 = Not(C)     # NOT C
-                intermediate3 = Or(intermediate1, intermediate2)  # (A AND B) OR (NOT C)
-                final_output = And(intermediate3, B)  # F = ((A AND B) OR (NOT C)) AND B
-
-                # Variables and expressions
-                variables = [A, B, C]
-                expressions = [intermediate1, intermediate2, intermediate3, final_output]
-
-                # Header names and column widths
-                headers = ["A", "B", "C", "A AND B", "NOT C", "(A AND B) OR (NOT C)", "F"]
-                column_widths = [5, 5, 5, 8, 6, 20, 5]  # Adjust widths as needed
-
-                # Print header row with adjusted spacing
-                header_row = " | ".join(h.ljust(w) for h, w in zip(headers, column_widths))
-                print(header_row)
-                print("-" * len(header_row))
-
-                # Generate and print the truth table rows
-                for row in truth_table(final_output, variables):
-                    inputs = row[0]
-                    outputs = [int(bool(expr.subs(dict(zip(variables, inputs))))) for expr in expressions]
-                    table_row = " | ".join(str(int(bool(x))).ljust(w) for x, w in zip(list(inputs) + outputs, column_widths))
-                    print(table_row)
-            </input>
-            <output>
-            </output>
-        </sage>
-
+        # Generate and print the truth table rows
+        for row in truth_table(final_output, variables):
+            inputs = row[0]
+            outputs = [int(bool(expr.subs(dict(zip(variables, inputs))))) for expr in expressions]
+            table_row = " | ".join(str(int(bool(x))).ljust(w) for x, w in zip(list(inputs) + outputs, column_widths))
+            print(table_row)
+    </input>
+    <output>
+    </output>
+</sage>
 
 
 </section>
