@@ -1,8 +1,6 @@
 <section xml:id="sec-intro-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Introduction to Logic Gates</title>
 
-    <subsection>
-        <title>Basic Logic Gates</title>
+    <title>Basic Logic Gates</title>
         <idx>
             <h>logic gates</h>
             <h>AND</h>
@@ -22,10 +20,9 @@
                 Logic gates underpin modern computing, enabling operations like addition, decision-making, and data processing.
             </p>
         </aside>
-    </subsection>
 
-    <subsection>
-        <title>AND Gate</title>
+
+
         <p>
             The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
         </p>
@@ -59,10 +56,9 @@
                         print(f"{int(A)} | {int(B)} | {int(bool(And(A, B)))}")
             </input>
         </sage>
-    </subsection>
 
-    <subsection>
-        <title>OR Gate</title>
+
+
         <p>
             The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
         </p>
@@ -96,9 +92,7 @@
                         print(f"{int(A)} | {int(B)} | {int(bool(Or(A, B)))}")
             </input>
         </sage>
-    </subsection>
 
-    <subsection>
         <title>NOT Gate</title>
         <p>
             The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>.
@@ -132,9 +126,9 @@
                     print(f"{int(A)} | {int(bool(Not(A)))}")
             </input>
         </sage>
-    </subsection>
 
-    <subsection>
+
+
         <title>Derived Gates</title>
         <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
         <figure xml:id="fig-NAND-Gate">
@@ -233,5 +227,5 @@
 
 
 
-    </subsection>
+
 </section>
