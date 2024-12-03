@@ -1,8 +1,6 @@
 <section xml:id="sec-intro-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Introduction to Logic Gates</title>
 
-    <subsection>
-        <title>Basic Logic Gates</title>
+    <title>Basic Logic Gates</title>
         <idx>
             <h>logic gates</h>
             <h>AND</h>
@@ -14,7 +12,7 @@
             <h>XNOR</h>
         </idx>
         <p>
-            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables. Common gates include <c>AND</c>, <c>OR</c>, <c>NOT</c>, <c>NAND</c>, <c>NOR</c>, <c>XOR</c>, and <c>XNOR</c>. These gates combine to form complex systems such as CPUs and memory circuits.
+            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables. The basic logic gates are AND, OR, and NOT which correspond to the logical operators reviewed in previous sections. Other commonly used gates as NAND, NOR, XOR, and XNOR are composites of the basic ones. Each gate has its own symbol and truth table representing outputs for all combinations of inputs. These gates combine to form complex systems such as CPUs and memory circuits.
         </p>
         <aside>
             <title>Notes</title>
@@ -22,16 +20,15 @@
                 Logic gates underpin modern computing, enabling operations like addition, decision-making, and data processing.
             </p>
         </aside>
-    </subsection>
 
-    <subsection>
-        <title>AND Gate</title>
+
+
         <p>
             The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
         </p>
         <figure xml:id="fig-AND-Gate">
             <caption>AND Gate</caption>
-            <image width="50%" xml:id="AND-Gate">
+            <image width="25%" xml:id="AND-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[and port] {};
@@ -59,16 +56,15 @@
                         print(f"{int(A)} | {int(B)} | {int(bool(And(A, B)))}")
             </input>
         </sage>
-    </subsection>
 
-    <subsection>
-        <title>OR Gate</title>
+
+
         <p>
             The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
         </p>
         <figure xml:id="fig-OR-Gate">
             <caption>OR Gate</caption>
-            <image width="50%" xml:id="OR-Gate">
+            <image width="25%" xml:id="OR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[or port] {};
@@ -96,16 +92,14 @@
                         print(f"{int(A)} | {int(B)} | {int(bool(Or(A, B)))}")
             </input>
         </sage>
-    </subsection>
 
-    <subsection>
         <title>NOT Gate</title>
         <p>
             The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>.
         </p>
         <figure xml:id="fig-NOT-Gate">
             <caption>NOT Gate</caption>
-            <image width="50%" xml:id="NOT-Gate">
+            <image width="25%" xml:id="NOT-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[not port] {};
@@ -132,14 +126,14 @@
                     print(f"{int(A)} | {int(bool(Not(A)))}")
             </input>
         </sage>
-    </subsection>
 
-    <subsection>
+
+
         <title>Derived Gates</title>
         <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
         <figure xml:id="fig-NAND-Gate">
             <caption>NAND Gate</caption>
-            <image width="50%" xml:id="NAND-Gate">
+            <image width="25%" xml:id="NAND-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[nand port] {};
@@ -148,10 +142,17 @@
             </image>
         </figure>
 
+                <aside>
+            <title>Notes</title>
+            <p>
+                These gates are critical for advanced functions, like error detection (<c>XOR</c>) and parity checking (<c>XNOR</c>).
+            </p>
+        </aside>
+
         <p><c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.</p>
         <figure xml:id="fig-NOR-Gate">
             <caption>NOR Gate</caption>
-            <image width="50%" xml:id="NOR-Gate">
+            <image width="25%" xml:id="NOR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[nor port] {};
@@ -163,7 +164,7 @@
         <p><c>XOR</c>: Produces <c>1</c> when inputs differ.</p>
         <figure xml:id="fig-XOR-Gate">
             <caption>XOR Gate</caption>
-            <image width="50%" xml:id="XOR-Gate">
+            <image width="25%" xml:id="XOR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[xor port] {};
@@ -174,8 +175,8 @@
 
         <p><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</p>
         <figure xml:id="fig-XNOR-Gate">
-            <caption>XOR Gate</caption>
-            <image width="50%" xml:id="XNOR-Gate">
+            <caption>XNOR Gate</caption>
+            <image width="25%" xml:id="XNOR-Gate">
             <latex-image >
                 \begin{circuitikz}
                 \draw (0,0) node[xnor port] {};
@@ -184,11 +185,47 @@
             </image>
         </figure>
 
-        <aside>
-            <title>Notes</title>
-            <p>
-                These gates are critical for advanced functions, like error detection (<c>XOR</c>) and parity checking (<c>XNOR</c>).
-            </p>
-        </aside>
-    </subsection>
+<sage>
+    <input>
+        from sympy.logic.boolalg import And, Or, Not, Xor
+
+        def nand(A, B):
+            return Not(And(A, B))
+
+        def nor(A, B):
+            return Not(Or(A, B))
+
+        def xor(A, B):
+            return Xor(A, B)
+
+        def xnor(A, B):
+            return Not(Xor(A, B))
+
+        # User-defined inputs
+        A = 1  # Replace with 0 or 1 for input A
+        B = 0  # Replace with 0 or 1 for input B
+        gate = "xor"  # Replace with "nand", "nor", "xor", or "xnor"
+
+
+        if gate == "nand":
+            result = nand(A, B)
+        elif gate == "nor":
+            result = nor(A, B)
+        elif gate == "xor":
+            result = xor(A, B)
+        elif gate == "xnor":
+            result = xnor(A, B)
+        else:
+            result = "Invalid gate type! Please use 'nand', 'nor', 'xor', or 'xnor'."
+
+        result
+    </input>
+    <output>
+    </output>
+</sage>
+
+
+
+
+
 </section>
