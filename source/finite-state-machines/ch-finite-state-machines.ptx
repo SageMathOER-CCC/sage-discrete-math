@@ -13,6 +13,5 @@
   <xi:include href="sec-state-machine-definition.ptx" />
   <xi:include href="sec-modeling-finite-state-machines.ptx" />
   <xi:include href="sec-fsm-in-action.ptx" />
-  <xi:include href="sec-extended-example.ptx" />
 
 </chapter>
