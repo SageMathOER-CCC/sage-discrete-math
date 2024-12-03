@@ -5,7 +5,7 @@
 
   <introduction>
     <p>
-      This chapter builds on the fundamental building blocks of all digital systems, logic gates, and explains how to process binary inputs to produce specific outputs based on different gate types, such as AND, OR, and NOT. Then, we show how these gates combine to form more complex circuits and integrate into everyday electronics, using built-in and customized Sage functions to simulate and analyze their behavior.
+      This chapter explains how to process binary inputs in Sage to produce specific outputs based on basic logic gates, such as AND, OR, and NOT. Then, we show how these gates combine to form more complex circuits and integrate into everyday electronics, using built-in and customized Sage functions to simulate and analyze their behavior.
     </p>
   </introduction>
 
