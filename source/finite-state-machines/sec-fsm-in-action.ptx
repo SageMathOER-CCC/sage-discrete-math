@@ -190,14 +190,6 @@
                     ('Ry', 'Gr', 't10s', '(G,r)'),
                 ]
 
-                significant_configs = [
-                    # from-state, to-state, input, output
-                    ('Gr', 'Yr', 't30s', '(Y,r)'),
-                    ('Yr', 'Rg', 't5s', '(R,g)'),
-                    ('Rg', 'Ry', 't20s', '(R,y)'),
-                    ('Ry', 'Gr', 't10s', '(G,r)'),
-                ]
-
                 machine_configs = {}
                 for config in significant_configs:
                     (fr, to, evt, out) = config
