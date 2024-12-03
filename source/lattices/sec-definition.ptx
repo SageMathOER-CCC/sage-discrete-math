@@ -103,4 +103,18 @@
             </input>
         </sage>
     </subsection>
+    <subsection xml:id="subsec-Divisor-Lattice">
+        <title>Divisor Lattice</title>
+        <p>
+            The Sage <c>DivisorLattice()</c> function returns the divisor lattice of an integer.
+        </p>
+        <p>
+            The elements of the lattice are divisors of <m>n</m> and <m>x &lt; y</m> in the lattice if <m>x</m> divides <m>y</m>.
+        </p>
+        <sage>
+            <input>
+                Posets.DivisorLattice(12).show()
+            </input>
+        </sage>
+    </subsection>
 </section>

@@ -3,7 +3,7 @@
     <title>Trees in Action</title>
     <introduction>
         <p>
-            Imagine your task is to create a railway between all the City Colleges of Chicago (CCC) campus locations. The contract requests that you use minimal track material to save construction costs. For simplicity's sake, assume each railway is a straight line.
+            Imagine your task is to create a railway between all the City Colleges of Chicago (CCC) campus locations. The contract requests that you use minimal track material to save construction costs. For simplicity's sake, assume each railway is a straight line between campuses.
         </p>
     </introduction>
     <subsection xml:id="subsec-Railway-Problem">
@@ -18,17 +18,17 @@
                 </li>
                 <li>
                     <p>
-                        Calculate the distances between the locations.
+                        Use the Haversine formula to calculate the distances between the locations. The Haversine formula requires latitude and longitude for inputs and computes the shortest path between two points on a sphere.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Make a Graph of the CCC campuses. Each location is a node. The weight of the edges represents the distance between locations.
+                        Make a Graph of the CCC campuses. Each location is a node. Each railway path is an edge. Each railway path is the shortest path between locations. The weight of the edges represents the distance between locations.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Find the minimum spanning tree of the CCC Graph.
+                        Find the minimum spanning tree (MST) of the CCC Graph.
                     </p>
                 </li>
             </ol>
@@ -97,7 +97,7 @@
             </input>
         </sage>
         <p>
-            Since the Earth is curved, we cannot use the hypotenuse. We will use the Haversine formula instead. Note that the Haversine formula still produces an approximation because the Earth is not a perfect sphere. Here is a function to compute the Haversine formula.
+            Since the Earth is curved, we cannot use the Euclidean distance. We will use the Haversine formula instead. Note that the Haversine formula still produces an approximation because the Earth is not a perfect sphere. Here is a function to compute the Haversine formula.
         </p>
         <sage>
             <input>
@@ -149,7 +149,7 @@
     <subsection xml:id="subsec-CCC-Graph">
         <title>Graph</title>
         <p>
-            Swap <m>(Latitude, Longitude)</m>coordinates for plotting with <m>(x,y)</m> coordinates.
+            Swap <m>(Latitude, Longitude)</m> coordinates for plotting with <m>(x,y)</m> coordinates.
         </p>
         <sage>
             <input>
@@ -176,19 +176,17 @@
     <subsection xml:id="subsec-Railway">
         <title>Railway</title>
         <p>
-            So far, we have encountered various concepts for connecting a graph's vertices, including a Hamilton path and a minimum spanning tree. Let's consider what technique is best suited for solving the problem of constructing a railway that optimizes material costs.
+            So far, we have encountered various concepts for connecting a graph's vertices, including the Hamilton path and the MST. Let's consider what technique is best suited for solving the problem of constructing a railway that optimizes material costs.
         </p>
         <p>
-            The previous chapter used the traveling salesperson algorithm to optimize a delivery route. Since we aim to optimize material costs, you might think of following a similar approach: apply the traveling salesperson algorithm, eliminate the greatest edge from the Hamilton circuit, and design the railway with the minimum Hamilton path. While the Hamiltonian path optimizes graph traversal by visiting each vertex exactly once in a single path, it does not necessarily guarantee that all vertices are connected with the minimal total weight.
+            The previous chapter used the traveling salesperson algorithm to optimize a delivery route. Since we aim to optimize material costs, you might think of following a similar approach: apply the traveling salesperson algorithm, eliminate the greatest edge from the Hamilton circuit, and design the railway with the minimum Hamilton path. If we take a Hamilton circuit
+            and eliminate one edge, we obtain a spanning tree. While the Hamilton path optimizes graph traversal by visiting each vertex exactly once in a single path, it does not guarantee that all vertices are connected with the minimal total weight.
         </p>
         <p>
-            In a Hamiltonian path, the requirement to visit each vertex in a single path can force the inclusion of high-weight edges. Alternatively, a minimum spanning tree is not restricted by the requirement of connecting vertices with a path. A minimum spanning tree can avoid high-weight edges by connecting vertices without regard to forming a path as long as the graph remains connected and acyclic. Although the minimum Hamilton path is one of many possible spanning trees, it is not a minimum spanning tree. Prim's Algorithm ensures the weight of the spanning tree is minimal because, at each iteration, it selects the smallest-weight edge.
+            In a Hamilton path, the requirement to visit each vertex in a single path can force the inclusion of high-weight edges. Alternatively, the MST is not restricted by the requirement of connecting vertices with a path. The MST can avoid high-weight edges by connecting vertices without regard to forming a path as long as the graph remains connected and acyclic. Although the minimum Hamilton path is one of many possible spanning trees, it is not an MST. Prim's Algorithm ensures the weight of the spanning tree is minimal because, at each iteration, it selects the smallest-weight edge.
         </p>
         <p>
-            We may want to create a railway that optimizes travel time and construction material costs in a real-world situation. When ignoring the downtown Loop, the Chicago L train system resembles a tree and is criticized for its lack of interconnectivity. For example, finding an efficient route connecting the end of the Blue Line with the end of the Red Line is challenging. In this challenge question, We will optimize construction material costs for simplicity.
-        </p>
-        <p>
-            Let's find the minimum spanning tree edge <c>list</c> of the campus locations with the <c>min_spanning_tree(by_weight=True)</c> function.
+            Let's find the MST edge <c>list</c> of the campus locations with the <c>min_spanning_tree(by_weight=True)</c> function.
         </p>
         <sage>
             <input>
@@ -197,7 +195,7 @@
             </input>
         </sage>
         <p>
-            Visualize the minimum spanning tree with the vertex positions mapped to the geographical coordinates of each campus location.
+            Visualize the MST with the vertex positions mapped to the geographical coordinates of each campus location.
         </p>
         <sage>
             <input>
@@ -210,5 +208,11 @@
                 )
             </input>
         </sage>
+    </subsection>
+    <subsection xml:id="subsec-Conclusion">
+        <title>Conclusion</title>
+        <p>
+            In this exercise, we only optimized construction material costs. In a real-world scenario, we may want to create a railway that optimizes both travel time and material costs. In the case of the Chicago L train system, the railway resembles a tree when ignoring the downtown Loop. The L receives criticism for its lack of interconnectivity. For example, finding an efficient route connecting the end of the Blue Line with the end of the Red Line is challenging because a traveler may need to commute all the way downtown from one end of the railway to reach another end. As an interesting challenge, you can optimize both travel time and construction costs.
+        </p>
     </subsection>
 </section>
