@@ -32,8 +32,8 @@
         </figure>
         <p>
             The system must ensure safety and smooth traffic flow by coordinating appropriate traffic
-            and pedestrian light configurations. Initially, vehicle traffic proceeds with a green light,
-            while pedestrian crossing is prohibited with a red light.</p>
+            and pedestrian light configurations. Initially, vehicle traffic proceeds with a traffic
+            green light, while pedestrian crossing is prohibited with a pedestrian red light.</p>
     </subsection>
     <subsection>
         <title>Elements of the FSM Model</title>
@@ -47,35 +47,35 @@
             For inputs, the system leverage four independent timers with different preset durations
             and triggering different use cases as follows:
             <ul>
-                <li>30sec timer <c>t30s</c>: drives the traffic light transition from <c>G</c> to <c>Y</c>. The pedestrian light remains <c>r</c> and unchanged.</li>
-                <li>5sec timer <c>t5s</c>: drives the traffic light transition from <c>Y</c> to <c>R</c>, and the pedestrian light transition from <c>r</c> to <c>g</c>.</li>
-                <li>20sec timer <c>t20s</c>: drives the pedestrian light transition from <c>g</c> to <c>y</c>, while the traffic light remains <c>R</c> and unchanged.</li>
-                <li>10sec timer <c>t10s</c>: drives the pedestrian light transition from <c>y</c> to <c>r</c>, and the traffic light transition from <c>R</c> back to <c>G</c>.</li>
+                <li>30sec timer <m>t30s</m>: drives the traffic light transition from <c>G</c> to <c>Y</c>. The pedestrian light remains <c>r</c> and unchanged.</li>
+                <li>5sec timer <m>t5s</m>: drives the traffic light transition from <c>Y</c> to <c>R</c>, and the pedestrian light transition from <c>r</c> to <c>g</c>.</li>
+                <li>20sec timer <m>t20s</m>: drives the pedestrian light transition from <c>g</c> to <c>y</c>, while the traffic light remains <c>R</c> and unchanged.</li>
+                <li>10sec timer <m>t10s</m>: drives the pedestrian light transition from <c>y</c> to <c>r</c>, and the traffic light transition from <c>R</c> back to <c>G</c>.</li>
             </ul>
         </p>
         <p>
             From the above timers and lights configurations, the following set of 4 distinct states emerges:
             <ul>
-                <li>State <c>Yr</c>: Where the traffic light is Yellow, Pedestrian light is red.</li>
-                <li>State <c>Rg</c>: Where the traffic light is Red, Pedestrian light is green.</li>
-                <li>State <c>Ry</c>: Where the traffic light is Red, Pedestrian light is yellow.</li>
-                <li>State <c>Gr</c>: Where the traffic light is Green, Pedestrian light is red.</li>
+                <li>State <c>Yr</c>: Where the traffic light is Yellow, pedestrian light is red.</li>
+                <li>State <c>Rg</c>: Where the traffic light is Red, pedestrian light is green.</li>
+                <li>State <c>Ry</c>: Where the traffic light is Red, pedestrian light is yellow.</li>
+                <li>State <c>Gr</c>: Where the traffic light is Green, pedestrian light is red.</li>
             </ul>
         </p>
         <p>
             Finally, the system's outputs corresponding to each of the above are the light configurations and would be similar to the states:
             <ul>
                 <li>
-                    <c>(Y,r)</c>: Traffic light turning Yellow and the Pedestrian light remains red.
+                    <c>(Y,r)</c>: Traffic light turning Yellow and the pedestrian light remains red.
                 </li>
                 <li>
-                    <c>(R,g)</c>: Traffic light turning Red and the Pedestrian light turning green.
+                    <c>(R,g)</c>: Traffic light turning Red and the pedestrian light turning green.
                 </li>
                 <li>
-                    <c>(R,y)</c>: Traffic light remains Red and the Pedestrian light turning yellow.
+                    <c>(R,y)</c>: Traffic light remains Red and the pedestrian light turning yellow.
                 </li>
                 <li>
-                    <c>(G,r)</c>: Traffic light turning Green and the Pedestrian light turning red.
+                    <c>(G,r)</c>: Traffic light turning Green and the pedestrian light turning red.
                 </li>
             </ul>
         </p>
@@ -258,20 +258,9 @@
     </subsection>
     <conclusion>
         <p>
-            One limitation of using Sage built-in modules is that it fails handling transitions that were not defined in the FSM.
-            For instance, in the previous example, if the timer durations pattern for the input does not match the defined transitions,
-            the run will raise an exception, instead of gracefully handling the exception and defaulting to no transition (similarly,
-            the same issue arise if attempting to run the FSM starting at state that is not part of the FSM definition).</p>
-        <sage>
-            <input>
-                *_, outputs_history = fsm.process(
-                    initial_state=Gr,
-                    input_tape=['t5s', 't20s', 't10s', 't30s', 't30s'],
-                )
-
-                # Error will be thrown while running the following
-                [print(_) for _ in outputs_history];
-            </input>
-        </sage>
+            It is worth noting that using Sage built-in modules could produce an error when handling transitions that
+            were not defined in the FSM. For instance, in the previous example, if the timer durations _pattern_ for
+            the input does not match the defined transitions, the output will be a <c>None</c> value. Similarly, an
+            exception would be thrown if attempting to run the FSM starting at state that is not part of the FSM definition.</p>
 </conclusion>
 </section>

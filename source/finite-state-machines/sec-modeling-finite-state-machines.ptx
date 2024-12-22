@@ -33,11 +33,9 @@
             a state transition graph, visualizing the state machine, and simulating its execution in Sage.</p>
 
         <p>
-            Consider a 3-level elevator (floors 1 through 3). The elevator can be at one of the three floors
-            and moves in the same direction (up or down) until it reaches the top or bottom floor. It stops
-            at each floor along the way. The elevator has 3 buttons for users to select the destination floor
-            (only one can be selected at a time). Depending on the current position and the selected floor,
-            the elevator can go up, go down, or remain on the same floor.</p>
+            Consider a 3-level elevator (floors 1 through 3). The elevator has 3 buttons for users to select
+            the destination floor (only one can be selected at a time). Depending on the current position and
+            the selected floor, the elevator can go up, go down, or remain on the same floor.</p>
 
             <subsection>
                 <title>Description of the Elevator FSM</title>
