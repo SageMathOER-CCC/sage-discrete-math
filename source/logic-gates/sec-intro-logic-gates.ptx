@@ -1,30 +1,30 @@
 <section xml:id="sec-intro-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
-
-    <title>Basic Logic Gates</title>
-        <idx>
-            <h>logic gates</h>
-            <h>AND</h>
-            <h>OR</h>
-            <h>NOT</h>
-            <h>NAND</h>
-            <h>NOR</h>
-            <h>XOR</h>
-            <h>XNOR</h>
-        </idx>
+    <title>Logic Gates</title>
+    <idx>
+        <h>logic gates</h>
+        <h>AND</h>
+        <h>OR</h>
+        <h>NOT</h>
+        <h>NAND</h>
+        <h>NOR</h>
+        <h>XOR</h>
+        <h>XNOR</h>
+    </idx>
+    <introduction>
         <p>
-            Logic gates are the foundation of digital circuits. They process binary inputs (<c>0</c>s and <c>1</c>s) to produce specific outputs, defined by truth tables. The basic logic gates are AND, OR, and NOT which correspond to the logical operators reviewed in previous sections. Other commonly used gates as NAND, NOR, XOR, and XNOR are composites of the basic ones. Each gate has its own symbol and truth table representing outputs for all combinations of inputs. These gates combine to form complex systems such as CPUs and memory circuits.
+           Logic gates are the foundation of digital circuits. They process binary inputs to produce specific outputs. The basic logic gates are <m>AND</m>, <m>OR</m>, and <m>NOT</m>. Derived gates include <m>NAND</m>, <m>NOR</m>, <m>XOR</m>, and <m>XNOR</m>. Each gate has its own symbol and behavior defined by a truth table.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Logic gates underpin modern computing, enabling operations like addition, decision-making, and data processing.
-            </p>
-        </aside>
-
-
-
+    </introduction>
+    <aside>
+        <title>Notes</title>
         <p>
-            The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
+            Logic gates combine to form complex systems such as CPUs and memory circuits.
+        </p>
+    </aside>
+    <subsection xml:id="subsec-AND-Gate">
+        <title>AND Gate</title>
+        <p>
+        The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
         </p>
         <figure xml:id="fig-AND-Gate">
             <caption>AND Gate</caption>
@@ -56,11 +56,11 @@
                         print(f"{int(A)} | {int(B)} | {int(bool(And(A, B)))}")
             </input>
         </sage>
-
-
-
+    </subsection>
+    <subsection xml:id="subsec-OR-GATE">
+        <title>OR GATE</title>
         <p>
-            The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
+        The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
         </p>
         <figure xml:id="fig-OR-Gate">
             <caption>OR Gate</caption>
@@ -92,7 +92,9 @@
                         print(f"{int(A)} | {int(B)} | {int(bool(Or(A, B)))}")
             </input>
         </sage>
+    </subsection>
 
+    <subsection xml:id="subsec-NOT-Gate">
         <title>NOT Gate</title>
         <p>
             The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>.
@@ -126,10 +128,9 @@
                     print(f"{int(A)} | {int(bool(Not(A)))}")
             </input>
         </sage>
-
-
-
-        <title>Derived Gates</title>
+    </subsection>
+        <subsection xml:id="subsec-NAND-Gate">
+        <title>NAND Gate</title>
         <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
         <figure xml:id="fig-NAND-Gate">
             <caption>NAND Gate</caption>
@@ -141,14 +142,10 @@
             </latex-image>
             </image>
         </figure>
+    </subsection>
 
-                <aside>
-            <title>Notes</title>
-            <p>
-                These gates are critical for advanced functions, like error detection (<c>XOR</c>) and parity checking (<c>XNOR</c>).
-            </p>
-        </aside>
-
+    <subsection xml:id="subsec-NOR-Gate">
+        <title>NOR Gate</title>
         <p><c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.</p>
         <figure xml:id="fig-NOR-Gate">
             <caption>NOR Gate</caption>
@@ -160,7 +157,10 @@
             </latex-image>
             </image>
         </figure>
+    </subsection>
 
+    <subsection xml:id="subsec-XOR-Gate">
+        <title>XOR Gate</title>
         <p><c>XOR</c>: Produces <c>1</c> when inputs differ.</p>
         <figure xml:id="fig-XOR-Gate">
             <caption>XOR Gate</caption>
@@ -172,7 +172,10 @@
             </latex-image>
             </image>
         </figure>
+    </subsection>
 
+    <subsection xml:id="subsec-XNOR-Gate">
+        <title>XNOR Gate</title>
         <p><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</p>
         <figure xml:id="fig-XNOR-Gate">
             <caption>XNOR Gate</caption>
@@ -184,8 +187,7 @@
             </latex-image>
             </image>
         </figure>
-
-<sage>
+        <sage>
     <input>
         from sympy.logic.boolalg import And, Or, Not, Xor
 
@@ -222,10 +224,6 @@
     </input>
     <output>
     </output>
-</sage>
-
-
-
-
-
+    </sage>
+    </subsection>
 </section>
