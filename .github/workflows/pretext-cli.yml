@@ -3,9 +3,11 @@ on:
     # Runs on pull requests
     pull_request:
         branches: ["*"]
+
     # Runs on pushes to main
     push:
         branches: ["main"]
+
     # Runs on demand
     workflow_dispatch:
 
@@ -13,17 +15,44 @@ jobs:
     build:
         runs-on: ubuntu-latest
         container: oscarlevin/pretext:full
-
         steps:
             - name: Checkout source
               uses: actions/checkout@v4
 
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: '3.x'
+
+            - name: Install dependencies
+              run: |
+                  apt-get update
+                  apt-get install -y inkscape
+              shell: bash
+
+            - name: Verify Inkscape Installation
+              run: inkscape --version
+
             - name: install deps
-              run: pip install -r requirements.txt
+              run: |
+                  pip install -r requirements.txt
+                  pretext --version
+
+            - name: ensure proper asset type in image references
+              run: ./update-img-refs.py source/ --to-svg
 
             - name: build deploy targets
-              run: pretext build --deploys
-              
+              run: |
+                  version="$(pretext --version)"
+                  major="$(echo $version | cut -d '.' -f 1)"
+                  minor="$(echo $version | cut -d '.' -f 2)"
+                  if [ "$major" -ge 2 -a "$minor" -ge 5 ]; then
+                      echo "PreTeXt version is 2.5 or greater; using new build command"
+                      pretext build --deploys
+                  else
+                      echo "PreTeXt version is less than 2.5, using old build command"
+                      pretext build
+                  fi
             - name: stage deployment
               run: pretext deploy --stage-only
 
@@ -32,6 +61,11 @@ jobs:
               with:
                   name: deploy
                   path: output/stage
+
+            - name: ensure proper asset type in image references for pdf output
+              run: |
+                  make svg-to-pdf
+                  ./update-img-refs.py source/ --to-pdf
 
             - name: Build PDF with PreTeXt
               run: pretext build print
@@ -106,7 +140,7 @@ jobs:
 
             - name: Commit changes
               run: |
-                  git add output/print/main.pdf
+                  git add output/print/discrete-math-with-sage.pdf
                   git commit -m "Update PDF" || echo "No changes to commit"
 
             - name: Force push to pdf-update branch
