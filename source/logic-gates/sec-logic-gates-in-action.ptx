@@ -2,7 +2,7 @@
     <title>Logic Gates in Action</title>
     <introduction>
         <p>
-            Voting systems are fundamental in decision-making processes, from simple classroom polls to national elections. In this section, we’ll use logic gates to build a simple digital voting machine. The machine will count binary votes (Yes = 1, No = 0) and determine the majority outcome. We’ll break the system into smaller functions, each implemented using logic gates, and then combine them to form the complete voting machine.
+            Voting systems are fundamental in decision-making processes like national elections. In this section, we use logic gates to build a simple digital voting machine. The machine will count binary votes and determine the majority outcome. We break the system into smaller functions, each implemented using logic gates, and then combine them to form the complete voting machine.
         </p>
     </introduction>
 
@@ -61,9 +61,7 @@
         <title>Majority Decider</title>
         <p>
             The majority decider uses logic gates to determine whether "Yes" votes are greater than "No" votes. For three votes, the logic can be expressed as:
-            <display>
-                Majority = (V1 AND V2) OR (V2 AND V3) OR (V1 AND V3)
-            </display>
+            <me>Majority = (V1 AND V2) OR (V2 AND V3) OR (V1 AND V3)</me>
             This formula ensures that if at least two out of three votes are "Yes," the output will indicate a majority.
         </p>
         <sage>
