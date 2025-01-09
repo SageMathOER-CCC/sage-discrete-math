@@ -4,40 +4,40 @@
     <title>Combinatorics</title>
 
     <subsection>
-        <title>Factorial Function</title>
-        <idx>
-            <h>factorial</h>
-        </idx>
-        <p> The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product
-            of all positive integers less than or equal to <m>n</m>. </p>
-        <p> Compute the factorial of <m>5</m>: </p>
+        <title>Factorial Function</title><idx><h>factorial</h></idx>
+        <p>
+            The factorial of a non-negative integer <m>n</m>, denoted by <m>n!</m>, is the product of all positive integers less than or equal to <m>n</m>.
+        </p>
+        <p>
+            Compute the factorial of <m>5</m>:
+        </p>
         <sage>
             <input>
                 factorial(5)
             </input>
+            <output></output>
         </sage>
     </subsection>
 
     <subsection>
-        <title>Combinations</title>
-        <idx>
-            <h>combination</h>
-        </idx>
-        <p> The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set
-            of <m>n</m> objects. </p>
+        <title>Combinations</title><idx><h>combination</h></idx>
+        <p>
+            The combination <m>(n, k)</m> is an unordered selection of <m>k</m> objects from a set of <m>n</m> objects.
+        </p>
         <aside>
             <title>Notes</title>
-            <p> Use combinations when order does not matter, such as determining possible Poker
-                hands. The order in which a player holds cards does not affect the kind of hand. For
-                example, the following hand is a royal flush: <m>10</m>, <m>J</m>, <m>Q</m>, <m>K</m>
-                , <m>A</m>. The following hand is also a royal flush: <m>A</m>, <m>K</m>, <m>J</m>, <m>
-                10</m>, <m>Q</m>. </p>
+            <p>
+                Use combinations when order does not matter, such as determining possible Poker hands. The order in which a player holds cards does not affect the kind of hand. For example, the following hand is a royal flush: <m>10</m>, <m>J</m>, <m>Q</m>, <m>K</m>, <m>A</m>. The following hand is also a royal flush: <m>A</m>, <m>K</m>, <m>J</m>, <m>10</m>, <m>Q</m>.
+            </p>
         </aside>
-        <p> Calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m>: </p>
+        <p>
+            Calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m>:
+        </p>
         <sage>
             <input>
                 Combinations(5, 3).cardinality()
             </input>
+            <output></output>
         </sage>
         <p>
             List the combinations:
@@ -46,40 +46,39 @@
             <input>
                 Combinations(5, 3).list()
             </input>
+            <output></output>
         </sage>
-        <idx>
-            <h>binomial</h>
-        </idx>
-        <p> The <c>binomial()</c> function provides an alternative method to compute the number of
-            combinations. </p>
+        <idx><h>binomial</h></idx>
+        <p>
+            The <c>binomial()</c> function provides an alternative method to compute the number of combinations.
+        </p>
         <sage>
             <input>
                 binomial(5, 3)
             </input>
+            <output></output>
         </sage>
     </subsection>
 
     <subsection>
-        <title>Permutations</title>
-        <idx>
-            <h>permutation</h>
-        </idx>
-        <p> A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>
-            n</m> objects. </p>
+        <title>Permutations</title><idx><h>permutation</h></idx>
+        <p>
+            A permutation <m>(n, k)</m> is an ordered selection of <m>k</m> objects from a set of <m>n</m> objects.
+        </p>
         <aside>
             <title>Notes</title>
             <p>
-                Use permutations in situations where order does matter, such as when creating
-                passwords. Longer passwords have more permutations, making them more challenging to
-                guess by brute force.
+                Use permutations in situations where order does matter, such as when creating passwords. Longer passwords have more permutations, making them more challenging to guess by brute force.
             </p>
         </aside>
-        <p> To calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m> when
-            the order matters, use the <c>Permutations()</c> method. </p>
+        <p>
+            To calculate the number of ways to choose <m>3</m> elements from a set of <m>5</m> when the order matters, use the <c>Permutations()</c> method.
+        </p>
         <sage>
             <input>
                 Permutations(5, 3).cardinality()
             </input>
+            <output></output>
         </sage>
         <p>
             List the permutations:
@@ -88,13 +87,19 @@
             <input>
                 Permutations(5, 3).list()
             </input>
+            <output></output>
         </sage>
-        <p> When <m>n = k</m>, we can calculate permutations of <m>n</m> elements. </p>
-        <p> Calculate the number of permutations of a set with <m>3</m> elements: </p>
+        <p>
+            When <m>n = k</m>, we can calculate permutations of <m>n</m> elements.
+        </p>
+        <p>
+            Calculate the number of permutations of a set with <m>3</m> elements:
+        </p>
         <sage>
             <input>
                 Permutations(3).cardinality()
             </input>
+            <output></output>
         </sage>
         <p>
             List the permutations:
@@ -103,6 +108,7 @@
             <input>
                 Permutations(3).list()
             </input>
+            <output></output>
         </sage>
         <p>
             The following is an example of permutations of specified elements:
@@ -113,14 +119,18 @@
 
                 A.list()
             </input>
+            <output></output>
         </sage>
-        <p> Choose <m>2</m>: </p>
+        <p>
+            Choose <m>2</m>:
+        </p>
         <sage>
             <input>
                 A = Permutations(['a', 'b', 'c'], 2)
 
                 A.list()
             </input>
+            <output></output>
         </sage>
     </subsection>
 
