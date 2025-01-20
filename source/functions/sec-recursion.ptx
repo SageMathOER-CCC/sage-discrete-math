@@ -1,25 +1,39 @@
 <section xml:id="sec-recursion" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Recursion</title><idx><h>recursion</h></idx>
+    <title>Recursion</title>
+    <idx>
+        <h>recursion</h>
+    </idx>
     <introduction>
         <p>
-            Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. This approach is extensively used in mathematics and computer science, especially in the computation of binomial coefficients, the evaluation of polynomials, and the generation of sequences.
+            Recursion is a method where the solution to a problem depends on solutions to smaller
+            instances of the same problem. This approach is extensively used in mathematics and
+            computer science, especially in the computation of binomial coefficients, the evaluation
+            of polynomials, and the generation of sequences.
         </p>
     </introduction>
 
     <subsection>
-        <title>Recursion in Sequences</title><idx><h>sequence</h></idx>
+        <title>Recursion in Sequences</title>
+        <idx>
+            <h>sequence</h>
+        </idx>
         <p>
-            A recursive sequence is defined by one or more base cases and a recursive step that relates each term to its predecessors.
+            A recursive sequence is defined by one or more base cases and a recursive step that
+            relates each term to its predecessors.
         </p>
         <aside>
             <title>Notes</title>
             <p>
-                Use recursion to solve problems by breaking them down into similar steps. In programming, recursively defined functions often improve code readability.
+                Use recursion to solve problems by breaking them down into similar steps. In
+                programming, recursively defined functions often improve code readability.
             </p>
         </aside>
-        <p>
-            Given a sequence defined by a recursive formula, we can ask Sage to find its closed form. Here, <c>s</c> is a function representing the sequence defined by recursion. The equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>. The <c>rsolve()</c> function is then used to find a closed-form solution to this recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we use the <c>SR()</c> function to convert from Python notation to mathematical notation.
-        </p>
+        <p> Given a sequence defined by a recursive formula, we can ask Sage to find its closed
+            form. Here, <c>s</c> is a function representing the sequence defined by recursion. The
+            equation <c>eqn</c> defines the recursive relation <m>s_n = s_{n-1} + 2\cdot s_{n-2}</m>.
+            The <c>rsolve()</c> function is then used to find a closed-form solution to this
+            recurrence, given the initial conditions <m>s_0 = 2</m> and <m>s_1 = 7</m>. At last, we
+            use the <c>SR()</c> function to convert from Python notation to mathematical notation. </p>
         <sage>
             <input>
                 from sympy import Function, rsolve
@@ -29,15 +43,16 @@
                 sol = rsolve(eqn, s(n), {s(0): 2, s(1): 7})
                 show(SR(sol))
             </input>
-            <output></output>
         </sage>
-        <p>
-            We can use the <c>show()</c> function to make the output visually more pleasing; you can try removing it and see how the output looks.
-        </p>
-        <idx><h>Fibonacci</h></idx>
-        <p>
-            Similarly, the Fibonacci sequence is another example of a recursive sequence, defined by the base cases <m>F_0 = 0</m> and <m>F_1 = 1</m>, and the recursive relation <m>F_n = F_{n-1} + F_{n-2}</m> for <m>n &gt; 1</m>. This sequence is a cornerstone example in the study of recursion.
-        </p>
+        <p> We can use the <c>show()</c> function to make the output visually more pleasing; you can
+            try removing it and see how the output looks. </p>
+        <idx>
+            <h>Fibonacci</h>
+        </idx>
+        <p> Similarly, the Fibonacci sequence is another example of a recursive sequence, defined by
+            the base cases <m>F_0 = 0</m> and <m>F_1 = 1</m>, and the recursive relation <m>F_n =
+            F_{n-1} + F_{n-2}</m> for <m>n &gt; 1</m>. This sequence is a cornerstone example in the
+            study of recursion. </p>
         <sage>
             <input>
                 from sympy import Function, rsolve
@@ -47,30 +62,33 @@
                 fib_sol = rsolve(fib_eqn, F(n), {F(0): 0, F(1): 1})
                 show(SR(fib_sol))
             </input>
-            <output></output>
         </sage>
-        <p>
-            The <c>show()</c> function is again used here to present the solution in a more accessible mathematical notation, illustrating the power of recursive functions to describe complex sequences with simple rules.
-        </p>
-        <p>
-            We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by iterating and updating the values of two consecutive Fibonacci numbers in the sequence. Let's calculate the third Fibonacci number.
-        </p>
+        <p> The <c>show()</c> function is again used here to present the solution in a more
+            accessible mathematical notation, illustrating the power of recursive functions to
+            describe complex sequences with simple rules. </p>
+        <p> We can also write a function <c>fib()</c> to compute the <m>n</m>th Fibonacci number by
+            iterating and updating the values of two consecutive Fibonacci numbers in the sequence.
+            Let's calculate the third Fibonacci number. </p>
         <sage>
             <input>
                 def fib(n):
-                    if n == 0 or n == 1: return n
+                    # assuming n is always an int
+                    if n &lt; 2:
+                        return n
                     else:
-                        U = 0; V = 1  # the initial terms F0 and F1
+                        # the initial terms F0 and F1
+                        U = 0; V = 1
                         for k in range(2, n+1):
-                            W = U + V; U = V; V = W
+                            W = U + V;
+                            U = V; V = W
                         return V
-                fib(3)
+
+                # display the first 10 Fibonacci numbers
+                [fib(i) for i in range(10)]
             </input>
-            <output></output>
         </sage>
-        <p>
-            We go back to the previous method where we calculated the closed form <c>fib_sol</c> and evaluate it now at  <m>n = 3</m>.
-        </p>
+        <p> We go back to the previous method where we calculated the closed form <c>fib_sol</c> and
+            evaluate it now at <m>n = 3</m>. </p>
         <sage>
             <input>
                 from sympy import Function, rsolve, Symbol, simplify
@@ -82,27 +100,28 @@
                 fib3 = simplify(fib_sol.subs(n, 3))
                 show(SR(fib3))
             </input>
-            <output></output>
         </sage>
-        <p>
-            As we can see, we obtain the same number either by evaluating the closed form at <m>n = 3</m> or by finding the third Fibonacci number directly by iteration.
-        </p>
+        <p> As we can see, we obtain the same number either by evaluating the closed form at <m>n =
+            3</m> or by finding the third Fibonacci number directly by iteration. </p>
 
     </subsection>
 
     <subsection>
-        <title>Recursion with Binomial Coefficients</title><idx><h>binomial coefficients</h></idx>
-        <p>
-            Binomial coefficients, denoted as <m>\binom{n}{k}</m>, count the number of ways to choose <m>k</m> elements from an <m>n</m>-element set. They can be defined recursively. Sage can compute binomial coefficients using the <c>binomial(n, k)</c> function.
-        </p>
+        <title>Recursion with Binomial Coefficients</title>
+        <idx>
+            <h>binomial coefficients</h>
+        </idx>
+        <p> Binomial coefficients, denoted as <m>\binom{n}{k}</m>, count the number of ways to
+            choose <m>k</m> elements from an <m>n</m>-element set. They can be defined recursively.
+            Sage can compute binomial coefficients using the <c>binomial(n, k)</c> function. </p>
         <sage>
             <input>
                 binomial(5, 3)
             </input>
-            <output></output>
         </sage>
         <p>
-            We can also explore the recursive nature of binomial coefficients by defining a function ourselves recursively.
+            We can also explore the recursive nature of binomial coefficients by defining a function
+            ourselves recursively.
         </p>
         <sage>
             <input>
@@ -111,14 +130,11 @@
                         return 1
                     else:
                         return binomial_recursive(n-1, k-1) + binomial_recursive(n-1, k)
-
                 binomial_recursive(5, 3)
             </input>
-            <output></output>
         </sage>
-        <p>
-            This function implements the recursive formula <m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m>, with base cases <m>\binom{n}{0} = \binom{n}{n} = 1</m>.
-        </p>
+        <p> This function implements the recursive formula <m>\binom{n}{k} = \binom{n-1}{k-1} +
+            \binom{n-1}{k}</m>, with base cases <m>\binom{n}{0} = \binom{n}{n} = 1</m>. </p>
     </subsection>
 
 </section>
