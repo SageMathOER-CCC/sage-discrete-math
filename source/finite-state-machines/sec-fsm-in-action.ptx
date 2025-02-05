@@ -26,7 +26,7 @@
             a transition event after a predefined duration.</p>
         <figure>
             <media>
-                <image source="finite-state-machines/simple_traffic_light.png" width="67%" />
+                <image source="finite-state-machines/simple_traffic_light.svg" width="80%" />
             </media>
             <caption>Simple Traffic Light</caption>
         </figure>
@@ -88,12 +88,14 @@
                     <row header="yes" bottom="major">
                         <cell></cell>
 
-                        <cell></cell>
                         <cell>next</cell>
                         <cell></cell>
-
                         <cell></cell>
+                        <cell></cell>
+
                         <cell>output</cell>
+                        <cell></cell>
+                        <cell></cell>
                         <cell></cell>
                     </row>
                     <row header="yes" bottom="minor">
