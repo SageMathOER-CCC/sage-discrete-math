@@ -40,7 +40,7 @@
             <output></output>
         </sage>
         <p>
-            List the combinations:
+            List the combinations (Note that the index begins at <m>0</m> and ends at <m>n − 1</m>):
         </p>
         <sage>
             <input>
@@ -81,7 +81,7 @@
             <output></output>
         </sage>
         <p>
-            List the permutations:
+            List the permutations(Note that the index begins at <m>1</m> and ends at <m>n</m>):
         </p>
         <sage>
             <input>

@@ -195,7 +195,7 @@
         </li>
         <li>
           <p>
-            Do not use keywords as identifiers.
+            Do not use keywords alone as identifiers.
           </p>
         </li>
       </ul>

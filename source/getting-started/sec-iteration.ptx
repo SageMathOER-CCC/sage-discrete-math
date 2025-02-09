@@ -24,7 +24,7 @@
 
     <sage>
         <input>
-            # We can also specify a step value
+            # We can also specify an integer step value
             for i in range(30, 90, 9):
                 print(i)
         </input>

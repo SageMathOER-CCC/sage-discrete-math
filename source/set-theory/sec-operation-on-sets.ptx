@@ -308,7 +308,7 @@
             </input>
         </sage>
         <p>
-            If we only want to view part of the power set, we can specify a range of elements with a technique called slicing. For example, here are the first 5 elements of the power set.
+            If we only want to view part of the power set, we can specify a range of elements with a technique called slicing. For example, here are the first 5 elements of the power set. Note that although sets do not have order, they are displayed in an order, hence their can be a "first 5" elements
         </p>
         <sage>
             <input>
