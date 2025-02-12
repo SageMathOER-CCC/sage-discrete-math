@@ -11,9 +11,10 @@
         <h>XNOR</h>
     </idx>
     <introduction>
-        <p>
-           Logic gates are the foundation of digital circuits. They process binary inputs to produce specific outputs. The basic logic gates are <m>AND</m>, <m>OR</m>, and <m>NOT</m>. Derived gates include <m>NAND</m>, <m>NOR</m>, <m>XOR</m>, and <m>XNOR</m>. Each gate has its own symbol and behavior defined by a truth table.
-        </p>
+        <p> Logic gates are the foundation of digital circuits. They process binary inputs to
+            produce specific outputs. The basic logic gates are <m>AND</m>, <m>OR</m>, and <m>NOT</m>.
+            Derived gates include <m>NAND</m>, <m>NOR</m>, <m>XOR</m>, and <m>XNOR</m>. Each gate
+            has its own symbol and behavior defined by a truth table. </p>
     </introduction>
     <aside>
         <title>Notes</title>
@@ -23,17 +24,15 @@
     </aside>
     <subsection xml:id="subsec-AND-Gate">
         <title>AND Gate</title>
-        <p>
-        The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
-        </p>
+        <p> The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>. </p>
         <figure xml:id="fig-AND-Gate">
             <caption>AND Gate</caption>
             <image width="25%" xml:id="AND-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[and port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[and port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
         <sage>
@@ -43,9 +42,7 @@
                 And(A, B)
             </input>
         </sage>
-        <p>
-            Truth table for the <c>AND</c> gate:
-        </p>
+        <p> Truth table for the <c>AND</c> gate: </p>
         <sage>
             <input>
                 # Generate truth table for AND gate
@@ -59,17 +56,15 @@
     </subsection>
     <subsection xml:id="subsec-OR-GATE">
         <title>OR GATE</title>
-        <p>
-        The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
-        </p>
+        <p> The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>. </p>
         <figure xml:id="fig-OR-Gate">
             <caption>OR Gate</caption>
             <image width="25%" xml:id="OR-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[or port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[or port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
         <sage>
@@ -79,9 +74,7 @@
                 Or(A, B)
             </input>
         </sage>
-        <p>
-            Truth table for the <c>OR</c> gate:
-        </p>
+        <p> Truth table for the <c>OR</c> gate: </p>
         <sage>
             <input>
                 # Generate truth table for OR gate
@@ -96,17 +89,15 @@
 
     <subsection xml:id="subsec-NOT-Gate">
         <title>NOT Gate</title>
-        <p>
-            The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>.
-        </p>
+        <p> The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>. </p>
         <figure xml:id="fig-NOT-Gate">
             <caption>NOT Gate</caption>
             <image width="25%" xml:id="NOT-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[not port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[not port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
         <sage>
@@ -116,9 +107,7 @@
                 Not(A)
             </input>
         </sage>
-        <p>
-            Truth table for the <c>NOT</c> gate:
-        </p>
+        <p> Truth table for the <c>NOT</c> gate: </p>
         <sage>
             <input>
                 # Generate truth table for NOT gate
@@ -129,17 +118,17 @@
             </input>
         </sage>
     </subsection>
-        <subsection xml:id="subsec-NAND-Gate">
+    <subsection xml:id="subsec-NAND-Gate">
         <title>NAND Gate</title>
         <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
         <figure xml:id="fig-NAND-Gate">
             <caption>NAND Gate</caption>
             <image width="25%" xml:id="NAND-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[nand port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[nand port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
     </subsection>
@@ -150,11 +139,11 @@
         <figure xml:id="fig-NOR-Gate">
             <caption>NOR Gate</caption>
             <image width="25%" xml:id="NOR-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[nor port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[nor port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
     </subsection>
@@ -165,11 +154,11 @@
         <figure xml:id="fig-XOR-Gate">
             <caption>XOR Gate</caption>
             <image width="25%" xml:id="XOR-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[xor port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[xor port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
     </subsection>
@@ -180,50 +169,48 @@
         <figure xml:id="fig-XNOR-Gate">
             <caption>XNOR Gate</caption>
             <image width="25%" xml:id="XNOR-Gate">
-            <latex-image >
-                \begin{circuitikz}
-                \draw (0,0) node[xnor port] {};
-                \end{circuitikz}
-            </latex-image>
+                <latex-image>
+                    \begin{circuitikz}
+                    \draw (0,0) node[xnor port] {};
+                    \end{circuitikz}
+                </latex-image>
             </image>
         </figure>
         <sage>
-    <input>
-        from sympy.logic.boolalg import And, Or, Not, Xor
+            <input>
+                from sympy.logic.boolalg import And, Or, Not, Xor
 
-        def nand(A, B):
-            return Not(And(A, B))
+                def nand(A, B):
+                    return Not(And(A, B))
 
-        def nor(A, B):
-            return Not(Or(A, B))
+                def nor(A, B):
+                    return Not(Or(A, B))
 
-        def xor(A, B):
-            return Xor(A, B)
+                def xor(A, B):
+                    return Xor(A, B)
 
-        def xnor(A, B):
-            return Not(Xor(A, B))
+                def xnor(A, B):
+                    return Not(Xor(A, B))
 
-        # User-defined inputs
-        A = 1  # Replace with 0 or 1 for input A
-        B = 0  # Replace with 0 or 1 for input B
-        gate = "xor"  # Replace with "nand", "nor", "xor", or "xnor"
+                # User-defined inputs
+                A = 1 # Replace with 0 or 1 for input A
+                B = 0 # Replace with 0 or 1 for input B
+                gate = "xor" # Replace with "nand", "nor", "xor", or "xnor"
 
 
-        if gate == "nand":
-            result = nand(A, B)
-        elif gate == "nor":
-            result = nor(A, B)
-        elif gate == "xor":
-            result = xor(A, B)
-        elif gate == "xnor":
-            result = xnor(A, B)
-        else:
-            result = "Invalid gate type! Please use 'nand', 'nor', 'xor', or 'xnor'."
+                if gate == "nand":
+                    result = nand(A, B)
+                elif gate == "nor":
+                    result = nor(A, B)
+                elif gate == "xor":
+                    result = xor(A, B)
+                elif gate == "xnor":
+                    result = xnor(A, B)
+                else:
+                    result = "Invalid gate type! Please use 'nand', 'nor', 'xor', or 'xnor'."
 
-        result
-    </input>
-    <output>
-    </output>
-    </sage>
+                result
+            </input>
+        </sage>
     </subsection>
 </section>
