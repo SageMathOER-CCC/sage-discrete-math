@@ -23,12 +23,12 @@
                 </li>
                 <li>
                     <p>
-                        Make a Graph of the CCC campuses. Each location is a node. Each railway path is an edge. Each railway path is the shortest path between locations. The weight of the edges represents the distance between locations.
+                        Make a graph of the CCC campuses. Each location is a node. Each railway path is an edge. Each railway path is the shortest path between locations. The weight of the edges represents the distance between locations.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Find the minimum spanning tree (MST) of the CCC Graph.
+                        Find the minimum spanning tree (MST) of the CCC graph.
                     </p>
                 </li>
             </ol>
@@ -48,7 +48,7 @@
                     <cell>(41.88609733324964, -87.62682604591349)</cell>
                 </row>
                 <row>
-                    <cell>Harry S Truman College</cell>
+                    <cell>Harry Truman College</cell>
                     <cell>(41.9646769664519, -87.65901943241516)</cell>
                 </row>
                 <row>
@@ -126,7 +126,7 @@
             </input>
         </sage>
         <p>
-            Now we can make an edge <c>list</c>. We will represent each campus as a node with the initials of the college name. The weight of the edge will represent the Haversine value between the locations. For example, express the route between Harold Washington College and Harry S Truman College as <c>("HW", "HT", Haversine)</c>.
+            Now we can make an edge <c>list</c>. We will represent each campus as a node with the initials of the college name. The weight of the edge will represent the Haversine value between the locations. For example, express the route between Harold Washington College and Harry Truman College as <c>("HW", "HT", Haversine)</c>.
         </p>
         <sage>
             <input>

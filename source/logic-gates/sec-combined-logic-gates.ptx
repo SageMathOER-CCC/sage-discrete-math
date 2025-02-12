@@ -5,11 +5,7 @@
         Logic gates can be combined to create more complex circuits that perform specific tasks. By linking gates together, we can create circuits that process multiple inputs to produce a desired output. For example, combining an <c>AND</c> gate and a <c>NOT</c> gate results in a <c>NAND</c> gate, which inverts the output of the <c>AND</c> gate. More complex circuits, such as half-adders and multiplexers, are built by combining basic gates in strategic ways.
     </p>
     <p>
-        Let's look at a circuit:
-    </p>
-
-    <p>
-        We will evaluate this circuit by setting True for <m>X</m>, <m>Y</m>, and False for <m>Z</m> below using Sage.
+        Let's look at a circuit. We evaluate this circuit by setting True for <m>X</m>, <m>Y</m>, and False for <m>Z</m> below using Sage.
     </p>
     <sage>
         <input>
