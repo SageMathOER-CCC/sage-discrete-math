@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="isomorphism" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Isomorphism</title><idx><h>isomorphism</h></idx>
+  <title>Isomorphism</title>
+  <idx>
+    <h>isomorphism</h>
+  </idx>
+  <p> Informally, we can say that an <term>isomorphism</term> is a relation of sameness between
+    graphs. Let's say that the graphs <m>G = (V, E)</m> and <m>G' = (V', E')</m> are isomorphic if
+    there exists a bijection <m>f: V \rightarrow V'</m> such that
+    <m>\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>. </p>
   <p>
-    Informally, we can say that an <term>isomorphism</term> is a relation of sameness between graphs. Let's say that the graphs <m>G = (V, E)</m> and <m>G' = (V', E')</m> are isomorphic if there exists a bijection <m>f: V \rightarrow V'</m> such that <m>\{u, v\} \in E \Leftrightarrow \{f(u), f(v)\} \in E'</m>.
-  </p>
-  <p>
-    This means there is a bijection between the set of vertices such that every time two vertices determine an edge in the first graph, the image of these vertices by the bijection also determines an edge in the second graph, and vice versa. Essentially, the two graphs have the same structure, but the vertices are labeled differently.
+    This means there is a bijection between the set of vertices such that every time two vertices
+    determine an edge in the first graph, the image of these vertices by the bijection also
+    determines an edge in the second graph, and vice versa. Essentially, the two graphs have the
+    same structure, but the vertices are labeled differently.
   </p>
   <aside>
     <title>Notes</title>
     <p>
-      Graph isomorphism identifies structures relevant to chemistry, biology, machine learning, and neural networks.
+      Graph isomorphism identifies structures relevant to chemistry, biology, machine learning, and
+      neural networks.
     </p>
   </aside>
   <sage>
@@ -46,18 +54,19 @@
       D.show()
     </input>
   </sage>
-  <p>
-    The sage <c>is_isomorphic()</c> method can be used to check if two graphs are isomorphic. The method returns <c>True</c> if the graphs are isomorphic and <c>False</c> if the graphs are not isomorphic.
-  </p>
+  <p> The sage <c>is_isomorphic()</c> method can be used to check if two graphs are isomorphic. The
+    method returns <c>True</c> if the graphs are isomorphic and <c>False</c> if the graphs are not
+    isomorphic. </p>
   <sage>
     <input>
       C.is_isomorphic(D)
     </input>
   </sage>
 
-  <p>
-    The <term>invariants under isomorphism</term> are conditions that can be checked to determine if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If all of these are true then the graph may or may not be isomorphic. The three conditions for invariants under isomorphism are:
-    <me>
+  <p> The <term>invariants under isomorphism</term> are conditions that can be checked to determine
+    if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If
+    all of these are true then the graph may or may not be isomorphic. The three conditions for
+    invariants under isomorphism are: <me>
       G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
     </me>
     <me>
@@ -68,10 +77,14 @@
     </me>
   </p>
   <p>
-    To summarize, if one graph is connected and the other is not, then the graphs are not isomorphic. If the number of vertices and edges are different, then the graphs are not isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all three invariants are satisfied, then the graphs may or may not be isomorphic.
+    To summarize, if one graph is connected and the other is not, then the graphs are not
+    isomorphic. If the number of vertices and edges are different, then the graphs are not
+    isomorphic. If the degree sequences are different, then the graphs are not isomorphic. If all
+    three invariants are satisfied, then the graphs may or may not be isomorphic.
   </p>
   <p>
-    Let's define a function to check if two graphs satisfy the invariants under isomorphism. Make sure you run the next cell to define the function before using the function.
+    Let's define a function to check if two graphs satisfy the invariants under isomorphism. Make
+    sure you run the next cell to define the function before using the function.
   </p>
   <sage>
     <input>
@@ -119,11 +132,10 @@
               )
           )
     </input>
-    <output></output>
   </sage>
-  <p>
-    If we use <c>invariant_under_isomorphism</c> on the <m>C</m> and <m>D</m>, the output will let's know that the graphs may or may not be isomorphic. We can use the <c>is_isomorphic()</c> method to check if the graphs are definitively isomorphic.
-  </p>
+  <p> If we use <c>invariant_under_isomorphism</c> on the <m>C</m> and <m>D</m>, the output will
+    let's know that the graphs may or may not be isomorphic. We can use the <c>is_isomorphic()</c>
+    method to check if the graphs are definitively isomorphic. </p>
   <sage>
     <input>
       invariant_under_isomorphism(C, D)
@@ -160,9 +172,8 @@
       B.show()
     </input>
   </sage>
-  <p>
-    This time, if we apply <c>invariant_under_isomorphism</c> function on <m>A</m> and <m>B</m>, the output will show us that they are not isomorphic.
-  </p>
+  <p> This time, if we apply <c>invariant_under_isomorphism</c> function on <m>A</m> and <m>B</m>,
+    the output will show us that they are not isomorphic. </p>
   <sage>
     <input>
       invariant_under_isomorphism(A, B)
