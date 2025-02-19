@@ -22,7 +22,7 @@
         </li>
         <li>
           <p>
-            <c>show()</c> is an alias for <c>pretty_print()</c>.
+            <c>show()</c> is an alias for <c>pretty_print()</c> with added functionality for graphic output.
           </p>
         </li>
         <li>

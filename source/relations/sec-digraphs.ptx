@@ -20,7 +20,7 @@
         </input>
     </sage>
     <p>
-        The circles intersecting the node represent the relation matching the element to itself
+        The circles intersecting the node are the same as arrows pointing from the node to itself.
     </p>
     <p>
         We can add a title to the digraph with the <c>name</c> parameter.

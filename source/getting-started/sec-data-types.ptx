@@ -126,7 +126,8 @@
 
     <p>
         We start by defining a <c>list</c> within square brackets <c>[]</c>.
-        Then, the <c>Set()</c> function creates the Sage set object.
+        Then, the <c>Set()</c> function creates the Sage set object. 
+        If you have experience with Python, you may have used a Python <c>set</c>. Notice how the Python <c>set</c> begins with a lowercase <c>s</c>. Even though Sage supports Python sets, we will use Sage <c>Set</c> for the added features. Be sure to define <c>Set()</c> with an upper case <c>S</c>.
     </p>
     <sage>
     <input>
