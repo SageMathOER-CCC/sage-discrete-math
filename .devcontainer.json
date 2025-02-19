@@ -1,3 +1,12 @@
+//////////////////////////////////////////////////////////////
+//
+// This file provides configuration options so that a PreTeXt
+//   project can be edited and built using GitHub's Codespaces.
+// It is recommended to keep this in your repository even if you
+//   do not use this feature, as it will allow other to explore
+//   your project easily.
+//
+///////////////////////////////////////////////////////////////
 {
   "name": "PreTeXt-Codespaces",
 
