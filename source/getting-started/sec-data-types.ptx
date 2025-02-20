@@ -93,7 +93,7 @@
     </sage>
     <idx><h>data types</h><h>tuple</h></idx>
     <p>
-        <term>Tuple</term>: An immutable collection within a pair of parenthesis <c>()</c>. If an object is immutable, you cannot change the value after creating it.
+        <term>Tuple</term>: An immutable collection within a pair of parentheses <c>()</c>. If an object is immutable, you cannot change the value after creating it.
     </p>
     <sage>
     <input>
