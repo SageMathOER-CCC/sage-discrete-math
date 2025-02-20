@@ -9,6 +9,7 @@
   <sage>
     <input>
       G = Graph({1: [2, 3], 2: [3], 3: [4]})
+      G.show()
       G.all_paths(1, 4)
     </input>
     <output>
@@ -23,6 +24,7 @@
   <sage>
       <input>
           G = Graph({1: [2, 3], 2: [3], 3: [4]})
+          G.show()
           G.shortest_path(1, 4)
       </input>
       <output>
@@ -38,6 +40,7 @@
   <sage>
       <input>
           G = Graph({1: [2, 3], 2: [3], 3: [4]})
+          G.show()
           G.is_connected()
       </input>
       <output>
@@ -52,6 +55,7 @@
   <sage>
       <input>
           G = Graph({1: [2, 3], 2: [4], 5: [6]})
+          G.show()
           G.is_connected()
       </input>
       <output>
@@ -63,11 +67,13 @@
   <sage>
       <input>
           G = Graph({1: [2, 3], 2: [4], 5: [6]})
+          G.show()
           G.connected_components()
       </input>
       <output>
       </output>
   </sage>
+  <!-- Consider removing as this section is redundent with the added show() functions -->
   <p>
     We can visualize the graph as a disjoint union of its connected components, by plotting it.
   </p>
@@ -81,11 +87,12 @@
   </sage>
   <idx><h>diameter</h></idx>
   <p>
-    The diameter of a graph is the length of the longest shortest path between any two vertices.
+    The diameter of a graph is the length of the longest path among all of a graph's shortest paths between any two vertices.
   </p>
   <sage>
       <input>
           G = Graph({1: [2, 3], 2: [3, 4], 3: [4]})
+          G.show()
           G.diameter()
       </input>
       <output>
@@ -99,6 +106,7 @@
   <sage>
       <input>
           G = Graph({1: [2, 3], 2: [4], 3: [4]})
+          G.show()
           G.is_bipartite()
       </input>
       <output>

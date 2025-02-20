@@ -6,6 +6,9 @@
       Sage offers various ways to display values on the screen. The simplest way is to type the value into a cell, and Sage will display it. Sage also has functions that display values in different formats.
     </p>
     <p>
+      Sage will always display the value of the last line of code in a cell and nothing more unless one of these functions are used.
+    </p>
+    <p>
       <ul>
         <li>
           <p>
@@ -14,12 +17,12 @@
         </li>
         <li>
           <p>
-            <c>pretty_print()</c> displays rich text.
+            <c>pretty_print()</c> displays rich text as typeset <latex /> output.
           </p>
         </li>
         <li>
           <p>
-            <c>show()</c> is an alias for <c>pretty_print()</c>.
+            <c>show()</c> is an alias for <c>pretty_print()</c> with added functionality for graphic output.
           </p>
         </li>
         <li>
@@ -38,9 +41,6 @@
           </p>
         </li>
       </ul>
-    </p>
-    <p>
-      Sage will display the value of the last line of code in a cell.
     </p>
     <sage>
         <input>
