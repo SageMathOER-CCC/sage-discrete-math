@@ -129,6 +129,11 @@ jobs:
         with:
           name: pdf
           path: output/print
+      - name: Set up Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory /__w/sage-discrete-math/sage-discrete-math
       - name: Create or update pdf-release branch from main
         run: |
           git fetch origin
@@ -137,10 +142,6 @@ jobs:
           else
             git checkout -b pdf-release main
           fi
-      - name: Set up Git user
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
       - name: Check for existing tag
         id: check_tag
         run: |
