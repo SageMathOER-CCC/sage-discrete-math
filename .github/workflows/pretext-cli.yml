@@ -17,42 +17,21 @@ on:
 
 jobs:
   # ----------------------------------------------------
-  install-dependencies:
+  build:
     runs-on: ubuntu-latest
     container: oscarlevin/pretext:full
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-
-      - name: Cache pip dependencies
-        id: cache-pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pretext --version
 
-  # ----------------------------------------------------
-  build:
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    container: oscarlevin/pretext:full
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
       # Build Web artifact
-      - name: Build Web target with PreTeXt
-        run: pretext --verbosity=DEBUG build web --clean --generate --deploys --input=source/main.ptx
-
-      - name: Stage deployment (Web)
-        run: pretext --verbosity=DEBUG deploy --stage-only
+      - name: Build and stage the Web target of the project
+        run: make clean deploy stage
 
       - name: Bundle Web output as artifact
         uses: actions/upload-artifact@v4

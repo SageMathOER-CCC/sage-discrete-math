@@ -24,6 +24,14 @@ all: pdf web view
 web:
 	pretext --verbosity=$(VERBOSITY) build web --clean --generate --input=$(SOURCE_FILE)
 
+# Build deployable web version of the project
+deploy:
+	pretext --verbosity=$(VERBOSITY) build web --clean --generate --deploys --input=$(SOURCE_FILE)
+
+# Stage the deployable web version of the project
+stage:
+	pretext --verbosity=$(VERBOSITY) deploy --stage-only
+
 # Generate the PDF version of the project
 pdf:
 	pretext --verbosity=$(VERBOSITY) build print --clean --generate --input=$(SOURCE_FILE)
@@ -50,6 +58,8 @@ setup:				 ## set up local environment
 clean: 				 ## Clean up generated/cached files
 all: pdf web view    ## Build the web version (default target)
 web:                 ## Build the web version of the project
+deploy:              ## Build deployable web version of the project
+stage:			   	 ## Stage the deployable web version
 view:                ## View the project in a web browser
 pdf:                 ## Generate the PDF version of the project
 upgrade:			 ## Upgrade PRETEXT to latest version
