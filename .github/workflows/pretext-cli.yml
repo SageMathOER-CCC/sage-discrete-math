@@ -112,34 +112,55 @@ jobs:
     needs: build
     permissions:
       contents: write
+
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Fetch and switch to the release branch
+      - name: Fetch latest commit hash on release branch
         run: |
-          git fetch origin
-          git checkout main
-          git reset --hard origin/main
+          git fetch origin main
+          echo "LATEST_COMMIT_HASH=$(git rev-parse --short origin/main)" >> $GITHUB_ENV
 
       - name: Download PDF artifact
         uses: actions/download-artifact@v4
         with:
-            name: pdf
-            path: output/print
+          name: pdf
+          path: output/print
 
       - name: Create or update pdf-update branch
         run: git checkout -B pdf-update
 
-      - name: Set up Git user
+      - name: Check if PDF has changed
+        id: check_diff
         run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Get last commit message on pdf-update (if exists)
+          LAST_PDF_COMMIT_MSG=$(git log -1 --pretty=%s pdf-update 2>/dev/null || echo "")
 
-      - name: Commit changes and sync PDF update
+          # Check if last commit already contains the latest main commit hash
+          if echo "$LAST_PDF_COMMIT_MSG" | grep -q "$LATEST_COMMIT_HASH"; then
+            echo "No new changes in the PDF. Skipping update."
+            echo "skip_update=true" >> $GITHUB_ENV
+          fi
+
+      - name: Skip update if no changes
+        if: env.skip_update == 'true'
+        run: echo "PDF update skipped as there are no new changes."
+
+      - name: Set up Git user
+        if: env.skip_update != 'true'
         run: |
-          LATEST_COMMIT_HASH=$(git rev-parse --short origin/main)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        if: env.skip_update != 'true'
+        run: |
           git add output/print/main.pdf
           git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
-          git push origin pdf-update --force
 
+      - name: Push changes to pdf-update branch
+        if: env.skip_update != 'true'
+        run: git push origin pdf-update --force
