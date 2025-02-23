@@ -75,10 +75,6 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-      - name: Ensure proper asset type in image references for web output
-        run: ./update-img-refs.py source/ --to-svg
-      - name: Build Web target with PreTeXt
-        run: make clean web
       - name: Build deploy targets
         run: pretext build --deploys
       - name: Stage deployment
