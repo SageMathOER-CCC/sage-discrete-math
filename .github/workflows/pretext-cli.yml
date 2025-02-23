@@ -10,29 +10,60 @@ on:
       - main
 
   schedule:
-    # run weekly on Monday at midnight
     - cron: "0 0 * * 1"
 
   # Runs on demand
   workflow_dispatch:
 
 jobs:
-  build:
+  # ----------------------------------------------------
+  install-dependencies:
     runs-on: ubuntu-latest
     container: oscarlevin/pretext:full
-
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: install deps
-        run: pip install -r requirements.txt
+      - name: Cache pip dependencies
+        id: cache-pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-      - name: build deploy targets
-        run: pretext build web --clean --generate --deploys --input=source/main.ptx
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pretext --version
 
-      - name: stage deployment
-        run: pretext deploy --stage-only
+    outputs:
+      container: oscarlevin/pretext:full
+
+  # ----------------------------------------------------
+  build-web:
+    runs-on: ubuntu-latest
+    needs: install-dependencies
+    container: oscarlevin/pretext:full
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Cache Web Build
+        id: cache-web
+        uses: actions/cache@v4
+        with:
+          path: output/stage
+          key: ${{ runner.os }}-web-${{ hashFiles('source/**') }}
+          restore-keys: |
+            ${{ runner.os }}-web-
+
+      - name: Build Web target with PreTeXt
+        run: pretext --verbosity=DEBUG build web --clean --generate --deploys --input=source/main.ptx
+
+      - name: Stage deployment
+        run: pretext --verbosity=DEBUG deploy --stage-only
 
       - name: Bundle output/stage as artifact
         uses: actions/upload-artifact@v4
@@ -40,8 +71,29 @@ jobs:
           name: deploy
           path: output/stage
 
+  # ----------------------------------------------------
+  build-pdf:
+    runs-on: ubuntu-latest
+    needs: install-dependencies
+    container: oscarlevin/pretext:full
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Cache PDF Build
+        id: cache-pdf
+        uses: actions/cache@v4
+        with:
+          path: output/print
+          key: ${{ runner.os }}-pdf-${{ hashFiles('source/**') }}
+          restore-keys: |
+            ${{ runner.os }}-pdf-
+
+      - name: Ensure proper asset type in image references for PDF output
+        run: ./update-img-refs.py source/ --to-pdf
+
       - name: Build PDF with PreTeXt
-        run: pretext build print --clean --generate --input=source/main.ptx
+        run: make clean pdf
 
       - name: Bundle output/print as PDF artifact
         uses: actions/upload-artifact@v4
@@ -49,39 +101,10 @@ jobs:
           name: pdf
           path: output/print
 
-  deploy-ghpages:
+  # ----------------------------------------------------
+  update-pdf:
     runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    concurrency:
-      group: "page"
-      cancel-in-progress: false
-    steps:
-      - name: Download website artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: deploy
-          path: deploy
-      - name: Setup GitHub Pages
-        id: check
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: deploy
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  refresh-pdf:
-    runs-on: ubuntu-latest
-    needs: build
+    needs: build-pdf
     permissions:
       contents: write
     steps:
@@ -92,7 +115,7 @@ jobs:
         run: |
           git fetch origin
           git checkout main
-          git reset --hard origin/main
+          git pull origin main
 
       - name: Download PDF artifact
         uses: actions/download-artifact@v4
@@ -100,18 +123,81 @@ jobs:
           name: pdf
           path: output/print
 
-      - name: Create or update release branch from main
-        run: git checkout -B pdf-release
+      - name: Create or update pdf-update branch
+        run: |
+          git fetch origin
+          if git show-ref --quiet refs/heads/pdf-update; then
+            git checkout pdf-update
+          else
+            git checkout -b pdf-update main
+          fi
 
       - name: Set up Git user
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit changes
+      - name: Check for existing tag
+        id: check_tag
+        run: |
+          LATEST_COMMIT_HASH=$(git rev-parse --short main)
+          if git rev-parse "pdf-v${LATEST_COMMIT_HASH}" >/dev/null 2>&1; then
+            echo "Tag pdf-v${LATEST_COMMIT_HASH} already exists."
+            echo "skip_update=true" >> $GITHUB_ENV
+          fi
+
+      - name: Check if PDF has changed
+        id: check_diff
         run: |
           git add output/print/main.pdf
-          git commit -m "Update PDF document" || echo "No changes to commit"
+          if git diff --cached --quiet; then
+            echo "No changes in the PDF."
+            echo "skip_update=true" >> $GITHUB_ENV
+          fi
 
-      - name: Force push to release branch
-        run: git push origin pdf-release --force
+      - name: Skip update if no changes
+        if: env.skip_update == 'true'
+        run: echo "Skipping PDF update as there are no changes."
+
+      - name: Commit changes and tag
+        if: env.skip_update != 'true'
+        run: |
+          LATEST_COMMIT_HASH=$(git rev-parse --short HEAD)
+          git add output/print/main.pdf
+          git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
+          git tag "pdf-v${LATEST_COMMIT_HASH}"
+          git push origin pdf-update
+          git push origin --tags
+
+  # ----------------------------------------------------
+  deploy-ghpages:
+    runs-on: ubuntu-latest
+    needs: [build-web, update-pdf] # Ensures web deploy runs even if PDF update is skipped
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: "page"
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download website artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy
+          path: deploy
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deploy
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
