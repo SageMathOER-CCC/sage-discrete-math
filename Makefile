@@ -22,11 +22,11 @@ all: pdf web view
 
 # Build the web version of the project
 web:
-	pretext --verbosity=$(VERBOSITY) build web --clean --generate
+	pretext --verbosity=$(VERBOSITY) build web --clean --generate --input=$(SOURCE_FILE)
 
 # Generate the PDF version of the project
 pdf:
-	pretext --verbosity=$(VERBOSITY) build print --clean --generate
+	pretext --verbosity=$(VERBOSITY) build print --clean --generate --input=$(SOURCE_FILE)
 
 # View the project in a web browser
 view:
