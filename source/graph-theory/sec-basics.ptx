@@ -296,8 +296,8 @@
         </p>
         <sage>
         <input>
-             G.add_vertices([10, 11, 12])
-             G.show()
+            G.add_vertices([10, 11, 12])
+            G.show()
         </input>
         </sage>
         <idx><h>graphs</h><h>remove vertex</h></idx>

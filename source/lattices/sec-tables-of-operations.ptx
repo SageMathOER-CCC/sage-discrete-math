@@ -1,19 +1,22 @@
 <section xml:id="sec-tables-of-operations">
     <title>Tables of Operations</title>
     <introduction>
-        <p>
-            This section examines the representation of meet <m>(∧)</m> and join <m>(∨)</m> operations within lattices using operation tables.
-        </p>
+        <p> This section examines the representation of meet <m>(∧)</m> and join <m>(∨)</m>
+            operations within lattices using operation tables. </p>
     </introduction>
 
     <subsection xml:id="meet-operation-table">
-        <title>Meet Operation Table</title><idx><h>meet matrix</h></idx>
+        <title>Meet Operation Table</title>
+        <idx>
+            <h>meet matrix</h>
+        </idx>
         <p>
-            The meet operation table illustrates the greatest lower bound, or meet, for every pair of elements in the lattice.
+            The meet operation table illustrates the greatest lower bound, or meet, for every pair
+            of elements in the lattice.
         </p>
-        <p>
-            To output the table as a matrix, we need to specify that the poset is indeed a lattice, thus requiring us to use the function <c>LatticePoset()</c>. Then, we can use the function <c>meet_matrix()</c> to process the table.
-        </p>
+        <p> To output the table as a matrix, we need to specify that the poset is indeed a lattice,
+            thus requiring us to use the function <c>LatticePoset()</c>. Then, we can use the
+            function <c>meet_matrix()</c> to process the table. </p>
         <sage>
             <input>
                 elements = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
@@ -28,9 +31,9 @@
                 show(M)
             </input>
         </sage>
-        <p>
-            From the output matrix, we can see that each entry <m>a_{ij}</m> is not the actual value of the meet of the elements <m>a_{i}</m> and <m>a_{j}</m> but just its position in the lattice. Let's show the values:
-        </p>
+        <p> From the output matrix, we can see that each entry <m>a_{ij}</m> is not the actual value
+            of the meet of the elements <m>a_{i}</m> and <m>a_{j}</m> but just its position in the
+            lattice. Let's show the values: </p>
         <sage>
             <input>
                 linear_extension = L.linear_extension()
@@ -45,8 +48,6 @@
 
                 values_meet_matrix
             </input>
-            <output>
-            </output>
         </sage>
         <p>
             Show the output as a table:
@@ -68,9 +69,13 @@
     </subsection>
 
     <subsection xml:id="join-operation-table">
-        <title>Join Operation Table</title><idx><h>join matrix</h></idx>
+        <title>Join Operation Table</title>
+        <idx>
+            <h>join matrix</h>
+        </idx>
         <p>
-            Conversely, the join operation table presents the least upper bound, or join, for each pair of lattice elements.
+            Conversely, the join operation table presents the least upper bound, or join, for each
+            pair of lattice elements.
         </p>
         <sage>
             <input>
