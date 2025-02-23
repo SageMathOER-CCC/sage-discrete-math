@@ -133,16 +133,24 @@ jobs:
       - name: Create or update pdf-update branch
         run: git checkout -B pdf-update
 
-      - name: Check if PDF has changed
-        id: check_diff
+      - name: Get last PDF tag
+        id: last_pdf_tag
         run: |
-          # Get last commit message on pdf-update (if exists)
-          LAST_PDF_COMMIT_MSG=$(git log -1 --pretty=%s pdf-update 2>/dev/null || echo "")
+          LAST_PDF_TAG=$(git tag --list 'pdf-v*' --sort=-v:refname | head -n 1)
 
-          # Check if last commit already contains the latest main commit hash
-          if echo "$LAST_PDF_COMMIT_MSG" | grep -q "$LATEST_COMMIT_HASH"; then
-            echo "No new changes in the PDF. Skipping update."
-            echo "skip_update=true" >> $GITHUB_ENV
+          if [ -z "$LAST_PDF_TAG" ]; then
+            echo "No existing PDF version tag found. Assuming new updates."
+            echo "skip_update=false" >> $GITHUB_ENV
+          else
+            LAST_PDF_HASH=${LAST_PDF_TAG#pdf-v}
+            echo "Last PDF tag found: $LAST_PDF_TAG (Commit: $LAST_PDF_HASH)"
+            if [ "$LAST_PDF_HASH" = "$LATEST_COMMIT_HASH" ]; then
+              echo "PDF is already up to date. Skipping update."
+              echo "skip_update=true" >> $GITHUB_ENV
+            else
+              echo "PDF needs an update."
+              echo "skip_update=false" >> $GITHUB_ENV
+            fi
           fi
 
       - name: Skip update if no changes
@@ -161,6 +169,15 @@ jobs:
           git add output/print/main.pdf
           git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
 
-      - name: Push changes to pdf-update branch
+      - name: Tag new PDF version
         if: env.skip_update != 'true'
-        run: git push origin pdf-update --force
+        run: |
+          NEW_PDF_TAG="pdf-v${LATEST_COMMIT_HASH}"
+          git tag $NEW_PDF_TAG
+          echo "Created new tag: $NEW_PDF_TAG"
+
+      - name: Push changes and new PDF tag to pdf-update branch
+        if: env.skip_update != 'true'
+        run: |
+          git push origin pdf-update --force
+          git push origin --tags
