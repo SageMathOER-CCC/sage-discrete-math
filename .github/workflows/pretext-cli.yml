@@ -103,14 +103,15 @@ jobs:
           echo "Latest commit on main: $LATEST_MAIN_HASH"
           echo "LATEST_MAIN_HASH=$LATEST_MAIN_HASH" >> $GITHUB_ENV
 
-      - name: Checkout to pdf-update branch and get hash from last commit message
+      - name: Checkout to pdf-release branch and get hash from last commit message
         run: |
-          git checkout -B pdf-update
+          # Checkout the pdf-release branch without syncing to main or current branch.
+          git fetch origin pdf-release || git checkout --orphan pdf-release
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
-          echo "Last commit message on pdf-update: $LAST_COMMIT_MSG"
-          LAST_MAIN_HASH=$(echo "$LAST_COMMIT_MSG" | grep -oE '[0-9a-f]{7}')
-          echo "Extracted commit hash from last pdf-update commit: $LAST_MAIN_HASH"
-          echo "LAST_MAIN_HASH=$LAST_MAIN_HASH" >> $GITHUB_ENV
+          echo "Last commit message on pdf-release: $LAST_COMMIT_MSG"
+          LAST_MAIN_HASH_COMMIT=$(echo "$LAST_COMMIT_MSG" | grep -oE "Update PDF for ([0-9a-f]{7})" | awk '{print $4}')
+          echo "Extracted commit hash from last pdf-release commit: $LAST_MAIN_HASH_COMMIT"
+          echo "LAST_MAIN_HASH=$LAST_MAIN_HASH_COMMIT" >> $GITHUB_ENV
 
       - name: Determine if PDF update is needed
         run: |
@@ -120,7 +121,6 @@ jobs:
           else
             echo "PDF needs an update."
             echo "skip_update=false" >> $GITHUB_ENV
-          fi
 
       - name: Skip update if no changes
         if: env.skip_update == 'true'
@@ -144,4 +144,4 @@ jobs:
         run: |
           git add output/print/main.pdf
           git commit -m "Update PDF for ${LATEST_MAIN_HASH}"
-          git push origin pdf-update --force
+          git push origin pdf-release --force
