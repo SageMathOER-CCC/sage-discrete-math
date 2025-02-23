@@ -1,183 +1,113 @@
 name: PreTeXt-CLI Actions
-
 on:
-  # Runs on pull requests
-  pull_request:
-    branches: ["*"]
-
-  # Runs on pushes to main
-  push:
-    branches: ["main"]
-
-  schedule:
-    # Run weekly on Monday at midnight
-    - cron: "0 0 * * 1"
-
-  # Runs on demand (allows triggering PDF build/update manually)
-  workflow_dispatch:
-    inputs:
-      trigger_pdf:
-        description: "Trigger PDF Build and Update"
-        required: false
-        default: "false"
+    # Runs on pull requests
+    pull_request:
+        branches: ["*"]
+    # Runs on pushes to main
+    push:
+        branches: ["main"]
+    # Runs on demand
+    workflow_dispatch:
 
 jobs:
-  install-dependencies:
-    runs-on: ubuntu-latest
-    container: oscarlevin/pretext:full
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pretext --version
-    outputs:
-      container: oscarlevin/pretext:full
+    build:
+        runs-on: ubuntu-latest
+        container: oscarlevin/pretext:full
 
-  build-pdf:
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_pdf == 'true'  # Only run manually
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    container: oscarlevin/pretext:full
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-      - name: Ensure proper asset type in image references for PDF output
-        run: ./update-img-refs.py source/ --to-pdf
-      - name: Build PDF with PreTeXt
-        run: make clean pdf
-      - name: Bundle output/print as PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdf
-          path: output/print
-      - name: Create or update pdf-release branch from main
-        run: |
-          git fetch origin
-          if git show-ref --quiet refs/heads/pdf-release; then
-            git checkout pdf-release
-          else
-            git checkout -b pdf-release main
-          fi
-      - name: Commit changes (if any) to pdf-release
-        run: |
-          git add output/print/discrete-math-with-sage.pdf
-          git commit -m "Update PDF" || echo "No changes to commit"
-      - name: Push changes to pdf-release branch
-        run: |
-          git push origin pdf-release
+        steps:
+            - name: Checkout source
+              uses: actions/checkout@v4
 
-  build-web:
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    container: oscarlevin/pretext:full
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-      - name: Build deploy targets
-        run: pretext build --deploys
-      - name: Stage deployment
-        run: pretext deploy --stage-only
-      - name: Bundle output/stage as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: deploy
-          path: output/stage
+            - name: install deps
+              run: pip install -r requirements.txt
 
-  deploy-ghpages:
-    runs-on: ubuntu-latest
-    needs: build-web
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    concurrency:
-      group: "page"
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Download website artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: deploy
-          path: deploy
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: deploy
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+            - name: build deploy targets
+              run: pretext build --deploys
 
-  update-pdf:
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_pdf == 'true'  # Only run manually
-    runs-on: ubuntu-latest
-    needs: build-pdf
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-      - name: Fetch and switch to main branch
-        run: |
-          git fetch origin
-          git checkout main
-          git pull origin main
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pdf
-          path: output/print
-      - name: Set up Git user
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global --add safe.directory /__w/sage-discrete-math/sage-discrete-math
-      - name: Create or update pdf-release branch from main
-        run: |
-          git fetch origin
-          if git show-ref --quiet refs/heads/pdf-release; then
-            git checkout pdf-release
-          else
-            git checkout -b pdf-release main
-          fi
-      - name: Check for existing tag
-        id: check_tag
-        run: |
-          LATEST_COMMIT_HASH=$(git rev-parse --short main)
-          if git rev-parse "pdf-v${LATEST_COMMIT_HASH}" >/dev/null 2>&1; then
-            echo "Tag pdf-v${LATEST_COMMIT_HASH} already exists."
-            echo "skip_update=true" >> $GITHUB_ENV
-          fi
-      - name: Check if PDF has changed
-        id: check_diff
-        run: |
-          git add output/print/discrete-math-with-sage.pdf
-          if git diff --cached --quiet; then
-            echo "No changes in the PDF."
-            echo "skip_update=true" >> $GITHUB_ENV
-          fi
-      - name: Skip update if no changes
-        if: env.skip_update == 'true'
-        run: echo "Skipping PDF update as there are no changes."
-      - name: Create a new tag for the artifact
-        if: env.skip_update != 'true'
-        run: |
-          LATEST_COMMIT_HASH=$(git rev-parse --short HEAD)
-          git tag "pdf-v${LATEST_COMMIT_HASH}"
-      - name: Commit changes with commit hash/tag
-        if: env.skip_update != 'true'
-        run: |
-          LATEST_COMMIT_HASH=$(git rev-parse --short HEAD)
-          git add output/print/discrete-math-with-sage.pdf
-          git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
-      - name: Push changes and tag to pdf-release branch
-        if: env.skip_update != 'true'
-        run: |
-          git push origin pdf-release
-          git push origin --tags
+            - name: stage deployment
+              run: pretext deploy --stage-only
+
+            - name: Bundle output/stage as artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: deploy
+                  path: output/stage
+
+            - name: Build PDF with PreTeXt
+              run: pretext build print
+
+            - name: Bundle output/print as PDF artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: pdf
+                  path: output/print
+
+    deploy-ghpages:
+        runs-on: ubuntu-latest
+        needs: build
+        if: vars.PTX_ENABLE_DEPLOY_GHPAGES == 'yes' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
+        concurrency:
+            group: "page"
+            cancel-in-progress: false
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Download website artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: deploy
+                  path: deploy
+            - name: Setup GitHub Pages
+              id: check
+              uses: actions/configure-pages@v4
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: deploy
+            - name: Deploy to Github Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+
+    update-pdf:
+        runs-on: ubuntu-latest
+        needs: build
+        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        permissions:
+            contents: write
+
+        steps:
+            - name: Checkout source
+              uses: actions/checkout@v4
+
+            - name: Fetch and switch to main branch
+              run: |
+                  git fetch origin
+                  git checkout main
+                  git reset --hard origin/main
+
+            - name: Download PDF artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: pdf
+                  path: output/print
+
+            - name: Create or update pdf-update branch from main
+              run: git checkout -B pdf-update
+
+            - name: Set up Git user
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            - name: Commit changes
+              run: |
+                  git add output/print/main.pdf
+                  git commit -m "Update PDF" || echo "No changes to commit"
+
+            - name: Force push to pdf-update branch
+              run: git push origin pdf-update --force
