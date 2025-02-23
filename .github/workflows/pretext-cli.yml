@@ -104,7 +104,7 @@ jobs:
 
             - name: Commit changes
               run: |
-                  git add output/print/main.pdf
+                  git add output/print/discrete-math-with-sage.pdf
                   git commit -m "Update PDF" || echo "No changes to commit"
 
             - name: Force push to pdf-update branch
