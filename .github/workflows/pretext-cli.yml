@@ -1,4 +1,5 @@
 name: PreTeXt-CLI Actions
+
 on:
   # Runs on pull requests
   pull_request:
@@ -12,8 +13,13 @@ on:
     # Run weekly on Monday at midnight
     - cron: "0 0 * * 1"
 
-  # Runs on demand
+  # Runs on demand (allows triggering PDF build/update manually)
   workflow_dispatch:
+    inputs:
+      trigger_pdf:
+        description: "Trigger PDF Build and Update"
+        required: false
+        default: "false"
 
 jobs:
   install-dependencies:
@@ -30,6 +36,7 @@ jobs:
       container: oscarlevin/pretext:full
 
   build-pdf:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_pdf == 'true'  # Only run manually
     runs-on: ubuntu-latest
     needs: install-dependencies
     container: oscarlevin/pretext:full
@@ -112,6 +119,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   update-pdf:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_pdf == 'true'  # Only run manually
     runs-on: ubuntu-latest
     needs: build-pdf
     permissions:
