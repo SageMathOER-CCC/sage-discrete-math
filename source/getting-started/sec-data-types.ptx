@@ -11,9 +11,9 @@
     </p>
 
     <p>
+        <idx><h>data types</h><h>integer</h></idx>
         Let's ask Sage what type of object this is.
     </p>
-    <idx><h>data types</h><h>integer</h></idx>
     <sage>
     <input>
         n = 2
@@ -26,8 +26,8 @@
         The <c>type()</c> function reveals that <c>2</c> is an instance of the <term>Integer</term> class.
         Sage includes numerous classes for different types of mathematical objects.
     </p>
-    <idx><h>data types</h><h>symbolic</h></idx>
     <p>
+        <idx><h>data types</h><h>symbolic</h></idx>
         In the following example, Sage does not evaluate an approximation of <c>sqrt(2) * log(3)</c>.
         Sage will retain the <term>symbolic</term> value.
     </p>
@@ -38,8 +38,8 @@
         type(sym)
     </input>
     </sage>
-    <idx><h>data types</h><h>string</h></idx>
     <p>
+        <idx><h>data types</h><h>string</h></idx>
         <term>String</term>: a <c>str</c> is a sequence of characters used for text. You can use single or double quotes.
     </p>
     <sage>
@@ -49,8 +49,8 @@
         print(type(greeting))
     </input>
     </sage>
-    <idx><h>data types</h><h>boolean</h></idx>
     <p>
+        <idx><h>data types</h><h>boolean</h></idx>
         <term>Boolean</term>: The type <c>bool</c> can be one of two values, <c>True</c> or <c>False</c>.
     </p>
     <sage>
@@ -60,8 +60,8 @@
         print(f"{b} is {type(b)}")
     </input>
     </sage>
-    <idx><h>data types</h><h>list</h></idx>
     <p>
+        <idx><h>data types</h><h>list</h></idx>
         <term>List</term>: A mutable collection of items within a pair of square brackets <c>[]</c>. If an object is mutable, you can change its value after creating it.
     </p>
     <sage>
@@ -91,9 +91,9 @@
         len(l)
     </input>
     </sage>
-    <idx><h>data types</h><h>tuple</h></idx>
     <p>
-        <term>Tuple</term>: An immutable collection within a pair of parentheses <c>()</c>. If an object is immutable, you cannot change the value after creating it.
+        <idx><h>data types</h><h>tuple</h></idx>
+        <term>Tuple</term>: An immutable collection within a pair of parenthesis <c>()</c>. If an object is immutable, you cannot change the value after creating it.
     </p>
     <sage>
     <input>
@@ -102,8 +102,8 @@
         type(t)
     </input>
     </sage>
-    <idx><h>data types</h><h>set (Python)</h></idx>
     <p>
+        <idx><h>data types</h><h>set (Python)</h></idx>
         <term>set</term>: A collection of items within a pair of curly braces <c>{}</c>. <c>set()</c> with lowercase <c>s</c> is built into Python. The items in a set are unique and unordered. After printing the set, we see there are no duplicate values.
     </p>
     <sage>
@@ -134,8 +134,8 @@
         print(S)
     </input>
     </sage>
-    <idx><h>data types</h><h>dictionary</h></idx>
     <p>
+        <idx><h>data types</h><h>dictionary</h></idx>
         <term>Dictionary</term>: A collection of key-value pairs.
     </p>
     <sage>
