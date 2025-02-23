@@ -36,18 +36,80 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-
       - name: Ensure proper asset type in image references for PDF output
         run: ./update-img-refs.py source/ --to-pdf
-
       - name: Build PDF with PreTeXt
         run: make clean pdf
-
       - name: Bundle output/print as PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdf
           path: output/print
+      - name: Create or update pdf-release branch from main
+        run: |
+          git fetch origin
+          if git show-ref --quiet refs/heads/pdf-release; then
+            git checkout pdf-release
+          else
+            git checkout -b pdf-release main
+          fi
+      - name: Commit changes (if any) to pdf-release
+        run: |
+          git add output/print/discrete-math-with-sage.pdf
+          git commit -m "Update PDF" || echo "No changes to commit"
+      - name: Push changes to pdf-release branch
+        run: |
+          git push origin pdf-release
+
+  build-web:
+    runs-on: ubuntu-latest
+    needs: install-dependencies
+    container: oscarlevin/pretext:full
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Ensure proper asset type in image references for web output
+        run: ./update-img-refs.py source/ --to-svg
+      - name: Build Web target with PreTeXt
+        run: make clean web
+      - name: Build deploy targets
+        run: pretext build --deploys
+      - name: Stage deployment
+        run: pretext deploy --stage-only
+      - name: Bundle output/stage as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy
+          path: output/stage
+
+  deploy-ghpages:
+    runs-on: ubuntu-latest
+    needs: build-web
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: "page"
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download website artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy
+          path: deploy
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deploy
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
   update-pdf:
     runs-on: ubuntu-latest
@@ -114,58 +176,3 @@ jobs:
         run: |
           git push origin pdf-release
           git push origin --tags
-
-  build-web:
-    runs-on: ubuntu-latest
-    needs: update-pdf # Ensuring web build starts only after the PDF update
-    container: oscarlevin/pretext:full
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Ensure proper asset type in image references
-        run: ./update-img-refs.py source/ --to-svg
-
-      - name: Build Web target with PreTeXt
-        run: make clean web
-
-      - name: Build deploy targets
-        run: pretext build --deploys
-
-      - name: Stage deployment
-        run: pretext deploy --stage-only
-
-      - name: Bundle output/stage as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: deploy
-          path: output/stage
-
-  deploy-ghpages:
-    runs-on: ubuntu-latest
-    needs: build-web
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    concurrency:
-      group: "page"
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Download website artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: deploy
-          path: deploy
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: deploy
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
