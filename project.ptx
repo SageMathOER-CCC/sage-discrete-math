@@ -14,9 +14,6 @@
       name="print"
       format="pdf"
       latex-engine="xelatex"
-      output-dir="print"
-      deploy-dir="pdf"
-      output-filename="main.pdf"
     />
   </targets>
 </project>
