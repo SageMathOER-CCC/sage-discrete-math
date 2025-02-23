@@ -128,6 +128,7 @@ jobs:
           git fetch origin
           if git show-ref --quiet refs/heads/pdf-update; then
             git checkout pdf-update
+            git pull --rebase origin pdf-update
           else
             git checkout -b pdf-update main
           fi
@@ -166,13 +167,14 @@ jobs:
           git add output/print/main.pdf
           git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
           git tag "pdf-v${LATEST_COMMIT_HASH}"
-          git push origin pdf-update
+          git pull --rebase origin pdf-update
+          git push origin pdf-update --force
           git push origin --tags
 
   # ----------------------------------------------------
   deploy-ghpages:
     runs-on: ubuntu-latest
-    needs: [build-web, update-pdf] # Ensures web deploy runs even if PDF update is skipped
+    needs: build-web
     permissions:
       contents: read
       pages: write
