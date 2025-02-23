@@ -38,9 +38,6 @@ jobs:
           pip install -r requirements.txt
           pretext --version
 
-    outputs:
-      container: oscarlevin/pretext:full
-
   # ----------------------------------------------------
   build-web:
     runs-on: ubuntu-latest
@@ -117,21 +114,19 @@ jobs:
           git checkout main
           git pull origin main
 
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: pdf
-          path: output/print
-
       - name: Create or update pdf-update branch
         run: |
           git fetch origin
           if git show-ref --quiet refs/heads/pdf-update; then
             git checkout pdf-update
-            git pull --rebase origin pdf-update
           else
             git checkout -b pdf-update main
           fi
+
+      - name: Rebase pdf-update onto main (to get latest changes)
+        run: |
+          git fetch origin
+          git rebase origin/main
 
       - name: Set up Git user
         run: |
@@ -167,8 +162,7 @@ jobs:
           git add output/print/main.pdf
           git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
           git tag "pdf-v${LATEST_COMMIT_HASH}"
-          git pull --rebase origin pdf-update
-          git push origin pdf-update --force
+          git push origin pdf-update
           git push origin --tags
 
   # ----------------------------------------------------
@@ -203,3 +197,42 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Increment version/tag on main branch
+        if: github.ref == 'refs/heads/main' && env.skip_update != 'true'
+        run: |
+          # Fetch tags from the remote
+          git fetch --tags
+
+          # Get the latest tag, default to v0.0.0 if no tags exist
+          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
+          if [ -z "$LATEST_TAG" ]; then
+            LATEST_TAG="v0.0.0"
+          fi
+
+          # Parse the latest tag into major, minor, and patch
+          MAJOR=$(echo $LATEST_TAG | cut -d. -f1 | sed 's/v//')
+          MINOR=$(echo $LATEST_TAG | cut -d. -f2)
+          PATCH=$(echo $LATEST_TAG | cut -d. -f3)
+
+          # Increment patch version, or handle rollover logic
+          PATCH=$((PATCH + 1))
+          if [ $PATCH -gt 9 ]; then
+            PATCH=0
+            MINOR=$((MINOR + 1))
+            if [ $MINOR -gt 9 ]; then
+              MINOR=0
+              MAJOR=$((MAJOR + 1))
+              if [ $MAJOR -gt 9 ]; then
+                MAJOR=0
+              fi
+            fi
+          fi
+
+          # Construct the new tag
+          NEW_TAG="v$MAJOR.$MINOR.$PATCH"
+          echo "New version tag: $NEW_TAG"
+
+          # Create and push the new tag
+          git tag $NEW_TAG
+          git push origin $NEW_TAG
