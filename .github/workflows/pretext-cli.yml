@@ -39,7 +39,7 @@ jobs:
           pretext --version
 
   # ----------------------------------------------------
-  build-web:
+  build:
     runs-on: ubuntu-latest
     needs: install-dependencies
     container: oscarlevin/pretext:full
@@ -47,128 +47,36 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Cache Web Build
-        id: cache-web
-        uses: actions/cache@v4
-        with:
-          path: output/stage
-          key: ${{ runner.os }}-web-${{ hashFiles('source/**') }}
-          restore-keys: |
-            ${{ runner.os }}-web-
-
+      # Build Web artifact
       - name: Build Web target with PreTeXt
         run: pretext --verbosity=DEBUG build web --clean --generate --deploys --input=source/main.ptx
 
-      - name: Stage deployment
+      - name: Stage deployment (Web)
         run: pretext --verbosity=DEBUG deploy --stage-only
 
-      - name: Bundle output/stage as artifact
+      - name: Bundle Web output as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: deploy
+          name: web-deploy
           path: output/stage
 
-  # ----------------------------------------------------
-  build-pdf:
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    container: oscarlevin/pretext:full
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Cache PDF Build
-        id: cache-pdf
-        uses: actions/cache@v4
-        with:
-          path: output/print
-          key: ${{ runner.os }}-pdf-${{ hashFiles('source/**') }}
-          restore-keys: |
-            ${{ runner.os }}-pdf-
-
+      # Build PDF artifact
       - name: Ensure proper asset type in image references for PDF output
         run: ./update-img-refs.py source/ --to-pdf
 
       - name: Build PDF with PreTeXt
         run: make clean pdf
 
-      - name: Bundle output/print as PDF artifact
+      - name: Bundle PDF output as artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdf
           path: output/print
 
   # ----------------------------------------------------
-  update-pdf:
-    runs-on: ubuntu-latest
-    needs: build-pdf
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Fetch and switch to main branch
-        run: |
-          git fetch origin
-          git checkout main
-          git pull origin main
-
-      - name: Create or update pdf-update branch
-        run: |
-          git fetch origin
-          if git show-ref --quiet refs/heads/pdf-update; then
-            git checkout pdf-update
-          else
-            git checkout -b pdf-update main
-          fi
-
-      - name: Rebase pdf-update onto main (to get latest changes)
-        run: |
-          git fetch origin
-          git rebase origin/main
-
-      - name: Set up Git user
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Check for existing tag
-        id: check_tag
-        run: |
-          LATEST_COMMIT_HASH=$(git rev-parse --short main)
-          if git rev-parse "pdf-v${LATEST_COMMIT_HASH}" >/dev/null 2>&1; then
-            echo "Tag pdf-v${LATEST_COMMIT_HASH} already exists."
-            echo "skip_update=true" >> $GITHUB_ENV
-          fi
-
-      - name: Check if PDF has changed
-        id: check_diff
-        run: |
-          git add output/print/main.pdf
-          if git diff --cached --quiet; then
-            echo "No changes in the PDF."
-            echo "skip_update=true" >> $GITHUB_ENV
-          fi
-
-      - name: Skip update if no changes
-        if: env.skip_update == 'true'
-        run: echo "Skipping PDF update as there are no changes."
-
-      - name: Commit changes and tag
-        if: env.skip_update != 'true'
-        run: |
-          LATEST_COMMIT_HASH=$(git rev-parse --short HEAD)
-          git add output/print/main.pdf
-          git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
-          git tag "pdf-v${LATEST_COMMIT_HASH}"
-          git push origin pdf-update
-          git push origin --tags
-
-  # ----------------------------------------------------
   deploy-ghpages:
     runs-on: ubuntu-latest
-    needs: build-web
+    needs: build
     permissions:
       contents: read
       pages: write
@@ -180,16 +88,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download website artifact
+      - name: Download Web artifact
         uses: actions/download-artifact@v4
         with:
-          name: deploy
+          name: web-deploy
           path: deploy
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload Web artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: deploy
@@ -198,41 +106,38 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Increment version/tag on main branch
-        if: github.ref == 'refs/heads/main' && env.skip_update != 'true'
+  # ----------------------------------------------------
+  update-pdf:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Fetch and switch to current branch
         run: |
-          # Fetch tags from the remote
-          git fetch --tags
+          git fetch origin
+          git checkout ${{ github.ref }}
 
-          # Get the latest tag, default to v0.0.0 if no tags exist
-          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
-          if [ -z "$LATEST_TAG" ]; then
-            LATEST_TAG="v0.0.0"
+      - name: Create or update pdf-update branch
+        run: |
+          git fetch origin
+          if git show-ref --quiet refs/heads/pdf-update; then
+            git checkout pdf-update
+          else
+            git checkout -b pdf-update ${{ github.ref }}
           fi
 
-          # Parse the latest tag into major, minor, and patch
-          MAJOR=$(echo $LATEST_TAG | cut -d. -f1 | sed 's/v//')
-          MINOR=$(echo $LATEST_TAG | cut -d. -f2)
-          PATCH=$(echo $LATEST_TAG | cut -d. -f3)
+      - name: Rebase pdf-update onto current branch (to get latest changes)
+        run: |
+          git fetch origin
+          git rebase origin/${{ github.ref }}
 
-          # Increment patch version, or handle rollover logic
-          PATCH=$((PATCH + 1))
-          if [ $PATCH -gt 9 ]; then
-            PATCH=0
-            MINOR=$((MINOR + 1))
-            if [ $MINOR -gt 9 ]; then
-              MINOR=0
-              MAJOR=$((MAJOR + 1))
-              if [ $MAJOR -gt 9 ]; then
-                MAJOR=0
-              fi
-            fi
-          fi
+      - name: Commit changes and sync PDF update
+        run: |
+          git add output/print/main.pdf
+          git commit -m "Update PDF: ${LATEST_COMMIT_HASH}" || echo "No changes to commit"
+          git push origin pdf-update --force
 
-          # Construct the new tag
-          NEW_TAG="v$MAJOR.$MINOR.$PATCH"
-          echo "New version tag: $NEW_TAG"
-
-          # Create and push the new tag
-          git tag $NEW_TAG
-          git push origin $NEW_TAG
