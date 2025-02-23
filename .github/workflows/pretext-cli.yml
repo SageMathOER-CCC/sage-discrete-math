@@ -101,7 +101,7 @@ jobs:
           path: output/print
 
       - name: Create or update release branch from main
-        run: git checkout -B release
+        run: git checkout -B pdf-release
 
       - name: Set up Git user
         run: |
@@ -114,4 +114,4 @@ jobs:
           git commit -m "Update PDF document" || echo "No changes to commit"
 
       - name: Force push to release branch
-        run: git push origin release --force
+        run: git push origin pdf-release --force
