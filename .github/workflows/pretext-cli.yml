@@ -107,7 +107,7 @@ jobs:
         run: |
           # Checkout the pdf-release branch without syncing to main or current branch.
           git fetch origin pdf-release || git checkout --orphan pdf-release
-          LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+          LAST_COMMIT_MSG=$(git log -2 --pretty=%B)
           echo "Last commit message on pdf-release: $LAST_COMMIT_MSG"
           LAST_MAIN_HASH_COMMIT=$(echo "$LAST_COMMIT_MSG" | grep -oE "Update PDF for ([0-9a-f]{7})" | awk '{print $4}')
           echo "Extracted commit hash from last pdf-release commit: $LAST_MAIN_HASH_COMMIT"
@@ -146,6 +146,7 @@ jobs:
       - name: Commit updated PDF
         if: env.skip_update != 'true'
         run: |
+          git checkout pdf-release
           git add output/print/main.pdf
           git commit -m "Update PDF for ${LATEST_MAIN_HASH}"
           git push origin pdf-release --force
