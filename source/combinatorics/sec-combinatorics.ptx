@@ -48,6 +48,9 @@
             </input>
             <output></output>
         </sage>
+        <p>
+            Note that the function arranges the numbers from <m>0</m> to <m>n − 1</m> for its listing of combinations.
+        </p>
         <idx><h>binomial</h></idx>
         <p>
             The <c>binomial()</c> function provides an alternative method to compute the number of combinations.
@@ -89,6 +92,9 @@
             </input>
             <output></output>
         </sage>
+        <p>
+            Note that the function arranges the numbers from <m>1</m> to <m>n</m> for its listing of permutations.
+        </p>
         <p>
             When <m>n = k</m>, we can calculate permutations of <m>n</m> elements.
         </p>
