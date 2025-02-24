@@ -130,6 +130,12 @@ jobs:
         if: env.skip_update == 'true'
         run: echo "Skipping PDF update as there are no new changes."
 
+      - name: Checkout to pdf-release branch
+        if: env.skip_update != 'true'
+        run: |
+          git fetch origin
+          git checkout pdf-release
+
       - name: Download PDF artifact
         if: env.skip_update != 'true'
         uses: actions/download-artifact@v4
@@ -146,7 +152,6 @@ jobs:
       - name: Commit updated PDF
         if: env.skip_update != 'true'
         run: |
-          git checkout pdf-release
           git add output/print/main.pdf
           git commit -m "Update PDF for ${LATEST_MAIN_HASH}"
           git push origin pdf-release --force
