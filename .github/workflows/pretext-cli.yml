@@ -1,113 +1,127 @@
 name: PreTeXt-CLI Actions
 on:
-    # Runs on pull requests
-    pull_request:
-        branches: ["*"]
-    # Runs on pushes to main
-    push:
-        branches: ["main"]
-    # Runs on demand
-    workflow_dispatch:
+  # Runs on pull requests
+  pull_request:
+    branches: ["*"]
+
+  # Runs on pushes to main
+  push:
+    branches: ["main"]
+
+  # run weekly on Monday at midnight
+  schedule:
+    - cron: "0 0 * * 1"
+
+  # Runs on demand
+  workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        container: oscarlevin/pretext:full
+  # ----------------------------------------------------
+  build:
+    runs-on: ubuntu-latest
+    container: oscarlevin/pretext:full
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
 
-        steps:
-            - name: Checkout source
-              uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pretext --version
 
-            - name: install deps
-              run: pip install -r requirements.txt
+      # Build Web artifact
+      - name: Build and stage the Web target of the project
+        run: make clean deploy stage
 
-            - name: build deploy targets
-              run: pretext build --deploys
-              
-            - name: stage deployment
-              run: pretext deploy --stage-only
+      - name: Bundle Web output as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-deploy
+          path: output/stage
 
-            - name: Bundle output/stage as artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: deploy
-                  path: output/stage
+      # Build PDF artifact
+      - name: Ensure proper asset type in image references for PDF output
+        run: ./update-img-refs.py source/ --to-pdf
 
-            - name: Build PDF with PreTeXt
-              run: pretext build print
+      - name: Build PDF with PreTeXt
+        run: make clean pdf
 
-            - name: Bundle output/print as PDF artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: pdf
-                  path: output/print
+      - name: Bundle output/print as PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: output/print
 
-    deploy-ghpages:
-        runs-on: ubuntu-latest
-        needs: build
-        if: vars.PTX_ENABLE_DEPLOY_GHPAGES == 'yes' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-        permissions:
-            contents: read
-            pages: write
-            id-token: write
-        concurrency:
-            group: "page"
-            cancel-in-progress: false
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Download website artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: deploy
-                  path: deploy
-            - name: Setup GitHub Pages
-              id: check
-              uses: actions/configure-pages@v4
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: deploy
-            - name: Deploy to Github Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+  # ----------------------------------------------------
+  deploy-ghpages:
+    runs-on: ubuntu-latest
+    if: vars.PTX_ENABLE_DEPLOY_GHPAGES == 'yes' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: "page"
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download Web artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-deploy
+          path: deploy
 
-    update-pdf:
-        runs-on: ubuntu-latest
-        needs: build
-        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-        permissions:
-            contents: write
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
 
-        steps:
-            - name: Checkout source
-              uses: actions/checkout@v4
+      - name: Upload Web artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: deploy
 
-            - name: Fetch and switch to main branch
-              run: |
-                  git fetch origin
-                  git checkout main
-                  git reset --hard origin/main
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
-            - name: Download PDF artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: pdf
-                  path: output/print
+  # ----------------------------------------------------
+  update-pdf:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    permissions:
+      contents: write
 
-            - name: Create or update pdf-update branch from main
-              run: git checkout -B pdf-update
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
 
-            - name: Set up Git user
-              run: |
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Fetch and switch to main branch
+        run: |
+          git fetch origin
+          git checkout main
+          git reset origin/main --hard
 
-            - name: Commit changes
-              run: |
-                  git add output/print/main.pdf
-                  git commit -m "Update PDF" || echo "No changes to commit"
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pdf
+          path: output/print
 
-            - name: Force push to pdf-update branch
-              run: git push origin pdf-update --force
+      - name: Create or update pdf-update branch from main
+        run: git checkout -B pdf-update
+
+      - name: Set up Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add output/print/main.pdf
+          git commit -m "Update PDF" || echo "No changes to commit"
+
+      - name: Force push to pdf-update branch
+        run: git push origin pdf-update --force

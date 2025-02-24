@@ -24,7 +24,7 @@
                 it may not natively support more complex state machine features such as parallel
                 states or hierarchical transitions.</p>
         </aside>
-        </introduction>
+    </introduction>
 
     <subsection>
         <title>The Elevator State Machine</title>
@@ -37,231 +37,279 @@
             the destination floor (only one can be selected at a time). Depending on the current position and
             the selected floor, the elevator can go up, go down, or remain on the same floor.</p>
 
-            <subsection>
-                <title>Description of the Elevator FSM</title>
-                <p>
-                    This elevator system can be modeled and simulated using a finite-state machine with
-                    states <m>S=\{f_1, f_2, f_3\}</m> representing each floor, the user inputs set <m>X=\{b_1, b_2, b_3\}</m>
-                    (where <m>b_i</m> represents the button for <m>i^{th}</m> floor), and the outputs set <m>Z=\{U, D, N\}</m>
-                    for 'going up', 'going down', or 'going nowhere'.</p>
+        <subsection>
+            <title>Description of the Elevator FSM</title>
+            <p> This elevator system can be modeled and simulated using a finite-state machine with
+                states <m>S=\{f_1, f_2, f_3\}</m> representing each floor, the user inputs set <m>X=\{b_1, b_2, b_3\}</m> (where <m>b_i</m>
+                represents the button for <m>i^{th}</m> floor), and the outputs set <m>Z=\{U, D, N\}</m> for 'going up', 'going down', or 'going nowhere'.</p>
 
-                <p>
-                    The components of this FSM are transcribed in the following table.</p>
-                <p>
-                    <table>
-                        <title>The Elevator State Machine Definition</title>
-                            <tabular halign="center">
-                                <row header="yes" bottom="major">
-                                    <cell></cell>
+            <p>
+                The components of this FSM are transcribed in the following table.</p>
+            <p>
+                <table>
+                    <title>The Elevator State Machine Definition</title>
+                    <tabular halign="center">
+                        <row header="yes" bottom="major">
+                            <cell></cell>
 
-                                    <cell></cell>
-                                    <cell>next</cell>
-                                    <cell></cell>
+                            <cell>next</cell>
+                            <cell></cell>
+                            <cell></cell>
 
-                                    <cell></cell>
-                                    <cell>output</cell>
-                                    <cell></cell>
-                                </row>
-                                <row header="yes" bottom="minor">
-                                    <cell>current</cell>
+                            <cell>output</cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
 
-                                    <cell><m>b_1</m></cell>
-                                    <cell><m>b_2</m></cell>
-                                    <cell><m>b_3</m></cell>
+                        <row header="yes" bottom="minor">
+                            <cell>current</cell>
+                            <cell>
+                                <m>b_1</m>
+                            </cell>
+                            <cell>
+                                <m>b_2</m>
+                            </cell>
+                            <cell>
+                                <m>b_3</m>
+                            </cell>
 
-                                    <cell><m>b_1</m></cell>
-                                    <cell><m>b_2</m></cell>
-                                    <cell><m>b_3</m></cell>
-                                </row>
+                            <cell>
+                                <m>b_1</m>
+                            </cell>
+                            <cell>
+                                <m>b_2</m>
+                            </cell>
+                            <cell>
+                                <m>b_3</m>
+                            </cell>
+                        </row>
 
-                                <row>
-                                    <cell><m>f_1</m></cell>
+                        <row>
+                            <cell>
+                                <m>f_1</m>
+                            </cell>
 
-                                    <cell><m>f_1</m></cell>
-                                    <cell><m>f_2</m></cell>
-                                    <cell><m>f_3</m></cell>
+                            <cell>
+                                <m>f_1</m>
+                            </cell>
+                            <cell>
+                                <m>f_2</m>
+                            </cell>
+                            <cell>
+                                <m>f_3</m>
+                            </cell>
 
-                                    <cell><m>N</m></cell>
-                                    <cell><m>U</m></cell>
-                                    <cell><m>U</m></cell>
-                                </row>
+                            <cell>
+                                <m>N</m>
+                            </cell>
+                            <cell>
+                                <m>U</m>
+                            </cell>
+                            <cell>
+                                <m>U</m>
+                            </cell>
+                        </row>
 
-                                <row>
-                                    <cell><m>f_2</m></cell>
+                        <row>
+                            <cell>
+                                <m>f_2</m>
+                            </cell>
 
-                                    <cell><m>f_1</m></cell>
-                                    <cell><m>f_2</m></cell>
-                                    <cell><m>f_3</m></cell>
+                            <cell>
+                                <m>f_1</m>
+                            </cell>
+                            <cell>
+                                <m>f_2</m>
+                            </cell>
+                            <cell>
+                                <m>f_3</m>
+                            </cell>
 
-                                    <cell><m>D</m></cell>
-                                    <cell><m>N</m></cell>
-                                    <cell><m>U</m></cell>
-                                </row>
+                            <cell>
+                                <m>D</m>
+                            </cell>
+                            <cell>
+                                <m>N</m>
+                            </cell>
+                            <cell>
+                                <m>U</m>
+                            </cell>
+                        </row>
 
-                                <row>
-                                    <cell><m>f_3</m></cell>
+                        <row>
+                            <cell>
+                                <m>f_3</m>
+                            </cell>
 
-                                    <cell><m>f_1</m></cell>
-                                    <cell><m>f_2</m></cell>
-                                    <cell><m>f_3</m></cell>
+                            <cell>
+                                <m>f_1</m>
+                            </cell>
+                            <cell>
+                                <m>f_2</m>
+                            </cell>
+                            <cell>
+                                <m>f_3</m>
+                            </cell>
 
-                                    <cell><m>D</m></cell>
-                                    <cell><m>D</m></cell>
-                                    <cell><m>N</m></cell>
-                                </row>
-                            </tabular>
-                    </table>
-                </p>
+                            <cell>
+                                <m>D</m>
+                            </cell>
+                            <cell>
+                                <m>D</m>
+                            </cell>
+                            <cell>
+                                <m>N</m>
+                            </cell>
+                        </row>
+                    </tabular>
+                </table>
+            </p>
 
-                <p>
-                    The following steps outline the approach to build and test the elevator controller system:
-                    <ol>
-                        <li>
-                            <p>Define the elements of the Finite State Machine: States, Inputs, Transitions, and Outputs.</p>
-                        </li>
-                        <li>
-                            <p>Construct the State Machine.</p>
-                        </li>
-                        <li>
-                            <p>Run the machine using a sample input set.</p>
-                        </li>
-                    </ol>
-                </p>
-            </subsection>
-            <subsection>
-                <title>Elements of the Elevator FSM</title>
-                <p>
-                    The first step is to define the states and transitions in the state machine,
-                    which can be represented using lists and dictionaries.</p>
-                <sage>
-                    <input>
-                        # Define state, input and output sets
-                        states = ['f1', 'f2', 'f3']
-                        inputs = ['b1', 'b2', 'b3']
-                        outputs = ['U', 'D', 'N']
+            <p> The following steps outline the approach to build and test the elevator controller system:
+                <ol>
+                    <li>
+                        <p>Define the elements of the Finite State Machine: States, Inputs, Transitions, and Outputs.</p>
+                    </li>
+                    <li>
+                        <p>Construct the State Machine.</p>
+                    </li>
+                    <li>
+                        <p>Run the machine using a sample input set.</p>
+                    </li>
+                </ol>
+            </p>
+        </subsection>
+        <subsection>
+            <title>Elements of the Elevator FSM</title>
+            <p>
+                The first step is to define the states and transitions in the state machine,
+                which can be represented using lists and dictionaries.</p>
+            <sage>
+                <input>
+                    # Define state, input and output sets
+                    states = ['f1', 'f2', 'f3']
+                    inputs = ['b1', 'b2', 'b3']
+                    outputs = ['U', 'D', 'N']
 
-                        # Transitions as a dictionary {(current_state, input): next_state}
-                        transitions = {
-                            ('f1', 'b1'): 'f1',
-                            ('f1', 'b2'): 'f2',
-                            ('f1', 'b3'): 'f3',
+                    # Transitions as a dictionary {(current_state, input): next_state}
+                    transitions = {
+                        ('f1', 'b1'): 'f1',
+                        ('f1', 'b2'): 'f2',
+                        ('f1', 'b3'): 'f3',
 
-                            ('f2', 'b1'): 'f1',
-                            ('f2', 'b2'): 'f2',
-                            ('f2', 'b3'): 'f3',
+                        ('f2', 'b1'): 'f1',
+                        ('f2', 'b2'): 'f2',
+                        ('f2', 'b3'): 'f3',
 
-                            ('f3', 'b1'): 'f1',
-                            ('f3', 'b2'): 'f2',
-                            ('f3', 'b3'): 'f3',
-                        }
+                        ('f3', 'b1'): 'f1',
+                        ('f3', 'b2'): 'f2',
+                        ('f3', 'b3'): 'f3',
+                    }
 
-                        # The machine outputs control how the elevator would move
-                        outputs = {
-                            ('f1', 'b1'): 'N',
-                            ('f1', 'b2'): 'U',
-                            ('f1', 'b3'): 'U',
+                    # The machine outputs control how the elevator would move
+                    outputs = {
+                        ('f1', 'b1'): 'N',
+                        ('f1', 'b2'): 'U',
+                        ('f1', 'b3'): 'U',
 
-                            ('f2', 'b1'): 'D',
-                            ('f2', 'b2'): 'N',
-                            ('f2', 'b3'): 'U',
+                        ('f2', 'b1'): 'D',
+                        ('f2', 'b2'): 'N',
+                        ('f2', 'b3'): 'U',
 
-                            ('f3', 'b1'): 'D',
-                            ('f3', 'b2'): 'D',
-                            ('f3', 'b3'): 'N',
-                        }
+                        ('f3', 'b1'): 'D',
+                        ('f3', 'b2'): 'D',
+                        ('f3', 'b3'): 'N',
+                    }
 
-                        # Display the machine configuration
-                        print('States: ', states)
-                        print('Transitions: ', transitions)
-                        print('Outputs: ', outputs)
-                    </input>
-                    <output></output>
-                </sage>
-            </subsection>
-            <subsection>
-                <title>Graph Model of the Elevator FSM</title>
-                <p>
-                    An FSM can be modeled as a graph where vertices represent the states, and the directed
-                    edge between vertices is the relationship between two states (the transition from one
-                    state to the other). The weight of a directed edge between two vertices represents the
-                    pair of input and output associated with the transition between the two states.</p>
+                    # Display the machine configuration
+                    print('States: ', states)
+                    print('Transitions: ', transitions)
+                    print('Outputs: ', outputs)
+                </input>
+            </sage>
+        </subsection>
+        <subsection>
+            <title>Graph Model of the Elevator FSM</title>
+            <p>
+                An FSM can be modeled as a graph where vertices represent the states, and the directed
+                edge between vertices is the relationship between two states (the transition from
+                one state to the other). The weight of a directed edge between two vertices represents
+                the pair of input and output associated with the transition between the two states.</p>
 
-                <p> In Sage, the <c>DiGraph</c> class can be used to represent the states, transitions, and
-                    outputs of the state machine as a directed graph, leveraging the graph structure to
-                    visualize the state machine representation.</p>
-                <sage>
-                    <input>
-                        # 'DiGraph' is imported by default. If not, it can be imported as follow
-                        # from sage.graphs.digraph import DiGraph
+            <p> In Sage, the <c>DiGraph</c> class can be used to represent the states, transitions,
+                and outputs of the state machine as a directed graph, leveraging the graph structure
+                to visualize the state machine representation.</p>
+            <sage>
+                <input>
+                    # 'DiGraph' is imported by default. If not, it can be imported as follow
+                    # from sage.graphs.digraph import DiGraph
 
-                        # Initialize a directed graph
-                        elevator_fsm = DiGraph(loops=True)
+                    # Initialize a directed graph
+                    elevator_fsm = DiGraph(loops=True)
 
-                        # Add states as vertices
-                        elevator_fsm.add_vertices(states)
+                    # Add states as vertices
+                    elevator_fsm.add_vertices(states)
 
-                        # Add transitions and outputs as edges
-                        for (_state, _input), next_state in transitions.items():
-                            _output = outputs[(_state, _input)]
-                            edge_label = f"{_input}, {_output}"
-                            elevator_fsm.add_edge(_state, next_state, label=edge_label)
+                    # Add transitions and outputs as edges
+                    for (_state, _input), next_state in transitions.items():
+                        _output = outputs[(_state, _input)]
+                        edge_label = f"{_input}, {_output}"
+                        elevator_fsm.add_edge(_state, next_state, label=edge_label)
 
-                        # Display the graph (state machine)
-                        elevator_fsm.show(
-                                figsize=[5.6, 5.6],
-                                layout='circular',
-                                vertex_size=250,
-                                edge_labels=True,
-                                vertex_labels=True,
-                                edge_color=(.2,.4,1),
-                                edge_thickness=1.0,
-                        )
-                    </input>
-                    <output></output>
-                </sage>
-                <p> The <c>show()</c> method renders a graphical representation of the state machine.
-                    Each vertex in the graph represents a state, and each directed edge represents a
-                    transition, labeled as (input, output).</p>
-            </subsection>
-            <subsection>
-                <title>Run the Elevator State Machine</title>
-                <p>
-                    Next, the state machine's behavior can be simulated by defining a function that
-                    processes a list of inputs and transitions through the states accordingly.</p>
-                <sage>
-                    <input>
-                        # Function to run the state machine
-                        def run_state_machine(start_state, inputs):
-                            current_state = start_state
-                            for _input in inputs:
-                                print(f"Current state: {current_state}, Input: {_input}")
+                    # Display the graph (state machine)
+                    elevator_fsm.show(
+                        figsize=[5.6, 5.6],
+                        layout='circular',
+                        vertex_size=250,
+                        edge_labels=True,
+                        vertex_labels=True,
+                        edge_color=(.2,.4,1),
+                        edge_thickness=1.0,
+                    )
+                </input>
+            </sage>
+            <p> The <c>show()</c> method renders a graphical representation of the state machine.
+                Each vertex in the graph represents a state, and each directed edge represents a
+                transition, labeled as (input, output).</p>
+        </subsection>
+        <subsection>
+            <title>Run the Elevator State Machine</title>
+            <p>
+                Next, the state machine's behavior can be simulated by defining a function that
+                processes a list of inputs and transitions through the states accordingly.</p>
+            <sage>
+                <input>
+                    # Function to run the state machine
+                    def run_state_machine(start_state, inputs):
+                        current_state = start_state
+                        for _input in inputs:
+                            print(f"Current state: {current_state}, Input: {_input}")
 
-                                if (current_state, _input) in transitions:
-                                    current_output = outputs[(current_state, _input)]
-                                    current_state = transitions[(current_state, _input)]
-                                    print(
-                                        f"Transitioned to: {current_state}\n"
-                                        f"Output: {current_output}\n"
-                                    )
-                                else:
-                                    print(
-                                        f"No transition/output available for input {_input} in state {current_state}"
-                                    )
-                                    break
+                            if (current_state, _input) in transitions:
+                                current_output = outputs[(current_state, _input)]
+                                current_state = transitions[(current_state, _input)]
+                                print(
+                                    f"Transitioned to: {current_state}\n"
+                                    f"Output: {current_output}\n"
+                                )
+                            else:
+                                print(
+                                    f"No transition/output available for input {_input} in state {current_state}"
+                                )
+                                break
 
-                            print(f"Last state: {current_state}")
+                        print(f"Last state: {current_state}")
 
-                        # Example of running the state machine
-                        start_state = 'f2'
-                        inputs = ['b1', 'b1', 'b3', 'b2']
+                    # Example of running the state machine
+                    start_state = 'f2'
+                    inputs = ['b1', 'b1', 'b3', 'b2']
 
-                        run_state_machine(start_state, inputs)
-                    </input>
-                    <output></output>
-                </sage>
-                <p> The <c>run_state_machine()</c> function simulates the state machine by processing a list
-                    of inputs starting from an initial state.</p>
-            </subsection>
+                    run_state_machine(start_state, inputs)
+                </input>
+            </sage>
+            <p> The <c>run_state_machine()</c> function simulates the state machine by processing a
+                list of inputs starting from an initial state.</p>
+        </subsection>
     </subsection>
 
     <subsection>
@@ -270,38 +318,41 @@
             Let's design a simple traffic light controller to illustrate alternative methods
             for defining, visualizing, and executing finite state machines in Sage.
         </p>
-        <p>
-            Consider a simplified traffic light system controlled by preset timers. This system
+        <p> Consider a simplified traffic light system controlled by preset timers. This system
             operates through three phases that represent the flow of road traffic: Free-flowing,
             Slowing-down, and Halted. These phases correspond to the traffic light signals: green,
             yellow, and red, controlling the flow of traffic. The system uses three timer settings:
-            30 seconds, 20 seconds, and 5 seconds. When a timer expires, it triggers the transition
-            to the next phase. Initially, the light is green, the traffic is flowing, and:
+            <m>30</m> seconds, <m>20</m> seconds, and <m>5</m> seconds. When a timer expires, it triggers
+            the transition to the next phase. Initially, the light is green, the traffic is flowing, and:
             <ul>
                 <li>
                     <p>
-                        When the 30-second timer expires, the traffic light changes from green to yellow, and traffic begins to slow down.
+                        When the <m>30</m>-seconds timer expires, the traffic light changes from green to
+                        yellow, and traffic begins to slow down.
                     </p>
                 </li>
                 <li>
                     <p>
-                        When the 5-second timer expires, the traffic light changes from yellow to red, bringing traffic to a complete stop.
+                        When the <m>5</m>-seconds timer expires, the traffic light changes from yellow to
+                        red, bringing traffic to a complete stop.
                     </p>
                 </li>
                 <li>
                     <p>
-                        When the 20-second timer expires, the traffic light changes from red to green, allowing traffic to start moving again.
+                        When the <m>20</m>-seconds timer expires, the traffic light changes from red to
+                        green, allowing traffic to start moving again.
                     </p>
                 </li>
             </ul>
         </p>
         <subsection>
             <title>Description of the Traffic Light FSM</title>
-            <p>
-                In this traffic light system, the three phases representing the flow of road traffic: <em>Free-flowing (F)</em>, <em>Slowing-down (S)</em>,
-                and <em>Halted (H)</em> are the states <m>S=\{F, S, H\}</m> of the FSM. These phases correspond to the traffic light signals: green (G),
-                yellow (Y), and red (R), which are the outputs set <m>Z=\{G, Y, R\}</m> of the system. The timers driving the transitions are the inputs
-                set <m>X=\{t_{5s}, t_{20s}, t_{30s}\}</m> of this traffic light system.</p>
+            <p> In this traffic light system, the three phases representing the flow of road
+                traffic: <em>Free-flowing (F)</em>, <em>Slowing-down (S)</em>, and <em>Halted (H)</em>
+                are the states <m>S=\{F, S, H\}</m> of the FSM. These phases correspond to the
+                traffic light signals: green (G), yellow (Y), and red (R), which are the outputs set
+                <m>Z=\{G, Y, R\}</m> of the system. The timers driving the transitions are the inputs set
+                <m>X=\{t_{5s}, t_{20s}, t_{30s}\}</m> of this traffic light system.</p>
             <p>
                 The following table summarize the elements of the traffic light FSM.</p>
             <p>
@@ -311,60 +362,114 @@
                         <row header="yes" bottom="major">
                             <cell></cell>
 
-                            <cell></cell>
                             <cell>next</cell>
                             <cell></cell>
-
                             <cell></cell>
+
                             <cell>output</cell>
+                            <cell></cell>
                             <cell></cell>
                         </row>
                         <row header="yes" bottom="minor">
                             <cell>current</cell>
 
-                            <cell><m>t_{5s}</m></cell>
-                            <cell><m>t_{20s}</m></cell>
-                            <cell><m>t_{30s}</m></cell>
+                            <cell>
+                                <m>t_{5s}</m>
+                            </cell>
+                            <cell>
+                                <m>t_{20s}</m>
+                            </cell>
+                            <cell>
+                                <m>t_{30s}</m>
+                            </cell>
 
-                            <cell><m>t_{5s}</m></cell>
-                            <cell><m>t_{20s}</m></cell>
-                            <cell><m>t_{30s}</m></cell>
+                            <cell>
+                                <m>t_{5s}</m>
+                            </cell>
+                            <cell>
+                                <m>t_{20s}</m>
+                            </cell>
+                            <cell>
+                                <m>t_{30s}</m>
+                            </cell>
                         </row>
 
                         <row>
-                            <cell><m>F</m></cell>
+                            <cell>
+                                <m>F</m>
+                            </cell>
 
-                            <cell><m>F</m></cell>
-                            <cell><m>F</m></cell>
-                            <cell><m>S</m></cell>
+                            <cell>
+                                <m>F</m>
+                            </cell>
+                            <cell>
+                                <m>F</m>
+                            </cell>
+                            <cell>
+                                <m>S</m>
+                            </cell>
 
-                            <cell><m>G</m></cell>
-                            <cell><m>G</m></cell>
-                            <cell><m>Y</m></cell>
+                            <cell>
+                                <m>G</m>
+                            </cell>
+                            <cell>
+                                <m>G</m>
+                            </cell>
+                            <cell>
+                                <m>Y</m>
+                            </cell>
                         </row>
 
                         <row>
-                            <cell><m>S</m></cell>
+                            <cell>
+                                <m>S</m>
+                            </cell>
 
-                            <cell><m>H</m></cell>
-                            <cell><m>S</m></cell>
-                            <cell><m>S</m></cell>
+                            <cell>
+                                <m>H</m>
+                            </cell>
+                            <cell>
+                                <m>S</m>
+                            </cell>
+                            <cell>
+                                <m>S</m>
+                            </cell>
 
-                            <cell><m>R</m></cell>
-                            <cell><m>Y</m></cell>
-                            <cell><m>Y</m></cell>
+                            <cell>
+                                <m>R</m>
+                            </cell>
+                            <cell>
+                                <m>Y</m>
+                            </cell>
+                            <cell>
+                                <m>Y</m>
+                            </cell>
                         </row>
 
                         <row>
-                            <cell><m>H</m></cell>
+                            <cell>
+                                <m>H</m>
+                            </cell>
 
-                            <cell><m>H</m></cell>
-                            <cell><m>F</m></cell>
-                            <cell><m>H</m></cell>
+                            <cell>
+                                <m>H</m>
+                            </cell>
+                            <cell>
+                                <m>F</m>
+                            </cell>
+                            <cell>
+                                <m>H</m>
+                            </cell>
 
-                            <cell><m>R</m></cell>
-                            <cell><m>G</m></cell>
-                            <cell><m>R</m></cell>
+                            <cell>
+                                <m>R</m>
+                            </cell>
+                            <cell>
+                                <m>G</m>
+                            </cell>
+                            <cell>
+                                <m>R</m>
+                            </cell>
                         </row>
                     </tabular>
                 </table>
@@ -395,12 +500,11 @@
                     traffic_light_fsm = FiniteStateMachine()
                     traffic_light_fsm
                 </input>
-                <output></output>
             </sage>
-            <p>
-                The function <c>FSMState()</c> defines a state for a given label. The <c>is_initial</c> flag can
-                be set to true to set the current state as the <em>initial state</em> of the finite state machine.
-                The method <c>add_state()</c> appends the created state to an existing state machine.</p>
+            <p> The function <c>FSMState()</c> defines a state for a given label. The <c>is_initial</c>
+                flag can be set to true to set the current state as the <em>initial state</em> of
+                the finite state machine. The method <c>add_state()</c> appends the created state to
+                an existing state machine.</p>
             <sage>
                 <input>
                     # Define a new state then adding it
@@ -414,7 +518,6 @@
                     # the FiniteStateMachine instance
                     traffic_light_fsm
                 </input>
-                <output></output>
             </sage>
             <p> To check whether or not a finite state machine has a state defined, <c>has_state()</c>
                 method can be used by passing in the state label (case-sensitive).</p>
@@ -422,7 +525,6 @@
                 <input>
                     traffic_light_fsm.has_state('F')
                 </input>
-                <output></output>
             </sage>
             <p>
                 The function <c>states()</c> enumerates the list of all defined states of the state machine.</p>
@@ -430,7 +532,6 @@
                 <input>
                     traffic_light_fsm.states()
                 </input>
-                <output></output>
             </sage>
             <p>
                 The method <c>initial_states()</c> lists the defined initial state(s) of the state machine.</p>
@@ -438,7 +539,6 @@
                 <input>
                     traffic_light_fsm.initial_states()
                 </input>
-                <output></output>
             </sage>
             <p>
                 To define a new transition between two states (as well as the input triggering the transition, and
@@ -460,7 +560,7 @@
                         )
                     )
 
-                    # After 5sec, transition from slowing-down to halted, and set traffic light to red
+                    # After 5sec, transition from slowing-down to halted and set traffic light to red
                     traffic_light_fsm.add_transition(FSMTransition(slowing_down, halted, 't5s', 'R'))
 
                     # After 30sec, transition from halted back to free-flowing, and set traffic light to green
@@ -468,11 +568,10 @@
 
                     traffic_light_fsm.transitions()
                 </input>
-                <output></output>
             </sage>
-            <p>
-                An alternative method for defining state transitions in an FSM is by using the <c>add_transitions_from_function()</c> method.
-                This approach accepts a callable function that takes two states as arguments: the source state and the target state.
+            <p> An alternative method for defining state transitions in an FSM is by using the
+                <c>add_transitions_from_function()</c> method. This approach accepts a callable
+                function that takes two states as arguments: the source state and the target state.
                 The following code demonstrates how this can be implemented.</p>
             <sage>
                 <input>
@@ -498,7 +597,6 @@
                     traffic_light_fsm.add_transitions_from_function(transit_function)
                     traffic_light_fsm.transitions()
                 </input>
-                <output></output>
             </sage>
             <p> Once the states and transitions are defined, the state machine can be run using
                 <c>process()</c> method, which then returns the intermediary outputs during the
@@ -514,7 +612,6 @@
                     # print out the outputs of the state machine run
                     outputs_history
                 </input>
-                <output></output>
             </sage>
             <p>
                 The <c>graph()</c> command displays the graph representation of the state machine.</p>
@@ -529,7 +626,6 @@
                         edge_thickness=1.0
                     )
                 </input>
-                <output></output>
             </sage>
             <p> The <c>FiniteStateMachine</c> class also offers <latex /> representation of the state
                 machine using the <c>latex_options()</c> method.</p>
@@ -544,25 +640,35 @@
                     print(latex(traffic_light_fsm))
                 </input>
             </sage>
-            <p>
-                Note that the <latex /> printout may not have all elements displayed. However, it can still be
-                customized further. The following figure shows a rendering of the above <latex /> commands.</p>
-            <figure>
-                <media>
-                    <image source="finite-state-machines/first_traffic_light_FSM.png" width="67%"/>
-                </media>
-                <caption>FSM graph output.</caption>
+            <p> Note that the <latex /> printout may not have all elements displayed. However, it
+                can still be customized further. The following figure shows a rendering of the above <latex /> commands.</p>
+
+            <figure xml:id="fig-traffic-light-fsm">
+                <caption>FSM graph output</caption>
+                <image width="60%" xml:id="traffic-light-fsm">
+                    <latex-image>
+                        \begin{tikzpicture}[node distance={10mm}, thick, state/.style = {draw, circle}]
+                            \node[state] (F) at (3.00, 0.00) {$\mathbf{F}$};
+                            \node[state] (S) at (-1.50, 2.6) {$\mathbf{S}$};
+                            \node[state] (H) at (-1.50, -2.6) {$\mathbf{H}$};
+
+                            \draw[-&gt;] (3.75,0.00) -- (F);
+                            \path[-&gt;] (F) edge node[rotate=330.00, anchor=south] {$t_{30s}|Y$} (S);
+                            \path[-&gt;] (H) edge node[rotate=30.00, anchor=south] {$t_{20s}|G$} (F);
+                            \path[-&gt;] (S) edge node[rotate=90.00, anchor=south] {$t_{5s}|R$} (H);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
             </figure>
         </subsection>
         <subsection>
             <title>Using `Transducer' Module</title>
-            <p>
-                Sage <c>Transducer</c> is a specialization of the generic <c>FiniteStateMachine</c> class.
-                The <c>Transducer</c> class creates a finite state machine that support optional final states, and
-                whose transitions have input and output labels.</p>
+            <p> Sage <c>Transducer</c> is a specialization of the generic <c>FiniteStateMachine</c>
+                class. The <c>Transducer</c> class creates a finite state machine that support
+                optional final states, and whose transitions have input and output labels.</p>
 
-            <p>
-                Let's see how to create another state machine using <c>Transducer</c> and for the same traffic light example.</p>
+            <p> Let's see how to create another state machine using <c>Transducer</c> and for the
+                same traffic light example.</p>
             <sage>
                 <input>
                     # the module allows the instantiation of a state machine by passing
@@ -595,7 +701,6 @@
                     )
                     traffic_light_transducer
                 </input>
-                <output></output>
             </sage>
             <p>
                 The member variable <c>input_alphabet</c> lists the set of the transducer inputs set.</p>
@@ -603,7 +708,6 @@
                 <input>
                     traffic_light_transducer.input_alphabet
                 </input>
-                <output></output>
             </sage>
             <p>
                 The member variable <c>output_alphabet</c> lists the set of the transducer outputs set.</p>
@@ -611,7 +715,6 @@
                 <input>
                     traffic_light_transducer.output_alphabet
                 </input>
-                <output></output>
             </sage>
             <p> Since a <c>Transducer</c> is also a <c>FiniteStateMachine </c>, the method <c>has_state()</c> can
                 still be used to check whether or not a given state exists in the defined transducer (by passing
@@ -620,7 +723,6 @@
                 <input>
                     traffic_light_transducer.has_state('F')
                 </input>
-                <output></output>
             </sage>
             <p>
                 The function <c>states()</c> enumerates the list of all defined states of the state machine.</p>
@@ -628,7 +730,6 @@
                 <input>
                     traffic_light_transducer.states()
                 </input>
-                <output></output>
             </sage>
             <p>
                 The method <c>initial_states()</c> lists the defined initial state(s) of the state machine.</p>
@@ -636,7 +737,6 @@
                 <input>
                     traffic_light_transducer.initial_states()
                 </input>
-                <output></output>
             </sage>
             <p>
                 After defining the states and transitions, the transducer can be executed using the <c>process()</c> method
@@ -655,15 +755,15 @@
 
                     outputs_history
                 </input>
-                <output></output>
             </sage>
-            <p>
-                The <c>graph()</c> command displays the graph representation of the transducer-based state machine.</p>
-                <aside>
-                    <title>Notes</title>
-                    <p> The <c>latex_options()</c> method of the base class <c>FiniteStateMachine</c> also is inherited
-                        and can also be used with <c>Transducer</c> state machine to output <latex /> representation.</p>
-                    </aside>
+            <p> The <c>graph()</c> command displays the graph representation of the transducer-based
+                state machine.</p>
+            <aside>
+                <title>Notes</title>
+                <p> The <c>latex_options()</c> method of the base class <c>FiniteStateMachine</c>
+                    also is inherited and can also be used with <c>Transducer</c> state machine to
+                    output <latex /> representation.</p>
+            </aside>
             <sage>
                 <input>
                     traffic_light_transducer.graph().show(
@@ -675,15 +775,14 @@
                         edge_thickness=1.0
                     )
                 </input>
-                <output></output>
             </sage>
         </subsection>
     </subsection>
     <conclusion>
         <p>
-            The above are basic commands with a typical workflow of defining and running of simple finite
-            state machines. The general structure of the state machine can be adapted to fit different use
-            cases. The examples shown can be customized and fine-tuned to reflect more complex scenarios
-            (more states, different input sequences, etc.)</p>
+            The above are basic commands with a typical workflow of defining and running of simple
+            finite state machines. The general structure of the state machine can be adapted to fit
+            different use cases. The examples shown can be customized and fine-tuned to reflect more
+            complex scenarios (more states, different input sequences, etc.)</p>
     </conclusion>
 </section>

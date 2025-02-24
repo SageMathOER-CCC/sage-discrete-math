@@ -1,222 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="debugging" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Debugging</title>
+    <title>Debugging</title>
 
-  <idx><h>error message</h></idx>
-  <p>
-    Error messages are an inevitable part of programming.
-    When you make a syntax error and see a message, read it carefully for clues about the cause of the error.
-    While some messages are helpful and descriptive, others may seem cryptic or confusing.
-    With practice, you will develop valuable skills for debugging your code and resolving errors.
-    Not all errors will produce an error message.
-    Logical errors occur when the syntax is correct, but the program does not produce the expected output.
-    Remember, mistakes are learning opportunities, and everyone makes them.
-    Here are some tips for debugging your code:
-    <ul>
-      <li>
-        <p>
-          Read the error message carefully for information to help you identify and fix the problem.
-        </p>
-      </li>
+    <idx>
+        <h>error message</h>
+    </idx>
+    <p> Error messages are an inevitable part of programming. When you make a syntax error and see a
+        message, read it carefully for clues about the cause of the error. While some messages are
+        helpful and descriptive, others may seem cryptic or confusing. With practice, you will
+        develop valuable skills for debugging your code and resolving errors. Not all errors will
+        produce an error message. Logical errors occur when the syntax is correct, but the program
+        does not produce the expected output. Remember, mistakes are learning opportunities, and
+        everyone makes them. Here are some tips for debugging your code: <ul>
+            <li>
+                <p>
+                    Read the error message carefully for information to help you identify and fix the problem.
+                </p>
+            </li>
 
-      <li>
-        <p>
-          Study the documentation.
-        </p>
-      </li>
+            <li>
+                <p>
+                    Study the documentation.
+                </p>
+            </li>
 
-      <li>
-        <p>
-          Google the error message.
-          Someone else has likely encountered the same issue.
-        </p>
-      </li>
+            <li>
+                <p>
+                    Google the error message.
+                    Someone else has likely encountered the same issue.
+                </p>
+            </li>
 
-      <li>
-        <p>
-          Search for previous posts on Sage forums.
-        </p>
-      </li>
+            <li>
+                <p>
+                    Search for previous posts on Sage forums.
+                </p>
+            </li>
 
-      <li>
-        <p>
-          Take a break and return with a fresh perspective.
-        </p>
-      </li>
+            <li>
+                <p>
+                    Take a break and return with a fresh perspective.
+                </p>
+            </li>
 
-      <li>
-        <p>
-          If you are still stuck after trying these steps, ask the Sage community.
-        </p>
-      </li>
-    </ul>
-  </p>
+            <li>
+                <p>
+                    If you are still stuck after trying these steps, ask the Sage community.
+                </p>
+            </li>
+        </ul>
+    </p>
 
-  <p>
-    Let's dive in and make some mistakes together!
-  </p>
-  <sage>
-  <input>
-      # Run this cell and see what happens
-      1message = "Hello, World!"
-      print(1message)
-  </input>
-  </sage>
+    <p>
+        Let's dive in and make some mistakes together!
+    </p>
+    <sage>
+        <input>
+            # Run this cell and see what happens
+            1message = "Hello, World!"
+            print(1message)
+        </input>
+    </sage>
 
-  <p>
-    Why didn't this print <c>Hello, World!</c> on the screen? The error message informed us of a <c>SyntaxError</c>.
-    While the phrase <c>invalid decimal literal</c> may seem confusing, the key issue here is the invalid variable name.
-    Valid identifiers must start with a letter or underscore.
-    They cannot begin with a number or use any special characters.
-    Let's correct the variable name by using a valid identifier.
-  </p>
-  <sage>
-  <input>
-      message = "Hello, World!"
-      print(message)
-  </input>
-  </sage>
+    <p> Why didn't this print <c>Hello, World!</c> on the screen? The error message informed us of a <c>
+        SyntaxError</c>. While the phrase <c>invalid decimal literal</c> may seem confusing, the key
+        issue here is the invalid variable name. Valid identifiers must start with a letter or
+        underscore. They cannot begin with a number or use any special characters. Let's correct the
+        variable name by using a valid identifier. </p>
+    <sage>
+        <input>
+            message = "Hello, World!"
+            print(message)
+        </input>
+    </sage>
 
-  <p>
-    Here is another error:
-  </p>
-  <sage>
-  <input>
-      print(Hi)
-  </input>
-  </sage>
+    <p>
+        Here is another error:
+    </p>
+    <sage>
+        <input>
+            print(Hi)
+        </input>
+    </sage>
 
-  <p>
-    In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined.
-    Sage assumes that <c>Hi</c> is a variable because there are no quotes.
-    We can make <c>Hi</c> a string by enclosing it in quotes.
-  </p>
-  <sage>
-  <input>
-      print("Hi")
-  </input>
-  </sage>
+    <p> In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes
+        that <c>Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by
+        enclosing it in quotes. </p>
+    <sage>
+        <input>
+            print("Hi")
+        </input>
+    </sage>
 
-  <p>
-    Alternatively, if we intended <c>Hi</c> to be a variable, we can assign a value to it before printing.
-  </p>
-  <sage>
-  <input>
-      Hi = "Hello, World!"
-      print(Hi)
-  </input>
-  </sage>
+    <p> Alternatively, if we intended <c>Hi</c> to be a variable, we can assign a value to it before
+        printing. </p>
+    <sage>
+        <input>
+            Hi = "Hello, World!"
+            print(Hi)
+        </input>
+    </sage>
 
-  <p>
-    Reading the documentation is essential to understanding how to use methods correctly.
-    If we incorrectly use a method, we will likely get a <c>NameError</c>, <c>AttributeError</c>, <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake.
-  </p>
+    <p> Reading the documentation is essential to understanding how to use methods correctly. If we
+        incorrectly use a method, we will likely get a <c>NameError</c>, <c>AttributeError</c>,
+        <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake. </p>
 
-  <p>
-    Here is an example of a <c>NameError</c>:
-  </p>
-  <sage>
-  <input>
-      l = [6, 1, 5, 2, 4, 3]
-      sort(l)
-  </input>
-  </sage>
+    <p> Here is an example of a <c>NameError</c>: </p>
+    <sage>
+        <input>
+            l = [6, 1, 5, 2, 4, 3]
+            sort(l)
+        </input>
+    </sage>
 
-  <p>
-    The <c>sort()</c> method must be called on the list object using dot notation.
-  </p>
-  <sage>
-  <input>
-      l = [4, 1, 2, 3]
-      l.sort()
-      print(l)
-  </input>
-  </sage>
+    <p> The <c>sort()</c> method must be called on the list object using dot notation. </p>
+    <sage>
+        <input>
+            l = [4, 1, 2, 3]
+            l.sort()
+            print(l)
+        </input>
+    </sage>
 
-  <p>
-    Here is an example of an <c>AttributeError</c>:
-  </p>
-  <sage>
-  <input>
-      l = [1, 2, 3]
-      l.len()
-  </input>
-  </sage>
+    <p> Here is an example of an <c>AttributeError</c>: </p>
+    <sage>
+        <input>
+            l = [1, 2, 3]
+            l.len()
+        </input>
+    </sage>
 
-  <p>
-    Here is the correct way to use the <c>len()</c> method:
-  </p>
-  <sage>
-  <input>
-      l = [1, 2, 3]
-      len(l)
-  </input>
-  </sage>
+    <p> Here is the correct way to use the <c>len()</c> method: </p>
+    <sage>
+        <input>
+            l = [1, 2, 3]
+            len(l)
+        </input>
+    </sage>
 
-  <p>
-    Here is an example of a <c>TypeError</c>:
-  </p>
-  <sage>
-  <input>
-      l = [1, 2, 3]
-      l.append(4, 5)
-  </input>
-  </sage>
+    <p> Here is an example of a <c>TypeError</c>: </p>
+    <sage>
+        <input>
+            l = [1, 2, 3]
+            l.append(4, 5)
+        </input>
+    </sage>
 
-  <p>
-    The <c>append()</c> method only takes one argument.
-    To add multiple elements to a list, use the <c>extend()</c> method.
-  </p>
-  <sage>
-  <input>
-      l = [1, 2, 3]
-      l.extend([4, 5])
-      print(l)
-  </input>
-  </sage>
+    <p> The <c>append()</c> method only takes one argument. To add multiple elements to a list, use
+        the <c>extend()</c> method. </p>
+    <sage>
+        <input>
+            l = [1, 2, 3]
+            l.extend([4, 5])
+            print(l)
+        </input>
+    </sage>
 
-  <p>
-    Here is an example of a <c>ValueError</c>:
-  </p>
-  <sage>
-  <input>
-      factorial(-5)
-  </input>
-  </sage>
+    <p> Here is an example of a <c>ValueError</c>: </p>
+    <sage>
+        <input>
+            factorial(-5)
+        </input>
+    </sage>
 
-  <p>
-    Although the resulting error message is lengthy, the last line informs us that the argument must be a non-negative integer.
-  </p>
-  <sage>
-  <input>
-      factorial(5)
-  </input>
-  </sage>
+    <p>
+        Although the resulting error message is lengthy, the last line informs us that the argument
+        must be a non-negative integer.
+    </p>
+    <sage>
+        <input>
+            factorial(5)
+        </input>
+    </sage>
 
-  <p>
-    Finally, we will consider a logical error.
-    If your task is to print the numbers from <m>1</m> to <m>10</m>, you may mistakenly write the following code:
-  </p>
-  <sage>
-  <input>
-      for i in range(10):
-          print(i)
-  </input>
-  </sage>
+    <p> Finally, we will consider a logical error. If your task is to print the numbers from <m>1</m>
+        to <m>10</m>, you may mistakenly write the following code: </p>
+    <sage>
+        <input>
+            for i in range(10):
+                print(i)
+        </input>
+    </sage>
 
-  <p>
-    The output will be the numbers from <m>0</m> to <m>9</m>.
-    To include <m>10</m>, we need to adjust the range because the start is inclusive and the stop is exclusive.
-  </p>
-  <sage>
-  <input>
-      for i in range(1, 11):
-          print(i)
-  </input>
-  </sage>
+    <p> The output will be the numbers from <m>0</m> to <m>9</m>. To include <m>10</m>, we need to
+        adjust the range because the start is inclusive and the stop is exclusive. </p>
+    <sage>
+        <input>
+            for i in range(1, 11):
+                print(i)
+        </input>
+    </sage>
 
-  <p>
-    For more information, read the CoCalc <url href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about the top mathematical syntax errors in Sage</url>
-  </p>
+    <p> For more information, read the CoCalc <url
+            href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about
+        the top mathematical syntax errors in Sage</url>
+    </p>
 </section>

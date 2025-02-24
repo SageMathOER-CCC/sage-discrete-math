@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-truth-table" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Truth Tables</title><idx><h>truth table</h></idx>
+    <title>Truth Tables</title>
+    <idx>
+        <h>truth table</h>
+    </idx>
+    <p> The <c>truthtable()</c> function in Sage generates the truth table for a given
+        logical expression. </p>
+    <aside>
+        <title>Notes</title>
         <p>
-            The <c>truthtable()</c> function in Sage generates the truth table for a given logical expression.
+            Truth tables aid in the design of digital circuits.
         </p>
-        <aside>
-            <title>Notes</title>
-            <p>
-                Truth tables aid in the design of digital circuits.
-            </p>
-        </aside>
-        <sage>
-            <input>
-                A = propcalc.formula('p -&gt; q')
-                A.truthtable()
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            An alternative way to display the table with better separation and visuals would be to use <c>SymbolicLogic()</c>, <c>statement()</c>, <c>truthtable()</c> and the <c>print_table()</c> functions.
-        </p>
-        <sage>
-            <input>
-                A = SymbolicLogic()
-                B = A.statement('p -&gt; q')
-                C = A.truthtable(B)
-                A.print_table(C)
-            </input>
-            <output></output>
-        </sage>
-        <p>
-            <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations, while <c>statement()</c> defines the given statement. The <c>truthtable()</c> method generates a truth table for this statement, and <c>print_table()</c> displays it.
-        </p>
+    </aside>
+    <sage>
+        <input>
+            A = propcalc.formula('p -&gt; q')
+            A.truthtable()
+        </input>
+    </sage>
+    <p> An alternative way to display the table with better separation and visuals would be to use
+        <c>SymbolicLogic()</c>, <c>statement()</c>, <c>truthtable()</c> and the <c>print_table()</c> functions. </p>
+    <sage>
+        <input>
+            A = SymbolicLogic()
+            B = A.statement('p -&gt; q')
+            C = A.truthtable(B)
+            A.print_table(C)
+        </input>
+    </sage>
     <p>
-        Expanding on the concept of truth tables, we can analyze logical expressions involving three variables. This provides a deeper understanding of the interplay between multiple conditions. The <c>truthtable()</c> function supports expressions with a number of variables that is practical for computational purposes, if the list of variables becomes too lengthy (such as extending beyond the width of a LaTeX page), the truth table's columns may run off the screen. Additionally, the function's performance may degrade with a very large number of variables, potentially increasing the computation time.
-    </p>
+        The command <c>SymbolicLogic()</c> creates an instance for handling symbolic logic operations,
+        while <c>statement()</c> defines the given statement. The <c>truthtable()</c> method generates a
+        truth table for this statement, and <c>print_table()</c> displays it. </p>
+
+    <p> Expanding on the concept of truth tables, we can analyze logical expressions involving three
+        variables. This provides a deeper understanding of the interplay between multiple conditions.
+        The <c>truthtable()</c> function supports expressions with a number of variables that is
+        practical for computational purposes, if the list of variables becomes too lengthy (such as
+        extending beyond the width of a LaTeX page), the truth table's columns may run off the screen.
+        Additionally, the function's performance may degrade with a very large number of variables,
+        potentially increasing the computation time. </p>
     <sage>
         <input>
             B = propcalc.formula('(p &amp; q) -&gt; r')
             B.truthtable()
         </input>
-        <output></output>
     </sage>
 
 </section>
