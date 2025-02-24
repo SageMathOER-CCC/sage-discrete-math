@@ -105,7 +105,7 @@ jobs:
 
       - name: Checkout to pdf-release branch and get hash from last commit message
         run: |
-          git fetch origin pdf-release && git checkout pdf-release
+          git checkout pdf-release
           LAST_COMMIT_MSG=$(git log --no-merges -n 1 --pretty=%B)
           echo "Last commit message on pdf-release (non-merge): $LAST_COMMIT_MSG"
           LAST_MAIN_HASH_COMMIT=$(echo "$LAST_COMMIT_MSG" | grep -oE "Update PDF for ([0-9a-f]{7})" | awk '{print $4}')
