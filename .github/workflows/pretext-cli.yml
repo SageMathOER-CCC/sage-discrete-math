@@ -105,13 +105,16 @@ jobs:
 
       - name: Checkout to pdf-release branch and get hash from last commit message
         run: |
-          # Checkout the pdf-release branch without syncing to main or current branch.
-          git fetch origin pdf-release || git checkout --orphan pdf-release
+          git fetch origin pdf-release && git checkout pdf-release
           LAST_COMMIT_MSG=$(git log --no-merges -n 1 --pretty=%B)
-          echo "Last commit message on pdf-release: $LAST_COMMIT_MSG"
+          echo "Last commit message on pdf-release (non-merge): $LAST_COMMIT_MSG"
           LAST_MAIN_HASH_COMMIT=$(echo "$LAST_COMMIT_MSG" | grep -oE "Update PDF for ([0-9a-f]{7})" | awk '{print $4}')
           echo "Extracted commit hash from last pdf-release commit: $LAST_MAIN_HASH_COMMIT"
-          echo "LAST_MAIN_HASH=$LAST_MAIN_HASH_COMMIT" >> $GITHUB_ENV
+          if [ -z "$LAST_MAIN_HASH_COMMIT" ]; then
+            echo "LAST_MAIN_HASH_COMMIT is empty, assuming new commit is needed."
+            echo "LAST_MAIN_HASH_COMMIT=" >> $GITHUB_ENV
+          else
+            echo "LAST_MAIN_HASH_COMMIT=$LAST_MAIN_HASH_COMMIT" >> $GITHUB_ENV
 
       - name: Determine if PDF update is needed
         run: |
