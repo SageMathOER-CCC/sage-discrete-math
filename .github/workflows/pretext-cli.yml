@@ -115,12 +115,16 @@ jobs:
 
       - name: Determine if PDF update is needed
         run: |
-          if [[ "$LAST_MAIN_HASH" == "$LATEST_MAIN_HASH" ]]; then
+          if [[ -z "$LAST_MAIN_HASH" ]]; then
+            echo "No last commit hash found on pdf-update, PDF needs an update."
+            echo "skip_update=false" >> $GITHUB_ENV
+          elif [[ "$LAST_MAIN_HASH" == "$LATEST_MAIN_HASH" ]]; then
             echo "PDF is already up to date. Skipping update."
             echo "skip_update=true" >> $GITHUB_ENV
           else
             echo "PDF needs an update."
             echo "skip_update=false" >> $GITHUB_ENV
+          fi
 
       - name: Skip update if no changes
         if: env.skip_update == 'true'
