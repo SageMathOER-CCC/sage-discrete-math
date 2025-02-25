@@ -26,6 +26,8 @@
         </input>
     </sage>
 
+    <!-- 
+
     <p>
         Let's use relations to explore matching items of clothes. Let's define two sets, jackets and shirts, as examples:
     </p>
@@ -63,4 +65,27 @@
             print("Matching relation R =", R)
         </input>
     </sage>
+        -->
+
+    <subsection>
+        <title>Relations On a Set</title>
+
+        <p>
+        When <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
+    </p>
+    <p>
+        Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
+    </p>
+    <sage>
+        <input>
+            A = Set([2, 3, 4, 6, 8])
+
+            # Define the relation R on A: aRb iff a divides b
+            R = Set([(a, b) for a in A for b in A if a.divides(b)])
+
+            show(R)
+        </input>
+    </sage>
+    </subsection>
+
 </section>
