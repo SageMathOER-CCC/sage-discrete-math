@@ -1,107 +1,104 @@
 <section xml:id="paths" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Paths</title><idx><h>path</h></idx>
-  <p>
-    A path between two vertices <m>u</m> and <m>v</m> is a sequence of consecutive edges starting at <m>u</m> and ending at <m>v</m>.
-  </p>
+  <title>Paths</title>
+  <idx>
+    <h>path</h>
+  </idx>
+  <p> A path between two vertices <m>u</m> and <m>v</m> is a sequence of consecutive edges starting
+    at <m>u</m> and ending at <m>v</m>. </p>
   <p>
     To get all paths between two vertices:
   </p>
   <sage>
     <input>
       G = Graph({1: [2, 3], 2: [3], 3: [4]})
+      G.show()
       G.all_paths(1, 4)
     </input>
-    <output>
-    </output>
   </sage>
   <p>
     The length of a path is defined as the number of edges that make up the path.
   </p>
-  <p>
-    Finding the shortest path between two vertices can be achieved using the <c>shortest_path()</c> function:
-  </p>
+  <p> Finding the shortest path between two vertices can be achieved using the <c>shortest_path()</c>
+    function: </p>
   <sage>
-      <input>
-          G = Graph({1: [2, 3], 2: [3], 3: [4]})
-          G.shortest_path(1, 4)
-      </input>
-      <output>
-      </output>
+    <input>
+      G = Graph({1: [2, 3], 2: [3], 3: [4]})
+      G.show()
+      G.shortest_path(1, 4)
+    </input>
   </sage>
-  <idx><h>connected</h></idx>
+  <idx>
+    <h>connected</h>
+  </idx>
   <p>
     A graph is said to be connected if there is a path between any two vertices in the graph.
   </p>
-  <p>
-    To determine if a graph is connected, we can use the <c>is_connected()</c> function:
-  </p>
+  <p> To determine if a graph is connected, we can use the <c>is_connected()</c> function: </p>
   <sage>
-      <input>
-          G = Graph({1: [2, 3], 2: [3], 3: [4]})
-          G.is_connected()
-      </input>
-      <output>
-      </output>
+    <input>
+      G = Graph({1: [2, 3], 2: [3], 3: [4]})
+      G.show()
+      G.is_connected()
+    </input>
   </sage>
-  <p>
-    A connected component of a graph <m>G </m> is a maximal connected subgraph of <m>G </m>. If the graph <m>G </m> is connected, then it has only one connected component.
-  </p>
+  <p> A connected component of a graph <m>G</m> is a maximal connected subgraph of <m>G</m>. If
+    the graph <m>G</m> is connected, then it has only one connected component. </p>
   <p>
     For example, the following graph is not connected:
   </p>
   <sage>
-      <input>
-          G = Graph({1: [2, 3], 2: [4], 5: [6]})
-          G.is_connected()
-      </input>
-      <output>
-      </output>
+    <input>
+      G = Graph({1: [2, 3], 2: [4], 5: [6]})
+      G.show()
+      G.is_connected()
+    </input>
   </sage>
-  <p>
-    To identify all connected components of a graph, the <c>connected_components()</c> function can be utilized:
-  </p>
+  <p> To identify all connected components of a graph, the <c>connected_components()</c> function
+    can be utilized: </p>
   <sage>
-      <input>
-          G = Graph({1: [2, 3], 2: [4], 5: [6]})
-          G.connected_components()
-      </input>
-      <output>
-      </output>
+    <input>
+      G = Graph({1: [2, 3], 2: [4], 5: [6]})
+      G.show()
+      G.connected_components()
+    </input>
   </sage>
+  <!-- Consider removing as this section is redundent with the added show() functions -->
   <p>
     We can visualize the graph as a disjoint union of its connected components, by plotting it.
   </p>
   <sage>
     <input>
-        G = Graph({1: [2, 3], 2: [4], 5: [6, 7], 6: [7]})
-        G.show()
+      G = Graph({1: [2, 3], 2: [4], 5: [6, 7], 6: [7]})
+      G.show()
     </input>
-    <output>
-    </output>
   </sage>
-  <idx><h>diameter</h></idx>
+  <idx>
+    <h>diameter</h>
+  </idx>
   <p>
-    The diameter of a graph is the length of the longest shortest path between any two vertices.
+    The diameter of a graph is the length of the longest path among all of a graph's shortest paths between any two vertices.
   </p>
   <sage>
-      <input>
-          G = Graph({1: [2, 3], 2: [3, 4], 3: [4]})
-          G.diameter()
-      </input>
-      <output>
-          # Calculates the diameter of the graph.
-      </output>
+    <input>
+      G = Graph({1: [2, 3], 2: [3, 4], 3: [4]})
+      G.show()
+
+      # Calculates the diameter of the graph.
+      G.diameter()
+    </input>
   </sage>
-  <idx><h>bipartite</h></idx>
+  <idx>
+    <h>bipartite</h>
+  </idx>
   <p>
-     A graph is bipartite if its set of vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set:
+    A graph is bipartite if its set of vertices can be divided into two disjoint sets such that
+    every edge connects a vertex in one set to a vertex in the other set:
   </p>
   <sage>
-      <input>
-          G = Graph({1: [2, 3], 2: [4], 3: [4]})
-          G.is_bipartite()
-      </input>
-      <output>
-      </output>
+    <input>
+      G = Graph({1: [2, 3], 2: [4], 3: [4]})
+      G.show()
+      G.is_bipartite()
+    </input>
   </sage>
 </section>

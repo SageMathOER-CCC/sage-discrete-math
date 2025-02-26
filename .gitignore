@@ -2,9 +2,11 @@
 # ensure this file is tracked
 !.gitignore
 
-# don't track unpublished builds or stage
+# don't track unpublished builds or stage (note: Runestone uses `published`)
 output/web
 output/stage
+published
+.cache
 
 # don't track assets generated from source
 generated-assets
@@ -98,3 +100,15 @@ codechat_config.yaml
 
 # Don't track local files under /venv (virtual local environment)
 venv
+
+# Don't track local temp files and generated files
+*.local
+*.bak
+*.swp
+*.old
+*.log
+*.tmp
+
+# Don't track deprecated workflows
+.github/workflows/deploy.yml
+.github/workflows/test-build.yml

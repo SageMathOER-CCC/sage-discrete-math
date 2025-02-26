@@ -2,26 +2,31 @@
     <title>Logic Gates in Action</title>
     <introduction>
         <p>
-            Voting systems are fundamental in decision-making processes like national elections. In this section, we use logic gates to build a simple digital voting machine. The machine will count binary votes and determine the majority outcome. We break the system into smaller functions, each implemented using logic gates, and then combine them to form the complete voting machine.
+            Voting systems are fundamental in decision-making processes like national elections. In
+            this section, we use logic gates to build a simple digital voting machine. The machine
+            will count binary votes and determine the majority outcome. We break the system into
+            smaller functions, each implemented using logic gates, and then combine them to form the
+            complete voting machine.
         </p>
     </introduction>
 
     <subsection xml:id="sec-vote-encoder">
         <title>Vote Encoder</title>
-        <p>
-            The first step in our voting machine is to encode individual votes. Each voter casts a binary vote:
+        <p> The first step in our voting machine is to encode individual votes. Each voter casts a
+            binary vote:
             <itemizedlist>
                 <item><c>1</c>: Indicates a "Yes" vote.</item>
                 <item><c>0</c>: Indicates a "No" vote.</item>
             </itemizedlist>
-            In this system, the votes are inputs to our logic circuit. These inputs will later be processed to determine the majority outcome.
-        </p>
+            In this system, the votes are inputs to our logic circuit. These inputs will later be
+            processed to determine the majority outcome. </p>
     </subsection>
 
     <subsection xml:id="sec-vote-counter">
         <title>Vote Counter</title>
         <p>
-            To determine the majority, we need to count how many votes are "Yes." We can use basic logic gates to add up the binary votes. Here’s how we calculate the sum of three votes:
+            To determine the majority, we need to count how many votes are "Yes." We can use basic
+            logic gates to add up the binary votes. Here's how we calculate the sum of three votes:
         </p>
         <sage>
             <input>
@@ -40,7 +45,7 @@
                     return final_sum, final_carry
 
                 # Example votes
-                example_votes = {V1: True, V2: True, V3: False}  # Representing Yes, Yes, No
+                example_votes = {V1: True, V2: True, V3: False} # Representing Yes, Yes, No
                 result = three_vote_sum(V1, V2, V3)
 
                 # Substitute values into the results
@@ -49,21 +54,20 @@
 
                 final_sum, final_carry
             </input>
-            <output>
-            </output>
         </sage>
         <p>
-            The result of this operation gives us the total number of "Yes" votes and helps determine the majority.
+            The result of this operation gives us the total number of "Yes" votes and helps
+            determine the majority.
         </p>
     </subsection>
 
     <subsection xml:id="sec-majority-decider">
         <title>Majority Decider</title>
-        <p>
-            The majority decider uses logic gates to determine whether "Yes" votes are greater than "No" votes. For three votes, the logic can be expressed as:
+        <p> The majority decider uses logic gates to determine whether "Yes" votes are greater
+            than "No" votes. For three votes, the logic can be expressed as:
             <me>Majority = (V1 AND V2) OR (V2 AND V3) OR (V1 AND V3)</me>
-            This formula ensures that if at least two out of three votes are "Yes," the output will indicate a majority.
-        </p>
+            This formula ensures that if at least two out of three votes are "Yes," the output
+            will indicate a majority. </p>
         <sage>
             <input>
                 from sympy.logic.boolalg import And, Or
@@ -78,8 +82,6 @@
                 # Example evaluation
                 majority.subs({V1: True, V2: True, V3: False})
             </input>
-            <output>
-            </output>
         </sage>
         <p>
             This logic circuit outputs 1 if the majority of votes are "Yes," and 0 otherwise.
@@ -88,8 +90,9 @@
 
     <subsection xml:id="sec-complete-voting-machine">
         <title>Combining Everything: The Complete Voting Machine</title>
-        <p>
-            Now that we have the individual components—a vote encoder, a vote counter, and a majority decider—we can combine them to create the complete voting machine. The final logic circuit will take three binary inputs (the votes) and output:
+        <p> Now that we have the individual components—a vote encoder, a vote counter, and a
+            majority decider—we can combine them to create the complete voting machine. The final
+            logic circuit will take three binary inputs (the votes) and output:
             <itemizedlist>
                 <item><term>Total Yes Votes</term>: The total number of "Yes" votes.</item>
                 <item><term>Majority</term>: Indicates whether "Yes" votes form the majority.</item>
@@ -125,7 +128,7 @@
                     return total_yes_votes, carry, majority_result
 
                 # Example votes
-                example_votes = {V1: True, V2: True, V3: False}  # Representing Yes, Yes, No
+                example_votes = {V1: True, V2: True, V3: False} # Representing Yes, Yes, No
                 total_yes, carry, majority_result = voting_machine(V1, V2, V3)
 
                 # Substitute example values
@@ -135,17 +138,21 @@
 
                 final_total_yes, final_carry, final_majority
             </input>
-            <output>
-            </output>
         </sage>
         <p>
-            This combined system demonstrates how logic gates can be used to implement decision-making processes in a voting system. It highlights the versatility of logic circuits in solving real-world problems.
+            This combined system demonstrates how logic gates can be used to implement
+            decision-making processes in a voting system. It highlights the versatility of logic
+            circuits in solving real-world problems.
         </p>
     </subsection>
 
     <conclusion>
         <p>
-            The voting machine is just one example of how logic gates can be applied in everyday scenarios. By breaking down the system into smaller components and combining them, we created a simple yet powerful system for decision-making. This example highlights the foundational role of logic gates in modern technology, bridging the gap between theoretical understanding and practical applications.
+            The voting machine is just one example of how logic gates can be applied in everyday
+            scenarios. By breaking down the system into smaller components and combining them, we
+            created a simple yet powerful system for decision-making. This example highlights the
+            foundational role of logic gates in modern technology, bridging the gap between
+            theoretical understanding and practical applications.
         </p>
     </conclusion>
 </section>
