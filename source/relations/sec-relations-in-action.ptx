@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="relations-in-action" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Relations in Action</title>
+    <introduction>
+        <p>
+            Imagine you have just been invited to a formal outing and are trying to construct an outfit. All of your formal clothes are in a similar style, material, and fit with the main differance being in color; so your main delema is how you will match colors. We will list all possible suit outfits with a complementary color scheme and list all possible blazer outfits with triatic color schemes.
+        </p>
+        <p>
+            Here are the colors of your coats, pants, and shirts in the form of a dictionary with RGB values as keys for color names as values.
+        </p>
+        <sage>
+            <input>
+                Coat_Colors = {
+                    (0.000, 0.053, 0.476): 'navy',
+                    (1.000, 0.947, 0.524): 'beige',
+                    (0.053, 0.476, 0.000): 'olive',
+                    (0.476, 0.000, 0.053): 'wine',
+                    (0.180, 0.741, 1.000): 'baby blue',
+                    (0.820, 0.259, 0.000): 'bronze orange',
+                    (0.525, 0.263, 0.000): 'army brown',
+                    (0.947, 0.524, 1.000): 'washed pink',
+                    (0.000, 0.000, 0.000): 'black'
+                }
+
+                Pants_Colors = {
+                    (0.000, 0.053, 0.476): 'navy',
+                    (1.000, 0.953, 0.580): 'beige',
+                    (0.053, 0.476, 0.000): 'olive',
+                    (0.476, 0.000, 0.053): 'wine',
+                    (0.180, 0.741, 1.000): 'baby blue',
+                    (0.820, 0.259, 0.000): 'bronze orange',
+                    (0.525, 0.263, 0.000): 'army brown',
+                    (0.282, 0.318, 0.357): 'sky grey',
+                    (0.000, 0.000, 0.000): 'black'
+                }
+
+                Shirt_Colors = {
+                    (1.000, 0.953, 0.580): 'beige',
+                    (0.000, 0.053, 0.476): 'navy',
+                    (0.947, 0.524, 1.000): 'washed pink',
+                    (0.820, 0.259, 0.000): 'bronze orange',
+                    (0.180, 0.741, 1.000): 'baby blue',
+                    (0.053, 0.476, 0.000): 'olive',
+                    (1.000, 1.000, 1.000): 'white'
+                }
+            </input>
+        </sage>
+    </introduction>
+    <subsection>
+    <title>Color Complements</title>
+        <p>
+            Complementary colors are defined as two colors, that when added together produce a white (or some shade of grey but for this exercise we will calculate around pure white). We can calculate a color's complement by simply subtracting all of its RGB values from white <c>(1,1,1)</c>. This will produce an RGB value that when it is added to the original will create white.
+        </p>
+        <p>
+            Here we define a function that does just that.
+        </p>
+        <sage>
+            <input>
+                def Generate_complement(input_color):
+                    output_color = (1 - input_color[0], 1 - input_color[1], 1 - input_color[2])
+                    return output_color
+            </input>
+        </sage>
+    
+
+        <subsubsection>
+        <title>Suits and Shirts</title>
+            <introduction>
+                <p>
+                    Traditionally a suit must have a matching, in terms of color and material, pair of dress pants and a coat. So, instead of complementing all three sets of clothing, we will combine the dictionaries of pants and coats under intersection in order to get a set of full suits.
+                </p>
+            </introduction>    
+                <sage>
+                    <input>
+                        Full_Suits = Pants_Colors | Coat_Colors
+                        Full_Suits
+                    </input>
+                </sage>
+                <p>
+                    Now we want to find what combinations of shirts and suits will complement eachother. Here is how we define it as a relation, from the set of suits to the set of shirts, in Sage.
+                </p>
+                <sage>
+                    <input>
+                        Suit_Combos = [(Full_Suits[a], Shirt_Colors[b]) for a in Full_Suits for b in Shirt_Colors if b == Generate_complement(a)]
+                        Suit_Combos
+                    </input>
+                </sage>
+            </subsubsection>
+        </subsection>
+        <subsection>
+            <title>Triadic Schemes</title>
+            <introduction>
+                <p>
+                    Unlike suits, when wearing a coat as a blazer the pants can differ in color from the coat. This allows for a color scheme with three diffrent colors. To create such a scheme we will calculate which combinations form a triadic scheme. Like complements, triadic colors are sets of colors that, when added, form a white or grey but in this case there are three.
+                </p>
+            </introduction>
+            <p>
+                Here is a function that returns a color's other two triadic conterparts of equal brightness.
+            </p>
+            <sage>
+                <input>
+                    def Generate_triadic(input_color):
+                        triadic_1 = (input_color[1], input_color[2], input_color[0])
+                        triadic_2 = (input_color[2], input_color[0], input_color[1])
+                        return triadic_1, triadic_2
+                </input>
+            </sage>
+            <subsubsection xml:id="subsubsec-Blazer-Outfits">
+                <title>Blazer Outfits</title>
+
+                <p>
+                    In this case we can not intersect (or union for that matter) two sets of clothes because all pices of clothing should be diffrent colors. We can still combine two sets in order to streamline the creation of relations by remembering that a relation is itself a set and therefore we can create a relation from a set onto a relation. Say you wanted to build an outfit around a chosen coat you can make the outfit by creating a relation from <c>Coat_Colors</c> to <c>Shirt_Colors</c><m>R</m><c>Pants_Colors</c>.
+                </p>
+
+                <sage>
+                    <input>
+                        #We have our original relation in terms of RGB values instead of color names to simplify calculations
+                        Shirt_R_Pants = [(a, b) for a in Shirt_Colors for b in Pants_Colors if a in Generate_triadic(b)]
+
+                        Blazer_Combos = [(Coat_Colors[a] , (Shirt_Colors[b[0]] , Pants_Colors[b[1]])) for a in Coat_Colors for b in Shirt_R_Pants if Set(Generate_triadic(a)) == Set(b)]
+                        Blazer_Combos
+                    </input>
+                </sage>
+            </subsubsection>
+        </subsection>
+</section>
