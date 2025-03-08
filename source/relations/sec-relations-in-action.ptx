@@ -4,7 +4,7 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you have just been invited to a formal outing and are trying to construct an outfit. All of your formal clothes are in a similar style, material, and fit with the main differance being in color; so your main delema is how you will match colors. We will list all possible suit outfits with a complementary color scheme and list all possible blazer outfits with triatic color schemes.
+            Imagine you have just been invited to a formal outing and are trying to construct an outfit. All of your formal clothes are in a similar style, material, and fit with the main difference being in color; so your main delema is how you will match colors. We will list all possible suit outfits with a complementary color scheme and list all possible blazer outfits with triadic color schemes.
         </p>
         <p>
             Here are the colors of your coats, pants, and shirts in the form of a dictionary with RGB values as keys for color names as values.
@@ -78,7 +78,7 @@
                     </input>
                 </sage>
                 <p>
-                    Now we want to find what combinations of shirts and suits will complement eachother. Here is how we define it as a relation, from the set of suits to the set of shirts, in Sage.
+                    Now we want to find what combinations of shirts and suits will complement each other. Here is how we define it as a relation, from the set of suits to the set of shirts, in Sage.
                 </p>
                 <sage>
                     <input>
@@ -92,11 +92,11 @@
             <title>Triadic Schemes</title>
             <introduction>
                 <p>
-                    Unlike suits, when wearing a coat as a blazer the pants can differ in color from the coat. This allows for a color scheme with three diffrent colors. To create such a scheme we will calculate which combinations form a triadic scheme. Like complements, triadic colors are sets of colors that, when added, form a white or grey but in this case there are three.
+                    Unlike suits, when wearing a coat as a blazer the pants can differ in color from the coat. This allows for a color scheme with three different colors. To create such a scheme we will calculate which combinations form a triadic scheme. Like complements, triadic colors are sets of colors that, when added, form a white or grey but in this case there are three.
                 </p>
             </introduction>
             <p>
-                Here is a function that returns a color's other two triadic conterparts of equal brightness.
+                Here is a function that returns a color's other two triadic counterparts of equal brightness.
             </p>
             <sage>
                 <input>
@@ -110,7 +110,7 @@
                 <title>Blazer Outfits</title>
 
                 <p>
-                    In this case we can not intersect (or union for that matter) two sets of clothes because all pices of clothing should be diffrent colors. We can still combine two sets in order to streamline the creation of relations by remembering that a relation is itself a set and therefore we can create a relation from a set onto a relation. Say you wanted to build an outfit around a chosen coat you can make the outfit by creating a relation from <c>Coat_Colors</c> to <c>Shirt_Colors</c><m>R</m><c>Pants_Colors</c>.
+                    In this case we can not intersect (or union for that matter) two sets of clothes because all pieces of clothing should be different colors. We can still combine two sets in order to streamline the creation of relations by remembering that a relation is itself a set and therefore we can create a relation from a set onto a relation. Say you wanted to build an outfit around a chosen coat you can make the outfit by creating a relation from <c>Coat_Colors</c> to <c>Shirt_Colors</c><m>R</m><c>Pants_Colors</c>.
                 </p>
 
                 <sage>
