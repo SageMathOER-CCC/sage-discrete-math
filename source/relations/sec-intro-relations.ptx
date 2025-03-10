@@ -55,46 +55,6 @@
         </sage>
     </subsection>
     
-    <!-- 
-
-    <p>
-        Let's use relations to explore matching items of clothes. Let's define two sets, jackets and shirts, as examples:
-    </p>
-    <p>
-        <me>
-            \text{jackets} = \{j_1, j_2, j_3\}
-        </me>
-        <me>
-            \text{shirts} = \{s_1, s_2, s_3, s_4\}
-        </me>
-    </p>
-    <p>
-        The Cartesian product of jackets and shirts includes all possible combinations of jackets with shirts.
-    </p>
-    <sage>
-        <input>
-            # Define the sets of jackets and shirts
-            jackets = Set(['j1', 'j2', 'j3'])
-            shirts = Set(['s1', 's2', 's3', 's4'])
-
-            # View all the possible combinations of jackets and shirts
-            C = cartesian_product([jackets, shirts])
-
-            Set(C)
-        </input>
-    </sage>
-    <p>
-        Since the Cartesian product returns all the possible combinations, some jackets and shirts will clash. Let's create a relation from jackets to shirts based on matching the items of clothing.
-    </p>
-    <sage>
-        <input>
-            # Define a matching relation between jackets and shirts
-            R = Set([('j1', 's1'), ('j2', 's3'), ('j3', 's4'), ('j1', 's2')])
-
-            print("Matching relation R =", R)
-        </input>
-    </sage>
-        -->
 
     <subsection xml:id="subsec-Relations-on-a-Set">
         <title>Relations On a Set</title>
