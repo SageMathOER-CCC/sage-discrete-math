@@ -16,8 +16,8 @@
             A = Set([1, 2, 3, 4, 5, 6])
             B = Set([1, 2, 7])
 
-            C = Set(cartesian_product([A, B]))
-            S = Subsets(C)
+            Car_Prod = Set(cartesian_product([A, B]))
+            S = Subsets(Car_Prod)
 
             R = Set([(a, b) for a in A for b in B if a==2*b])
 
@@ -25,42 +25,56 @@
             print("Is R a relation from set A to set B?", R in S)
         </input>
     </sage>
+    <p>
+        In this example we used the <c>Set</c> class to test for being a relation because the functions used to test for a relation require sets as inputs but for some of the chapter relations will be in the <c>list</c> class because of different functionality. 
+    </p>
 
-    <p>
-        Let's use relations to explore matching items of clothes. Let's define two sets, jackets and shirts, as examples:
+
+    <subsection xml:id="subsec-relation-composition">
+        <title>Relation Composition</title>
+
+        <p>
+            If we have two relations with a set in common, such as <m>R_1</m> from <m>A</m> to <m>B</m> and <m>R_2</m> from <m>B</m> to <m>C</m>, we can compose them to create a relation between the two non repeated sets, such as <m>R_2 \circ R_1</m> from <m>A</m> to <m>C</m>. A composed relation <m>R_2 \circ R_1</m> is defined as the set of pairs <m>(a,c)</m> where <m>a \in A</m> and <m>c \in C</m> and there exists a <m>b \in B</m> such that <m>aR_1b</m> and <m>bR_2c</m>.
+        </p>
+        
+        <p>
+            We can also use Sage to compose relations.
+        </p>
+        <sage>
+            <input>
+                A = Set([1, 2, 3, 4, 5, 6])
+                B = Set([1, 2, 7])
+                R_1 = [(a, b) for a in A for b in B if a==2*b]
+
+                C = Set([7,8,9,10])
+                R_2 = [(a,c) for a in A for c in C if a + c == 10]
+                
+                R_2oR_1 = [(r_1[0], r_2[1]) for r_1 in R_1 for r_2 in R_2 if r_1[1] == r_2[0]]
+                R_2oR_1
+            </input>
+        </sage>
+    </subsection>
+    
+
+    <subsection xml:id="subsec-Relations-on-a-Set">
+        <title>Relations On a Set</title>
+
+        <p>
+        When <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
     </p>
     <p>
-        <me>
-            \text{jackets} = \{j_1, j_2, j_3\}
-        </me>
-        <me>
-            \text{shirts} = \{s_1, s_2, s_3, s_4\}
-        </me>
-    </p>
-    <p>
-        The Cartesian product of jackets and shirts includes all possible combinations of jackets with shirts.
+        Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
     </p>
     <sage>
         <input>
-            # Define the sets of jackets and shirts
-            jackets = Set(['j1', 'j2', 'j3'])
-            shirts = Set(['s1', 's2', 's3', 's4'])
+            A = Set([2, 3, 4, 6, 8])
 
-            # View all the possible combinations of jackets and shirts
-            C = cartesian_product([jackets, shirts])
+            # Define the relation R on A: aRb iff a divides b
+            R = Set([(a, b) for a in A for b in A if a.divides(b)])
 
-            Set(C)
+            show(R)
         </input>
     </sage>
-    <p>
-        Since the Cartesian product returns all the possible combinations, some jackets and shirts will clash. Let's create a relation from jackets to shirts based on matching the items of clothing.
-    </p>
-    <sage>
-        <input>
-            # Define a matching relation between jackets and shirts
-            R = Set([('j1', 's1'), ('j2', 's3'), ('j3', 's4'), ('j1', 's2')])
+    </subsection>
 
-            print("Matching relation R =", R)
-        </input>
-    </sage>
 </section>

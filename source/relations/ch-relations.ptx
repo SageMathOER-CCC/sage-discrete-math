@@ -11,7 +11,6 @@
 
   <!-- include sections -->
   <xi:include href="sec-intro-relations.ptx" />
-  <xi:include href="sec-relations-on-a-set.ptx" />
   <xi:include href="sec-digraphs.ptx" />
   <xi:include href="sec-properties.ptx" />
   <xi:include href="sec-equivalence.ptx" />
