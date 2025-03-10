@@ -28,4 +28,5 @@
   <xi:include href="sec-defining-functions.ptx" />
   <xi:include href="sec-documentation.ptx" />
   <xi:include href="sec-sage-browser.ptx" />
+  <xi:include href="sec-miscellaneous.ptx" />
 </chapter>
