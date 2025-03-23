@@ -4,7 +4,7 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you have just been invited to a formal outing and are trying to construct an outfit. All of your formal clothes are in a similar style, material, and fit with the main difference being in color; so your main delema is how you will match colors. We will list all possible suit outfits with a complementary color scheme and list all possible blazer outfits with triadic color schemes.
+            Imagine you have just been invited to a formal outing and are trying to construct an outfit. All of your formal clothes are in a similar style, material, and fit with the main difference being in color; so your main dilemma is how you will match colors. We will list all possible suit outfits with a complementary color scheme and list all possible blazer outfits with triadic color schemes.
         </p>
         <p>
             Here are the colors of your coats, pants, and shirts in the form of a dictionary with RGB values as keys for color names as values.

@@ -9,7 +9,7 @@
         Recall the Cartesian product consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
-        In this example, an element in the set <m>A</m> relates to an element in <m>B</m> if the element from <m>A</m> is twice the element from <m>B</m>.
+        In this example, an element in the set <m>A</m> relates to an element in <m>B</m> if the element from <m>A</m> is twice the element in <m>B</m>.
     </p>
     <sage>
         <input>
