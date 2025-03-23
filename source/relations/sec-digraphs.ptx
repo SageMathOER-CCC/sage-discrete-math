@@ -6,7 +6,7 @@
         A digraph, or directed graph, is a visual representation of a relation <m>R</m> on the set <m>A</m>. Every element in set <m>A</m> is shown as a node (vertex). An arrow from the node <m>a</m> to the node <m>b</m> represents the pair <m>(a,b)</m> on the relation <m>R</m>.
     </p>
     <p>
-        A digraph must be made from a list and not sets or tuples.
+        <alert>A digraph must be made from a list and not sets or tuples.</alert>
     </p>
     <sage>
         <input>

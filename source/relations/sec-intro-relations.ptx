@@ -25,9 +25,6 @@
             print("Is R a relation from set A to set B?", R in S)
         </input>
     </sage>
-    <p>
-        In this example we used the <c>Set</c> class to test for being a relation because the functions used to test for a relation require sets as inputs but for some of the chapter relations will be in the <c>list</c> class because of different functionality. 
-    </p>
 
 
     <subsection xml:id="subsec-relation-composition">
