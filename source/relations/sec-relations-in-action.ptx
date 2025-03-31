@@ -64,7 +64,7 @@
                 from math import isclose
                 # To account for rounding and floating point errors isclose will be used instead of ==
 
-                def iscomplement(v, k)
+                def iscomplement(v, k):
                 # The color wheel loops around on itself meaning we need to check for complements even when hue + 0.5 > 1
                     return isclose(rgb2hsl(v)[0], (rgb2hsl(k)[0] + 0.5) - floor(rgb2hsl(k)[0] + 0.5), abs_tol=1e-8) <!-- Can't use '% 1' because floating point errors cause negative outputs with blue hues causing false negatives-->
 
