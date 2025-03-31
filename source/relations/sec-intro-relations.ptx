@@ -9,15 +9,15 @@
         Recall the Cartesian product consists of all possible ordered pairs <m>(a, b)</m>, where <m>a \in A</m> and <m>b \in B</m>. Each pair combines an element from set <m>A</m> with an element from set <m>B</m>.
     </p>
     <p>
-        In this example, an element in the set <m>A</m> relates to an element in <m>B</m> if the element from <m>A</m> is twice the element in <m>B</m>.
+        In this example, an element in the set <m>A</m> relates to an element in <m>B</m> if the element from <m>A</m> is twice the element from <m>B</m>.
     </p>
     <sage>
         <input>
             A = Set([1, 2, 3, 4, 5, 6])
             B = Set([1, 2, 7])
 
-            CP = Set(cartesian_product([A, B]))
-            S = Subsets(CP)
+            Car_Prod = Set(cartesian_product([A, B]))
+            S = Subsets(Car_Prod)
 
             R = Set([(a, b) for a in A for b in B if a==2*b])
 
@@ -25,13 +25,16 @@
             print("Is R a relation from set A to set B?", R in S)
         </input>
     </sage>
+    <p>
+        In this example we used the <c>Set</c> class to test for being a relation because the functions used to test for a relation require sets as inputs but for some of the chapter relations will be in the <c>list</c> class because of different functionality. 
+    </p>
 
 
     <subsection xml:id="subsec-relation-composition">
         <title>Relation Composition</title>
 
         <p>
-            If we have two relations with a set in common, such as <m>R</m> from <m>A</m> to <m>B</m> and <m>S</m> from <m>B</m> to <m>C</m>, we can compose them to create a relation between the two non repeated sets, such as <m>S \circ R</m> from <m>A</m> to <m>C</m>, where the relation is defined as all <m>aS \circ Rc</m> where there exists an element <m>b \in B</m> such that <m>aRb</m> and <m>bSc</m> exist.  
+            If we have two relations with a set in common, such as <m>R_1</m> from <m>A</m> to <m>B</m> and <m>R_2</m> from <m>B</m> to <m>C</m>, we can compose them to create a relation between the two non repeated sets, such as <m>R_2 \circ R_1</m> from <m>A</m> to <m>C</m>. A composed relation <m>R_2 \circ R_1</m> is defined as the set of pairs <m>(a,c)</m> where <m>a \in A</m> and <m>c \in C</m> and there exists a <m>b \in B</m> such that <m>aR_1b</m> and <m>bR_2c</m>.
         </p>
         
         <p>
@@ -41,13 +44,13 @@
             <input>
                 A = Set([1, 2, 3, 4, 5, 6])
                 B = Set([1, 2, 7])
-                R = Set([(a, b) for a in A for b in B if a==2*b])
+                R_1 = [(a, b) for a in A for b in B if a==2*b]
 
                 C = Set([7,8,9,10])
-                S = Set([(a,c) for a in A for c in C if a + c == 10])
+                R_2 = [(a,c) for a in A for c in C if a + c == 10]
                 
-                SoR = Set([(r[0], s[1]) for r in R for s in S if r[1] == s[0]])
-                show(SoR)
+                R_2oR_1 = [(r_1[0], r_2[1]) for r_1 in R_1 for r_2 in R_2 if r_1[1] == r_2[0]]
+                R_2oR_1
             </input>
         </sage>
     </subsection>

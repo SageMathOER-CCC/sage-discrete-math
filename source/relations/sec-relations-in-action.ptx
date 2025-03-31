@@ -4,164 +4,122 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you are shopping for clothing online and want color scheme suggestions for the outfit you are creating. The website you are shopping on has many color options and far too many potential combinations to evaluate on your own. Sage can solve this by narrowing down the options for your preferred color scheme rules.
+            Imagine you have just been invited to a formal outing and are trying to construct an outfit. All of your formal clothes are in a similar style, material, and fit with the main difference being in color; so your main delema is how you will match colors. We will list all possible suit outfits with a complementary color scheme and list all possible blazer outfits with triadic color schemes.
         </p>
         <p>
-            Python's <c>colour</c> package has a dictionary of color values and names that will be used as a stand-in for the color information provided by the website. We will use a dictionary because it allows for us to see outputs as color names as opposed to RGB values.
+            Here are the colors of your coats, pants, and shirts in the form of a dictionary with RGB values as keys for color names as values.
         </p>
         <sage>
             <input>
-                from colour import COLOR_NAME_TO_RGB as Website_Color_Data
-                U = {}
-                for v, k in Website_Color_Data.items():
-                    #The original dictionary's RGB values are on a scale of 0-255 so the must be converted to sage's 0-1 scale
-                    U.setdefault((k[0]/255, k[1]/255, k[2]/255), v) <!-- setdefault is used because the original dictionary has repeat entries for words containing 'grey' and 'gray' and this implementation keeps the American spelling only-->  
-                print('The dictionary has ' + str(len(U)) + ' entries')
-            </input>
-        </sage>
-        <p>
-           The dictionary is very large and it would force sage to calculate many irrelevant pairs in a relation. Personal preferences are necessary to narrow down the set sage works with. 
-        </p>
-        <p>
-           For this example, you will be creating an outfit out of a tee-shirt, over-shirt, and bottoms. Each clothing item will be represented by a set of the colors, as strings, that are available for that clothing item. With this we can now create the set of colors that we want to work with.
-        </p>
-        <sage>
-            <input>
-                Tee = Set(['maroon', 'beige', 'azure', 'brown', 'navy', 'olive', 'ivory', 'lavender', 'firebrick', 'sandybrown', 'honeydew'])
-                Over = Set(['maroon', 'beige', 'azure', 'beige', 'tan', 'brown', 'navy', 'slateblue', 'khaki', 'ivory', 'lavender', 'firebrick'])
-                Bottoms = Set(['maroon', 'beige', 'azure', 'tan', 'brown', 'navy', 'olive', 'khaki', 'ivory', 'lavender', 'firebrick', 'honeydew'])
-                C = Tee | Over | Bottoms 
-                show(C)
+                Coat_Colors = {
+                    (0.000, 0.053, 0.476): 'navy',
+                    (1.000, 0.947, 0.524): 'beige',
+                    (0.053, 0.476, 0.000): 'olive',
+                    (0.476, 0.000, 0.053): 'wine',
+                    (0.180, 0.741, 1.000): 'baby blue',
+                    (0.820, 0.259, 0.000): 'bronze orange',
+                    (0.525, 0.263, 0.000): 'army brown',
+                    (0.947, 0.524, 1.000): 'washed pink',
+                    (0.000, 0.000, 0.000): 'black'
+                }
+
+                Pants_Colors = {
+                    (0.000, 0.053, 0.476): 'navy',
+                    (1.000, 0.953, 0.580): 'beige',
+                    (0.053, 0.476, 0.000): 'olive',
+                    (0.476, 0.000, 0.053): 'wine',
+                    (0.180, 0.741, 1.000): 'baby blue',
+                    (0.820, 0.259, 0.000): 'bronze orange',
+                    (0.525, 0.263, 0.000): 'army brown',
+                    (0.282, 0.318, 0.357): 'sky grey',
+                    (0.000, 0.000, 0.000): 'black'
+                }
+
+                Shirt_Colors = {
+                    (1.000, 0.953, 0.580): 'beige',
+                    (0.000, 0.053, 0.476): 'navy',
+                    (0.947, 0.524, 1.000): 'washed pink',
+                    (0.820, 0.259, 0.000): 'bronze orange',
+                    (0.180, 0.741, 1.000): 'baby blue',
+                    (0.053, 0.476, 0.000): 'olive',
+                    (1.000, 1.000, 1.000): 'white'
+                }
             </input>
         </sage>
     </introduction>
-    <subsection xml:id="subsec-Color-Complements">
+    <subsection>
     <title>Color Complements</title>
         <p>
-            Complementary colors are two colors, who's hues are <m>180^\circ</m> away from each other on the color wheel. RGB values do not let us compare hues easily so we will use the <c>rgb2hsl</c> command, from the <c>colour</c> package, and the hue values it generates to compute which colors are complements. The <c>rgb2hsl</c> command outputs in the format <c>(hue, saturation, lightness)</c> with all values, <m>v</m>, in the range <m>0 \leq v \leq 1</m>, so instead of checking for complements with increments of <m>180^\circ</m>, we will use increments of <c>0.5</c>.
-        </p>  
-        <figure xml:id="fig-complements">
-            <caption>Cyan and red are complementary colors.</caption>
-                <image width="100%" xml:id="complement-wheel"> 
-                <shortdescription> RGB color wheel with a line connecting red and cyan</shortdescription>
-                <latex-image>
-                    \begin{tikzpicture}
-                		\shade[shading=color wheel]  (0,0) circle (1.5);
-            			\draw [fill=white, white](0,0) circle (1);
-			            \draw [black, fill = white] (0,-1.25) circle (0.25) node[black] {C}
-            			(0,1.25) circle (0.25) node[black] {R};
-			            \draw[very thick] (0,1) -- (0,-1);
-            		\end{tikzpicture}
-                </latex-image>
-            </image>
-        </figure>
+            Complementary colors are defined as two colors, that when added together produce a white (or some shade of grey but for this exercise we will calculate around pure white). We can calculate a color's complement by simply subtracting all of its RGB values from white <c>(1,1,1)</c>. This will produce an RGB value that when it is added to the original will create white.
+        </p>
         <p>
-            Here is a relation, on <m>C</m>, that maps colors to their complements.
+            Here we define a function that does just that.
         </p>
         <sage>
             <input>
-                from colour import rgb2hsl
-                from math import isclose
-                # To account for rounding and floating point errors isclose will be used instead of ==
-
-                def iscomplement(v, k)
-                # The color wheel loops around on itself meaning we need to check for complements even when hue + 0.5 > 1
-                    return isclose(rgb2hsl(v)[0], (rgb2hsl(k)[0] + 0.5) - floor(rgb2hsl(k)[0] + 0.5), abs_tol=1e-8) <!-- Can't use '% 1' because floating point errors cause negative outputs with blue hues causing false negatives-->
-
-                Complement = Set([(U[a],U[b]) for a in U for b in U if iscomplement(a, b) and U[a] in C and U[b] in C])
-                list(Complement) <!-- Lists are called because pprint.pprint() does not organize the output of sage sets -->
-            </input>  
+                def Generate_complement(input_color):
+                    output_color = (1 - input_color[0], 1 - input_color[1], 1 - input_color[2])
+                    return output_color
+            </input>
         </sage>
-        <p>
-            It may appear as if the <c>Complement</c> relation can be categorized as an equivalence relation, but this is not the case; colors do not complement themselves therefore the relation is not reflexive.
-        </p>
-        <subsubsection xml:id="subsubsec-Complementary-Outfits">
-        <title>Complementary Outfits</title>
+    
+
+        <subsubsection>
+        <title>Suits and Shirts</title>
             <introduction>
                 <p>
-                    If you wanted the over-shirt and bottoms to match, you could have your outfit consist of two complementary colors. The colors available for the over-shirt are different from the colors available for the bottoms, so a new set of both clothing items' colors must be made.
+                    Traditionally a suit must have a matching, in terms of color and material, pair of dress pants and a coat. So, instead of complementing all three sets of clothing, we will combine the dictionaries of pants and coats under intersection in order to get a set of full suits.
                 </p>
             </introduction>    
                 <sage>
                     <input>
-                        over_bottom = Over &amp; Bottoms
-                        show(over_bottom)
+                        Full_Suits = Pants_Colors | Coat_Colors
+                        Full_Suits
                     </input>
                 </sage>
                 <p>
-                   The <c>Complement</c> relation does not describe all complementary outfits with the given restraints. This can be fixed by intersecting the relation with <c>over_bottom</c><m>\times</m><c>Tee</c> because this imparts the restraints of complements and website inventory.
+                    Now we want to find what combinations of shirts and suits will complement each other. Here is how we define it as a relation, from the set of suits to the set of shirts, in Sage.
                 </p>
                 <sage>
                     <input>
-                       C_outfits = Set(cartesian_product([over_bottom, Tee])) &amp; Complement
-                       list(C_outfits)
+                        Suit_Combos = [(Full_Suits[a], Shirt_Colors[b]) for a in Full_Suits for b in Shirt_Colors if b == Generate_complement(a)]
+                        Suit_Combos
                     </input>
                 </sage>
             </subsubsection>
         </subsection>
-        <subsection xml:id="subsec-Triadic-Schemes">
+        <subsection>
             <title>Triadic Schemes</title>
             <introduction>
                 <p>
-                    If you want each component of your outfit to be of a differ color, you can use a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
-                </p>  
-                <figure xml:id="fig-triadic">
-                    <caption>Red, green, and blue form a triadic color scheme</caption>
-                        <image width="100%" xml:id="triadic-wheel"> 
-                        <shortdescription> RGB color wheel with a triangle connecting red, green, and blue.</shortdescription>
-                        <latex-image>
-                            \begin{tikzpicture} [xrange=-1.5:1.5,yrange=-1.5:1.5] 
-                        		\shade[shading=color wheel]  (0,0) circle (1.5);
-                    			\draw [fill=white, white](0,0) circle (1);
-                    			\draw[very thick] (1.0825,-0.625) -- (0,1.25) -- (-1.0825,-0.625) -- cycle;
-                    			\draw [black, fill = white] (0,1.25) circle (0.25) node[black] {R}
-                    			(-1.0825,-0.625) circle (0.25) node[black] {B}
-                    			(1.0825,-0.625) circle (0.25) node[black] {G};
-                    		\end{tikzpicture}
-                        </latex-image>
-                    </image>
-                </figure> 
+                    Unlike suits, when wearing a coat as a blazer the pants can differ in color from the coat. This allows for a color scheme with three different colors. To create such a scheme we will calculate which combinations form a triadic scheme. Like complements, triadic colors are sets of colors that, when added, form a white or grey but in this case there are three.
+                </p>
             </introduction>
             <p>
-                Here is a relation that maps a color to the colors with the hue <m>120^\circ</m> to its right. 
+                Here is a function that returns a color's other two triadic counterparts of equal brightness.
             </p>
             <sage>
                 <input>
-                    def is120(v,k):
-                        return isclose(rgb2hsl(v)[0], (rgb2hsl(k)[0] + 1/3) - floor(rgb2hsl(k)[0] + 1/3), abs_tol=1e-8)
+                    def Generate_triadic(input_color):
+                        triadic_1 = (input_color[1], input_color[2], input_color[0])
+                        triadic_2 = (input_color[2], input_color[0], input_color[1])
+                        return triadic_1, triadic_2
+                </input>
+            </sage>
+            <subsubsection xml:id="subsubsec-Blazer-Outfits">
+                <title>Blazer Outfits</title>
 
-                    T_120 = Set([(U[a], U[b]) for a in U for b in U if is120(a,b) and U[a] in C and U[b] in C])
-                    list(T_120)
-                </input>
-            </sage>
-            <p>
-               Composing this relation with itself causes it will map one color to other colors with hues <m>120^\circ</m> away on the color wheel. This may miss some color pairs, in C, but these pairs lack a third color and thus do not constitute a triadic scheme. These pairs are therefore omitted. 
-            </p>
-            <sage>
-                <input>
-                    T_240 = Set([(t1[0], t2[1]) for t1 in T_120 for t2 in T_120 if t1[1] == t2[0]])
-                    list(T_240)
-                </input>
-            </sage>
-            <subsubsection xml:id="subsubsec-triadic-outfits">
-                <title>Triadic Outfits</title>
                 <p>
-                    With triadic outfits we can not intersect (or union for that matter) two sets of clothes because all pieces of clothing should be in different colors. We can still combine two sets in order to streamline the creation of relations by remembering that a relation is itself a set, and therefore we can create a relation from a set onto a relation. 
+                    In this case we can not intersect (or union for that matter) two sets of clothes because all pieces of clothing should be different colors. We can still combine two sets in order to streamline the creation of relations by remembering that a relation is itself a set and therefore we can create a relation from a set onto a relation. Say you wanted to build an outfit around a chosen coat you can make the outfit by creating a relation from <c>Coat_Colors</c> to <c>Shirt_Colors</c><m>R</m><c>Pants_Colors</c>.
                 </p>
+
                 <sage>
                     <input>
-                        Triads = Set([(c, t) for c in C for t in T_240 if ((c, t[0]) in T_120 or (c, t[1]) in T_120) and not (c in t)])
-                        list(Triads)
-                    </input>
-                </sage>
-                <p>
-                    Now that you have a relation that describes all triadic schemes in <m>C</m>, you need to now narrow it down to the color combinations allowed by the website's stock. 
-                </p>
-                <sage>
-                    <input>
-                        All_Outfits = Set(cartesian_product([Over, cartesian_product([Tee, Bottoms])]))
-                        T_Outfits = All_Outfits &amp; Triads
-                        list(T_Outfits)
+                        #We have our original relation in terms of RGB values instead of color names to simplify calculations
+                        Shirt_R_Pants = [(a, b) for a in Shirt_Colors for b in Pants_Colors if a in Generate_triadic(b)]
+
+                        Blazer_Combos = [(Coat_Colors[a] , (Shirt_Colors[b[0]] , Pants_Colors[b[1]])) for a in Coat_Colors for b in Shirt_R_Pants if Set(Generate_triadic(a)) == Set(b)]
+                        Blazer_Combos
                     </input>
                 </sage>
             </subsubsection>
