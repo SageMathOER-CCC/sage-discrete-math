@@ -31,7 +31,7 @@
         <title>Relation Composition</title>
 
         <p> 
-            Let <m>R</m> be a relation from a set <m>A</m> to a set <m>B</m> and <m>S</m> a relation from <m>B</m> to a set <m>C</m>. The composite of <m>R</m> and <m>S</m> is the relation consisting of the ordered pairs <m>(a,c)</m> where <m>a \in A</m> and <m>a \in C</m>, and for which there is a <m>b \in B</m> such that <m>(a,b) \in R</m> and <m>(b,c) \in S</m>. We denote the composite of <m>R</m> and <m>S</m> by <m>S \! \circ \! R</m>.
+            Let <m>R</m> be a relation from a set <m>A</m> to a set <m>B</m> and <m>S</m> a relation from <m>B</m> to a set <m>C</m>. The composite of <m>R</m> and <m>S</m> is the relation consisting of the ordered pairs <m>(a,c)</m> where <m>a \in A</m> and <m>c \in C</m>, and for which there is a <m>b \in B</m> such that <m>(a,b) \in R</m> and <m>(b,c) \in S</m>. We denote the composite of <m>R</m> and <m>S</m> by <m>S \! \circ \! R</m>.
         </p>
         
         <p>
