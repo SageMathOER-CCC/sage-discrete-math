@@ -34,6 +34,7 @@
     \usetikzlibrary{positioning,matrix,arrows}
     \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
     \usetikzlibrary{decorations.markings}
+    \usetikzlibrary{shadings} <!-- Used in Relations in Action -->
   </latex-image-preamble>
 
   <!-- It is possible to rename elements: -->
