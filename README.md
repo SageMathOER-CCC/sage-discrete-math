@@ -2,19 +2,19 @@
 
 ## Chicago City Colleges Open Educational Resource
 
-Welcome to our interactive online textbook for learning Discrete Mathematics with SageMath. View the most recent version of the textbook at [https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html](https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html)
+Welcome to our interactive online textbook for learning Discrete Mathematics with SageMath (_Sage_). View the most recent version of the textbook at [https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html](https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html)
 
 ### Empowering mathematicians and computer scientists with open-source tools
 
-We are developing essential resources for students to use mathematical software effectively. Our goal is to streamline the learning process with SageMath. This approach helps students focus more on mathematics and reduces the friction of learning how to code. Our resources are designed for all math students, regardless of programming experience.
+We are developing essential resources for students to use mathematical software effectively. Our goal is to streamline the learning process with Sage. This approach helps students focus more on mathematics and reduces the friction of learning how to code. Our resources are designed for all math students, regardless of programming experience.
 
-### What is SageMath?
+### What is Sage?
 
-[SageMath](https://www.sagemath.org/) is a free, open-source mathematics software system based on Python. It integrates well-known open-source packages that include NumPy, SciPy, matplotlib, Sympy, Maxima, GAP, FLINT, R, and many [others](https://doc.sagemath.org/html/en/reference/spkg/). SageMath is fulfilling the need for a robust and free alternative to proprietary software like Magma, Maple, Mathematica, and Matlab.
+[Sage](https://www.sagemath.org/) is a free, open-source mathematics software system based on Python. It integrates well-known open-source packages that include NumPy, SciPy, matplotlib, Sympy, Maxima, GAP, FLINT, R, and many [others](https://doc.sagemath.org/html/en/reference/spkg/). Sage is fulfilling the need for a robust and free alternative to proprietary software like Magma, Maple, Mathematica, and Matlab.
 
-### Why Discrete Mathematics with SageMath?
+### Why Discrete Mathematics with Sage?
 
-Our first textbook focuses on discrete mathematics. SageMath allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
+Our first textbook focuses on discrete mathematics. Sage allows students to explore and visualize complex concepts, boosting their understanding and skills in this essential subject.
 
 ## How to Contribute
 
@@ -49,7 +49,7 @@ GitHub Codespaces allows you to develop in a cloud-based development environment
 
 ### How to Make Changes
 
-After setting up a codespace or cloning the repository to your local machine, you can start making changes to the project. PreTeXt uses XML to structure the content and SageMath for interactive code cells. You can learn more about PreTeXt [here](https://pretextbook.org/).
+After setting up a codespace or cloning the repository to your local machine, you can start making changes to the project. PreTeXt uses XML to structure the content and Sage for interactive code cells. You can learn more about PreTeXt [here](https://pretextbook.org/).
 
 You can refer to an overview of features and syntax in the [PreTeXt documentation](https://pretextbook.org/doc/guide/html/overview.html).
 

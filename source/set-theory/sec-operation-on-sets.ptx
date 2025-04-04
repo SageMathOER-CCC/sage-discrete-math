@@ -235,7 +235,7 @@
                 </li>
                 <li>
                     <p>
-                        Most of Python’s immutable built-in objects are hashable.
+                        Most of Python's immutable built-in objects are hashable.
                     </p>
                 </li>
                 <li>
@@ -308,7 +308,7 @@
             </input>
         </sage>
         <p>
-            If we only want to view part of the power set, we can specify a range of elements with a technique called slicing. With slicing we convert the set into a list with order. 
+            If we only want to view part of the power set, we can specify a range of elements with a technique called slicing. With slicing we convert the set into a list with order.
             For example, here are the first 5 elements of the list made from the elements of the power set.
         </p>
         <sage>
