@@ -5,28 +5,35 @@
 
   <introduction>
     <p>
-      Welcome to our introduction to SageMath (also referred to as Sage). This chapter is designed for learners of all backgrounds—whether you're new to programming or aiming to expand your mathematical toolkit. There are various options for running Sage, including the SageMathCell, CoCalc, and a local installation. The easiest way to get started is to use the SageMathCell embedded directly in this book. We will also cover how to use CoCalc, a cloud-based platform that provides a collaborative environment for running Sage code.
+      Welcome to our introduction to SageMath (also referred to as Sage). This chapter is designed for
+      learners of all backgrounds —whether you're new to programming or aiming to expand your mathematical
+      toolkit. There are various ways to run Sage, including SageMathCell, CoCalc, and a local installation.
+      The simplest way to start is by using the SageMathCell embedded in this book. We will also cover how
+      to use CoCalc, a cloud-based platform for running Sage in a collaborative environment.
     </p>
 
     <p>
-      Sage is a free open-source mathematics software system that integrates <url href="https://doc.sagemath.org/html/en/reference/spkg/">various open-source mathematics software packages</url>. We will cover the basics, including SageMath's syntax, data types, variables, and debugging techniques. Our goal is to equip you with the foundational knowledge needed to explore mathematical problems and programming concepts in an accessible and straightforward manner.
+      Sage is a free, open-source mathematics software system that integrates
+      <url href="https://doc.sagemath.org/html/en/reference/spkg/">various open-source math packages</url>.
+      This chapter introduces Sage's syntax, data types, variables, and debugging techniques. Our goal is to
+      equip you with the foundational knowledge to explore mathematical problems and programming concepts
+      in an intuitive and practical manner.
     </p>
 
     <p>
-      Join us as we explore the capabilities of SageMath!
+      Join us as we explore the capabilities of Sage!
     </p>
-
   </introduction>
 
   <!-- include sections -->
   <xi:include href="sec-intro-to-sage.ptx" />
-  <xi:include href="sec-displaying.ptx" />
-  <xi:include href="sec-OOP.ptx" />
   <xi:include href="sec-data-types.ptx" />
-  <xi:include href="sec-iteration.ptx" />
-  <xi:include href="sec-debugging.ptx" />
+  <xi:include href="sec-flow-control-structures.ptx" />
   <xi:include href="sec-defining-functions.ptx" />
+  <xi:include href="sec-OOP.ptx" />
+  <xi:include href="sec-displaying.ptx" />
+  <xi:include href="sec-debugging.ptx" />
   <xi:include href="sec-documentation.ptx" />
-  <xi:include href="sec-sage-browser.ptx" />
   <xi:include href="sec-miscellaneous.ptx" />
+  <xi:include href="sec-sage-browser.ptx" />
 </chapter>

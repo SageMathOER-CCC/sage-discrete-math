@@ -1,225 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="about-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Intro to Sage</title>
-  <introduction>
-    <p>
-      You can execute and modify Sage code directly within the SageMathCells embedded on this webpage. Cells on the same page share a common memory space. To ensure accurate results, run the cells in the sequence in which they appear. Running them out of order may cause unexpected outcomes due to dependencies between the cells.
-    </p>
-  </introduction>
+    <title>Intro to Sage</title>
 
-  <subsection xml:id="subsec-Sage-as-a-Calculator">
-    <title>Sage as a Calculator</title>
-
-    <p>
-      Before we get started with discrete math, let's see how we can use Sage as a calculator. Here are the basic arithmetic operators:
-    </p>
-    <idx><h>arithmetic operators</h></idx>
-    <ul>
-      <li>
+    <introduction>
         <p>
-          Addition: <c>+</c>
+            You can execute and modify Sage code directly within the SageMathCells embedded on this webpage.
+            Cells on the same page share a common memory space. To ensure accurate results, run the cells in
+            the sequence in which they appear. Running them out of order may cause unexpected outcomes due to
+            dependencies between the cells.
         </p>
-      </li>
-      <li>
+        <sage>
+            <input>
+                # This is an empty cell that you can use to type code
+                # and run Sage commands. These lines here are an example
+                # of comments for the reader and are ignored by Sage.
+            </input>
+        </sage>
+    </introduction>
+
+    <subsection xml:id="subsec-Sage-as-a-Calculator">
+        <title>Sage as a Calculator</title>
+
         <p>
-          Subtraction: <c>-</c>
+            Before we get started with discrete math, let's explore how Sage can be used as a calculator.
+            Here are the basic arithmetic operators:
         </p>
-      </li>
-      <li>
+
+        <idx><h>arithmetic operators</h></idx>
+
+        <ul>
+            <li><c>+</c> (Addition)</li>
+            <li><c>-</c> (Subtraction)</li>
+            <li><c>*</c> (Multiplication)</li>
+            <li><c>**</c> or <c>^</c> (Exponentiation)</li>
+            <li><c>/</c> (Division)</li>
+            <li><c>//</c> (Integer division)</li>
+            <li><c>%</c> (Modulo - remainder of division)</li>
+        </ul>
+
         <p>
-          Multiplication: <c>*</c>
+            There are two ways to run the code within the cells:
         </p>
-      </li>
-      <li>
+
+        <ul>
+            <li>Click the <kbd>Evaluate (Sage)</kbd> button under the cell.</li>
+            <li>Use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd> while the cursor is active in the cell.</li>
+        </ul>
+
+        <p>Try the following examples:</p>
+        <sage>
+            <input>
+                # Lines that start with a pound sign are comments
+                # and ignored by Sage
+                1+1
+            </input>
+        </sage>
+
+        <sage>
+            <input>
+                100 - 1
+            </input>
+        </sage>
+
+        <sage>
+            <input>
+                3*4
+            </input>
+        </sage>
+
         <p>
-          Exponentiation: <c>**</c>, or <c>^</c>
+            Sage supports two exponentiation operators:
         </p>
-      </li>
-      <li>
+
+        <sage>
+            <input>
+                # Sage uses two exponentiation operators
+                # ** is valid in Sage and Python
+                2**3
+            </input>
+        </sage>
+
+        <sage>
+            <input>
+                # Sage uses two exponentiation operators
+                # ^ is valid in Sage
+                2^3
+            </input>
+        </sage>
+
+        <p>Division in Sage:</p>
+
+        <sage><input>5 / 3  # Returns a rational number</input></sage>
+        <sage><input>5 / 3.0  # Returns a floating-point approximation</input></sage>
+
+        <p>Integer division and modulo:</p>
+
+        <sage><input>5 // 3  # Returns the quotient</input></sage>
+        <sage><input>5 % 3   # Returns the remainder</input></sage>
+    </subsection>
+
+    <subsection xml:id="subsec-Variables-and-Names">
+        <title>Variables and Names</title>
+
         <p>
-          Division: <c>/</c>
+            Variables store values in the computer's memory. This includes value of an expression to a
+            variable. Use the assignment operator <c>=</c> to assign a value to a variable. The variable
+            name is on the left side, and the value is on the right. Unlike the expressions above, an
+            assignment does not display anything. To view a variable's value, type its name and run the cell.
+            <!-- TODO. Do we need to define what constants are and how they differ from variables ? -->
         </p>
-      </li>
-      <li>
+
+        <sage>
+            <input>
+                a = 1
+                b = 2
+                sum = a + b
+                sum
+            </input>
+        </sage>
+
         <p>
-          Integer division: <c>//</c>
+            When choosing variable names, follow these rules for valid identifiers:
         </p>
-      </li>
-      <li>
+
+        <idx><h>identifiers</h></idx>
+
+        <ul>
+            <li>Identifiers cannot start with a digit.</li>
+            <li>Identifiers are case-sensitive.</li>
+            <li>Identifiers can include:
+                <ul>
+                    <li>Letters (<c>a-z</c>, <c>A-Z</c>)</li>
+                    <li>Digits (<c>0-9</c>)</li>
+                    <li>Underscore (<c>_</c>)</li>
+                </ul>
+            </li>
+            <li>Do not use spaces, hyphens, punctuation, or special characters while naming your identifiers.</li>
+            <li>Do not use reserved keywords as variable names.</li>
+        </ul>
+
+        <p>Python has a set of reserved keywords that cannot be used as variable names:</p>
+
         <p>
-          Modulo: <c>%</c>
+            <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>,
+            <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>,
+            <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>,
+            <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>,
+            <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>,
+            <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
         </p>
-      </li>
-    </ul>
 
-    <p>
-      There are two ways to run the code within the cells:
-      <ul>
-        <li>
-          <p>
-            Click the <kbd>Evaluate (Sage)</kbd> button located under the cell.
-          </p>
-        </li>
-        <li>
-          <p>
-            Use the keyboard shortcut <kbd>Shift</kbd> + <kbd>Enter</kbd> if your cursor is active in the cell.
-          </p>
-        </li>
-      </ul>
-    </p>
+        <p>
+            To check if a word is a reserved keyword, use the <c>keyword</c> module in Python.
+        </p>
 
-    <sage>
-      <input>
-        # Lines that start with a pound sign are comments
-        # and ignored by Sage
-        1+1
-      </input>
-    </sage>
+        <sage>
+            <input>
+                import keyword
+                keyword.iskeyword('if')
+            </input>
+        </sage>
 
-    <sage>
-      <input>
-        100 - 1
-      </input>
-    </sage>
+        <p>
+            The output is <c>True</c> because <c>if</c> is a keyword. Try checking other names.
+        </p>
+    </subsection>
 
-    <sage>
-      <input>
-        3*4
-      </input>
-    </sage>
-
-    <sage>
-      <input>
-        # Sage uses two exponentiation operators
-        # ** is valid in Sage and Python
-        2**3
-      </input>
-    </sage>
-
-    <sage>
-      <input>
-        # Sage uses two exponentiation operators
-        # ^ is valid in Sage
-        2^3
-      </input>
-    </sage>
-
-    <sage>
-      <input>
-        # Returns a rational number
-        5/3
-      </input>
-    </sage>
-
-    <sage>
-      <input>
-        # Returns a floating point approximation
-        5/3.0
-      </input>
-    </sage>
-
-    <sage>
-      <input>
-        # Returns the quotient of the integer division
-        5//3
-      </input>
-    </sage>
-
-    <sage>
-      <input>
-        # Returns the remainder of the integer division
-        5 % 3
-      </input>
-    </sage>
-  </subsection>
-
-  <subsection xml:id="subsec-Variables-and-Names">
-    <title>Variables and Names</title>
-    <p>
-      We can assign the value of an expression to a variable. A variable is a name that refers to a value in the computer's memory. Use the assignment operator <c>=</c> to assign a value to a variable. The variable name is on the left side of the assignment operator, and the value is on the right side. Unlike the expressions above, the assignment statement does not display anything. To view the value of a variable, type the variable name and run the cell.
-    </p>
-    <sage>
-      <input>
-        a = 1
-        b = 2
-        sum = a + b
-        sum
-      </input>
-    </sage>
-
-    <p>
-      When choosing variable names, use valid identifiers.
-    </p>
-
-    <idx><h>identifiers</h></idx>
-
-    <p>
-      <ul>
-        <li>
-          <p>
-            Identifiers cannot start with a digit.
-          </p>
-        </li>
-        <li>
-          <p>
-            Identifiers are case-sensitive.
-          </p>
-        </li>
-        <li>
-          <p>
-            Identifiers can include:
-            <ul>
-              <li>
-                <p>
-                  letters (<c>a</c> - <c>z</c>, <c>A</c> - <c>Z</c>)
-                </p>
-              </li>
-              <li>
-                <p>
-                  digits (<c>0</c> - <c>9</c>)
-                </p>
-              </li>
-              <li>
-                <p>
-                  underscore character <c>_</c>
-                </p>
-              </li>
-            </ul>
-          </p>
-        </li>
-        <li>
-          <p>
-            Do not use spaces, hyphens, punctuation, or special characters when naming identifiers.
-          </p>
-        </li>
-        <li>
-          <p>
-            Do not use keywords as identifiers.
-          </p>
-        </li>
-      </ul>
-    </p>
-
-    <p>
-      Below are some reserved keywords that you cannot use as variable names:
-    </p>
-
-    <p>
-      <c>False</c>, <c>None</c>, <c>True</c>, <c>and</c>, <c>as</c>, <c>assert</c>, <c>async</c>, <c>await</c>, <c>break</c>, <c>class</c>, <c>continue</c>, <c>def</c>, <c>del</c>, <c>elif</c>, <c>else</c>, <c>except</c>, <c>finally</c>, <c>for</c>, <c>from</c>, <c>global</c>, <c>if</c>, <c>import</c>, <c>in</c>, <c>is</c>, <c>lambda</c>, <c>nonlocal</c>, <c>not</c>, <c>or</c>, <c>pass</c>, <c>raise</c>, <c>return</c>, <c>try</c>, <c>while</c>, <c>with</c>, <c>yield</c>.
-    </p>
-
-    <p>
-      Use the Python <c>keyword</c> module to check if a name is a keyword.
-    </p>
-    <sage>
-      <input>
-        import keyword
-        keyword.iskeyword('if')
-      </input>
-    </sage>
-    <p>
-      The output is <c>True</c> because <c>if</c> is a keyword. Try checking other names.
-    </p>
-  </subsection>
 </section>
