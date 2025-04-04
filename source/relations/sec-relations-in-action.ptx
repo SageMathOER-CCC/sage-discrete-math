@@ -106,7 +106,7 @@
                     If you want each component of your outfit to be of a differ color, you can use a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
                 </p>  
                 <figure xml:id="fig-triadic">
-                    <caption>Red, green, and blue form a triadic color scheme</caption>
+                    <caption>Red, green, and blue form a triadic color scheme.</caption>
                         <image width="100%" xml:id="triadic-wheel"> 
                         <shortdescription> RGB color wheel with a triangle connecting red, green, and blue.</shortdescription>
                         <latex-image>
@@ -135,7 +135,7 @@
                 </input>
             </sage>
             <p>
-               Composing this relation with itself causes it will map one color to other colors with hues <m>120^\circ</m> away on the color wheel. This may miss some color pairs, in C, but these pairs lack a third color and thus do not constitute a triadic scheme. These pairs are therefore omitted. 
+               Composing this relation with itself causes it will map one color to other colors with hues <m>240^\circ</m> away on the color wheel. This may miss some color pairs, in C, but these pairs lack a third color and thus do not constitute a triadic scheme. These pairs are therefore omitted. 
             </p>
             <sage>
                 <input>
