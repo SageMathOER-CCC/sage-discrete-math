@@ -189,7 +189,7 @@
         <ul>
             <li>
                 <p>
-                    <c>graph</c>: A SageMath Graph object.
+                    <c>graph</c>: A Sage Graph object.
                 </p>
             </li>
             <li>

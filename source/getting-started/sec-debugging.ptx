@@ -6,55 +6,40 @@
     <idx>
         <h>error message</h>
     </idx>
-    <p> Error messages are an inevitable part of programming. When you make a syntax error and see a
-        message, read it carefully for clues about the cause of the error. While some messages are
-        helpful and descriptive, others may seem cryptic or confusing. With practice, you will
-        develop valuable skills for debugging your code and resolving errors. Not all errors will
-        produce an error message. Logical errors occur when the syntax is correct, but the program
-        does not produce the expected output. Remember, mistakes are learning opportunities, and
-        everyone makes them. Here are some tips for debugging your code: <ul>
-            <li>
-                <p>
-                    Read the error message carefully for information to help you identify and fix the problem.
-                </p>
-            </li>
 
-            <li>
-                <p>
-                    Study the documentation.
-                </p>
-            </li>
-
-            <li>
-                <p>
-                    Google the error message.
-                    Someone else has likely encountered the same issue.
-                </p>
-            </li>
-
-            <li>
-                <p>
-                    Search for previous posts on Sage forums.
-                </p>
-            </li>
-
-            <li>
-                <p>
-                    Take a break and return with a fresh perspective.
-                </p>
-            </li>
-
-            <li>
-                <p>
-                    If you are still stuck after trying these steps, ask the Sage community.
-                </p>
-            </li>
-        </ul>
+    <p>
+        Error messages are an inevitable part of programming. When you encounter one, read it carefully for
+        clues about the cause. Some messages are clear and descriptive, while others may seem cryptic. With
+        practice, you will develop valuable skills debugging your code and resolving errors
     </p>
+
+    <p>
+        Note that not all errors result in error messages. <term>Logical errors</term> occur when the syntax
+        is correct, but the program does not produce the expected result. Usually, these are a bit harder to trace.
+    </p>
+
+    <p>
+        Remember, mistakes are learning opportunities —everyone makes them! Here are some useful debugging tips:
+    </p>
+
+    <ul>
+        <li>Read the error message carefully —it often provides useful hints.</li>
+        <li>Consult the documentation to understand the correct syntax and usage.</li>
+        <li>Google-search the error message —it's likely that others have encountered the same issue.</li>
+        <li>Check SageMath forums for previous discussions.</li>
+        <li>Take a break and return with a fresh perspective.</li>
+        <li>Ask the Sage community if you're still stuck after trying all the above steps.</li>
+    </ul>
 
     <p>
         Let's dive in and make some mistakes together!
     </p>
+
+    <p>
+        <idx><h>debugging</h><h>syntax error</h></idx>
+        A <term>SyntaxError</term> usually occurs when the code is not written according to the language rules.
+    </p>
+
     <sage>
         <input>
             # Run this cell and see what happens
@@ -63,11 +48,18 @@
         </input>
     </sage>
 
-    <p> Why didn't this print <c>Hello, World!</c> on the screen? The error message informed us of a <c>
-        SyntaxError</c>. While the phrase <c>invalid decimal literal</c> may seem confusing, the key
-        issue here is the invalid variable name. Valid identifiers must start with a letter or
-        underscore. They cannot begin with a number or use any special characters. Let's correct the
-        variable name by using a valid identifier. </p>
+    <p>
+        Why didn't this print <c>Hello, World!</c> to the console? The error message indicates a <c>SyntaxError</c>:
+        <c>invalid decimal literal</c>. The issue here is the invalid variable name. Valid <em>identifiers</em> must:
+    </p>
+
+    <ul>
+        <li>Start with a letter or an underscore (never with a number).</li>
+        <li>Avoid any special characters other than the underscores.</li>
+    </ul>
+
+    <p>Let's correct the variable name:</p>
+
     <sage>
         <input>
             message = "Hello, World!"
@@ -76,25 +68,34 @@
     </sage>
 
     <p>
-        Here is another error:
+        <idx><h>debugging</h><h>name error</h></idx>
+        A <term>NameError</term> occurs when a variable or function is referenced before being defined.
     </p>
+
     <sage>
         <input>
             print(Hi)
         </input>
     </sage>
 
-    <p> In this case, we encounter a <c>NameError</c> because <c>Hi</c> is not defined. Sage assumes
-        that <c>Hi</c> is a variable because there are no quotes. We can make <c>Hi</c> a string by
-        enclosing it in quotes. </p>
+    <p>
+        Sage assumes <c>Hi</c> is a variable, but we have not defined it yet. There are two ways to fix this:
+    </p>
+
+    <ul>
+        <li>Use quotes to indicate that <c>Hi</c> is a string.</li>
+    </ul>
+
     <sage>
         <input>
             print("Hi")
         </input>
     </sage>
 
-    <p> Alternatively, if we intended <c>Hi</c> to be a variable, we can assign a value to it before
-        printing. </p>
+    <ul>
+        <li>Alternatively, if we intended <c>Hi</c> to be a variable, then we must define it before first use.</li>
+    </ul>
+
     <sage>
         <input>
             Hi = "Hello, World!"
@@ -102,11 +103,15 @@
         </input>
     </sage>
 
-    <p> Reading the documentation is essential to understanding how to use methods correctly. If we
-        incorrectly use a method, we will likely get a <c>NameError</c>, <c>AttributeError</c>,
-        <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake. </p>
+    <p> Reading the documentation is essential to understanding the proper use of methods. If we
+        incorrectly use a method, we will likely get a <c>NameError</c> (as seen above), an <c>AttributeError</c>,
+        a <c>TypeError</c>, or <c>ValueError</c>, depending on the mistake.
+    </p>
 
-    <p> Here is an example of a <c>NameError</c>: </p>
+    <p>
+        Here is another example of a <c>NameError</c>:
+    </p>
+
     <sage>
         <input>
             l = [6, 1, 5, 2, 4, 3]
@@ -123,7 +128,11 @@
         </input>
     </sage>
 
-    <p> Here is an example of an <c>AttributeError</c>: </p>
+    <p>
+        <idx><h>debugging</h><h>attribute error</h></idx>
+        An <term>AttributeError</term> occurs when an invalid method is called on an object.
+    </p>
+
     <sage>
         <input>
             l = [1, 2, 3]
@@ -131,15 +140,21 @@
         </input>
     </sage>
 
-    <p> Here is the correct way to use the <c>len()</c> method: </p>
+    <p>
+        The <c>len()</c> function must be used separately rather than as a method of a list.
+    </p>
+
     <sage>
         <input>
-            l = [1, 2, 3]
             len(l)
         </input>
     </sage>
 
-    <p> Here is an example of a <c>TypeError</c>: </p>
+    <p>
+        <idx><h>debugging</h><h>type error</h></idx>
+        A <term>TypeError</term> occurs when an operation or function is applied to an <em>incorrect</em> data type.
+    </p>
+
     <sage>
         <input>
             l = [1, 2, 3]
@@ -147,17 +162,23 @@
         </input>
     </sage>
 
-    <p> The <c>append()</c> method only takes one argument. To add multiple elements to a list, use
-        the <c>extend()</c> method. </p>
+    <p>
+        The <c>append()</c> method only takes one argument. To add multiple elements, use <c>extend()</c>.
+    </p>
+
     <sage>
         <input>
-            l = [1, 2, 3]
             l.extend([4, 5])
             print(l)
         </input>
     </sage>
 
-    <p> Here is an example of a <c>ValueError</c>: </p>
+    <p>
+        <idx><h>debugging</h><h>value error</h></idx>
+        A <term>ValueError</term> occurs when an operation receives an argument of the correct type but with
+        an invalid value.
+    </p>
+
     <sage>
         <input>
             factorial(-5)
@@ -165,17 +186,26 @@
     </sage>
 
     <p>
-        Although the resulting error message is lengthy, the last line informs us that the argument
-        must be a non-negative integer.
+        Although the resulting error message is lengthy, the last line informs us that Factorials are only
+        defined for non-negative integers.
     </p>
+
     <sage>
         <input>
             factorial(5)
         </input>
     </sage>
 
-    <p> Finally, we will consider a logical error. If your task is to print the numbers from <m>1</m>
-        to <m>10</m>, you may mistakenly write the following code: </p>
+    <p>
+        <idx><h>debugging</h><h>logical error</h></idx>
+        A <term>Logical error</term> does not produce an error message but leads to incorrect results.
+    </p>
+
+    <p>
+        Here, assuming your task is to print the numbers from <m>1</m> to <m>10</m>, and you mistakenly write
+        the following code:
+    </p>
+
     <sage>
         <input>
             for i in range(10):
@@ -183,8 +213,11 @@
         </input>
     </sage>
 
-    <p> The output will be the numbers from <m>0</m> to <m>9</m>. To include <m>10</m>, we need to
-        adjust the range because the start is inclusive and the stop is exclusive. </p>
+    <p>
+        This instead will print the numbers <m>0</m> to <m>9</m> (because the start is inclusive but not the stop).
+        If we want numbers <m>1</m> to <m>10</m>, we need to adjust the range.
+    </p>
+
     <sage>
         <input>
             for i in range(1, 11):
@@ -192,8 +225,9 @@
         </input>
     </sage>
 
-    <p> For more information, read the CoCalc <url
-            href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors">article about
-        the top mathematical syntax errors in Sage</url>
+    <p>
+        To learn more, check out the
+        <url href="https://github.com/sagemathinc/cocalc/wiki/MathematicalSyntaxErrors"> CoCalc article</url> about
+        the top mathematical syntax errors in Sage.
     </p>
 </section>

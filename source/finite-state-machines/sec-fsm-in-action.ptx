@@ -17,7 +17,7 @@
     <subsection>
         <title> Traffic Light Controller: Problem Overview</title>
         <p>
-            Let’s design a traffic light system for a two-way road with pedestrian crossings. This
+            Let's design a traffic light system for a two-way road with pedestrian crossings. This
             system coordinates the movement of vehicles and pedestrians using lights to indicate
             when vehicles can proceed, slow down, or stop, and when pedestrians can cross safely.
             Vehicle traffic lights include three signals: Red, Yellow, and Green. For simplicity,

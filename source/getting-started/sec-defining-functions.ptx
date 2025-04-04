@@ -3,22 +3,44 @@
 <section xml:id="defining-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Defining Functions</title><idx><h>functions (programming)</h></idx>
   <p>
-    Sage comes with many built-in functions. Math terminology is not always standard, so be sure to read the documentation to learn what these functions do and how to use them. You can also define custom functions yourself. You are welcome to use the custom functions we define in this book. However, since these custom functions are not part of the Sage source code, you will need to copy and paste the functions into your Sage environment. If you try to use a custom function without defining it, you will get a <c>NameError</c>.
+    Sage comes with many built-in functions. While Math terminology is not always standard, be sure
+    to refer to the documentation to understand the exact functionality of these built-in functions
+    and know how to use them. You can also define custom functions to suit your specific needs. You
+    are welcome to use the custom functions we define in this book. However, since these custom
+    functions are not part of the Sage source code, you will need to copy and paste the functions into your Sage environment. In this section, we'll explore how to define custom functions and use them.
+  </p>
+
+  <p>
+    To define a custom function in Sage, use the <c>def</c> keyword followed by the function name
+    and the function's arguments. The body of the function is indented, and it should contain a
+    <c>return</c> statement that outputs a value. Note that the function definition will only be
+    stored in memory after executing the cell. You won't see any output when defining the function,
+    but once it is defined, you can use it in other cells. If the cell is successfully executed, you
+    will see a green box underneath it. If the box is not green, run the cell again to define the
+    function.
   </p>
   <p>
-    To define a custom function in Sage, use the <c>def</c> keyword followed by the function name and the function's arguments. The function's body is indented. When you call the function, the <c>return</c> keyword returns a value from the function. The function definition is only stored in memory after you run the cell. You will not see any output when you run the cell that defines the function. You will see output only when you call the function. A green box under the cell indicates the successful execution of the cell. If the box is not green, you must run the cell to define the function.
+    A simple example of defining a function is one that returns the <m>n^{th}</m> (0-indexed) row
+    of Pascal's Triangle. Pascal's Triangle is a triangular array of numbers where each number is
+    the sum of the two numbers directly above it.
   </p>
+
   <p>
-    You may have heard of Pascal's Triangle, a triangular array of numbers in which each number is the sum of the two numbers directly above it. Here is an example function that returns the <m>n^{th}</m> (0-indexed) row of Pascal's Triangle:
+    Here's a function definition that computes a specific row of Pascal's Triangle. You need execute
+    the cell to store the function in memory. You can only call the <c>pascal_row()</c> function
+    once the definition has been executed. If you attempt to use the function without defining it
+    first, you will receive a <c>NameError</c>.
   </p>
+
   <sage>
     <input>
       def pascal_row(n):
           return [binomial(n, i) for i in range(n + 1)]
     </input>
   </sage>
+
   <p>
-    Try calling the function for yourself. First, run the Sage cell with the function definition to define the function. If you try to call a function without defining it, you will get a <c>NameError</c>. After defining the function, you can use it in other cells. You won't see any output when you run the cell that defines the function. The Sage cells store the function definition memory. You will see output only when you call the function. After running the above cell, you can call the <c>pascal_row()</c> function.
+    After defining the function above, let's try calling it. :
   </p>
   <sage>
     <input>
@@ -26,7 +48,8 @@
     </input>
   </sage>
   <p>
-    Input validation makes functions more robust. We may get some validation out of the box. For example, if we try to call the function using a string or decimal value as input, we will get a <c>TypeError</c>:
+    Sage functions can sometimes produce unexpected results if given improper input. For instance,
+    passing a string or a decimal value into the function will raise a <c>TypeError</c>:
   </p>
   <sage>
     <input>
@@ -34,15 +57,10 @@
     </input>
   </sage>
   <p>
-    However, if we try to call the function with a negative integer, the function will return an empty list without raising an error.
-  </p>
-  <sage>
-    <input>
-      pascal_row(-5)
-    </input>
-  </sage>
-  <p>
-    This lack of error handling is risky because it can go undetected and cause unexpected behavior. Let's add a <c>ValueError</c> to handle negative input:
+    However, if you pass a negative integer, the function will silently return an empty list. This
+    lack of error handling can lead to unnoticed errors or unexpected behaviors that are difficult
+    to debug, so it is essential to incorporate input validation. Let's add a <c>ValueError</c> to
+    handle negative input properly:
   </p>
   <sage>
     <input>
@@ -53,7 +71,8 @@
     </input>
   </sage>
   <p>
-    Running the above cell redefines the function. Try calling the function with a negative integer to see the input validation.
+    With the updated function definition above, try calling the function again with a negative
+    integer. You will now receive an informative error message rather than an empty list:
   </p>
   <sage>
     <input>
@@ -61,40 +80,38 @@
     </input>
   </sage>
   <p>
-    Functions can also include a <c>docstring</c> to provide documentation for the function. The <c>docstring</c> is a string that appears as the first statement in the function body. It describes what the function does and how to use it.
+    Functions can also include a <c>docstring</c> in the function definition to describe its
+    purpose, inputs, outputs, and any examples of usage. The <c>docstring</c> is a string that
+    appears as the first statement in the function body. This documentation can be accessed using
+    the <c>help()</c> function or the <c>?</c> operator.
   </p>
   <sage>
     <input>
       def pascal_row(n):
-          r"""
+          """
           Return row `n` of Pascal's triangle.
 
           INPUT:
-
           - ``n`` -- non-negative integer; the row number of Pascal's triangle to return.
             The row index starts from 0, which corresponds to the top row.
 
           OUTPUT: list; row `n` of Pascal's triangle as a list of integers.
 
           EXAMPLES:
-
-          This example illustrates how to get various rows of Pascal's triangle (0-indexed) ::
+          This example illustrates how to get various rows of Pascal's triangle (0-indexed) :
 
               sage: pascal_row(0)  # the top row
               [1]
-
               sage: pascal_row(4)
               [1, 4, 6, 4, 1]
 
-          It is an error to provide a negative value for `n` ::
-
+          It is an error to provide a negative value for `n`:
               sage: pascal_row(-1)
               Traceback (most recent call last):
               ...
               ValueError: `n` must be a non-negative integer
 
           .. NOTE::
-
               This function uses the `binomial` function to compute each
               element of the row.
           """
@@ -105,16 +122,24 @@
     </input>
   </sage>
   <p>
-    After redefining the function and running the above cell, view the <c>docstring</c> by calling the <c>help()</c> function on the function name. You can also access the <c>docstring</c> with the <c>?</c> operator.
+    After redefining the function, you can view the <c>docstring</c> by calling the <c>help()</c>
+    function on the function name:
   </p>
   <sage>
     <input>
       help(pascal_row)
-      # pascal_row? also displays the docstring
-      # pascal_row?? reveals the function's source code
     </input>
   </sage>
   <p>
-    For more information on code style conventions and writing documentation strings, refer to the General Conventions article from the Sage Developer's Guide.
+    Alternatively, you can access the source code using the <c>??</c> operator:
+  </p>
+  <sage>
+    <input>
+      pascal_row??
+    </input>
+  </sage>
+  <p>
+    To learn more on code style conventions and writing documentation strings, refer
+    to the General Conventions article in the Sage Developer's Guide.
   </p>
 </section>

@@ -144,7 +144,7 @@
             from sympy import symbols
 
             def sympy_sop(expression):
-                # Convert input expression to a SageMath formula object if necessary
+                # Convert input expression to Sage formula object if necessary
                 if isinstance(expression, str):
                     formula_object = propcalc.formula(expression)
                 elif isinstance(expression, sage.logic.boolformula.BooleanFormula):
@@ -160,7 +160,7 @@
                 variables = table_list[0]
                 minterms = [row[:-1] for row in table_list[1:] if row[-1]]
 
-                # Convert the SageMath variables to SymPy symbols
+                # Convert Sage variables to SymPy symbols
                 sympy_variables = symbols(' '.join(variables))
 
                 # Use SymPy to compute the SOP form
