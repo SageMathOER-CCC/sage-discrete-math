@@ -58,7 +58,7 @@
         For each possible combination of inputs, the table shows the corresponding outputs, making
         it easier to analyze and understand the behavior of the circuit.</p>
     <p>
-        Let’s create a truth table for the simplified circuit.</p>
+        Let's create a truth table for the simplified circuit.</p>
     <p>
         <m>
             F = (x \; and \; y) \; or \; (x \; and \; z) \; or \; (y \; and \; z)

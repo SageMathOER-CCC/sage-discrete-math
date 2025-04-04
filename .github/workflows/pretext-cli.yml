@@ -24,6 +24,11 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
+      - name: Update apt and install make
+        run: |
+          apt update && apt upgrade -y
+          apt install make -y && make --version
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
