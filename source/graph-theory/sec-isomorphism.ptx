@@ -67,7 +67,7 @@
     if two graphs are not isomorphic. If one of these fails then the graphs are not isomorphic. If
     all of these are true then the graph may or may not be isomorphic. The three conditions for
     invariants under isomorphism are: <me>
-      G = (V, E) \text{ is connected iff } G' = (V', E') \text{ is connected}
+      G = (V, E) \text{ is connected if and only if } G' = (V', E') \text{ is connected}
     </me>
     <me>
       |V| = |V'| \text{ and } |E| = |E'|
