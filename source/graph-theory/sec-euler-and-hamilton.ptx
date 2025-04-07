@@ -42,13 +42,13 @@
             <ul>
                 <li>
                     <p>
-                        A connected graph has an <term>Euler circuit</term> iff every vertex has an even degree.
+                        A connected graph has an <term>Euler circuit</term> if and only if every vertex has an even degree.
                     </p>
                 </li>
 
                 <li>
                     <p>
-                        A connected graph has an <term>Euler path</term> iff there are at most two vertices with an odd degree.
+                        A connected graph has an <term>Euler path</term> if and only if there are at most two vertices with an odd degree.
                     </p>
                 </li>
             </ul>

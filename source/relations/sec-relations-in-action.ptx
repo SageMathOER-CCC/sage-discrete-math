@@ -4,44 +4,40 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you are shopping for clothing online and want color scheme suggestions for the outfit you are creating. The website you are shopping on has many color options and far too many potential combinations to evaluate on your own. Sage can solve this by narrowing down the options for your preferred color scheme rules.
+            Imagine you have been contracted to update a piece of commercial software by implementing a new messaging system for customers and updating one for employees. The contractor has required you to use brand complaint colors to represent all messages and that your color choices maximize hue contrast to make messages easily identifiable.
         </p>
         <p>
-            Python's <c>colour</c> package has a dictionary of color values and names that will be used as a stand-in for the color information provided by the website. We will use a dictionary because it allows for us to see outputs as color names as opposed to RGB values.
+            Here is the <c>Set</c> of approved colors.
         </p>
         <sage>
             <input>
-                from colour import COLOR_NAME_TO_RGB as Website_Color_Data
-                U = {}
-                for v, k in Website_Color_Data.items():
-                    #The original dictionary's RGB values are on a scale of 0-255 so the must be converted to sage's 0-1 scale
-                    U.setdefault((k[0]/255, k[1]/255, k[2]/255), v) <!-- setdefault is used because the original dictionary has repeat entries for words containing 'grey' and 'gray' and this implementation keeps the American spelling only-->  
-                print('The dictionary has ' + str(len(U)) + ' entries')
+            C = Set(['brown', 'olive', 'darkcyan', 'green', 'violet', 'navy'])
+            # Sage has a built in dictionary of colors we can use to analyze our colors and we can test to see if our colors are accounted for
+            C.issubset(Set(colors))
             </input>
         </sage>
         <p>
-           The dictionary is very large and it would force sage to calculate many irrelevant pairs in a relation. Personal preferences are necessary to narrow down the set sage works with. 
+            <dl> 
+                <li><title>Customer System</title>
+                    <p>
+                        The contractor requested two new message types that can be represented by two different color schemes, one for a dark-mode and the other for a light-mode. These will be created with a complementary color scheme.
+                    </p>
+                </li>
+                <li><title>Employee System</title>
+                    <p>
+                        The contractor requested a single color scheme that maintains the color maroon for the preexisting message type while adding two additional message types. These will be created with a triadic color scheme.
+                    </p>
+                </li>
+            </dl>
         </p>
-        <p>
-           For this example, you will be creating an outfit out of a tee-shirt, over-shirt, and bottoms. Each clothing item will be represented by a set of the colors, as strings, that are available for that clothing item. With this we can now create the set of colors that we want to work with.
-        </p>
-        <sage>
-            <input>
-                Tee = Set(['maroon', 'beige', 'azure', 'brown', 'navy', 'olive', 'ivory', 'lavender', 'firebrick', 'sandybrown', 'honeydew'])
-                Over = Set(['maroon', 'beige', 'azure', 'beige', 'tan', 'brown', 'navy', 'slateblue', 'khaki', 'ivory', 'lavender', 'firebrick'])
-                Bottoms = Set(['maroon', 'beige', 'azure', 'tan', 'brown', 'navy', 'olive', 'khaki', 'ivory', 'lavender', 'firebrick', 'honeydew'])
-                C = Tee | Over | Bottoms 
-                show(C)
-            </input>
-        </sage>
     </introduction>
     <subsection xml:id="subsec-Color-Complements">
     <title>Color Complements</title>
         <p>
-            Complementary colors are two colors, who's hues are <m>180^\circ</m> away from each other on the color wheel. RGB values do not let us compare hues easily so we will use the <c>rgb2hsl</c> command, from the <c>colour</c> package, and the hue values it generates to compute which colors are complements. The <c>rgb2hsl</c> command outputs in the format <c>(hue, saturation, lightness)</c> with all values, <m>v</m>, in the range <m>0 \leq v \leq 1</m>, so instead of checking for complements with increments of <m>180^\circ</m>, we will use increments of <c>0.5</c>.
+            Complementary colors are two colors, who's hues are <m>180^\circ</m> away from each other on the color wheel. This results in maximally contrasting hues.
         </p>  
         <figure xml:id="fig-complements">
-            <caption>Cyan and red are complementary colors.</caption>
+            <caption>Cyan and red are complementary colors (on RGB displays).</caption>
                 <image width="100%" xml:id="complement-wheel"> 
                 <shortdescription> RGB color wheel with a line connecting red and cyan</shortdescription>
                 <latex-image>
@@ -56,57 +52,63 @@
             </image>
         </figure>
         <p>
-            Here is a relation, on <m>C</m>, that maps colors to their complements.
+            RGB values do not let us compare hues easily so we will use the <c>.hsl()</c> attribute and the hue values it generates to compute which colors are complements. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values, <m>v</m>, in the range <m>0 \leq v \leq 1</m>, so instead of checking for complements with increments of <m>180^\circ</m>, we will use increments of <c>1/2</c>. 
+        </p>
+        <p>
+            Here is a relation, on <m>C</m>, that maps colors to their complements using this method.
         </p>
         <sage>
             <input>
-                from colour import rgb2hsl
                 from math import isclose
-                # To account for rounding and floating point errors isclose will be used instead of ==
-
+                # To account for floating point errors isclose will be used instead of ==
                 def iscomplement(v, k):
-                # The color wheel loops around on itself meaning we need to check for complements even when hue + 0.5 > 1
-                    return isclose(rgb2hsl(v)[0], (rgb2hsl(k)[0] + 0.5) - floor(rgb2hsl(k)[0] + 0.5), abs_tol=1e-8) <!-- Can't use '% 1' because floating point errors cause negative outputs with blue hues causing false negatives-->
+                    return isclose(colors[v].hsl()[0], (colors[k].hsl()[0] + 1/2) , abs_tol=1e-8)
 
-                Complement = Set([(U[a],U[b]) for a in U for b in U if iscomplement(a, b) and U[a] in C and U[b] in C])
-                list(Complement) <!-- Lists are called because pprint.pprint() does not organize the output of sage sets -->
+                Complement = Set([(c1, c2) for c1 in C for c2 in C if iscomplement(c1, c2)])
+                Complement
             </input>  
         </sage>
         <p>
             It may appear as if the <c>Complement</c> relation can be categorized as an equivalence relation, but this is not the case; colors do not complement themselves therefore the relation is not reflexive.
         </p>
-        <subsubsection xml:id="subsubsec-Complementary-Outfits">
-        <title>Complementary Outfits</title>
+        <subsubsection xml:id="subsubsec-customer-colors">
+        <title>Customer Colors</title>
             <introduction>
                 <p>
-                    If you wanted the over-shirt and bottoms to match, you could have your outfit consist of two complementary colors. The colors available for the over-shirt are different from the colors available for the bottoms, so a new set of both clothing items' colors must be made.
+                    A partial order on <c>Complement</c> can be created, as relations are themselves sets, to select which color pairs should be used for light-mode and dark-mode. This will be done by adding the lightness values (obtained using the <c>.hsl()</c> attribute) of a given pair's elements and mapping the pairs with the smaller values to the pairs with the larger values. 
                 </p>
-            </introduction>    
+            </introduction>
                 <sage>
                     <input>
-                        over_bottom = Over &amp; Bottoms
-                        show(over_bottom)
+                        def isbrighterpair(v,k):
+                            return colors[v[0]][2] + colors[v[1]][2] &lt;= colors[k[0]][2] + colors[k[1]][2]
+                            
+                        light_order = Set([(p1,p2) for p1 in Complement for p2 in Complement if isbrighterpair(p1,p2)])
+                        light_order
                     </input>
                 </sage>
                 <p>
-                   The <c>Complement</c> relation does not describe all complementary outfits with the given restraints. This can be fixed by intersecting the relation with <c>over_bottom</c><m>\times</m><c>Tee</c> because this imparts the restraints of complements and website inventory.
+                    A Hasse diagram can now be used to visually analyze the poset.
                 </p>
                 <sage>
                     <input>
-                       C_outfits = Set(cartesian_product([over_bottom, Tee])) &amp; Complement
-                       list(C_outfits)
+                        P = Poset((list(Complement), list(light_order)))
+                        P.plot(vertex_size=9000, figsize=7)
                     </input>
                 </sage>
+                <p>
+                    This Hasse diagram shows that green and violet form the brightest complementary combination so they are best fit for light-mode. Olive and navy form the darkest combination they will fit best for dark-mode.
+                </p>
             </subsubsection>
         </subsection>
         <subsection xml:id="subsec-Triadic-Schemes">
             <title>Triadic Schemes</title>
             <introduction>
                 <p>
-                    If you want each component of your outfit to be of a differ color, you can use a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
+                    Hue contrast can still be maximized with the three color requirement, for the employee software, by using a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
                 </p>  
                 <figure xml:id="fig-triadic">
-                    <caption>Red, green, and blue form a triadic color scheme</caption>
+                    <caption>Red, green, and blue form a triadic color scheme (on RGB displays).</caption>
                         <image width="100%" xml:id="triadic-wheel"> 
                         <shortdescription> RGB color wheel with a triangle connecting red, green, and blue.</shortdescription>
                         <latex-image>
@@ -121,49 +123,46 @@
                         </latex-image>
                     </image>
                 </figure> 
+                <p>
+                    Instead of creating a single relation on <m>C</m> for the employee messages, two relations will be made one from the set containing maroon, set <m>M</m>, to <m>C</m> and the other from <m>C</m> to <m>M</m>. This is done because relations output pairs while triadic schemes require three colors.
+                </p>
             </introduction>
+            <subsubsection xml:id="subsubsec-employee-colors">
+                <title>Employee Colors</title>
             <p>
-                Here is a relation that maps a color to the colors with the hue <m>120^\circ</m> to its right. 
+                Here is a relation that maps maroon to the colors with the hue <m>120^\circ</m> to its right. 
             </p>
             <sage>
                 <input>
                     def is120(v,k):
-                        return isclose(rgb2hsl(v)[0], (rgb2hsl(k)[0] + 1/3) - floor(rgb2hsl(k)[0] + 1/3), abs_tol=1e-8)
-
-                    T_120 = Set([(U[a], U[b]) for a in U for b in U if is120(a,b) and U[a] in C and U[b] in C])
-                    list(T_120)
+                        return isclose(colors[v].hsl()[0], ((colors[k].hsl()[0] + 1/3) % 1), abs_tol=1e-8)
+                    
+                    M = Set(['maroon'])
+                    M_r120 = Set([(m, c) for c in C for m in M if is120(m, c)])
+                    M_r120.list()
                 </input>
             </sage>
             <p>
-               Composing this relation with itself causes it will map one color to other colors with hues <m>120^\circ</m> away on the color wheel. This may miss some color pairs, in C, but these pairs lack a third color and thus do not constitute a triadic scheme. These pairs are therefore omitted. 
+                Here is a relation that maps colors to maroon if they are <m>240^\circ</m> to its right. 
             </p>
             <sage>
                 <input>
-                    T_240 = Set([(t1[0], t2[1]) for t1 in T_120 for t2 in T_120 if t1[1] == t2[0]])
-                    list(T_240)
+                    def is240(v,k):
+                        return isclose(colors[v].hsl()[0], ((colors[k].hsl()[0] + 2/3) % 1), abs_tol=1e-8)
+
+                    r240_M = Set([(c, m) for c in C for m in M if is240(m, c)])
+                    r240_M.list()
                 </input>
             </sage>
-            <subsubsection xml:id="subsubsec-triadic-outfits">
-                <title>Triadic Outfits</title>
-                <p>
-                    With triadic outfits we can not intersect (or union for that matter) two sets of clothes because all pieces of clothing should be in different colors. We can still combine two sets in order to streamline the creation of relations by remembering that a relation is itself a set, and therefore we can create a relation from a set onto a relation. 
-                </p>
-                <sage>
-                    <input>
-                        Triads = Set([(c, t) for c in C for t in T_240 if ((c, t[0]) in T_120 or (c, t[1]) in T_120) and not (c in t)])
-                        list(Triads)
-                    </input>
-                </sage>
-                <p>
-                    Now that you have a relation that describes all triadic schemes in <m>C</m>, you need to now narrow it down to the color combinations allowed by the website's stock. 
-                </p>
-                <sage>
-                    <input>
-                        All_Outfits = Set(cartesian_product([Over, cartesian_product([Tee, Bottoms])]))
-                        T_Outfits = All_Outfits &amp; Triads
-                        list(T_Outfits)
-                    </input>
-                </sage>
+            <p>
+                If these two relations are composed, the resulting relation describes all pairs of colors which satisfy the contractor's requests because they describe colors that form triadic schemes with maroon.
+            </p>
+            <sage>
+                <input>
+                    Employee = Set([(p1[0],p2[1]) for p1 in r240_M for p2 in M_r120 if p1[1] == p2[0]])
+                    Employee
+                </input>
+            </sage>
             </subsubsection>
         </subsection>
 </section>

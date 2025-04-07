@@ -30,8 +30,8 @@
     <subsection xml:id="subsec-relation-composition">
         <title>Relation Composition</title>
 
-        <p>
-            If we have two relations with a set in common, such as <m>R</m> from <m>A</m> to <m>B</m> and <m>S</m> from <m>B</m> to <m>C</m>, we can compose them to create a relation between the two non repeated sets, such as <m>S \circ R</m> from <m>A</m> to <m>C</m>, where the relation is defined as all <m>aS \circ Rc</m> where there exists an element <m>b \in B</m> such that <m>aRb</m> and <m>bSc</m> exist.  
+        <p> 
+            Let <m>R</m> be a relation from a set <m>A</m> to a set <m>B</m> and <m>S</m> a relation from <m>B</m> to a set <m>C</m>. The composite of <m>R</m> and <m>S</m> is the relation consisting of the ordered pairs <m>(a,c)</m> where <m>a \in A</m> and <m>c \in C</m>, and for which there is a <m>b \in B</m> such that <m>(a,b) \in R</m> and <m>(b,c) \in S</m>. We denote the composite of <m>R</m> and <m>S</m> by <m>S \! \circ \! R</m>.
         </p>
         
         <p>
@@ -60,7 +60,7 @@
         When <m>A = B</m> we refer to the relation as a relation <term>on</term> <m>A</m>.
     </p>
     <p>
-        Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> iff <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
+        Consider the set <m>A = \{2,3,4,6,8\}</m>. Let's define a relation <m>R</m> on <m>A</m> such that <m>aRb</m> if and only if <m>a | b</m> (<m>a</m> divides <m>b</m>). The relation <m>R</m> can be represented by the set of ordered pairs where the first element divides the second:
     </p>
     <sage>
         <input>
