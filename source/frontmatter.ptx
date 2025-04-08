@@ -182,6 +182,13 @@
         <email>a.boughrira@gmail.com</email>
       </contributor>
 
+      <contributor xml:id="mk">
+        <personname>Michael Kattner (Contrib.)</personname>
+        <department>Mathematics</department>
+        <institution>Wright College</institution>
+        <email>MDKattner@gmail.com</email>
+      </contributor>
+
     </contributors>
   </preface>
 
