@@ -4,7 +4,7 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you have been contracted to update a piece of commercial software by implementing a new messaging system for customers and updating one for employees. The contractor has required you to use brand complaint colors to represent all messages and that your color choices maximize hue contrast to make messages easily identifiable.
+            Imagine you have been tasked with updating notifications, and their colors, on a software with a customer end and an employee end. You are required to color-code notifications using brand-compliant colors. You must also maximize hue difference so notifications are easily identifiablemaximize.
         </p>
         <p>
             Here is the <c>Set</c> of approved colors.
@@ -12,20 +12,20 @@
         <sage>
             <input>
             C = Set(['brown', 'olive', 'darkcyan', 'green', 'violet', 'navy'])
-            # Sage has a built in dictionary of colors we can use to analyze our colors and we can test to see if our colors are accounted for
-            C.issubset(Set(colors))
+            # Sage has a built in dictionary of colors and we can test to see if our colors are in it 
+            print("Colors in the sage dictionary: " + str(C.issubset(Set(colors))))
             </input>
         </sage>
         <p>
             <dl> 
-                <li><title>Customer System</title>
+                <li><title>Customer Interface</title>
                     <p>
-                        The contractor requested two new message types that can be represented by two different color schemes, one for a dark-mode and the other for a light-mode. These will be created with a complementary color scheme.
+                        You must create two color schemes, one light-mode and one dark-mode, each consisting of two colors.
                     </p>
                 </li>
-                <li><title>Employee System</title>
+                <li><title>Employee Interface</title>
                     <p>
-                        The contractor requested a single color scheme that maintains the color maroon for the preexisting message type while adding two additional message types. These will be created with a triadic color scheme.
+                        You must create single color scheme that maintains the color maroon for the preexisting notification type while adding two additional colors/types.
                     </p>
                 </li>
             </dl>
@@ -34,19 +34,19 @@
     <subsection xml:id="subsec-Color-Complements">
     <title>Color Complements</title>
         <p>
-            Complementary colors are two colors, who's hues are <m>180^\circ</m> away from each other on the color wheel. This results in maximally contrasting hues.
+            Complementary colors are two colors, who's hues are <m>180^\circ</m> away from each other on the color wheel. This results in maximized hue difference.
         </p>  
         <figure xml:id="fig-complements">
-            <caption>Cyan and red are complementary colors (on RGB displays).</caption>
-                <image width="100%" xml:id="complement-wheel"> 
+            <caption>On RGB displays, red and cyan are complementary colors.</caption>
+                <image width="60%" xml:id="complement-wheel"> 
                 <shortdescription> RGB color wheel with a line connecting red and cyan</shortdescription>
                 <latex-image>
                     \begin{tikzpicture}
                 		\shade[shading=color wheel]  (0,0) circle (1.5);
             			\draw [fill=white, white](0,0) circle (1);
-			            \draw [black, fill = white] (0,-1.25) circle (0.25) node[black] {C}
+                        \draw [black, fill = white] (0,-1.25) circle (0.25) node[black] {C}
             			(0,1.25) circle (0.25) node[black] {R};
-			            \draw[very thick] (0,1) -- (0,-1);
+                        \draw[very thick] (0,1) -- (0,-1);
             		\end{tikzpicture}
                 </latex-image>
             </image>
@@ -59,10 +59,11 @@
         </p>
         <sage>
             <input>
-                from math import isclose
-                # To account for floating point errors isclose will be used instead of ==
                 def iscomplement(v, k):
-                    return isclose(colors[v].hsl()[0], (colors[k].hsl()[0] + 1/2) , abs_tol=1e-8)
+                #Sage allows us to convert floats to rationals to avoid floating point imprecision
+                    v_hue = Rational(colors[v].hsl()[0])
+                    k_hue = Rational(colors[k].hsl()[0])
+                    return v_hue == k_hue + 1/2
 
                 Complement = Set([(c1, c2) for c1 in C for c2 in C if iscomplement(c1, c2)])
                 Complement
@@ -81,7 +82,9 @@
                 <sage>
                     <input>
                         def isbrighterpair(v,k):
-                            return colors[v[0]][2] + colors[v[1]][2] &lt;= colors[k[0]][2] + colors[k[1]][2]
+                            v_brightness = colors[v[0]][2] + colors[v[1]][2]
+                            k_brightness = colors[k[0]][2] + colors[k[1]][2]
+                            return v_brightness &lt;= k_brightness 
                             
                         light_order = Set([(p1,p2) for p1 in Complement for p2 in Complement if isbrighterpair(p1,p2)])
                         light_order
@@ -105,11 +108,11 @@
             <title>Triadic Schemes</title>
             <introduction>
                 <p>
-                    Hue contrast can still be maximized with the three color requirement, for the employee software, by using a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
+                    Hue difference can still be maximized with the three color requirement, for the employee interface, by using a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
                 </p>  
                 <figure xml:id="fig-triadic">
-                    <caption>Red, green, and blue form a triadic color scheme (on RGB displays).</caption>
-                        <image width="100%" xml:id="triadic-wheel"> 
+                    <caption>On RGB displays, red, green, and blue form a triadic color scheme.</caption>
+                        <image width="60%" xml:id="triadic-wheel"> 
                         <shortdescription> RGB color wheel with a triangle connecting red, green, and blue.</shortdescription>
                         <latex-image>
                             \begin{tikzpicture} [xrange=-1.5:1.5,yrange=-1.5:1.5] 
@@ -124,7 +127,7 @@
                     </image>
                 </figure> 
                 <p>
-                    Instead of creating a single relation on <m>C</m> for the employee messages, two relations will be made one from the set containing maroon, set <m>M</m>, to <m>C</m> and the other from <m>C</m> to <m>M</m>. This is done because relations output pairs while triadic schemes require three colors.
+                    Instead of creating a single relation on <m>C</m> for the employee color scheme, two relations will be made one from the set containing maroon, <m>M</m>, to <m>C</m> and the other from <m>C</m> to <m>M</m>. This is done because relations output pairs while triadic schemes require three colors.
                 </p>
             </introduction>
             <subsubsection xml:id="subsubsec-employee-colors">
@@ -135,11 +138,13 @@
             <sage>
                 <input>
                     def is120(v,k):
-                        return isclose(colors[v].hsl()[0], ((colors[k].hsl()[0] + 1/3) % 1), abs_tol=1e-8)
+                        v_hue = Rational(colors[v].hsl()[0])
+                        k_hue = Rational(colors[k].hsl()[0]) 
+                        return 1/3 + v_hue == k_hue
                     
                     M = Set(['maroon'])
-                    M_r120 = Set([(m, c) for c in C for m in M if is120(m, c)])
-                    M_r120.list()
+                    M_120 = Set([(m, c) for c in C for m in M if is120(m, c)])
+                    M_120.list()
                 </input>
             </sage>
             <p>
@@ -148,21 +153,17 @@
             <sage>
                 <input>
                     def is240(v,k):
-                        return isclose(colors[v].hsl()[0], ((colors[k].hsl()[0] + 2/3) % 1), abs_tol=1e-8)
+                        v_hue = Rational(colors[v].hsl()[0])
+                        k_hue = Rational(colors[k].hsl()[0]) 
+                        return  2/3 + v_hue == k_hue
 
-                    r240_M = Set([(c, m) for c in C for m in M if is240(m, c)])
-                    r240_M.list()
+                    M_240 = Set([(c, m) for c in C for m in M if is240(m, c)])
+                    M_240.list()
                 </input>
             </sage>
             <p>
-                If these two relations are composed, the resulting relation describes all pairs of colors which satisfy the contractor's requests because they describe colors that form triadic schemes with maroon.
+                We now know to add navy and green notifications to the employee interface.
             </p>
-            <sage>
-                <input>
-                    Employee = Set([(p1[0],p2[1]) for p1 in r240_M for p2 in M_r120 if p1[1] == p2[0]])
-                    Employee
-                </input>
-            </sage>
             </subsubsection>
         </subsection>
 </section>
