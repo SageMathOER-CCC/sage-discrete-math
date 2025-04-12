@@ -4,7 +4,7 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you have been tasked with updating notifications, and their colors, on a software with a customer end and an employee end. You are required to color-code notifications using brand-compliant colors. You must also maximize hue difference so notifications are easily identifiablemaximize.
+            Imagine you have been tasked with updating notifications, and their colors, on a software with a customer end and an employee end. You are required to color-code notifications using brand-compliant colors. You must also maximize hue difference so notifications are easily identifiable. 
         </p>
         <p>
             Here is the <c>Set</c> of approved colors.
