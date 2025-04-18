@@ -72,7 +72,7 @@
     <worksheets formatted="yes" />
   </latex>
 
-  <html>
+  <html favicon='simple'>
     <platform host="web"/>
     <!-- The host above could also be "runestone" -->
 
