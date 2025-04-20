@@ -4,37 +4,24 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you have been tasked with updating notifications, and their colors, on a software with a customer end and an employee end. You are required to color-code notifications using brand-compliant colors. You must also maximize hue difference so notifications are easily identifiable. 
+            Imagine you are responsible for the UX on a website with two distinct features. You must color-code the two features using both a dark-mode and a light-mode. Both schemes must maximize hue contrast while using the brand's colors.
         </p>
         <p>
             Here is the <c>Set</c> of approved colors.
         </p>
         <sage>
             <input>
-            C = Set(['brown', 'olive', 'darkcyan', 'green', 'violet', 'navy'])
+            C = Set(['paleturquoise', 'maroon', 'teal', 'green',
+                'violet', 'firebrick'])
             # Sage has a built in dictionary of colors and we can test to see if our colors are in it 
-            print("Colors in the sage dictionary: " + str(C.issubset(Set(colors))))
+            print("Colors are in the sage dictionary: " + str(C.issubset(Set(colors))))
             </input>
         </sage>
-        <p>
-            <dl> 
-                <li><title>Customer Interface</title>
-                    <p>
-                        You must create two color schemes, one light-mode and one dark-mode, each consisting of two colors.
-                    </p>
-                </li>
-                <li><title>Employee Interface</title>
-                    <p>
-                        You must create single color scheme that maintains the color maroon for the preexisting notification type while adding two additional colors/types.
-                    </p>
-                </li>
-            </dl>
-        </p>
     </introduction>
     <subsection xml:id="subsec-Color-Complements">
     <title>Color Complements</title>
         <p>
-            Complementary colors are two colors, who's hues are <m>180^\circ</m> away from each other on the color wheel. This results in maximized hue difference.
+            Complementary colors are two colors, whose hues are <m>180^\circ</m> away from each other on the color wheel. This results in maximized hue contrast.
         </p>  
         <figure xml:id="fig-complements">
             <caption>On RGB displays, red and cyan are complementary colors.</caption>
@@ -42,7 +29,7 @@
                 <shortdescription> RGB color wheel with a line connecting red and cyan</shortdescription>
                 <latex-image>
                     \begin{tikzpicture}
-                		\shade[shading=color wheel]  (0,0) circle (1.5);
+                		\shade[shading=color wheel] (0,0) circle (1.5);
             			\draw [fill=white, white](0,0) circle (1);
                         \draw [black, fill = white] (0,-1.25) circle (0.25) node[black] {C}
             			(0,1.25) circle (0.25) node[black] {R};
@@ -52,10 +39,10 @@
             </image>
         </figure>
         <p>
-            RGB values do not let us compare hues easily so we will use the <c>.hsl()</c> attribute and the hue values it generates to compute which colors are complements. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values, <m>v</m>, in the range <m>0 \leq v \leq 1</m>, so instead of checking for complements with increments of <m>180^\circ</m>, we will use increments of <c>1/2</c>. 
+            RGB values complicate work with hues so the <c>.hsl()</c> attribute and the hue values it generates will be used to compute which colors are complements. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values, <m>v</m>, in the range <m>0 \leq v \leq 1</m>, so increments of <m>180^\circ</m>, will be replaced by increments of <c>1/2</c>. 
         </p>
         <p>
-            Here is a relation, on <m>C</m>, that maps colors to their complements using this method.
+            Here is a relation, on <m>C</m>, that maps colors to their complements using the method above.
         </p>
         <sage>
             <input>
@@ -65,105 +52,71 @@
                     k_hue = Rational(colors[k].hsl()[0])
                     return v_hue == k_hue + 1/2
 
-                Complement = Set([(c1, c2) for c1 in C for c2 in C if iscomplement(c1, c2)])
-                Complement
-            </input>  
+                Complements = Set([(c1, c2) for c1 in C for c2 in C
+                    if iscomplement(c1, c2)])
+                Complements
+            </input>
         </sage>
         <p>
-            It may appear as if the <c>Complement</c> relation can be categorized as an equivalence relation, but this is not the case; colors do not complement themselves therefore the relation is not reflexive.
+            It may appear as if <c>Complements</c> relation is an equivalence relation, but this is not the case; colors do not complement themselves therefore the relation is not reflexive.
         </p>
-        <subsubsection xml:id="subsubsec-customer-colors">
-        <title>Customer Colors</title>
+        </subsection>
+        <subsection xml:id="subsec-Dark-Light-Mode">
+            <title>Light and Dark Modes</title>
             <introduction>
                 <p>
-                    A partial order on <c>Complement</c> can be created, as relations are themselves sets, to select which color pairs should be used for light-mode and dark-mode. This will be done by adding the lightness values (obtained using the <c>.hsl()</c> attribute) of a given pair's elements and mapping the pairs with the smaller values to the pairs with the larger values. 
+                    A partial order on <c>Complements</c> can be created, as relations are themselves sets, to select which color pairs should be used for the dark-mode and the light-mode. The poset will be created by adding the lightness values of both colors in the pair then ordering the pairs based on the size of the total of the lightness values. This results in the highest total at the top of the poset and the lowest total at the bottom of the poset.
                 </p>
             </introduction>
                 <sage>
                     <input>
-                        def isbrighterpair(v,k):
+                        def isBrighterPair(v,k):
                             v_brightness = colors[v[0]][2] + colors[v[1]][2]
                             k_brightness = colors[k[0]][2] + colors[k[1]][2]
-                            return v_brightness &lt;= k_brightness 
+                            return v_brightness &lt; k_brightness 
                             
-                        light_order = Set([(p1,p2) for p1 in Complement for p2 in Complement if isbrighterpair(p1,p2)])
-                        light_order
+                        S_order = Set([(p1,p2) for p1 in Complements for p2 in Complements
+                            if isBrighterPair(p1,p2)])
+                        S_order
                     </input>
                 </sage>
                 <p>
-                    A Hasse diagram can now be used to visually analyze the poset.
+                    A Hasse diagram can now be used to visually analyze the poset. 
                 </p>
                 <sage>
                     <input>
-                        P = Poset((list(Complement), list(light_order)))
-                        P.plot(vertex_size=9000, figsize=7)
+                        P = Poset((list(Complements), list(S_order)))
+                        P.plot(vertex_size=17000, figsize=9)
                     </input>
                 </sage>
                 <p>
-                    This Hasse diagram shows that green and violet form the brightest complementary combination so they are best fit for light-mode. Olive and navy form the darkest combination they will fit best for dark-mode.
+                    Alternatively, the <c>.top()</c> and <c>.bottom()</c> attributes can be used to see the top and bottom of the poset if they exist.
                 </p>
-            </subsubsection>
-        </subsection>
-        <subsection xml:id="subsec-Triadic-Schemes">
-            <title>Triadic Schemes</title>
-            <introduction>
-                <p>
-                    Hue difference can still be maximized with the three color requirement, for the employee interface, by using a triadic color scheme. Triadic color schemes consist of three different colors, where each color is <m>120^\circ</m> or <m>240^\circ</m> away on the color wheel.
-                </p>  
-                <figure xml:id="fig-triadic">
-                    <caption>On RGB displays, red, green, and blue form a triadic color scheme.</caption>
-                        <image width="60%" xml:id="triadic-wheel"> 
-                        <shortdescription> RGB color wheel with a triangle connecting red, green, and blue.</shortdescription>
-                        <latex-image>
-                            \begin{tikzpicture} [xrange=-1.5:1.5,yrange=-1.5:1.5] 
-                        		\shade[shading=color wheel]  (0,0) circle (1.5);
-                    			\draw [fill=white, white](0,0) circle (1);
-                    			\draw[very thick] (1.0825,-0.625) -- (0,1.25) -- (-1.0825,-0.625) -- cycle;
-                    			\draw [black, fill = white] (0,1.25) circle (0.25) node[black] {R}
-                    			(-1.0825,-0.625) circle (0.25) node[black] {B}
-                    			(1.0825,-0.625) circle (0.25) node[black] {G};
-                    		\end{tikzpicture}
-                        </latex-image>
-                    </image>
-                </figure> 
-                <p>
-                    Instead of creating a single relation on <m>C</m> for the employee color scheme, two relations will be made one from the set containing maroon, <m>M</m>, to <m>C</m> and the other from <m>C</m> to <m>M</m>. This is done because relations output pairs while triadic schemes require three colors.
-                </p>
-            </introduction>
-            <subsubsection xml:id="subsubsec-employee-colors">
-                <title>Employee Colors</title>
-            <p>
-                Here is a relation that maps maroon to the colors with the hue <m>120^\circ</m> to its right. 
-            </p>
-            <sage>
-                <input>
-                    def is120(v,k):
-                        v_hue = Rational(colors[v].hsl()[0])
-                        k_hue = Rational(colors[k].hsl()[0]) 
-                        return 1/3 + v_hue == k_hue
-                    
-                    M = Set(['maroon'])
-                    M_120 = Set([(m, c) for c in C for m in M if is120(m, c)])
-                    M_120.list()
-                </input>
-            </sage>
-            <p>
-                Here is a relation that maps colors to maroon if they are <m>240^\circ</m> to its right. 
-            </p>
-            <sage>
-                <input>
-                    def is240(v,k):
-                        v_hue = Rational(colors[v].hsl()[0])
-                        k_hue = Rational(colors[k].hsl()[0]) 
-                        return  2/3 + v_hue == k_hue
+                <sage>
+                    <input>
+                        highest_pair = P.top() 
+                        lowest_pair = P.bottom() 
 
-                    M_240 = Set([(c, m) for c in C for m in M if is240(m, c)])
-                    M_240.list()
-                </input>
-            </sage>
-            <p>
-                We now know to add navy and green notifications to the employee interface.
-            </p>
-            </subsubsection>
+                        print("The highest lightness pair is: " + str((highest_pair)))
+                        print("The lowest lightness pair is: " + str(lowest_pair))
+                    </input>
+                </sage>
+                <p>
+                    Both methods show that teal and maroon are at the bottom while pale turquoise and firebrick are at the top. So pale turquoise and firebrick will be used for light-mode while teal and maroon will be used for dark-mode.
+                </p>
+                <p>
+                    The <c>.html_color()</c> attribute can be used to find the corresponding hex codes for these colors for use in the website's code.
+                </p>
+                <sage>
+                    <input>
+                        highest_hex = (colors[highest_pair[0]].html_color(),
+                            colors[highest_pair[1]].html_color())
+                        lowest_hex = (colors[lowest_pair[0]].html_color(),
+                            colors[lowest_pair[1]].html_color())
+
+                        print("Light-mode hex colors are: " + str(highest_hex))
+                        print("Dark-mode hex colors are: " + str(lowest_hex))
+                    </input>
+                </sage>
         </subsection>
 </section>
