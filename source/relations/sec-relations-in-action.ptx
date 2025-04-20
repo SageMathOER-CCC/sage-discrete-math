@@ -4,10 +4,10 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you are responsible for the UX on a website with two distinct features. You must color-code the two features using both a dark-mode and a light-mode. Both schemes must maximize hue contrast while using the brand's colors.
+            Imagine you are responsible for the UX on a website with two distinct features. You have been asked to color code these futures distinctly in both a light-mode and a dark-mode with the brand's colors.
         </p>
         <p>
-            Here is the <c>Set</c> of approved colors.
+            Here is the <c>Set</c> of the brand's colors.
         </p>
         <sage>
             <input>
@@ -21,7 +21,7 @@
     <subsection xml:id="subsec-Color-Complements">
     <title>Color Complements</title>
         <p>
-            Complementary colors are two colors, whose hues are <m>180^\circ</m> away from each other on the color wheel. This results in maximized hue contrast.
+            Complementary colors are two colors, whose hues are <m>180^\circ</m> away from each other on the color wheel. This results in contrasting and distinct hues.
         </p>  
         <figure xml:id="fig-complements">
             <caption>On RGB displays, red and cyan are complementary colors.</caption>
