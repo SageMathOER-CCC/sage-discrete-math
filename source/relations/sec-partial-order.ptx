@@ -51,5 +51,40 @@
             P.cover_relations()
         </input>
     </sage>
+    <p>
+        The <c>.has_bottom()</c> function tests for a bottom element of a poset.
+    </p>
+    <sage>
+        <input>
+            P.has_bottom()
+        </input>
+    </sage>
+    <p>
+        The same applies for the <c>.has_top()</c> function but with a top element.
+    </p>
+    <sage>
+        <input>
+            P.has_top()
+        </input>
+    </sage>
+    <p>
+        The bottom element of a poset, if one exists, can be found with the <c>.bottom()</c> attribute.
+    </p>
+    <sage>
+        <input>
+            P.bottom()
+        </input>
+    </sage>
+    <p>
+        Similarly, the top element of a poset, if one exists, can be found with the <c>.top()</c> attribute.
+    </p>
+    <sage>
+        <input>
+            P.top()
+        </input>
+    </sage>
+    <p>
+        Notice that <m>P</m> does not have a top element, causing nothing to be returned by <c>P.top()</c>.
+    </p>
 
 </section>
