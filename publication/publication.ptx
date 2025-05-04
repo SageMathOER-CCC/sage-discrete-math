@@ -61,6 +61,8 @@
   <!-- sided.  @pageref="yes/no" controls whether page number are   -->
   <!-- included in cross-references                                 -->
   <latex print="no" sides="one" font-size="10" draft="no">
+    <!-- Adds Cover to PDF output -->
+    <cover front="DM-Cover.pdf"/>
     <!-- Control text justification and bottom page behavior: -->
     <page right-alignment="flush" bottom-alignment="ragged" />
     <!-- Add content to \geometry{}: -->
