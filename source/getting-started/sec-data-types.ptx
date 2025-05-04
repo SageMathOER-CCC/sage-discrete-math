@@ -41,7 +41,7 @@
 
     <p>
         <idx><h>data types</h><h>rational</h></idx>
-        Similarly, Sage defaults to its own <c>rational</c> class with integer division.
+        Similarly, Sage uses to its own <c>rational</c> class when dividing two <term>Integers</term>.
     </p>
     <sage>
     <input>
