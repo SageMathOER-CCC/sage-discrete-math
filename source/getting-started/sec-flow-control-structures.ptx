@@ -13,7 +13,7 @@
 
     <introduction>
         <p>
-            Generally, when writing programs, we often want to control the flow of execution. Flow control
+            When writing programs, we want to control the flow of execution. Flow control
             structures allow your code to make decisions or repeat actions based on conditions. These structures
             are part of Python and work the same way in Sage. There are three primary types of flow control structures:
             <ul>
@@ -21,7 +21,7 @@
                     <p>
                         <term>Assignment</term> statements store values in <em>variables</em>. These let us reuse results
                         and build more complex expressions step by step. An assignment is performed using the <c>=</c> operator
-                        as seen earlier (refer to "Variable and Names" in the Sage introduction section). Note that Sage also
+                        as discussed earlier (see <xref ref="subsec-Variables-and-Names"/>). Note that Sage also
                         supports compound assignment operators like <c>+=</c>, <c>-=</c>, <c>*=</c>, <c>/=</c>, and <c>%=</c> which
                         combine assignment with basic arithmetic operations (addition, subtraction, multiplication, division and modulus).
                     </p>
@@ -102,7 +102,7 @@
         </sage>
 
         <p>
-            By default, <c>range(n)</c> starts at <m>0</m>. To specify a starting value, provide two arguments:
+            By default, <c>range(n)</c> starts at <m>0</m>. To specify a different starting value, provide two arguments:
         </p>
 
         <sage>
@@ -169,29 +169,31 @@
         <ul>
             <li>
                 <p>
-                    The <c>while</c> loops: repeat a block of code while a condition remains true.
+                    The <c>while</c> loops repeats a block of code while a condition remains true.
                 </p>
             </li>
         <li>
             <p>
-                The <c>break</c> statement: terminate and exit a loop early.
+                The <c>break</c> statement terminates and exit a loop early.
             </p>
         </li>
         <li>
             <p>
-                The <c>continue</c> statement: to skip the rest of the loop body and jump to the next iteration.
+                The <c>continue</c> statement skips the rest of the loop body and jump to the next iteration.
             </p>
         </li>
         <li>
             <p>
-                The <c>pass</c> statement: simply do nothing (it serves as a placeholder for future code).
+                The <c>pass</c> statement serves as a placeholder for future code to be added later, or to tell
+                Sage do nothing (useful for example when we want to catch an exception so that the program does
+                not crash, yet choose no to do anything with the exception object).
             </p>
         </li>
         </ul>
 
         <p>
-            We'll see examples on how to use these statements later on in the book. Here is a quick example
-            of a <c>while</c> loop that print out the numbers from <m>0</m> to <m>4</m>:
+            We will see examples on how to use these statements later on in the book. Here is a quick example
+            of a <c>while</c> loop that prints out the numbers from <m>0</m> to <m>4</m>:
         </p>
         <sage>
             <input>
