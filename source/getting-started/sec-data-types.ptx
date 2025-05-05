@@ -28,14 +28,26 @@
 
     <p>
         <idx><h>data types</h><h>symbolic</h></idx>
-        Sage supports <term>symbolic</term> computation, where it retain and preserves the actual value of a
-        math expressions rather than evaluating them for approximated values.
+        Sage supports <term>symbolic</term> computation, where it retains and preserves the actual value of a
+        math expression rather than evaluating them for approximated values.
     </p>
     <sage>
     <input>
         sym = sqrt(2) / log(3)
         show(sym)
         type(sym)
+    </input>
+    </sage>
+
+    <p>
+        <idx><h>data types</h><h>rational</h></idx>
+        Similarly, Sage uses to its own <c>rational</c> class when dividing two <term>Integers</term>.
+    </p>
+    <sage>
+    <input>
+        k = 2/3
+        show(k)
+        type(k)
     </input>
     </sage>
 

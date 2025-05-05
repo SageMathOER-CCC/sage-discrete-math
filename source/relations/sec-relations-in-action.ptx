@@ -4,24 +4,41 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you are responsible for the UX on a website with two distinct features. You have been asked to color code these futures distinctly in both a light-mode and a dark-mode with the brand's colors.
+            Imagine you are creating both a light-mode and a dark-mode for a brand's website and have been asked to use complementary pairs of colors from the brand's color palette for the foreground of the website. Sage's <c>colors</c> dictionary and related attributes can be used to pick out colors for both modes.
         </p>
         <p>
-            Here is the <c>Set</c> of the brand's colors.
+            Here is the <c>Set</c> of the brand's color palette.
         </p>
         <sage>
             <input>
             C = Set(['paleturquoise', 'maroon', 'teal', 'green',
                 'violet', 'firebrick'])
-            # Sage has a built in dictionary of colors and we can test to see if our colors are in it 
-            print("Colors are in the sage dictionary: " + str(C.issubset(Set(colors))))
+            for c in C:
+                print(c)
+                circle((0,0),1, color=c, fill=true).show(figsize=[0.5,0.5], axes=False)
+            </input>
+        </sage>
+        <p>
+            We can then check if all of these color names are keys in the <c>colors</c> dictionary by converting <c>colors</c> into a <c>Set</c>.
+        </p>
+        <sage>
+            <input>
+            C.issubset(Set(colors))
+            </input>
+        </sage>
+        <p>
+            Strings of color names in the <c>colors</c> dictionary correspond to RGB values, where each value is in the interval <m>[0,1]</m>. 
+        </p>
+        <sage>
+            <input>
+                colors['violet']
             </input>
         </sage>
     </introduction>
     <subsection xml:id="subsec-Color-Complements">
     <title>Color Complements</title>
         <p>
-            Complementary colors are two colors, whose hues are <m>180^\circ</m> away from each other on the color wheel. This results in contrasting and distinct hues.
+            Complementary colors are two colors whose hues are on opposite sides of the color wheel.
         </p>  
         <figure xml:id="fig-complements">
             <caption>On RGB displays, red and cyan are complementary colors.</caption>
@@ -39,84 +56,139 @@
             </image>
         </figure>
         <p>
-            RGB values complicate work with hues so the <c>.hsl()</c> attribute and the hue values it generates will be used to compute which colors are complements. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values, <m>v</m>, in the range <m>0 \leq v \leq 1</m>, so increments of <m>180^\circ</m>, will be replaced by increments of <c>1/2</c>. 
-        </p>
-        <p>
-            Here is a relation, on <m>C</m>, that maps colors to their complements using the method above.
+            You can obtain a color's hue is by using the <c>.hsl()</c> attribute. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values being a <c>float</c> in the interval <m>[0,1]</m>. This interval causes colors to be complementary if and only if their hues differ by <m>\frac{1}{2}</m>.
         </p>
         <sage>
             <input>
-                def iscomplement(v, k):
-                #Sage allows us to convert floats to rationals to avoid floating point imprecision
-                    v_hue = Rational(colors[v].hsl()[0])
-                    k_hue = Rational(colors[k].hsl()[0])
-                    return v_hue == k_hue + 1/2
-
-                Complements = Set([(c1, c2) for c1 in C for c2 in C
-                    if iscomplement(c1, c2)])
-                Complements
+                v_HSL = colors['violet'].hsl()
+                v_HSL
             </input>
         </sage>
         <p>
-            It may appear as if <c>Complements</c> relation is an equivalence relation, but this is not the case; colors do not complement themselves therefore the relation is not reflexive.
+            The hue value is the first entry in the tuple meaning the hue is at index <c>0</c>.
         </p>
+        <sage>
+            <input>
+                v_hue = colors['violet'].hsl()[0]
+                v_hue
+            </input>
+        </sage>
+        <p>
+            The <c>float</c> class can cause issues when comparing values. For example, consider the complementary colors violet and green.
+        </p>
+        <sage>
+            <input>
+                g_hue = colors['green'].hsl()[0]
+                print(v_hue)
+                print(g_hue)
+                print('Is complementary pair:', v_hue == g_hue + 0.5)
+            </input>
+        </sage>
+        <p>
+            The imprecision caused by the <c>float</c> class caused a false negative when testing to see if two colors were complements. This can be avoided by converting the hue values to Sage's <c>rational</c> class.
+        </p>
+        <sage>
+            <input>
+                g_hue = Rational(colors['green'].hsl()[0])
+                v_hue = Rational(colors['violet'].hsl()[0])
+                print(v_hue)
+                print(g_hue)
+                print('Is complementary pair:', v_hue == g_hue + 1/2)
+            </input>
+        </sage>
+        <p>
+            Here is a relation, on <m>C</m>, defined as such: a color <c>c1</c> is related to a color <c>c2</c> if and only if the hues of <c>c1</c> and <c>c2</c> are complementary, where the test for complementation is the method used above.
+        </p>
+        <sage>
+            <input>
+                def iscomplement(m, k):
+                    m_hue = Rational(colors[m].hsl()[0])
+                    k_hue = Rational(colors[k].hsl()[0])
+                    return m_hue == k_hue + 1/2
+
+                Comp = [(c1, c2) for c1 in C for c2 in C
+                    if iscomplement(c1, c2)]
+                Comp
+            </input>
+        </sage>
         </subsection>
         <subsection xml:id="subsec-Dark-Light-Mode">
             <title>Light and Dark Modes</title>
             <introduction>
                 <p>
-                    A partial order on <c>Complements</c> can be created, as relations are themselves sets, to select which color pairs should be used for the dark-mode and the light-mode. The poset will be created by adding the lightness values of both colors in the pair then ordering the pairs based on the size of the total of the lightness values. This results in the highest total at the top of the poset and the lowest total at the bottom of the poset.
+                    Now that we know what pairs are complements, we will chose a darker foreground for the light background of the light-mode and a lighter foreground for the dark background of the dark-mode.
                 </p>
             </introduction>
-                <sage>
-                    <input>
-                        def isBrighterPair(v,k):
-                            v_brightness = colors[v[0]][2] + colors[v[1]][2]
-                            k_brightness = colors[k[0]][2] + colors[k[1]][2]
-                            return v_brightness &lt; k_brightness 
-                            
-                        S_order = Set([(p1,p2) for p1 in Complements for p2 in Complements
-                            if isBrighterPair(p1,p2)])
-                        S_order
-                    </input>
-                </sage>
-                <p>
-                    A Hasse diagram can now be used to visually analyze the poset. 
-                </p>
-                <sage>
-                    <input>
-                        P = Poset((list(Complements), list(S_order)))
-                        P.plot(vertex_size=17000, figsize=9)
-                    </input>
-                </sage>
-                <p>
-                    Alternatively, the <c>.top()</c> and <c>.bottom()</c> attributes can be used to see the top and bottom of the poset if they exist.
-                </p>
-                <sage>
-                    <input>
-                        highest_pair = P.top() 
-                        lowest_pair = P.bottom() 
+            <p>
+                The lightness value is the third value in the tuple created by <c>.hsl()</c> meaning it is indexed at <c>2</c>.
+            </p>
+            <sage>
+                <input>
+                    v_light = colors['violet'].hsl()[2]
+                    v_light
+                </input>
+            </sage>
+            <p>
+                Instead of comparing the values of individual colors, we will now compare the lightness between two complementary pairs to create the light mode and the dark mode. This can be done by adding the lightness value of each color in the pair before comparing them.
+            </p>
+            <sage>
+                <input>
+                    vg = ('violet', 'green')
+                    v_light = colors[vg[0]].hsl()[2]
+                    g_light = colors[vg[1]].hsl()[2]
+                    vg_total = v_light + g_light
+                    vg_total
+                </input>
+            </sage>
+            <p>
+                A partial order on <c>Comp</c> can be created, as relations are themselves sets. Here is a relation, on <c>Comp</c>, defined as such: <c>p1</c> relates to <c>p2</c> if and only if the sum of lightness values in <c>p1</c> is less than the sum in <c>p2</c>.
+            </p>
+            <sage>
+                <input>
+                    def isBrighterPair(m, k):
+                        m_total = colors[m[0]].hsl()[2] + colors[m[1]].hsl()[2]
+                        k_total = colors[k[0]].hsl()[2] + colors[k[1]].hsl()[2]
+                        return m_total &lt; k_total 
+                        
+                    L_order = [(p1,p2) for p1 in Comp for p2 in Comp
+                        if isBrighterPair(p1,p2)]
+                    L_order
+                </input>
+            </sage>
+            <p>
+                Remember, <c>L_order</c> is a relation on a set containing pairs of colors, therefore it orders our complementary pairs. For example, the pair of teal and firebrick have a lower sum of lightness values than violet and green.
+            </p>
+            <p>
+                The <c>.top()</c> and <c>.bottom()</c> attributes can be used to find the brightest and darkest pairs.
+            </p>
+            <sage>
+                <input>
+                    P = Poset((Comp, L_order))
+                    highest_pair = P.top() 
+                    lowest_pair = P.bottom() 
 
-                        print("The highest lightness pair is: " + str((highest_pair)))
-                        print("The lowest lightness pair is: " + str(lowest_pair))
-                    </input>
-                </sage>
-                <p>
-                    Both methods show that teal and maroon are at the bottom while pale turquoise and firebrick are at the top. So pale turquoise and firebrick will be used for light-mode while teal and maroon will be used for dark-mode.
-                </p>
-                <p>
-                    The <c>.html_color()</c> attribute can be used to find the corresponding hex codes for these colors for use in the website's code.
-                </p>
-                <sage>
-                    <input>
-                        highest_hex = (colors[highest_pair[0]].html_color(),
-                            colors[highest_pair[1]].html_color())
-                        lowest_hex = (colors[lowest_pair[0]].html_color(),
-                            colors[lowest_pair[1]].html_color())
+                    print('The highest lightness pair is:', highest_pair)
+                    print('The lowest lightness pair is:', lowest_pair)
+                </input>
+            </sage>
+            <p>
+                Teal and maroon will be used for light-mode because they are the darkest, while pale-turquoise and firebrick will be used for dark-mode because they are the lightest.
+            </p>
+            <p>
+                The <c>.html_color()</c> attribute can be used to find these colors' corresponding hex codes for use in the website's code.
+            </p>
+            <sage>
+                <input>
+                    highest_hex = (colors[highest_pair[0]].html_color(),
+                        colors[highest_pair[1]].html_color())
+                    lowest_hex = (colors[lowest_pair[0]].html_color(),
+                        colors[lowest_pair[1]].html_color())
 
-                        print("Light-mode hex colors are: " + str(highest_hex))
-                        print("Dark-mode hex colors are: " + str(lowest_hex))
-                    </input>
-                </sage>
+                    print('Dark-mode hex codes are:', highest_hex)
+                    (circle((0,0),1, color=highest_pair[0], fill=true) + circle((2.5,0),1, color=highest_pair[1], fill=true)).show(figsize=[3.5,1], axes=False)
+                    print('Light-mode hex codes are:', lowest_hex)
+                    (circle((0,0),1, color=lowest_pair[0], fill=true) + circle((2.5,0),1, color=lowest_pair[1], fill=true)).show(figsize=[3.5,1], axes=False)
+                </input>
+            </sage>
         </subsection>
 </section>

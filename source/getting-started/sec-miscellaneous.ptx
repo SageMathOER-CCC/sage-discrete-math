@@ -5,27 +5,16 @@
 
     <introduction>
         <p>
-            While Sage supports a lot of features that are outside the scope of this book, and
-            hence there is little value in covering them in depth beyond a simple explanation of
-            each feature or command.
+            Sage is feature rich, and the following is a brief introduction of some of its miscellaneous
+            features. Keep in mind that the primary goal of this book is to introduce Sage software and
+            demonstrate how it can be used to experiment with discrete math concepts within Sage environment.
         </p>
-
         <p>
-            The primary goal of this book is to introduce Sage software and demonstrate how it can
-            be used to experiment with discrete math concepts within the Sage environment. Sage is
-            used here interactively, and mainly covering the basics. Having an understanding of
-            any of the commands presented in this section would be crucial for working on a
-            production-grade project with complex mathematical models (e.g. handling large datasets).
-            In such cases, it would be more appropriate to use these commands within a standalone
-            Sage environment. These commands are presented here just for the sake of completeness.
-        </p>
-
-        <p>
-            Note that these Sage cells allow the user to experiment freely with any of the Sage-
-            supported commands. The content of the cells can be altered at runtime (on the live web
-            version of the book) and executed in real-time on a remote Sage server. Users can
-            modify the content of cells and execute any other Sage commands to explore various
-            mathematical concepts interactively.
+            Sage is used here interactively, and mainly covering the basics. Having an understanding of
+            any of the commands presented in this section would be crucial for working on a production-grade
+            project with complex mathematical models (e.g. handling large datasets). In such cases, it would
+            be more appropriate to use these commands within a standalone Sage environment. These commands
+            are presented here just for the sake of completeness.
         </p>
     </introduction>
 
@@ -64,7 +53,7 @@
         <p>Sage allows executing shell commands directly using the `!` operator (prefix the shell command to be executed).</p>
 
         <p>
-            <em>listing the content of the current directory showing the file that we just created:</em>
+            <em>Listing the content of the current directory showing the file that we just created:</em>
         </p>
         <sage>
         <input>
