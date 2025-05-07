@@ -4,10 +4,10 @@ Copyright (c) 2024-2025 Zunaid Ahmed, Hellen Colman, Samuel Lubliner
 
 This work is licensed under the Creative Commons Attribution-International License. To view a copy of this license, visit [creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
 
-=======================================================================
+***
 This repository is generated from the [pretext-codespace template](https://github.com/PreTeXtBook/pretext-codespace).
 The license for which can be seen below.
------------------------------------------------------------------------
+***
 MIT License
 
 Copyright (c) 2025 Oscar Levin
