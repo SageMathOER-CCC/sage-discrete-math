@@ -4,7 +4,7 @@
     <title>Relations in Action</title>
     <introduction>
         <p>
-            Imagine you are creating both a light-mode and a dark-mode for a brand's website and have been asked to use complementary pairs of colors from the brand's color palette for the foreground of the website. Sage's <c>colors</c> dictionary and related attributes can be used to pick out colors for both modes.
+            A website of a certain brand is to be designed using a 2-color scheme. These colors should be chosen from the brand's color palette, with the constraint that the two colors should be complementary. We need to design two versions of the website, one for light mode and another for dark mode.
         </p>
         <p>
             Here is the <c>Set</c> of the brand's color palette.
@@ -13,13 +13,21 @@
             <input>
             C = Set(['paleturquoise', 'maroon', 'teal', 'green',
                 'violet', 'firebrick'])
+            C
+            </input>
+        </sage>
+        <p>
+            Using <c>.show()</c> we can see the colors themselves.
+        </p>
+        <sage>
+            <input>
             for c in C:
                 print(c)
                 circle((0,0),1, color=c, fill=true).show(figsize=[0.5,0.5], axes=False)
             </input>
         </sage>
         <p>
-            We can then check if all of these color names are keys in the <c>colors</c> dictionary by converting <c>colors</c> into a <c>Set</c>.
+            We can then check if all of these color names are in Sage's <c>colors</c> dictionary.
         </p>
         <sage>
             <input>
@@ -27,7 +35,7 @@
             </input>
         </sage>
         <p>
-            Strings of color names in the <c>colors</c> dictionary correspond to RGB values, where each value is in the interval <m>[0,1]</m>. 
+            RGB values are tuples in the format <c>(red, green, blue)</c>, and in sage each entry is a <c>float</c> in the interval <m>[0,1]</m>. <c>colors</c> will return the RGB value of a color when the color's name is input.
         </p>
         <sage>
             <input>
@@ -42,7 +50,7 @@
         </p>  
         <figure xml:id="fig-complements">
             <caption>On RGB displays, red and cyan are complementary colors.</caption>
-                <image width="60%" xml:id="complement-wheel"> 
+                <image width="40%" xml:id="complement-wheel">
                 <shortdescription> RGB color wheel with a line connecting red and cyan</shortdescription>
                 <latex-image>
                     \begin{tikzpicture}
@@ -56,7 +64,7 @@
             </image>
         </figure>
         <p>
-            You can obtain a color's hue is by using the <c>.hsl()</c> attribute. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values being a <c>float</c> in the interval <m>[0,1]</m>. This interval causes colors to be complementary if and only if their hues differ by <m>\frac{1}{2}</m>.
+            We can obtain a color's hue is by using the <c>.hsl()</c> attribute. The <c>.hsl()</c> attribute outputs in the format <c>(hue, saturation, lightness)</c> with all values being a <c>float</c> in the interval <m>[0,1]</m>. This interval causes colors to be complementary if and only if their hues differ by <m>\frac{1}{2}</m>.
         </p>
         <sage>
             <input>
@@ -74,7 +82,7 @@
             </input>
         </sage>
         <p>
-            The <c>float</c> class can cause issues when comparing values. For example, consider the complementary colors violet and green.
+            The <c>float</c> type can cause issues when comparing values. For example, consider the complementary colors violet and green.
         </p>
         <sage>
             <input>
@@ -85,7 +93,7 @@
             </input>
         </sage>
         <p>
-            The imprecision caused by the <c>float</c> class caused a false negative when testing to see if two colors were complements. This can be avoided by converting the hue values to Sage's <c>rational</c> class.
+            The imprecision caused by the <c>float</c> type caused a false negative when testing to see if two colors were complements. This can be avoided by converting the hue values to Sage's <c>rational</c> type.
         </p>
         <sage>
             <input>
@@ -97,7 +105,7 @@
             </input>
         </sage>
         <p>
-            Here is a relation, on <m>C</m>, defined as such: a color <c>c1</c> is related to a color <c>c2</c> if and only if the hues of <c>c1</c> and <c>c2</c> are complementary, where the test for complementation is the method used above.
+            Here is a relation, on <m>C</m>, defined as follows: a color <c>c1</c> is related to a color <c>c2</c> if and only if the hues of <c>c1</c> and <c>c2</c> are complementary, where the test for complementation is the method used above.
         </p>
         <sage>
             <input>
@@ -116,7 +124,7 @@
             <title>Light and Dark Modes</title>
             <introduction>
                 <p>
-                    Now that we know what pairs are complements, we will chose a darker foreground for the light background of the light-mode and a lighter foreground for the dark background of the dark-mode.
+                    Now that we know what pairs are complements, we will create a partial order on <c>Comp</c> to help select a color pair for the light-mode and a color pair for the dark-mode. This partial order will be defined by comparing the lightness values of the pairs in <c>Comp</c>.
                 </p>
             </introduction>
             <p>
@@ -129,7 +137,7 @@
                 </input>
             </sage>
             <p>
-                Instead of comparing the values of individual colors, we will now compare the lightness between two complementary pairs to create the light mode and the dark mode. This can be done by adding the lightness value of each color in the pair before comparing them.
+                We will now compare the lightness between two complementary pairs to create the light mode and the dark mode. This can be done by adding the lightness value of each color in the pair before comparing them.
             </p>
             <sage>
                 <input>
@@ -141,7 +149,7 @@
                 </input>
             </sage>
             <p>
-                A partial order on <c>Comp</c> can be created, as relations are themselves sets. Here is a relation, on <c>Comp</c>, defined as such: <c>p1</c> relates to <c>p2</c> if and only if the sum of lightness values in <c>p1</c> is less than the sum in <c>p2</c>.
+                Using this calculation for total lightness, a partial order on <c>Comp</c> can be created. We define this relation as follows: <c>p1</c> relates to <c>p2</c> if and only if the total lightness of <c>p1</c> is less than the total of <c>p2</c>.
             </p>
             <sage>
                 <input>
@@ -156,7 +164,7 @@
                 </input>
             </sage>
             <p>
-                Remember, <c>L_order</c> is a relation on a set containing pairs of colors, therefore it orders our complementary pairs. For example, the pair of teal and firebrick have a lower sum of lightness values than violet and green.
+                Recall, <c>L_order</c> is a relation on <c>Comp</c>, therefore it orders our complementary pairs. For example, the pair of teal and firebrick have a lower total lightness than violet and green.
             </p>
             <p>
                 The <c>.top()</c> and <c>.bottom()</c> attributes can be used to find the brightest and darkest pairs.
