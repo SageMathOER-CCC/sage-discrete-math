@@ -12,7 +12,7 @@
         <sage>
             <input>
             C = Set(['paleturquoise', 'maroon', 'teal', 'green',
-                'violet', 'firebrick'])
+                'violet', 'lightcoral'])
             C
             </input>
         </sage>
@@ -70,7 +70,7 @@
             The Hue-Saturation-Lightness (HSL) system provides an alternate representation <c>(h,s,l)</c> of a color where the coordinates also lie in the interval <m>[0,1]</m>.
         </p>
         <p>
-            We can obtain a color's hue is by using the <c>.hsl()</c> attribute. 
+            We can obtain a color's hue is by using the <c>.hsl()</c> method. 
         </p>
         <sage>
             <input>
@@ -88,7 +88,7 @@
             </input>
         </sage>
         <p>
-            The <c>float</c> type can cause issues when comparing values. For example, consider the complementary colors violet and green.
+            The <c>float</c> class can cause issues when comparing values. For example, consider the complementary colors violet and green.
         </p>
         <sage>
             <input>
@@ -99,7 +99,7 @@
             </input>
         </sage>
         <p>
-            The imprecision caused by the <c>float</c> type caused a false negative when testing to see if two colors were complementary. This can be avoided by converting the hue values to Sage's <c>rational</c> type.
+            The imprecision caused by the <c>float</c> class caused a false negative when testing to see if two colors were complementary. This can be avoided by converting the hue values to Sage's <c>rational</c> class.
         </p>
         <sage>
             <input>
@@ -143,7 +143,7 @@
                 </input>
             </sage>
             <p>
-                We will now compare the lightness between two complementary pairs to create the light mode and the dark mode. This can be done by adding the lightness value of each color in the pair before comparing them.
+                We will now compare the lightness between two complementary pairs to create the light mode and the dark mode. This can be done by adding the lightness value of each color in the pair before comparing them. For example, let's calculate the total lightness of the pair (violet, green):
             </p>
             <sage>
                 <input>
@@ -155,7 +155,7 @@
                 </input>
             </sage>
             <p>
-                Using this calculation for total lightness, a partial order on <c>Comp</c> can be created. We define this relation as follows: <c>p1</c> relates to <c>p2</c> if and only if the total lightness of <c>p1</c> is less than the total of <c>p2</c>.
+                Using the previous calculation for total lightness of the pair, we define a partial order relation on <c>Comp</c> as follows: <c>p1</c> relates to <c>p2</c> if and only if the total lightness of <c>p1</c> is less than the total of <c>p2</c>. Let's define a function in Sage to build this relation.
             </p>
             <sage>
                 <input>
@@ -170,14 +170,22 @@
                 </input>
             </sage>
             <p>
-                Recall, <c>L</c> is a relation on <c>Comp</c>, therefore it orders our complementary pairs. For example, the pair of teal and firebrick have a lower total lightness than violet and green.
+                Recall, <c>L</c> is a relation on <c>Comp</c>, therefore it orders our complementary pairs. For example, the pair of violet and green have a lower total lightness than pale-turquoise and maroon.
             </p>
             <p>
-                The <c>.top()</c> and <c>.bottom()</c> attributes can be used to find the brightest and darkest pairs.
+                A Hasse diagram can now be used to visually analyze the poset.
             </p>
             <sage>
                 <input>
                     P = Poset((Comp, L))
+                    P.plot(vertex_size=0, figsize=7)
+                </input>
+            </sage>
+            <p>
+                The <c>.top()</c> and <c>.bottom()</c> methods can be used to assign the brightest and darkest pairs to variables.
+            </p>
+            <sage>
+                <input>
                     highest_pair = P.top() 
                     lowest_pair = P.bottom() 
 
@@ -185,11 +193,12 @@
                     print('The lowest lightness pair is:', lowest_pair)
                 </input>
             </sage>
+
             <p>
-                Teal and maroon will be used for light-mode because they are the darkest, while pale-turquoise and firebrick will be used for dark-mode because they are the lightest.
+                Teal and maroon will be used for light-mode because they are the darkest, while pale-turquoise and light-coral will be used for dark-mode because they are the lightest.
             </p>
             <p>
-                The <c>.html_color()</c> attribute can be used to find these colors' corresponding hex codes for use in the website's code.
+                The <c>.html_color()</c> method can be used to find these colors corresponding hex codes for use in the website's code.
             </p>
             <sage>
                 <input>
