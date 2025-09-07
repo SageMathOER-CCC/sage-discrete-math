@@ -5,6 +5,7 @@
 # don't track unpublished builds or stage (note: Runestone uses `published`)
 output/web
 output/stage
+output/latex
 published
 .cache
 
