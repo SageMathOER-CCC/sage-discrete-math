@@ -187,13 +187,9 @@
         <sage>
             <input>
                 def is_transitive_set(A, R):
-                    for a in A:
-                        for b in A:
-                            if (a, b) in R:
-                                for c in A:
-                                    if (b, c) in R and not (a, c) in R:
-                                        return False
-                    return True
+                    # For each (a, b) and (b, c) in R,
+                    # check if (a, c) is also in R
+                    return all((a, c) in R for (a, b) in R for (b2, c) in R if b == b2)
 
                 A = Set([1, 2, 3])
 
@@ -203,9 +199,8 @@
             </input>
         </sage>
         <p>
-            You may be tempted to write a function with a nested loop because the logic is easy to follow. However, when working with larger sets, the time complexity of the function will not be efficient. This is because we are iterating through the set <m>A</m> three times. We can improve the time complexity by using a dictionary to store the relation <m>R</m>. Alternatively, we can use built-in Sage <c>DiGraph</c> methods.
+            Alternatively, we can use the built-in Sage <c>is_transitive</c>.
         </p>
-
         <sage>
             <input>
                 D = DiGraph([(1, 2), (2, 3), (1, 3)], loops=True)
@@ -213,5 +208,8 @@
                 D.is_transitive()
             </input>
         </sage>
+        <p>
+            In this case, <c>is_transitive</c> returns <c>True</c> as expected. However, the Sage implementation of <c>is_transitive()</c> checks a stricter graph-theoretic property, and in some cases, it may return <c>False</c> even if the relation is transitive per our definition.
+        </p>
     </subsection>
 </section>
