@@ -17,7 +17,7 @@
             </input>
         </sage>
         <p>
-            Using <c>.show()</c> we can display the colors in <m>C</m>.
+            We can display the colors in <m>C</m> with the <c>show()</c> method.
         </p>
         <sage>
             <input>
@@ -42,7 +42,7 @@
     <title>Color Complements</title>
         <p>
             Complementary colors are pairs of colors whose hues are located directly opposite each other on the color wheel. For this example, we will consider the RGB (Red, Green, Blue) color wheel used in screen displays.
-        </p>  
+        </p>
         <figure xml:id="fig-complements">
             <caption>On RGB displays, red and cyan are complementary colors.</caption>
                 <image width="40%" xml:id="complement-wheel">
@@ -70,7 +70,7 @@
             The Hue-Saturation-Lightness (HSL) system provides an alternate representation <c>(h,s,l)</c> of a color where the coordinates also lie in the interval <m>[0,1]</m>.
         </p>
         <p>
-            We can obtain a color's hue is by using the <c>.hsl()</c> method. 
+            We can obtain a color's hue is by using the <c>hsl()</c> method.
         </p>
         <sage>
             <input>
@@ -134,7 +134,7 @@
                 </p>
             </introduction>
             <p>
-                The lightness value is the third value in the tuple created by <c>.hsl()</c> meaning it is indexed at <c>2</c>.
+                The lightness value is the third value in the tuple created by <c>hsl()</c> meaning it is indexed at <c>2</c>.
             </p>
             <sage>
                 <input>
@@ -162,8 +162,8 @@
                     def isBrighterPair(m, k):
                         m_total = colors[m[0]].hsl()[2] + colors[m[1]].hsl()[2]
                         k_total = colors[k[0]].hsl()[2] + colors[k[1]].hsl()[2]
-                        return m_total &lt; k_total 
-                        
+                        return m_total &lt; k_total
+
                     L = [(p1,p2) for p1 in Comp for p2 in Comp
                         if isBrighterPair(p1,p2)]
                     L
@@ -182,12 +182,12 @@
                 </input>
             </sage>
             <p>
-                The <c>.top()</c> and <c>.bottom()</c> methods can be used to assign the brightest and darkest pairs to variables.
+                Assign the brightest and darkest pairs to variables by using the <c>top()</c> and <c>bottom()</c> methods.
             </p>
             <sage>
                 <input>
-                    highest_pair = P.top() 
-                    lowest_pair = P.bottom() 
+                    highest_pair = P.top()
+                    lowest_pair = P.bottom()
 
                     print('The highest lightness pair is:', highest_pair)
                     print('The lowest lightness pair is:', lowest_pair)
@@ -198,7 +198,7 @@
                 Teal and maroon will be used for light-mode because they are the darkest, while pale-turquoise and light-coral will be used for dark-mode because they are the lightest.
             </p>
             <p>
-                The <c>.html_color()</c> method can be used to find these colors corresponding hex codes for use in the website's code.
+                Use the <c>html_color()</c> method to find these colors corresponding hex codes for use in the website's code.
             </p>
             <sage>
                 <input>
