@@ -96,9 +96,9 @@
         </p>
         <sage>
             <input>
-                def is_symmetric_set(relation_R):
-                    inverse_R = Set([(b, a) for (a, b) in relation_R])
-                    return relation_R == inverse_R
+                def is_symmetric_set(R):
+                    inverse_R = Set([(b, a) for (a, b) in R])
+                    return R == inverse_R
 
                 A = Set([1, 2, 3])
 
@@ -115,9 +115,9 @@
                 def is_symmetric_digraph(digraph):
                     return digraph.edges(labels=False) == digraph.reverse().edges(labels=False)
 
-                relation_R = [(1, 2), (2, 1), (3, 3)]
+                R = [(1, 2), (2, 1), (3, 3)]
 
-                G = DiGraph(relation_R, loops=true)
+                G = DiGraph(R, loops=true)
 
                 is_symmetric_digraph(G)
             </input>
@@ -130,15 +130,16 @@
         </p>
         <sage>
             <input>
-                def is_antisymmetric_set(relation):
-                    for a, b in relation:
-                        if (b, a) in relation and a != b:
+                def is_antisymmetric_set(R):
+                    # Unpack each pair (a, b) from R
+                    for a, b in R:
+                        if (b, a) in R and a != b:
                             return False
                     return True
 
-                relation = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
+                R = Set([(1, 2), (2, 3), (3, 4), (4, 1)])
 
-                is_antisymmetric_set(relation)
+                is_antisymmetric_set(R)
             </input>
         </sage>
         <p>
