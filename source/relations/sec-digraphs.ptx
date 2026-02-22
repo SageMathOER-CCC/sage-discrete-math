@@ -37,7 +37,7 @@
         </input>
     </sage>
     <p>
-        If the digraph does not contain a relation from a node to itself, we can omit the <c>loops=true</c> parameter. If we happen to forgot to include the parameter when we need to, Sage will give us a descriptive error message.
+        If the digraph does not contain a relation from a node to itself, we can omit the <c>loops=true</c> parameter. If we happen to forget to include the parameter when we need to, Sage will give us a descriptive error message.
     </p>
     <sage>
         <input>
@@ -50,7 +50,7 @@
         </input>
     </sage>
     <p>
-        We can also define the digraph using pair notion for relations.
+        We can also define the digraph using pair notation for relations.
     </p>
     <sage>
         <input>
