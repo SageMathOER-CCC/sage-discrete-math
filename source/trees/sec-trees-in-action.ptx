@@ -80,7 +80,7 @@
             <caption>City Colleges of Chicago</caption>
         </figure>
         <p>
-            Now, let's calculate the distances between campus locations. We will first create a <c>dictionary</c> to store the campus name, latitude, and longitude values.
+            First, we create a <c>dictionary</c> to store the campus name, latitude, and longitude values.
         </p>
         <sage>
             <input>
@@ -97,12 +97,12 @@
             </input>
         </sage>
         <p>
-            Since the Earth is curved, we cannot use the Euclidean distance. We will use the Haversine formula instead. Note that the Haversine formula still produces an approximation because the Earth is not a perfect sphere. Here is a function to compute the Haversine formula.
+            Now, let's calculate the distances between campus locations. Since the Earth is curved, we cannot use the Euclidean distance. We will use the Haversine formula instead. Note that the Haversine formula still produces an approximation because the Earth is not a perfect sphere. Here is a function to compute the Haversine formula.
         </p>
         <sage>
             <input>
                 def haversine(lat1, lon1, lat2, lon2):
-                    '''Reference: https://cs.nyu.edu/~visual/home/proj/tiger/gisfaq.html'''
+                    # Reference: https://cs.nyu.edu/~visual/home/proj/tiger/gisfaq.html
                     import math
 
                     lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
@@ -126,22 +126,19 @@
             </input>
         </sage>
         <p>
-            Now we can make an edge <c>list</c>. We will represent each campus as a node with the initials of the college name. The weight of the edge will represent the Haversine value between the locations. For example, express the route between Harold Washington College and Harry Truman College as <c>("HW", "HT", Haversine)</c>.
+            Now we can make an edge <c>list</c>. We will represent each campus as a node with the initials of the college name. The weight of the edge will represent the Haversine value between the locations. For example, express the route between Harold Washington College and Harry Truman College as <c>("HW", "HT", Haversine)</c>. We use <c>combinations()</c> from the <c>itertools</c> module to pair up every two colleges without repeating any pair. A list comprehension concisely builds the edge list from all pairwise combinations.
         </p>
         <sage>
             <input>
-                distances = []
-                colleges = list(lat_long.items())
-                for i in range(len(colleges)):
-                    college1, (lat1, lon1) = colleges[i]
-                    for j in range(i + 1, len(colleges)):
-                        college2, (lat2, lon2) = colleges[j]
-                        dist = haversine(lat1, lon1, lat2, lon2)
-                        distances.append((college1, college2, dist))
+                from itertools import combinations
+
+                distances = [
+                    (college1, college2, haversine(lat1, lon1, lat2, lon2))
+                    for (college1, (lat1, lon1)), (college2, (lat2, lon2)) in combinations(lat_long.items(), 2)
+                ]
 
                 print("\nDistances between colleges (in kilometers):")
-                for edge in distances:
-                    college1, college2, dist = edge
+                for college1, college2, dist in distances:
                     print(f"{college1} - {college2}: {dist:.2f} km")
             </input>
         </sage>
