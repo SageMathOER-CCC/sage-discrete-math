@@ -62,7 +62,6 @@
       G.connected_components()
     </input>
   </sage>
-  <!-- Consider removing as this section is redundent with the added show() functions -->
   <p>
     We can visualize the graph as a disjoint union of its connected components, by plotting it.
   </p>
@@ -99,6 +98,8 @@
       G = Graph({1: [2, 3], 2: [4], 3: [4]})
       G.show()
       G.is_bipartite()
+      print("Bipartite sets:")
+      G.bipartite_sets()
     </input>
   </sage>
 </section>
