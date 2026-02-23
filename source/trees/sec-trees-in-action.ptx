@@ -183,7 +183,7 @@
             In a Hamilton path, the requirement to visit each vertex in a single path can force the inclusion of high-weight edges. Alternatively, the MST is not restricted by the requirement of connecting vertices with a path. The MST can avoid high-weight edges by connecting vertices without regard to forming a path as long as the graph remains connected and acyclic. Although the minimum Hamilton path is one of many possible spanning trees, it is not an MST. Prim's Algorithm ensures the weight of the spanning tree is minimal because, at each iteration, it selects the smallest-weight edge.
         </p>
         <p>
-            Let's find the MST edge <c>list</c> of the campus locations with the <c>min_spanning_tree(by_weight=True)</c> function.
+            Let's find the MST edge <c>list</c> with Sage.
         </p>
         <sage>
             <input>

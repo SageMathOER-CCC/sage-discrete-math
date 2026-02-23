@@ -15,7 +15,7 @@
         A <term>spanning tree</term> for the graph <m>G</m> is a spanning subgraph of <m>G</m> that is a tree.
     </p>
     <p>
-        Given a graph, various algorithms can calculate a spanning tree, including depth-first search and breadth-first search.
+        Given a graph, search algorithms such as depth-first search and breadth-first search can be used to calculate a spanning tree.
     </p>
     <idx><h>Breadth-first search</h></idx>
     <p>
@@ -152,21 +152,21 @@
         </ol>
         The output of this algorithm is a minimal spanning tree.
     </p>
-    <sage>
-        <input>
-            G = Graph({"a":{"c":8, "e":1}, "b":{"c":6, "d":4}, "c":{"e":2}, "d":{"a":5, "c":4}})
-            G.show(edge_labels = True)
-        </input>
-    </sage>
-    <p>
-        We can ask Sage for the minimal spanning tree of this graph. By running <c>Graph.min_spanning_tree??</c> We can see that <c>min_spanning_tree()</c> uses a variation of Prim's Algorithm by default. We can also use other algorithms such as Kruskal, Boruvka, or NetworkX.
-    </p>
     <aside>
         <title>Notes</title>
         <p>
             Minimal spanning trees influence the efficient design of networks and roads.
         </p>
     </aside>
+    <p>
+        We can ask Sage for the minimal spanning tree of this graph. The <c>Graph.min_spanning_tree?</c> documentation states that <c>min_spanning_tree()</c> uses a variation of Prim's Algorithm by default. Alternatively, we can update the algorithms parameter to use Kruskal, Boruvka, or NetworkX.
+    </p>
+    <sage>
+        <input>
+            G = Graph({"a":{"c":8, "e":1}, "b":{"c":6, "d":4}, "c":{"e":2}, "d":{"a":5, "c":4}})
+            G.show(edge_labels = True)
+        </input>
+    </sage>
     <sage>
         <input>
             G.min_spanning_tree(by_weight=True)
@@ -185,7 +185,7 @@
         </input>
     </sage>
     <p>
-        Let's define a function to view the minimal spanning tree in the context of the original graph. The function parameters include:
+        Let's define a function to view the minimal spanning tree (MST) in the context of the original graph. The function parameters include:
         <ul>
             <li>
                 <p>
