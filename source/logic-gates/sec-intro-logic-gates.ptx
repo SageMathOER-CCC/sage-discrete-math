@@ -1,216 +1,251 @@
 <section xml:id="sec-intro-logic-gates" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Logic Gates</title>
-    <idx>
-        <h>logic gates</h>
-        <h>AND</h>
-        <h>OR</h>
-        <h>NOT</h>
-        <h>NAND</h>
-        <h>NOR</h>
-        <h>XOR</h>
-        <h>XNOR</h>
-    </idx>
-    <introduction>
-        <p> Logic gates are the foundation of digital circuits. They process binary inputs to
-            produce specific outputs. The basic logic gates are <m>AND</m>, <m>OR</m>, and <m>NOT</m>.
-            Derived gates include <m>NAND</m>, <m>NOR</m>, <m>XOR</m>, and <m>XNOR</m>. Each gate
-            has its own symbol and behavior defined by a truth table. </p>
-    </introduction>
-    <aside>
-        <title>Notes</title>
-        <p>
-            Logic gates combine to form complex systems such as CPUs and memory circuits.
-        </p>
-    </aside>
-    <subsection xml:id="subsec-AND-Gate">
-        <title>AND Gate</title>
-        <p> The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>. </p>
-        <figure xml:id="fig-AND-Gate">
-            <caption>AND Gate</caption>
-            <image width="25%" xml:id="AND-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[and port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-        <sage>
-            <input>
-                from sympy.logic.boolalg import And
-                from sympy.abc import A, B
-                And(A, B)
-            </input>
-        </sage>
-        <p> Truth table for the <c>AND</c> gate: </p>
-        <sage>
-            <input>
-                # Generate truth table for AND gate
-                print("\nA | B | A AND B")
-                print("--|---|--------")
-                for A in [False, True]:
-                    for B in [False, True]:
-                        print(f"{int(A)} | {int(B)} | {int(bool(And(A, B)))}")
-            </input>
-        </sage>
-    </subsection>
-    <subsection xml:id="subsec-OR-GATE">
-        <title>OR GATE</title>
-        <p> The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>. </p>
-        <figure xml:id="fig-OR-Gate">
-            <caption>OR Gate</caption>
-            <image width="25%" xml:id="OR-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[or port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-        <sage>
-            <input>
-                from sympy.logic.boolalg import Or
-                from sympy.abc import A, B
-                Or(A, B)
-            </input>
-        </sage>
-        <p> Truth table for the <c>OR</c> gate: </p>
-        <sage>
-            <input>
-                # Generate truth table for OR gate
-                print("\nA | B | A OR B")
-                print("--|---|--------")
-                for A in [False, True]:
-                    for B in [False, True]:
-                        print(f"{int(A)} | {int(B)} | {int(bool(Or(A, B)))}")
-            </input>
-        </sage>
-    </subsection>
+  <title>Logic Gates</title>
 
-    <subsection xml:id="subsec-NOT-Gate">
-        <title>NOT Gate</title>
-        <p> The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>. </p>
-        <figure xml:id="fig-NOT-Gate">
-            <caption>NOT Gate</caption>
-            <image width="25%" xml:id="NOT-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[not port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-        <sage>
-            <input>
-                from sympy.logic.boolalg import Not
-                from sympy.abc import A
-                Not(A)
-            </input>
-        </sage>
-        <p> Truth table for the <c>NOT</c> gate: </p>
-        <sage>
-            <input>
-                # Generate truth table for NOT gate
-                print("\nA | NOT A")
-                print("--|-------")
-                for A in [False, True]:
-                    print(f"{int(A)} | {int(bool(Not(A)))}")
-            </input>
-        </sage>
-    </subsection>
-    <subsection xml:id="subsec-NAND-Gate">
-        <title>NAND Gate</title>
-        <p><c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.</p>
-        <figure xml:id="fig-NAND-Gate">
-            <caption>NAND Gate</caption>
-            <image width="25%" xml:id="NAND-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[nand port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-    </subsection>
+  <idx> <h>logic gates</h> <h>AND</h> <h>OR</h> <h>NOT</h> <h>NAND</h> <h>NOR</h> <h>XOR</h> <h>XNOR</h> </idx>
+  <introduction>
+    <p>
+      Logic gates are the foundation of digital circuits.
+      They process binary inputs to produce specific outputs.
+      The basic logic gates are <m>AND</m>, <m>OR</m>, and <m>NOT</m>.
+      Derived gates include <m>NAND</m>, <m>NOR</m>, <m>XOR</m>, and <m>XNOR</m>.
+      Each gate has its own symbol and behavior defined by a truth table.
+    </p>
+  </introduction>
+  <aside>
+  <title>Notes</title>
 
-    <subsection xml:id="subsec-NOR-Gate">
-        <title>NOR Gate</title>
-        <p><c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.</p>
-        <figure xml:id="fig-NOR-Gate">
-            <caption>NOR Gate</caption>
-            <image width="25%" xml:id="NOR-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[nor port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-    </subsection>
-
-    <subsection xml:id="subsec-XOR-Gate">
-        <title>XOR Gate</title>
-        <p><c>XOR</c>: Produces <c>1</c> when inputs differ.</p>
-        <figure xml:id="fig-XOR-Gate">
-            <caption>XOR Gate</caption>
-            <image width="25%" xml:id="XOR-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[xor port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-    </subsection>
-
-    <subsection xml:id="subsec-XNOR-Gate">
-        <title>XNOR Gate</title>
-        <p><c>XNOR</c>: Produces <c>1</c> when inputs are the same.</p>
-        <figure xml:id="fig-XNOR-Gate">
-            <caption>XNOR Gate</caption>
-            <image width="25%" xml:id="XNOR-Gate">
-                <latex-image>
-                    \begin{circuitikz}
-                    \draw (0,0) node[xnor port] {};
-                    \end{circuitikz}
-                </latex-image>
-            </image>
-        </figure>
-        <sage>
-            <input>
-                from sympy.logic.boolalg import And, Or, Not, Xor
-
-                def nand(A, B):
-                    return Not(And(A, B))
-
-                def nor(A, B):
-                    return Not(Or(A, B))
-
-                def xor(A, B):
-                    return Xor(A, B)
-
-                def xnor(A, B):
-                    return Not(Xor(A, B))
-
-                # User-defined inputs
-                A = 1 # Replace with 0 or 1 for input A
-                B = 0 # Replace with 0 or 1 for input B
-                gate = "xor" # Replace with "nand", "nor", "xor", or "xnor"
+  <p>
+    Logic gates combine to form systems such as CPUs and memory circuits.
+  </p>
+  </aside>
 
 
-                if gate == "nand":
-                    result = nand(A, B)
-                elif gate == "nor":
-                    result = nor(A, B)
-                elif gate == "xor":
-                    result = xor(A, B)
-                elif gate == "xnor":
-                    result = xnor(A, B)
-                else:
-                    result = "Invalid gate type! Please use 'nand', 'nor', 'xor', or 'xnor'."
+  <subsection xml:id="subsec-AND-Gate">
+    <title>AND Gate</title>
 
-                result
-            </input>
-        </sage>
-    </subsection>
+    <p>
+      The <c>AND</c> gate produces a <c>1</c> only when both inputs are <c>1</c>.
+    </p>
+
+    <figure xml:id="fig-AND-Gate">
+      <caption>AND Gate</caption>
+      <image width="25%" xml:id="AND-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[and port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Truth table for the <c>AND</c> gate:
+    </p>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import And
+
+      print("\nA | B | A AND B")
+      for a in [False, True]:
+          for b in [False, True]:
+              print(f"{int(a)} | {int(b)} | {int(bool(And(a, b)))}")
+    </input>
+    </sage>
+  </subsection>
+
+
+  <subsection xml:id="subsec-OR-GATE">
+    <title>OR GATE</title>
+
+    <p>
+      The <c>OR</c> gate produces a <c>1</c> if at least one input is <c>1</c>.
+    </p>
+
+    <figure xml:id="fig-OR-Gate">
+      <caption>OR Gate</caption>
+      <image width="25%" xml:id="OR-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[or port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Truth table for the <c>OR</c> gate:
+    </p>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import Or
+
+      print("\nA | B | A OR B")
+      for a in [False, True]:
+          for b in [False, True]:
+              print(f"{int(a)} | {int(b)} | {int(bool(Or(a, b)))}")
+    </input>
+    </sage>
+  </subsection>
+
+
+  <subsection xml:id="subsec-NOT-Gate">
+    <title>NOT Gate</title>
+
+    <p>
+      The <c>NOT</c> gate inverts the input: <c>1</c> becomes <c>0</c>, and <c>0</c> becomes <c>1</c>.
+    </p>
+
+    <figure xml:id="fig-NOT-Gate">
+      <caption>NOT Gate</caption>
+      <image width="25%" xml:id="NOT-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[not port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      Truth table for the <c>NOT</c> gate:
+    </p>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import Not
+
+      print("\nA | NOT A")
+      for a in [False, True]:
+        print(f"{int(a)} | {int(bool(Not(a)))}")
+    </input>
+    </sage>
+  </subsection>
+
+
+  <subsection xml:id="subsec-NAND-Gate">
+    <title>NAND Gate</title>
+
+    <p>
+      <c>NAND</c>: Produces <c>0</c> only when both inputs are <c>1</c>.
+    </p>
+
+    <figure xml:id="fig-NAND-Gate">
+      <caption>NAND Gate</caption>
+      <image width="25%" xml:id="NAND-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[nand port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import And, Not
+
+      def nand(a, b):
+          return Not(And(a, b))
+
+      print("\nA | B | A NAND B")
+      for a in [False, True]:
+          for b in [False, True]:
+              print(f"{int(a)} | {int(b)} | {int(bool(nand(a, b)))}")
+    </input>
+    </sage>
+  </subsection>
+
+
+  <subsection xml:id="subsec-NOR-Gate">
+    <title>NOR Gate</title>
+
+    <p>
+      <c>NOR</c>: Produces <c>1</c> only when both inputs are <c>0</c>.
+    </p>
+
+    <figure xml:id="fig-NOR-Gate">
+      <caption>NOR Gate</caption>
+      <image width="25%" xml:id="NOR-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[nor port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import Or, Not
+
+      def nor(a, b):
+          return Not(Or(a, b))
+
+      print("\nA | B | A NOR B")
+      for a in [False, True]:
+          for b in [False, True]:
+              print(f"{int(a)} | {int(b)} | {int(bool(nor(a, b)))}")
+    </input>
+    </sage>
+  </subsection>
+
+
+  <subsection xml:id="subsec-XOR-Gate">
+    <title>XOR Gate</title>
+
+    <p>
+      <c>XOR</c>: Produces <c>1</c> when inputs differ.
+    </p>
+
+    <figure xml:id="fig-XOR-Gate">
+      <caption>XOR Gate</caption>
+      <image width="25%" xml:id="XOR-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[xor port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import Xor
+
+      print("\nA | B | A XOR B")
+      for a in [False, True]:
+          for b in [False, True]:
+              print(f"{int(a)} | {int(b)} | {int(bool(Xor(a, b)))}")
+    </input>
+    </sage>
+  </subsection>
+
+
+  <subsection xml:id="subsec-XNOR-Gate">
+    <title>XNOR Gate</title>
+
+    <p>
+      <c>XNOR</c>: Produces <c>1</c> when inputs are the same.
+    </p>
+
+    <figure xml:id="fig-XNOR-Gate">
+      <caption>XNOR Gate</caption>
+      <image width="25%" xml:id="XNOR-Gate">
+        <latex-image>
+            \begin{circuitikz}
+            \draw (0,0) node[xnor port] {};
+            \end{circuitikz}
+        </latex-image>
+      </image>
+    </figure>
+    <sage>
+    <input>
+      from sympy.logic.boolalg import Not, Xor
+
+      def xnor(a, b):
+        return Not(Xor(a, b))
+
+      print("\nA | B | A XNOR B")
+      for a in [False, True]:
+          for b in [False, True]:
+              print(f"{int(a)} | {int(b)} | {int(bool(xnor(a, b)))}")
+    </input>
+    </sage>
+  </subsection>
 </section>
