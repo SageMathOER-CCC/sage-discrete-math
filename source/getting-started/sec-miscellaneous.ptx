@@ -5,7 +5,7 @@
 
     <introduction>
         <p>
-            Sage is feature rich, and the following is a brief introduction of some of its miscellaneous
+            Sage is feature rich, and the following is a brief introduction to some of its miscellaneous
             features. Keep in mind that the primary goal of this book is to introduce Sage software and
             demonstrate how it can be used to experiment with discrete math concepts within Sage environment.
         </p>
