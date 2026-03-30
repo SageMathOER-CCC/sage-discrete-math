@@ -23,7 +23,7 @@
             <input>
             for c in C:
                 print(c)
-                circle((0,0),1, color=c, fill=true).show(figsize=[0.5,0.5], axes=False)
+                circle((0,0),1, color=c, fill=True).show(figsize=[0.5,0.5], axes=False)
             </input>
         </sage>
         <p>
@@ -208,9 +208,9 @@
                         colors[lowest_pair[1]].html_color())
 
                     print('Dark-mode hex codes are:', highest_hex)
-                    (circle((0,0),1, color=highest_pair[0], fill=true) + circle((2.5,0),1, color=highest_pair[1], fill=true)).show(figsize=[3.5,1], axes=False)
+                    (circle((0,0),1, color=highest_pair[0], fill=True) + circle((2.5,0),1, color=highest_pair[1], fill=True)).show(figsize=[3.5,1], axes=False)
                     print('Light-mode hex codes are:', lowest_hex)
-                    (circle((0,0),1, color=lowest_pair[0], fill=true) + circle((2.5,0),1, color=lowest_pair[1], fill=true)).show(figsize=[3.5,1], axes=False)
+                    (circle((0,0),1, color=lowest_pair[0], fill=True) + circle((2.5,0),1, color=lowest_pair[1], fill=True)).show(figsize=[3.5,1], axes=False)
                 </input>
             </sage>
         </subsection>
