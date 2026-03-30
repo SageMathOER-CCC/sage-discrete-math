@@ -128,9 +128,8 @@
         <idx><h>graphs</h><h>weighted</h></idx>
         <p>
             A <term>weighted graph</term> has a weight, or number, associated with each edge.
-            These weights can model anything including distances, costs, or other relevant quantities.
+            These weights can model distances, costs, or other relevant values.
         </p>
-
         <p>
             To create a weighted graph, add a third element to each pair of vertices.
         </p>

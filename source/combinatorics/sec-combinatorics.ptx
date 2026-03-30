@@ -52,7 +52,11 @@
         <idx>
             <h>binomial</h>
         </idx>
-        <p> The <c>binomial()</c> function provides an alternative method to compute the number of combinations. </p>
+        <p>
+            The <c>binomial()</c> function provides an alternative method to compute the number of combinations.
+            While <c>Combinations(mset, k)</c>, returns the combinatorial class of combinations of the multiset,
+            <c>binomial(x, m)</c> returns the coefficient value or a symbolic expression.
+        </p>
         <sage>
             <input>
                 binomial(5, 3)

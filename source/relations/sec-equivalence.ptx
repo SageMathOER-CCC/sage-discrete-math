@@ -31,7 +31,6 @@
     <sage>
         <input>
             import pprint
-
             # Define the floors as a dictionary, mapping floor names to sets of people
             floors = {
                 'first_floor': Set(['p_1', 'p_2', 'p_3', 'p_4']),
@@ -85,10 +84,31 @@
     <p>
         <term>Transitive</term>: If person <m>a</m> lives in the same floor as person <m>b</m> and person <m>b</m> lives in the same floor as person <m>c</m>, then person <m>a</m> lives in the same floor as person <m>c</m>.
     </p>
+    <p>
+        In SageMath, the <c>DiGraph.is_transitive()</c> method checks a stricter graph-theoretic property:
+        "A digraph is transitive if for any pair of vertices <m>u, v \in G</m> linked by a <m>uv</m>-path the edge <m>uv</m> belongs to <m>G</m>".
+        For this reason the Sage implementation of <c>is_transitive()</c> will return <c>False</c>. This is a good reminder to always review the documentation of built-in functions to ensure they align with our expectations!
+    </p>
     <sage>
         <input>
-            G = DiGraph(list(R), loops=true)
+            G = DiGraph(list(R), loops=True)
             G.is_transitive()
+        </input>
+    </sage>
+    <p>
+        We can define a custom function to check the transitive property, per our definition:
+    </p>
+    <m>
+        \text{If } aRb \text{ and } bRc \text{ then } aRc \: \forall a, b, c \in A
+    </m>
+    <sage>
+        <input>
+            def is_transitive_relation(digraph):
+                relation = set(digraph.edges(labels=False))
+                return all((a, c) in relation for (a, b) in relation for (b2, c) in relation if b == b2)
+
+            G = DiGraph(list(R), loops=True)
+            is_transitive_relation(G)
         </input>
     </sage>
 </section>

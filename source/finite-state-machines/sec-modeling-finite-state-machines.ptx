@@ -13,10 +13,10 @@
             specific custom behaviors of the machine. Additionally, the built-in module allows state
             machines to be defined and constructed in different ways, providing greater flexibility
             and making it more suitable from a programmer's perspective. However, it may not fully
-            conform to the precise definition given earlier. This highlights that it is still possible
-            to model, construct, display, and run relatively simple state machines by utilizing
-            general-purpose tools, such as graphs and transition matrices, to represent and operate
-            on state machines.</p>
+            conform to the precise definition given earlier.
+            Therefore we will use more general-purpose tools such as graphs and transition matrices,
+            to model, construct, display, and run relatively simple state machines.
+        </p>
         <aside>
             <title>Notes</title>
             <p>
@@ -234,7 +234,7 @@
                 An FSM can be modeled as a graph where vertices represent the states, and the directed
                 edge between vertices is the relationship between two states (the transition from
                 one state to the other). The weight of a directed edge between two vertices represents
-                the pair of input and output associated with the transition between the two states.</p>
+                the input and output pair associated with the transition between the two states.</p>
 
             <p> In Sage, the <c>DiGraph</c> class can be used to represent the states, transitions,
                 and outputs of the state machine as a directed graph, leveraging the graph structure
@@ -481,12 +481,12 @@
         <subsection>
             <title>Using `FiniteStateMachine' Module</title>
             <p>
-                Sage <c>FiniteStateMachine</c> built-in library provides a powerful tool to model, construct as
-                well as simulate state machines of various systems. This module will be leveraged to showcase
-                its capabilities on the given example, and demonstrating how it can be used to construct and
-                display the FSM, manage its state transitions and outputs.</p>
+                Sage's <c>FiniteStateMachine</c> module is a powerful tool for working with state machines.
+                We will use it to construct and display the FSM, and manage state transitions and outputs.
+            </p>
             <p>
-                The command <c>FiniteStateMachine()</c> constructs an <em>empty</em> state machine (no states, no transitions).</p>
+                The command <c>FiniteStateMachine()</c> constructs an <em>empty</em> state machine (no states, no transitions).
+            </p>
             <sage>
                 <input>
                     from sage.combinat.finite_state_machine import FSMState

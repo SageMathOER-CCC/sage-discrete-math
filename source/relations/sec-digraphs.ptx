@@ -16,7 +16,7 @@
             # Define the relation R on A: aRb iff a divides b
             R = [(a, b) for a in A for b in A if a.divides(b)]
 
-            DiGraph(R, loops=true)
+            DiGraph(R, loops=True)
         </input>
     </sage>
     <p>
@@ -33,11 +33,11 @@
     </aside>
     <sage>
         <input>
-            DiGraph(R, loops=true, name="Look at my digraph")
+            DiGraph(R, loops=True, name="Look at my digraph")
         </input>
     </sage>
     <p>
-        If the digraph does not contain a relation from a node to itself, we can omit the <c>loops=true</c> parameter. If we happen to forgot to include the parameter when we need to, Sage will give us a descriptive error message.
+        If the digraph does not contain a relation from a node to itself, we can omit the <c>loops=True</c> parameter. If we happen to forget to include the parameter when we need to, Sage will give us a descriptive error message.
     </p>
     <sage>
         <input>
@@ -50,7 +50,7 @@
         </input>
     </sage>
     <p>
-        We can also define the digraph using pair notion for relations.
+        We can also define the digraph using pair notation for relations.
     </p>
     <sage>
         <input>

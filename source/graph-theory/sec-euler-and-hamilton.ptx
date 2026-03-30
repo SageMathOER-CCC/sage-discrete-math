@@ -6,7 +6,6 @@
         <title>Euler</title>
         <idx><h>Euler path</h></idx>
         <idx><h>Euler circuit</h></idx>
-
         <p>
             An <term>Euler path</term> is a path that uses every edge of a graph exactly once.
             An Euler path that is a circuit is called an <term>Euler circuit</term>.
@@ -29,14 +28,12 @@
             G.show(edge_labels=True)
         </input>
         </sage>
-
         <aside>
             <title>Notes</title>
             <p>
                 Eulerian circuits and paths have practical applications for reducing travel and costs in logistics, waste management, the airline industry, and postal service.
             </p>
         </aside>
-
         <p>
             While exploring this problem, Euler discovered the following:
             <ul>
@@ -45,7 +42,6 @@
                         A connected graph has an <term>Euler circuit</term> if and only if every vertex has an even degree.
                     </p>
                 </li>
-
                 <li>
                     <p>
                         A connected graph has an <term>Euler path</term> if and only if there are at most two vertices with an odd degree.
@@ -54,7 +50,6 @@
             </ul>
             We say that a graph is <term>Eulerian</term> if contains an Euler circuit.
         </p>
-
         <p>
             We can use Sage to determine if a graph is Eulerian.
         </p>
@@ -63,32 +58,38 @@
             G.is_eulerian()
         </input>
         </sage>
-
         <p>
-            Since this returns <c>False</c>, we know that the graph is not Eulerian.
+            Since this returns <c>False</c>, we know that the graph does not contain an Euler circuit.
+            Let's also check if the Königsberg graph contains an Euler path. Use the <c>path=True</c> argument to determine if a graph contains an Euler path.
+        </p>
+        <sage>
+        <input>
+            G.is_eulerian(path=True)
+        </input>
+        </sage>
+        <p>
+            This also returns <c>False</c>, so the Königsberg graph has neither an Euler circuit nor an Euler path.
             Therefore, it is not possible to walk through the city of Königsberg, crossing each of its seven bridges exactly once.
         </p>
 
         <p>
-            We can use <c>path=True</c> to determine if a graph contains an Euler path.
-            Sage will return the beginning and the end of the path.
+            For this next example, let's define a new graph and check if it contains an Euler path. If it does contain an Euler path, Sage will return the beginning and the end of the path.
         </p>
         <sage>
         <input>
-            G = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-            G.show()
-            G.is_eulerian(path=True)
+            G1 = Graph([(1, 2), (2, 3), (3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+            G1.show()
+            G1.is_eulerian(path=True)
         </input>
         </sage>
-
         <p>
             If the graph is Eulerian, we can ask Sage to find an Euler circuit with the <c>eulerian_circuit</c> function. Let's take a look at the following graph.
         </p>
         <sage>
         <input>
-            G = Graph([(1, 2), (2, 3), (2, 3),(3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
-            G.show()
-            G.eulerian_circuit()
+            G2 = Graph([(1, 2), (2, 3), (2, 3),(3, 4), (4, 1), (2, 4), (1, 3), (1, 4)], multiedges=True)
+            G2.show()
+            G2.eulerian_circuit()
         </input>
         </sage>
 
@@ -98,8 +99,8 @@
         </p>
         <sage>
         <input>
-            G = graphs.CycleGraph(6)
-            G.eulerian_circuit(labels=False, return_vertices=True)
+            G2 = graphs.CycleGraph(6)
+            G2.eulerian_circuit(labels=False, return_vertices=True)
         </input>
         </sage>
 
@@ -175,7 +176,7 @@
         <p>
             The function <c>hamiltonian_cycle</c> returns <c>True</c> and lists an example of a Hamiltonian cycle as the list of vertices <c>[1, 2, 3, 4, 5]</c>.
             This is just one of the many Hamiltonian cycles that exist in the graph.
-            Now lets find the minimum Hamiltonian cycle.
+            Now, let's find the minimum Hamiltonian cycle.
         </p>
         <sage>
         <input>

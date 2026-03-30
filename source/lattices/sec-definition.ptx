@@ -48,6 +48,19 @@
             </p>
         </aside>
         <p>
+            After removing <c>a</c>, we can see that the poset is no longer a lattice.
+        </p>
+        <sage>
+            <input>
+                PO_broken = PO.subposet(
+                    [x for x in PO if x != 'a']
+                )
+                PO_broken.show()
+
+                PO_broken.is_lattice()                
+            </input>
+        </sage>
+        <p>
             We can also use <c>LatticePoset()</c> function to plot the lattice. The function <c>Poset()</c> can be used with any poset, even when the poset is not a lattice. The <c>LatticePoset()</c> function will raise an error if the poset is not a lattice.
         </p>
         <sage>
@@ -61,7 +74,7 @@
     <subsection xml:id="join">
         <title>Join</title><idx><h>join</h></idx>
         <p>
-            The join of two elements in a lattice is the least upper bound of those elements.
+            The <term>join</term> of two elements in a lattice is the least upper bound of those elements.
         </p>
         <p>
             To check if a poset is a join semi-lattice (every pair of elements has a least upper bound), we use <c>is_join_semilattice()</c> function.
@@ -84,7 +97,7 @@
     <subsection xml:id="meet">
         <title>Meet</title><idx><h>meet</h></idx>
         <p>
-            The meet of two elements in a lattice is their greatest lower bound.
+            The <term>meet</term> of two elements in a lattice is their greatest lower bound.
         </p>
         <p>
             To check if a poset is a meet semi-lattice (every pair of elements has a greatest lower bound), we use <c>is_meet_semilattice()</c> function.
@@ -110,6 +123,9 @@
         </p>
         <p>
             The elements of the lattice are divisors of <m>n</m> and <m>x &lt; y</m> in the lattice if <m>x</m> divides <m>y</m>.
+        </p>
+        <p>
+            Here we show the divisor lattice of <m>12</m>.
         </p>
         <sage>
             <input>

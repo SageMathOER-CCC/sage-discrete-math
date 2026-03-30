@@ -93,7 +93,7 @@
 
     <subsection xml:id="external-libraries">
         <title>Using External Libraries in Sage</title>
-        <p>Sage allows using external Python libraries to do advance calculation or access and communicate over a network (urllib.request library) .</p>
+        <p>Sage allows using external Python libraries to do advanced calculation or access and communicate over a network (urllib.request library) .</p>
 
         <p>
             <em>Using NumPy for numerical computations:</em>

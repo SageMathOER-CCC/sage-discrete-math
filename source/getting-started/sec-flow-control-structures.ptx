@@ -169,17 +169,17 @@
         <ul>
             <li>
                 <p>
-                    The <c>while</c> loops repeats a block of code while a condition remains true.
+                    The <c>while</c> loop repeats a block of code while a condition remains true.
                 </p>
             </li>
         <li>
             <p>
-                The <c>break</c> statement terminates and exit a loop early.
+                The <c>break</c> statement terminates and exits a loop early.
             </p>
         </li>
         <li>
             <p>
-                The <c>continue</c> statement skips the rest of the loop body and jump to the next iteration.
+                The <c>continue</c> statement skips the rest of the loop body and jumps to the next iteration.
             </p>
         </li>
         <li>

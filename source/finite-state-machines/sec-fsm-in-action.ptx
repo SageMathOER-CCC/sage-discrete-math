@@ -40,7 +40,7 @@
         <title>Elements of the FSM Model</title>
         <p>
             The goal here is to define a state machine model that can control this traffic light
-            system, construct it, then put it under test. This system has different configurations
+            system, construct it, then test it. This system has different configurations
             of lights: Red (<c>R</c>), Yellow (<c>Y</c>), and Green (<c>G</c>) for traffic, and
             red (<c>r</c>), yellow (<c>y</c>), and green (<c>g</c>) for pedestrians. Note that not
             all possible combinations makes sense.</p>

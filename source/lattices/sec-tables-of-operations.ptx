@@ -1,8 +1,11 @@
 <section xml:id="sec-tables-of-operations">
     <title>Tables of Operations</title>
     <introduction>
-        <p> This section examines the representation of meet <m>(∧)</m> and join <m>(∨)</m>
-            operations within lattices using operation tables. </p>
+        <p>
+            This section examines the representation of
+            meet and join
+            operations within lattices using operation tables.
+        </p>
     </introduction>
 
     <subsection xml:id="meet-operation-table">

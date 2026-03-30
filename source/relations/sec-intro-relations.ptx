@@ -31,11 +31,7 @@
         <title>Relation Composition</title>
 
         <p> 
-            Let <m>R</m> be a relation from a set <m>A</m> to a set <m>B</m> and <m>S</m> a relation from <m>B</m> to a set <m>C</m>. The composite of <m>R</m> and <m>S</m> is the relation consisting of the ordered pairs <m>(a,c)</m> where <m>a \in A</m> and <m>c \in C</m>, and for which there is a <m>b \in B</m> such that <m>(a,b) \in R</m> and <m>(b,c) \in S</m>. We denote the composite of <m>R</m> and <m>S</m> by <m>S \! \circ \! R</m>.
-        </p>
-        
-        <p>
-            We can also use Sage to compose relations.
+            Let <m>R</m> be a relation from a set <m>A</m> to a set <m>B</m>.
         </p>
         <sage>
             <input>
@@ -43,13 +39,40 @@
                 B = Set([1, 2, 7])
                 R = Set([(a, b) for a in A for b in B if a==2*b])
 
+                print("Relation R")
+                show(R)
+            </input>
+        </sage>
+        <p> 
+            Let <m>S</m> be a relation from set <m>B</m> to a set <m>C</m>.
+        </p>
+        <sage>
+            <input>
                 C = Set([7,8,9,10])
-                S = Set([(a,c) for a in A for c in C if a + c == 10])
-                
-                SoR = Set([(r[0], s[1]) for r in R for s in S if r[1] == s[0]])
+                S = Set([(b,c) for b in B for c in C if b + c == 10])
+
+                print("Relation S")
+                show(S)
+            </input>
+        </sage>
+        <p>
+            The composite of <m>R</m> and <m>S</m> is the relation 
+            consisting of the ordered pairs <m>(a,c)</m> 
+            where <m>a \in A</m> and <m>c \in C</m>, 
+            and for which there is a <m>b \in B</m> 
+            such that <m>(a,b) \in R</m> 
+            and <m>(b,c) \in S</m>. 
+            
+            We denote the composite of <m>R</m> and <m>S</m> by <m>S \! \circ \! R</m>.
+        </p>
+        <sage>
+            <input>
+                SoR = Set((a, c) for (a, b1) in R for (b2, c) in S if b1 == b2)
+                print("Composite relation S o R")
                 show(SoR)
             </input>
         </sage>
+
     </subsection>
     
 
