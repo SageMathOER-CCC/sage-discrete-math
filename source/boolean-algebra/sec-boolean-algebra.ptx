@@ -1,7 +1,10 @@
 <section xml:id="sec-boolean-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Boolean Algebra</title><idx><h>Boolean Algebra</h></idx>
     <p>
-        A  Boolean algebra is a bounded lattice that is both complemented and distributive. Let's define the <c>is_boolean_algebra()</c> function to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
+        A <term>Boolean algebra</term> is a bounded lattice that is both complemented and distributive.
+    </p>
+    <p>
+         Let's define the <c>is_boolean_algebra()</c> function to determine whether a given poset is a Boolean algebra. The function accepts a finite partially ordered set as input and returns a tuple containing a boolean value and a message explaining the result. Run the following cell to define the function and call it in other cells.
     </p>
     <sage>
         <input>
@@ -17,69 +20,62 @@
                 if not L.is_complemented():
                     return False, "The lattice is not complemented."
                 return True, "The poset is a Boolean algebra."
+
+            print("Ready to call `is_boolean_algebra`")
         </input>
     </sage>
     <p>
-        Let's check if the following poset is a Boolean algebra.
+        Let's check if the the divisor lattice of <m>30</m> is a Boolean algebra.
     </p>
     <sage>
         <input>
-            S = Set([1, 2, 3, 4, 5, 6])
+            dl_30 = Posets.DivisorLattice(30)
+            show(dl_30)
 
-            P = Poset((S, attrcall("divides")))
-
-            show(P)
+            is_boolean_algebra(dl_30)
         </input>
     </sage>
+    <p>
+        Now for the divisor lattice of <m>20</m>:
+    </p>
     <sage>
         <input>
+            dl_20 = Posets.DivisorLattice(20)
+            show(dl_20)
+
+            is_boolean_algebra(dl_20)
+        </input>
+    </sage>
+    <p>
+        Let's check if the poset, <m>P</m> is a Boolean algebra.
+    </p>
+    <sage>
+        <input>
+            P = Poset(({0,1,2,3,4}, [(0,1),(0,3),(1,2),(3,4)]))
+            show(P)
+
             is_boolean_algebra(P)
         </input>
     </sage>
     <p>
-        When we pass <c>P</c> to the <c>is_boolean_algebra()</c> function, <c>LatticePoset()</c> raises an error because <c>P</c> is not a lattice. The <c>ValueError</c> provides more information about the absence of a top element. Therefore, <c>P</c> is not a Boolean algebra.
+        Let's check if the following diamond poset is a Boolean algebra.
     </p>
     <sage>
         <input>
-            T = Subsets(['a', 'b', 'c'])
+            D = posets.DiamondPoset(5)
+            show(D)
 
-            Q = Poset((T, lambda x, y: x.issubset(y)))
-
-            Q.plot(vertex_size=3500, border=True)
-        </input>
-    </sage>
-    <sage>
-        <input>
-            is_boolean_algebra(Q)
+            is_boolean_algebra(D)
         </input>
     </sage>
     <p>
-        Let's examine the divisor lattice of 30:
-    </p>
-    <sage>
-        <input>
-            dl30 = Posets.DivisorLattice(30)
-            show(dl30)
-            is_boolean_algebra(dl30)
-        </input>
-    </sage>
-    <p>
-        Now for the divisor lattice of 20:
-    </p>
-    <sage>
-        <input>
-            dl20 = Posets.DivisorLattice(20)
-            show(dl20)
-            is_boolean_algebra(dl20)
-        </input>
-    </sage>
-    <p>
-        Here is a classic example in the field of computer science:
+        Here is a classic lattice in the field of computer science:
     </p>
     <sage>
         <input>
             B = posets.BooleanLattice(1)
             show(B)
+
             is_boolean_algebra(B)
         </input>
     </sage>

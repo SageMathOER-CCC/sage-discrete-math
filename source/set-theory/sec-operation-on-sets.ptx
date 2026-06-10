@@ -127,7 +127,7 @@
 
     <subsection>
         <title>Complement of Sets</title>
-        <idx><h>set operations</h><h>compliment</h></idx>
+        <idx><h>set operations</h><h>complement</h></idx>
         <p>
             Let <m>U = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}</m> be the universal set. Given the set <m>A = \{1, 2, 3, 4, 5\}</m>. We can use the <c>difference()</c> function to find the complement of <m>A</m>.
         </p>

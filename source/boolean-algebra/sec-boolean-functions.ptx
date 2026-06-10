@@ -47,7 +47,7 @@
             </li>
             <li>
                 <p>
-                    The function returns the sum-of-products expansion as a <c>sage.logic.boolformula.BooleanFormula</c> instance.
+                    The function returns the sum-of-products expansion.
                 </p>
             </li>
         </ul>
@@ -78,14 +78,28 @@
 
                 sop_result = ' | '.join(f'({m})' for m in sop_expansion)  # Join minterms using the OR operator
                 return propcalc.formula(sop_result)
+            
+            print("Ready to call `truth_table_sop()`")
         </input>
     </sage>
     <p>
-        For your convenience, our <c>truth_table_sop</c> function converts <c>String</c> input with <c>propcalc.formula</c>. Therefore, the input accepts <c>String</c> representations of Boolean expressions. Alternatively, you may pass an instance of <c>sage.logic.boolformula.BooleanFormula</c> directly to the function.
+        For your convenience, our <c>truth_table_sop</c> function converts <c>String</c> input with <c>propcalc.formula</c>. Therefore, the input accepts <c>String</c> representations of Boolean expressions. Alternatively, you may pass an instance of Sage <c>BooleanFormula</c> directly to the function.
+    </p>
+    <p>
+        For the Boolean function <me>f(x, y, z) = x \cdot (y + z)</me>, we have the following truth table:
     </p>
     <sage>
         <input>
-            truth_table_sop("x &amp; (y | z)")
+            A = propcalc.formula("x &amp; (y | z)")
+            A.truthtable()
+        </input>
+    </sage>
+    <p>
+        Now let's evaluate the sum-of-products expansion of the Boolean function.
+    </p>
+    <sage>
+        <input>
+            truth_table_sop(A)
         </input>
     </sage>
     <p>
@@ -122,6 +136,7 @@
     <sage>
         <input>
             from sympy import symbols
+            
             sympy_variables = symbols(' '.join(variables))
             print(sympy_variables)
         </input>

@@ -30,7 +30,7 @@
         </p>
     </aside>
     <p>
-        If <m>R</m> is a partial order relation on <m>A</m>, then the function <c>Poset((A, R))</c> computes the Hasse diagram associated to <m>R</m>.
+        If <m>R</m> is a partial order relation on <m>A</m>, then <c>Poset((A, R))</c> computes the Hasse diagram associated to <m>R</m>.
     </p>
     <sage>
         <input>
@@ -44,7 +44,7 @@
         </input>
     </sage>
     <p>
-        Moreover, the <c>cover_relations()</c> function shows the pairs depicted in the Hasse diagram after the previous simplifications.
+        Moreover, <c>cover_relations()</c> shows the pairs depicted in the Hasse diagram after the previous simplifications.
     </p>
     <sage>
         <input>
@@ -52,7 +52,7 @@
         </input>
     </sage>
     <p>
-        The <c>.has_bottom()</c> function tests for a bottom element of a poset.
+        The <c>has_bottom()</c> method returns <c>True</c> if the poset has a unique minimal element.
     </p>
     <sage>
         <input>
@@ -60,7 +60,7 @@
         </input>
     </sage>
     <p>
-        The same applies for the <c>.has_top()</c> function but with a top element.
+        The <c>has_top()</c> method returns <c>True</c> if the poset has a unique maximal element.
     </p>
     <sage>
         <input>
@@ -68,7 +68,7 @@
         </input>
     </sage>
     <p>
-        The bottom element of a poset, if one exists, can be found with the <c>.bottom()</c> attribute.
+        The <c>bottom()</c> method return the unique minimal element of the poset, if it exists.
     </p>
     <sage>
         <input>
@@ -76,7 +76,7 @@
         </input>
     </sage>
     <p>
-        Similarly, the top element of a poset, if one exists, can be found with the <c>.top()</c> attribute.
+        The <c>top()</c> method returns the unique maximal element of the poset, if it exists.
     </p>
     <sage>
         <input>

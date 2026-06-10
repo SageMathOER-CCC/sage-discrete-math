@@ -9,7 +9,7 @@
     Given a graph, a <term>cycle</term> is a circuit with no repeated edges. A <term>tree</term> is a connected graph with no cycles. A graph with no cycles and not necessarily connected is called a <term>forest</term>.
   </p>
   <p>
-    Let <m>G = (M, E)</m> be a graph. The following are all equivalent:
+    Let <m>G = (V, E)</m> be a graph. The following are all equivalent:
     <ul>
       <li>
         <p>
