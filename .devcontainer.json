@@ -19,7 +19,8 @@
 
   // Add gh cli as a feature (to support codechat)
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/jungaretti/features/make:1": {}
   },
 
   // Respect the project's designated dependencies
