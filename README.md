@@ -2,7 +2,17 @@
 
 ## Chicago City Colleges Open Educational Resource
 
-Welcome to our interactive online textbook for learning Discrete Mathematics with SageMath (_Sage_). View the most recent version of the textbook at [https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html](https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html)
+**Official Universal Identifier:** ISBN 979-8-9971037-0-5
+
+An Open Educational Resource (OER) custom curriculum designed to streamline the learning process with SageMath for undergraduate discrete mathematics courses.
+
+* **Authors:** Zunaid Ahmed, Hellen Colman, Samuel Lubliner
+* **Institution:** City Colleges of Chicago (Wright College)
+* **Live Web Textbook:** [Access the Digital Book Here](https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html)
+
+Welcome to our interactive online textbook for learning Discrete Mathematics with SageMath (_Sage_). 
+
+View the most recent version of the textbook at [https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html](https://sagemathoer-ccc.github.io/sage-discrete-math/Discrete-Math-with-SageMath.html)
 
 ### Empowering mathematicians and computer scientists with open-source tools
 
