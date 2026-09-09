@@ -15,5 +15,9 @@
       format="pdf"
       latex-engine="xelatex"
     />
+    <target
+      name="latex"
+      format="latex"
+    />
   </targets>
 </project>

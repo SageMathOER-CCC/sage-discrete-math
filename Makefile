@@ -45,6 +45,10 @@ upgrade:
 	pretext upgrade
 	pretext --version
 
+# Creates the intermediate LaTeX files used in making the PDF
+latex:
+	pretext build latex --clean --generate --input=$(SOURCE_FILE)
+
 # Display help dynamically
 help:
 	@clear
@@ -63,4 +67,5 @@ stage:			   	 ## Stage the deployable web version
 view:                ## View the project in a web browser
 pdf:                 ## Generate the PDF version of the project
 upgrade:			 ## Upgrade PRETEXT to latest version
+latex:               ## Generates the intermediate LaTeX used in the PDF compilation
 help:				 ## Display current help
