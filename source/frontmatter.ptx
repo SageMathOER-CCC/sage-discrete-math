@@ -201,6 +201,11 @@
       <url href="https://github.com/SageMathOER-CCC/sage-discrete-math/blob/pdf-update/output/print/main.pdf">here</url>.
     </p>
 
+    <credit>
+      <role>ISBN</role>
+      <entity>979-8-9971037-0-5</entity>
+    </credit>
+
     <website>
       <url href="https://github.com/SageMathOER-CCC/sage-discrete-math">GitHub Repository</url>
     </website>
